@@ -1,7 +1,0 @@
-23:02:21 - Server has opened ServerSocket at port 5435.
-23:02:23 - DsMdvServer -port 5440: no such process
-23:02:23 - Forked child, PID: 28935
-23:02:23 -   Now exec: 
-23:02:23 -   DsMdvServer -port 5440 -instance manager -qmax -1
-23:02:23 - NcMdvServer -port 5482: no such process
-23:02:23 - Forked child, PID: 28958
