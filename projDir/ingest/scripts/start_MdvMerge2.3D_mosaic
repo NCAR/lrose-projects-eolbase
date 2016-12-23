@@ -1,0 +1,16 @@
+#! /bin/csh
+
+# use MDV because it is more efficient not to go through netcdf
+
+setenv MDV_WRITE_FORMAT FORMAT_MDV
+setenv MDV_WRITE_USING_EXTENDED_PATHS TRUE
+
+cd $PROJ_DIR/ingest/params
+
+running "MdvMerge2 -params MdvMerge2.3D_mosaic"
+
+if ($status == 1) then
+    MdvMerge2 -params MdvMerge2.3D_mosaic -debug |& \
+	LogFilter -d $ERRORS_LOG_DIR -p MdvMerge2 -i 3D_mosaic >& /dev/null &
+endif
+

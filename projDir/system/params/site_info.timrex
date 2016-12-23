@@ -1,0 +1,15 @@
+#############################################
+# site-specific parameter file for SPOL
+#
+#############################################
+
+# site details
+
+# TIMREX
+#setenv SITE_NAME                  "TIMREX"
+#setenv RADAR_LAT                  22.5267
+#setenv RADAR_LON                  120.4335
+#setenv RADAR_ALT_KM               0.045
+#setenv RADAR_ALT_M                45
+
+#############################################

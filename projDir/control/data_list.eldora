@@ -1,0 +1,67 @@
+######################################################
+# required data for eldora at FL
+#
+# Format is:
+#
+#  dir  late_secs  very_late_secs
+######################################################
+
+# moments FMQ from spol
+
+fmq/moments/sband/shmem_20000                 60       3000000
+
+# moments from SPOL
+
+incoming_spol/cfradial/covar/sband            1000     3000000
+incoming_spol/cfradial/moments/sband          1000     3000000
+incoming_spol/cfradial/partrain/sband/sur     1000     3000000
+incoming_spol/spdb/rhi/sband                  1000     3000000
+
+# moments from CHILL
+
+incoming_chll/cfradial/moments/sband/rhi       1000     3000000
+incoming_chll/cfradial/moments/sband/sec       1000     3000000
+incoming_chll/cfradial/moments/sdb/rhi         1000     3000000
+incoming_chll/cfradial/moments/sdb/sec         1000     3000000
+incoming_chll/cfradial/moments/sdb/sur         1000     3000000
+incoming_chll/spdb/rhi/sband                   1000     3000000
+
+# NEXRAD data
+
+front/cfradial/kcys/moments                    900      3600
+front/cfradial/kftg/moments                    900      3600
+front/cfradial/kgjx/moments                    900      3600
+front/cfradial/kgld/moments                    900      3600
+front/cfradial/kpux/moments                    900      3600
+
+# NSSL
+
+front/raw/mdv/nssl_mosaic/tile1               900       1800
+front/raw/mdv/nssl_mosaic/tile2               900       1800
+front/raw/mdv/nssl_mosaic/tile3               900       1800
+front/raw/mdv/nssl_mosaic/tile4               900       1800
+front/mdv/nssl_mosaic                         900       1800
+
+# model
+
+front/raw/ruc                                 4000      8000
+front/mdv/ruc                                 4000      8000
+front/spdb/sounding/ruc                       4000      8000
+
+# surface / soundings
+
+front/spdb/madis                              900       1800
+front/spdb/metar                              900       1800
+front/spdb/sounding/nws                       50000     100000
+
+# lightning
+
+front/spdb/ltg/nldn                           21600     86400
+
+# satellite
+
+front/mdv/sat/goes13_1km                      3600      7200
+front/mdv/sat/goes13_4km                      3600      7200
+
+
+

@@ -1,0 +1,88 @@
+>>> LogFilter time stamp: 2015/01/21 00:00:00 <<<
+>>> LogFilter time stamp: 2015/01/21 01:00:00 <<<
+>>> LogFilter time stamp: 2015/01/21 02:00:00 <<<
+>>> LogFilter time stamp: 2015/01/21 03:00:00 <<<
+>>> LogFilter time stamp: 2015/01/21 04:00:00 <<<
+>>> LogFilter time stamp: 2015/01/21 05:00:00 <<<
+>>> LogFilter time stamp: 2015/01/21 06:00:00 <<<
+>>> LogFilter time stamp: 2015/01/21 07:00:00 <<<
+>>> LogFilter time stamp: 2015/01/21 08:00:00 <<<
+>>> LogFilter time stamp: 2015/01/21 09:00:00 <<<
+>>> LogFilter time stamp: 2015/01/21 10:00:00 <<<
+>>> LogFilter time stamp: 2015/01/21 11:00:00 <<<
+>>> LogFilter time stamp: 2015/01/21 12:00:00 <<<
+>>> LogFilter time stamp: 2015/01/21 13:00:00 <<<
+>>> LogFilter time stamp: 2015/01/21 14:00:00 <<<
+>>> LogFilter time stamp: 2015/01/21 15:00:00 <<<
+>>> LogFilter time stamp: 2015/01/21 16:00:00 <<<
+16:10:12 - DsMdvServer -port 5440: no such process
+16:10:12 - Forked child, PID: 29404
+16:10:12 -   Now exec: 
+16:10:12 -   DsMdvServer -port 5440 -instance manager -qmax -1
+16:10:12 - NcMdvServer -port 5482: no such process
+16:10:12 - Forked child, PID: 29429
+16:10:12 -   Now exec: 
+16:10:12 -   NcMdvServer -port 5482 -instance manager -qmax -1
+16:10:12 - pppppppppppppp nSamplePts: 0
+16:10:12 - ttttttttttttttttttttttttttttttpp
+16:10:12 - ttttttttttttpp nSamplePts: 0
+16:10:12 - sssssssssssssssss nSamplePts: 0
+16:10:16 - gggggggggggggggggggggggggg
+16:10:16 - pppppppppppppp nSamplePts: 0
+16:10:16 - ttttttttttttttttttttttttttttttpp
+16:10:16 - ttttttttttttpp nSamplePts: 0
+16:10:16 - sssssssssssssssss nSamplePts: 0
+16:10:19 - gggggggggggggggggggggggggg
+16:10:19 - pppppppppppppp nSamplePts: 0
+16:10:19 - ttttttttttttttttttttttttttttttpp
+16:10:19 - ttttttttttttpp nSamplePts: 0
+16:10:19 - sssssssssssssssss nSamplePts: 0
+16:10:21 - gggggggggggggggggggggggggg
+16:10:21 - pppppppppppppp nSamplePts: 0
+16:10:21 - ttttttttttttttttttttttttttttttpp
+16:10:21 - ttttttttttttpp nSamplePts: 0
+16:10:21 - sssssssssssssssss nSamplePts: 0
+16:10:23 - gggggggggggggggggggggggggg
+16:10:23 - pppppppppppppp nSamplePts: 0
+16:10:23 - ttttttttttttttttttttttttttttttpp
+16:10:23 - ttttttttttttpp nSamplePts: 0
+16:10:23 - sssssssssssssssss nSamplePts: 0
+16:10:24 - gggggggggggggggggggggggggg
+16:10:24 - pppppppppppppp nSamplePts: 0
+16:10:24 - ttttttttttttttttttttttttttttttpp
+16:10:24 - ttttttttttttpp nSamplePts: 0
+16:10:24 - sssssssssssssssss nSamplePts: 0
+16:10:25 - gggggggggggggggggggggggggg
+16:10:25 - pppppppppppppp nSamplePts: 0
+16:10:25 - ttttttttttttttttttttttttttttttpp
+16:10:25 - ttttttttttttpp nSamplePts: 0
+16:10:25 - sssssssssssssssss nSamplePts: 0
+16:10:34 - gggggggggggggggggggggggggg
+16:10:34 - pppppppppppppp nSamplePts: 0
+16:10:34 - ttttttttttttttttttttttttttttttpp
+16:10:34 - ttttttttttttpp nSamplePts: 0
+16:10:34 - sssssssssssssssss nSamplePts: 0
+16:10:39 - gggggggggggggggggggggggggg
+16:10:39 - pppppppppppppp nSamplePts: 0
+16:10:39 - ttttttttttttttttttttttttttttttpp
+16:10:39 - ttttttttttttpp nSamplePts: 0
+16:10:39 - sssssssssssssssss nSamplePts: 0
+16:13:06 - gggggggggggggggggggggggggg
+16:13:06 - pppppppppppppp nSamplePts: 0
+16:14:40 - ttttttttttttttttttttttttttttttpp
+16:14:40 - ttttttttttttpp nSamplePts: 0
+16:14:40 - sssssssssssssssss nSamplePts: 0
+16:14:40 - gggggggggggggggggggggggggg
+16:14:40 - pppppppppppppp nSamplePts: 0
+16:16:01 - ttttttttttttttttttttttttttttttpp
+16:16:01 - ttttttttttttpp nSamplePts: 0
+16:16:01 - sssssssssssssssss nSamplePts: 0
+16:16:01 - gggggggggggggggggggggggggg
+16:16:01 - pppppppppppppp nSamplePts: 0
+>>> LogFilter time stamp: 2015/01/21 17:00:00 <<<
+>>> LogFilter time stamp: 2015/01/21 18:00:00 <<<
+>>> LogFilter time stamp: 2015/01/21 19:00:00 <<<
+>>> LogFilter time stamp: 2015/01/21 20:00:00 <<<
+>>> LogFilter time stamp: 2015/01/21 21:00:00 <<<
+>>> LogFilter time stamp: 2015/01/21 22:00:00 <<<
+>>> LogFilter time stamp: 2015/01/21 23:00:00 <<<

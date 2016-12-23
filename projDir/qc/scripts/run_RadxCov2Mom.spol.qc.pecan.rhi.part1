@@ -1,0 +1,55 @@
+#! /bin/csh
+
+# run the moments generation for PECAN qc
+
+cd $PROJ_DIR/qc/params
+
+setenv TEMP_BASED_ZDR_CORRECTION_SLOPE -0.00344
+setenv TEMP_BASED_ZDR_CORRECTION_INTERCEPT 0.370
+setenv MEASURED_XMIT_POWER_CORRECTION_DB 0.0
+setenv ADJUST_CAL_FOR_MEASURED_XMIT_POWER FALSE
+setenv SWAP_MEASURED_XMIT_POWER_CHANNELS TRUE
+setenv DBZ_CORRECTION -0.13
+
+#RadxCov2Mom -params RadxCov2Mom.spol.qc.rhi -d -start "2015 05 28 00 00 00" -end "2015 06 01 20 00 00" >& ../data/pecan/RadxCov2Mom.spol.qc.rhi.part1.log 
+
+cd $PROJ_DIR/qc/params
+
+setenv TEMP_BASED_ZDR_CORRECTION_SLOPE -0.00344
+setenv TEMP_BASED_ZDR_CORRECTION_INTERCEPT 0.370
+setenv MEASURED_XMIT_POWER_CORRECTION_DB 0.0
+setenv ADJUST_CAL_FOR_MEASURED_XMIT_POWER FALSE
+setenv SWAP_MEASURED_XMIT_POWER_CHANNELS TRUE
+setenv DBZ_CORRECTION -0.13
+
+RadxCov2Mom -params RadxCov2Mom.spol.qc.rhi.hv_swap -d -start "2015 06 01 20 00 00" -end "2015 06 05 00 00 00" >& ../data/pecan/RadxCov2Mom.spol.qc.rhi.part1.log 
+
+setenv TEMP_BASED_ZDR_CORRECTION_SLOPE 0.00
+setenv TEMP_BASED_ZDR_CORRECTION_INTERCEPT 0.200
+setenv MEASURED_XMIT_POWER_CORRECTION_DB 0.00
+setenv ADJUST_CAL_FOR_MEASURED_XMIT_POWER TRUE
+setenv SWAP_MEASURED_XMIT_POWER_CHANNELS FALSE
+setenv DBZ_CORRECTION 2.05
+
+RadxCov2Mom -params RadxCov2Mom.spol.qc.rhi.hv_swap -d -start "2015 06 07 00 00 00" -end "2015 06 10 00 00 00" >>& ../data/pecan/RadxCov2Mom.spol.qc.rhi.part1.log 
+
+setenv TEMP_BASED_ZDR_CORRECTION_SLOPE 0.00
+setenv TEMP_BASED_ZDR_CORRECTION_INTERCEPT 0.110
+setenv MEASURED_XMIT_POWER_CORRECTION_DB 0.0
+setenv ADJUST_CAL_FOR_MEASURED_XMIT_POWER TRUE
+setenv SWAP_MEASURED_XMIT_POWER_CHANNELS FALSE
+setenv DBZ_CORRECTION 2.05
+
+RadxCov2Mom -params RadxCov2Mom.spol.qc.rhi.hv_swap -d -start "2015 06 10 00 00 00" -end "2015 06 14 00 00 00" >>& ../data/pecan/RadxCov2Mom.spol.qc.rhi.part1.log 
+
+setenv TEMP_BASED_ZDR_CORRECTION_SLOPE 0.00
+setenv TEMP_BASED_ZDR_CORRECTION_INTERCEPT 0.110
+setenv MEASURED_XMIT_POWER_CORRECTION_DB 0.0
+setenv ADJUST_CAL_FOR_MEASURED_XMIT_POWER TRUE
+setenv SWAP_MEASURED_XMIT_POWER_CHANNELS FALSE
+setenv DBZ_CORRECTION -0.55
+
+RadxCov2Mom -params RadxCov2Mom.spol.qc.rhi.hv_swap -d -start "2015 06 14 00 00 00" -end "2015 06 18 00 00 00" >>& ../data/pecan/RadxCov2Mom.spol.qc.rhi.part1.log
+
+
+

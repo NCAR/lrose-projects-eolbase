@@ -1,0 +1,14 @@
+#! /bin/csh
+
+
+setenv DISPLAY_HOME ~/cvs/projects/front_porch/displayHome/
+source ~/cvs/projects/front_porch/control/params/host_env.realtime
+setenv WSDDM_HOST boreal
+setenv LTG_HOST cospa25
+setenv ATEC_LTG_HOST atec-anc1
+setenv PROJECT front_porch
+setenv PROJECT2 CoSPA
+setenv ORIGIN_LAT 39.7914
+setenv ORIGIN_LON -104.5683
+CIDD -p $DISPLAY_HOME/params/CIDD.params -i front_porch &
+

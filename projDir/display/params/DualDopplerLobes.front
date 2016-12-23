@@ -1,0 +1,185 @@
+/**********************************************************************
+ * TDRP params for DualDopplerLobes
+ **********************************************************************/
+
+//======================================================================
+//
+// Create a map of the dual doppler region for radar pairs.
+// The radar pairs are listed in the param file. The output map
+// files are suitable for display in CIDD.
+// Niles Oien December 2007.
+//
+//======================================================================
+ 
+///////////// geometries //////////////////////////////
+//
+// List of geometries of radar pairs to create map files for, and output 
+//   map file names.
+// Set as appropriate.
+//
+// Type: struct
+//   typedef struct {
+//      double latRadar1;
+//      double lonRadar1;
+//      double latRadar2;
+//      double lonRadar2;
+//      double minDiffAngleDegrees;
+//      int nPointsPerLobe;
+//      string outMapFile;
+//   }
+//
+// 1D array - variable length.
+//
+
+geometries = {
+  {
+    latRadar1 = 40.1233,
+    lonRadar1 = -104.891,
+    latRadar2 = 40.4464,
+    lonRadar2 = -104.637,
+    minDiffAngleDegrees = 30,
+    nPointsPerLobe = 100,
+    outMapFile = "$(HOME)/cvs/projects/hawk/front/projDir/display/maps/SPOL_CHILL_DualDoppler_30.map"
+  }
+  ,
+  {
+    latRadar1 = 40.1233,
+    lonRadar1 = -104.891,
+    latRadar2 = 40.4464,
+    lonRadar2 = -104.637,
+    minDiffAngleDegrees = 45,
+    nPointsPerLobe = 100,
+    outMapFile = "$(HOME)/cvs/projects/hawk/front/projDir/display/maps/SPOL_CHILL_DualDoppler_45.map"
+  }
+  ,
+  {
+    latRadar1 = 40.1233,
+    lonRadar1 = -104.891,
+    latRadar2 = 40.4464,
+    lonRadar2 = -104.637,
+    minDiffAngleDegrees = 60,
+    nPointsPerLobe = 100,
+    outMapFile = "$(HOME)/cvs/projects/hawk/front/projDir/display/maps/SPOL_CHILL_DualDoppler_60.map"
+  }
+  ,
+  {
+    latRadar1 = 40.1233,
+    lonRadar1 = -104.891,
+    latRadar2 = 39.7866,
+    lonRadar2 = -104.546,
+    minDiffAngleDegrees = 30,
+    nPointsPerLobe = 100,
+    outMapFile = "$(HOME)/cvs/projects/hawk/front/projDir/display/maps/SPOL_KFTG_DualDoppler_30.map"
+  }
+  ,
+  {
+    latRadar1 = 40.1233,
+    lonRadar1 = -104.891,
+    latRadar2 = 39.7866,
+    lonRadar2 = -104.546,
+    minDiffAngleDegrees = 45,
+    nPointsPerLobe = 100,
+    outMapFile = "$(HOME)/cvs/projects/hawk/front/projDir/display/maps/SPOL_KFTG_DualDoppler_45.map"
+  }
+  ,
+  {
+    latRadar1 = 40.1233,
+    lonRadar1 = -104.891,
+    latRadar2 = 39.7866,
+    lonRadar2 = -104.546,
+    minDiffAngleDegrees = 60,
+    nPointsPerLobe = 100,
+    outMapFile = "$(HOME)/cvs/projects/hawk/front/projDir/display/maps/SPOL_KFTG_DualDoppler_60.map"
+  }
+  ,
+  {
+    latRadar1 = 40.4464,
+    lonRadar1 = -104.637,
+    latRadar2 = 39.7866,
+    lonRadar2 = -104.546,
+    minDiffAngleDegrees = 30,
+    nPointsPerLobe = 100,
+    outMapFile = "$(HOME)/cvs/projects/hawk/front/projDir/display/maps/CHILL_KFTG_DualDoppler_30.map"
+  }
+  ,
+  {
+    latRadar1 = 40.4464,
+    lonRadar1 = -104.637,
+    latRadar2 = 39.7866,
+    lonRadar2 = -104.546,
+    minDiffAngleDegrees = 45,
+    nPointsPerLobe = 100,
+    outMapFile = "$(HOME)/cvs/projects/hawk/front/projDir/display/maps/CHILL_KFTG_DualDoppler_45.map"
+  }
+  ,
+  {
+    latRadar1 = 40.4464,
+    lonRadar1 = -104.637,
+    latRadar2 = 39.7866,
+    lonRadar2 = -104.546,
+    minDiffAngleDegrees = 60,
+    nPointsPerLobe = 100,
+    outMapFile = "$(HOME)/cvs/projects/hawk/front/projDir/display/maps/CHILL_KFTG_DualDoppler_60.map"
+  }
+  ,
+  {
+    latRadar1 = 40.4464,
+    lonRadar1 = -104.637,
+    latRadar2 = 40.87115,
+    lonRadar2 = -104.714,
+    minDiffAngleDegrees = 30,
+    nPointsPerLobe = 100,
+    outMapFile = "$(HOME)/cvs/projects/hawk/front/projDir/display/maps/CHILL_PAWNEE_DualDoppler_30.map"
+  }
+  ,
+  {
+    latRadar1 = 40.4464,
+    lonRadar1 = -104.637,
+    latRadar2 = 40.87115,
+    lonRadar2 = -104.714,
+    minDiffAngleDegrees = 45,
+    nPointsPerLobe = 100,
+    outMapFile = "$(HOME)/cvs/projects/hawk/front/projDir/display/maps/CHILL_PAWNEE_DualDoppler_45.map"
+  }
+  ,
+  {
+    latRadar1 = 40.4464,
+    lonRadar1 = -104.637,
+    latRadar2 = 40.87115,
+    lonRadar2 = -104.714,
+    minDiffAngleDegrees = 60,
+    nPointsPerLobe = 100,
+    outMapFile = "$(HOME)/cvs/projects/hawk/front/projDir/display/maps/CHILL_PAWNEE_DualDoppler_60.map"
+  }
+  ,
+  {
+    latRadar1 = 41.1519,
+    lonRadar1 = -104.806,
+    latRadar2 = 40.87115,
+    lonRadar2 = -104.714,
+    minDiffAngleDegrees = 30,
+    nPointsPerLobe = 100,
+    outMapFile = "$(HOME)/cvs/projects/hawk/front/projDir/display/maps/KCYS_PAWNEE_DualDoppler_30.map"
+  }
+  ,
+  {
+    latRadar1 = 41.1519,
+    lonRadar1 = -104.806,
+    latRadar2 = 40.87115,
+    lonRadar2 = -104.714,
+    minDiffAngleDegrees = 45,
+    nPointsPerLobe = 100,
+    outMapFile = "$(HOME)/cvs/projects/hawk/front/projDir/display/maps/KCYS_PAWNEE_DualDoppler_45.map"
+  }
+  ,
+  {
+    latRadar1 = 41.1519,
+    lonRadar1 = -104.806,
+    latRadar2 = 40.87115,
+    lonRadar2 = -104.714,
+    minDiffAngleDegrees = 60,
+    nPointsPerLobe = 100,
+    outMapFile = "$(HOME)/cvs/projects/hawk/front/projDir/display/maps/KCYS_PAWNEE_DualDoppler_60.map"
+  }
+};
+

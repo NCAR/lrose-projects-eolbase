@@ -1,0 +1,1112 @@
+18:38:55 - Initializing built-in extension Generic Event Extension
+18:38:56 - Initializing built-in extension SHAPE
+18:38:56 - Initializing built-in extension MIT-SHM
+18:38:56 - Initializing built-in extension XInputExtension
+18:38:56 - Initializing built-in extension XTEST
+18:38:56 - Initializing built-in extension BIG-REQUESTS
+18:38:56 - Initializing built-in extension SYNC
+18:38:56 - Initializing built-in extension XKEYBOARD
+18:38:56 - Initializing built-in extension XC-MISC
+18:38:56 - Initializing built-in extension XINERAMA
+18:38:56 - Initializing built-in extension XFIXES
+18:38:56 - Initializing built-in extension RENDER
+18:38:56 - Initializing built-in extension RANDR
+18:38:56 - Initializing built-in extension COMPOSITE
+18:38:56 - Initializing built-in extension DAMAGE
+18:38:56 - Initializing built-in extension MIT-SCREEN-SAVER
+18:38:56 - Initializing built-in extension DOUBLE-BUFFER
+18:38:56 - Initializing built-in extension RECORD
+18:38:56 - Initializing built-in extension DPMS
+18:38:56 - Initializing built-in extension Present
+18:38:56 - Initializing built-in extension X-Resource
+18:38:56 - Initializing built-in extension XVideo
+18:38:56 - Initializing built-in extension XVideo-MotionCompensation
+18:38:56 - Initializing built-in extension SELinux
+18:38:56 - Initializing built-in extension GLX
+18:38:56 - 6 XSELINUXs still allocated at reset
+18:38:56 - SCREEN: 0 objects of 248 bytes = 0 total bytes 0 private allocs
+18:38:56 - DEVICE: 0 objects of 96 bytes = 0 total bytes 0 private allocs
+18:38:56 - CLIENT: 0 objects of 136 bytes = 0 total bytes 0 private allocs
+18:38:56 - WINDOW: 0 objects of 48 bytes = 0 total bytes 0 private allocs
+18:38:56 - PIXMAP: 1 objects of 16 bytes = 16 total bytes 0 private allocs
+18:38:56 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+18:38:56 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+18:38:56 - TOTAL: 6 objects, 88 bytes, 0 allocs
+18:38:56 - 1 PIXMAPs still allocated at reset
+18:38:56 - PIXMAP: 1 objects of 16 bytes = 16 total bytes 0 private allocs
+18:38:56 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+18:38:56 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+18:38:56 - TOTAL: 6 objects, 88 bytes, 0 allocs
+18:38:56 - 4 GCs still allocated at reset
+18:38:56 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+18:38:56 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+18:38:56 - TOTAL: 5 objects, 72 bytes, 0 allocs
+18:38:56 - 1 CURSORs still allocated at reset
+18:38:56 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+18:38:56 - TOTAL: 1 objects, 8 bytes, 0 allocs
+18:38:56 - 1 CURSOR_BITSs still allocated at reset
+18:38:56 - TOTAL: 0 objects, 0 bytes, 0 allocs
+18:38:56 - 6 XSELINUXs still allocated at reset
+18:39:17 - SCREEN: 0 objects of 248 bytes = 0 total bytes 0 private allocs
+18:39:17 - DEVICE: 0 objects of 96 bytes = 0 total bytes 0 private allocs
+18:39:17 - CLIENT: 0 objects of 136 bytes = 0 total bytes 0 private allocs
+18:39:17 - WINDOW: 0 objects of 48 bytes = 0 total bytes 0 private allocs
+18:39:17 - PIXMAP: 1 objects of 16 bytes = 16 total bytes 0 private allocs
+18:39:17 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+18:39:17 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+18:39:17 - TOTAL: 6 objects, 88 bytes, 0 allocs
+18:39:17 - 1 PIXMAPs still allocated at reset
+18:39:17 - PIXMAP: 1 objects of 16 bytes = 16 total bytes 0 private allocs
+18:39:17 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+18:39:17 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+18:39:17 - TOTAL: 6 objects, 88 bytes, 0 allocs
+18:39:17 - 4 GCs still allocated at reset
+18:39:17 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+18:39:17 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+18:39:17 - TOTAL: 5 objects, 72 bytes, 0 allocs
+18:39:17 - 1 CURSORs still allocated at reset
+18:39:17 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+18:39:17 - TOTAL: 1 objects, 8 bytes, 0 allocs
+18:39:17 - 1 CURSOR_BITSs still allocated at reset
+18:39:17 - TOTAL: 0 objects, 0 bytes, 0 allocs
+18:39:17 - 6 XSELINUXs still allocated at reset
+18:47:24 - SCREEN: 0 objects of 248 bytes = 0 total bytes 0 private allocs
+18:47:24 - DEVICE: 0 objects of 96 bytes = 0 total bytes 0 private allocs
+18:47:24 - CLIENT: 0 objects of 136 bytes = 0 total bytes 0 private allocs
+18:47:24 - WINDOW: 0 objects of 48 bytes = 0 total bytes 0 private allocs
+18:47:24 - PIXMAP: 1 objects of 16 bytes = 16 total bytes 0 private allocs
+18:47:24 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+18:47:24 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+18:47:24 - TOTAL: 6 objects, 88 bytes, 0 allocs
+18:47:24 - 1 PIXMAPs still allocated at reset
+18:47:24 - PIXMAP: 1 objects of 16 bytes = 16 total bytes 0 private allocs
+18:47:24 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+18:47:24 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+18:47:24 - TOTAL: 6 objects, 88 bytes, 0 allocs
+18:47:24 - 4 GCs still allocated at reset
+18:47:24 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+18:47:24 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+18:47:24 - TOTAL: 5 objects, 72 bytes, 0 allocs
+18:47:24 - 1 CURSORs still allocated at reset
+18:47:24 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+18:47:24 - TOTAL: 1 objects, 8 bytes, 0 allocs
+18:47:24 - 1 CURSOR_BITSs still allocated at reset
+18:47:24 - TOTAL: 0 objects, 0 bytes, 0 allocs
+18:47:24 - 7 XSELINUXs still allocated at reset
+18:47:24 - SCREEN: 0 objects of 248 bytes = 0 total bytes 0 private allocs
+18:47:24 - DEVICE: 0 objects of 96 bytes = 0 total bytes 0 private allocs
+18:47:24 - CLIENT: 0 objects of 136 bytes = 0 total bytes 0 private allocs
+18:47:24 - WINDOW: 0 objects of 48 bytes = 0 total bytes 0 private allocs
+18:47:24 - PIXMAP: 2 objects of 16 bytes = 32 total bytes 0 private allocs
+18:47:24 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+18:47:24 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+18:47:24 - TOTAL: 7 objects, 104 bytes, 0 allocs
+18:47:24 - 2 PIXMAPs still allocated at reset
+18:47:24 - PIXMAP: 2 objects of 16 bytes = 32 total bytes 0 private allocs
+18:47:24 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+18:47:24 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+18:47:24 - TOTAL: 7 objects, 104 bytes, 0 allocs
+18:47:24 - 4 GCs still allocated at reset
+18:47:24 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+18:47:24 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+18:47:24 - TOTAL: 5 objects, 72 bytes, 0 allocs
+18:47:24 - 1 CURSORs still allocated at reset
+18:47:24 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+18:47:24 - TOTAL: 1 objects, 8 bytes, 0 allocs
+18:47:24 - 1 CURSOR_BITSs still allocated at reset
+18:47:24 - TOTAL: 0 objects, 0 bytes, 0 allocs
+18:47:24 - 7 XSELINUXs still allocated at reset
+18:47:45 - SCREEN: 0 objects of 248 bytes = 0 total bytes 0 private allocs
+18:47:45 - DEVICE: 0 objects of 96 bytes = 0 total bytes 0 private allocs
+18:47:45 - CLIENT: 0 objects of 136 bytes = 0 total bytes 0 private allocs
+18:47:45 - WINDOW: 0 objects of 48 bytes = 0 total bytes 0 private allocs
+18:47:45 - PIXMAP: 2 objects of 16 bytes = 32 total bytes 0 private allocs
+18:47:45 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+18:47:45 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+18:47:45 - TOTAL: 7 objects, 104 bytes, 0 allocs
+18:47:45 - 2 PIXMAPs still allocated at reset
+18:47:45 - PIXMAP: 2 objects of 16 bytes = 32 total bytes 0 private allocs
+18:47:45 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+18:47:45 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+18:47:45 - TOTAL: 7 objects, 104 bytes, 0 allocs
+18:47:45 - 4 GCs still allocated at reset
+18:47:45 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+18:47:45 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+18:47:45 - TOTAL: 5 objects, 72 bytes, 0 allocs
+18:47:45 - 1 CURSORs still allocated at reset
+18:47:45 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+18:47:45 - TOTAL: 1 objects, 8 bytes, 0 allocs
+18:47:45 - 1 CURSOR_BITSs still allocated at reset
+18:47:45 - TOTAL: 0 objects, 0 bytes, 0 allocs
+18:47:45 - 7 XSELINUXs still allocated at reset
+18:48:36 - SCREEN: 0 objects of 248 bytes = 0 total bytes 0 private allocs
+18:48:36 - DEVICE: 0 objects of 96 bytes = 0 total bytes 0 private allocs
+18:48:36 - CLIENT: 0 objects of 136 bytes = 0 total bytes 0 private allocs
+18:48:36 - WINDOW: 0 objects of 48 bytes = 0 total bytes 0 private allocs
+18:48:36 - PIXMAP: 2 objects of 16 bytes = 32 total bytes 0 private allocs
+18:48:36 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+18:48:36 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+18:48:36 - TOTAL: 7 objects, 104 bytes, 0 allocs
+18:48:36 - 2 PIXMAPs still allocated at reset
+18:48:36 - PIXMAP: 2 objects of 16 bytes = 32 total bytes 0 private allocs
+18:48:36 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+18:48:36 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+18:48:36 - TOTAL: 7 objects, 104 bytes, 0 allocs
+18:48:36 - 4 GCs still allocated at reset
+18:48:36 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+18:48:36 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+18:48:36 - TOTAL: 5 objects, 72 bytes, 0 allocs
+18:48:36 - 1 CURSORs still allocated at reset
+18:48:36 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+18:48:36 - TOTAL: 1 objects, 8 bytes, 0 allocs
+18:48:36 - 1 CURSOR_BITSs still allocated at reset
+18:48:36 - TOTAL: 0 objects, 0 bytes, 0 allocs
+18:48:36 - 7 XSELINUXs still allocated at reset
+18:48:36 - SCREEN: 0 objects of 248 bytes = 0 total bytes 0 private allocs
+18:48:36 - DEVICE: 0 objects of 96 bytes = 0 total bytes 0 private allocs
+18:48:36 - CLIENT: 0 objects of 136 bytes = 0 total bytes 0 private allocs
+18:48:36 - WINDOW: 0 objects of 48 bytes = 0 total bytes 0 private allocs
+18:48:36 - PIXMAP: 2 objects of 16 bytes = 32 total bytes 0 private allocs
+18:48:36 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+18:48:36 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+18:48:36 - TOTAL: 7 objects, 104 bytes, 0 allocs
+18:48:36 - 2 PIXMAPs still allocated at reset
+18:48:36 - PIXMAP: 2 objects of 16 bytes = 32 total bytes 0 private allocs
+18:48:36 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+18:48:36 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+18:48:36 - TOTAL: 7 objects, 104 bytes, 0 allocs
+18:48:36 - 4 GCs still allocated at reset
+18:48:36 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+18:48:36 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+18:48:36 - TOTAL: 5 objects, 72 bytes, 0 allocs
+18:48:36 - 1 CURSORs still allocated at reset
+18:48:36 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+18:48:36 - TOTAL: 1 objects, 8 bytes, 0 allocs
+18:48:36 - 1 CURSOR_BITSs still allocated at reset
+18:48:36 - TOTAL: 0 objects, 0 bytes, 0 allocs
+18:48:36 - 7 XSELINUXs still allocated at reset
+18:48:57 - SCREEN: 0 objects of 248 bytes = 0 total bytes 0 private allocs
+18:48:57 - DEVICE: 0 objects of 96 bytes = 0 total bytes 0 private allocs
+18:48:57 - CLIENT: 0 objects of 136 bytes = 0 total bytes 0 private allocs
+18:48:57 - WINDOW: 0 objects of 48 bytes = 0 total bytes 0 private allocs
+18:48:57 - PIXMAP: 2 objects of 16 bytes = 32 total bytes 0 private allocs
+18:48:57 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+18:48:57 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+18:48:57 - TOTAL: 7 objects, 104 bytes, 0 allocs
+18:48:57 - 2 PIXMAPs still allocated at reset
+18:48:57 - PIXMAP: 2 objects of 16 bytes = 32 total bytes 0 private allocs
+18:48:57 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+18:48:57 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+18:48:57 - TOTAL: 7 objects, 104 bytes, 0 allocs
+18:48:57 - 4 GCs still allocated at reset
+18:48:57 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+18:48:57 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+18:48:57 - TOTAL: 5 objects, 72 bytes, 0 allocs
+18:48:57 - 1 CURSORs still allocated at reset
+18:48:57 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+18:48:57 - TOTAL: 1 objects, 8 bytes, 0 allocs
+18:48:57 - 1 CURSOR_BITSs still allocated at reset
+18:48:57 - TOTAL: 0 objects, 0 bytes, 0 allocs
+18:48:57 - 7 XSELINUXs still allocated at reset
+18:49:36 - SCREEN: 0 objects of 248 bytes = 0 total bytes 0 private allocs
+18:49:36 - DEVICE: 0 objects of 96 bytes = 0 total bytes 0 private allocs
+18:49:36 - CLIENT: 0 objects of 136 bytes = 0 total bytes 0 private allocs
+18:49:36 - WINDOW: 0 objects of 48 bytes = 0 total bytes 0 private allocs
+18:49:36 - PIXMAP: 2 objects of 16 bytes = 32 total bytes 0 private allocs
+18:49:36 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+18:49:36 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+18:49:36 - TOTAL: 7 objects, 104 bytes, 0 allocs
+18:49:36 - 2 PIXMAPs still allocated at reset
+18:49:36 - PIXMAP: 2 objects of 16 bytes = 32 total bytes 0 private allocs
+18:49:36 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+18:49:36 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+18:49:36 - TOTAL: 7 objects, 104 bytes, 0 allocs
+18:49:36 - 4 GCs still allocated at reset
+18:49:36 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+18:49:36 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+18:49:36 - TOTAL: 5 objects, 72 bytes, 0 allocs
+18:49:36 - 1 CURSORs still allocated at reset
+18:49:36 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+18:49:36 - TOTAL: 1 objects, 8 bytes, 0 allocs
+18:49:36 - 1 CURSOR_BITSs still allocated at reset
+18:49:36 - TOTAL: 0 objects, 0 bytes, 0 allocs
+18:49:36 - 7 XSELINUXs still allocated at reset
+18:49:36 - SCREEN: 0 objects of 248 bytes = 0 total bytes 0 private allocs
+18:49:36 - DEVICE: 0 objects of 96 bytes = 0 total bytes 0 private allocs
+18:49:36 - CLIENT: 0 objects of 136 bytes = 0 total bytes 0 private allocs
+18:49:36 - WINDOW: 0 objects of 48 bytes = 0 total bytes 0 private allocs
+18:49:36 - PIXMAP: 2 objects of 16 bytes = 32 total bytes 0 private allocs
+18:49:36 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+18:49:36 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+18:49:36 - TOTAL: 7 objects, 104 bytes, 0 allocs
+18:49:36 - 2 PIXMAPs still allocated at reset
+18:49:36 - PIXMAP: 2 objects of 16 bytes = 32 total bytes 0 private allocs
+18:49:36 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+18:49:36 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+18:49:36 - TOTAL: 7 objects, 104 bytes, 0 allocs
+18:49:36 - 4 GCs still allocated at reset
+18:49:36 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+18:49:36 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+18:49:36 - TOTAL: 5 objects, 72 bytes, 0 allocs
+18:49:36 - 1 CURSORs still allocated at reset
+18:49:36 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+18:49:36 - TOTAL: 1 objects, 8 bytes, 0 allocs
+18:49:36 - 1 CURSOR_BITSs still allocated at reset
+18:49:36 - TOTAL: 0 objects, 0 bytes, 0 allocs
+18:49:36 - 7 XSELINUXs still allocated at reset
+18:49:57 - SCREEN: 0 objects of 248 bytes = 0 total bytes 0 private allocs
+18:49:57 - DEVICE: 0 objects of 96 bytes = 0 total bytes 0 private allocs
+18:49:57 - CLIENT: 0 objects of 136 bytes = 0 total bytes 0 private allocs
+18:49:57 - WINDOW: 0 objects of 48 bytes = 0 total bytes 0 private allocs
+18:49:57 - PIXMAP: 2 objects of 16 bytes = 32 total bytes 0 private allocs
+18:49:57 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+18:49:57 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+18:49:57 - TOTAL: 7 objects, 104 bytes, 0 allocs
+18:49:57 - 2 PIXMAPs still allocated at reset
+18:49:57 - PIXMAP: 2 objects of 16 bytes = 32 total bytes 0 private allocs
+18:49:57 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+18:49:57 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+18:49:57 - TOTAL: 7 objects, 104 bytes, 0 allocs
+18:49:57 - 4 GCs still allocated at reset
+18:49:57 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+18:49:57 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+18:49:57 - TOTAL: 5 objects, 72 bytes, 0 allocs
+18:49:57 - 1 CURSORs still allocated at reset
+18:49:57 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+18:49:57 - TOTAL: 1 objects, 8 bytes, 0 allocs
+18:49:57 - 1 CURSOR_BITSs still allocated at reset
+18:49:57 - TOTAL: 0 objects, 0 bytes, 0 allocs
+18:49:57 - 7 XSELINUXs still allocated at reset
+18:50:25 - SCREEN: 0 objects of 248 bytes = 0 total bytes 0 private allocs
+18:50:25 - DEVICE: 0 objects of 96 bytes = 0 total bytes 0 private allocs
+18:50:25 - CLIENT: 0 objects of 136 bytes = 0 total bytes 0 private allocs
+18:50:25 - WINDOW: 0 objects of 48 bytes = 0 total bytes 0 private allocs
+18:50:25 - PIXMAP: 2 objects of 16 bytes = 32 total bytes 0 private allocs
+18:50:25 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+18:50:25 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+18:50:25 - TOTAL: 7 objects, 104 bytes, 0 allocs
+18:50:25 - 2 PIXMAPs still allocated at reset
+18:50:25 - PIXMAP: 2 objects of 16 bytes = 32 total bytes 0 private allocs
+18:50:25 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+18:50:25 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+18:50:25 - TOTAL: 7 objects, 104 bytes, 0 allocs
+18:50:25 - 4 GCs still allocated at reset
+18:50:25 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+18:50:25 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+18:50:25 - TOTAL: 5 objects, 72 bytes, 0 allocs
+18:50:25 - 1 CURSORs still allocated at reset
+18:50:25 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+18:50:25 - TOTAL: 1 objects, 8 bytes, 0 allocs
+18:50:25 - 1 CURSOR_BITSs still allocated at reset
+18:50:25 - TOTAL: 0 objects, 0 bytes, 0 allocs
+18:50:25 - 7 XSELINUXs still allocated at reset
+18:50:25 - SCREEN: 0 objects of 248 bytes = 0 total bytes 0 private allocs
+18:50:25 - DEVICE: 0 objects of 96 bytes = 0 total bytes 0 private allocs
+18:50:25 - CLIENT: 0 objects of 136 bytes = 0 total bytes 0 private allocs
+18:50:25 - WINDOW: 0 objects of 48 bytes = 0 total bytes 0 private allocs
+18:50:25 - PIXMAP: 2 objects of 16 bytes = 32 total bytes 0 private allocs
+18:50:25 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+18:50:25 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+18:50:25 - TOTAL: 7 objects, 104 bytes, 0 allocs
+18:50:25 - 2 PIXMAPs still allocated at reset
+18:50:25 - PIXMAP: 2 objects of 16 bytes = 32 total bytes 0 private allocs
+18:50:25 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+18:50:25 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+18:50:25 - TOTAL: 7 objects, 104 bytes, 0 allocs
+18:50:25 - 4 GCs still allocated at reset
+18:50:25 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+18:50:25 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+18:50:25 - TOTAL: 5 objects, 72 bytes, 0 allocs
+18:50:25 - 1 CURSORs still allocated at reset
+18:50:25 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+18:50:25 - TOTAL: 1 objects, 8 bytes, 0 allocs
+18:50:25 - 1 CURSOR_BITSs still allocated at reset
+18:50:25 - TOTAL: 0 objects, 0 bytes, 0 allocs
+18:50:25 - 7 XSELINUXs still allocated at reset
+18:50:46 - SCREEN: 0 objects of 248 bytes = 0 total bytes 0 private allocs
+18:50:46 - DEVICE: 0 objects of 96 bytes = 0 total bytes 0 private allocs
+18:50:46 - CLIENT: 0 objects of 136 bytes = 0 total bytes 0 private allocs
+18:50:46 - WINDOW: 0 objects of 48 bytes = 0 total bytes 0 private allocs
+18:50:46 - PIXMAP: 2 objects of 16 bytes = 32 total bytes 0 private allocs
+18:50:46 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+18:50:46 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+18:50:46 - TOTAL: 7 objects, 104 bytes, 0 allocs
+18:50:46 - 2 PIXMAPs still allocated at reset
+18:50:46 - PIXMAP: 2 objects of 16 bytes = 32 total bytes 0 private allocs
+18:50:46 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+18:50:46 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+18:50:46 - TOTAL: 7 objects, 104 bytes, 0 allocs
+18:50:46 - 4 GCs still allocated at reset
+18:50:46 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+18:50:46 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+18:50:46 - TOTAL: 5 objects, 72 bytes, 0 allocs
+18:50:46 - 1 CURSORs still allocated at reset
+18:50:46 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+18:50:46 - TOTAL: 1 objects, 8 bytes, 0 allocs
+18:50:46 - 1 CURSOR_BITSs still allocated at reset
+18:50:46 - TOTAL: 0 objects, 0 bytes, 0 allocs
+18:50:46 - 7 XSELINUXs still allocated at reset
+18:51:35 - SCREEN: 0 objects of 248 bytes = 0 total bytes 0 private allocs
+18:51:35 - DEVICE: 0 objects of 96 bytes = 0 total bytes 0 private allocs
+18:51:35 - CLIENT: 0 objects of 136 bytes = 0 total bytes 0 private allocs
+18:51:35 - WINDOW: 0 objects of 48 bytes = 0 total bytes 0 private allocs
+18:51:35 - PIXMAP: 2 objects of 16 bytes = 32 total bytes 0 private allocs
+18:51:35 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+18:51:35 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+18:51:35 - TOTAL: 7 objects, 104 bytes, 0 allocs
+18:51:35 - 2 PIXMAPs still allocated at reset
+18:51:35 - PIXMAP: 2 objects of 16 bytes = 32 total bytes 0 private allocs
+18:51:35 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+18:51:35 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+18:51:35 - TOTAL: 7 objects, 104 bytes, 0 allocs
+18:51:35 - 4 GCs still allocated at reset
+18:51:35 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+18:51:35 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+18:51:35 - TOTAL: 5 objects, 72 bytes, 0 allocs
+18:51:35 - 1 CURSORs still allocated at reset
+18:51:35 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+18:51:35 - TOTAL: 1 objects, 8 bytes, 0 allocs
+18:51:35 - 1 CURSOR_BITSs still allocated at reset
+18:51:35 - TOTAL: 0 objects, 0 bytes, 0 allocs
+18:51:35 - 7 XSELINUXs still allocated at reset
+18:51:35 - SCREEN: 0 objects of 248 bytes = 0 total bytes 0 private allocs
+18:51:35 - DEVICE: 0 objects of 96 bytes = 0 total bytes 0 private allocs
+18:51:35 - CLIENT: 0 objects of 136 bytes = 0 total bytes 0 private allocs
+18:51:35 - WINDOW: 0 objects of 48 bytes = 0 total bytes 0 private allocs
+18:51:35 - PIXMAP: 2 objects of 16 bytes = 32 total bytes 0 private allocs
+18:51:35 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+18:51:35 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+18:51:35 - TOTAL: 7 objects, 104 bytes, 0 allocs
+18:51:35 - 2 PIXMAPs still allocated at reset
+18:51:35 - PIXMAP: 2 objects of 16 bytes = 32 total bytes 0 private allocs
+18:51:35 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+18:51:35 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+18:51:35 - TOTAL: 7 objects, 104 bytes, 0 allocs
+18:51:35 - 4 GCs still allocated at reset
+18:51:35 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+18:51:35 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+18:51:35 - TOTAL: 5 objects, 72 bytes, 0 allocs
+18:51:35 - 1 CURSORs still allocated at reset
+18:51:35 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+18:51:35 - TOTAL: 1 objects, 8 bytes, 0 allocs
+18:51:35 - 1 CURSOR_BITSs still allocated at reset
+18:51:35 - TOTAL: 0 objects, 0 bytes, 0 allocs
+18:51:35 - 7 XSELINUXs still allocated at reset
+18:51:56 - SCREEN: 0 objects of 248 bytes = 0 total bytes 0 private allocs
+18:51:56 - DEVICE: 0 objects of 96 bytes = 0 total bytes 0 private allocs
+18:51:56 - CLIENT: 0 objects of 136 bytes = 0 total bytes 0 private allocs
+18:51:56 - WINDOW: 0 objects of 48 bytes = 0 total bytes 0 private allocs
+18:51:56 - PIXMAP: 2 objects of 16 bytes = 32 total bytes 0 private allocs
+18:51:56 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+18:51:56 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+18:51:56 - TOTAL: 7 objects, 104 bytes, 0 allocs
+18:51:56 - 2 PIXMAPs still allocated at reset
+18:51:56 - PIXMAP: 2 objects of 16 bytes = 32 total bytes 0 private allocs
+18:51:56 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+18:51:56 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+18:51:56 - TOTAL: 7 objects, 104 bytes, 0 allocs
+18:51:56 - 4 GCs still allocated at reset
+18:51:56 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+18:51:56 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+18:51:56 - TOTAL: 5 objects, 72 bytes, 0 allocs
+18:51:56 - 1 CURSORs still allocated at reset
+18:51:56 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+18:51:56 - TOTAL: 1 objects, 8 bytes, 0 allocs
+18:51:56 - 1 CURSOR_BITSs still allocated at reset
+18:51:56 - TOTAL: 0 objects, 0 bytes, 0 allocs
+18:51:56 - 7 XSELINUXs still allocated at reset
+>>> LogFilter time stamp: 2015/11/05 19:00:00 <<<
+19:02:11 - SCREEN: 0 objects of 248 bytes = 0 total bytes 0 private allocs
+19:02:11 - DEVICE: 0 objects of 96 bytes = 0 total bytes 0 private allocs
+19:02:11 - CLIENT: 0 objects of 136 bytes = 0 total bytes 0 private allocs
+19:02:11 - WINDOW: 0 objects of 48 bytes = 0 total bytes 0 private allocs
+19:02:11 - PIXMAP: 2 objects of 16 bytes = 32 total bytes 0 private allocs
+19:02:11 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+19:02:11 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:02:11 - TOTAL: 7 objects, 104 bytes, 0 allocs
+19:02:11 - 2 PIXMAPs still allocated at reset
+19:02:11 - PIXMAP: 2 objects of 16 bytes = 32 total bytes 0 private allocs
+19:02:11 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+19:02:11 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:02:11 - TOTAL: 7 objects, 104 bytes, 0 allocs
+19:02:11 - 4 GCs still allocated at reset
+19:02:11 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+19:02:11 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:02:11 - TOTAL: 5 objects, 72 bytes, 0 allocs
+19:02:11 - 1 CURSORs still allocated at reset
+19:02:11 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:02:11 - TOTAL: 1 objects, 8 bytes, 0 allocs
+19:02:11 - 1 CURSOR_BITSs still allocated at reset
+19:02:11 - TOTAL: 0 objects, 0 bytes, 0 allocs
+19:02:11 - 7 XSELINUXs still allocated at reset
+19:02:11 - SCREEN: 0 objects of 248 bytes = 0 total bytes 0 private allocs
+19:02:11 - DEVICE: 0 objects of 96 bytes = 0 total bytes 0 private allocs
+19:02:11 - CLIENT: 0 objects of 136 bytes = 0 total bytes 0 private allocs
+19:02:11 - WINDOW: 0 objects of 48 bytes = 0 total bytes 0 private allocs
+19:02:11 - PIXMAP: 2 objects of 16 bytes = 32 total bytes 0 private allocs
+19:02:11 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+19:02:11 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:02:11 - TOTAL: 7 objects, 104 bytes, 0 allocs
+19:02:11 - 2 PIXMAPs still allocated at reset
+19:02:11 - PIXMAP: 2 objects of 16 bytes = 32 total bytes 0 private allocs
+19:02:11 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+19:02:11 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:02:11 - TOTAL: 7 objects, 104 bytes, 0 allocs
+19:02:11 - 4 GCs still allocated at reset
+19:02:11 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+19:02:11 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:02:11 - TOTAL: 5 objects, 72 bytes, 0 allocs
+19:02:11 - 1 CURSORs still allocated at reset
+19:02:11 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:02:11 - TOTAL: 1 objects, 8 bytes, 0 allocs
+19:02:11 - 1 CURSOR_BITSs still allocated at reset
+19:02:11 - TOTAL: 0 objects, 0 bytes, 0 allocs
+19:02:11 - 7 XSELINUXs still allocated at reset
+19:02:32 - SCREEN: 0 objects of 248 bytes = 0 total bytes 0 private allocs
+19:02:32 - DEVICE: 0 objects of 96 bytes = 0 total bytes 0 private allocs
+19:02:32 - CLIENT: 0 objects of 136 bytes = 0 total bytes 0 private allocs
+19:02:32 - WINDOW: 0 objects of 48 bytes = 0 total bytes 0 private allocs
+19:02:32 - PIXMAP: 2 objects of 16 bytes = 32 total bytes 0 private allocs
+19:02:32 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+19:02:32 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:02:32 - TOTAL: 7 objects, 104 bytes, 0 allocs
+19:02:32 - 2 PIXMAPs still allocated at reset
+19:02:32 - PIXMAP: 2 objects of 16 bytes = 32 total bytes 0 private allocs
+19:02:32 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+19:02:32 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:02:32 - TOTAL: 7 objects, 104 bytes, 0 allocs
+19:02:32 - 4 GCs still allocated at reset
+19:02:32 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+19:02:32 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:02:32 - TOTAL: 5 objects, 72 bytes, 0 allocs
+19:02:32 - 1 CURSORs still allocated at reset
+19:02:32 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:02:32 - TOTAL: 1 objects, 8 bytes, 0 allocs
+19:02:32 - 1 CURSOR_BITSs still allocated at reset
+19:02:32 - TOTAL: 0 objects, 0 bytes, 0 allocs
+19:02:32 - 7 XSELINUXs still allocated at reset
+19:02:57 - SCREEN: 0 objects of 248 bytes = 0 total bytes 0 private allocs
+19:02:57 - DEVICE: 0 objects of 96 bytes = 0 total bytes 0 private allocs
+19:02:57 - CLIENT: 0 objects of 136 bytes = 0 total bytes 0 private allocs
+19:02:57 - WINDOW: 0 objects of 48 bytes = 0 total bytes 0 private allocs
+19:02:57 - PIXMAP: 2 objects of 16 bytes = 32 total bytes 0 private allocs
+19:02:57 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+19:02:57 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:02:57 - TOTAL: 7 objects, 104 bytes, 0 allocs
+19:02:57 - 2 PIXMAPs still allocated at reset
+19:02:57 - PIXMAP: 2 objects of 16 bytes = 32 total bytes 0 private allocs
+19:02:57 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+19:02:57 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:02:57 - TOTAL: 7 objects, 104 bytes, 0 allocs
+19:02:57 - 4 GCs still allocated at reset
+19:02:57 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+19:02:57 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:02:57 - TOTAL: 5 objects, 72 bytes, 0 allocs
+19:02:57 - 1 CURSORs still allocated at reset
+19:02:57 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:02:57 - TOTAL: 1 objects, 8 bytes, 0 allocs
+19:02:57 - 1 CURSOR_BITSs still allocated at reset
+19:02:57 - TOTAL: 0 objects, 0 bytes, 0 allocs
+19:02:57 - 7 XSELINUXs still allocated at reset
+19:02:57 - SCREEN: 0 objects of 248 bytes = 0 total bytes 0 private allocs
+19:02:57 - DEVICE: 0 objects of 96 bytes = 0 total bytes 0 private allocs
+19:02:57 - CLIENT: 0 objects of 136 bytes = 0 total bytes 0 private allocs
+19:02:57 - WINDOW: 0 objects of 48 bytes = 0 total bytes 0 private allocs
+19:02:57 - PIXMAP: 2 objects of 16 bytes = 32 total bytes 0 private allocs
+19:02:57 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+19:02:57 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:02:57 - TOTAL: 7 objects, 104 bytes, 0 allocs
+19:02:57 - 2 PIXMAPs still allocated at reset
+19:02:57 - PIXMAP: 2 objects of 16 bytes = 32 total bytes 0 private allocs
+19:02:57 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+19:02:57 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:02:57 - TOTAL: 7 objects, 104 bytes, 0 allocs
+19:02:57 - 4 GCs still allocated at reset
+19:02:57 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+19:02:57 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:02:57 - TOTAL: 5 objects, 72 bytes, 0 allocs
+19:02:57 - 1 CURSORs still allocated at reset
+19:02:57 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:02:57 - TOTAL: 1 objects, 8 bytes, 0 allocs
+19:02:57 - 1 CURSOR_BITSs still allocated at reset
+19:02:57 - TOTAL: 0 objects, 0 bytes, 0 allocs
+19:02:57 - 7 XSELINUXs still allocated at reset
+19:03:15 - SCREEN: 0 objects of 248 bytes = 0 total bytes 0 private allocs
+19:03:15 - DEVICE: 0 objects of 96 bytes = 0 total bytes 0 private allocs
+19:03:15 - CLIENT: 0 objects of 136 bytes = 0 total bytes 0 private allocs
+19:03:15 - WINDOW: 0 objects of 48 bytes = 0 total bytes 0 private allocs
+19:03:15 - PIXMAP: 2 objects of 16 bytes = 32 total bytes 0 private allocs
+19:03:15 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+19:03:15 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:03:15 - TOTAL: 7 objects, 104 bytes, 0 allocs
+19:03:15 - 2 PIXMAPs still allocated at reset
+19:03:15 - PIXMAP: 2 objects of 16 bytes = 32 total bytes 0 private allocs
+19:03:15 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+19:03:15 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:03:15 - TOTAL: 7 objects, 104 bytes, 0 allocs
+19:03:15 - 4 GCs still allocated at reset
+19:03:15 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+19:03:15 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:03:15 - TOTAL: 5 objects, 72 bytes, 0 allocs
+19:03:15 - 1 CURSORs still allocated at reset
+19:03:15 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:03:15 - TOTAL: 1 objects, 8 bytes, 0 allocs
+19:03:15 - 1 CURSOR_BITSs still allocated at reset
+19:03:15 - TOTAL: 0 objects, 0 bytes, 0 allocs
+19:03:15 - 7 XSELINUXs still allocated at reset
+19:05:19 - SCREEN: 0 objects of 248 bytes = 0 total bytes 0 private allocs
+19:05:19 - DEVICE: 0 objects of 96 bytes = 0 total bytes 0 private allocs
+19:05:19 - CLIENT: 0 objects of 136 bytes = 0 total bytes 0 private allocs
+19:05:19 - WINDOW: 0 objects of 48 bytes = 0 total bytes 0 private allocs
+19:05:19 - PIXMAP: 2 objects of 16 bytes = 32 total bytes 0 private allocs
+19:05:19 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+19:05:19 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:05:19 - TOTAL: 7 objects, 104 bytes, 0 allocs
+19:05:19 - 2 PIXMAPs still allocated at reset
+19:05:19 - PIXMAP: 2 objects of 16 bytes = 32 total bytes 0 private allocs
+19:05:19 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+19:05:19 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:05:19 - TOTAL: 7 objects, 104 bytes, 0 allocs
+19:05:19 - 4 GCs still allocated at reset
+19:05:19 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+19:05:19 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:05:19 - TOTAL: 5 objects, 72 bytes, 0 allocs
+19:05:19 - 1 CURSORs still allocated at reset
+19:05:19 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:05:19 - TOTAL: 1 objects, 8 bytes, 0 allocs
+19:05:19 - 1 CURSOR_BITSs still allocated at reset
+19:05:19 - TOTAL: 0 objects, 0 bytes, 0 allocs
+19:05:19 - 7 XSELINUXs still allocated at reset
+19:05:19 - SCREEN: 0 objects of 248 bytes = 0 total bytes 0 private allocs
+19:05:19 - DEVICE: 0 objects of 96 bytes = 0 total bytes 0 private allocs
+19:05:19 - CLIENT: 0 objects of 136 bytes = 0 total bytes 0 private allocs
+19:05:19 - WINDOW: 0 objects of 48 bytes = 0 total bytes 0 private allocs
+19:05:19 - PIXMAP: 2 objects of 16 bytes = 32 total bytes 0 private allocs
+19:05:19 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+19:05:19 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:05:19 - TOTAL: 7 objects, 104 bytes, 0 allocs
+19:05:19 - 2 PIXMAPs still allocated at reset
+19:05:19 - PIXMAP: 2 objects of 16 bytes = 32 total bytes 0 private allocs
+19:05:19 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+19:05:19 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:05:19 - TOTAL: 7 objects, 104 bytes, 0 allocs
+19:05:19 - 4 GCs still allocated at reset
+19:05:19 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+19:05:19 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:05:19 - TOTAL: 5 objects, 72 bytes, 0 allocs
+19:05:19 - 1 CURSORs still allocated at reset
+19:05:19 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:05:19 - TOTAL: 1 objects, 8 bytes, 0 allocs
+19:05:19 - 1 CURSOR_BITSs still allocated at reset
+19:05:19 - TOTAL: 0 objects, 0 bytes, 0 allocs
+19:05:19 - 7 XSELINUXs still allocated at reset
+19:05:39 - SCREEN: 0 objects of 248 bytes = 0 total bytes 0 private allocs
+19:05:39 - DEVICE: 0 objects of 96 bytes = 0 total bytes 0 private allocs
+19:05:39 - CLIENT: 0 objects of 136 bytes = 0 total bytes 0 private allocs
+19:05:39 - WINDOW: 0 objects of 48 bytes = 0 total bytes 0 private allocs
+19:05:39 - PIXMAP: 2 objects of 16 bytes = 32 total bytes 0 private allocs
+19:05:39 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+19:05:39 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:05:39 - TOTAL: 7 objects, 104 bytes, 0 allocs
+19:05:39 - 2 PIXMAPs still allocated at reset
+19:05:39 - PIXMAP: 2 objects of 16 bytes = 32 total bytes 0 private allocs
+19:05:39 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+19:05:39 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:05:39 - TOTAL: 7 objects, 104 bytes, 0 allocs
+19:05:39 - 4 GCs still allocated at reset
+19:05:39 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+19:05:39 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:05:39 - TOTAL: 5 objects, 72 bytes, 0 allocs
+19:05:39 - 1 CURSORs still allocated at reset
+19:05:39 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:05:39 - TOTAL: 1 objects, 8 bytes, 0 allocs
+19:05:39 - 1 CURSOR_BITSs still allocated at reset
+19:05:39 - TOTAL: 0 objects, 0 bytes, 0 allocs
+19:05:39 - 7 XSELINUXs still allocated at reset
+19:06:45 - SCREEN: 0 objects of 248 bytes = 0 total bytes 0 private allocs
+19:06:45 - DEVICE: 0 objects of 96 bytes = 0 total bytes 0 private allocs
+19:06:45 - CLIENT: 0 objects of 136 bytes = 0 total bytes 0 private allocs
+19:06:45 - WINDOW: 0 objects of 48 bytes = 0 total bytes 0 private allocs
+19:06:45 - PIXMAP: 2 objects of 16 bytes = 32 total bytes 0 private allocs
+19:06:45 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+19:06:45 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:06:45 - TOTAL: 7 objects, 104 bytes, 0 allocs
+19:06:45 - 2 PIXMAPs still allocated at reset
+19:06:45 - PIXMAP: 2 objects of 16 bytes = 32 total bytes 0 private allocs
+19:06:45 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+19:06:45 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:06:45 - TOTAL: 7 objects, 104 bytes, 0 allocs
+19:06:45 - 4 GCs still allocated at reset
+19:06:45 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+19:06:45 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:06:45 - TOTAL: 5 objects, 72 bytes, 0 allocs
+19:06:45 - 1 CURSORs still allocated at reset
+19:06:45 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:06:45 - TOTAL: 1 objects, 8 bytes, 0 allocs
+19:06:45 - 1 CURSOR_BITSs still allocated at reset
+19:06:45 - TOTAL: 0 objects, 0 bytes, 0 allocs
+19:06:45 - 7 XSELINUXs still allocated at reset
+19:06:46 - SCREEN: 0 objects of 248 bytes = 0 total bytes 0 private allocs
+19:06:46 - DEVICE: 0 objects of 96 bytes = 0 total bytes 0 private allocs
+19:06:46 - CLIENT: 0 objects of 136 bytes = 0 total bytes 0 private allocs
+19:06:46 - WINDOW: 0 objects of 48 bytes = 0 total bytes 0 private allocs
+19:06:46 - PIXMAP: 2 objects of 16 bytes = 32 total bytes 0 private allocs
+19:06:46 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+19:06:46 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:06:46 - TOTAL: 7 objects, 104 bytes, 0 allocs
+19:06:46 - 2 PIXMAPs still allocated at reset
+19:06:46 - PIXMAP: 2 objects of 16 bytes = 32 total bytes 0 private allocs
+19:06:46 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+19:06:46 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:06:46 - TOTAL: 7 objects, 104 bytes, 0 allocs
+19:06:46 - 4 GCs still allocated at reset
+19:06:46 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+19:06:46 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:06:46 - TOTAL: 5 objects, 72 bytes, 0 allocs
+19:06:46 - 1 CURSORs still allocated at reset
+19:06:46 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:06:46 - TOTAL: 1 objects, 8 bytes, 0 allocs
+19:06:46 - 1 CURSOR_BITSs still allocated at reset
+19:06:46 - TOTAL: 0 objects, 0 bytes, 0 allocs
+19:06:46 - 7 XSELINUXs still allocated at reset
+19:07:06 - SCREEN: 0 objects of 248 bytes = 0 total bytes 0 private allocs
+19:07:06 - DEVICE: 0 objects of 96 bytes = 0 total bytes 0 private allocs
+19:07:06 - CLIENT: 0 objects of 136 bytes = 0 total bytes 0 private allocs
+19:07:06 - WINDOW: 0 objects of 48 bytes = 0 total bytes 0 private allocs
+19:07:06 - PIXMAP: 2 objects of 16 bytes = 32 total bytes 0 private allocs
+19:07:06 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+19:07:06 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:07:06 - TOTAL: 7 objects, 104 bytes, 0 allocs
+19:07:06 - 2 PIXMAPs still allocated at reset
+19:07:06 - PIXMAP: 2 objects of 16 bytes = 32 total bytes 0 private allocs
+19:07:06 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+19:07:06 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:07:06 - TOTAL: 7 objects, 104 bytes, 0 allocs
+19:07:06 - 4 GCs still allocated at reset
+19:07:06 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+19:07:06 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:07:06 - TOTAL: 5 objects, 72 bytes, 0 allocs
+19:07:06 - 1 CURSORs still allocated at reset
+19:07:06 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:07:06 - TOTAL: 1 objects, 8 bytes, 0 allocs
+19:07:06 - 1 CURSOR_BITSs still allocated at reset
+19:07:06 - TOTAL: 0 objects, 0 bytes, 0 allocs
+19:07:06 - 7 XSELINUXs still allocated at reset
+19:12:29 - SCREEN: 0 objects of 248 bytes = 0 total bytes 0 private allocs
+19:12:29 - DEVICE: 0 objects of 96 bytes = 0 total bytes 0 private allocs
+19:12:29 - CLIENT: 0 objects of 136 bytes = 0 total bytes 0 private allocs
+19:12:29 - WINDOW: 0 objects of 48 bytes = 0 total bytes 0 private allocs
+19:12:29 - PIXMAP: 2 objects of 16 bytes = 32 total bytes 0 private allocs
+19:12:29 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+19:12:29 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:12:29 - TOTAL: 7 objects, 104 bytes, 0 allocs
+19:12:29 - 2 PIXMAPs still allocated at reset
+19:12:29 - PIXMAP: 2 objects of 16 bytes = 32 total bytes 0 private allocs
+19:12:29 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+19:12:29 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:12:29 - TOTAL: 7 objects, 104 bytes, 0 allocs
+19:12:29 - 4 GCs still allocated at reset
+19:12:29 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+19:12:29 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:12:29 - TOTAL: 5 objects, 72 bytes, 0 allocs
+19:12:29 - 1 CURSORs still allocated at reset
+19:12:29 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:12:29 - TOTAL: 1 objects, 8 bytes, 0 allocs
+19:12:29 - 1 CURSOR_BITSs still allocated at reset
+19:12:29 - TOTAL: 0 objects, 0 bytes, 0 allocs
+19:12:29 - 7 XSELINUXs still allocated at reset
+19:12:29 - SCREEN: 0 objects of 248 bytes = 0 total bytes 0 private allocs
+19:12:29 - DEVICE: 0 objects of 96 bytes = 0 total bytes 0 private allocs
+19:12:29 - CLIENT: 0 objects of 136 bytes = 0 total bytes 0 private allocs
+19:12:29 - WINDOW: 0 objects of 48 bytes = 0 total bytes 0 private allocs
+19:12:29 - PIXMAP: 2 objects of 16 bytes = 32 total bytes 0 private allocs
+19:12:29 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+19:12:29 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:12:29 - TOTAL: 7 objects, 104 bytes, 0 allocs
+19:12:29 - 2 PIXMAPs still allocated at reset
+19:12:29 - PIXMAP: 2 objects of 16 bytes = 32 total bytes 0 private allocs
+19:12:29 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+19:12:29 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:12:29 - TOTAL: 7 objects, 104 bytes, 0 allocs
+19:12:29 - 4 GCs still allocated at reset
+19:12:29 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+19:12:29 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:12:29 - TOTAL: 5 objects, 72 bytes, 0 allocs
+19:12:29 - 1 CURSORs still allocated at reset
+19:12:29 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:12:29 - TOTAL: 1 objects, 8 bytes, 0 allocs
+19:12:29 - 1 CURSOR_BITSs still allocated at reset
+19:12:29 - TOTAL: 0 objects, 0 bytes, 0 allocs
+19:12:29 - 7 XSELINUXs still allocated at reset
+19:12:50 - SCREEN: 0 objects of 248 bytes = 0 total bytes 0 private allocs
+19:12:50 - DEVICE: 0 objects of 96 bytes = 0 total bytes 0 private allocs
+19:12:50 - CLIENT: 0 objects of 136 bytes = 0 total bytes 0 private allocs
+19:12:50 - WINDOW: 0 objects of 48 bytes = 0 total bytes 0 private allocs
+19:12:50 - PIXMAP: 2 objects of 16 bytes = 32 total bytes 0 private allocs
+19:12:50 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+19:12:50 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:12:50 - TOTAL: 7 objects, 104 bytes, 0 allocs
+19:12:50 - 2 PIXMAPs still allocated at reset
+19:12:50 - PIXMAP: 2 objects of 16 bytes = 32 total bytes 0 private allocs
+19:12:50 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+19:12:50 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:12:50 - TOTAL: 7 objects, 104 bytes, 0 allocs
+19:12:50 - 4 GCs still allocated at reset
+19:12:50 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+19:12:50 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:12:50 - TOTAL: 5 objects, 72 bytes, 0 allocs
+19:12:50 - 1 CURSORs still allocated at reset
+19:12:50 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:12:50 - TOTAL: 1 objects, 8 bytes, 0 allocs
+19:12:50 - 1 CURSOR_BITSs still allocated at reset
+19:12:50 - TOTAL: 0 objects, 0 bytes, 0 allocs
+19:12:50 - 7 XSELINUXs still allocated at reset
+19:15:50 - SCREEN: 0 objects of 248 bytes = 0 total bytes 0 private allocs
+19:15:50 - DEVICE: 0 objects of 96 bytes = 0 total bytes 0 private allocs
+19:15:50 - CLIENT: 0 objects of 136 bytes = 0 total bytes 0 private allocs
+19:15:50 - WINDOW: 0 objects of 48 bytes = 0 total bytes 0 private allocs
+19:15:50 - PIXMAP: 2 objects of 16 bytes = 32 total bytes 0 private allocs
+19:15:50 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+19:15:50 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:15:50 - TOTAL: 7 objects, 104 bytes, 0 allocs
+19:15:50 - 2 PIXMAPs still allocated at reset
+19:15:50 - PIXMAP: 2 objects of 16 bytes = 32 total bytes 0 private allocs
+19:15:50 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+19:15:50 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:15:50 - TOTAL: 7 objects, 104 bytes, 0 allocs
+19:15:50 - 4 GCs still allocated at reset
+19:15:50 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+19:15:50 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:15:50 - TOTAL: 5 objects, 72 bytes, 0 allocs
+19:15:50 - 1 CURSORs still allocated at reset
+19:15:50 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:15:50 - TOTAL: 1 objects, 8 bytes, 0 allocs
+19:15:50 - 1 CURSOR_BITSs still allocated at reset
+19:15:50 - TOTAL: 0 objects, 0 bytes, 0 allocs
+19:15:50 - 7 XSELINUXs still allocated at reset
+19:15:50 - SCREEN: 0 objects of 248 bytes = 0 total bytes 0 private allocs
+19:15:50 - DEVICE: 0 objects of 96 bytes = 0 total bytes 0 private allocs
+19:15:50 - CLIENT: 0 objects of 136 bytes = 0 total bytes 0 private allocs
+19:15:50 - WINDOW: 0 objects of 48 bytes = 0 total bytes 0 private allocs
+19:15:50 - PIXMAP: 2 objects of 16 bytes = 32 total bytes 0 private allocs
+19:15:50 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+19:15:50 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:15:50 - TOTAL: 7 objects, 104 bytes, 0 allocs
+19:15:50 - 2 PIXMAPs still allocated at reset
+19:15:50 - PIXMAP: 2 objects of 16 bytes = 32 total bytes 0 private allocs
+19:15:50 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+19:15:50 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:15:50 - TOTAL: 7 objects, 104 bytes, 0 allocs
+19:15:50 - 4 GCs still allocated at reset
+19:15:50 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+19:15:50 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:15:50 - TOTAL: 5 objects, 72 bytes, 0 allocs
+19:15:50 - 1 CURSORs still allocated at reset
+19:15:50 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:15:50 - TOTAL: 1 objects, 8 bytes, 0 allocs
+19:15:50 - 1 CURSOR_BITSs still allocated at reset
+19:15:50 - TOTAL: 0 objects, 0 bytes, 0 allocs
+19:15:50 - 7 XSELINUXs still allocated at reset
+19:16:15 - SCREEN: 0 objects of 248 bytes = 0 total bytes 0 private allocs
+19:16:15 - DEVICE: 0 objects of 96 bytes = 0 total bytes 0 private allocs
+19:16:15 - CLIENT: 0 objects of 136 bytes = 0 total bytes 0 private allocs
+19:16:15 - WINDOW: 0 objects of 48 bytes = 0 total bytes 0 private allocs
+19:16:15 - PIXMAP: 2 objects of 16 bytes = 32 total bytes 0 private allocs
+19:16:15 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+19:16:15 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:16:15 - TOTAL: 7 objects, 104 bytes, 0 allocs
+19:16:15 - 2 PIXMAPs still allocated at reset
+19:16:15 - PIXMAP: 2 objects of 16 bytes = 32 total bytes 0 private allocs
+19:16:15 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+19:16:15 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:16:15 - TOTAL: 7 objects, 104 bytes, 0 allocs
+19:16:15 - 4 GCs still allocated at reset
+19:16:15 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+19:16:15 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:16:15 - TOTAL: 5 objects, 72 bytes, 0 allocs
+19:16:15 - 1 CURSORs still allocated at reset
+19:16:15 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:16:15 - TOTAL: 1 objects, 8 bytes, 0 allocs
+19:16:15 - 1 CURSOR_BITSs still allocated at reset
+19:16:15 - TOTAL: 0 objects, 0 bytes, 0 allocs
+19:16:15 - 7 XSELINUXs still allocated at reset
+19:19:11 - SCREEN: 0 objects of 248 bytes = 0 total bytes 0 private allocs
+19:19:11 - DEVICE: 0 objects of 96 bytes = 0 total bytes 0 private allocs
+19:19:11 - CLIENT: 0 objects of 136 bytes = 0 total bytes 0 private allocs
+19:19:11 - WINDOW: 0 objects of 48 bytes = 0 total bytes 0 private allocs
+19:19:11 - PIXMAP: 2 objects of 16 bytes = 32 total bytes 0 private allocs
+19:19:11 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+19:19:11 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:19:11 - TOTAL: 7 objects, 104 bytes, 0 allocs
+19:19:11 - 2 PIXMAPs still allocated at reset
+19:19:11 - PIXMAP: 2 objects of 16 bytes = 32 total bytes 0 private allocs
+19:19:11 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+19:19:11 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:19:11 - TOTAL: 7 objects, 104 bytes, 0 allocs
+19:19:11 - 4 GCs still allocated at reset
+19:19:11 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+19:19:11 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:19:11 - TOTAL: 5 objects, 72 bytes, 0 allocs
+19:19:11 - 1 CURSORs still allocated at reset
+19:19:11 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:19:11 - TOTAL: 1 objects, 8 bytes, 0 allocs
+19:19:11 - 1 CURSOR_BITSs still allocated at reset
+19:19:11 - TOTAL: 0 objects, 0 bytes, 0 allocs
+19:19:11 - 7 XSELINUXs still allocated at reset
+19:19:11 - SCREEN: 0 objects of 248 bytes = 0 total bytes 0 private allocs
+19:19:11 - DEVICE: 0 objects of 96 bytes = 0 total bytes 0 private allocs
+19:19:11 - CLIENT: 0 objects of 136 bytes = 0 total bytes 0 private allocs
+19:19:11 - WINDOW: 0 objects of 48 bytes = 0 total bytes 0 private allocs
+19:19:11 - PIXMAP: 2 objects of 16 bytes = 32 total bytes 0 private allocs
+19:19:11 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+19:19:11 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:19:11 - TOTAL: 7 objects, 104 bytes, 0 allocs
+19:19:11 - 2 PIXMAPs still allocated at reset
+19:19:11 - PIXMAP: 2 objects of 16 bytes = 32 total bytes 0 private allocs
+19:19:11 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+19:19:11 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:19:11 - TOTAL: 7 objects, 104 bytes, 0 allocs
+19:19:11 - 4 GCs still allocated at reset
+19:19:11 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+19:19:11 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:19:11 - TOTAL: 5 objects, 72 bytes, 0 allocs
+19:19:11 - 1 CURSORs still allocated at reset
+19:19:11 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:19:11 - TOTAL: 1 objects, 8 bytes, 0 allocs
+19:19:11 - 1 CURSOR_BITSs still allocated at reset
+19:19:11 - TOTAL: 0 objects, 0 bytes, 0 allocs
+19:19:11 - 7 XSELINUXs still allocated at reset
+19:19:34 - SCREEN: 0 objects of 248 bytes = 0 total bytes 0 private allocs
+19:19:34 - DEVICE: 0 objects of 96 bytes = 0 total bytes 0 private allocs
+19:19:34 - CLIENT: 0 objects of 136 bytes = 0 total bytes 0 private allocs
+19:19:34 - WINDOW: 0 objects of 48 bytes = 0 total bytes 0 private allocs
+19:19:34 - PIXMAP: 2 objects of 16 bytes = 32 total bytes 0 private allocs
+19:19:34 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+19:19:34 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:19:34 - TOTAL: 7 objects, 104 bytes, 0 allocs
+19:19:34 - 2 PIXMAPs still allocated at reset
+19:19:34 - PIXMAP: 2 objects of 16 bytes = 32 total bytes 0 private allocs
+19:19:34 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+19:19:34 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:19:34 - TOTAL: 7 objects, 104 bytes, 0 allocs
+19:19:34 - 4 GCs still allocated at reset
+19:19:34 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+19:19:34 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:19:34 - TOTAL: 5 objects, 72 bytes, 0 allocs
+19:19:34 - 1 CURSORs still allocated at reset
+19:19:34 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:19:34 - TOTAL: 1 objects, 8 bytes, 0 allocs
+19:19:34 - 1 CURSOR_BITSs still allocated at reset
+19:19:34 - TOTAL: 0 objects, 0 bytes, 0 allocs
+19:19:34 - 7 XSELINUXs still allocated at reset
+19:20:33 - SCREEN: 0 objects of 248 bytes = 0 total bytes 0 private allocs
+19:20:33 - DEVICE: 0 objects of 96 bytes = 0 total bytes 0 private allocs
+19:20:33 - CLIENT: 0 objects of 136 bytes = 0 total bytes 0 private allocs
+19:20:33 - WINDOW: 0 objects of 48 bytes = 0 total bytes 0 private allocs
+19:20:33 - PIXMAP: 2 objects of 16 bytes = 32 total bytes 0 private allocs
+19:20:33 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+19:20:33 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:20:33 - TOTAL: 7 objects, 104 bytes, 0 allocs
+19:20:33 - 2 PIXMAPs still allocated at reset
+19:20:33 - PIXMAP: 2 objects of 16 bytes = 32 total bytes 0 private allocs
+19:20:33 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+19:20:33 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:20:33 - TOTAL: 7 objects, 104 bytes, 0 allocs
+19:20:33 - 4 GCs still allocated at reset
+19:20:33 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+19:20:33 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:20:33 - TOTAL: 5 objects, 72 bytes, 0 allocs
+19:20:33 - 1 CURSORs still allocated at reset
+19:20:33 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:20:33 - TOTAL: 1 objects, 8 bytes, 0 allocs
+19:20:33 - 1 CURSOR_BITSs still allocated at reset
+19:20:33 - TOTAL: 0 objects, 0 bytes, 0 allocs
+19:20:33 - 7 XSELINUXs still allocated at reset
+19:20:33 - SCREEN: 0 objects of 248 bytes = 0 total bytes 0 private allocs
+19:20:33 - DEVICE: 0 objects of 96 bytes = 0 total bytes 0 private allocs
+19:20:33 - CLIENT: 0 objects of 136 bytes = 0 total bytes 0 private allocs
+19:20:33 - WINDOW: 0 objects of 48 bytes = 0 total bytes 0 private allocs
+19:20:33 - PIXMAP: 2 objects of 16 bytes = 32 total bytes 0 private allocs
+19:20:33 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+19:20:33 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:20:33 - TOTAL: 7 objects, 104 bytes, 0 allocs
+19:20:33 - 2 PIXMAPs still allocated at reset
+19:20:33 - PIXMAP: 2 objects of 16 bytes = 32 total bytes 0 private allocs
+19:20:33 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+19:20:33 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:20:33 - TOTAL: 7 objects, 104 bytes, 0 allocs
+19:20:33 - 4 GCs still allocated at reset
+19:20:33 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+19:20:33 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:20:33 - TOTAL: 5 objects, 72 bytes, 0 allocs
+19:20:33 - 1 CURSORs still allocated at reset
+19:20:33 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:20:33 - TOTAL: 1 objects, 8 bytes, 0 allocs
+19:20:33 - 1 CURSOR_BITSs still allocated at reset
+19:20:33 - TOTAL: 0 objects, 0 bytes, 0 allocs
+19:20:33 - 7 XSELINUXs still allocated at reset
+19:20:46 - SCREEN: 0 objects of 248 bytes = 0 total bytes 0 private allocs
+19:20:46 - DEVICE: 0 objects of 96 bytes = 0 total bytes 0 private allocs
+19:20:46 - CLIENT: 0 objects of 136 bytes = 0 total bytes 0 private allocs
+19:20:46 - WINDOW: 0 objects of 48 bytes = 0 total bytes 0 private allocs
+19:20:46 - PIXMAP: 2 objects of 16 bytes = 32 total bytes 0 private allocs
+19:20:46 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+19:20:46 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:20:46 - TOTAL: 7 objects, 104 bytes, 0 allocs
+19:20:46 - 2 PIXMAPs still allocated at reset
+19:20:46 - PIXMAP: 2 objects of 16 bytes = 32 total bytes 0 private allocs
+19:20:46 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+19:20:46 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:20:46 - TOTAL: 7 objects, 104 bytes, 0 allocs
+19:20:46 - 4 GCs still allocated at reset
+19:20:46 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+19:20:46 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:20:46 - TOTAL: 5 objects, 72 bytes, 0 allocs
+19:20:46 - 1 CURSORs still allocated at reset
+19:20:46 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:20:46 - TOTAL: 1 objects, 8 bytes, 0 allocs
+19:20:46 - 1 CURSOR_BITSs still allocated at reset
+19:20:46 - TOTAL: 0 objects, 0 bytes, 0 allocs
+19:20:46 - 7 XSELINUXs still allocated at reset
+19:21:50 - SCREEN: 0 objects of 248 bytes = 0 total bytes 0 private allocs
+19:21:50 - DEVICE: 0 objects of 96 bytes = 0 total bytes 0 private allocs
+19:21:50 - CLIENT: 0 objects of 136 bytes = 0 total bytes 0 private allocs
+19:21:50 - WINDOW: 0 objects of 48 bytes = 0 total bytes 0 private allocs
+19:21:50 - PIXMAP: 2 objects of 16 bytes = 32 total bytes 0 private allocs
+19:21:50 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+19:21:50 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:21:50 - TOTAL: 7 objects, 104 bytes, 0 allocs
+19:21:50 - 2 PIXMAPs still allocated at reset
+19:21:50 - PIXMAP: 2 objects of 16 bytes = 32 total bytes 0 private allocs
+19:21:50 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+19:21:50 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:21:50 - TOTAL: 7 objects, 104 bytes, 0 allocs
+19:21:50 - 4 GCs still allocated at reset
+19:21:50 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+19:21:50 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:21:50 - TOTAL: 5 objects, 72 bytes, 0 allocs
+19:21:50 - 1 CURSORs still allocated at reset
+19:21:50 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:21:50 - TOTAL: 1 objects, 8 bytes, 0 allocs
+19:21:50 - 1 CURSOR_BITSs still allocated at reset
+19:21:50 - TOTAL: 0 objects, 0 bytes, 0 allocs
+19:21:50 - 7 XSELINUXs still allocated at reset
+19:21:50 - SCREEN: 0 objects of 248 bytes = 0 total bytes 0 private allocs
+19:21:50 - DEVICE: 0 objects of 96 bytes = 0 total bytes 0 private allocs
+19:21:50 - CLIENT: 0 objects of 136 bytes = 0 total bytes 0 private allocs
+19:21:50 - WINDOW: 0 objects of 48 bytes = 0 total bytes 0 private allocs
+19:21:50 - PIXMAP: 2 objects of 16 bytes = 32 total bytes 0 private allocs
+19:21:50 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+19:21:50 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:21:50 - TOTAL: 7 objects, 104 bytes, 0 allocs
+19:21:50 - 2 PIXMAPs still allocated at reset
+19:21:50 - PIXMAP: 2 objects of 16 bytes = 32 total bytes 0 private allocs
+19:21:50 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+19:21:50 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:21:50 - TOTAL: 7 objects, 104 bytes, 0 allocs
+19:21:50 - 4 GCs still allocated at reset
+19:21:50 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+19:21:50 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:21:50 - TOTAL: 5 objects, 72 bytes, 0 allocs
+19:21:50 - 1 CURSORs still allocated at reset
+19:21:50 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:21:50 - TOTAL: 1 objects, 8 bytes, 0 allocs
+19:21:50 - 1 CURSOR_BITSs still allocated at reset
+19:21:50 - TOTAL: 0 objects, 0 bytes, 0 allocs
+19:21:50 - 7 XSELINUXs still allocated at reset
+19:22:13 - SCREEN: 0 objects of 248 bytes = 0 total bytes 0 private allocs
+19:22:13 - DEVICE: 0 objects of 96 bytes = 0 total bytes 0 private allocs
+19:22:13 - CLIENT: 0 objects of 136 bytes = 0 total bytes 0 private allocs
+19:22:13 - WINDOW: 0 objects of 48 bytes = 0 total bytes 0 private allocs
+19:22:13 - PIXMAP: 2 objects of 16 bytes = 32 total bytes 0 private allocs
+19:22:13 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+19:22:13 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:22:13 - TOTAL: 7 objects, 104 bytes, 0 allocs
+19:22:13 - 2 PIXMAPs still allocated at reset
+19:22:13 - PIXMAP: 2 objects of 16 bytes = 32 total bytes 0 private allocs
+19:22:13 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+19:22:13 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:22:13 - TOTAL: 7 objects, 104 bytes, 0 allocs
+19:22:13 - 4 GCs still allocated at reset
+19:22:13 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+19:22:13 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:22:13 - TOTAL: 5 objects, 72 bytes, 0 allocs
+19:22:13 - 1 CURSORs still allocated at reset
+19:22:13 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:22:13 - TOTAL: 1 objects, 8 bytes, 0 allocs
+19:22:13 - 1 CURSOR_BITSs still allocated at reset
+19:22:13 - TOTAL: 0 objects, 0 bytes, 0 allocs
+19:22:13 - 7 XSELINUXs still allocated at reset
+19:26:42 - SCREEN: 0 objects of 248 bytes = 0 total bytes 0 private allocs
+19:26:42 - DEVICE: 0 objects of 96 bytes = 0 total bytes 0 private allocs
+19:26:42 - CLIENT: 0 objects of 136 bytes = 0 total bytes 0 private allocs
+19:26:42 - WINDOW: 0 objects of 48 bytes = 0 total bytes 0 private allocs
+19:26:42 - PIXMAP: 2 objects of 16 bytes = 32 total bytes 0 private allocs
+19:26:42 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+19:26:42 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:26:42 - TOTAL: 7 objects, 104 bytes, 0 allocs
+19:26:42 - 2 PIXMAPs still allocated at reset
+19:26:42 - PIXMAP: 2 objects of 16 bytes = 32 total bytes 0 private allocs
+19:26:42 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+19:26:42 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:26:42 - TOTAL: 7 objects, 104 bytes, 0 allocs
+19:26:42 - 4 GCs still allocated at reset
+19:26:42 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+19:26:42 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:26:42 - TOTAL: 5 objects, 72 bytes, 0 allocs
+19:26:42 - 1 CURSORs still allocated at reset
+19:26:42 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:26:42 - TOTAL: 1 objects, 8 bytes, 0 allocs
+19:26:42 - 1 CURSOR_BITSs still allocated at reset
+19:26:42 - TOTAL: 0 objects, 0 bytes, 0 allocs
+19:26:42 - 7 XSELINUXs still allocated at reset
+19:26:42 - SCREEN: 0 objects of 248 bytes = 0 total bytes 0 private allocs
+19:26:42 - DEVICE: 0 objects of 96 bytes = 0 total bytes 0 private allocs
+19:26:42 - CLIENT: 0 objects of 136 bytes = 0 total bytes 0 private allocs
+19:26:42 - WINDOW: 0 objects of 48 bytes = 0 total bytes 0 private allocs
+19:26:42 - PIXMAP: 2 objects of 16 bytes = 32 total bytes 0 private allocs
+19:26:42 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+19:26:42 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:26:42 - TOTAL: 7 objects, 104 bytes, 0 allocs
+19:26:42 - 2 PIXMAPs still allocated at reset
+19:26:42 - PIXMAP: 2 objects of 16 bytes = 32 total bytes 0 private allocs
+19:26:42 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+19:26:42 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:26:42 - TOTAL: 7 objects, 104 bytes, 0 allocs
+19:26:42 - 4 GCs still allocated at reset
+19:26:42 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+19:26:42 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:26:42 - TOTAL: 5 objects, 72 bytes, 0 allocs
+19:26:42 - 1 CURSORs still allocated at reset
+19:26:42 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:26:42 - TOTAL: 1 objects, 8 bytes, 0 allocs
+19:26:42 - 1 CURSOR_BITSs still allocated at reset
+19:26:42 - TOTAL: 0 objects, 0 bytes, 0 allocs
+19:26:42 - 7 XSELINUXs still allocated at reset
+19:27:00 - SCREEN: 0 objects of 248 bytes = 0 total bytes 0 private allocs
+19:27:00 - DEVICE: 0 objects of 96 bytes = 0 total bytes 0 private allocs
+19:27:00 - CLIENT: 0 objects of 136 bytes = 0 total bytes 0 private allocs
+19:27:00 - WINDOW: 0 objects of 48 bytes = 0 total bytes 0 private allocs
+19:27:00 - PIXMAP: 2 objects of 16 bytes = 32 total bytes 0 private allocs
+19:27:00 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+19:27:00 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:27:00 - TOTAL: 7 objects, 104 bytes, 0 allocs
+19:27:00 - 2 PIXMAPs still allocated at reset
+19:27:00 - PIXMAP: 2 objects of 16 bytes = 32 total bytes 0 private allocs
+19:27:00 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+19:27:00 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:27:00 - TOTAL: 7 objects, 104 bytes, 0 allocs
+19:27:00 - 4 GCs still allocated at reset
+19:27:00 - GC: 4 objects of 16 bytes = 64 total bytes 0 private allocs
+19:27:00 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:27:00 - TOTAL: 5 objects, 72 bytes, 0 allocs
+19:27:00 - 1 CURSORs still allocated at reset
+19:27:00 - CURSOR: 1 objects of 8 bytes = 8 total bytes 0 private allocs
+19:27:00 - TOTAL: 1 objects, 8 bytes, 0 allocs
+19:27:00 - 1 CURSOR_BITSs still allocated at reset
+19:27:00 - TOTAL: 0 objects, 0 bytes, 0 allocs
+19:27:00 - 7 XSELINUXs still allocated at reset
+>>> LogFilter time stamp: 2015/11/05 20:00:00 <<<
+>>> LogFilter time stamp: 2015/11/05 21:00:00 <<<
+>>> LogFilter time stamp: 2015/11/05 22:00:00 <<<
+>>> LogFilter time stamp: 2015/11/05 23:00:00 <<<

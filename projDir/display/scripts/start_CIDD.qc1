@@ -1,0 +1,13 @@
+#! /bin/csh
+
+setenv PROJ_DIR ~/projDir
+if (-e /opt/local/front/projDir) then
+  setenv PROJ_DIR  /opt/local/front/projDir
+endif
+
+set_font_path >& /dev/null
+xrdb -nocpp -merge $PROJ_DIR/display/params/XResources4CIDD
+
+CIDD -p http://front.eol.ucar.edu/content/projects/hawk/front/projDir/display/params/CIDD.qc1 >& /dev/null &
+
+

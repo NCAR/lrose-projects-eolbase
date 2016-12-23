@@ -1,0 +1,9 @@
+#! /bin/csh
+
+cd /scr/hail1/rsfdata/time_series/pecan/sband/sunscan/20150623
+foreach file (20150623_1*sec.iwrf_ts)
+  echo AltCpCompute processing file $file
+  AltCpCompute -params ~/projDir/cal/params/AltCpCompute.pairs -tsf $file > /scr/sci/rsfdata/pecan/suncal/20150623/$file:r.pairs.txt
+end
+
+

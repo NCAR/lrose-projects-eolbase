@@ -1,0 +1,8 @@
+#! /bin/sh
+
+# rsync over the saved time series
+
+DESTDIR=/export/hail2/rsfdata/pecan/nidas
+
+rsync -av --rsh='ssh -p 20022' spol@spol.dyndns.org:/data/nidas/netcdf $DESTDIR |& LogFilter -d $ERRORS_LOG_DIR -p rsync -i nidas.spol &
+

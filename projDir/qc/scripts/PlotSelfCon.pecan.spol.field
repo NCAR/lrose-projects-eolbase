@@ -1,0 +1,10 @@
+#! //bin/csh
+
+#===========================================================================
+#
+# Plot self consistency for PECAN, SPOL, FIELD
+#
+#===========================================================================
+
+PlotSelfCon.pecan.py --debug --sc_file $PROJ_DIR/qc/data/pecan/self_con.spol.field.txt --cp_file $PROJ_DIR/qc/data/pecan/spol_pecan_CP_analysis_20150528_000553.txt --title "Z Self-consistency analysis - SPOL - PECAN - Field data" --minElev 1.25
+

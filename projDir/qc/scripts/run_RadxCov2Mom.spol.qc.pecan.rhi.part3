@@ -1,0 +1,32 @@
+#! /bin/csh
+
+# run the moments generation for PECAN qc
+
+cd $PROJ_DIR/qc/params
+
+setenv TEMP_BASED_ZDR_CORRECTION_SLOPE -0.00958
+setenv TEMP_BASED_ZDR_CORRECTION_INTERCEPT 0.219
+setenv MEASURED_XMIT_POWER_CORRECTION_DB 0.0
+setenv ADJUST_CAL_FOR_MEASURED_XMIT_POWER TRUE
+setenv SWAP_MEASURED_XMIT_POWER_CHANNELS FALSE
+#setenv DBZ_CORRECTION -1.50
+#setenv DBZ_CORRECTION -0.90
+setenv DBZ_CORRECTION -0.31
+
+RadxCov2Mom -params RadxCov2Mom.spol.qc.rhi -d -start "2015 07 01 00 00 00" -end "2015 07 08 00 00 00" >& ../data/pecan/RadxCov2Mom.spol.qc.rhi.part3.log
+
+
+setenv TEMP_BASED_ZDR_CORRECTION_SLOPE -0.00724
+setenv TEMP_BASED_ZDR_CORRECTION_INTERCEPT 0.156
+setenv MEASURED_XMIT_POWER_CORRECTION_DB 0.0
+setenv ADJUST_CAL_FOR_MEASURED_XMIT_POWER TRUE
+setenv SWAP_MEASURED_XMIT_POWER_CHANNELS FALSE
+#setenv DBZ_CORRECTION -1.50
+#setenv DBZ_CORRECTION -0.90
+setenv DBZ_CORRECTION -0.31
+
+RadxCov2Mom -params RadxCov2Mom.spol.qc.rhi -d -start "2015 07 08 00 00 00" -end "2015 07 17 00 00 00" >>& ../data/pecan/RadxCov2Mom.spol.qc.rhi.part3.log
+
+
+
+

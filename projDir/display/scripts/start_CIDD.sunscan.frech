@@ -1,0 +1,16 @@
+#! /bin/csh
+
+setenv PROJ_DIR  /opt/local/front/projDir
+
+set_font_path >& /dev/null
+xrdb -nocpp -merge $PROJ_DIR/display/params/XResources4CIDD
+
+cd $PROJ_DIR/display/params
+
+CIDD -p CIDD.sunscan.frech -font fixed >& /dev/null &
+
+
+
+
+
+

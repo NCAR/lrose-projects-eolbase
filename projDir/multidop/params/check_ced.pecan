@@ -1,0 +1,23 @@
+READVOL 11.0    NEXT    000000. 240000. YES
+STATS   PRINT   Z       1.0     ALL     BOTH                            FULL
+READVOL 12.0    NEXT    000000. 240000. YES
+STATS   PRINT   Z       1.0     ALL     BOTH                            FULL
+READVOL 13.0    NEXT    000000. 240000. YES
+STATS   PRINT   Z       1.0     ALL     BOTH                            FULL
+READVOL 14.0    NEXT    000000. 240000. YES
+STATS   PRINT   Z       1.0     ALL     BOTH                            FULL
+READVOL 15.0    NEXT    000000. 240000. YES
+STATS   PRINT   Z       1.0     ALL     BOTH                            FULL
+READVOL 16.0    NEXT    000000. 240000. YES
+STATS   PRINT   Z       1.0     ALL     BOTH                            FULL
+READVOL 17.0    NEXT    000000. 240000. YES
+STATS   PRINT   Z       1.0     ALL     BOTH                            FULL
+READVOL 18.0    NEXT    000000. 240000. YES
+STATS   PRINT   Z       1.0     ALL     BOTH                            FULL
+READVOL 19.0    NEXT    000000. 240000. YES
+STATS   PRINT   Z       1.0     ALL     BOTH                            FULL
+READVOL 20.0    NEXT    000000. 240000. YES
+STATS   PRINT   Z       1.0     ALL     BOTH                            FULL
+READVOL 21.0    NEXT    000000. 240000. YES
+STATS   PRINT   Z       1.0     ALL     BOTH                            FULL
+QUIT

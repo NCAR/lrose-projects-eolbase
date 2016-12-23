@@ -1,0 +1,21 @@
+#! /bin/csh
+
+# run the PID/PRECIP for PECAN to compute
+# bragg and ice zdr biases
+
+setenv WRITE_OUTPUT_VOLUME TRUE
+setenv COPY_INPUT_FIELDS_TO_OUTPUT FALSE
+setenv SELF_CONSISTENCY_ZDRM_CORRECTION 0.0
+
+cd $PROJ_DIR/qc/params
+
+RadxPartRain -params RadxPartRain.spol.paper.rhi -d -start "2015 06 15 00 00 00" -end "2015 06 23 00 00 00" >& ../data/pecan/RadxPartRain.spol.paper.rhi.part1.log &
+
+RadxPartRain -params RadxPartRain.spol.paper.rhi -d -start "2015 06 23 00 00 00" -end "2015 07 01 00 00 00" >& ../data/pecan/RadxPartRain.spol.paper.rhi.part2.log &
+
+RadxPartRain -params RadxPartRain.spol.paper.rhi -d -start "2015 07 01 00 00 00" -end "2015 07 08 00 00 00" >& ../data/pecan/RadxPartRain.spol.paper.rhi.part3.log &
+
+RadxPartRain -params RadxPartRain.spol.paper.rhi -d -start "2015 07 08 00 00 00" -end "2015 07 17 00 00 00" >& ../data/pecan/RadxPartRain.spol.paper.rhi.part4.log &
+
+
+

@@ -1,0 +1,17 @@
+#! /bin/csh
+
+setenv DATA_HOST tesla.eol.ucar.edu
+
+setenv PROJ_DIR ~/projDir
+if (-e /opt/local/front/projDir) then
+  setenv PROJ_DIR  /opt/local/front/projDir
+endif
+
+set_font_path >& /dev/null
+
+source $PROJ_DIR/system/params/site_info.dynamo
+cd $PROJ_DIR/display/params
+
+CIDD -p CIDD.dynamo.smartr -font fixed >& /dev/null &
+
+

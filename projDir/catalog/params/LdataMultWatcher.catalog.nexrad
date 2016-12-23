@@ -1,0 +1,352 @@
+/**********************************************************************
+ * TDRP params for LdataMultWatcher
+ **********************************************************************/
+
+//======================================================================
+//
+// LdataMultWatcher program.
+//
+// LdataMultWatcher watches for _latest_data_info in multiple 
+//   directories. The application will optionally call scripts when new 
+//   data arrives in each directory, or when data is late.
+//
+//======================================================================
+ 
+//======================================================================
+//
+// DEBUGGING AND PROCESS CONTROL.
+//
+//======================================================================
+ 
+///////////// debug ///////////////////////////////////
+//
+// Debug option.
+// If set, debug messages will be printed appropriately.
+//
+// Type: enum
+// Options:
+//     DEBUG_OFF
+//     DEBUG_NORM
+//     DEBUG_VERBOSE
+//
+
+debug = DEBUG_NORM;
+
+///////////// instance ////////////////////////////////
+//
+// Process instance.
+// Used for registration with procmap.
+// Type: string
+//
+
+instance = "catalog.nexrad";
+
+///////////// procmap_register_interval ///////////////
+//
+// Register interval for procmap - secs.
+// If the script takes longer than 60 secs to complete, you will need to 
+//   set this to a higher value to avoid the process being killed and 
+//   restarted by the auto_restarter.
+// Type: int
+//
+
+procmap_register_interval = 60;
+
+//======================================================================
+//
+// DATA SET DETAILS.
+//
+// For each individual data set, you can set whether to call the 
+//   new_data and/or late_data scripts.
+// The new_data_script_name is called as new data arrives. The 
+//   late_data_script is called when it has been data_late_secs since the 
+//   last data arrived.
+// The scripts are called with the following command line args, in no 
+//   particular order:
+//   -valid_utime ?: unix_time
+//   -valid_time ?: yyyy,mm,dd,hh,mm,ss
+//   -is_forecast ?: true/false
+//   -forecast_lead_secs ?: - for forecasts
+//   -gen_utime ?: unix_time - for forecasts
+//   -gen_time ?: yyyy,mm,dd,hh,mm,ss - for forecasts
+//   -rap_data_dir ?: RAP_DATA_DIR environment variable
+//   -abs_dir_path ?: input_dir relative to /
+//   -rel_dir_path ?: input_dir relative to RAP_DATA_DIR
+//   -rel_file_path ?: input file relative to input_dir
+//   -file_ext ?: extention of input file
+//   -data_type ?: data type of input file - for DataMapper
+//   -user_info1 ?: set by upstream app
+//   -user_info2 ?: set by upstream app
+//   -writer ?: which app wrote the data
+//   -late_data_secs ?: - for late_data_script.
+//
+//======================================================================
+ 
+///////////// data_sets ///////////////////////////////
+//
+// List of data set details.
+// For each data set to be watched, set the parameters in this array.
+//
+// Type: struct
+//   typedef struct {
+//      string input_dir;
+//      boolean call_new_data_script;
+//      string new_data_script_name;
+//      boolean call_late_data_script;
+//      string late_data_script_name;
+//      int late_data_secs;
+//   }
+//
+// 1D array - variable length.
+//
+
+data_sets = {
+  {
+    input_dir = "$(DATA_DIR)/$(project)/cfradial/kama/partrain",
+    call_new_data_script = TRUE,
+    new_data_script_name = "$(PROJ_DIR)/catalog/scripts/run_CIDD.catalog.kama",
+    call_late_data_script = FALSE,
+    late_data_script_name = "test_script",
+    late_data_secs = 3600
+  }
+  ,
+  {
+    input_dir = "$(DATA_DIR)/$(project)/cfradial/kcys/partrain",
+    call_new_data_script = TRUE,
+    new_data_script_name = "$(PROJ_DIR)/catalog/scripts/run_CIDD.catalog.kcys",
+    call_late_data_script = FALSE,
+    late_data_script_name = "test_script",
+    late_data_secs = 3600
+  }
+  ,
+  {
+    input_dir = "$(DATA_DIR)/$(project)/cfradial/kddc/partrain",
+    call_new_data_script = TRUE,
+    new_data_script_name = "$(PROJ_DIR)/catalog/scripts/run_CIDD.catalog.kddc",
+    call_late_data_script = FALSE,
+    late_data_script_name = "test_script",
+    late_data_secs = 3600
+  }
+  ,
+  {
+    input_dir = "$(DATA_DIR)/$(project)/cfradial/keax/partrain",
+    call_new_data_script = TRUE,
+    new_data_script_name = "$(PROJ_DIR)/catalog/scripts/run_CIDD.catalog.keax",
+    call_late_data_script = FALSE,
+    late_data_script_name = "test_script",
+    late_data_secs = 3600
+  }
+  ,
+  {
+    input_dir = "$(DATA_DIR)/$(project)/cfradial/kftg/partrain",
+    call_new_data_script = TRUE,
+    new_data_script_name = "$(PROJ_DIR)/catalog/scripts/run_CIDD.catalog.kftg",
+    call_late_data_script = FALSE,
+    late_data_script_name = "test_script",
+    late_data_secs = 3600
+  }
+  ,
+  {
+    input_dir = "$(DATA_DIR)/$(project)/cfradial/kgjx/partrain",
+    call_new_data_script = TRUE,
+    new_data_script_name = "$(PROJ_DIR)/catalog/scripts/run_CIDD.catalog.kgjx",
+    call_late_data_script = FALSE,
+    late_data_script_name = "test_script",
+    late_data_secs = 3600
+  }
+  ,
+  {
+    input_dir = "$(DATA_DIR)/$(project)/cfradial/kgld/partrain",
+    call_new_data_script = TRUE,
+    new_data_script_name = "$(PROJ_DIR)/catalog/scripts/run_CIDD.catalog.kgld",
+    call_late_data_script = FALSE,
+    late_data_script_name = "test_script",
+    late_data_secs = 3600
+  }
+  ,
+  {
+    input_dir = "$(DATA_DIR)/$(project)/cfradial/kict/partrain",
+    call_new_data_script = TRUE,
+    new_data_script_name = "$(PROJ_DIR)/catalog/scripts/run_CIDD.catalog.kict",
+    call_late_data_script = FALSE,
+    late_data_script_name = "test_script",
+    late_data_secs = 3600
+  }
+  ,
+  {
+    input_dir = "$(DATA_DIR)/$(project)/cfradial/kinx/partrain",
+    call_new_data_script = TRUE,
+    new_data_script_name = "$(PROJ_DIR)/catalog/scripts/run_CIDD.catalog.kinx",
+    call_late_data_script = FALSE,
+    late_data_script_name = "test_script",
+    late_data_secs = 3600
+  }
+  ,
+  {
+    input_dir = "$(DATA_DIR)/$(project)/cfradial/klnx/partrain",
+    call_new_data_script = TRUE,
+    new_data_script_name = "$(PROJ_DIR)/catalog/scripts/run_CIDD.catalog.klnx",
+    call_late_data_script = FALSE,
+    late_data_script_name = "test_script",
+    late_data_secs = 3600
+  }
+  ,
+  {
+    input_dir = "$(DATA_DIR)/$(project)/cfradial/koax/partrain",
+    call_new_data_script = TRUE,
+    new_data_script_name = "$(PROJ_DIR)/catalog/scripts/run_CIDD.catalog.koax",
+    call_late_data_script = FALSE,
+    late_data_script_name = "test_script",
+    late_data_secs = 3600
+  }
+  ,
+  {
+    input_dir = "$(DATA_DIR)/$(project)/cfradial/kpux/partrain",
+    call_new_data_script = TRUE,
+    new_data_script_name = "$(PROJ_DIR)/catalog/scripts/run_CIDD.catalog.kpux",
+    call_late_data_script = FALSE,
+    late_data_script_name = "test_script",
+    late_data_secs = 3600
+  }
+  ,
+  {
+    input_dir = "$(DATA_DIR)/$(project)/cfradial/ksgf/partrain",
+    call_new_data_script = TRUE,
+    new_data_script_name = "$(PROJ_DIR)/catalog/scripts/run_CIDD.catalog.ksgf",
+    call_late_data_script = FALSE,
+    late_data_script_name = "test_script",
+    late_data_secs = 3600
+  }
+  ,
+  {
+    input_dir = "$(DATA_DIR)/$(project)/cfradial/ktlx/partrain",
+    call_new_data_script = TRUE,
+    new_data_script_name = "$(PROJ_DIR)/catalog/scripts/run_CIDD.catalog.ktlx",
+    call_late_data_script = FALSE,
+    late_data_script_name = "test_script",
+    late_data_secs = 3600
+  }
+  ,
+  {
+    input_dir = "$(DATA_DIR)/$(project)/cfradial/ktwx/partrain",
+    call_new_data_script = TRUE,
+    new_data_script_name = "$(PROJ_DIR)/catalog/scripts/run_CIDD.catalog.ktwx",
+    call_late_data_script = FALSE,
+    late_data_script_name = "test_script",
+    late_data_secs = 3600
+  }
+  ,
+  {
+    input_dir = "$(DATA_DIR)/$(project)/cfradial/kuex/partrain",
+    call_new_data_script = TRUE,
+    new_data_script_name = "$(PROJ_DIR)/catalog/scripts/run_CIDD.catalog.kuex",
+    call_late_data_script = FALSE,
+    late_data_script_name = "test_script",
+    late_data_secs = 3600
+  }
+  ,
+  {
+    input_dir = "$(DATA_DIR)/$(project)/cfradial/kvnx/partrain",
+    call_new_data_script = TRUE,
+    new_data_script_name = "$(PROJ_DIR)/catalog/scripts/run_CIDD.catalog.kvnx",
+    call_late_data_script = FALSE,
+    late_data_script_name = "test_script",
+    late_data_secs = 3600
+  }
+};
+
+//======================================================================
+//
+// LATEST DATA INFO HANDLING DETAILS.
+//
+//======================================================================
+ 
+///////////// max_realtime_valid_age //////////////////
+//
+// Maximum age for files, realtime mode, seconds.
+// Default is 15 minutes.
+// Type: int
+//
+
+max_realtime_valid_age = 30;
+
+///////////// read_ldata_fmq_from_start ///////////////
+//
+// Option to read FMQ for latest_data_info from start.
+// If TRUE, the all of the entries in the FMQ will be read, from the 
+//   start. This is useful for archive mode, or for debugging what is in 
+//   an FMQ.
+// Type: boolean
+//
+
+read_ldata_fmq_from_start = FALSE;
+
+///////////// save_read_state /////////////////////////
+//
+// Option to save read state.
+// If TRUE, each time a read is successful, a _latest_read_info XML file 
+//   will be written to a tmp directory, so that read state can be 
+//   maintained in case the application crashes.
+// Type: boolean
+//
+
+save_read_state = FALSE;
+
+//======================================================================
+//
+// SCRIPT EXECUTION DETAILS.
+//
+//======================================================================
+ 
+///////////// run_script_in_background ////////////////
+//
+// Option to run script in background.
+// If TRUE, the script will be run in the background. Therefore, the 
+//   system call will return immediately. If FALSE, LdataMultWatcher will 
+//   register with procmap while waiting for the script to complete.
+// Type: boolean
+//
+
+run_script_in_background = TRUE;
+
+///////////// terminate_script_if_hung ////////////////
+//
+// Option to terminate script if it hangs.
+// If TRUE, the script will be killed if it does not return within 
+//   'script_max_run_secs'.
+// Type: boolean
+//
+
+terminate_script_if_hung = TRUE;
+
+///////////// script_max_run_secs /////////////////////
+//
+// Max time allowed for script - secs.
+// If 'terminate_script_if_hung' is TRUE, the script will be killed if 
+//   it does not complete withing this number of secs.
+// Type: int
+//
+
+script_max_run_secs = 3600;
+
+///////////// sleep_after_script //////////////////////
+//
+// Option to have LdataMultWatcher sleep after the script returns.
+// If TRUE, LdataMultWatcher will sleep for script_sleep_time 
+//   milliseconds.  This options is ignored if the script is run in the 
+//   background.
+// Type: boolean
+//
+
+sleep_after_script = TRUE;
+
+///////////// script_sleep_time ///////////////////////
+//
+// Time to sleep after a script run in the foreground completes - 
+//   millisec.
+// Only used if sleep_after_script is TRUE.
+// Type: int
+//
+
+script_sleep_time = 1000;
+

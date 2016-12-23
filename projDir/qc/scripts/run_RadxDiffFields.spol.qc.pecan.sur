@@ -1,0 +1,9 @@
+#! /bin/csh
+
+# check the field diffs between QC and original data
+
+cd $PROJ_DIR/qc/params
+
+RadxDiffFields -params RadxDiffFields.spol.qc.sur -d -start "2015 05 28 00 00 00" -end "2015 07 17 00 00 00" >& ../data/pecan/RadxDiffFields.spol.qc.sur.log &
+
+

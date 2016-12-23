@@ -1,0 +1,66 @@
+>>> LogFilter time stamp: 2015/12/05 00:00:00 <<<
+>>> LogFilter time stamp: 2015/12/05 01:00:00 <<<
+01:21:17 -   Now exec: 
+01:21:17 -   NcMdvServer -port 5482 -instance manager -qmax -1
+01:21:17 - WARNING - MdvxField::MdvxField
+01:21:17 -   Field name: DBZ
+01:21:17 -   Volume size: 0
+01:21:17 - WARNING - MdvxField::computeMinAndMax
+01:21:17 -   Field name: DBZ
+01:21:17 -   Volume size: 0
+01:21:17 - WARNING - MdvxField::computeMinAndMax
+01:21:17 -   Field name: DBZ
+01:21:17 -   Volume size: 0
+01:21:17 - WARNING - MdvxField::computeMinAndMax
+01:21:17 -   Field name: DBZ
+01:21:17 -   Volume size: 0
+01:21:17 - WARNING - MdvxField::computeMinAndMax
+01:21:17 -   Field name: DBZ
+01:21:17 -   Volume size: 0
+01:21:17 - WARNING - MdvxField::computeMinAndMax
+01:21:17 -   Field name: DBZ
+01:21:17 -   Volume size: 0
+01:21:17 - WARNING - MdvxField::computeMinAndMax
+01:21:18 -   Field name: DBZ
+01:21:18 -   Volume size: 0
+01:21:18 - WARNING - MdvxField::MdvxField
+01:21:18 -   Field name: DBZ
+01:21:18 -   Volume size: 0
+01:21:18 - WARNING - MdvxField::computeMinAndMax
+01:21:18 -   Field name: DBZ
+01:21:18 -   Volume size: 0
+01:21:18 - WARNING - MdvxField::computeMinAndMax
+01:21:18 -   Field name: DBZ
+01:21:18 -   Volume size: 0
+01:21:18 - WARNING - MdvxField::computeMinAndMax
+01:21:18 -   Field name: DBZ
+01:21:18 -   Volume size: 0
+01:21:18 - WARNING - MdvxField::computeMinAndMax
+01:21:18 -   Field name: DBZ
+01:21:18 -   Volume size: 0
+01:21:18 - WARNING - MdvxField::computeMinAndMax
+01:21:18 -   Field name: DBZ
+01:21:18 -   Volume size: 0
+01:21:18 - WARNING - MdvxField::computeMinAndMax
+>>> LogFilter time stamp: 2015/12/05 02:00:00 <<<
+>>> LogFilter time stamp: 2015/12/05 03:00:00 <<<
+>>> LogFilter time stamp: 2015/12/05 04:00:00 <<<
+>>> LogFilter time stamp: 2015/12/05 05:00:00 <<<
+>>> LogFilter time stamp: 2015/12/05 06:00:00 <<<
+>>> LogFilter time stamp: 2015/12/05 07:00:00 <<<
+>>> LogFilter time stamp: 2015/12/05 08:00:00 <<<
+>>> LogFilter time stamp: 2015/12/05 09:00:00 <<<
+>>> LogFilter time stamp: 2015/12/05 10:00:00 <<<
+>>> LogFilter time stamp: 2015/12/05 11:00:00 <<<
+>>> LogFilter time stamp: 2015/12/05 12:00:00 <<<
+>>> LogFilter time stamp: 2015/12/05 13:00:00 <<<
+>>> LogFilter time stamp: 2015/12/05 14:00:00 <<<
+>>> LogFilter time stamp: 2015/12/05 15:00:00 <<<
+>>> LogFilter time stamp: 2015/12/05 16:00:00 <<<
+>>> LogFilter time stamp: 2015/12/05 17:00:00 <<<
+>>> LogFilter time stamp: 2015/12/05 18:00:00 <<<
+>>> LogFilter time stamp: 2015/12/05 19:00:00 <<<
+>>> LogFilter time stamp: 2015/12/05 20:00:00 <<<
+>>> LogFilter time stamp: 2015/12/05 21:00:00 <<<
+>>> LogFilter time stamp: 2015/12/05 22:00:00 <<<
+>>> LogFilter time stamp: 2015/12/05 23:00:00 <<<

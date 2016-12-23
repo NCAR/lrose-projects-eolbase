@@ -1,0 +1,4 @@
+#! /bin/csh
+
+get_csu_ddoppler_data |& \
+    LogFilter -d $ERRORS_LOG_DIR -p get_csu_ddopler_data &

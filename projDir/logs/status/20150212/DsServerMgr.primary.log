@@ -1,0 +1,34 @@
+>>> LogFilter time stamp: 2015/02/12 00:00:00 <<<
+>>> LogFilter time stamp: 2015/02/12 01:00:00 <<<
+>>> LogFilter time stamp: 2015/02/12 02:00:00 <<<
+>>> LogFilter time stamp: 2015/02/12 03:00:00 <<<
+>>> LogFilter time stamp: 2015/02/12 04:00:00 <<<
+>>> LogFilter time stamp: 2015/02/12 05:00:00 <<<
+>>> LogFilter time stamp: 2015/02/12 06:00:00 <<<
+>>> LogFilter time stamp: 2015/02/12 07:00:00 <<<
+>>> LogFilter time stamp: 2015/02/12 08:00:00 <<<
+>>> LogFilter time stamp: 2015/02/12 09:00:00 <<<
+>>> LogFilter time stamp: 2015/02/12 10:00:00 <<<
+>>> LogFilter time stamp: 2015/02/12 11:00:00 <<<
+>>> LogFilter time stamp: 2015/02/12 12:00:00 <<<
+>>> LogFilter time stamp: 2015/02/12 13:00:00 <<<
+>>> LogFilter time stamp: 2015/02/12 14:00:00 <<<
+>>> LogFilter time stamp: 2015/02/12 15:00:00 <<<
+15:42:06 -   Now exec: 
+15:42:06 -   NcMdvServer -port 5482 -instance manager -qmax -1
+15:42:06 - sssssssssssssssss nSamplePts: 500
+15:46:01 - sssssssssssss 0, lat, lon: 39.2597, -105.182
+15:46:01 - sssssssssssss last, lat, lon: 40.6045, -105.182
+15:46:01 - WARNING: DsServerMgr reaped child with pid: 8202 which had a BAD EXIT. 
+15:53:59 - NcMdvServer -port 5482: no such process
+15:53:59 - Forked child, PID: 5508
+15:53:59 -   Now exec: 
+15:53:59 -   NcMdvServer -port 5482 -instance manager -qmax -1
+>>> LogFilter time stamp: 2015/02/12 16:00:00 <<<
+>>> LogFilter time stamp: 2015/02/12 17:00:00 <<<
+>>> LogFilter time stamp: 2015/02/12 18:00:00 <<<
+>>> LogFilter time stamp: 2015/02/12 19:00:00 <<<
+>>> LogFilter time stamp: 2015/02/12 20:00:00 <<<
+>>> LogFilter time stamp: 2015/02/12 21:00:00 <<<
+>>> LogFilter time stamp: 2015/02/12 22:00:00 <<<
+>>> LogFilter time stamp: 2015/02/12 23:00:00 <<<

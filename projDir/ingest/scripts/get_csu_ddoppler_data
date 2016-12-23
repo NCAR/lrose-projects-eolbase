@@ -1,0 +1,18 @@
+#!/bin/sh
+
+# get data for non-UTC as well in case we missed something
+
+today=$(date +%Y%m%d)
+outdir=$DATA_DIR/front/cedric/ddoppler/chill_spol/${today}
+mkdir -p $outdir
+cd $outdir
+wget -m -nd --accept "*.ced,*.gz" -e robots=off --level=1 http://radarmet.atmos.colostate.edu/ftp/front/ced/${today}
+
+# get latest CEDRIC dual doppler data from CSU
+
+today=$(date -u +%Y%m%d)
+outdir=$DATA_DIR/front/cedric/ddoppler/chill_spol/${today}
+mkdir -p $outdir
+cd $outdir
+wget -m -nd --accept "*.ced,*.gz" -e robots=off --level=1 http://radarmet.atmos.colostate.edu/ftp/front/ced/${today}
+

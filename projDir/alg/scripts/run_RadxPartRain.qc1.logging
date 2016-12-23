@@ -1,0 +1,9 @@
+#! /bin/csh
+
+cd $PROJ_DIR/alg/params
+
+RadxPartRain -params RadxPartRain.qc.spol.sur  -debug -start "2014 05 20 00 00 00" -end "2014 06 21 00 00 00" >& $ERRORS_LOG_DIR/today/RadxPartRain.qc1.spol.sur &
+RadxPartRain -params RadxPartRain.qc.spol.rhi  -debug -start "2014 05 20 00 00 00" -end "2014 06 21 00 00 00" >& $ERRORS_LOG_DIR/today/RadxPartRain.qc1.spol.rhi &
+RadxPartRain -params RadxPartRain.qc.chill.sur  -debug -start "2014 05 20 00 00 00" -end "2014 06 21 00 00 00" >& $ERRORS_LOG_DIR/today/RadxPartRain.qc1.chill.sur &
+RadxPartRain -params RadxPartRain.qc.chill.rhi  -debug -start "2014 05 20 00 00 00" -end "2014 06 21 00 00 00" >& $ERRORS_LOG_DIR/today/RadxPartRain.qc1.chill.rhi &
+

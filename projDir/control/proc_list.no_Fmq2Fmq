@@ -1,0 +1,133 @@
+######################################################################
+# FRONT - on eldora
+#
+######################################################################
+# SYSTEM processes
+#
+Janitor           logs     start_Janitor.logs        snuff_inst
+Janitor           raw      start_Janitor.raw         snuff_inst
+Scout             primary  start_Scout               kill_Scout
+DataMapper        primary  start_DataMapper          kill_DataMapper
+#
+######################################################################
+# SERVER processes
+#
+DsServerMgr       primary  start_inst(no-params)     snuff_inst
+DsProxyServer     primary  start_inst(no-params)     snuff_inst
+DsMdvServer       manager  start_inst(no-params)     snuff_inst
+NcMdvServer       manager  start_inst(no-params)     snuff_inst
+DsFmqServer       manager  start_inst(no-params)     snuff_inst
+DsSpdbServer      manager  start_inst(no-params)     snuff_inst
+DsFCopyServer     manager  start_inst(no-params)     snuff_inst
+Metar2Symprod     manager  start_inst(no-params)     snuff_inst
+Rhi2Symprod       manager  start_inst(no-params)     snuff_inst
+AcTrack2Symprod   manager  start_inst(no-params)     snuff_inst
+SunCal2Symprod    manager  start_inst(no-params)     snuff_inst
+Tstorms2Symprod   manager  start_inst(no-params)     snuff_inst
+#
+######################################################################
+# PID and PRECIP RATE from CHILL and SPOL
+#
+RadxPartRain       spol.sur           start_inst(alg)     snuff_inst
+RadxPartRain       spol.rhi           start_inst(alg)     snuff_inst
+RadxPartRain       chill.sur          start_inst(alg)     snuff_inst
+RadxPartRain       chill.rhi          start_inst(alg)     snuff_inst
+######################################################################
+# moments FMQ relay from SPOL
+#
+#Fmq2Fmq relay.moments.sband  start_inst(ingest)      snuff_inst
+#
+######################################################################
+# UF files for Dual Doppler
+#
+RadxConvert   moments.sur.uf  start_inst(ingest)     snuff_inst
+RadxConvert   moments.rhi.uf  start_inst(ingest)     snuff_inst
+#DsFileDist   uf              start_inst(system)     snuff_inst
+#
+######################################################################
+#
+# NEXRAD file ingest - from LDM
+#
+RadxConvert   kftg    start_inst(ingest)     snuff_inst
+RadxConvert   kcys    start_inst(ingest)     snuff_inst
+RadxConvert   kpux    start_inst(ingest)     snuff_inst
+RadxConvert   kgjx    start_inst(ingest)     snuff_inst
+RadxConvert   kgld    start_inst(ingest)     snuff_inst
+#
+######################################################################
+#
+# NEXRAD PID and rain rate
+#
+RadxPartRain  kftg    start_inst(alg)        snuff_inst
+RadxPartRain  kcys    start_inst(alg)        snuff_inst
+RadxPartRain  kpux    start_inst(alg)        snuff_inst
+RadxPartRain  kgld    start_inst(alg)        snuff_inst
+RadxPartRain  kgjx    start_inst(alg)        snuff_inst
+######################################################################
+#
+# QPE
+#
+RadxQpe          spol             start_inst(qpe)   snuff_inst
+RadxQpe          chill            start_inst(qpe)   snuff_inst
+RadxQpe          kftg             start_inst(qpe)   snuff_inst
+RadxQpe          kcys             start_inst(qpe)   snuff_inst
+RadxQpe          kpux             start_inst(qpe)   snuff_inst
+RadxQpe          kgld             start_inst(qpe)   snuff_inst
+RadxQpe          kgjx             start_inst(qpe)   snuff_inst
+MdvMerge2        qpe              start_inst(qpe)   snuff_inst
+MdvMergeClosest  qpe              start_inst(qpe)   snuff_inst
+PrecipAccum      qpe_1hr          start_inst(qpe)   snuff_inst
+PrecipAccum      qpe_2hr          start_inst(qpe)   snuff_inst
+PrecipAccum      qpe_3hr          start_inst(qpe)   snuff_inst
+PrecipAccum      qpe_24hr         start_inst(qpe)   snuff_inst
+PrecipAccum      qpe_closest_1hr  start_inst(qpe)   snuff_inst
+PrecipAccum      qpe_closest_2hr  start_inst(qpe)   snuff_inst
+PrecipAccum      qpe_closest_3hr  start_inst(qpe)   snuff_inst
+PrecipAccum      qpe_closest_24hr start_inst(qpe)   snuff_inst
+#
+######################################################################
+# Observations ingest - from LDM
+#
+LdmDynamic2Static  metar              start_inst(ingest)  snuff_inst
+LdmDynamic2Static  sounding           start_inst(ingest)  snuff_inst
+Metar2Spdb         front              start_inst(ingest)  snuff_inst 
+madis2Spdb         front              start_inst(ingest)  snuff_inst 
+NWSsoundingIngest  front              start_inst(ingest)  snuff_inst 
+InputWatcher       mesonet1           start_inst(ingest)  snuff_inst 
+InputWatcher       nssl_mosaic.tile1  start_inst(ingest)  snuff_inst 
+InputWatcher       nssl_mosaic.tile2  start_inst(ingest)  snuff_inst 
+InputWatcher       nssl_mosaic.tile3  start_inst(ingest)  snuff_inst 
+InputWatcher       nssl_mosaic.tile4  start_inst(ingest)  snuff_inst 
+Mrms2Mdv           nssl_mosaic.tile1  start_Mrms2Mdv.nssl_mosaic.tile1  snuff_inst 
+Mrms2Mdv           nssl_mosaic.tile2  start_Mrms2Mdv.nssl_mosaic.tile2  snuff_inst 
+Mrms2Mdv           nssl_mosaic.tile3  start_Mrms2Mdv.nssl_mosaic.tile3  snuff_inst 
+Mrms2Mdv           nssl_mosaic.tile4  start_Mrms2Mdv.nssl_mosaic.tile4  snuff_inst 
+MdvMerge2          nssl_mosaic        start_inst(ingest)  snuff_inst
+InputWatcher       ruc                start_inst(ingest)  snuff_inst 
+Grib2toMdv         ruc                start_inst(ingest)  snuff_inst 
+Mdv2SoundingSpdb   ruc                start_inst(ingest)  snuff_inst
+NcGeneric2Mdv      sat_1km            start_inst(ingest)  snuff_inst 
+NcGeneric2Mdv      sat_4km            start_inst(ingest)  snuff_inst 
+Ltg2Spdb           nldn               start_inst(ingest)  snuff_inst
+cedric2mdv         chill_spol         start_inst(ingest)  snuff_inst
+#
+######################################################################
+#
+# Refract
+#
+Radx2Grid          refract_spol   start_Radx2Grid.refract_spol   snuff_inst
+Refract            spol           start_Refract.spol             snuff_inst
+CalcMoisture       spol           start_CalcMoisture.spol        snuff_inst
+######################################################################
+# Algorithms
+#
+SurfInterp         front              start_inst(alg)     snuff_inst
+######################################################################
+######################################################################
+# Images to catalog
+#
+LdataMultWatcher   catalog.data       start_inst(catalog) snuff_inst
+LdataWatcher       catalog.images     start_inst(catalog) snuff_inst
+#LdataWatcher      catalog.pecan      start_inst(catalog) snuff_inst
+#LdataWatcher       catalog.frappe     start_inst(catalog) snuff_inst
+######################################################################

@@ -1,0 +1,13 @@
+#! /bin/csh
+
+cd $PROJ_DIR/alg/params
+
+setenv radar_name klnx
+setenv RADAR_NAME KLNX
+
+running "RadxPartRain -instance $radar_name"
+
+if ($status == 1) then
+    RadxPartRain -instance $radar_name -params RadxPartRain.nexrad |& \
+        LogFilter -d $ERRORS_LOG_DIR -p RadxPartRain -i $radar_name >& /dev/null &
+endif

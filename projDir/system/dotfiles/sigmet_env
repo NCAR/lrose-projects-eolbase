@@ -1,0 +1,61 @@
+#######################
+# SIGMET environment
+#
+
+setenv IRIS_ROOT /usr/sigmet
+
+# The following variables reference the source/release/configuration
+# tree.  These should all be rooted at the location where IRIS has
+# been installed.
+#
+
+setenv IRIS_APP_DEFAULTS ${IRIS_ROOT}/bin/app-defaults/
+setenv IRIS_BIN ${IRIS_ROOT}/bin/
+setenv IRIS_BIN_ACROBAT ${IRIS_ROOT}/acrobat/bin/
+setenv IRIS_BITMAPS ${IRIS_ROOT}/dt/icons/
+setenv IRIS_CONFIG ${IRIS_ROOT}/config/
+setenv IRIS_DICTIONARY ${IRIS_CONFIG}dict/
+setenv IRIS_INIT ${IRIS_CONFIG}init/
+setenv IRIS_KEYS ${IRIS_ROOT}/bin/keys/
+setenv IRIS_LISTINGS ${IRIS_CONFIG}listings/
+setenv IRIS_MANUALS_INST ${IRIS_ROOT}/manuals/IrisInstall.ilcab/instapdf/install/
+setenv IRIS_MANUALS_IRIS ${IRIS_ROOT}/manuals/IrisUsers.ilcab/irisupdf/irisug/
+setenv IRIS_MANUALS_IRISRAD ${IRIS_ROOT}/manuals/IrisRadar.ilcab/irisrpdf/irisrad/
+setenv IRIS_MANUALS_NOTE ${IRIS_ROOT}/manuals/relnotes.ilcab/relnopdf/relnotes/
+setenv IRIS_MANUALS_PROG ${IRIS_ROOT}/manuals/IrisProgram.ilcab/irisppdf/program/
+setenv IRIS_MANUALS_RCP02 ${IRIS_ROOT}/manuals/rcp02_ug.ilcab/rcp02pdf/rcp02/
+setenv IRIS_MANUALS_RVP6 ${IRIS_ROOT}/manuals/rvp6_ug.ilcab/rvp6updf/rvp6user/
+setenv IRIS_MANUALS_RVP7 ${IRIS_ROOT}/manuals/rvp7_ug.ilcab/rvp7updf/rvp7user/
+setenv IRIS_MANUALS_RXNET7 ${IRIS_ROOT}/manuals/rxnet7.ilcab/rxnetpdf/rxnet7/
+setenv IRIS_MANUALS_UTIL ${IRIS_ROOT}/manuals/IrisUtils.ilcab/irisupdf/irisutl/
+setenv IRIS_MENU ${IRIS_CONFIG}menu/
+setenv IRIS_NLS ${IRIS_ROOT}/bin/nls/C/
+setenv IRIS_OVERLAY ${IRIS_CONFIG}overlay/
+setenv IRIS_PIPES ${IRIS_CONFIG}pipes/
+setenv IRIS_SCRIPT ${IRIS_ROOT}/script/
+setenv IRIS_SOUNDS ${IRIS_ROOT}/dt/sounds/
+
+# The following variables define where IRIS data are placed.  These
+# must be separate directories, but need have no relation among each
+# other.
+#
+
+setenv IRIS_INGEST /usr/iris_data/ingest/
+setenv IRIS_LOG /usr/iris_data/log/
+setenv IRIS_PRODUCT /usr/iris_data/product/
+setenv IRIS_PRODUCT_RAW /usr/iris_data/product_raw/
+setenv IRIS_TAPE_INV /usr/iris_data/tape_inv/
+setenv IRIS_TEMP /usr/iris_data/temp/
+
+# The following definitions are for variables that are independent
+# of the location where IRIS has been installed.
+#
+setenv IRIS_NETRCV "TCPIP 30725"
+setenv IRIS_OPERATORS "dixon operator"
+setenv IRIS_OBSERVERS "observer"
+
+# Set Machine/Platform type for the rest of the script
+#
+set MACH=`uname -s`
+#set MACH=`${IRIS_BIN}sig_uname_filter $MACH`
+

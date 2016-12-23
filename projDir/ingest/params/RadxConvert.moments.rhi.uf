@@ -1,0 +1,860 @@
+/**********************************************************************
+ * TDRP params for RadxConvert
+ **********************************************************************/
+
+//======================================================================
+//
+// Converts files between CfRadial and other radial formats.
+//
+//======================================================================
+ 
+//======================================================================
+//
+// DEBUGGING.
+//
+//======================================================================
+ 
+///////////// debug ///////////////////////////////////
+//
+// Debug option.
+// If set, debug messages will be printed appropriately.
+//
+// Type: enum
+// Options:
+//     DEBUG_OFF
+//     DEBUG_NORM
+//     DEBUG_VERBOSE
+//     DEBUG_EXTRA
+//
+
+debug = DEBUG_OFF;
+
+///////////// instance ////////////////////////////////
+//
+// Program instance for process registration.
+// This application registers with procmap. This is the instance used 
+//   for registration.
+// Type: string
+//
+
+instance = "moments.rhi.uf";
+
+//======================================================================
+//
+// DATA INPUT.
+//
+//======================================================================
+ 
+///////////// input_dir ///////////////////////////////
+//
+// Input directory for searching for files.
+// Files will be searched for in this directory.
+// Type: string
+//
+
+input_dir = "$(DATA_DIR)/firestone/cfradial/moments/sband/rhi";
+
+///////////// mode ////////////////////////////////////
+//
+// Operating mode.
+// In REALTIME mode, the program waits for a new input file.  In ARCHIVE 
+//   mode, it moves through the data between the start and end times set 
+//   on the command line. In FILELIST mode, it moves through the list of 
+//   file names specified on the command line. Paths (in ARCHIVE mode, at 
+//   least) MUST contain a day-directory above the data file -- 
+//   ./data_file.ext will not work as a file path, but 
+//   ./yyyymmdd/data_file.ext will.
+//
+// Type: enum
+// Options:
+//     REALTIME
+//     ARCHIVE
+//     FILELIST
+//
+
+mode = REALTIME;
+
+///////////// max_realtime_data_age_secs //////////////
+//
+// Maximum age of realtime data (secs).
+// Only data less old than this will be used.
+// Type: int
+//
+
+max_realtime_data_age_secs = 600;
+
+///////////// latest_data_info_avail //////////////////
+//
+// Is _latest_data_info file available?.
+// If TRUE, will watch the latest_data_info file. If FALSE, will scan 
+//   the input directory for new files.
+// Type: boolean
+//
+
+latest_data_info_avail = TRUE;
+
+///////////// search_recursively //////////////////////
+//
+// Option to recurse to subdirectories while looking for new files.
+// If TRUE, all subdirectories with ages less than max_dir_age will be 
+//   searched. This may take considerable CPU, so be careful in its use. 
+//   Only applies if latest_data_info_avail is FALSE.
+// Type: boolean
+//
+
+search_recursively = TRUE;
+
+///////////// max_recursion_depth /////////////////////
+//
+// Maximum depth for recursive directory scan.
+// Only applies search_recursively is TRUE. This is the max depth, below 
+//   input_dir, to which the recursive directory search will be carried 
+//   out. A depth of 0 will search the top-level directory only. A depth 
+//   of 1 will search the level below the top directory, etc.
+// Type: int
+//
+
+max_recursion_depth = 5;
+
+///////////// wait_between_checks /////////////////////
+//
+// Sleep time between checking directory for input - secs.
+// If a directory is large and files do not arrive frequently, set this 
+//   to a higher value to reduce the CPU load from checking the directory. 
+//   Only applies if latest_data_info_avail is FALSE.
+// Minimum val: 1
+// Type: int
+//
+
+wait_between_checks = 2;
+
+///////////// file_quiescence /////////////////////////
+//
+// File quiescence when checking for files - secs.
+// This allows you to make sure that a file coming from a remote machine 
+//   is complete before reading it. Only applies if latest_data_info_avail 
+//   is FALSE.
+// Type: int
+//
+
+file_quiescence = 5;
+
+///////////// search_ext //////////////////////////////
+//
+// File name extension.
+// If set, only files with this extension will be processed.
+// Type: string
+//
+
+search_ext = "";
+
+//======================================================================
+//
+// OPTIONAL FIXED ANGLE OR SWEEP NUMBER LIMITS.
+//
+// Fixed angles are elevation in PPI mode and azimuth in RHI mode.
+//
+//======================================================================
+ 
+///////////// set_fixed_angle_limits //////////////////
+//
+// Option to set fixed angle limits.
+// Only use sweeps within the specified fixed angle limits.
+// Type: boolean
+//
+
+set_fixed_angle_limits = FALSE;
+
+///////////// lower_fixed_angle_limit /////////////////
+//
+// Lower fixed angle limit - degrees.
+// Type: double
+//
+
+lower_fixed_angle_limit = 0;
+
+///////////// upper_fixed_angle_limit /////////////////
+//
+// Upper fixed angle limit - degrees.
+// Type: double
+//
+
+upper_fixed_angle_limit = 90;
+
+///////////// set_sweep_num_limits ////////////////////
+//
+// Option to set sweep number limits.
+// Only read sweeps within the specified sweep number limits.
+// Type: boolean
+//
+
+set_sweep_num_limits = FALSE;
+
+///////////// lower_sweep_num /////////////////////////
+//
+// Lower sweep number limit.
+// Type: int
+//
+
+lower_sweep_num = 0;
+
+///////////// upper_sweep_num /////////////////////////
+//
+// Upper sweep number limit.
+// Type: int
+//
+
+upper_sweep_num = 0;
+
+///////////// read_set_radar_num //////////////////////
+//
+// Option to set the radar number.
+// See read_radar_num.
+// Type: boolean
+//
+
+read_set_radar_num = FALSE;
+
+///////////// read_radar_num //////////////////////////
+//
+// Set the radar number for the data to be extracted.
+// Most files have data from a single radar, so this does not apply. The 
+//   NOAA HRD files, however, have data from both the lower fuselage (LF, 
+//   radar_num = 1) and tail (TA, radar_num = 2) radars. For HRD files, by 
+//   default the TA radar will be used, unless the radar num is set to 1 
+//   for the LF radar.
+// Type: int
+//
+
+read_radar_num = 0;
+
+//======================================================================
+//
+// READ OPTIONS.
+//
+//======================================================================
+ 
+///////////// aggregate_sweep_files_on_read ///////////
+//
+// Option to aggregate sweep files into a volume on read.
+// If true, and the input data is in sweeps rather than volumes (e.g. 
+//   DORADE), the sweep files from a volume will be aggregated into a 
+//   volume.
+// Type: boolean
+//
+
+aggregate_sweep_files_on_read = FALSE;
+
+///////////// aggregate_all_files_on_read /////////////
+//
+// Option to aggregate all files in the file list on read.
+// If true, all of the files specified with the '-f' arg will be 
+//   aggregated into a single volume as they are read in. This only 
+//   applies to FILELIST mode. Overrides 'aggregate_sweep_files_on_read'.
+// Type: boolean
+//
+
+aggregate_all_files_on_read = FALSE;
+
+///////////// ignore_idle_scan_mode_on_read ///////////
+//
+// Option to ignore data taken in IDLE mode.
+// If true, on read will ignore files with an IDLE scan mode.
+// Type: boolean
+//
+
+ignore_idle_scan_mode_on_read = TRUE;
+
+///////////// remove_rays_with_all_data_missing ///////
+//
+// Option to remove rays for which all data is missing.
+// If true, ray data will be checked. If all fields have missing data at 
+//   all gates, the ray will be removed after reading.
+// Type: boolean
+//
+
+remove_rays_with_all_data_missing = FALSE;
+
+///////////// remove_rays_with_antenna_transitions ////
+//
+// Option to remove rays taken while the antenna was in transition.
+// If true, rays with the transition flag set will not be used. The 
+//   transiton flag is set when the antenna is in transtion between one 
+//   sweep and the next.
+// Type: boolean
+//
+
+remove_rays_with_antenna_transitions = FALSE;
+
+///////////// transition_nrays_margin /////////////////
+//
+// Number of transition rays to include as a margin.
+// Sometimes the transition flag is turned on too early in a transition, 
+//   on not turned off quickly enough after a transition. If you set this 
+//   to a number greater than 0, that number of rays will be included at 
+//   each end of the transition, i.e. the transition will effectively be 
+//   shorter at each end by this number of rays.
+// Type: int
+//
+
+transition_nrays_margin = 0;
+
+///////////// trim_surveillance_sweeps_to_360deg //////
+//
+// Option to trip surveillance sweeps so that they only cover 360 
+//   degrees.
+// Some sweeps will have rays which cover more than a 360-degree 
+//   rotation. Often these include antenna transitions. If this is set to 
+//   true, rays are trimmed off either end of the sweep to limit the 
+//   coverage to 360 degrees. The median elevation angle is computed and 
+//   the end ray which deviates from the median in elevation is trimmed 
+//   first.
+// Type: boolean
+//
+
+trim_surveillance_sweeps_to_360deg = FALSE;
+
+///////////// set_max_range ///////////////////////////
+//
+// Option to set the max range for any ray.
+// Type: boolean
+//
+
+set_max_range = FALSE;
+
+///////////// max_range_km ////////////////////////////
+//
+// Specified maximim range - km.
+// Gates beyond this range are removed.
+// Type: double
+//
+
+max_range_km = 9999;
+
+///////////// preserve_sweeps /////////////////////////
+//
+// Preserve sweeps just as they are in the file.
+// Applies generally to NEXRAD data. If true, the sweep details are 
+//   preserved. If false, we consolidate sweeps from split cuts into a 
+//   single sweep.
+// Type: boolean
+//
+
+preserve_sweeps = FALSE;
+
+///////////// remove_long_range_rays //////////////////
+//
+// Option to remove long range rays.
+// Applies to NEXRAD data. If true, data from the non-Doppler long-range 
+//   sweeps will be removed.
+// Type: boolean
+//
+
+remove_long_range_rays = TRUE;
+
+///////////// remove_short_range_rays /////////////////
+//
+// Option to remove short range rays.
+// Applies to NEXRAD data. If true, data from the Doppler short-range 
+//   sweeps will be removed.
+// Type: boolean
+//
+
+remove_short_range_rays = FALSE;
+
+///////////// set_ngates_constant /////////////////////
+//
+// Option to force the number of gates to be constant.
+// If TRUE, the number of gates on all rays will be set to the maximum, 
+//   and gates added to shorter rays will be filled with missing values.
+// Type: boolean
+//
+
+set_ngates_constant = FALSE;
+
+//======================================================================
+//
+// OPTION TO OVERRIDE INSTRUMENT NAME.
+//
+//======================================================================
+ 
+///////////// override_instrument_name ////////////////
+//
+// Option to override the instrument name.
+// If true, the name provided will be used.
+// Type: boolean
+//
+
+override_instrument_name = FALSE;
+
+///////////// instrument_name /////////////////////////
+//
+// Instrument name.
+// See override_instrument_name.
+// Type: string
+//
+
+instrument_name = "unknown";
+
+//======================================================================
+//
+// OPTION TO OVERRIDE RADAR LOCATION.
+//
+//======================================================================
+ 
+///////////// override_radar_location /////////////////
+//
+// Option to override the radar location.
+// If true, the location in this file will be used. If not, the location 
+//   in the time series data will be used.
+// Type: boolean
+//
+
+override_radar_location = FALSE;
+
+///////////// radar_latitude_deg //////////////////////
+//
+// Radar latitude (deg).
+// See override_radar_location.
+// Type: double
+//
+
+radar_latitude_deg = -999;
+
+///////////// radar_longitude_deg /////////////////////
+//
+// Radar longitude (deg).
+// See override_radar_location.
+// Type: double
+//
+
+radar_longitude_deg = -999;
+
+///////////// radar_altitude_meters ///////////////////
+//
+// Radar altitude (meters).
+// See override_radar_location.
+// Type: double
+//
+
+radar_altitude_meters = -999;
+
+///////////// change_radar_latitude_sign //////////////
+//
+// Option to negate the latitude.
+// Mainly useful for RAPIC files. In RAPIC, latitude is always positive, 
+//   so mostly you need to set the latitiude to the negative value of 
+//   itself.
+// Type: boolean
+//
+
+change_radar_latitude_sign = FALSE;
+
+///////////// apply_georeference_corrections //////////
+//
+// Option to apply the georeference info for moving platforms.
+// For moving platforms, measured georeference information is sometimes 
+//   available. If this is set to true, the georeference data is applied 
+//   and appropriate corrections made. If possible, Earth-centric azimuth 
+//   and elevation angles will be computed.
+// Type: boolean
+//
+
+apply_georeference_corrections = FALSE;
+
+//======================================================================
+//
+// OPTION TO CORRECT ANTENNA ANGLES.
+//
+//======================================================================
+ 
+///////////// apply_azimuth_offset ////////////////////
+//
+// Option to apply an offset to the azimuth values.
+// If TRUE, this offset will be ADDED to the measured azimuth angles. 
+//   This is useful, for example, in the case of a mobile platform which 
+//   is not set up oriented to true north. Suppose you have a truck (like 
+//   the DOWs) which is oriented off true north. Then if you add in the 
+//   truck HEADING relative to true north, the measured azimuth angles 
+//   will be adjusted by the heading, to give azimuth relative to TRUE 
+//   north.
+// Type: boolean
+//
+
+apply_azimuth_offset = FALSE;
+
+///////////// azimuth_offset //////////////////////////
+//
+// Azimuth offset (degrees).
+// See 'apply_azimuth_offset'. This value will be ADDED to the measured 
+//   azimuths.
+// Type: double
+//
+
+azimuth_offset = 0;
+
+///////////// apply_elevation_offset //////////////////
+//
+// Option to apply an offset to the elevation values.
+// If TRUE, this offset will be ADDED to the measured elevation angles. 
+//   This is useful to correct for a systematic bias in measured elevation 
+//   angles.
+// Type: boolean
+//
+
+apply_elevation_offset = FALSE;
+
+///////////// elevation_offset ////////////////////////
+//
+// Elevation offset (degrees).
+// See 'apply_elevation_offset'. This value will be ADDED to the 
+//   measured elevations.
+// Type: double
+//
+
+elevation_offset = 0;
+
+//======================================================================
+//
+// OPTION TO SPECIFY FIELD NAMES AND OUTPUT ENCODING.
+//
+//======================================================================
+ 
+///////////// set_output_fields ///////////////////////
+//
+// Set the field names and output encoding.
+// If false, all fields will be used.
+// Type: boolean
+//
+
+set_output_fields = TRUE;
+
+///////////// output_fields ///////////////////////////
+//
+// Output field details.
+// Set the details for the output fields. The output_field_name is the 
+//   ndtCDF variable name. Set the long name to a more descriptive name. 
+//   Set the standard name to the CF standard name for this field. If the 
+//   long name or standard name are empty, the existing names are used. If 
+//   SCALING_SPECIFIED, then the scale and offset is used.
+//
+// Type: struct
+//   typedef struct {
+//      string input_field_name;
+//      string output_field_name;
+//      string long_name;
+//      string standard_name;
+//      string output_units;
+//      output_encoding_t encoding;
+//        Options:
+//          OUTPUT_ENCODING_ASIS
+//          OUTPUT_ENCODING_FLOAT32
+//          OUTPUT_ENCODING_INT32
+//          OUTPUT_ENCODING_INT16
+//          OUTPUT_ENCODING_INT08
+//      output_scaling_t output_scaling;
+//        Options:
+//          SCALING_DYNAMIC
+//          SCALING_SPECIFIED
+//      double output_scale;
+//      double output_offset;
+//   }
+//
+// 1D array - variable length.
+//
+
+output_fields = {
+  {
+    input_field_name = "DBZ_F",
+    output_field_name = "ZH",
+    long_name = "reflectivity",
+    standard_name = "equivalent_reflectivity_factor",
+    output_units = "dBZ",
+    encoding = OUTPUT_ENCODING_ASIS,
+    output_scaling = SCALING_DYNAMIC,
+    output_scale = 0.01,
+    output_offset = 0
+  }
+  ,
+  {
+    input_field_name = "VEL_F",
+    output_field_name = "VE",
+    long_name = "radial_velocity",
+    standard_name = "radial_velocity_of_scatterers_away_from_instrument",
+    output_units = "m/s",
+    encoding = OUTPUT_ENCODING_ASIS,
+    output_scaling = SCALING_DYNAMIC,
+    output_scale = 0.01,
+    output_offset = 0
+  }
+  ,
+  {
+    input_field_name = "SNRHC_F",
+    output_field_name = "SN",
+    long_name = "signal_to_noise_ratio",
+    standard_name = "signal_to_noise_ratio",
+    output_units = "dB",
+    encoding = OUTPUT_ENCODING_ASIS,
+    output_scaling = SCALING_DYNAMIC,
+    output_scale = 0.01,
+    output_offset = 0
+  }
+  ,
+  {
+    input_field_name = "ZDR_F",
+    output_field_name = "ZD",
+    long_name = "differential_reflectivity",
+    standard_name = "log_differential_reflectivity_hv",
+    output_units = "dB",
+    encoding = OUTPUT_ENCODING_ASIS,
+    output_scaling = SCALING_DYNAMIC,
+    output_scale = 0.01,
+    output_offset = 0
+  }
+  ,
+  {
+    input_field_name = "KDP_F",
+    output_field_name = "KP",
+    long_name = "specific_differential_reflectivity",
+    standard_name = "specific_differential_reflectivity_hv",
+    output_units = "deg/km",
+    encoding = OUTPUT_ENCODING_ASIS,
+    output_scaling = SCALING_DYNAMIC,
+    output_scale = 0.01,
+    output_offset = 0
+  }
+  ,
+  {
+    input_field_name = "LDRH_F",
+    output_field_name = "LD",
+    long_name = "linear_depolarization_ratio",
+    standard_name = "linear_depolarization_ratio",
+    output_units = "dB",
+    encoding = OUTPUT_ENCODING_ASIS,
+    output_scaling = SCALING_DYNAMIC,
+    output_scale = 0.01,
+    output_offset = 0
+  }
+  ,
+  {
+    input_field_name = "PHIDP_F",
+    output_field_name = "PD",
+    long_name = "differential_phase",
+    standard_name = "differential_phase_hv",
+    output_units = "deg",
+    encoding = OUTPUT_ENCODING_ASIS,
+    output_scaling = SCALING_DYNAMIC,
+    output_scale = 0.01,
+    output_offset = 0
+  }
+  ,
+  {
+    input_field_name = "RHOHV_F",
+    output_field_name = "RH",
+    long_name = "cross_correlation_coefficient",
+    standard_name = "cross_correlaction_hv",
+    output_units = "",
+    encoding = OUTPUT_ENCODING_ASIS,
+    output_scaling = SCALING_DYNAMIC,
+    output_scale = 0.01,
+    output_offset = 0
+  }
+};
+
+///////////// write_other_fields_unchanged ////////////
+//
+// Option to write out the unspecified fields as they are.
+// If false, only the fields listed in output_fields will be written. If 
+//   this is true, all other fields will be written unchanged.
+// Type: boolean
+//
+
+write_other_fields_unchanged = FALSE;
+
+//======================================================================
+//
+// OPTION TO SPECIFY OUTPUT ENCODING FOR ALL FIELDS.
+//
+//======================================================================
+ 
+///////////// set_output_encoding_for_all_fields //////
+//
+// Option to set output encoding for all fields.
+// Type: boolean
+//
+
+set_output_encoding_for_all_fields = FALSE;
+
+///////////// output_encoding /////////////////////////
+//
+// Output encoding for all fields, if requested.
+//
+// Type: enum
+// Options:
+//     OUTPUT_ENCODING_ASIS
+//     OUTPUT_ENCODING_FLOAT32
+//     OUTPUT_ENCODING_INT32
+//     OUTPUT_ENCODING_INT16
+//     OUTPUT_ENCODING_INT08
+//
+
+output_encoding = OUTPUT_ENCODING_ASIS;
+
+//======================================================================
+//
+// OUTPUT FORMAT.
+//
+//======================================================================
+ 
+///////////// output_format ///////////////////////////
+//
+// Format for the output files.
+//
+// Type: enum
+// Options:
+//     OUTPUT_FORMAT_CFRADIAL
+//     OUTPUT_FORMAT_DORADE
+//     OUTPUT_FORMAT_FORAY
+//     OUTPUT_FORMAT_NEXRAD
+//     OUTPUT_FORMAT_UF
+//     OUTPUT_FORMAT_MDV_RADIAL
+//
+
+output_format = OUTPUT_FORMAT_UF;
+
+///////////// netcdf_style ////////////////////////////
+//
+// NetCDF style - if output_format is CFRADIAL.
+// netCDF classic format, netCDF 64-bit offset format, netCDF4 using 
+//   HDF5 format, netCDF4 using HDF5 format but only netCDF3 calls.
+//
+// Type: enum
+// Options:
+//     CLASSIC
+//     NC64BIT
+//     NETCDF4
+//     NETCDF4_CLASSIC
+//
+
+netcdf_style = CLASSIC;
+
+//======================================================================
+//
+// OUTPUT BYTE-SWAPPING and COMPRESSION.
+//
+//======================================================================
+ 
+///////////// output_native_byte_order ////////////////
+//
+// Option to leave data in native byte order.
+// If false, data will be byte-swapped as appropriate on output.
+// Type: boolean
+//
+
+output_native_byte_order = FALSE;
+
+///////////// output_compressed ///////////////////////
+//
+// Option to compress data fields on output.
+// Applies to netCDF and Dorade. UF does not support compression.
+// Type: boolean
+//
+
+output_compressed = TRUE;
+
+//======================================================================
+//
+// OUTPUT OPTIONS FOR CfRadial FILES.
+//
+//======================================================================
+ 
+///////////// output_force_ngates_vary ////////////////
+//
+// Option to force the use of ragged arrays for CfRadial files.
+// Only applies to CfRadial. If true, forces the use of ragged arrays 
+//   even if the number of gates for all rays is constant.
+// Type: boolean
+//
+
+output_force_ngates_vary = FALSE;
+
+///////////// compression_level ///////////////////////
+//
+// Compression level for output, if compressed.
+// Applies to netCDF only. Dorade compression is run-length encoding, 
+//   and has not options..
+// Type: int
+//
+
+compression_level = 5;
+
+//======================================================================
+//
+// OUTPUT DIRECTORY AND FILE NAME.
+//
+//======================================================================
+ 
+///////////// output_dir //////////////////////////////
+//
+// Output directory path.
+// Files will be written to this directory.
+// Type: string
+//
+
+output_dir = "$(DATA_DIR)/firestone/uf/moments/sband/rhi";
+
+///////////// output_filename_mode ////////////////////
+//
+// Mode for computing output file name.
+// START_AND_END_TIMES: include both start and end times in file name. 
+//   START_TIME_ONLY: include only start time in file name. END_TIME_ONLY: 
+//   include only end time in file name.
+//
+// Type: enum
+// Options:
+//     START_AND_END_TIMES
+//     START_TIME_ONLY
+//     END_TIME_ONLY
+//
+
+output_filename_mode = START_AND_END_TIMES;
+
+///////////// append_day_dir_to_output_dir ////////////
+//
+// Add the day directory to the output directory.
+// Path will be output_dir/yyyymmdd/filename.
+// Type: boolean
+//
+
+append_day_dir_to_output_dir = TRUE;
+
+///////////// append_year_dir_to_output_dir ///////////
+//
+// Add the year directory to the output directory.
+// Path will be output_dir/yyyy/yyyymmdd/filename.
+// Type: boolean
+//
+
+append_year_dir_to_output_dir = FALSE;
+
+///////////// write_individual_sweeps /////////////////
+//
+// Option to write out individual sweeps if appropriate.
+// If true, the volume is split into individual sweeps for writing. 
+//   Applies to CfRadial format. This is always true for DORADE format 
+//   files.
+// Type: boolean
+//
+
+write_individual_sweeps = FALSE;
+
+///////////// write_latest_data_info //////////////////
+//
+// Option to write out _latest_data_info files.
+// If true, the _latest_data_info files will be written after the 
+//   converted file is written.
+// Type: boolean
+//
+
+write_latest_data_info = TRUE;
+

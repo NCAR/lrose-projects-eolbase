@@ -1,0 +1,26 @@
+#! /bin/csh
+
+# run the PID/PRECIP for PECAN qc
+# also estimates Z and ZDR bias, stores in SPDB
+
+setenv COPY_INPUT_FIELDS_TO_OUTPUT TRUE
+setenv WRITE_OUTPUT_VOLUME TRUE
+
+cd $PROJ_DIR/qc/params
+
+setenv SELF_CONSISTENCY_ZDRM_CORRECTION 0.3
+
+RadxPartRain -params RadxPartRain.spol.qc.rhi -d -start "2015 05 28 00 00 00" -end "2015 06 07 00 00 00" >& ../data/pecan/RadxPartRain.spol.qc.rhi.part1.log &
+
+setenv SELF_CONSISTENCY_ZDRM_CORRECTION 0.0
+
+RadxPartRain -params RadxPartRain.spol.qc.rhi -d -start "2015 06 07 00 00 00" -end "2015 06 20 00 00 00" >& ../data/pecan/RadxPartRain.spol.qc.rhi.part2.log &
+
+RadxPartRain -params RadxPartRain.spol.qc.rhi -d -start "2015 06 20 00 00 00" -end "2015 07 01 00 00 00" >& ../data/pecan/RadxPartRain.spol.qc.rhi.part3.log &
+
+RadxPartRain -params RadxPartRain.spol.qc.rhi -d -start "2015 07 01 00 00 00" -end "2015 07 17 00 00 00" >& ../data/pecan/RadxPartRain.spol.qc.rhi.part4.log &
+
+
+
+
+

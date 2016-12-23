@@ -1,0 +1,8 @@
+#! /bin/sh
+
+# kill rsync over the saved time series
+
+snuff "rsync -av --rsh=ssh -p 20022"
+
+
+

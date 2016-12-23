@@ -1,0 +1,41 @@
+>>> LogFilter time stamp: 2015/09/04 00:00:00 <<<
+>>> LogFilter time stamp: 2015/09/04 01:00:00 <<<
+>>> LogFilter time stamp: 2015/09/04 02:00:00 <<<
+>>> LogFilter time stamp: 2015/09/04 03:00:00 <<<
+>>> LogFilter time stamp: 2015/09/04 04:00:00 <<<
+>>> LogFilter time stamp: 2015/09/04 05:00:00 <<<
+>>> LogFilter time stamp: 2015/09/04 06:00:00 <<<
+>>> LogFilter time stamp: 2015/09/04 07:00:00 <<<
+>>> LogFilter time stamp: 2015/09/04 08:00:00 <<<
+>>> LogFilter time stamp: 2015/09/04 09:00:00 <<<
+>>> LogFilter time stamp: 2015/09/04 10:00:00 <<<
+>>> LogFilter time stamp: 2015/09/04 11:00:00 <<<
+>>> LogFilter time stamp: 2015/09/04 12:00:00 <<<
+>>> LogFilter time stamp: 2015/09/04 13:00:00 <<<
+>>> LogFilter time stamp: 2015/09/04 14:00:00 <<<
+>>> LogFilter time stamp: 2015/09/04 15:00:00 <<<
+>>> LogFilter time stamp: 2015/09/04 16:00:00 <<<
+>>> LogFilter time stamp: 2015/09/04 17:00:00 <<<
+>>> LogFilter time stamp: 2015/09/04 18:00:00 <<<
+18:22:13 - WARNING: DsServerMgr reaped child with pid: 28935 which had a BAD EXIT. 
+18:22:22 - WARNING: DsServerMgr reaped child with pid: 28958 which had a BAD EXIT. 
+18:23:46 - DsMdvServer -port 5440: no such process
+18:23:46 - Forked child, PID: 12836
+18:24:31 -   Now exec: 
+18:24:31 -   DsMdvServer -port 5440 -instance manager -qmax -1
+18:24:31 - WARNING: DsServerMgr reaped child with pid: 12836 which had a BAD EXIT. 
+>>> LogFilter time stamp: 2015/09/04 19:00:00 <<<
+19:44:58 - DsMdvServer -port 5440: no such process
+19:44:58 - Forked child, PID: 17800
+19:44:58 -   Now exec: 
+19:44:58 -   DsMdvServer -port 5440 -instance manager -qmax -1
+19:45:02 - WARNING: DsServerMgr reaped child with pid: 17800 which had a BAD EXIT. 
+>>> LogFilter time stamp: 2015/09/04 20:00:00 <<<
+>>> LogFilter time stamp: 2015/09/04 21:00:00 <<<
+>>> LogFilter time stamp: 2015/09/04 22:00:00 <<<
+22:08:49 - NcMdvServer -port 5482: no such process
+22:08:49 - Forked child, PID: 27003
+22:09:16 -   Now exec: 
+22:09:16 -   NcMdvServer -port 5482 -instance manager -qmax -1
+22:09:16 - WARNING: DsServerMgr reaped child with pid: 27003 which had a BAD EXIT. 
+>>> LogFilter time stamp: 2015/09/04 23:00:00 <<<

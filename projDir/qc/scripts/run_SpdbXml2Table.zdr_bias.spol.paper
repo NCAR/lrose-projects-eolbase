@@ -1,0 +1,6 @@
+#! /bin/csh
+
+cd $PROJ_DIR/qc/params
+
+SpdbXml2Table -params SpdbXml2Table.zdr_bias.spol.paper -start "2015 06 15 00 00 00" -end "2015 07 17 00 00 00" > ../data/pecan/zdr_bias.spol.paper.txt
+

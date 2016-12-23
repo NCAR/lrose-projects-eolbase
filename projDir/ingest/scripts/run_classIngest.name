@@ -1,0 +1,8 @@
+#! /bin/csh
+
+# Create SPDB data for CLASS sounding files
+
+cd $PROJ_DIR/ingest/params
+
+classIngest -params classIngest.name -verbose -f ~/projDir/data/name/raw/soundings/class/*cls 
+

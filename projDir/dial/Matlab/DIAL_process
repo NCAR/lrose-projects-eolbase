@@ -1,0 +1,55 @@
+#! /bin/sh
+
+echo "save_quicklook $1" 
+echo "save_data: $2"
+echo "save_netCDF: $3"
+echo "save_catalog: $4"
+echo "channel: $5"
+echo "node: $6"
+# get current date and year to feed into Matlab
+daystr=`date -u +%y%m%d`
+year=`date +%Y`
+# if the first 20 min of a new day use previous day 
+hour=`date -u +%k%M` 
+echo "hour = $hour"
+if [ $hour -lt 20 ]
+then 
+ echo finish processing previous day
+ daystr=`date +%y%m%d`
+fi
+echo "daystr = $daystr"
+echo "year = $year"
+node=\'$6\'
+echo "node = ${node}"
+# set the path to DIAL data files
+if [ ${node} = \'NCAR\' ]
+then
+ dialpath=\'/scr/eldora1/h2o_data/${year}/${daystr}$5\'
+else
+ dialpath=\'/scr/eldora1/MSU_h2o_data/${year}/${daystr}$5\'
+fi
+echo "dialpath = ${dialpath}"
+# make output dirs
+mkdir -p /scr/eldora1/processed_h2o_data
+mkdir -p /scr/eldora1/MSU_processed_h2o_data
+# set the Matlab command
+matcmd="addpath $HOME/projDir/Matlab; DIAL_process_v6_5_function(${dialpath},$1,$2,$3,$4,${node}); exit"
+# file, save_quicklook, save_data, save_netCDF, save_catalog
+cmd="/opt/local/bin/matlab -nodisplay -nosplash -r \"$matcmd\""
+echo "cmd = $cmd"
+# run the command
+eval $cmd
+
+
+
+
+
+
+
+
+
+
+
+
+
+

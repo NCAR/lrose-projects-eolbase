@@ -1,0 +1,1136 @@
+/**********************************************************************
+ * TDRP params for AltCpCompute
+ **********************************************************************/
+
+//======================================================================
+//
+// AltCpCompute analyses data from tsarchive time series files using the 
+//   cross-polar technique to determine ZDR bias.
+//
+//======================================================================
+ 
+//======================================================================
+//
+// DEBUGGING AND PROCESS CONTROL.
+//
+//======================================================================
+ 
+///////////// debug ///////////////////////////////////
+//
+// Debug option.
+//
+// If set, debug messages will be printed appropriately.
+//
+//
+// Type: enum
+// Options:
+//     DEBUG_OFF
+//     DEBUG_NORM
+//     DEBUG_VERBOSE
+//     DEBUG_EXTRA
+//
+
+debug = DEBUG_OFF;
+
+///////////// instance ////////////////////////////////
+//
+// Process instance.
+//
+// Used for registration with procmap.
+//
+//
+// Type: string
+//
+
+instance = "pecan.pairs";
+
+///////////// register_with_procmap ///////////////////
+//
+// Option to register with the process mapper.
+//
+// If true, this application will try to register with procmap once per 
+//   minute. (If unable to do so, no error occurs.).
+//
+//
+// Type: boolean
+//
+
+register_with_procmap = FALSE;
+
+//======================================================================
+//
+// DATA INPUT.
+//
+//======================================================================
+ 
+///////////// input_mode //////////////////////////////
+//
+// Input mode - files or time series API, or CfRadial moments.
+//
+// If TS_FMQ_INPUT, the application will read the time series from a 
+//   file message queue and process the pulses as they come in. If 
+//   TS_FILE_INPUT, the application will process all the files specified 
+//   on the command line. If CFRADIAL, moments will be read from CfRadial 
+//   files.
+//
+//
+// Type: enum
+// Options:
+//     TS_FILE_INPUT
+//     TS_FMQ_INPUT
+//     CFRADIAL_INPUT
+//
+
+input_mode = CFRADIAL_INPUT;
+
+///////////// input_fmq_name //////////////////////////
+//
+// FMQ name. For TS_FMQ_INPUT only.
+//
+// Path to FMQ files. There are 2 files, one with a .buf extension and 
+//   one with a .stat extention. This path does not include the 
+//   extensions.
+//
+//
+// Type: string
+//
+
+input_fmq_name = "/tmp/fmq/ts";
+
+//======================================================================
+//
+// COMPUTING MOMENTS FROM TIME SERIES.
+//
+//======================================================================
+ 
+///////////// n_samples ///////////////////////////////
+//
+// Number of pulse samples in a beam.
+//
+//
+// Type: int
+//
+
+n_samples = 64;
+
+///////////// switching_receiver //////////////////////
+//
+// Does the receiver path switch between each pulse.
+//
+// In some alternating mode radars, the receiver chain switches between 
+//   pulses. This is done to create a co-polar and cross-polar receiver 
+//   system which is more stable for ZDR. If this is set to TRUE, then the 
+//   receiver is assumed to switch and the data for each channel is 
+//   gathered accordingly.
+//
+//
+// Type: boolean
+//
+
+switching_receiver = TRUE;
+
+///////////// invert_hv_flag //////////////////////////
+//
+// Option to invert H/V flag in pulse data.
+//
+// Normally, the HV flag is set to 1 for H, 0 for V. If the flag in the 
+//   data has the opposite sense, set this to true.
+//
+//
+// Type: boolean
+//
+
+invert_hv_flag = FALSE;
+
+///////////// nbeams_per_analysis /////////////////////
+//
+// Number of beams per stats analysis.
+//
+// The stats will be computed each time this number of beams is reached. 
+//   Set to -1 to analyze all input data.
+//
+//
+// Type: int
+//
+
+nbeams_per_analysis = 3600;
+
+//======================================================================
+//
+// READING MOMENTS FROM CFRADIAL FILES.
+//
+//======================================================================
+ 
+///////////// cfradial_input_dir //////////////////////
+//
+// Input directory for searching for files.
+//
+// Files will be searched for in this directory.
+//
+//
+// Type: string
+//
+
+// cfradial_input_dir = "$(DATA_DIR)/$(project)/cfradial/spol/moments/sband/sur";
+cfradial_input_dir = "/scr/hail2/rsfdata/pecan/cfradial/spol/moments/sband/sur";
+
+///////////// cfradial_mode ///////////////////////////
+//
+// Operating mode.
+//
+// In REALTIME mode, the program waits for a new input file.  In ARCHIVE 
+//   mode, it moves through the data between the start and end times set 
+//   on the command line. In FILELIST mode, it moves through the list of 
+//   file names specified on the command line. Paths (in ARCHIVE mode, at 
+//   least) MUST contain a day-directory above the data file -- 
+//   ./data_file.ext will not work as a file path, but 
+//   ./yyyymmdd/data_file.ext will.
+//
+//
+// Type: enum
+// Options:
+//     CFRADIAL_REALTIME
+//     CFRADIAL_ARCHIVE
+//     CFRADIAL_FILELIST
+//
+
+cfradial_mode = CFRADIAL_ARCHIVE;
+
+///////////// cfradial_max_realtime_data_age_secs /////
+//
+// Maximum age of realtime data (secs).
+//
+// Only data less old than this will be used.
+//
+//
+// Type: int
+//
+
+cfradial_max_realtime_data_age_secs = 300;
+
+///////////// cfradial_latest_data_info_avail /////////
+//
+// Is _latest_data_info file available?.
+//
+// If TRUE, will watch the latest_data_info file. If FALSE, will scan 
+//   the input directory for new files.
+//
+//
+// Type: boolean
+//
+
+cfradial_latest_data_info_avail = TRUE;
+
+///////////// cfradial_search_recursively /////////////
+//
+// Option to recurse to subdirectories while looking for new files.
+//
+// If TRUE, all subdirectories with ages less than max_dir_age will be 
+//   searched. This may take considerable CPU, so be careful in its use. 
+//   Only applies if latest_data_info_avail is FALSE.
+//
+//
+// Type: boolean
+//
+
+cfradial_search_recursively = TRUE;
+
+///////////// cfradial_max_recursion_depth ////////////
+//
+// Maximum depth for recursive directory scan.
+//
+// Only applies search_recursively is TRUE. This is the max depth, below 
+//   input_dir, to which the recursive directory search will be carried 
+//   out. A depth of 0 will search the top-level directory only. A depth 
+//   of 1 will search the level below the top directory, etc.
+//
+//
+// Type: int
+//
+
+cfradial_max_recursion_depth = 5;
+
+///////////// cfradial_wait_between_checks ////////////
+//
+// Sleep time between checking directory for input - secs.
+//
+// If a directory is large and files do not arrive frequently, set this 
+//   to a higher value to reduce the CPU load from checking the directory. 
+//   Only applies if latest_data_info_avail is FALSE.
+//
+// Minimum val: 1
+//
+// Type: int
+//
+
+cfradial_wait_between_checks = 2;
+
+///////////// cfradial_file_quiescence ////////////////
+//
+// File quiescence when checking for files - secs.
+//
+// This allows you to make sure that a file coming from a remote machine 
+//   is complete before reading it. Only applies if latest_data_info_avail 
+//   is FALSE.
+//
+//
+// Type: int
+//
+
+cfradial_file_quiescence = 5;
+
+///////////// cfradial_search_ext /////////////////////
+//
+// File name extension.
+//
+// If set, only files with this extension will be processed.
+//
+//
+// Type: string
+//
+
+cfradial_search_ext = "nc";
+
+///////////// cfradial_dbmhx_field_name ///////////////
+//
+// Field name for dbm cross-polar H channel.
+//
+// This field is not noise-corrected or filtered. Units are in dBm.
+//
+//
+// Type: string
+//
+
+cfradial_dbmhx_field_name = "DBMHX";
+
+///////////// cfradial_dbmvx_field_name ///////////////
+//
+// Field name for dbm cross-polar V channel.
+//
+// This field is not noise-corrected or filtered. Units are in dBm.
+//
+//
+// Type: string
+//
+
+cfradial_dbmvx_field_name = "DBMVX";
+
+///////////// cfradial_snrhx_field_name ///////////////
+//
+// Field name for snr cross-polar H channel.
+//
+// Units are in dB.
+//
+//
+// Type: string
+//
+
+cfradial_snrhx_field_name = "SNRHX";
+
+///////////// cfradial_snrvx_field_name ///////////////
+//
+// Field name for snr cross-polar V channel.
+//
+// Units are in dB.
+//
+//
+// Type: string
+//
+
+cfradial_snrvx_field_name = "SNRVX";
+
+///////////// cfradial_cpa_field_name /////////////////
+//
+// Field name for clutter phase alignment field.
+//
+// This can be used to determine clutter likelihood.
+//
+//
+// Type: string
+//
+
+cfradial_cpa_field_name = "CPA";
+
+///////////// cfradial_cmd_field_name /////////////////
+//
+// Field name for clutter mitigation decision field.
+//
+// This can be used to determine clutter likelihood.
+//
+//
+// Type: string
+//
+
+cfradial_cmd_field_name = "CMD";
+
+///////////// cfradial_rho_vx_hx_field_name ///////////
+//
+// Field name for cross-correlation between vx and hx.
+//
+// Should be close to 1 in valid gates.
+//
+//
+// Type: string
+//
+
+cfradial_rho_vx_hx_field_name = "RHO_VX_HX";
+
+//======================================================================
+//
+// CALIBRATION XML PATH.
+//
+//======================================================================
+ 
+///////////// cal_xml_file_path ///////////////////////
+//
+// Path for XML calibration file.
+//
+// At a minimum, the calibration file should contain noiseDbm, 
+//   receiverGainDbm, dbz0 and radarConstant values for each channel.
+//
+//
+// Type: string
+//
+
+cal_xml_file_path = "$(PROJ_DIR)/cal/params/spol_cal.xml";
+
+//======================================================================
+//
+// ANALYSIS DETAILS.
+//
+//======================================================================
+ 
+///////////// min_snr /////////////////////////////////
+//
+// Minimum SNR for analysis (dB).
+//
+// Gates with SNR below this will be ignored.
+//
+//
+// Type: double
+//
+
+min_snr = -1000;
+
+///////////// max_snr /////////////////////////////////
+//
+// Maximum SNR for analysis (dB).
+//
+// Gates with SNR above this will be ignored.
+//
+//
+// Type: double
+//
+
+max_snr = 1000;
+
+///////////// min_valid_ratio_db //////////////////////
+//
+// Minimum valid Vx/Hx ratio (dB).
+//
+// Sometimes, odd data leads to inappropriate ratios. This puts limits 
+//   on the ratios to be used in the analysis.
+//
+//
+// Type: double
+//
+
+min_valid_ratio_db = -200;
+
+///////////// max_valid_ratio_db //////////////////////
+//
+// Maximum valid Vx/Hx ratio (dB).
+//
+// Sometimes, odd data leads to inappropriate ratios. This puts limits 
+//   on the ratios to be used in the analysis.
+//
+//
+// Type: double
+//
+
+max_valid_ratio_db = 200;
+
+///////////// min_rho_vx_hx ///////////////////////////
+//
+// Minimum RHO_VX_HX.
+//
+// Used to limit analysis to above this value. See 'check_rho_vx_hx'.
+//
+//
+// Type: double
+//
+
+min_rho_vx_hx = 0.0;
+
+///////////// max_rho_vx_hx ///////////////////////////
+//
+// Maximum RHO_VX_HX.
+//
+// Used to limit the analysis to below this value. See 
+//   'check_RHO_VX_HX'.
+//
+//
+// Type: double
+//
+
+max_rho_vx_hx = 1.1;
+
+///////////// min_cpa_for_clutter /////////////////////
+//
+// Minimum CPA for clutter echoes.
+//
+// Used to identify likely clutter points for analysis.
+//
+//
+// Type: double
+//
+
+min_cpa_for_clutter = 0.9;
+
+///////////// max_cpa_for_clutter /////////////////////
+//
+// Maximum CPA for clutter echoes.
+//
+// Used to identify likely clutter points for analysis.
+//
+//
+// Type: double
+//
+
+max_cpa_for_clutter = 1;
+
+///////////// min_cpa_for_weather /////////////////////
+//
+// Minimum CPA for weather echoes.
+//
+// Used to identify likely weather points for analysis.
+//
+//
+// Type: double
+//
+
+min_cpa_for_weather = 0;
+
+///////////// max_cpa_for_weather /////////////////////
+//
+// Maximum CPA for weather echoes.
+//
+// Used to identify likely weather points for analysis.
+//
+//
+// Type: double
+//
+
+max_cpa_for_weather = 0.5;
+
+///////////// min_cmd_for_clutter /////////////////////
+//
+// Minimum CMD for clutter echoes.
+//
+// Used to identify likely clutter points for analysis. Only applies to 
+//   CfRadial analysis.
+//
+//
+// Type: double
+//
+
+min_cmd_for_clutter = 0.8;
+
+///////////// max_cmd_for_clutter /////////////////////
+//
+// Maximum CMD for clutter echoes.
+//
+// Used to identify likely clutter points for analysis. Only applies to 
+//   CfRadial analysis.
+//
+//
+// Type: double
+//
+
+max_cmd_for_clutter = 1;
+
+///////////// min_cmd_for_weather /////////////////////
+//
+// Minimum CMD for weather echoes.
+//
+// Used to identify likely weather points for analysis. Only applies to 
+//   CfRadial analysis.
+//
+//
+// Type: double
+//
+
+min_cmd_for_weather = 0;
+
+///////////// max_cmd_for_weather /////////////////////
+//
+// Maximum CMD for weather echoes.
+//
+// Used to identify likely weather points for analysis. Only applies to 
+//   CfRadial analysis.
+//
+//
+// Type: double
+//
+
+max_cmd_for_weather = 0.4;
+
+///////////// min_range_km_for_clutter ////////////////
+//
+// Minimum range for clutter analysis (km).
+//
+// Ranges less than this will be not be used for clutter analysis.
+//
+//
+// Type: double
+//
+
+min_range_km_for_clutter = 10;
+
+///////////// max_range_km_for_clutter ////////////////
+//
+// Maximum range for clutter analysis (km).
+//
+// Ranges greater than this will be not be used for clutter analysis.
+//
+//
+// Type: double
+//
+
+max_range_km_for_clutter = 100;
+
+///////////// min_range_km_for_weather ////////////////
+//
+// Minimum range for weather analysis (km).
+//
+// Ranges less than this will be not be used for weather analysis.
+//
+//
+// Type: double
+//
+
+min_range_km_for_weather = 10;
+
+///////////// max_range_km_for_weather ////////////////
+//
+// Maximum range for weather analysis (km).
+//
+// Ranges greater than this will be not be used for weather analysis.
+//
+//
+// Type: double
+//
+
+max_range_km_for_weather = 140;
+
+///////////// min_elevation_deg_for_clutter ///////////
+//
+// Minimum elevation for clutter analysis (deg).
+//
+// Elevations less than this will be ignored for clutter analysis.
+//
+//
+// Type: double
+//
+
+min_elevation_deg_for_clutter = 0.25;
+
+///////////// max_elevation_deg_for_clutter ///////////
+//
+// Maximum elevation for clutter analysis (deg).
+//
+// Elevations greater than this will be ignored for clutter analysis.
+//
+//
+// Type: double
+//
+
+max_elevation_deg_for_clutter = 0.75;
+
+///////////// min_elevation_deg_for_weather ///////////
+//
+// Minimum elevation for weather analysis (deg).
+//
+// Elevations less than this will be ignored for weather analysis.
+//
+//
+// Type: double
+//
+
+min_elevation_deg_for_weather = 0;
+
+///////////// max_elevation_deg_for_weather ///////////
+//
+// Maximum elevation for weather analysis (deg).
+//
+// Elevations greater than this will be ignored for weather analysis.
+//
+//
+// Type: double
+//
+
+max_elevation_deg_for_weather = 80;
+
+//======================================================================
+//
+// OUTPUT RESULTS.
+//
+//======================================================================
+ 
+///////////// write_results_to_file ///////////////////
+//
+// Option to write the results to a file.
+//
+// The file appears in output_dir, and the file name includes the start 
+//   time for the analysis. If false, results are written to stdout.
+//
+//
+// Type: boolean
+//
+
+write_results_to_file = TRUE;
+
+///////////// write_metadata_results_to_file //////////
+//
+// Option to write metadata at the top of the results file.
+//
+// If true, the processing metadata will be written to the top of the 
+//   results file. Each line of metadata will start with the '#' comment 
+//   character.
+//
+//
+// Type: boolean
+//
+
+write_metadata_results_to_file = TRUE;
+
+///////////// output_dir //////////////////////////////
+//
+// Dir for output files.
+//
+// The results will be written to sub-directories named from the data 
+//   time.
+//
+//
+// Type: string
+//
+
+output_dir = "$(PROJ_DIR)/cal/data/pecan";
+
+///////////// file_name_prefix ////////////////////////
+//
+// Prefix for output file names.
+//
+//
+// Type: string
+//
+
+file_name_prefix = "spol_pecan_CP_analysis";
+
+///////////// n_pairs_for_time_series_mode ////////////
+//
+// Number of pairs for computing results in time series mode.
+//
+// We print out results at this frequency.
+//
+//
+// Type: int
+//
+
+n_pairs_for_time_series_mode = 5000;
+
+///////////// min_n_pairs_for_clutter /////////////////
+//
+// Min number of pairs for computing cp ratio in clutter.
+//
+//
+// Type: int
+//
+
+min_n_pairs_for_clutter = 1000;
+
+///////////// min_n_pairs_for_weather /////////////////
+//
+// Min number of pairs for computing cp ratio in weather.
+//
+//
+// Type: int
+//
+
+min_n_pairs_for_weather = 1000;
+
+///////////// column_delimiter_for_output_files ///////
+//
+// Delimiter between data columns in output file.
+//
+//
+// Type: string
+//
+
+column_delimiter_for_output_files = " ";
+
+///////////// write_data_pairs_to_stdout //////////////
+//
+// Option to write individual hx/vx data pairs to an output file.
+//
+// The raw pairs can then be used for generating plots. The file appears 
+//   in output_dir, and the file name includes the start time for the 
+//   analysis.
+//
+//
+// Type: boolean
+//
+
+write_data_pairs_to_stdout = TRUE;
+
+///////////// write_running_results_to_stdout /////////
+//
+// Write running results to stdout.
+//
+// If true, we print out the running and global results to stdout.
+//
+//
+// Type: boolean
+//
+
+write_running_results_to_stdout = FALSE;
+
+//======================================================================
+//
+// OUTPUT RATIO RESULTS TO SPDB XML.
+//
+//======================================================================
+ 
+///////////// write_ratio_to_spdb /////////////////////
+//
+// Option to write out ratio results to SPDB.
+//
+// The ratios will be written in XML, stored in SPDB. The data can then 
+//   be retrieved for plotting or other purposes.
+//
+//
+// Type: boolean
+//
+
+write_ratio_to_spdb = TRUE;
+
+///////////// spdb_output_url /////////////////////////
+//
+// URL for SPDB XML.
+//
+// For local writes, specify the directory. For remote writes, specify 
+//   the full url: spdbp:://host::dir.
+//
+//
+// Type: string
+//
+
+spdb_output_url = "$(DATA_DIR)/$(project)/spdb/cal/zdr/cp_alt";
+
+//======================================================================
+//
+// RETRIEVING VALUES FROM CFRADIAL XML STATUS.
+//
+//======================================================================
+ 
+///////////// retrieve_vals_from_xml_status ///////////
+//
+// Option to retrieve values from XML status block in CfRadial file.
+//
+// If TRUE, we will retrieve the status, and add the values to the end 
+//   of the line written to the ratio file.
+//
+//
+// Type: boolean
+//
+
+retrieve_vals_from_xml_status = TRUE;
+
+///////////// xml_status_entries //////////////////////
+//
+// Specify which XML entries to be retrieved.
+//
+// 	xml_tag_list: list of XML tags used to identify entry. These should 
+//   be delimited in xml format, using < and >
+// 	specify_label: do you want to use a label instead of the tags to 
+//   name the value?
+// 	label: the label to use if specify_label is true
+// .
+//
+//
+// Type: struct
+//   typedef struct {
+//      string xml_tag_list;
+//      boolean specify_label;
+//      string label;
+//   }
+//
+// 1D array - variable length.
+//
+
+xml_status_entries = {
+  {
+    xml_tag_list = "<SBandXmitPower><XmitPowerDbmH>",
+    specify_label = TRUE,
+    label = "TxPwrH"
+  }
+  ,
+  {
+    xml_tag_list = "<SBandXmitPower><XmitPowerDbmV>",
+    specify_label = TRUE,
+    label = "TxPwrV"
+  }
+  ,
+  {
+    xml_tag_list = "<SBandTestPulse><TestPulsePowerDbHc>",
+    specify_label = TRUE,
+    label = "TpPwrHc"
+  }
+  ,
+  {
+    xml_tag_list = "<SBandTestPulse><TestPulsePowerDbVc>",
+    specify_label = TRUE,
+    label = "TpPwrVc"
+  }
+  ,
+  {
+    xml_tag_list = "<SBandTestPulse><TestPulsePowerDbHx>",
+    specify_label = TRUE,
+    label = "TpPwrHx"
+  }
+  ,
+  {
+    xml_tag_list = "<SBandTestPulse><TestPulsePowerDbVx>",
+    specify_label = TRUE,
+    label = "TpPwrVx"
+  }
+  ,
+  {
+    xml_tag_list = "<SpolTemperatures><Klystron>",
+    specify_label = TRUE,
+    label = "TempKlystron"
+  }
+  ,
+  {
+    xml_tag_list = "<SpolTemperatures><TX_Rear_Cab>",
+    specify_label = TRUE,
+    label = "TempRear"
+  }
+  ,
+  {
+    xml_tag_list = "<SpolTemperatures><Vert_Lna>",
+    specify_label = TRUE,
+    label = "TempLnaV"
+  }
+  ,
+  {
+    xml_tag_list = "<SpolTemperatures><Horiz_Lna>",
+    specify_label = TRUE,
+    label = "TempLnaH"
+  }
+  ,
+  {
+    xml_tag_list = "<SpolTemperatures><Rcvr_Enclosure>",
+    specify_label = TRUE,
+    label = "TempRxBox"
+  }
+  ,
+  {
+    xml_tag_list = "<SpolTemperatures><Front_Cab>",
+    specify_label = TRUE,
+    label = "TempFront"
+  }
+  ,
+  {
+    xml_tag_list = "<SpolTemperatures><SCC>",
+    specify_label = TRUE,
+    label = "TempSCC"
+  }
+  ,
+  {
+    xml_tag_list = "<SpolTemperatures><Annex>",
+    specify_label = TRUE,
+    label = "TempAnnex"
+  }
+  ,
+  {
+    xml_tag_list = "<SpolTemperatures><UPS_Container>",
+    specify_label = TRUE,
+    label = "TempUPS"
+  }
+};
+
+//======================================================================
+//
+// RETRIEVING SITE TEMPERATURE FROM SPDB.
+//
+//======================================================================
+ 
+///////////// read_site_temp_from_spdb ////////////////
+//
+// Option to read site temperature from SPDB.
+//
+// The temperature closest to the radar volume time will be read in.
+//
+//
+// Type: boolean
+//
+
+read_site_temp_from_spdb = TRUE;
+
+///////////// site_temp_spdb_url //////////////////////
+//
+// URL for temperatures from SPDB.
+//
+//
+// Type: string
+//
+
+// site_temp_spdb_url = "spdbp:://hail:0:pecan/spdb/KSMeso";
+site_temp_spdb_url = "spdbp:://hail:0:pecan/spdb/spol/temp";
+
+///////////// site_temp_station_name //////////////////
+//
+// Station name for site temperature.
+//
+//
+// Type: string
+//
+
+// site_temp_station_name = "LCRK";
+site_temp_station_name = "SPOL";
+
+///////////// site_temp_search_margin_secs ////////////
+//
+// Search margin when finding site temp data (secs).
+//
+// We search for the temperature closest in time to the radar volume. 
+//   This is the search margin on either side of the volume time.
+//
+//
+// Type: int
+//
+
+site_temp_search_margin_secs = 3600;
+
+//======================================================================
+//
+// RETRIEVING VERT POINTING RESULTS FROM SPDB.
+//
+//======================================================================
+ 
+///////////// read_vert_point_from_spdb ///////////////
+//
+// Option to read vert pointing results from SPDB.
+//
+// Vert pointing gives an independent estimate for ZDR correction.
+//
+//
+// Type: boolean
+//
+
+read_vert_point_from_spdb = TRUE;
+
+///////////// vert_point_spdb_url /////////////////////
+//
+// URL for vert pointing results in SPDB.
+//
+//
+// Type: string
+//
+
+vert_point_spdb_url = "spdbp:://hail:0:pecan/spdb/cal/zdr/vert";
+
+///////////// vert_point_radar_name ///////////////////
+//
+// Radar name for vert pointing results.
+//
+//
+// Type: string
+//
+
+vert_point_radar_name = "SPOL";
+
+///////////// vert_point_search_margin_secs ///////////
+//
+// Search margin when finding vert pointing results (secs).
+//
+// We search for the vert pointing result closest in time to the radar 
+//   volume. This is the search margin on either side of the volume time. 
+//   We average the results within this time period.
+//
+//
+// Type: int
+//
+
+vert_point_search_margin_secs = 10400;
+
+///////////// vert_point_min_valid_count //////////////
+//
+// Min number of observations for valid vertical pointing results.
+//
+// The vertical pointing results can only be trusted if there are 
+//   sufficient observational points.
+//
+//
+// Type: int
+//
+
+vert_point_min_valid_count = 5000;
+
+//======================================================================
+//
+// RETRIEVING SUNSCAN RESULTS FROM SPDB.
+//
+//======================================================================
+ 
+///////////// read_sunscan_from_spdb //////////////////
+//
+// Option to read sun scan results from SPDB.
+//
+// Sun scanning, when combined with the CP ratio, gives an independent 
+//   estimate for ZDR correction.
+//
+//
+// Type: boolean
+//
+
+read_sunscan_from_spdb = TRUE;
+
+///////////// sunscan_spdb_url ////////////////////////
+//
+// URL for sun scan results in SPDB.
+//
+//
+// Type: string
+//
+
+sunscan_spdb_url = "spdbp:://hail:0:pecan/spdb/spol/suncal/sband";
+
+///////////// sunscan_search_margin_secs //////////////
+//
+// Search margin when finding sun scan results (secs).
+//
+// We search for the sun scan result closest in time to the radar 
+//   volume. This is the search margin on either side of the volume time. 
+//   We average the results within this time period.
+//
+//
+// Type: int
+//
+
+sunscan_search_margin_secs = 10400;
+
+///////////// sunscan_min_valid_count /////////////////
+//
+// Min number of observations for valid sunscan results.
+//
+// The sunscan results can only be trusted if there are sufficient 
+//   observational points.
+//
+//
+// Type: int
+//
+
+sunscan_min_valid_count = 5000;
+

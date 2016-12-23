@@ -1,0 +1,11 @@
+#! /bin/csh
+
+cd $PROJ_DIR/ingest/params
+
+running "InputWatcher -params InputWatcher.mrms_conus_plus"
+
+if ($status == 1) then
+    InputWatcher -params InputWatcher.mrms_conus_plus -debug |& \
+	LogFilter -d $ERRORS_LOG_DIR -p InputWatcher -i mrms_conus_plus >& /dev/null &
+endif
+

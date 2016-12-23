@@ -1,0 +1,58 @@
+>>> LogFilter time stamp: 2014/12/14 00:00:00 <<<
+00:57:50 - Server has opened ServerSocket at port 5435.
+>>> LogFilter time stamp: 2014/12/14 01:00:00 <<<
+>>> LogFilter time stamp: 2014/12/14 02:00:00 <<<
+>>> LogFilter time stamp: 2014/12/14 03:00:00 <<<
+>>> LogFilter time stamp: 2014/12/14 04:00:00 <<<
+04:03:07 - DsSpdbServer -port 5441: no such process
+04:03:07 - Forked child, PID: 3567
+04:03:07 -   Now exec: 
+04:03:07 -   DsSpdbServer -port 5441 -instance manager -qmax -1
+04:03:07 - Rhi2Symprod -port 5473: no such process
+04:03:07 - Forked child, PID: 3588
+04:03:07 -   Now exec: 
+04:05:58 -   Rhi2Symprod -port 5473 -instance manager -qmax -1
+04:05:58 - NcMdvServer -port 5482: no such process
+04:05:58 - Forked child, PID: 3849
+04:07:20 -   Now exec: 
+04:07:20 -   NcMdvServer -port 5482 -instance manager -qmax -1
+04:07:20 - WARNING: DsServerMgr reaped child with pid: 3849 which had a BAD EXIT. 
+04:15:06 - NcMdvServer -port 5482: no such process
+04:15:06 - Forked child, PID: 4516
+04:15:06 -   Now exec: 
+04:15:06 -   NcMdvServer -port 5482 -instance manager -qmax -1
+04:16:07 - WARNING: DsServerMgr reaped child with pid: 4516 which had a BAD EXIT. 
+04:16:11 - NcMdvServer -port 5482: no such process
+04:16:11 - Forked child, PID: 4745
+04:17:17 -   Now exec: 
+04:17:17 -   NcMdvServer -port 5482 -instance manager -qmax -1
+04:17:17 - WARNING: DsServerMgr reaped child with pid: 4745 which had a BAD EXIT. 
+04:17:22 - NcMdvServer -port 5482: no such process
+04:17:22 - Forked child, PID: 5070
+04:17:22 -   Now exec: 
+04:20:43 -   NcMdvServer -port 5482 -instance manager -qmax -1
+04:20:43 - WARNING: DsServerMgr reaped child with pid: 5070 which had a BAD EXIT. 
+04:23:22 - DsMdvServer -port 5440: no such process
+04:23:22 - Forked child, PID: 5640
+04:23:22 -   Now exec: 
+04:28:00 -   DsMdvServer -port 5440 -instance manager -qmax -1
+04:28:00 - WARNING: DsServerMgr reaped child with pid: 5640 which had a BAD EXIT. 
+>>> LogFilter time stamp: 2014/12/14 05:00:00 <<<
+>>> LogFilter time stamp: 2014/12/14 06:00:00 <<<
+>>> LogFilter time stamp: 2014/12/14 07:00:00 <<<
+>>> LogFilter time stamp: 2014/12/14 08:00:00 <<<
+>>> LogFilter time stamp: 2014/12/14 09:00:00 <<<
+>>> LogFilter time stamp: 2014/12/14 10:00:00 <<<
+>>> LogFilter time stamp: 2014/12/14 11:00:00 <<<
+>>> LogFilter time stamp: 2014/12/14 12:00:00 <<<
+>>> LogFilter time stamp: 2014/12/14 13:00:00 <<<
+>>> LogFilter time stamp: 2014/12/14 14:00:00 <<<
+>>> LogFilter time stamp: 2014/12/14 15:00:00 <<<
+>>> LogFilter time stamp: 2014/12/14 16:00:00 <<<
+>>> LogFilter time stamp: 2014/12/14 17:00:00 <<<
+>>> LogFilter time stamp: 2014/12/14 18:00:00 <<<
+>>> LogFilter time stamp: 2014/12/14 19:00:00 <<<
+>>> LogFilter time stamp: 2014/12/14 20:00:00 <<<
+>>> LogFilter time stamp: 2014/12/14 21:00:00 <<<
+>>> LogFilter time stamp: 2014/12/14 22:00:00 <<<
+>>> LogFilter time stamp: 2014/12/14 23:00:00 <<<

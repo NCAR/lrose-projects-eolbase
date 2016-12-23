@@ -1,0 +1,66 @@
+#
+# Master copy in $PROJ_DIR/control/crontab
+# install by running $PROJ_DIR/system/scripts/install_crontab
+#
+####################################################################
+# SYSTEM
+#
+# Process restarters
+*/1 * * * *  csh -c "start_auto_restart_check_cron" 1> /dev/null 2> /dev/null
+*/1 * * * *  csh -c "start_procmap_check_cron"      1> /dev/null 2> /dev/null
+#
+# Build links to log date subdirs
+*/5 * * * *   csh -c "start_build_logdir_links" 1> /dev/null 2> /dev/null
+#
+####################################################################
+# DATA
+#
+# Get CSU Dual Doppler
+#*/1 * * * *  csh -c "run_get_csu_ddoppler_data"      1> /dev/null 2> /dev/null
+#
+# get weather camera images from FRONT
+#*/2 * * * * csh -c "sync_weather_cams" >/dev/null 2>&1
+#
+# HSRL thumbnails, data transfer, soundings
+#
+#1 0,12 * * * /usr/local/hsrl/bin/daily_thumbnails >/dev/null 2>&1
+#
+#@reboot /usr/local/hsrl/etc/sigshell /usr/local/hsrl/etc/start_cdfclient
+#10 6,18 * * * /usr/local/etc/hsrl/fetch_gv_sondes.py
+#
+# transfer weather station data from S-Pol
+#*/10 * * * *   csh -c "rsync_nidas.spol" 1> /dev/null 2> /dev/null
+####################################################################
+# RUN DIAL scripts
+#
+# WVDIAL scheduler cron entries
+# DIAL PROCESS(save_figure, save_data, save_netCDF, save_catalog, channel)
+# save (on=1, off=0), and channel (FF=standard channel, NF= wide field-of-view channel)
+# process and save only images every 15 min
+*/15 * * * * cd $HOME/projDir/dial/Matlab && ./DIAL_process 1 0 0 1 FF NCAR >/dev/null 2>&1
+*/16 * * * * cd $HOME/projDir/dial/Matlab && ./DIAL_process 1 0 0 1 NF NCAR >/dev/null 2>&1
+*/17 * * * * cd $HOME/projDir/dial/Matlab && ./DIAL_process 1 0 0 1 FF MSU  >/dev/null 2>&1
+#  process and save data at 6:10PM MST for full day
+10 18 * * * cd $HOME/projDir/dial/Matlab && ./DIAL_process 0 1 1 0 FF NCAR >/dev/null 2>&1
+11 18 * * * cd $HOME/projDir/dial/Matlab && ./DIAL_process 0 1 1 0 NF NCAR >/dev/null 2>&1
+12 18 * * * cd $HOME/projDir/dial/Matlab && ./DIAL_process 0 1 1 0 FF MSU  >/dev/null 2>&1
+#####################################################################
+#
+# unpack h2odata
+9  * * * *  /home/rsfdata/etc/unpack_h2o_archives.py 1>> /tmp/unpack_h2o.log 2>&1
+# verify h2odata is being transferred
+#
+# rsync dial data from field
+*/10 * * * * csh -c "run_rsync_dial_data" 1> /dev/null 2> /dev/null
+*/5  * * * * csh -c "run_rsync_hsrl_data" 1> /dev/null 2> /dev/null
+#
+# enable 2016/4/1 : Water Vapor dial is being tested in the EOL Parking lot
+# 15 * * * *  /home/rsfdata/etc/check_h2o_transfer.py 1>> /tmp/check_h2o_transfer.log 2&>1
+####################################################################
+# TRANSFER IMAGES FROM RAL WEATHER PAGE TO CATALOG
+#
+#*/10 * * * *   csh -c "retrieve_ral_products" 1> /dev/null 2> /dev/null
+####################################################################
+# TRANSFER HCR data into correct location
+#
+#*/10 * * * *  csh -c "rsync_cset_hcr_moments" 1> /dev/null 2> /dev/null

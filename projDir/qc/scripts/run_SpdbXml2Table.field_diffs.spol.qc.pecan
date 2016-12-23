@@ -1,0 +1,8 @@
+#! /bin/csh
+
+cd $PROJ_DIR/qc/params
+
+SpdbXml2Table -params SpdbXml2Table.field_diffs.spol.qc -start "2015 05 28 00 00 00" -end "2015 07 17 00 00 00" > ../data/pecan/field_diffs.spol.qc.txt
+
+
+

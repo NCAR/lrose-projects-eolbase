@@ -1,0 +1,21 @@
+#! /bin/csh
+
+#===========================================================================
+#
+# Create links from files to fortran units, for CEDRIC - ARCHIVE MODE
+#
+#===========================================================================
+
+# call with year, month, day, hour, min, sec
+
+make_cedric_links.archive.py --debug --radar_name kddc --link_name fort.11 --time "$1 $2 $3 $4 $5 $6"
+make_cedric_links.archive.py --debug --radar_name keax --link_name fort.12 --time "$1 $2 $3 $4 $5 $6"
+make_cedric_links.archive.py --debug --radar_name kgld --link_name fort.13 --time "$1 $2 $3 $4 $5 $6"
+make_cedric_links.archive.py --debug --radar_name kict --link_name fort.14 --time "$1 $2 $3 $4 $5 $6"
+make_cedric_links.archive.py --debug --radar_name kinx --link_name fort.15 --time "$1 $2 $3 $4 $5 $6"
+make_cedric_links.archive.py --debug --radar_name koax --link_name fort.16 --time "$1 $2 $3 $4 $5 $6"
+make_cedric_links.archive.py --debug --radar_name ktwx --link_name fort.17 --time "$1 $2 $3 $4 $5 $6"
+make_cedric_links.archive.py --debug --radar_name kuex --link_name fort.18 --time "$1 $2 $3 $4 $5 $6"
+make_cedric_links.archive.py --debug --radar_name kvnx --link_name fort.19 --time "$1 $2 $3 $4 $5 $6"
+make_cedric_links.archive.py --debug --radar_name spol --link_name fort.20 --time "$1 $2 $3 $4 $5 $6"
+make_cedric_links.archive.py --debug --radar_name klnx --link_name fort.21 --time "$1 $2 $3 $4 $5 $6"

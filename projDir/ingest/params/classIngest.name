@@ -1,0 +1,218 @@
+/**********************************************************************
+ * TDRP params for classIngest
+ **********************************************************************/
+
+//======================================================================
+//
+// classIngest reads sounding data files in NCAR CLASS format, and 
+//   writes them to an SPDB data base.
+//
+//======================================================================
+ 
+//======================================================================
+//
+// DEBUGGING AND PROCESS CONTROL.
+//
+//======================================================================
+ 
+///////////// debug ///////////////////////////////////
+//
+// Debug option.
+// If set, debug messages will be printed with the appropriate level of 
+//   detail.
+//
+// Type: enum
+// Options:
+//     DEBUG_OFF
+//     DEBUG_NORM
+//     DEBUG_VERBOSE
+//
+
+debug = DEBUG_OFF;
+
+///////////// instance ////////////////////////////////
+//
+// Process instance.
+// Used for registration with procmap.
+// Type: string
+//
+
+instance = "name";
+
+//======================================================================
+//
+// PROGRAM MODES OF OPERATION.
+//
+//======================================================================
+ 
+///////////// mode ////////////////////////////////////
+//
+// Operating mode.
+// In REALTIME mode, the program waits for a new input file. In this 
+//   mode it is optional to watch for a latest_data_info file. In ARCHIVE 
+//   mode, it processes all of the data files in the input directory 
+//   between the start and end times set on the command line. In FILELIST 
+//   mode, it processes all of the files in the list specified on the 
+//   command line. In FILELIST mode paths must be fully qualified with 
+//   respect to the date and time - so if each date has a separate 
+//   subdirectory the date part of the path must be included.
+//
+// Type: enum
+// Options:
+//     ARCHIVE
+//     REALTIME
+//     FILELIST
+//
+
+mode = ARCHIVE;
+
+//======================================================================
+//
+// DATA INPUT.
+//
+//======================================================================
+ 
+///////////// input_dir ///////////////////////////////
+//
+// Input directory.
+// Directory where input data files can be found.
+// Type: string
+//
+
+input_dir = "$(DATA_DIR)/name/raw/soundings/class";
+
+///////////// latest_data_info_avail //////////////////
+//
+// Set to true if there is a latest_data_info file available in the 
+//   input directory.
+// REALTIME mode only.
+// Type: boolean
+//
+
+latest_data_info_avail = FALSE;
+
+///////////// max_realtime_valid_age //////////////////
+//
+// Max valid age of rdata input files in realtime mode (secs).
+// This the max valid age for an incoming file. The program will wait 
+//   for a data file more recent than this age.
+// Minimum val: 1
+// Type: int
+//
+
+max_realtime_valid_age = 3600;
+
+///////////// strict_subdir_check /////////////////////
+//
+// When set, only checks input_dir for subdirs of the form YYYYMMDD.
+// Only in REALTIME mode with latest_data_info_avail FALSE.
+// Type: boolean
+//
+
+strict_subdir_check = FALSE;
+
+///////////// file_suffix /////////////////////////////
+//
+// Input file suffix or extension.
+// Input file suffixes will be checked against this string. Ignored if 
+//   empty. Should not include the period before the extension.
+// Type: string
+//
+
+file_suffix = "cls";
+
+///////////// file_match_string ///////////////////////
+//
+// Input filename match string.
+// Files must contain this string to be processed. Ignored if empty 
+//   string.
+// Type: string
+//
+
+file_match_string = "QC";
+
+///////////// dir_search_recursion_depth //////////////
+//
+// Depth of directories to search for files.
+// Only applies if latest_data_info_avail is FALSE.
+// Type: int
+//
+
+dir_search_recursion_depth = 3;
+
+///////////// latest_file_only ////////////////////////
+//
+// Only process the latest file found.
+// Applies on startup. If FALSE, all files younger than 
+//   max_realtime_valid_age will be processed.
+// Type: boolean
+//
+
+latest_file_only = TRUE;
+
+///////////// check_seconds ///////////////////////////
+//
+// File check frequency.
+// Number of seconds to wait before we check the input directory for a 
+//   new file again.
+// Type: long
+//
+
+check_seconds = 180;
+
+//======================================================================
+//
+// READING THE FILE.
+//
+//======================================================================
+ 
+///////////// take_siteID_from_file ///////////////////
+//
+// Option to take the site ID from the class file.
+// The default is to do this, from the line that reads :
+
+// Launch Site Type/Site ID
+
+// If this line is not numeric, this may result in the siteID
+// being 0 which is not desirable.
+// Type: boolean
+//
+
+take_siteID_from_file = FALSE;
+
+///////////// specified_siteID ////////////////////////
+//
+// siteID to use if take_siteID_from_file is FALSE.
+// This may be useful if the siteID from the.
+// Minimum val: 1
+// Type: int
+//
+
+specified_siteID = 1;
+
+//======================================================================
+//
+// SPDB OUTPUT.
+//
+//======================================================================
+ 
+///////////// spdb_urls ///////////////////////////////
+//
+// List of URLs for spdb output.
+// Example URL syntax spdbp:://$(HOST)::spdb/soundings/profiler.
+// Type: string
+// 1D array - variable length.
+//
+
+spdb_urls = { "spdbp:://localhost::name/spdb/soundings" };
+
+///////////// expire_secs /////////////////////////////
+//
+// Number of seconds before sounding data should considered expired.
+// This is an 'advisory number - it indicates to the data user how long 
+//   they can consider the sounding to be valid.
+// Type: long
+//
+
+expire_secs = 14400;
+

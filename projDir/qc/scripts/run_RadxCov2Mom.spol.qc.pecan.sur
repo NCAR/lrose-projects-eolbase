@@ -1,0 +1,6 @@
+#! /bin/csh
+
+run_RadxCov2Mom.spol.qc.pecan.sur.part1 &
+run_RadxCov2Mom.spol.qc.pecan.sur.part2 &
+run_RadxCov2Mom.spol.qc.pecan.sur.part3 &
+

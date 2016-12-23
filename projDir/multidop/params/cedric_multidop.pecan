@@ -1,0 +1,142 @@
+*-------*-------*-------*-------*-------*-------*-------*-------*-------*-------
+*       Do rudimentary synthesis and maybe QUIT; otherwise continue or restart
+*       with a READVOL of the synthesis output Fortran unit (SYNfort).
+*       Link outside Cedric execution
+*-------*-------*-------*-------*-------*-------*-------*-------*-------*-------
+COMMENT
+        -------------------------------------------------------------
+               SYNTHESIS OF RADIAL VELOCITIES WITH NO ADVECTION
+        1) NUMBER OF RADARS = 9
+        2) TWO EQUATION SOLUTION VERSUS THREE EQUATION SOLUTION
+           U3 = U2 + EWU*(W3+Vt)                                                        
+           V3 = V2 + EWV*(W3+Vt)
+           DTEST1-3: Constraints on acceptability of synthesized winds                                                 
+           (U2,V2)~(U3,V3) - acceptable if (EWU and EWV) .lt. DTEST1                                                   
+                     Larger DTEST1 ==> (U2,V2) approximations are                                                      
+                     acceptable to higher altitudes (steeper elevation                                                 
+                     angles)                                                                                           
+           (U2,V2) - acceptable if (USTD and VSTD) .lt. DTEST2                                                         
+                     HSTD=SQRT(USTD*USTD+VSTD*VSTD) proportional to                                                    
+                          angle between beams (dual-Doppler lobes)                                                     
+                     Larger DTEST2 ==> UV winds closer to the baseline                                                 
+           (W3)    - acceptable if (WSTD) .lt. DTEST3                                                                  
+        3) (U,V,W) STD = (500.0,500.0,500.0) Note: Use HSTD instead after SYN.                                         
+        4) TRANSFER RADIAL VELOCITY
+        --------------------------------------------------------------                                                 
+SYNTHES NSNVOL  NRADS   DTEST1  DTEST2  DTEST3  ITWOEQ  ITANAL  STMDIR  STMSPD                                         
+        LUNIT   NAMVOL  IBEGTM  IENDTM  IREWND  NAMVEL  IADTYP  NAMTIM  NADFSW                                         
+        INPUT   NAMINP1 NAMINP2 NAMINP3 NAMINP4 NAMINP5                                                                
+        OUTPUT  NAMOUT1 NAMOUT2 NAMOUT3 NAMOUT4 NAMOUT5                                                                
+END                                                                                                                    
+P_______P_______P_______P_______P_______P_______P_______P_______P_______P_______                                       
+1_______2_______3_______4_______5_______6_______7_______8_______9_______10______                                       
+COMEND                                                                                                                 
+*-------*-------*-------*-------*-------*-------*-------*-------*-------*-------
+*       VALUE   SET: Changes dummy parameters in the SYNTHES command
+*-------*-------*-------*-------*-------*-------*-------*-------*-------*-------
+VALUE   ON
+*       SYNTHES command parameters:
+VALUE   SET     NSNVOL  to      SYNtest
+VALUE   SET     ITWOEQ  to      NO
+VALUE   SET     VEL_inp to      VEL
+*       SYNTHES interpolated data inputs
+VALUE   SET     UNkddc  to      11.0
+VALUE   SET     UNkeax  to      12.0
+VALUE   SET     UNkgld  to      13.0
+VALUE   SET     UNkict  to      14.0
+VALUE   SET     UNkinx  to      15.0
+VALUE   SET     UNkoax  to      16.0
+VALUE   SET     UNktwx  to      17.0
+VALUE   SET     UNkuex  to      18.0
+VALUE   SET     UNkvnx  to      19.0
+VALUE   SET     UNklnx  to      20.0
+VALUE   SET     UNspol  to      21.0
+*       NUMBER of input radars
+VALUE   SET     NRADS   to      10.0
+*-------*-------*-------*-------*-------*-------*-------*-------*-------*-------
+*YNTHES SYNtime NRADS   DTEST1  DTEST2  DTEST3  ITWOEQ  ANLtime STMDIR  STMSPD
+*       RadIn-1 NEXT                    YES     VelIn-1 ADVtyp  TIME    YES
+*-------*-------*-------*-------*-------*-------*-------*-------*-------*-------
+SYNTHES NSNVOL  NRADS   500.0   500.0   500.0   NO
+*  KDDC:
+        UNkddc  NEXT    000000. 240000. YES     VEL_inp                 YES
+        INPUT   VEL_inp
+        OUTPUT  VEL_kddc
+*  KEAX:
+        UNkeax  NEXT    000000. 240000. YES     VEL_inp                 YES
+        INPUT   VEL_inp
+        OUTPUT  VEL_keax
+*  KGLD:  
+        UNkgld  NEXT    000000. 240000. YES     VEL_inp                 YES
+        INPUT   VEL_inp
+        OUTPUT  VEL_kgld
+*  KICT:
+        UNkict  NEXT    000000. 240000. YES     VEL_inp                 YES
+        INPUT   VEL_inp
+        OUTPUT  VEL_kict
+*  KINX:
+        UNkinx  NEXT    000000. 240000. YES     VEL_inp                 YES
+        INPUT   VEL_inp
+        OUTPUT  VEL_kinx
+*  KOAX:
+        UNkoax  NEXT    000000. 240000. YES     VEL_inp                 YES
+        INPUT   VEL_inp
+        OUTPUT  VEL_koax
+*  KTWX:
+        UNktwx  NEXT    000000. 240000. YES     VEL_inp                 YES
+        INPUT   VEL_inp
+        OUTPUT  VEL_ktwx
+*  KUEX:
+        UNkuex  NEXT    000000. 240000. YES     VEL_inp                 YES
+        INPUT   VEL_inp
+        OUTPUT  VEL_kuex
+*  KVNX:
+        UNkvnx  NEXT    000000. 240000. YES     VEL_inp                 YES
+        INPUT   VEL_inp
+        OUTPUT  VEL_kvnx
+*  KLNX:
+        UNklnx  NEXT    000000. 240000. YES     VEL_inp                 YES
+        INPUT   VEL_inp
+        OUTPUT  VEL_klnx
+*  SPOL:
+*        UNspol  NEXT    000000. 240000. YES     VEL_inp                 YES
+*        INPUT   VEL_inp
+*        OUTPUT  VEL_spol
+END                                                                                                                    
+STATS   PRINT   Z       1.0     ALL     BOTH                            FULL
+DELETE  EWU     EWV     MPE
+DELETE  W       WSTD
+*-------*-------*-------*-------*-------*-------*-------*-------*-------*-------
+*       HSTD - proportional to the angle between dual-Doppler radar beams       
+*-------*-------*-------*-------*-------*-------*-------*-------*-------*-------
+FUNCTIONNAME    1.0                                                     FULL
+        HSTD    P       SQ+SQ   USTD    VSTD
+        HSTD    P       SQRT    HSTD
+END
+DELETE  USTD    VSTD
+FUNCTIONNAME    1.0                                                     FULL
+        NmbRads P       BITCOUNTCT
+END
+DELETE  CT
+*-------*-------*-------*-------*-------*-------*-------*-------*-------*-------
+*       FUNCTIONS:
+*                 1. Do some editing of the derived winds
+*                    a. (U,V) if SPEED < 60.0
+*                    b. (U,V) if HSTD < 3.0
+*                 2. Derive vertical component of vorticity (VORZ)
+*                    and horizontal convergence (CONV).
+*-------*-------*-------*-------*-------*-------*-------*-------*-------*-------
+FUNCTIONNAME    1.0                                                     FULL
+        UVSQ    T       SQ+SQ   U       V
+        SPEED   P       SQRT    UVSQ                                  
+        U       P       ONLYIFC>U       SPEED   60.0
+        V       P       ONLYIFC>V       SPEED   60.0
+        U       P       ONLYIFC>U       HSTD    3.0
+        V       P       ONLYIFC>V       HSTD    3.0
+        VORZ    P       DDI-DDJ V       U       1.0     1.0
+        CONV    P       DDI+DDJ U       V       1.0     1.0 
+END
+STATS   PRINT   Z       1.0     ALL     BOTH                            FULL
+WRITVOL 90.0            SYNTH   BEG
+QUIT
+*-------*-------*-------*-------*-------*-------*-------*-------*-------*-------

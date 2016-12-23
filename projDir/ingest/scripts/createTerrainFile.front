@@ -1,0 +1,5 @@
+#! /bin/csh
+
+# make a 0.01 deg latlon terrain grid for FRONT area
+
+WorldTerrain /scr/sci/rsfdata/terrain/DEM/compressed 35 -110 1200 1000 0.01 0.01 $DATA_DIR/pecan/mdv/terrain/front_terrain.mdv

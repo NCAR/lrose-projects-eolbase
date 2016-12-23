@@ -1,0 +1,79 @@
+>>> LogFilter time stamp: 2015/01/12 00:00:00 <<<
+>>> LogFilter time stamp: 2015/01/12 01:00:00 <<<
+>>> LogFilter time stamp: 2015/01/12 02:00:00 <<<
+>>> LogFilter time stamp: 2015/01/12 03:00:00 <<<
+>>> LogFilter time stamp: 2015/01/12 04:00:00 <<<
+>>> LogFilter time stamp: 2015/01/12 05:00:00 <<<
+>>> LogFilter time stamp: 2015/01/12 06:00:00 <<<
+>>> LogFilter time stamp: 2015/01/12 07:00:00 <<<
+>>> LogFilter time stamp: 2015/01/12 08:00:00 <<<
+>>> LogFilter time stamp: 2015/01/12 09:00:00 <<<
+>>> LogFilter time stamp: 2015/01/12 10:00:00 <<<
+>>> LogFilter time stamp: 2015/01/12 11:00:00 <<<
+>>> LogFilter time stamp: 2015/01/12 12:00:00 <<<
+>>> LogFilter time stamp: 2015/01/12 13:00:00 <<<
+>>> LogFilter time stamp: 2015/01/12 14:00:00 <<<
+>>> LogFilter time stamp: 2015/01/12 15:00:00 <<<
+>>> LogFilter time stamp: 2015/01/12 16:00:00 <<<
+>>> LogFilter time stamp: 2015/01/12 17:00:00 <<<
+>>> LogFilter time stamp: 2015/01/12 18:00:00 <<<
+>>> LogFilter time stamp: 2015/01/12 19:00:00 <<<
+>>> LogFilter time stamp: 2015/01/12 20:00:00 <<<
+>>> LogFilter time stamp: 2015/01/12 21:00:00 <<<
+21:28:57 - NcMdvServer -port 5482: no such process
+21:28:57 - Forked child, PID: 23682
+21:30:19 -   Now exec: 
+21:30:19 -   NcMdvServer -port 5482 -instance manager -qmax -1
+21:30:19 - WARNING: DsServerMgr reaped child with pid: 23682 which had a BAD EXIT. 
+21:30:23 - NcMdvServer -port 5482: no such process
+21:30:23 - Forked child, PID: 24876
+21:30:23 -   Now exec: 
+21:32:58 -   NcMdvServer -port 5482 -instance manager -qmax -1
+21:32:58 - WARNING: DsServerMgr reaped child with pid: 24876 which had a BAD EXIT. 
+21:33:00 - NcMdvServer -port 5482: no such process
+21:33:00 - Forked child, PID: 25120
+21:33:00 -   Now exec: 
+21:37:56 -   NcMdvServer -port 5482 -instance manager -qmax -1
+21:37:56 - WARNING: DsServerMgr reaped child with pid: 25120 which had a BAD EXIT. 
+>>> LogFilter time stamp: 2015/01/12 22:00:00 <<<
+22:07:46 - NcMdvServer -port 5482: no such process
+22:07:46 - Forked child, PID: 28747
+22:07:46 -   Now exec: 
+22:08:22 -   NcMdvServer -port 5482 -instance manager -qmax -1
+22:08:22 - WARNING: DsServerMgr reaped child with pid: 28747 which had a BAD EXIT. 
+22:17:29 - NcMdvServer -port 5482: no such process
+22:17:29 - Forked child, PID: 29374
+22:18:04 -   Now exec: 
+22:18:04 -   NcMdvServer -port 5482 -instance manager -qmax -1
+22:18:04 - WARNING: DsServerMgr reaped child with pid: 29374 which had a BAD EXIT. 
+22:18:06 - NcMdvServer -port 5482: no such process
+22:18:06 - Forked child, PID: 29563
+22:18:06 -   Now exec: 
+22:22:28 -   NcMdvServer -port 5482 -instance manager -qmax -1
+22:22:28 - WARNING: DsServerMgr reaped child with pid: 29563 which had a BAD EXIT. 
+22:22:30 - NcMdvServer -port 5482: no such process
+22:22:30 - Forked child, PID: 29815
+22:23:52 -   Now exec: 
+22:23:52 -   NcMdvServer -port 5482 -instance manager -qmax -1
+22:23:52 - WARNING: DsServerMgr reaped child with pid: 29815 which had a BAD EXIT. 
+22:23:55 - NcMdvServer -port 5482: no such process
+22:23:55 - Forked child, PID: 30015
+22:23:55 -   Now exec: 
+22:25:32 -   NcMdvServer -port 5482 -instance manager -qmax -1
+22:25:32 - WARNING: DsServerMgr reaped child with pid: 30015 which had a BAD EXIT. 
+22:25:34 - NcMdvServer -port 5482: no such process
+22:25:34 - Forked child, PID: 30613
+22:27:10 -   Now exec: 
+22:27:10 -   NcMdvServer -port 5482 -instance manager -qmax -1
+22:27:10 - WARNING: DsServerMgr reaped child with pid: 30613 which had a BAD EXIT. 
+22:27:12 - NcMdvServer -port 5482: no such process
+22:27:12 - Forked child, PID: 30814
+22:27:12 -   Now exec: 
+22:49:29 -   NcMdvServer -port 5482 -instance manager -qmax -1
+22:49:29 - WARNING: DsServerMgr reaped child with pid: 30814 which had a BAD EXIT. 
+22:49:38 - NcMdvServer -port 5482: no such process
+22:49:38 - Forked child, PID: 31989
+22:49:38 -   Now exec: 
+22:49:38 -   NcMdvServer -port 5482 -instance manager -qmax -1
+22:55:45 - WARNING: DsServerMgr reaped child with pid: 31989 which had a BAD EXIT. 
+>>> LogFilter time stamp: 2015/01/12 23:00:00 <<<

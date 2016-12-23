@@ -1,0 +1,19 @@
+#! /bin/csh
+
+#setenv DATA_HOST front.eol.ucar.edu
+
+setenv PROJ_DIR ~/projDir
+if (-e /opt/local/front/projDir) then
+  setenv PROJ_DIR  /opt/local/front/projDir
+endif
+
+set_font_path >& /dev/null
+xrdb -nocpp $PROJ_DIR/display/params/XResources4CIDD
+
+cd $PROJ_DIR/display/params
+
+SpectraPlot -params SpectraPlot.spol >& /dev/null &
+
+
+
+
