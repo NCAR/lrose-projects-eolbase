@@ -1,5 +1,5 @@
 #########################################
-# .cshrc file for HAWK system
+# .cshrc file for LROSE EOLBASE project
 #########################################
 
 if ( $?prompt ) then
@@ -15,36 +15,11 @@ set autologout=0
 
 umask 002
 setenv TAPE /dev/st0
-setenv PRINTER color.gate.rtf
+setenv PRINTER nwcolor
 
 # Set the build environment
 
 setenv LANG C
-
-if ( -f $HOME/.build_env ) then
-  # file created by sourcing set_build_env
-  source $HOME/.build_env
-else if ( -f $HOME/.hawk_build_env ) then
-  # file created by sourcing set_build_env
-  source $HOME/.hawk_build_env
-else
-  setenv HOST_OS LINUX
-  setenv BUILD_DIR $HOME/cvs
-  setenv RAP_MAKE_INC_DIR $BUILD_DIR/make_include
-  setenv RAP_MAKE_BIN_DIR $BUILD_DIR/make_bin
-  setenv RAP_INC_DIR $BUILD_DIR/include
-  setenv RAP_LIB_DIR $BUILD_DIR/lib
-  setenv RAP_SHARED_LIB_DIR $BUILD_DIR/lib
-  setenv RAP_BIN_DIR $BUILD_DIR/bin
-  setenv RAP_MAN_DIR $BUILD_DIR/man
-  setenv RAP_DOC_DIR $BUILD_DIR/doc
-endif
-
-setenv RAP_SHARED_INC_DIR $RAP_INC_DIR
-setenv RAP_SHARED_LIB_DIR $RAP_LIB_DIR
-setenv RAP_SHARED_BIN_DIR $RAP_BIN_DIR
-
-setenv KADIR "~/src/ka"
 
 # Note: options for HOST_OS environment variable are
 #  LINUX
@@ -52,6 +27,24 @@ setenv KADIR "~/src/ka"
 #  LINUX_64_32MODE
 #  DARWIN
 #  CYGWIN
+
+setenv HOST_OS LINUX_64
+
+setenv LROSE_CORE_DIR $HOME/git/lrose-core
+setenv LROSE_INSTALL_DIR $HOME/lrose
+
+setenv RAP_MAKE_INC_DIR $LROSE_CORE_DIR/codebase/make_include
+setenv RAP_MAKE_BIN_DIR $LROSE_CORE_DIR/codebase/make_bin
+
+setenv RAP_INC_DIR $LROSE_INSTALL_DIR/include
+setenv RAP_LIB_DIR $LROSE_INSTALL_DIR/lib
+setenv RAP_BIN_DIR $LROSE_INSTALL_DIR/bin
+setenv RAP_MAN_DIR $LROSE_INSTALL_DIR/man
+setenv RAP_DOC_DIR $LROSE_INSTALL_DIR/doc
+
+setenv RAP_SHARED_INC_DIR $RAP_INC_DIR
+setenv RAP_SHARED_LIB_DIR $RAP_LIB_DIR
+setenv RAP_SHARED_BIN_DIR $RAP_BIN_DIR
 
 # CVS
 
@@ -62,17 +55,12 @@ setenv CVSROOT :pserver:${CVSUSER}@localhost:/cvs
 
 setenv QTDIR /usr/lib/qt4
 
-setenv RVP8_INC_DIR $RAP_INC_DIR
-setenv RVP8_LIB_DIR $RAP_LIB_DIR
-setenv RVP8_BIN_DIR $RAP_BIN_DIR
-setenv REFR_BIN_DIR $RAP_BIN_DIR
-
 setenv FC gfortran
 setenv GCC_WARNINGS -Wall
 
 # --- LD library path --
 
-setenv LD_LIBRARY_PATH $QTDIR/lib:/usr/local/lib:$HOME/cvs/lib64:$BUILD_DIR/lib:/usr/lib64/mpich2/lib
+setenv LD_LIBRARY_PATH $QTDIR/lib:/usr/local/lib:$LROSE_INSTALL_DIR/lib
 
 # --- NCAR GRAPHICS ---
 
@@ -82,16 +70,19 @@ setenv NCARG_ROOT /usr/local/ncarg
 
 setenv JAVA_HOME /usr/java/latest
 setenv ANT_HOME /usr/local/ant
-setenv RAP_JAR_DIR $BUILD_DIR/java/dist/lib
+setenv RAP_JAR_DIR $LROSE_INSTALL_DIR/java/dist/lib
 
 # --- RUNTIME ---
 
-setenv DATA_HOST eldora.eol.ucar.edu
 setenv PROJ_DIR $HOME/projDir
 setenv TITAN_HOME $PROJ_DIR
+
+setenv DATA_HOST localhost
 setenv DATA_DIR $PROJ_DIR/data
 setenv RAP_DATA_DIR $DATA_DIR
+
 setenv TMP_DIR $DATA_DIR/tmp
+
 setenv LOG_DIR $DATA_DIR/logs
 setenv DATA_DISTRIB_LOG_DIR $LOG_DIR/distrib
 setenv ERRORS_LOG_DIR $LOG_DIR/errors
@@ -104,28 +95,27 @@ setenv LDATA_FMQ_ACTIVE true
 setenv DS_COMM_TIMEOUT_MSECS 60000
 setenv DS_PING_TIMEOUT_MSECS 20000
 
-setenv PAPER_SIZE 500x700+60+60
-
 setenv MDV_WRITE_FORMAT FORMAT_NCF
 setenv MDV_WRITE_USING_EXTENDED_PATHS TRUE
 setenv MDV2NETCDF_WRITE_LATLON_ARRAYS FALSE
 
-# --- site info --- 
+# --- project info --- 
 
-if (-f $PROJ_DIR/system/params/site_info) then
-  source $PROJ_DIR/system/params/site_info
+if (-f $PROJ_DIR/system/params/project_info) then
+  source $PROJ_DIR/system/params/project_info
 endif
 
 # python
 
-setenv PYTHONPATH ~/anaconda/pkgs
+setenv PYTHONPATH ~/anaconda2/pkgs
 
 # --- Path ---
 
 # Assemble path to include all scripts directories
-# then projDir/bin, then the rest
+# then install dir, then the rest
 
 set path = (.)
+
 if ( -d $PROJ_DIR ) then
   foreach dir ($PROJ_DIR/*)
     if (-d $dir/scripts) then
@@ -134,21 +124,9 @@ if ( -d $PROJ_DIR ) then
   end
 endif
 
-if ($?BUILD_DIR) then
-  if ( -d $BUILD_DIR/bin64 ) then
-    set path = ($path $BUILD_DIR/bin64)
-  endif
-  if ( -d $BUILD_DIR/bin32 ) then
-    set path = ($path $BUILD_DIR/bin32)
-  endif
-  if ( -d $BUILD_DIR/bin ) then
-    set path = ($path $BUILD_DIR/bin)
-  endif
-endif
+set path = ($path $LROSE_INSTALL_DIR/bin)
 
 set path = ($path $PROJ_DIR/dial/Matlab)
-
-set savehist=0
 
 set path = ($path ~/bin $QTDIR/bin \
         ~/anaconda/bin \
@@ -162,6 +140,10 @@ set path = ($path ~/bin $QTDIR/bin \
 
 # -- core files --
 # unlimit coredumpsize
+
+# history
+
+set savehist=0
 
 # --- Aliases ---
 
@@ -246,15 +228,15 @@ if ($?prompt) then
   alias pgen1_data 'cd /scr/pgen1'
   alias pgen2_data 'cd /scr/pgen2'
 
-  alias spol 'ssh -p 20022 -a -C -XY spol@spol.dyndns.org'
-  alias control1 'ssh -a -x -C -Y -R 2401:localhost:2401 control1'
-  alias control2 'ssh -a -x -C -Y -R 2401:localhost:2401 control2'
-  alias mgen1 'ssh -a -x -C -Y -R 2401:localhost:2401 mgen1'
-  alias mgen2 'ssh -a -x -C -Y -R 2401:localhost:2401 mgen2'
-  alias pgen1 'ssh -a -x -C -Y -R 2401:localhost:2401 pgen1'
-  alias pgen2 'ssh -a -x -C -Y -R 2401:localhost:2401 pgen2'
-  alias scratch1 'ssh -a -x -C -Y -R 2401:localhost:2401 scratch1'
-  alias rvp8 'ssh -a -x -C -Y -R 2401:localhost:2401 operator@rvp8'
+#  alias spol 'ssh -p 20022 -a -C -XY spol@spol.dyndns.org'
+#  alias control1 'ssh -a -x -C -Y -R 2401:localhost:2401 control1'
+#  alias control2 'ssh -a -x -C -Y -R 2401:localhost:2401 control2'
+#  alias mgen1 'ssh -a -x -C -Y -R 2401:localhost:2401 mgen1'
+#  alias mgen2 'ssh -a -x -C -Y -R 2401:localhost:2401 mgen2'
+#  alias pgen1 'ssh -a -x -C -Y -R 2401:localhost:2401 pgen1'
+#  alias pgen2 'ssh -a -x -C -Y -R 2401:localhost:2401 pgen2'
+#  alias scratch1 'ssh -a -x -C -Y -R 2401:localhost:2401 scratch1'
+#  alias rvp8 'ssh -a -x -C -Y -R 2401:localhost:2401 operator@rvp8'
 
 # save to dvd
 
