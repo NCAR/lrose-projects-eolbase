@@ -203,7 +203,12 @@ if ($?prompt) then
   alias cvsin 'ssh -a -x -C -L 2401:cvs:2401'
   alias cvsout 'ssh -a -x -C -R 2401:cvs:2401'
   
-  alias gitstat 'git status -uno'
+  alias gstat 'git status'
+  alias gcom 'git commit -am \!*'
+  alias gpush 'git push'
+  alias gpull 'git pull'
+  alias gdiff 'git diff '
+  alias gdt 'git difftool -g -y '
 
   alias gate 'ssh -a -XY -C -L 2401:cvs.rap.ucar.edu:2401 -L 8888:svn.eol.ucar.edu:80 dixon@gate.ucar.edu'
 

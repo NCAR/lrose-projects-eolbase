@@ -32,7 +32,9 @@ Fmq2Fmq relay.moments.sband  start_inst(ingest)      snuff_inst
 ######################################################################
 # Base observations ingest - from LDM
 #
-#InputWatcher       mrms_conus_plus    start_inst(ingest)  snuff_inst 
+InputWatcher        mrms_conus_plus    start_inst(ingest)  snuff_inst 
+MrmsGribIngest      snowie             start_inst(ingest)  snuff_inst 
+MdvConvert          mrms_comp_snowie   start_inst(ingest)  snuff_inst
 #Metar2Spdb         ops                start_inst(ingest)  snuff_inst 
 #LdmDynamic2Static  metar              start_inst(ingest)  snuff_inst
 #LdmDynamic2Static  sounding           start_inst(ingest)  snuff_inst
