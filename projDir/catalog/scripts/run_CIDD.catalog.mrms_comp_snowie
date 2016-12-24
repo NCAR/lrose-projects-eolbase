@@ -40,8 +40,8 @@ setenv ORIGIN_LON -100.0
 
 setenv MINX -120
 setenv MAXX -109
-setenv MINY  30
-setenv MAXY  40
+setenv MINY  40
+setenv MAXY  50
 
 cd $PROJ_DIR/catalog/params
 CIDD -p CIDD.catalog.mrms_comp_snowie -i mrms_mosaic.web.normal -fn fixed -v 2
@@ -72,8 +72,8 @@ setenv ORIGIN_LON -100.0
 
 setenv MINX -120
 setenv MAXX -109
-setenv MINY  30
-setenv MAXY  40
+setenv MINY  40
+setenv MAXY  50
 
 cd $PROJ_DIR/catalog/params
 CIDD -p CIDD.catalog.mrms_comp_snowie -i mrms_mosaic.web.transparent -fn fixed -v 2
