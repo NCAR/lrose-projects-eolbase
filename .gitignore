@@ -15,3 +15,6 @@ Entries.static
 
 projDir/data
 
+projDir/control/crontab
+projDir/control/proc_list
+projDir/system/params/project_info
