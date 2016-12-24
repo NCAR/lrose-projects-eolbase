@@ -162,10 +162,11 @@ MdvConvert          mrms_comp_snowie   start_inst(ingest)  snuff_inst
 ######################################################################
 # Images to catalog
 #
-#LdataMultWatcher   catalog.nexrad     start_inst(catalog) snuff_inst
-#LdataMultWatcher   catalog.mosaics    start_inst(catalog) snuff_inst
-#LdataMultWatcher   catalog.spol       start_inst(catalog) snuff_inst
-#LdataWatcher       catalog.images     start_inst(catalog) snuff_inst
-#LdataMultWatcher   catalog.dow        start_inst(catalog) snuff_inst
-#LdataWatcher       catalog.dow_images start_inst(catalog) snuff_inst
+LdataMultWatcher    catalog.mrms_comp_snowie start_inst(catalog) snuff_inst
+#LdataMultWatcher   catalog.nexrad           start_inst(catalog) snuff_inst
+#LdataMultWatcher   catalog.mosaics          start_inst(catalog) snuff_inst
+#LdataMultWatcher   catalog.spol             start_inst(catalog) snuff_inst
+#LdataWatcher       catalog.images           start_inst(catalog) snuff_inst
+#LdataMultWatcher   catalog.dow              start_inst(catalog) snuff_inst
+#LdataWatcher       catalog.dow_images       start_inst(catalog) snuff_inst
 ######################################################################
