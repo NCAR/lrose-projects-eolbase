@@ -139,7 +139,7 @@ data_sets = {
     call_late_data_script = FALSE,
     late_data_script_name = "test_script",
     late_data_secs = 3600,
-    trailing_args = "--radar_name,dow6,--min_fixed_angle,0.25,--max_fixed_angle,2.25,--max_range_km,90.0"
+    trailing_args = "--radar_name,dow6,--min_fixed_angle,0.25,--max_fixed_angle,2.25,--max_range_km,60.0"
   }
   ,
   {
@@ -149,7 +149,7 @@ data_sets = {
     call_late_data_script = FALSE,
     late_data_script_name = "test_script",
     late_data_secs = 3600,
-    trailing_args = "--radar_name,dow7,--min_fixed_angle,0.25,--max_fixed_angle,2.25,--max_range_km,90.0"
+    trailing_args = "--radar_name,dow7,--min_fixed_angle,0.25,--max_fixed_angle,2.25,--max_range_km,60.0"
   }
   // ,
   // {
