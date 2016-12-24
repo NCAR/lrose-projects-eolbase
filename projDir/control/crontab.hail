@@ -1,9 +1,11 @@
 ######################################################################
-# PECAN - on hail
+# EOL BASE crontab - on hail
 #
 #
-# >>>>> DO NOT  edit with crontab -e
-# master copy is ~/cvs/projects/hawk/front/projDir/control/crontab
+####################################################################
+# ============= DO NOT  edit with crontab -e  ======================
+# master copy is:
+#   github.com/NCAR/lrose-projects-eolbase/projDir/control/crontab
 # install with install_crontab
 ####################################################################
 # SYSTEM
@@ -16,7 +18,7 @@
 */5 * * * *   csh -c "start_build_logdir_links" 1> /dev/null 2> /dev/null
 #
 ####################################################################
-# BACK UP PECAN DATA TO ELDORA
+# BACK UP DATA TO ELDORA
 #
 #*/5 * * * *   csh -c "rsync_pecan_to_eldora" 1> /dev/null 2> /dev/null
 #

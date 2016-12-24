@@ -1,11 +1,10 @@
 ######################################################################
-# PECAN - on hail
+# EOLBASE - on hail
 #
 ######################################################################
 # SYSTEM processes
 #
 Janitor           logs     start_Janitor.logs        snuff_inst
-#Janitor           raw      start_Janitor.raw         snuff_inst
 Scout             primary  start_Scout               kill_Scout
 DataMapper        primary  start_DataMapper          kill_DataMapper
 #
@@ -28,8 +27,38 @@ Tstorms2Symprod   manager  start_inst(no-params)     snuff_inst
 ######################################################################
 # moments FMQ relay from SPOL
 #
-# Fmq2Fmq relay.moments.sband  start_inst(ingest)      snuff_inst
+Fmq2Fmq relay.moments.sband  start_inst(ingest)      snuff_inst
 #
+######################################################################
+# Base observations ingest - from LDM
+#
+InputWatcher        mrms_conus_plus    start_inst(ingest)  snuff_inst 
+MrmsGribIngest      snowie             start_inst(ingest)  snuff_inst 
+MdvConvert          mrms_comp_snowie   start_inst(ingest)  snuff_inst
+#Metar2Spdb         ops                start_inst(ingest)  snuff_inst 
+#LdmDynamic2Static  metar              start_inst(ingest)  snuff_inst
+#LdmDynamic2Static  sounding           start_inst(ingest)  snuff_inst
+#madis2Spdb         ops                start_inst(ingest)  snuff_inst 
+#KSMesonet2Spdb     ops                start_inst(ingest)  snuff_inst 
+#NWSsoundingIngest  ops                start_inst(ingest)  snuff_inst 
+#InputWatcher       mesonet1           start_inst(ingest)  snuff_inst 
+#InputWatcher       KSMeso             start_inst(ingest)  snuff_inst 
+#MrmsGribIngest     ops                start_inst(ingest)  snuff_inst 
+#MdvConvert         mrms_comp          start_inst(ingest)  snuff_inst
+#InputWatcher       ruc                start_inst(ingest)  snuff_inst 
+#Grib2toMdv         ruc                start_inst(ingest)  snuff_inst 
+#Mdv2SoundingSpdb   ruc                start_inst(ingest)  snuff_inst
+#NcGeneric2Mdv      sat_1km            start_inst(ingest)  snuff_inst 
+#NcGeneric2Mdv      sat_4km            start_inst(ingest)  snuff_inst 
+#Ltg2Spdb           nldn               start_inst(ingest)  snuff_inst
+#LtgSpdb2Mdv        nldn               start_inst(ingest)  snuff_inst
+#NcarAcPosn2Spdb    ops                start_inst(ingest)  snuff_inst
+#NcarAcPosn2Spdb    mobile             start_inst(ingest)  snuff_inst
+#
+######################################################################
+# Interpolate surface data
+#
+#SurfInterp         ops                start_inst(alg)     snuff_inst
 ######################################################################
 #
 # NEXRAD file ingest - from LDM
@@ -54,40 +83,13 @@ Tstorms2Symprod   manager  start_inst(no-params)     snuff_inst
 #RadxConvert  kuex    start_RadxConvert.kuex   snuff_inst
 #RadxConvert  kvnx    start_RadxConvert.kvnx   snuff_inst
 #
-# for OLYMPEX
+######################################################################
+# NEXRAD ingest for OLYMPEX
 #
 #DsFileDist   olympex start_inst(system)       snuff_inst
 #RadxConvert  katx    start_RadxConvert.katx   snuff_inst
 #RadxConvert  klgx    start_RadxConvert.klgx   snuff_inst
 #
-######################################################################
-# Observations ingest - from LDM
-#
-#LdmDynamic2Static  metar              start_inst(ingest)  snuff_inst
-#LdmDynamic2Static  sounding           start_inst(ingest)  snuff_inst
-#Metar2Spdb         ops                start_inst(ingest)  snuff_inst 
-#madis2Spdb         ops                start_inst(ingest)  snuff_inst 
-#KSMesonet2Spdb     ops                start_inst(ingest)  snuff_inst 
-#NWSsoundingIngest  ops                start_inst(ingest)  snuff_inst 
-#InputWatcher       mesonet1           start_inst(ingest)  snuff_inst 
-#InputWatcher       KSMeso             start_inst(ingest)  snuff_inst 
-#InputWatcher       mrms_conus_plus    start_inst(ingest)  snuff_inst 
-#MrmsGribIngest     ops                start_inst(ingest)  snuff_inst 
-#MdvConvert         mrms_comp          start_inst(ingest)  snuff_inst
-#InputWatcher       ruc                start_inst(ingest)  snuff_inst 
-#Grib2toMdv         ruc                start_inst(ingest)  snuff_inst 
-#Mdv2SoundingSpdb   ruc                start_inst(ingest)  snuff_inst
-#NcGeneric2Mdv      sat_1km            start_inst(ingest)  snuff_inst 
-#NcGeneric2Mdv      sat_4km            start_inst(ingest)  snuff_inst 
-#Ltg2Spdb           nldn               start_inst(ingest)  snuff_inst
-#LtgSpdb2Mdv        nldn               start_inst(ingest)  snuff_inst
-#NcarAcPosn2Spdb    ops                start_inst(ingest)  snuff_inst
-#NcarAcPosn2Spdb    mobile             start_inst(ingest)  snuff_inst
-#
-######################################################################
-# Interpolate surface data
-#
-#SurfInterp         ops                start_inst(alg)     snuff_inst
 ######################################################################
 # Convective/stratiform partitioning
 #
@@ -160,10 +162,11 @@ Tstorms2Symprod   manager  start_inst(no-params)     snuff_inst
 ######################################################################
 # Images to catalog
 #
-#LdataMultWatcher   catalog.nexrad     start_inst(catalog) snuff_inst
-#LdataMultWatcher   catalog.mosaics    start_inst(catalog) snuff_inst
-#LdataMultWatcher   catalog.spol       start_inst(catalog) snuff_inst
-#LdataWatcher       catalog.images     start_inst(catalog) snuff_inst
-#LdataMultWatcher   catalog.dow        start_inst(catalog) snuff_inst
-#LdataWatcher       catalog.dow_images start_inst(catalog) snuff_inst
+LdataMultWatcher    catalog.mrms_comp_snowie start_inst(catalog) snuff_inst
+#LdataMultWatcher   catalog.nexrad           start_inst(catalog) snuff_inst
+#LdataMultWatcher   catalog.mosaics          start_inst(catalog) snuff_inst
+#LdataMultWatcher   catalog.spol             start_inst(catalog) snuff_inst
+#LdataWatcher       catalog.images           start_inst(catalog) snuff_inst
+#LdataMultWatcher   catalog.dow              start_inst(catalog) snuff_inst
+#LdataWatcher       catalog.dow_images       start_inst(catalog) snuff_inst
 ######################################################################
