@@ -129,14 +129,13 @@ set path = ($path $LROSE_INSTALL_DIR/bin)
 set path = ($path $PROJ_DIR/dial/Matlab)
 
 set path = ($path ~/bin $QTDIR/bin \
-        ~/anaconda/bin \
+        ~/anaconda2/bin \
 	$JAVA_HOME/bin $ANT_HOME/bin \
 	$NCARG_ROOT/bin \
 	/usr/local/bin /usr/local/sbin /usr/bin/X11 \
         /usr/sbin /usr/bin /sbin /bin /usr/X11R6/bin \
 	/opt/gfortran/irun/bin /opt/spol/bin /opt/local/bin \
-        /usr/sigmet/bin /usr/sigmet/bin/rda $QTDIR/bin \
-	/opt/anaconda/bin )
+        /usr/sigmet/bin /usr/sigmet/bin/rda $QTDIR/bin )
 
 # -- core files --
 # unlimit coredumpsize
