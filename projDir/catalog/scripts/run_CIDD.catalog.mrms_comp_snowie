@@ -16,7 +16,7 @@ setenv RENDER_LTG FALSE
 
 # use CIDD to create normal images
 
-setenv CIDD_LABEL ${project}-image-generation
+setenv CIDD_LABEL snowie-image-generation
 setenv CREATING_IMAGES 1
 setenv TRANSPARENT_IMAGES 0
 setenv IS_TRANS
@@ -27,7 +27,7 @@ setenv MISSING_DATA_COLOR gray20
 setenv RANGE_RING_FLAG 1
 setenv SHOW_HEIGHT_SEL 0
 setenv TIME_INTERVAL 10.0
-setenv IMAGE_DIR $DATA_DIR/${project}/raw/images
+setenv IMAGE_DIR $DATA_DIR/snowie/raw/images
 setenv OUTPUT_GEO_XML 0
 setenv MARGIN_WIDTH 20
 setenv HORIZ_DEFAULT_HEIGHT 1000
@@ -35,7 +35,7 @@ setenv HORIZ_DEFAULT_HEIGHT 1000
 setenv PROJECTION LAT_LON
 setenv ZOOM_LIMITS_IN_LATLON 1
 
-setenv ORIGIN_LAT 37.5
+setenv ORIGIN_LAT 35
 setenv ORIGIN_LON -100.0
 
 setenv MINX -120
@@ -48,7 +48,7 @@ CIDD -p CIDD.catalog.mrms_comp_snowie -i mrms_mosaic.web.normal -fn fixed -v 2
 
 # use CIDD to create transparent images
 
-setenv CIDD_LABEL ${project}-image-generation
+setenv CIDD_LABEL snowie-image-generation
 setenv CREATING_IMAGES 1
 setenv TRANSPARENT_IMAGES 1
 setenv IS_TRANS -TRANS
@@ -59,7 +59,7 @@ setenv MISSING_DATA_COLOR gray20
 setenv RANGE_RING_FLAG 0
 setenv SHOW_HEIGHT_SEL 0
 setenv TIME_INTERVAL 10.0
-setenv IMAGE_DIR $DATA_DIR/${project}/raw/images
+setenv IMAGE_DIR $DATA_DIR/snowie/raw/images
 setenv OUTPUT_GEO_XML 1
 setenv MARGIN_WIDTH 0
 setenv HORIZ_DEFAULT_HEIGHT 1500
