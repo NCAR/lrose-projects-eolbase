@@ -170,9 +170,9 @@ def createKmlFile(xmlPath, kmlPath, category, platform, yyyymmdd, hh, mm, field_
     # this is the platform in lower case
 
     href_platform = platform.lower()
-    project = os.environ['project']
+    catalog_name = os.environ['catalog_name']
     
-    href = 'http://catalog.eol.ucar.edu/' + project + '/' \
+    href = 'http://catalog.eol.ucar.edu/' + catalog_name + '/' \
            + category + '/' + href_platform + '/' \
            + yyyymmdd + '/' + hh + '/' \
            + category + '.' + platform + '.' + yyyymmdd + hh + mm + '.' + field_name + '.png'
@@ -185,14 +185,12 @@ def createKmlFile(xmlPath, kmlPath, category, platform, yyyymmdd, hh, mm, field_
     if (options.debug == True):
         print 'Writing KML to file: ', kmlPath
 
-    project = os.environ['project']
-
     kml_file = open(kmlPath, 'w')
 
     kml_file.write('<?xml version="1.0" encoding="UTF-8"?>\n')
     kml_file.write('<kml xmlns="http://earth.google.com/kml/2.0">\n')
     kml_file.write('  <Document>\n')
-    kml_file.write('    <name>' + project.upper() + ' radar images</name>\n')
+    kml_file.write('    <name>' + catalog_name.upper() + ' radar images</name>\n')
     kml_file.write('    <open>1</open>\n')
     kml_file.write('    <Folder>\n')
     kml_file.write('     <name>' + platform + '</name>\n')
@@ -335,8 +333,8 @@ def parseArgs():
                       default='catalog.eol.ucar.edu',
                       help='Target FTP server')
 
-    project = os.environ['project']
-    defaultTargetDir = 'pub/incoming/catalog/' + project
+    catalog_name = os.environ['catalog_name']
+    defaultTargetDir = 'pub/incoming/catalog/' + catalog_name
     parser.add_option('--target_dir',
                       dest='targetDir',
                       default='pub/incoming/catalog/dc3',
@@ -355,7 +353,7 @@ def parseArgs():
     parser.add_option('--href_platform',
                       dest='href_platform',
                       default='',
-                      help='The platform name used in the HRFT tag of the KML file.  For this project, this is the platform name but in all lower case.  Defaults to the the "platform" if not specified. Note that KML files are only generated for transparent images.')
+                      help='The platform name used in the HRFT tag of the KML file.  For this catalog_name, this is the platform name but in all lower case.  Defaults to the the "platform" if not specified. Note that KML files are only generated for transparent images.')
 
     parser.add_option('--is_transparent',
                       dest='is_transparent', default='False',

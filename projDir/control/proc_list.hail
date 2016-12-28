@@ -160,13 +160,15 @@ MdvConvert          mrms_comp_snowie   start_inst(ingest)  snuff_inst
 #cedric2mdv    chill_spol         start_inst(ingest)  snuff_inst
 #
 ######################################################################
-# Images to catalog
+# Generate images for catalog
 #
 LdataMultWatcher    catalog.mrms_comp_snowie start_inst(catalog) snuff_inst
+LdataMultWatcher    catalog.dow              start_inst(catalog) snuff_inst
 #LdataMultWatcher   catalog.nexrad           start_inst(catalog) snuff_inst
 #LdataMultWatcher   catalog.mosaics          start_inst(catalog) snuff_inst
 #LdataMultWatcher   catalog.spol             start_inst(catalog) snuff_inst
-#LdataWatcher       catalog.images           start_inst(catalog) snuff_inst
-#LdataMultWatcher   catalog.dow              start_inst(catalog) snuff_inst
-#LdataWatcher       catalog.dow_images       start_inst(catalog) snuff_inst
 ######################################################################
+# Push images to catalog
+#
+LdataWatcher       catalog.images           start_inst(catalog) snuff_inst
+LdataWatcher       catalog.dow_images       start_inst(catalog) snuff_inst
