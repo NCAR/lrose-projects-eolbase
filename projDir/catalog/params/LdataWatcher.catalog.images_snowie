@@ -39,7 +39,7 @@ debug = DEBUG_NORM;
 // Type: string
 //
 
-instance = "catalog.images";
+instance = "catalog.images_snowie";
 
 ///////////// procmap_register_interval ///////////////
 //
@@ -65,7 +65,7 @@ procmap_register_interval = 60;
 // Type: string
 //
 
-inputPath = "$(DATA_DIR)/$(catalog_name)/raw/images";
+inputPath = "$(DATA_DIR)/snowie/raw/images";
 
 ///////////// use_url /////////////////////////////////
 //
@@ -390,7 +390,7 @@ script_min_interval_secs = 0;
 
 supplementary_args = {
   "--ftp_server", "catalog.eol.ucar.edu",
-  "--target_dir", "pub/incoming/catalog/$(catalog_name)",
+  "--target_dir", "pub/incoming/catalog/snowie",
   "--move_after_copy",
   "--debug"
 };

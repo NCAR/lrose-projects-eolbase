@@ -152,8 +152,8 @@ def putFile(filePath, catalogName):
 
     # create tmp dir if necessary
 
-    project = os.environ['project']
-    imageDir = os.path.join(project, "raw/tmp/images")
+    catalog_name = os.environ['catalog_name']
+    imageDir = os.path.join(catalog_name, "raw/tmp/images")
     dataDir = os.environ['DATA_DIR']
     tmpDir = os.path.join(dataDir, imageDir)
     if (options.debug == True):
@@ -259,8 +259,8 @@ def parseArgs():
                       dest='ftpServer',
                       default='catalog.eol.ucar.edu',
                       help='Target FTP server')
-    project = os.environ['project']
-    defaultTargetDir = 'pub/incoming/catalog/' + project
+    catalog_name = os.environ['catalog_name']
+    defaultTargetDir = 'pub/incoming/catalog/' + catalog_name
     parser.add_option('--target_dir',
                       dest='targetDir',
                       default=defaultTargetDir,
