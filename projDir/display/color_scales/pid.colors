@@ -1,6 +1,4 @@
-# number color scale
-
-# Mike Dixon, June 1991
+# PID color scale
 
 0.5	1.5	#d1d0b8    !cld-drops
 1.5	2.5	#fed89a	   !drizzle
