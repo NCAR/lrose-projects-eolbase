@@ -934,7 +934,7 @@ cidd.menu_bar_funct10: EXIT_BUTTON
 
 ##########################################
 
-cidd.horiz_frame_label:  ** SUNSCAN S-band **
+cidd.horiz_frame_label:  ** SUNSCAN Marshall **
 
 # Set the message to display when no data is availible
 cidd.no_data_message:     NO DATA FOUND (in this area at the selected time)
@@ -1160,7 +1160,7 @@ gzip_requests = FALSE;
 
 prod_info = {
   {
-    menu_label = "CENTROID SBAND",
+    menu_label = "CENTROID",
     url = "spdbp:SunCal2Symprod://front.eol.ucar.edu:8080:eolbase/spdb/spol/suncal/sband?use_http=true",
     data_type = 0,
     render_type = RENDER_GET_VALID,
