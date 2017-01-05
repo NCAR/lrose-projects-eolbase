@@ -27,8 +27,7 @@ Tstorms2Symprod   manager  start_inst(no-params)     snuff_inst
 ######################################################################
 # moments FMQ relay from SPOL
 #
-Fmq2Fmq relay.moments.sband  start_inst(ingest)      snuff_inst
-#
+Fmq2Fmq relay.spol.marshall  start_inst(ingest)      snuff_inst
 ######################################################################
 # Base observations ingest - from LDM
 #

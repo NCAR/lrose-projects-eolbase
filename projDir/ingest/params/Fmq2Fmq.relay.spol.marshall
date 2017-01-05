@@ -40,7 +40,7 @@ debug = DEBUG_OFF;
 // Type: string
 //
 
-instance = "relay.moments.sband";
+instance = "relay.spol.marshall";
 
 //======================================================================
 //
@@ -54,7 +54,7 @@ instance = "relay.moments.sband";
 // Type: string
 //
 
-input_url = "fmqp:://spol.dyndns.org:5443:fmq/moments/sband/shmem_20000";
+input_url = "fmqp:://localhost:15443:fmq/moments/sband/shmem_20000";
 
 ///////////// msecs_sleep_blocking ////////////////////
 //
@@ -80,7 +80,7 @@ msecs_sleep_blocking = 1000;
 //
 
 output_urls = {
-  "fmqp:://localhost::fmq/moments/sband/shmem_20000"
+  "fmqp:://localhost::/scr/sci/rsfdata/fmq/moments/spol"
 };
 
 ///////////// output_compression //////////////////////
