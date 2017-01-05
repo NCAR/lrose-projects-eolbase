@@ -100,7 +100,7 @@ input_mode = DSR_FMQ_INPUT;
 // Type: string
 //
 
-input_fmq_url = "fmqp:://$(DATA_HOST):15443:fmq/moments/sband/shmem_20000";
+input_fmq_url = "fmqp:://localhost::/scr/sci/rsfdata/fmq/moments/spol";
 
 ///////////// seek_to_start_of_fmq ////////////////////
 //
