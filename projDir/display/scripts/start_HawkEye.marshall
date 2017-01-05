@@ -1,0 +1,14 @@
+#! /bin/csh
+
+setenv DATA_HOST hail.eol.ucar.edu
+
+setenv PROJ_DIR ~/projDir
+if (-e /opt/local/git/lrose-projects-eolbase/projDir) then
+  setenv PROJ_DIR  /opt/local/front/projDir
+endif
+
+cd $PROJ_DIR/display/params
+
+HawkEye -params HawkEye.marshall >& /dev/null &
+
+
