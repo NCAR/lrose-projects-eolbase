@@ -211,6 +211,8 @@ if ($?prompt) then
 
   alias gate 'ssh -a -XY -C -L 2401:cvs.rap.ucar.edu:2401 -L 8888:svn.eol.ucar.edu:80 dixon@gate.ucar.edu'
 
+  alias spol_fmq_tunnel 'ssh -L 5443:mgen1.gate.rtf:5443 -p20022 spol@spol.dyndns.org'
+
   alias psg 'ps axww | sed -n "1p; \|sed .*/\!*/|d; /\!*/p"'
   alias pslg 'ps alxww | sed -n "1p; \|sed .*/\!*/|d; /\!*/p"'
   alias psug 'ps auxww | sed -n "1p; \|sed .*/\!*/|d; /\!*/p"'
