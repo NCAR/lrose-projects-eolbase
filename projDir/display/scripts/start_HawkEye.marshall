@@ -1,7 +1,5 @@
 #! /bin/csh
 
-setenv DATA_HOST hail.eol.ucar.edu
-
 setenv PROJ_DIR ~/projDir
 if (-e /opt/local/git/lrose-projects-eolbase/projDir) then
   setenv PROJ_DIR  /opt/local/git/lrose-projects-eolbase/projDir
