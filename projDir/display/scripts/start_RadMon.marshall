@@ -1,3 +1,3 @@
 #! /bin/csh -f
 
-xterm -title RadMon-SPOL-Marshall -bg black -fg green -g 80x3-0+0 -fn fixed -e /opt/local/bin/RadMon -summary -update 1 -fmq /scr/sci/rsfdata/fmq/moments/spol &
+xterm -title RadMon-SPOL-Marshall -bg black -fg green -g 80x3-0+0 -fn fixed -e /opt/local/bin/RadMon -summary -update 3 -fmq /scr/sci/rsfdata/fmq/moments/spol &
