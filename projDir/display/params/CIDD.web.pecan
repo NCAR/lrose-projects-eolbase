@@ -1551,6 +1551,7 @@ NEXRADS      NEXRADS      nexrads.map       1      0.0      10000.0     white
 PISA         PISA       pecan_pisa.map      1      0.0      10000.0     orange
 SPOL-KDDC    SPOL-KDDC  spol_kddc_compare.map 0    0.0      10000.0     white
 CHILL        CHILL        chill.map         0      0.0      10000.0     cyan
+CHILL        CHILL        chill.map         0      0.0      10000.0     cyan
 
 #RADARS_CIRC  RADAR_CIRC   radar_circles.map 0      0.0      10000.0     orange
 #World         World          world_states.map        1  0.0 1000000.0  white
