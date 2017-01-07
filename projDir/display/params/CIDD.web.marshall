@@ -1285,9 +1285,6 @@ cidd.max_adeg:               360.0
 # List of comma delimited local directories or HTTP URLs to search
 # Searchs . then each directory/URL in order 
 
-#cidd.color_file_subdir: http://front.eol.ucar.edu/git/lrose-projects-eolbase/projDir/display/color_scales
-#cidd.map_file_subdir: http://front.eol.ucar.edu/git/lrose-projects-eolbase/projDir/display/maps
-
 cidd.color_file_subdir: http://front.eol.ucar.edu/git/lrose-displays/color_scales
 cidd.map_file_subdir: http://front.eol.ucar.edu/git/lrose-displays/maps
 
