@@ -18,6 +18,10 @@
 */5 * * * *   csh -c "start_build_logdir_links" 1> /dev/null 2> /dev/null
 #
 ####################################################################
+# Maintain ssh tunnel from FL to Marshall for Moments data FMQ
+#
+*/1 * * * * csh -c "create_spol_relay_tunnel" 1> /dev/null 2> /dev/null
+####################################################################
 # BACK UP DATA TO ELDORA
 #
 #*/5 * * * *   csh -c "rsync_pecan_to_eldora" 1> /dev/null 2> /dev/null
