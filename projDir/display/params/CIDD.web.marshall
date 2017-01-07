@@ -868,7 +868,7 @@ ihwys     ihwys    conus_interstates.map    1      0.0      10000.0     white
 #ushwys    ushwys       conus_ushwys.map     0      0.0     10000.0     white
 dia          dia          DIA_all.map       1      0.0      10000.0     white
 BAO          BAO          bao_tower.map     1      0.0      10000.0     white
-SPOL         SPOL     spol_firestone.map    1      0.0      10000.0    yellow
+FRONT        FRONT        front_firestone.map 1      0.0      10000.0    yellow
 CHILL        CHILL        chill.map         1      0.0      10000.0     cyan
 NEXRADS      NEXRADS      nexrads.map       1      0.0      10000.0     orange
 RADARS_CIRC  RADAR_CIRC   radar_circles.map 0      0.0      10000.0     orange
