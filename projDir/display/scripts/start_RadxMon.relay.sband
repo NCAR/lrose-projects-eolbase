@@ -1,6 +1,4 @@
 #! /bin/csh -f
 
-setenv PROJ_DIR ~dixon/projDir
-setenv DATA_HOST eldora.eol.ucar.edu
+xterm -title SPOL-RadxMon -bg black -fg yellow -g 90x15-0+0 -fn fixed -e /opt/local/bin/RadxMon -summary -update -20 -fmq /scr/sci/rsfdata/fmq/moments/spol &
 
-xterm -title SPOL-RadxMon -bg black -fg yellow -g 90x15-0+0 -fn fixed -e RadxMon -params $PROJ_DIR/display/params/RadxMon.relay.sband &

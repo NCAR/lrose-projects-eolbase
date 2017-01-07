@@ -7,6 +7,6 @@ endif
 
 cd $PROJ_DIR/display/params
 
-HawkEye -params HawkEye.marshall >& /dev/null &
+/opt/local/bin/HawkEye -params HawkEye.marshall >& /dev/null &
 
 
