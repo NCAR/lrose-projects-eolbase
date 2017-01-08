@@ -32,49 +32,55 @@ Fmq2Fmq relay.spol.marshall  start_inst(ingest)      snuff_inst
 # Base observations ingest - from LDM
 #
 InputWatcher        mrms_conus_plus    start_inst(ingest)  snuff_inst 
-MrmsGribIngest      snowie             start_inst(ingest)  snuff_inst 
-MdvConvert          mrms_comp_snowie   start_inst(ingest)  snuff_inst
-#Metar2Spdb         ops                start_inst(ingest)  snuff_inst 
-#LdmDynamic2Static  metar              start_inst(ingest)  snuff_inst
-#LdmDynamic2Static  sounding           start_inst(ingest)  snuff_inst
+Metar2Spdb          ops                start_inst(ingest)  snuff_inst 
+LdmDynamic2Static   metar              start_inst(ingest)  snuff_inst
+LdmDynamic2Static   sounding           start_inst(ingest)  snuff_inst
 madis2Spdb          ops                start_inst(ingest)  snuff_inst 
-#KSMesonet2Spdb     ops                start_inst(ingest)  snuff_inst 
-#NWSsoundingIngest  ops                start_inst(ingest)  snuff_inst 
+NWSsoundingIngest   ops                start_inst(ingest)  snuff_inst 
 InputWatcher        mesonet1           start_inst(ingest)  snuff_inst 
-#InputWatcher       KSMeso             start_inst(ingest)  snuff_inst 
 #MrmsGribIngest     ops                start_inst(ingest)  snuff_inst 
 #MdvConvert         mrms_comp          start_inst(ingest)  snuff_inst
-#InputWatcher       ruc                start_inst(ingest)  snuff_inst 
-#Grib2toMdv         ruc                start_inst(ingest)  snuff_inst 
-#Mdv2SoundingSpdb   ruc                start_inst(ingest)  snuff_inst
+InputWatcher        ruc                start_inst(ingest)  snuff_inst 
+Grib2toMdv          ruc                start_inst(ingest)  snuff_inst 
+Mdv2SoundingSpdb    ruc                start_inst(ingest)  snuff_inst
 #NcGeneric2Mdv      sat_1km            start_inst(ingest)  snuff_inst 
 #NcGeneric2Mdv      sat_4km            start_inst(ingest)  snuff_inst 
-#Ltg2Spdb           nldn               start_inst(ingest)  snuff_inst
-#LtgSpdb2Mdv        nldn               start_inst(ingest)  snuff_inst
-#NcarAcPosn2Spdb    ops                start_inst(ingest)  snuff_inst
+Ltg2Spdb            nldn               start_inst(ingest)  snuff_inst
+LtgSpdb2Mdv         nldn               start_inst(ingest)  snuff_inst
+NcarAcPosn2Spdb     ops                start_inst(ingest)  snuff_inst
 #NcarAcPosn2Spdb    mobile             start_inst(ingest)  snuff_inst
 #
 ######################################################################
+# SNOWIE ingest
+#
+MrmsGribIngest      snowie             start_inst(ingest)  snuff_inst 
+MdvConvert          mrms_comp_snowie   start_inst(ingest)  snuff_inst
+######################################################################
+# PECAN ingest
+#
+#InputWatcher       KSMeso             start_inst(ingest)  snuff_inst 
+#KSMesonet2Spdb     ops                start_inst(ingest)  snuff_inst 
+######################################################################
 # Interpolate surface data
 #
-#SurfInterp         ops                start_inst(alg)     snuff_inst
+SurfInterp         ops                start_inst(alg)     snuff_inst
 ######################################################################
 #
 # NEXRAD file ingest - from LDM
 #
 #RadxConvert  kabx    start_RadxConvert.kabx   snuff_inst
 #RadxConvert  kama    start_RadxConvert.kama   snuff_inst
-#RadxConvert  kcys    start_RadxConvert.kcys   snuff_inst
+RadxConvert   kcys    start_RadxConvert.kcys   snuff_inst
 #RadxConvert  kddc    start_RadxConvert.kddc   snuff_inst
 #RadxConvert  keax    start_RadxConvert.keax   snuff_inst
-#RadxConvert  kftg    start_RadxConvert.kftg   snuff_inst
-#RadxConvert  kgjx    start_RadxConvert.kgjx   snuff_inst
-#RadxConvert  kgld    start_RadxConvert.kgld   snuff_inst
+RadxConvert   kftg    start_RadxConvert.kftg   snuff_inst
+RadxConvert   kgjx    start_RadxConvert.kgjx   snuff_inst
+RadxConvert   kgld    start_RadxConvert.kgld   snuff_inst
 #RadxConvert  kict    start_RadxConvert.kict   snuff_inst
 #RadxConvert  kinx    start_RadxConvert.kinx   snuff_inst
 #RadxConvert  klnx    start_RadxConvert.klnx   snuff_inst
 #RadxConvert  koax    start_RadxConvert.koax   snuff_inst
-#RadxConvert  kpux    start_RadxConvert.kpux   snuff_inst
+RadxConvert   kpux    start_RadxConvert.kpux   snuff_inst
 #RadxConvert  kriw    start_RadxConvert.kriw   snuff_inst
 #RadxConvert  ksgf    start_RadxConvert.ksgf   snuff_inst
 #RadxConvert  ktlx    start_RadxConvert.ktlx   snuff_inst

@@ -111,8 +111,8 @@ terrain_field_name = "Elevation";
 
 surface_data_urls = {
   "spdbp:://$(DATA_HOST)::$(project)/spdb/metar",
-  "spdbp:://$(DATA_HOST)::$(project)/spdb/madis",
-  "spdbp:://$(DATA_HOST)::$(project)/spdb/KSMeso"
+  "spdbp:://$(DATA_HOST)::$(project)/spdb/madis"
+//   "spdbp:://$(DATA_HOST)::$(project)/spdb/KSMeso"
 };
 
 ///////////// genpt_data_urls /////////////////////////
