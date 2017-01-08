@@ -37,10 +37,10 @@ MdvConvert          mrms_comp_snowie   start_inst(ingest)  snuff_inst
 #Metar2Spdb         ops                start_inst(ingest)  snuff_inst 
 #LdmDynamic2Static  metar              start_inst(ingest)  snuff_inst
 #LdmDynamic2Static  sounding           start_inst(ingest)  snuff_inst
-#madis2Spdb         ops                start_inst(ingest)  snuff_inst 
+madis2Spdb          ops                start_inst(ingest)  snuff_inst 
 #KSMesonet2Spdb     ops                start_inst(ingest)  snuff_inst 
 #NWSsoundingIngest  ops                start_inst(ingest)  snuff_inst 
-#InputWatcher       mesonet1           start_inst(ingest)  snuff_inst 
+InputWatcher        mesonet1           start_inst(ingest)  snuff_inst 
 #InputWatcher       KSMeso             start_inst(ingest)  snuff_inst 
 #MrmsGribIngest     ops                start_inst(ingest)  snuff_inst 
 #MdvConvert         mrms_comp          start_inst(ingest)  snuff_inst

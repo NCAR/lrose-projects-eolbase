@@ -199,10 +199,10 @@ applyLatLonLimits = TRUE;
 // PECAN
 
 latLonLimits = {
-    minLat = 30,
-    minLon = -110,
-    maxLat = 45,
-    maxLon = -90
+    minLat = 20,
+    minLon = -120,
+    maxLat = 50,
+    maxLon = -80
 };
 
 ///////////// applyDataProviderLimits /////////////////
