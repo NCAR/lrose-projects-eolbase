@@ -45,17 +45,17 @@
 
 field_list = {
   { "SPOL surveillance",  "SPOL_" },
-  { "SPOL sectors",  "SPSEC_" }
-  // { "NEXRAD moments", "NEX_" },
+  { "SPOL sectors",  "SPSEC_" },
+  { "NEXRAD moments", "NEX_" },
   // { "NEXRAD PID/precip", "NEXP_ " },
   // { "REFRACT surveillance",  "REFR_" },
   // { "CHILL surveillance", "CHILL_" },
   // { "CHILL SDB surveillance", "SDBSUR" },
   // { "DualDoppler chill-spol", "DDOP_" },
-  // { "Surface", "SURF_" },
-  // { "Model", "MODEL_"},
+  { "Surface", "SURF_" },
+  { "Model", "MODEL_"},
   // { "Satellite", "SAT_"},
-  // { "Lightning", "LTG_"},
+  { "Lightning", "LTG_"}
   // { "CHILL sectors", "CHSEC_" },
   // { "CHILL SDB sectors", "SDBSEC" }
 };
@@ -238,23 +238,23 @@ REFR_======== ==REFR==  mdvp::static//localhost::/spacer?&None  none.colors   m 
 REFR_======== ==REFR==  mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
 REFR_======== ==REFR==  mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
 
-REFR_CAL_STRENGTH  REFR_CAL_STRENGTH  mdvp::refract_calib//front.eol.ucar.edu:8080:front/mdv/refract/calib?use_http=true&strength power_AIQ.colors  dB -5 80 5 radial 1 0
-REFR_CAL_AV_I      REFR_CAL_AV_I      mdvp::refract_calib//front.eol.ucar.edu:8080:front/mdv/refract/calib?use_http=true&av_i     power_AIQ.colors  dB -5 80 5 radial 1 0
-REFR_CAL_AV_Q      REFR_CAL_AV_Q      mdvp::refract_calib//front.eol.ucar.edu:8080:front/mdv/refract/calib?use_http=true&av_q     power_AIQ.colors  dB -5 80 5 radial 1 0
-REFR_CAL_PHASE_ERR REFR_CAL_PHASE_ERR mdvp::refract_calib//front.eol.ucar.edu:8080:front/mdv/refract/calib?use_http=true&phase_er  power_AIQ.colors  dB -5 80 5 radial 1 0
-REFR_CAL_QUALOTY   REFR_CAL_QUALITY   mdvp::refract_calib//front.eol.ucar.edu:8080:front/mdv/refract/calib?use_http=true&quality  power_AIQ.colors  dB -5 80 5 radial 1 0
-REFR_CAL_NCP       REFR_CAL_NCP       mdvp::refract_calib//front.eol.ucar.edu:8080:front/mdv/refract/calib?use_http=true&ncp      ncp.colors  dB -5 80 5 radial 1 0
+REFR_CAL_STRENGTH  REFR_CAL_STRENGTH  mdvp::refract_calib//front.eol.ucar.edu:8080:eolbase/mdv/refract/calib?use_http=true&strength power_AIQ.colors  dB -5 80 5 radial 1 0
+REFR_CAL_AV_I      REFR_CAL_AV_I      mdvp::refract_calib//front.eol.ucar.edu:8080:eolbase/mdv/refract/calib?use_http=true&av_i     power_AIQ.colors  dB -5 80 5 radial 1 0
+REFR_CAL_AV_Q      REFR_CAL_AV_Q      mdvp::refract_calib//front.eol.ucar.edu:8080:eolbase/mdv/refract/calib?use_http=true&av_q     power_AIQ.colors  dB -5 80 5 radial 1 0
+REFR_CAL_PHASE_ERR REFR_CAL_PHASE_ERR mdvp::refract_calib//front.eol.ucar.edu:8080:eolbase/mdv/refract/calib?use_http=true&phase_er  power_AIQ.colors  dB -5 80 5 radial 1 0
+REFR_CAL_QUALOTY   REFR_CAL_QUALITY   mdvp::refract_calib//front.eol.ucar.edu:8080:eolbase/mdv/refract/calib?use_http=true&quality  power_AIQ.colors  dB -5 80 5 radial 1 0
+REFR_CAL_NCP       REFR_CAL_NCP       mdvp::refract_calib//front.eol.ucar.edu:8080:eolbase/mdv/refract/calib?use_http=true&ncp      ncp.colors  dB -5 80 5 radial 1 0
 REFR_========     ==REFR==           mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
 REFR_========     ==REFR==           mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
 
-REFR_MEAN_I        REFR_MEAN_I        mdvp:://front.eol.ucar.edu:8080:front/mdv/refract/spol_refr?use_http=true&MeanI   iqz.colors  dB -5 80 5 radial 1 0
-REFR_MEAN_Q        REFR_MEAN_Q        mdvp:://front.eol.ucar.edu:8080:front/mdv/refract/spol_refr?use_http=true&MeanI   iqz.colors  dB -5 80 5 radial 1 0
-REFR_CPA           REFR_CPA           mdvp:://front.eol.ucar.edu:8080:front/mdv/refract/spol_refr?use_http=true&CPA     cpa.colors  dB -5 80 5 radial 1 0
-REFR_SNR           REFR_SNR           mdvp:://front.eol.ucar.edu:8080:front/mdv/refract/spol_refr?use_http=true&SNRHC   cpa.colors  dB -5 80 5 radial 1 0
-REFR_N             REFR_N             mdvp:://front.eol.ucar.edu:8080:front/mdv/refract/spol_refr?use_http=true&N       refrac_N_fabry2.colors  dB -5 80 5 radial 1 0
-REFR_DELTA_N       REFR_DELTA_N       mdvp:://front.eol.ucar.edu:8080:front/mdv/refract/spol_refr?use_http=true&DELTA_N delta_N.colors  dB -5 80 5 radial 1 0
-REFR_SIGMA_N       REFR_SIGMA_N       mdvp:://front.eol.ucar.edu:8080:front/mdv/refract/spol_refr?use_http=true&SIGMA_N refrac_sigmaN.colors  dB -5 80 5 radial 1 0
-REFR_SIGMA_DN      REFR_SIGMA_DN      mdvp:://front.eol.ucar.edu:8080:front/mdv/refract/spol_refr?use_http=true&SIGMA_DN refrac_sigmaN.colors  dB -5 80 5 radial 1 0
+REFR_MEAN_I        REFR_MEAN_I        mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/refract/spol_refr?use_http=true&MeanI   iqz.colors  dB -5 80 5 radial 1 0
+REFR_MEAN_Q        REFR_MEAN_Q        mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/refract/spol_refr?use_http=true&MeanI   iqz.colors  dB -5 80 5 radial 1 0
+REFR_CPA           REFR_CPA           mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/refract/spol_refr?use_http=true&CPA     cpa.colors  dB -5 80 5 radial 1 0
+REFR_SNR           REFR_SNR           mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/refract/spol_refr?use_http=true&SNRHC   cpa.colors  dB -5 80 5 radial 1 0
+REFR_N             REFR_N             mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/refract/spol_refr?use_http=true&N       refrac_N_fabry2.colors  dB -5 80 5 radial 1 0
+REFR_DELTA_N       REFR_DELTA_N       mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/refract/spol_refr?use_http=true&DELTA_N delta_N.colors  dB -5 80 5 radial 1 0
+REFR_SIGMA_N       REFR_SIGMA_N       mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/refract/spol_refr?use_http=true&SIGMA_N refrac_sigmaN.colors  dB -5 80 5 radial 1 0
+REFR_SIGMA_DN      REFR_SIGMA_DN      mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/refract/spol_refr?use_http=true&SIGMA_DN refrac_sigmaN.colors  dB -5 80 5 radial 1 0
 
 ##############################
 # SPOL MOMENTS - SECTORS
@@ -616,7 +616,7 @@ SDBSEC_======  ========  mdvp::static//front.eol.ucar.edu:8080:/spacer?use_http=
 ############################
 # Dual Doppler
 
-DDOP_==== ==Ddop==  mdvp:://front.eol.ucar.edu:8080:front/mdv/sat/goes1km?use_http=true&gvar_ch1  sat_albedo.colors  albedo   -5   80  5  dcont   1 0
+DDOP_==== ==Ddop==  mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/sat/goes1km?use_http=true&gvar_ch1  sat_albedo.colors  albedo   -5   80  5  dcont   1 0
 DDOP_==== ==Ddop==  mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
 DDOP_==== ==Ddop==  mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
 DDOP_==== ==Ddop==  mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
@@ -625,19 +625,19 @@ DDOP_==== ==Ddop==  mdvp::static//localhost::/spacer?&None  none.colors   m   0 
 DDOP_==== ==Ddop==  mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
 DDOP_==== ==Ddop==  mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
 
-DDOP_U DDOP_U mdvp:://front.eol.ucar.edu:8080:front/mdv/ddoppler/chill_spol?use_http=true&U   vel.colors   m/s   -5   80  5  dcont   1 0
-DDOP_V DDOP_V mdvp:://front.eol.ucar.edu:8080:front/mdv/ddoppler/chill_spol?use_http=true&V   vel.colors   m/s   -5   80  5  dcont   1 0
-DDOP_W DDOP_W mdvp:://front.eol.ucar.edu:8080:front/mdv/ddoppler/chill_spol?use_http=true&W   vel.colors   m/s   -5   80  5  dcont   1 0
-DDOP_speed DDOP_speed mdvp:://front.eol.ucar.edu:8080:front/mdv/ddoppler/chill_spol?use_http=true&speed   wind_speed.colors   m/s   -5   80  5  dcont   1 0
-DDOP_Conv  DDOP_Conv  mdvp:://front.eol.ucar.edu:8080:front/mdv/ddoppler/chill_spol?use_http=true&CONV conv.colors m -5 80 5 dcont 1 0
-DDOP_Vort  DDOP_Vort  mdvp:://front.eol.ucar.edu:8080:front/mdv/ddoppler/chill_spol?use_http=true&Vor vorticity.colors s-1 -5 80 5 dcont 1 0
-DDOP_MAXDBZF DDOP_MAXDBZF mdvp:://front.eol.ucar.edu:8080:front/mdv/ddoppler/chill_spol?use_http=true&MAXDBZF  dbz.colors   dBZ -5 80 5 radial 1 0
+DDOP_U DDOP_U mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/ddoppler/chill_spol?use_http=true&U   vel.colors   m/s   -5   80  5  dcont   1 0
+DDOP_V DDOP_V mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/ddoppler/chill_spol?use_http=true&V   vel.colors   m/s   -5   80  5  dcont   1 0
+DDOP_W DDOP_W mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/ddoppler/chill_spol?use_http=true&W   vel.colors   m/s   -5   80  5  dcont   1 0
+DDOP_speed DDOP_speed mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/ddoppler/chill_spol?use_http=true&speed   wind_speed.colors   m/s   -5   80  5  dcont   1 0
+DDOP_Conv  DDOP_Conv  mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/ddoppler/chill_spol?use_http=true&CONV conv.colors m -5 80 5 dcont 1 0
+DDOP_Vort  DDOP_Vort  mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/ddoppler/chill_spol?use_http=true&Vor vorticity.colors s-1 -5 80 5 dcont 1 0
+DDOP_MAXDBZF DDOP_MAXDBZF mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/ddoppler/chill_spol?use_http=true&MAXDBZF  dbz.colors   dBZ -5 80 5 radial 1 0
 DDOP_==== ==Ddop==  mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
 
 #############################
 # NEXRAD MOMENTS
 
-NEX_KFTG_DBZ   KFTG_DBZ    mdvp:://front.eol.ucar.edu:8080:front/cfradial/kftg/moments?use_http=true&REF       dbz.colors   dBZ -5 80 5 radial 1 0
+NEX_KFTG_DBZ   KFTG_DBZ    mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/kftg/moments?use_http=true&REF       dbz.colors   dBZ -5 80 5 radial 1 0
 NEX_======== =NEXRAD=  mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
 NEX_======== =NEXRAD=  mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
 NEX_======== =NEXRAD=  mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
@@ -646,55 +646,55 @@ NEX_======== =NEXRAD=  mdvp::static//localhost::/spacer?&None  none.colors   m  
 NEX_======== =NEXRAD=  mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
 NEX_======== =NEXRAD=  mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
 
-NEX_COMP_DBZ COMP_DBZ  mdvp:://front.eol.ucar.edu:8080:front/mdv/nssl_mosaic?use_http=true&mosaicked_refl  dbz.colors   dBZ -5 80 5 dcont,comp 1 0
-NEX_KFTG_DBZ   KFTG_DBZ    mdvp:://front.eol.ucar.edu:8080:front/cfradial/kftg/moments?use_http=true&REF       dbz.colors   dBZ -5 80 5 radial 1 0
-NEX_KFTG_VEL   KFTG_VEL    mdvp:://front.eol.ucar.edu:8080:front/cfradial/kftg/moments?use_http=true&VEL       vel.colors   m/s -5 80 5 radial 1 0
-NEX_KFTG_WIDTH KFTG_WIDTH  mdvp:://front.eol.ucar.edu:8080:front/cfradial/kftg/moments?use_http=true&SW        width.colors m/s -5 80 5 radial 1 0
-NEX_KFTG_ZDR   KFTG_ZDR    mdvp:://front.eol.ucar.edu:8080:front/cfradial/kftg/moments?use_http=true&ZDR       zdr.colors   dB  -5 80 5 radial 1 0
-NEX_KFTG_PHIDP KFTG_PHIDP  mdvp:://front.eol.ucar.edu:8080:front/cfradial/kftg/moments?use_http=true&PHI       phidp.colors deg -5 80 5 radial 1 0
-NEX_KFTG_RHOHV KFTG_RHOHV  mdvp:://front.eol.ucar.edu:8080:front/cfradial/kftg/moments?use_http=true&RHO       rhohv.colors -   -5 80 5 radial 1 0
+NEX_COMP_DBZ COMP_DBZ  mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/nssl_mosaic?use_http=true&mosaicked_refl  dbz.colors   dBZ -5 80 5 dcont,comp 1 0
+NEX_KFTG_DBZ   KFTG_DBZ    mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/kftg/moments?use_http=true&REF       dbz.colors   dBZ -5 80 5 radial 1 0
+NEX_KFTG_VEL   KFTG_VEL    mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/kftg/moments?use_http=true&VEL       vel.colors   m/s -5 80 5 radial 1 0
+NEX_KFTG_WIDTH KFTG_WIDTH  mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/kftg/moments?use_http=true&SW        width.colors m/s -5 80 5 radial 1 0
+NEX_KFTG_ZDR   KFTG_ZDR    mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/kftg/moments?use_http=true&ZDR       zdr.colors   dB  -5 80 5 radial 1 0
+NEX_KFTG_PHIDP KFTG_PHIDP  mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/kftg/moments?use_http=true&PHI       phidp.colors deg -5 80 5 radial 1 0
+NEX_KFTG_RHOHV KFTG_RHOHV  mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/kftg/moments?use_http=true&RHO       rhohv.colors -   -5 80 5 radial 1 0
 NEX_========   ========    mdvp::static//front.eol.ucar.edu:8080:/spacer/moments?use_http=true&Elevation       none.colors  m   -5 80 5 dcont  1 0
 
-NEX_MOSAIC_DBZ MOSAIC_DBZ  mdvp:://front.eol.ucar.edu:8080:front/mdv/nssl_mosaic?use_http=true&mosaicked_refl  dbz.colors   dBZ -5 80 5 radial 1 0
-NEX_KCYS_DBZ   KCYS_DBZ    mdvp:://front.eol.ucar.edu:8080:front/cfradial/kcys/moments?use_http=true&REF       dbz.colors   dBZ -5 80 5 radial 1 0
-NEX_KCYS_VEL   KCYS_VEL    mdvp:://front.eol.ucar.edu:8080:front/cfradial/kcys/moments?use_http=true&VEL       vel.colors   m/s -5 80 5 radial 1 0
-NEX_KCYS_WIDTH KCYS_WIDTH  mdvp:://front.eol.ucar.edu:8080:front/cfradial/kcys/moments?use_http=true&SW        width.colors m/s -5 80 5 radial 1 0
-NEX_KCYS_ZDR   KCYS_ZDR    mdvp:://front.eol.ucar.edu:8080:front/cfradial/kcys/moments?use_http=true&ZDR       zdr.colors   dB  -5 80 5 radial 1 0
-NEX_KCYS_PHIDP KCYS_PHIDP  mdvp:://front.eol.ucar.edu:8080:front/cfradial/kcys/moments?use_http=true&PHI       phidp.colors deg -5 80 5 radial 1 0
-NEX_KCYS_RHOHV KCYS_RHOHV  mdvp:://front.eol.ucar.edu:8080:front/cfradial/kcys/moments?use_http=true&RHO       rhohv.colors -   -5 80 5 radial 1 0
+NEX_MOSAIC_DBZ MOSAIC_DBZ  mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/nssl_mosaic?use_http=true&mosaicked_refl  dbz.colors   dBZ -5 80 5 radial 1 0
+NEX_KCYS_DBZ   KCYS_DBZ    mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/kcys/moments?use_http=true&REF       dbz.colors   dBZ -5 80 5 radial 1 0
+NEX_KCYS_VEL   KCYS_VEL    mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/kcys/moments?use_http=true&VEL       vel.colors   m/s -5 80 5 radial 1 0
+NEX_KCYS_WIDTH KCYS_WIDTH  mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/kcys/moments?use_http=true&SW        width.colors m/s -5 80 5 radial 1 0
+NEX_KCYS_ZDR   KCYS_ZDR    mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/kcys/moments?use_http=true&ZDR       zdr.colors   dB  -5 80 5 radial 1 0
+NEX_KCYS_PHIDP KCYS_PHIDP  mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/kcys/moments?use_http=true&PHI       phidp.colors deg -5 80 5 radial 1 0
+NEX_KCYS_RHOHV KCYS_RHOHV  mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/kcys/moments?use_http=true&RHO       rhohv.colors -   -5 80 5 radial 1 0
 NEX_========   ========    mdvp::static//front.eol.ucar.edu:8080:/spacer/moments?use_http=true&Elevation       none.colors  m   -5 80 5 dcont  1 0
 
-NEX_MOSAIC_DBZ MOSAIC_DBZ  mdvp:://front.eol.ucar.edu:8080:front/mdv/nssl_mosaic?use_http=true&mosaicked_refl  dbz.colors   dBZ -5 80 5 radial 1 0
-NEX_KPUX_DBZ   KPUX_DBZ    mdvp:://front.eol.ucar.edu:8080:front/cfradial/kpux/moments?use_http=true&REF       dbz.colors   dBZ -5 80 5 radial 1 0
-NEX_KPUX_VEL   KPUX_VEL    mdvp:://front.eol.ucar.edu:8080:front/cfradial/kpux/moments?use_http=true&VEL       vel.colors   m/s -5 80 5 radial 1 0
-NEX_KPUX_WIDTH KPUX_WIDTH  mdvp:://front.eol.ucar.edu:8080:front/cfradial/kpux/moments?use_http=true&SW        width.colors m/s -5 80 5 radial 1 0
-NEX_KPUX_ZDR   KPUX_ZDR    mdvp:://front.eol.ucar.edu:8080:front/cfradial/kpux/moments?use_http=true&ZDR       zdr.colors   dB  -5 80 5 radial 1 0
-NEX_KPUX_PHIDP KPUX_PHIDP  mdvp:://front.eol.ucar.edu:8080:front/cfradial/kpux/moments?use_http=true&PHI       phidp.colors deg -5 80 5 radial 1 0
-NEX_KPUX_RHOHV KPUX_RHOHV  mdvp:://front.eol.ucar.edu:8080:front/cfradial/kpux/moments?use_http=true&RHO       rhohv.colors -   -5 80 5 radial 1 0
+NEX_MOSAIC_DBZ MOSAIC_DBZ  mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/nssl_mosaic?use_http=true&mosaicked_refl  dbz.colors   dBZ -5 80 5 radial 1 0
+NEX_KPUX_DBZ   KPUX_DBZ    mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/kpux/moments?use_http=true&REF       dbz.colors   dBZ -5 80 5 radial 1 0
+NEX_KPUX_VEL   KPUX_VEL    mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/kpux/moments?use_http=true&VEL       vel.colors   m/s -5 80 5 radial 1 0
+NEX_KPUX_WIDTH KPUX_WIDTH  mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/kpux/moments?use_http=true&SW        width.colors m/s -5 80 5 radial 1 0
+NEX_KPUX_ZDR   KPUX_ZDR    mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/kpux/moments?use_http=true&ZDR       zdr.colors   dB  -5 80 5 radial 1 0
+NEX_KPUX_PHIDP KPUX_PHIDP  mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/kpux/moments?use_http=true&PHI       phidp.colors deg -5 80 5 radial 1 0
+NEX_KPUX_RHOHV KPUX_RHOHV  mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/kpux/moments?use_http=true&RHO       rhohv.colors -   -5 80 5 radial 1 0
 NEX_========   ========    mdvp::static//front.eol.ucar.edu:8080:/spacer/moments?use_http=true&Elevation       none.colors  m   -5 80 5 dcont  1 0
 
-NEX_MOSAIC_DBZ MOSAIC_DBZ  mdvp:://front.eol.ucar.edu:8080:front/mdv/nssl_mosaic?use_http=true&mosaicked_refl  dbz.colors   dBZ -5 80 5 radial 1 0
-NEX_KGLD_DBZ   KGLD_DBZ    mdvp:://front.eol.ucar.edu:8080:front/cfradial/kgld/moments?use_http=true&REF       dbz.colors   dBZ -5 80 5 radial 1 0
-NEX_KGLD_VEL   KGLD_VEL    mdvp:://front.eol.ucar.edu:8080:front/cfradial/kgld/moments?use_http=true&VEL       vel.colors   m/s -5 80 5 radial 1 0
-NEX_KGLD_WIDTH KGLD_WIDTH  mdvp:://front.eol.ucar.edu:8080:front/cfradial/kgld/moments?use_http=true&SW        width.colors m/s -5 80 5 radial 1 0
-NEX_KGLD_ZDR   KGLD_ZDR    mdvp:://front.eol.ucar.edu:8080:front/cfradial/kgld/moments?use_http=true&ZDR       zdr.colors   dB  -5 80 5 radial 1 0
-NEX_KGLD_PHIDP KGLD_PHIDP  mdvp:://front.eol.ucar.edu:8080:front/cfradial/kgld/moments?use_http=true&PHI       phidp.colors deg -5 80 5 radial 1 0
-NEX_KGLD_RHOHV KGLD_RHOHV  mdvp:://front.eol.ucar.edu:8080:front/cfradial/kgld/moments?use_http=true&RHO       rhohv.colors -   -5 80 5 radial 1 0
+NEX_MOSAIC_DBZ MOSAIC_DBZ  mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/nssl_mosaic?use_http=true&mosaicked_refl  dbz.colors   dBZ -5 80 5 radial 1 0
+NEX_KGLD_DBZ   KGLD_DBZ    mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/kgld/moments?use_http=true&REF       dbz.colors   dBZ -5 80 5 radial 1 0
+NEX_KGLD_VEL   KGLD_VEL    mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/kgld/moments?use_http=true&VEL       vel.colors   m/s -5 80 5 radial 1 0
+NEX_KGLD_WIDTH KGLD_WIDTH  mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/kgld/moments?use_http=true&SW        width.colors m/s -5 80 5 radial 1 0
+NEX_KGLD_ZDR   KGLD_ZDR    mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/kgld/moments?use_http=true&ZDR       zdr.colors   dB  -5 80 5 radial 1 0
+NEX_KGLD_PHIDP KGLD_PHIDP  mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/kgld/moments?use_http=true&PHI       phidp.colors deg -5 80 5 radial 1 0
+NEX_KGLD_RHOHV KGLD_RHOHV  mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/kgld/moments?use_http=true&RHO       rhohv.colors -   -5 80 5 radial 1 0
 NEX_========   ========    mdvp::static//front.eol.ucar.edu:8080:/spacer/moments?use_http=true&Elevation       none.colors  m   -5 80 5 dcont  1 0
 
-NEX_MOSAIC_DBZ MOSAIC_DBZ  mdvp:://front.eol.ucar.edu:8080:front/mdv/nssl_mosaic?use_http=true&mosaicked_refl  dbz.colors   dBZ -5 80 5 radial 1 0
-NEX_KGJX_DBZ   KGJX_DBZ    mdvp:://front.eol.ucar.edu:8080:front/cfradial/kgjx/moments?use_http=true&REF       dbz.colors   dBZ -5 80 5 radial 1 0
-NEX_KGJX_VEL   KGJX_VEL    mdvp:://front.eol.ucar.edu:8080:front/cfradial/kgjx/moments?use_http=true&VEL       vel.colors   m/s -5 80 5 radial 1 0
-NEX_KGJX_WIDTH KGJX_WIDTH  mdvp:://front.eol.ucar.edu:8080:front/cfradial/kgjx/moments?use_http=true&SW        width.colors m/s -5 80 5 radial 1 0
-NEX_KGJX_ZDR   KGJX_ZDR    mdvp:://front.eol.ucar.edu:8080:front/cfradial/kgjx/moments?use_http=true&ZDR       zdr.colors   dB  -5 80 5 radial 1 0
-NEX_KGJX_PHIDP KGJX_PHIDP  mdvp:://front.eol.ucar.edu:8080:front/cfradial/kgjx/moments?use_http=true&PHI       phidp.colors deg -5 80 5 radial 1 0
-NEX_KGJX_RHOHV KGJX_RHOHV  mdvp:://front.eol.ucar.edu:8080:front/cfradial/kgjx/moments?use_http=true&RHO       rhohv.colors -   -5 80 5 radial 1 0
+NEX_MOSAIC_DBZ MOSAIC_DBZ  mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/nssl_mosaic?use_http=true&mosaicked_refl  dbz.colors   dBZ -5 80 5 radial 1 0
+NEX_KGJX_DBZ   KGJX_DBZ    mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/kgjx/moments?use_http=true&REF       dbz.colors   dBZ -5 80 5 radial 1 0
+NEX_KGJX_VEL   KGJX_VEL    mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/kgjx/moments?use_http=true&VEL       vel.colors   m/s -5 80 5 radial 1 0
+NEX_KGJX_WIDTH KGJX_WIDTH  mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/kgjx/moments?use_http=true&SW        width.colors m/s -5 80 5 radial 1 0
+NEX_KGJX_ZDR   KGJX_ZDR    mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/kgjx/moments?use_http=true&ZDR       zdr.colors   dB  -5 80 5 radial 1 0
+NEX_KGJX_PHIDP KGJX_PHIDP  mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/kgjx/moments?use_http=true&PHI       phidp.colors deg -5 80 5 radial 1 0
+NEX_KGJX_RHOHV KGJX_RHOHV  mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/kgjx/moments?use_http=true&RHO       rhohv.colors -   -5 80 5 radial 1 0
 NEX_========   ========    mdvp::static//front.eol.ucar.edu:8080:/spacer/moments?use_http=true&Elevation       none.colors  m   -5 80 5 dcont  1 0
 
 ############################
 # NEXRAD PID AND PRECIP RATE
 
-NEXP_======== =NEXPID=  mdvp:://front.eol.ucar.edu:8080:front/cfradial/kftg/partrain?use_http=true&KDP          kdp_sband.colors    deg/km -5 80 5 radial 1 0
+NEXP_======== =NEXPID=  mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/kftg/partrain?use_http=true&KDP          kdp_sband.colors    deg/km -5 80 5 radial 1 0
 NEXP_======== =NEXPID=  mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
 NEXP_======== =NEXPID=  mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
 NEXP_======== =NEXPID=  mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
@@ -703,55 +703,55 @@ NEXP_======== =NEXPID=  mdvp::static//localhost::/spacer?&None  none.colors   m 
 NEXP_======== =NEXPID=  mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
 NEXP_======== =NEXPID=  mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
 
-NEXP_KFTG_KDP         KFTG_KDP         mdvp:://front.eol.ucar.edu:8080:front/cfradial/kftg/partrain?use_http=true&KDP          kdp_sband.colors    deg/km -5 80 5 radial 1 0
-NEXP_KFTG_PID         KFTG_PID         mdvp:://front.eol.ucar.edu:8080:front/cfradial/kftg/partrain?use_http=true&PID          pid.colors    -      -5 80 5 radial 1 0
-NEXP_KFTG_PID_TEMP    KFTG_PID_TEMP    mdvp:://front.eol.ucar.edu:8080:front/cfradial/kftg/partrain?use_http=true&TEMP_FOR_PID temp.colors   dBZ    -5 80 5 radial 1 0
-NEXP_KFTG_RATE_ZH     KFTG_RATE_ZH     mdvp:://front.eol.ucar.edu:8080:front/cfradial/kftg/partrain?use_http=true&RATE_ZH      precip_rate.colors  mm/hr  -5 80 5 radial 1 0
-NEXP_KFTG_RATE_Z_ZDR  KFTG_RATE_Z_ZDR  mdvp:://front.eol.ucar.edu:8080:front/cfradial/kftg/partrain?use_http=true&RATE_Z_ZDR   precip_rate.colors  mm/hr  -5 80 5 radial 1 0
-NEXP_KFTG_RATE_KDP    KFTG_RATE_KDP    mdvp:://front.eol.ucar.edu:8080:front/cfradial/kftg/partrain?use_http=true&RATE_KDP     precip_rate.colors  mm/hr  -5 80 5 radial 1 0
-NEXP_KFTG_RATE_PID    KFTG_RATE_PID    mdvp:://front.eol.ucar.edu:8080:front/cfradial/kftg/partrain?use_http=true&RATE_PID     precip_rate.colors  mm/hr  -5 80 5 radial 1 0
-NEXP_KFTG_RATE_HYBRID KFTG_RATE_HYBRID mdvp:://front.eol.ucar.edu:8080:front/cfradial/kftg/partrain?use_http=true&RATE_HYBRID  precip_rate.colors  mm/hr  -5 80 5 radial 1 0
+NEXP_KFTG_KDP         KFTG_KDP         mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/kftg/partrain?use_http=true&KDP          kdp_sband.colors    deg/km -5 80 5 radial 1 0
+NEXP_KFTG_PID         KFTG_PID         mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/kftg/partrain?use_http=true&PID          pid.colors    -      -5 80 5 radial 1 0
+NEXP_KFTG_PID_TEMP    KFTG_PID_TEMP    mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/kftg/partrain?use_http=true&TEMP_FOR_PID temp.colors   dBZ    -5 80 5 radial 1 0
+NEXP_KFTG_RATE_ZH     KFTG_RATE_ZH     mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/kftg/partrain?use_http=true&RATE_ZH      precip_rate.colors  mm/hr  -5 80 5 radial 1 0
+NEXP_KFTG_RATE_Z_ZDR  KFTG_RATE_Z_ZDR  mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/kftg/partrain?use_http=true&RATE_Z_ZDR   precip_rate.colors  mm/hr  -5 80 5 radial 1 0
+NEXP_KFTG_RATE_KDP    KFTG_RATE_KDP    mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/kftg/partrain?use_http=true&RATE_KDP     precip_rate.colors  mm/hr  -5 80 5 radial 1 0
+NEXP_KFTG_RATE_PID    KFTG_RATE_PID    mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/kftg/partrain?use_http=true&RATE_PID     precip_rate.colors  mm/hr  -5 80 5 radial 1 0
+NEXP_KFTG_RATE_HYBRID KFTG_RATE_HYBRID mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/kftg/partrain?use_http=true&RATE_HYBRID  precip_rate.colors  mm/hr  -5 80 5 radial 1 0
 
-NEXP_KCYS_KDP         KCYS_KDP         mdvp:://front.eol.ucar.edu:8080:front/cfradial/kcys/partrain?use_http=true&KDP          kdp_sband.colors    deg/km -5 80 5 radial 1 0
-NEXP_KCYS_PID         KCYS_PID         mdvp:://front.eol.ucar.edu:8080:front/cfradial/kcys/partrain?use_http=true&PID          pid.colors    -      -5 80 5 radial 1 0
-NEXP_KCYS_PID_TEMP    KCYS_PID_TEMP    mdvp:://front.eol.ucar.edu:8080:front/cfradial/kcys/partrain?use_http=true&TEMP_FOR_PID temp.colors   dBZ    -5 80 5 radial 1 0
-NEXP_KCYS_RATE_ZH     KCYS_RATE_ZH     mdvp:://front.eol.ucar.edu:8080:front/cfradial/kcys/partrain?use_http=true&RATE_ZH      precip_rate.colors  mm/hr  -5 80 5 radial 1 0
-NEXP_KCYS_RATE_Z_ZDR  KCYS_RATE_Z_ZDR  mdvp:://front.eol.ucar.edu:8080:front/cfradial/kcys/partrain?use_http=true&RATE_Z_ZDR   precip_rate.colors  mm/hr  -5 80 5 radial 1 0
-NEXP_KCYS_RATE_KDP    KCYS_RATE_KDP    mdvp:://front.eol.ucar.edu:8080:front/cfradial/kcys/partrain?use_http=true&RATE_KDP     precip_rate.colors  mm/hr  -5 80 5 radial 1 0
-NEXP_KCYS_RATE_PID    KCYS_RATE_PID    mdvp:://front.eol.ucar.edu:8080:front/cfradial/kcys/partrain?use_http=true&RATE_PID     precip_rate.colors  mm/hr  -5 80 5 radial 1 0
-NEXP_KCYS_RATE_HYBRID KCYS_RATE_HYBRID mdvp:://front.eol.ucar.edu:8080:front/cfradial/kcys/partrain?use_http=true&RATE_HYBRID  precip_rate.colors  mm/hr  -5 80 5 radial 1 0
+NEXP_KCYS_KDP         KCYS_KDP         mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/kcys/partrain?use_http=true&KDP          kdp_sband.colors    deg/km -5 80 5 radial 1 0
+NEXP_KCYS_PID         KCYS_PID         mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/kcys/partrain?use_http=true&PID          pid.colors    -      -5 80 5 radial 1 0
+NEXP_KCYS_PID_TEMP    KCYS_PID_TEMP    mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/kcys/partrain?use_http=true&TEMP_FOR_PID temp.colors   dBZ    -5 80 5 radial 1 0
+NEXP_KCYS_RATE_ZH     KCYS_RATE_ZH     mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/kcys/partrain?use_http=true&RATE_ZH      precip_rate.colors  mm/hr  -5 80 5 radial 1 0
+NEXP_KCYS_RATE_Z_ZDR  KCYS_RATE_Z_ZDR  mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/kcys/partrain?use_http=true&RATE_Z_ZDR   precip_rate.colors  mm/hr  -5 80 5 radial 1 0
+NEXP_KCYS_RATE_KDP    KCYS_RATE_KDP    mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/kcys/partrain?use_http=true&RATE_KDP     precip_rate.colors  mm/hr  -5 80 5 radial 1 0
+NEXP_KCYS_RATE_PID    KCYS_RATE_PID    mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/kcys/partrain?use_http=true&RATE_PID     precip_rate.colors  mm/hr  -5 80 5 radial 1 0
+NEXP_KCYS_RATE_HYBRID KCYS_RATE_HYBRID mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/kcys/partrain?use_http=true&RATE_HYBRID  precip_rate.colors  mm/hr  -5 80 5 radial 1 0
 
-NEXP_KPUX_KDP         KPUX_KDP         mdvp:://front.eol.ucar.edu:8080:front/cfradial/kpux/partrain?use_http=true&KDP          kdp_sband.colors    deg/km -5 80 5 radial 1 0
-NEXP_KPUX_PID         KPUX_PID         mdvp:://front.eol.ucar.edu:8080:front/cfradial/kpux/partrain?use_http=true&PID          pid.colors    -      -5 80 5 radial 1 0
-NEXP_KPUX_PID_TEMP    KPUX_PID_TEMP    mdvp:://front.eol.ucar.edu:8080:front/cfradial/kpux/partrain?use_http=true&TEMP_FOR_PID temp.colors   dBZ    -5 80 5 radial 1 0
-NEXP_KPUX_RATE_ZH     KPUX_RATE_ZH     mdvp:://front.eol.ucar.edu:8080:front/cfradial/kpux/partrain?use_http=true&RATE_ZH      precip_rate.colors  mm/hr  -5 80 5 radial 1 0
-NEXP_KPUX_RATE_Z_ZDR  KPUX_RATE_Z_ZDR  mdvp:://front.eol.ucar.edu:8080:front/cfradial/kpux/partrain?use_http=true&RATE_Z_ZDR   precip_rate.colors  mm/hr  -5 80 5 radial 1 0
-NEXP_KPUX_RATE_KDP    KPUX_RATE_KDP    mdvp:://front.eol.ucar.edu:8080:front/cfradial/kpux/partrain?use_http=true&RATE_KDP     precip_rate.colors  mm/hr  -5 80 5 radial 1 0
-NEXP_KPUX_RATE_PID    KPUX_RATE_PID    mdvp:://front.eol.ucar.edu:8080:front/cfradial/kpux/partrain?use_http=true&RATE_PID     precip_rate.colors  mm/hr  -5 80 5 radial 1 0
-NEXP_KPUX_RATE_HYBRID KPUX_RATE_HYBRID mdvp:://front.eol.ucar.edu:8080:front/cfradial/kpux/partrain?use_http=true&RATE_HYBRID  precip_rate.colors  mm/hr  -5 80 5 radial 1 0
+NEXP_KPUX_KDP         KPUX_KDP         mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/kpux/partrain?use_http=true&KDP          kdp_sband.colors    deg/km -5 80 5 radial 1 0
+NEXP_KPUX_PID         KPUX_PID         mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/kpux/partrain?use_http=true&PID          pid.colors    -      -5 80 5 radial 1 0
+NEXP_KPUX_PID_TEMP    KPUX_PID_TEMP    mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/kpux/partrain?use_http=true&TEMP_FOR_PID temp.colors   dBZ    -5 80 5 radial 1 0
+NEXP_KPUX_RATE_ZH     KPUX_RATE_ZH     mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/kpux/partrain?use_http=true&RATE_ZH      precip_rate.colors  mm/hr  -5 80 5 radial 1 0
+NEXP_KPUX_RATE_Z_ZDR  KPUX_RATE_Z_ZDR  mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/kpux/partrain?use_http=true&RATE_Z_ZDR   precip_rate.colors  mm/hr  -5 80 5 radial 1 0
+NEXP_KPUX_RATE_KDP    KPUX_RATE_KDP    mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/kpux/partrain?use_http=true&RATE_KDP     precip_rate.colors  mm/hr  -5 80 5 radial 1 0
+NEXP_KPUX_RATE_PID    KPUX_RATE_PID    mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/kpux/partrain?use_http=true&RATE_PID     precip_rate.colors  mm/hr  -5 80 5 radial 1 0
+NEXP_KPUX_RATE_HYBRID KPUX_RATE_HYBRID mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/kpux/partrain?use_http=true&RATE_HYBRID  precip_rate.colors  mm/hr  -5 80 5 radial 1 0
 
-NEXP_KGLD_KDP         KGLD_KDP         mdvp:://front.eol.ucar.edu:8080:front/cfradial/kgld/partrain?use_http=true&KDP          kdp_sband.colors    deg/km -5 80 5 radial 1 0
-NEXP_KGLD_PID         KGLD_PID         mdvp:://front.eol.ucar.edu:8080:front/cfradial/kgld/partrain?use_http=true&PID          pid.colors    -      -5 80 5 radial 1 0
-NEXP_KGLD_PID_TEMP    KGLD_PID_TEMP    mdvp:://front.eol.ucar.edu:8080:front/cfradial/kgld/partrain?use_http=true&TEMP_FOR_PID temp.colors   dBZ    -5 80 5 radial 1 0
-NEXP_KGLD_RATE_ZH     KGLD_RATE_ZH     mdvp:://front.eol.ucar.edu:8080:front/cfradial/kgld/partrain?use_http=true&RATE_ZH      precip_rate.colors  mm/hr  -5 80 5 radial 1 0
-NEXP_KGLD_RATE_Z_ZDR  KGLD_RATE_Z_ZDR  mdvp:://front.eol.ucar.edu:8080:front/cfradial/kgld/partrain?use_http=true&RATE_Z_ZDR   precip_rate.colors  mm/hr  -5 80 5 radial 1 0
-NEXP_KGLD_RATE_KDP    KGLD_RATE_KDP    mdvp:://front.eol.ucar.edu:8080:front/cfradial/kgld/partrain?use_http=true&RATE_KDP     precip_rate.colors  mm/hr  -5 80 5 radial 1 0
-NEXP_KGLD_RATE_PID    KGLD_RATE_PID    mdvp:://front.eol.ucar.edu:8080:front/cfradial/kgld/partrain?use_http=true&RATE_PID     precip_rate.colors  mm/hr  -5 80 5 radial 1 0
-NEXP_KGLD_RATE_HYBRID KGLD_RATE_HYBRID mdvp:://front.eol.ucar.edu:8080:front/cfradial/kgld/partrain?use_http=true&RATE_HYBRID  precip_rate.colors  mm/hr  -5 80 5 radial 1 0
+NEXP_KGLD_KDP         KGLD_KDP         mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/kgld/partrain?use_http=true&KDP          kdp_sband.colors    deg/km -5 80 5 radial 1 0
+NEXP_KGLD_PID         KGLD_PID         mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/kgld/partrain?use_http=true&PID          pid.colors    -      -5 80 5 radial 1 0
+NEXP_KGLD_PID_TEMP    KGLD_PID_TEMP    mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/kgld/partrain?use_http=true&TEMP_FOR_PID temp.colors   dBZ    -5 80 5 radial 1 0
+NEXP_KGLD_RATE_ZH     KGLD_RATE_ZH     mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/kgld/partrain?use_http=true&RATE_ZH      precip_rate.colors  mm/hr  -5 80 5 radial 1 0
+NEXP_KGLD_RATE_Z_ZDR  KGLD_RATE_Z_ZDR  mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/kgld/partrain?use_http=true&RATE_Z_ZDR   precip_rate.colors  mm/hr  -5 80 5 radial 1 0
+NEXP_KGLD_RATE_KDP    KGLD_RATE_KDP    mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/kgld/partrain?use_http=true&RATE_KDP     precip_rate.colors  mm/hr  -5 80 5 radial 1 0
+NEXP_KGLD_RATE_PID    KGLD_RATE_PID    mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/kgld/partrain?use_http=true&RATE_PID     precip_rate.colors  mm/hr  -5 80 5 radial 1 0
+NEXP_KGLD_RATE_HYBRID KGLD_RATE_HYBRID mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/kgld/partrain?use_http=true&RATE_HYBRID  precip_rate.colors  mm/hr  -5 80 5 radial 1 0
 
-NEXP_KGJX_KDP         KGJX_KDP         mdvp:://front.eol.ucar.edu:8080:front/cfradial/kgjx/partrain?use_http=true&KDP          kdp_sband.colors    deg/km -5 80 5 radial 1 0
-NEXP_KGJX_PID         KGJX_PID         mdvp:://front.eol.ucar.edu:8080:front/cfradial/kgjx/partrain?use_http=true&PID          pid.colors    -      -5 80 5 radial 1 0
-NEXP_KGJX_PID_TEMP    KGJX_PID_TEMP    mdvp:://front.eol.ucar.edu:8080:front/cfradial/kgjx/partrain?use_http=true&TEMP_FOR_PID temp.colors   dBZ    -5 80 5 radial 1 0
-NEXP_KGJX_RATE_ZH     KGJX_RATE_ZH     mdvp:://front.eol.ucar.edu:8080:front/cfradial/kgjx/partrain?use_http=true&RATE_ZH      precip_rate.colors  mm/hr  -5 80 5 radial 1 0
-NEXP_KGJX_RATE_Z_ZDR  KGJX_RATE_Z_ZDR  mdvp:://front.eol.ucar.edu:8080:front/cfradial/kgjx/partrain?use_http=true&RATE_Z_ZDR   precip_rate.colors  mm/hr  -5 80 5 radial 1 0
-NEXP_KGJX_RATE_KDP    KGJX_RATE_KDP    mdvp:://front.eol.ucar.edu:8080:front/cfradial/kgjx/partrain?use_http=true&RATE_KDP     precip_rate.colors  mm/hr  -5 80 5 radial 1 0
-NEXP_KGJX_RATE_PID    KGJX_RATE_PID    mdvp:://front.eol.ucar.edu:8080:front/cfradial/kgjx/partrain?use_http=true&RATE_PID     precip_rate.colors  mm/hr  -5 80 5 radial 1 0
-NEXP_KGJX_RATE_HYBRID KGJX_RATE_HYBRID mdvp:://front.eol.ucar.edu:8080:front/cfradial/kgjx/partrain?use_http=true&RATE_HYBRID  precip_rate.colors  mm/hr  -5 80 5 radial 1 0
+NEXP_KGJX_KDP         KGJX_KDP         mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/kgjx/partrain?use_http=true&KDP          kdp_sband.colors    deg/km -5 80 5 radial 1 0
+NEXP_KGJX_PID         KGJX_PID         mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/kgjx/partrain?use_http=true&PID          pid.colors    -      -5 80 5 radial 1 0
+NEXP_KGJX_PID_TEMP    KGJX_PID_TEMP    mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/kgjx/partrain?use_http=true&TEMP_FOR_PID temp.colors   dBZ    -5 80 5 radial 1 0
+NEXP_KGJX_RATE_ZH     KGJX_RATE_ZH     mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/kgjx/partrain?use_http=true&RATE_ZH      precip_rate.colors  mm/hr  -5 80 5 radial 1 0
+NEXP_KGJX_RATE_Z_ZDR  KGJX_RATE_Z_ZDR  mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/kgjx/partrain?use_http=true&RATE_Z_ZDR   precip_rate.colors  mm/hr  -5 80 5 radial 1 0
+NEXP_KGJX_RATE_KDP    KGJX_RATE_KDP    mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/kgjx/partrain?use_http=true&RATE_KDP     precip_rate.colors  mm/hr  -5 80 5 radial 1 0
+NEXP_KGJX_RATE_PID    KGJX_RATE_PID    mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/kgjx/partrain?use_http=true&RATE_PID     precip_rate.colors  mm/hr  -5 80 5 radial 1 0
+NEXP_KGJX_RATE_HYBRID KGJX_RATE_HYBRID mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/kgjx/partrain?use_http=true&RATE_HYBRID  precip_rate.colors  mm/hr  -5 80 5 radial 1 0
 
 ############################
 # SURFACE data
 
-SURF_===== ==Surf==   mdvp:://front.eol.ucar.edu:8080:front/mdv/surf_interp?use_http=true&Temp        temp.colors m -5 80 5 dcont 1 0
+SURF_===== ==Surf==   mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/surf_interp?use_http=true&Temp        temp.colors m -5 80 5 dcont 1 0
 SURF_===== ==Surf==   mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
 SURF_===== ==Surf==   mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
 SURF_===== ==Surf==   mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
@@ -760,10 +760,10 @@ SURF_===== ==Surf==   mdvp::static//localhost::/spacer?&None  none.colors   m   
 SURF_===== ==Surf==   mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
 SURF_===== ==Surf==   mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
 
-SURF_Temp  SURF_Temp  mdvp:://front.eol.ucar.edu:8080:front/mdv/surf_interp?use_http=true&Temp        temp.colors m -5 80 5 dcont 1 0
-SURF_DewPt SURF_DewPt mdvp:://front.eol.ucar.edu:8080:front/mdv/surf_interp?use_http=true&DewPoint    temp.colors m -5 80 5 dcont 1 0
-SURF_Conv  SURF_Conv  mdvp:://front.eol.ucar.edu:8080:front/mdv/surf_interp?use_http=true&Convergence conv.colors m -5 80 5 dcont 1 0
-SURF_Terrain Terrain  mdvp::terrain//front.eol.ucar.edu:8080:front/mdv/terrain?use_http=true&Elevation     terrain_front.colors m -5 80 5 dcont 1 0
+SURF_Temp  SURF_Temp  mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/surf_interp?use_http=true&Temp        temp.colors m -5 80 5 dcont 1 0
+SURF_DewPt SURF_DewPt mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/surf_interp?use_http=true&DewPoint    temp.colors m -5 80 5 dcont 1 0
+SURF_Conv  SURF_Conv  mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/surf_interp?use_http=true&Convergence conv.colors m -5 80 5 dcont 1 0
+SURF_Terrain Terrain  mdvp::terrain//front.eol.ucar.edu:8080:eolbase/mdv/terrain?use_http=true&Elevation     terrain_front.colors m -5 80 5 dcont 1 0
 SURF_===== ========   mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
 SURF_===== ========   mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
 SURF_===== ========   mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
@@ -772,7 +772,7 @@ SURF_===== ========   mdvp::static//localhost::/spacer?&None  none.colors   m   
 ############################
 # Model data
 
-MODEL_==== ==Model==  mdvp:://front.eol.ucar.edu:8080:front/mdv/ruc?use_http=true&TMP  temp.colors   C   -5   80  5  dcont   1 0
+MODEL_==== ==Model==  mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/ruc?use_http=true&TMP  temp.colors   C   -5   80  5  dcont   1 0
 MODEL_==== ==Model==  mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
 MODEL_==== ==Model==  mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
 MODEL_==== ==Model==  mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
@@ -781,9 +781,9 @@ MODEL_==== ==Model==  mdvp::static//localhost::/spacer?&None  none.colors   m   
 MODEL_==== ==Model==  mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
 MODEL_==== ==Model==  mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
 
-MODEL_RUC-temp   RUC-temp   mdvp:://front.eol.ucar.edu:8080:front/mdv/ruc?use_http=true&TMP  temp.colors   C   -5   80  5  dcont   1 0
-MODEL_RUC-RH     RUC-RH     mdvp:://front.eol.ucar.edu:8080:front/mdv/ruc?use_http=true&RH   rh.colors   %   -5   80  5  dcont   1 0
-MODEL_RUC-Wspd   RUC-Wspd   mdvp:://front.eol.ucar.edu:8080:front/mdv/ruc?use_http=true&speed   wind_speed.colors   m/s   -5   80  5  dcont   1 0
+MODEL_RUC-temp   RUC-temp   mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/ruc?use_http=true&TMP  temp.colors   C   -5   80  5  dcont   1 0
+MODEL_RUC-RH     RUC-RH     mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/ruc?use_http=true&RH   rh.colors   %   -5   80  5  dcont   1 0
+MODEL_RUC-Wspd   RUC-Wspd   mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/ruc?use_http=true&speed   wind_speed.colors   m/s   -5   80  5  dcont   1 0
 MODEL_VdrasTemp  VdrasTemp  mdvp:://vdras.eol.ucar.edu::front-vdras/mdv/adjoint/anal?use_http=true&temp surf_temp.colors   C   -5   80  5  dcont   1 0
 MODEL_========   =========  mdvp::static//front.eol.ucar.edu:8080:/spacer?use_http=true&Elevation  none.colors   m   -5   80  5  dcont   1 0
 MODEL_========   =========  mdvp::static//front.eol.ucar.edu:8080:/spacer?use_http=true&Elevation  none.colors   m   -5   80  5  dcont   1 0
@@ -793,7 +793,7 @@ MODEL_========   =========  mdvp::static//front.eol.ucar.edu:8080:/spacer?use_ht
 ############################
 # Satellite data
 
-SAT_==== ==Sat==  mdvp:://front.eol.ucar.edu:8080:front/mdv/sat/goes1km?use_http=true&gvar_ch1  sat_albedo.colors  albedo   -5   80  5  dcont   1 0
+SAT_==== ==Sat==  mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/sat/goes1km?use_http=true&gvar_ch1  sat_albedo.colors  albedo   -5   80  5  dcont   1 0
 SAT_==== ==Sat==  mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
 SAT_==== ==Sat==  mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
 SAT_==== ==Sat==  mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
@@ -802,11 +802,11 @@ SAT_==== ==Sat==  mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 
 SAT_==== ==Sat==  mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
 SAT_==== ==Sat==  mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
 
-SAT_Vis   SAT_Vis  mdvp:://front.eol.ucar.edu:8080:front/mdv/sat/goes13_1km?use_http=true&gvar_ch1  sat_cloud.colors  albedo   -5   80  5  dcont   1 0
-SAT_IR2   SAT_IR2  mdvp:://front.eol.ucar.edu:8080:front/mdv/sat/goes13_4km?use_http=true&gvar_ch2   sat_temp.colors   C   -5   80  5  dcont   1 0
-SAT_IR3   SAT_IR3  mdvp:://front.eol.ucar.edu:8080:front/mdv/sat/goes13_4km?use_http=true&gvar_ch3   sat_temp.colors   C   -5   80  5  dcont   1 0
-SAT_IR4   SAT_IR4  mdvp:://front.eol.ucar.edu:8080:front/mdv/sat/goes13_4km?use_http=true&gvar_ch4   sat_temp.colors   C   -5   80  5  dcont   1 0
-SAT_WV    SAT_WV   mdvp:://front.eol.ucar.edu:8080:front/mdv/sat/goes13_4km?use_http=true&gvar_ch6   wv.colors   C   -5   80  5  dcont   1 0
+SAT_Vis   SAT_Vis  mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/sat/goes13_1km?use_http=true&gvar_ch1  sat_cloud.colors  albedo   -5   80  5  dcont   1 0
+SAT_IR2   SAT_IR2  mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/sat/goes13_4km?use_http=true&gvar_ch2   sat_temp.colors   C   -5   80  5  dcont   1 0
+SAT_IR3   SAT_IR3  mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/sat/goes13_4km?use_http=true&gvar_ch3   sat_temp.colors   C   -5   80  5  dcont   1 0
+SAT_IR4   SAT_IR4  mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/sat/goes13_4km?use_http=true&gvar_ch4   sat_temp.colors   C   -5   80  5  dcont   1 0
+SAT_WV    SAT_WV   mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/sat/goes13_4km?use_http=true&gvar_ch6   wv.colors   C   -5   80  5  dcont   1 0
 SAT_==== ========  mdvp::static//front.eol.ucar.edu:8080:/spacer?use_http=true&Elevation  none.colors   m   -5   80  5  dcont   1 0
 SAT_==== ========  mdvp::static//front.eol.ucar.edu:8080:/spacer?use_http=true&Elevation  none.colors   m   -5   80  5  dcont   1 0
 SAT_==== ========  mdvp::static//front.eol.ucar.edu:8080:/spacer?use_http=true&Elevation  none.colors   m   -5   80  5  dcont   1 0
@@ -815,7 +815,7 @@ SAT_==== ========  mdvp::static//front.eol.ucar.edu:8080:/spacer?use_http=true&E
 ############################
 # Lightning data
 
-LTG_==== ==Ltg==  mdvp:://front.eol.ucar.edu:8080:front/mdv/sat/goes1km?use_http=true&gvar_ch1  sat_albedo.colors  albedo   -5   80  5  dcont   1 0
+LTG_==== ==Ltg==  mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/sat/goes1km?use_http=true&gvar_ch1  sat_albedo.colors  albedo   -5   80  5  dcont   1 0
 LTG_==== ==Ltg==  mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
 LTG_==== ==Ltg==  mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
 LTG_==== ==Ltg==  mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
@@ -824,9 +824,9 @@ LTG_==== ==Ltg==  mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 
 LTG_==== ==Ltg==  mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
 LTG_==== ==Ltg==  mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
 
-LTG_LMA_2D LMA_2D mdvp:://front.eol.ucar.edu:8080:front/mdv/lma/lmaGridder_2min?use_http=true&counts2D counts2D_v2.colors Counts  0 0 0   cart    1 0
-LTG_LMA_3D LMA_3D mdvp:://front.eol.ucar.edu:8080:front/mdv/lma/lmaGridder_2min?use_http=true&counts3D counts3D_v2.colors Counts  0 0 0   cart    1 0
-LTG_LMA_extent LMA_extent mdvp:://front.eol.ucar.edu:8080:front/mdv/lma/lmaFlashExtent_2min?use_http=true&flashExtent flashExt.colors Fl/Km2/2min 0 0 0   cart    1 0
+LTG_LMA_2D LMA_2D mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/lma/lmaGridder_2min?use_http=true&counts2D counts2D_v2.colors Counts  0 0 0   cart    1 0
+LTG_LMA_3D LMA_3D mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/lma/lmaGridder_2min?use_http=true&counts3D counts3D_v2.colors Counts  0 0 0   cart    1 0
+LTG_LMA_extent LMA_extent mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/lma/lmaFlashExtent_2min?use_http=true&flashExtent flashExt.colors Fl/Km2/2min 0 0 0   cart    1 0
 
 LTG_==== ==Ltg==  mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
 LTG_==== ==Ltg==  mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
@@ -941,10 +941,10 @@ KCYS-PAWNEE-DualDop60 KCYS-PAWNEE-DualDop60  KCYS_PAWNEE_DualDoppler_60.map 0   
 #
 # Legend_label  URL U V W_fieldnames units  Style [Color]
 #----------------------------------------------------------------------------
-Surf  mdvp:://front.eol.ucar.edu:8080:front/mdv/surf_interp?use_http=true& Uwind Vwind None m/s 1 yellow
-RUC   mdvp:://front.eol.ucar.edu:8080:front/mdv/ruc?use_http=true& UGRD  VGRD  None m/s 1 cyan
+Surf  mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/surf_interp?use_http=true& Uwind Vwind None m/s 1 yellow
+RUC   mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/ruc?use_http=true& UGRD  VGRD  None m/s 1 cyan
 VDRAS mdvp:://vdras.eol.ucar.edu::front-vdras/mdv/adjoint/anal?use_http=true& uwind vwind wwind m/s 1 orange
-DDOP  mdvp:://front.eol.ucar.edu:8080:front/mdv/ddoppler/chill_spol?use_http=true& U V None m/s 1 yellow
+DDOP  mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/ddoppler/chill_spol?use_http=true& U V None m/s 1 yellow
 
 </WINDS>
 
@@ -2043,7 +2043,7 @@ prod_info = {
   ,
   {
     menu_label = "METARS-simple",
-    url = "spdbp:Metar2Symprod:simple//front.eol.ucar.edu:8080:front/spdb/metar?use_http=true",
+    url = "spdbp:Metar2Symprod:simple//front.eol.ucar.edu:8080:eolbase/spdb/metar?use_http=true",
     data_type = 0,
     render_type = RENDER_LATEST_IN_FRAME,
     on_by_default = FALSE,
@@ -2056,7 +2056,7 @@ prod_info = {
   ,
   {
     menu_label = "METARS-full",
-    url = "spdbp:Metar2Symprod:labels//front.eol.ucar.edu:8080:front/spdb/metar?use_http=true",
+    url = "spdbp:Metar2Symprod:labels//front.eol.ucar.edu:8080:eolbase/spdb/metar?use_http=true",
     data_type = 0,
     render_type = RENDER_LATEST_IN_FRAME,
     on_by_default = FALSE,
@@ -2069,7 +2069,7 @@ prod_info = {
   ,
   {
     menu_label = "MADIS-simple",
-    url = "spdbp:Metar2Symprod:simple//front.eol.ucar.edu:8080:front/spdb/madis?use_http=true",
+    url = "spdbp:Metar2Symprod:simple//front.eol.ucar.edu:8080:eolbase/spdb/madis?use_http=true",
     data_type = 0,
     render_type = RENDER_LATEST_IN_FRAME,
     on_by_default = FALSE,
@@ -2082,7 +2082,7 @@ prod_info = {
   ,
   {
     menu_label = "MADIS-full",
-    url = "spdbp:Metar2Symprod:labels//front.eol.ucar.edu:8080:front/spdb/madis?use_http=true",
+    url = "spdbp:Metar2Symprod:labels//front.eol.ucar.edu:8080:eolbase/spdb/madis?use_http=true",
     data_type = 0,
     render_type = RENDER_LATEST_IN_FRAME,
     on_by_default = FALSE,
@@ -2095,7 +2095,7 @@ prod_info = {
   ,
   {
     menu_label = "NLDN" ,
-    url = "spdbp:Ltg2Symprod://front.eol.ucar.edu:8080:front/spdb/ltg/nldn?use_http=true",
+    url = "spdbp:Ltg2Symprod://front.eol.ucar.edu:8080:eolbase/spdb/ltg/nldn?use_http=true",
     data_type = 0,
     render_type = RENDER_ALL_BEFORE_DATA_TIME,
     on_by_default = FALSE,
@@ -2108,7 +2108,7 @@ prod_info = {
   // ,                        
   // {
   //   menu_label = "Falcon Track 10-min",
-  //   url = "spdbp:AcTrack2Symprod:10_min//front.eol.ucar.edu:8080:front/spdb/ac_posn/falcon?use_http=true",
+  //   url = "spdbp:AcTrack2Symprod:10_min//front.eol.ucar.edu:8080:eolbase/spdb/ac_posn/falcon?use_http=true",
   //   data_type = 0,
   //   render_type = RENDER_FIRST_BEFORE_FRAME_TIME,
   //   on_by_default = FALSE,
@@ -2144,7 +2144,7 @@ id_label = "Terrain";
 // Type: string
 //
 
-terrain_url = "mdvp::terrain//front.eol.ucar.edu:8080:front/mdv/terrain?use_http=true&Elevation";
+terrain_url = "mdvp::terrain//front.eol.ucar.edu:8080:eolbase/mdv/terrain?use_http=true&Elevation";
 
 ///////////// height_scaler ///////////////////////////
 //
