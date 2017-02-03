@@ -342,7 +342,7 @@ MG1_RATE_HYBRID MG1_RATE_HYBRID    mdvp:://front.eol.ucar.edu:8080:dynamo/cfradi
 
 World         World          world_states.map        1  0.0 1000000.0  white
 Maldives      Maldives       maldives.map            1  0.0 10000.0    white
-#Towers        Towers         dynamo_towers.map       0  0.0 10000.0    cyan
+Towers        Towers         dynamo_towers.map       0  0.0 10000.0    cyan
 Points        Points         dynamo_points.map       0  0.0 1000000.0  cyan
 
 # Colorado
