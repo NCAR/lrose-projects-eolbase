@@ -28,3 +28,17 @@ You should be able to run the commands on any of the servers:
   /opt/local/bin/start_CIDD.web.marshall
 ```
 
+## Displays for other field projects
+
+### PECAN
+
+```
+  /opt/local/bin/start_CIDD.web.pecan
+```
+
+### DYNAMO
+
+```
+  /opt/local/bin/start_CIDD.web.dynamo
+```
+
