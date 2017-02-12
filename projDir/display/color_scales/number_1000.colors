@@ -8,7 +8,7 @@
 10      12      SkyBlue
 12      14      LightSeaGreen
 14      16      DarkCyan
-16      18      Teal
+16      18      DarkGreen
 18    	20  	NavyBlue
 20      22     	SlateBlue
 22      25      gray30
@@ -28,13 +28,13 @@
 150     175     coral
 175     200     tomato
 200     250     orangered
-250     300     crimson
+250     300     indianred
 300     350     DeepPink
 350     400     Maroon1
 400     450     HotPink
 450     500     LightPink
 500     600     Violet
-600     700     PaleRedViolet
+600     700     PaleVioletRed
 700     800     Orchid
 800     900     MediumOrchid
 900     1000    DarkOrchid
