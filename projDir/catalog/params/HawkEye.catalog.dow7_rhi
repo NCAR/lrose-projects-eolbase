@@ -180,7 +180,7 @@ begin_in_archive_mode = TRUE;
 // Type: string
 //
 
-archive_start_time = "2017 02 07 21 00 00";
+archive_start_time = "2017 01 09 00 00 00";
 
 ///////////// archive_scan_interval_secs //////////////
 //
@@ -216,8 +216,7 @@ archive_n_scans = 12;
 // Type: string
 //
 
-archive_data_url = "$(DATA_DIR)/incoming_dow7/cfradial/quicklook/high/rhi";
-// archive_data_url = "$(DATA_DIR)/incoming_dow7/cfradial/quicklook/high/sur";
+archive_data_url = "$(HOME)/data/cswr/SNOWIE/cfradial/dow7/rhi";
 
 ///////////// archive_search_margin_secs //////////////
 //
@@ -716,7 +715,7 @@ ppi_main_legend_pos = LEGEND_TOP_LEFT;
 // Type: int
 //
 
-rhi_window_width = 500;
+rhi_window_width = 700;
 
 ///////////// rhi_window_height ///////////////////////
 //
@@ -726,7 +725,7 @@ rhi_window_width = 500;
 // Type: int
 //
 
-rhi_window_height = 500;
+rhi_window_height = 700;
 
 ///////////// rhi_window_start_x //////////////////////
 //
@@ -736,7 +735,7 @@ rhi_window_height = 500;
 // Type: int
 //
 
-rhi_window_start_x = 1000;
+rhi_window_start_x = 1150;
 
 ///////////// rhi_window_start_y //////////////////////
 //
@@ -1547,7 +1546,7 @@ bscan_dwell_stats = DWELL_STATS_MIDDLE;
 // Type: string
 //
 
-images_output_dir = "/tmp/images/HawkEye";
+images_output_dir = "/tmp/images/snowie/dow7/rhi";
 
 ///////////// images_write_to_day_dir /////////////////
 //
@@ -1668,7 +1667,7 @@ images_write_latest_data_info = TRUE;
 // Type: boolean
 //
 
-images_auto_create = FALSE;
+images_auto_create = TRUE;
 
 ///////////// images_creation_mode ////////////////////
 //
@@ -1750,6 +1749,35 @@ images_archive_start_time = "1970 01 01 00 00 00";
 //
 
 images_archive_end_time = "1970 01 01 00 00 00";
+
+///////////// images_set_sweep_index_list /////////////
+//
+// Option to specify the sweep indexes for the image generation.
+//
+// If TRUE, only the specified sweeps will be processed.
+//
+//
+// Type: boolean
+//
+
+images_set_sweep_index_list = TRUE;
+
+///////////// images_sweep_index_list /////////////////
+//
+// List of valid sweep indexes for image generation.
+//
+// See 'images_set_sweep_index_list'. Images will only be generated for 
+//   the specified sweep indexes.
+//
+//
+// Type: int
+// 1D array - variable length.
+//
+
+images_sweep_index_list = {
+ 1,
+ 7
+};
 
 //======================================================================
 //
