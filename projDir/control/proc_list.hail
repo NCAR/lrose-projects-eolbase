@@ -177,3 +177,4 @@ LdataMultWatcher    catalog.dow              start_inst(catalog) snuff_inst
 #
 LdataWatcher       catalog.images           start_inst(catalog) snuff_inst
 LdataWatcher       catalog.dow_images       start_inst(catalog) snuff_inst
+LdataWatcher       catalog.dow_rhi_images   start_inst(catalog) snuff_inst
