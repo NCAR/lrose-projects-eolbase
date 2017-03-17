@@ -1490,7 +1490,7 @@ short_requests = TRUE;
 prod_info = {
   {
     menu_label = "Tstorms" ,
-    url = "spdbp:Tstorms2Symprod://front.eol.ucar.edu:8080:spdb/tstorms/BrisMerge?use_http=true",
+    url = "spdbp:Tstorms2Symprod://front.eol.ucar.edu:8080:cp2_queensland/spdb/tstorms/BrisMerge?use_http=true",
     data_type = 0,
     render_type = RENDER_LATEST_IN_FRAME,
     on_by_default = TRUE,
@@ -1503,7 +1503,7 @@ prod_info = {
   ,
   {
     menu_label = "Ltg" ,
-    url = "spdbp:Ltg2Symprod://front.eol.ucar.edu:8080:spdb/ltg?use_http=true",
+    url = "spdbp:Ltg2Symprod://front.eol.ucar.edu:8080:cp2_queensland/spdb/ltg?use_http=true",
     data_type = 0,
     render_type = RENDER_ALL_BEFORE_DATA_TIME,
     on_by_default = TRUE,
@@ -1516,7 +1516,7 @@ prod_info = {
   ,
   {
     menu_label = "Surface stations - simple",
-    url = "spdbp:Metar2Symprod:simple//front.eol.ucar.edu:8080:spdb/aws?use_http=true",
+    url = "spdbp:Metar2Symprod:simple//front.eol.ucar.edu:8080:cp2_queensland/spdb/aws?use_http=true",
     data_type = 0,
     render_type = RENDER_LATEST_IN_FRAME,
     on_by_default = TRUE,
@@ -1529,7 +1529,7 @@ prod_info = {
   ,
   {
     menu_label = "Surface stations - labels",
-    url = "spdbp:Metar2Symprod:labels//front.eol.ucar.edu:8080:spdb/aws?use_http=true",
+    url = "spdbp:Metar2Symprod:labels//front.eol.ucar.edu:8080:cp2_queensland/spdb/aws?use_http=true",
     data_type = 0,
     render_type = RENDER_LATEST_IN_FRAME,
     on_by_default = FALSE,
@@ -1542,7 +1542,7 @@ prod_info = {
   ,                        
   {
     menu_label = "AC Track",
-    url = "spdbp:AcTrack2Symprod://front.eol.ucar.edu:8080:spdb/ac_posn?use_http=true",
+    url = "spdbp:AcTrack2Symprod://front.eol.ucar.edu:8080:cp2_queensland/spdb/ac_posn?use_http=true",
     data_type = 0,
     render_type = RENDER_FIRST_BEFORE_FRAME_TIME,
     on_by_default = TRUE,
