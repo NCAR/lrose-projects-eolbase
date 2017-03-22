@@ -5,6 +5,7 @@
 # SYSTEM processes
 #
 Janitor           logs     start_Janitor.logs        snuff_inst
+Janitor           raw      start_Janitor.raw         snuff_inst
 Scout             primary  start_Scout               kill_Scout
 DataMapper        primary  start_DataMapper          kill_DataMapper
 #
@@ -42,6 +43,7 @@ InputWatcher        mesonet1           start_inst(ingest)  snuff_inst
 #MdvConvert         mrms_comp          start_inst(ingest)  snuff_inst
 InputWatcher        ruc                start_inst(ingest)  snuff_inst 
 Grib2toMdv          ruc                start_inst(ingest)  snuff_inst 
+Grib2toMdv          ruc_fcasts         start_inst(ingest)  snuff_inst 
 Mdv2SoundingSpdb    ruc                start_inst(ingest)  snuff_inst
 #NcGeneric2Mdv      sat_1km            start_inst(ingest)  snuff_inst 
 #NcGeneric2Mdv      sat_4km            start_inst(ingest)  snuff_inst 
@@ -53,8 +55,8 @@ NcarAcPosn2Spdb     ops                start_inst(ingest)  snuff_inst
 ######################################################################
 # SNOWIE ingest
 #
-MrmsGribIngest      snowie             start_inst(ingest)  snuff_inst 
-MdvConvert          mrms_comp_snowie   start_inst(ingest)  snuff_inst
+#MrmsGribIngest      snowie             start_inst(ingest)  snuff_inst 
+#MdvConvert          mrms_comp_snowie   start_inst(ingest)  snuff_inst
 ######################################################################
 # PECAN ingest
 #
@@ -167,14 +169,14 @@ RadxConvert   kpux    start_RadxConvert.kpux   snuff_inst
 ######################################################################
 # Generate images for catalog
 #
-LdataMultWatcher    catalog.mrms_comp_snowie start_inst(catalog) snuff_inst
-LdataMultWatcher    catalog.dow              start_inst(catalog) snuff_inst
+#LdataMultWatcher    catalog.mrms_comp_snowie start_inst(catalog) snuff_inst
+#LdataMultWatcher    catalog.dow              start_inst(catalog) snuff_inst
 #LdataMultWatcher   catalog.nexrad           start_inst(catalog) snuff_inst
 #LdataMultWatcher   catalog.mosaics          start_inst(catalog) snuff_inst
 #LdataMultWatcher   catalog.spol             start_inst(catalog) snuff_inst
 ######################################################################
 # Push images to catalog
 #
-LdataWatcher       catalog.images           start_inst(catalog) snuff_inst
-LdataWatcher       catalog.dow_images       start_inst(catalog) snuff_inst
-LdataWatcher       catalog.dow_rhi_images   start_inst(catalog) snuff_inst
+#LdataWatcher       catalog.images           start_inst(catalog) snuff_inst
+#LdataWatcher       catalog.dow_images       start_inst(catalog) snuff_inst
+#LdataWatcher       catalog.dow_rhi_images   start_inst(catalog) snuff_inst
