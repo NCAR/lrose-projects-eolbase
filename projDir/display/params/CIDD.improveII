@@ -72,103 +72,24 @@
 #Legend   Button                                                             Rendering
 #Label    Label       URL           Colorscale Units Cont-lo-hi-interv Format Display_in_menu Bkgnd_Render
 #----------------------------------------------------------------------------------------------------------
-# Front Range
 #
 
-DBZ_F_SUR   DBZ_F_SUR   mdvp:://front.eol.ucar.edu:8080:timrex/mdv/spol/rvp8/sur?use_http=true&DBZ_F   dbz.colors   dBZ -5 80 5 radial 1 0
-DBZ_F_SEC   DBZ_F_SEC   mdvp:://front.eol.ucar.edu:8080:timrex/mdv/spol/rvp8/sec?use_http=true&DBZ_F   dbz.colors   dBZ -5 80 5 radial 1 0
-DBZ_SUR     DBZ_SUR     mdvp:://front.eol.ucar.edu:8080:timrex/mdv/spol/rvp8/sur?use_http=true&DBZ     dbz.colors   dBZ -5 80 5 radial 1 0
-DBZ_SEC     DBZ_SEC     mdvp:://front.eol.ucar.edu:8080:timrex/mdv/spol/rvp8/sec?use_http=true&DBZ     dbz.colors   dBZ -5 80 5 radial 1 0
+# S-BAND MOMENTS
 
-VEL_F_SUR   VEL_F_SUR   mdvp:://front.eol.ucar.edu:8080:timrex/mdv/spol/rvp8/sur?use_http=true&VEL_F   vel.colors   m/s -5 80 5 radial 1 0
-VEL_F_SEC   VEL_F_SEC   mdvp:://front.eol.ucar.edu:8080:timrex/mdv/spol/rvp8/sec?use_http=true&VEL_F   vel.colors   m/s -5 80 5 radial 1 0
-VEL_SUR     VEL_SUR     mdvp:://front.eol.ucar.edu:8080:timrex/mdv/spol/rvp8/sur?use_http=true&VEL     vel.colors   m/s -5 80 5 radial 1 0
-VEL_SEC     VEL_SEC     mdvp:://front.eol.ucar.edu:8080:timrex/mdv/spol/rvp8/sec?use_http=true&VEL     vel.colors   m/s -5 80 5 radial 1 0
+DBZ     DBZ     mdvp:://front.eol.ucar.edu:8080:improveII/cfradial?use_http=true&DZ   dbz.colors   dBZ -5 80 5 radial 1 0
+VEL     VEL     mdvp:://front.eol.ucar.edu:8080:improveII/cfradial?use_http=true&VE    vel.colors   m/s -5 80 5 radial 1 0
+WIDTH   WIDTH   mdvp:://front.eol.ucar.edu:8080:improveII/cfradial?use_http=true&SW    width.colors m/s -5 80 5 radial 1 0
+NCP     NCP     mdvp:://front.eol.ucar.edu:8080:improveII/cfradial?use_http=true&NCP   ncp.colors  dB   -5   80  5  radial 1 0
 
-WIDTH_F_SUR WIDTH_F_SUR mdvp:://front.eol.ucar.edu:8080:timrex/mdv/spol/rvp8/sur?use_http=true&WIDTH_F  width.colors m/s -5 80 5 radial 1 0
-WIDTH_F_SEC WIDTH_F_SEC mdvp:://front.eol.ucar.edu:8080:timrex/mdv/spol/rvp8/sur?use_http=true&WIDTH_F  width.colors m/s -5 80 5 radial 1 0
-WIDTH_SUR   WIDTH_SUR   mdvp:://front.eol.ucar.edu:8080:timrex/mdv/spol/rvp8/sec?use_http=true&WIDTH    width.colors m/s -5 80 5 radial 1 0
-WIDTH_SEC   WIDTH_SEC   mdvp:://front.eol.ucar.edu:8080:timrex/mdv/spol/rvp8/sur?use_http=true&WIDTH    width.colors m/s -5 80 5 radial 1 0
+ZDR     ZDR     mdvp:://front.eol.ucar.edu:8080:improveII/cfradial?use_http=true&ZDR   zdr.colors   dB  -5 80 5 radial 1 0
+PHIDP   PHIDP   mdvp:://front.eol.ucar.edu:8080:improveII/cfradial?use_http=true&PHI phidp.colors deg -5 80 5 radial 1 0
+RHOHV   RHOHV   mdvp:://front.eol.ucar.edu:8080:improveII/cfradial?use_http=true&RHOHV rhohv.colors _   -5 80 5 radial 1 0
+LDR     LDR     mdvp:://front.eol.ucar.edu:8080:improveII/cfradial?use_http=true&LDR   ldr.colors   dB  -5 80 5 radial 1 0
 
-ZDR_F_SUR   ZDR_F_SUR   mdvp:://front.eol.ucar.edu:8080:timrex/mdv/spol/rvp8/sur?use_http=true&ZDR_F zdr.colors   dB  -5 80 5 radial 1 0
-ZDR_F_SEC   ZDR_F_SEC   mdvp:://front.eol.ucar.edu:8080:timrex/mdv/spol/rvp8/sec?use_http=true&ZDR_F zdr.colors   dB  -5 80 5 radial 1 0
-ZDR_SUR     ZDR_SUR     mdvp:://front.eol.ucar.edu:8080:timrex/mdv/spol/rvp8/sur?use_http=true&ZDR   zdr.colors   dB  -5 80 5 radial 1 0
-ZDR_SEC     ZDR_SEC     mdvp:://front.eol.ucar.edu:8080:timrex/mdv/spol/rvp8/sec?use_http=true&ZDR   zdr.colors   dB  -5 80 5 radial 1 0
-
-LDRH_F_SUR  LDRH_F_SUR  mdvp:://front.eol.ucar.edu:8080:timrex/mdv/spol/rvp8/sur?use_http=true&LDRH_F ldr.colors   dB  -5 80 5 radial 1 0
-LDRH_F_SEC  LDRH_F_SEC  mdvp:://front.eol.ucar.edu:8080:timrex/mdv/spol/rvp8/sec?use_http=true&LDRH_F ldr.colors   dB  -5 80 5 radial 1 0
-LDRH_SUR    LDRH_SUR    mdvp:://front.eol.ucar.edu:8080:timrex/mdv/spol/rvp8/sur?use_http=true&LDRH   ldr.colors   dB  -5 80 5 radial 1 0
-LDRH_SEC    LDRH_SEC    mdvp:://front.eol.ucar.edu:8080:timrex/mdv/spol/rvp8/sec?use_http=true&LDRH   ldr.colors   dB  -5 80 5 radial 1 0
-
-LDRV_F_SUR  LDRV_F_SUR  mdvp:://front.eol.ucar.edu:8080:timrex/mdv/spol/rvp8/sur?use_http=true&LDRV_F ldr.colors   dB  -5 80 5 radial 1 0
-LDRV_F_SEC  LDRV_F_SEC  mdvp:://front.eol.ucar.edu:8080:timrex/mdv/spol/rvp8/sec?use_http=true&LDRV_F ldr.colors   dB  -5 80 5 radial 1 0
-LDRV_SUR    LDRV_SUR    mdvp:://front.eol.ucar.edu:8080:timrex/mdv/spol/rvp8/sur?use_http=true&LDRV   ldr.colors   dB  -5 80 5 radial 1 0
-LDRV_SEC    LDRV_SEC    mdvp:://front.eol.ucar.edu:8080:timrex/mdv/spol/rvp8/sec?use_http=true&LDRV   ldr.colors   dB  -5 80 5 radial 1 0
-
-PHIDP_F_SUR PHIDP_F_SUR mdvp:://front.eol.ucar.edu:8080:timrex/mdv/spol/rvp8/sur?use_http=true&PHIDP_F phidp.colors deg -5 80 5 radial 1 0
-PHIDP_F_SEC PHIDP_F_SEC mdvp:://front.eol.ucar.edu:8080:timrex/mdv/spol/rvp8/sec?use_http=true&PHIDP_F phidp.colors deg -5 80 5 radial 1 0
-PHIDP_SUR   PHIDP_SUR   mdvp:://front.eol.ucar.edu:8080:timrex/mdv/spol/rvp8/sur?use_http=true&PHIDP   phidp.colors deg -5 80 5 radial 1 0
-PHIDP_SEC   PHIDP_SEC   mdvp:://front.eol.ucar.edu:8080:timrex/mdv/spol/rvp8/sec?use_http=true&PHIDP   phidp.colors deg -5 80 5 radial 1 0
-
-RHOHV_F_SUR RHOHV_F_SUR mdvp:://front.eol.ucar.edu:8080:timrex/mdv/spol/rvp8/sur?use_http=true&RHOHV_F rhohv.colors _   -5 80 5 radial 1 0
-RHOHV_F_SEC RHOHV_F_SEC mdvp:://front.eol.ucar.edu:8080:timrex/mdv/spol/rvp8/sec?use_http=true&RHOHV_F rhohv.colors _   -5 80 5 radial 1 0
-RHOHV_SUR   RHOHV_SUR   mdvp:://front.eol.ucar.edu:8080:timrex/mdv/spol/rvp8/sur?use_http=true&RHOHV   rhohv.colors _   -5 80 5 radial 1 0
-RHOHV_SEC   RHOHV_SEC   mdvp:://front.eol.ucar.edu:8080:timrex/mdv/spol/rvp8/sec?use_http=true&RHOHV   rhohv.colors _   -5 80 5 radial 1 0
-
-KDP_F_SUR   KDP_F_SUR   mdvp:://front.eol.ucar.edu:8080:timrex/mdv/spol/rvp8/sur?use_http=true&KDP_F  kdp.colors   deg/km -5 80 5 radial 1 0     
-KDP_F_SEC   KDP_F_SEC   mdvp:://front.eol.ucar.edu:8080:timrex/mdv/spol/rvp8/sec?use_http=true&KDP_F  kdp.colors   deg/km -5 80 5 radial 1 0     
-KDP_SUR     KDP_SUR     mdvp:://front.eol.ucar.edu:8080:timrex/mdv/spol/rvp8/sur?use_http=true&KDP    kdp.colors   deg/km -5 80 5 radial 1 0     
-KDP_SEC     KDP_SEC     mdvp:://front.eol.ucar.edu:8080:timrex/mdv/spol/rvp8/sec?use_http=true&KDP    kdp.colors   deg/km -5 80 5 radial 1 0     
-
-SNRHC_F_SUR   SNRHC_F_SUR   mdvp:://front.eol.ucar.edu:8080:timrex/mdv/spol/rvp8/sur?use_http=true&SNRHC_F  snr.colors   dB     -5 80 5 radial 1 0
-SNRHC_F_SEC   SNRHC_F_SEC   mdvp:://front.eol.ucar.edu:8080:timrex/mdv/spol/rvp8/sec?use_http=true&SNRHC_F  snr.colors   dB     -5 80 5 radial 1 0
-SNRHC_SUR     SNRHC_SUR     mdvp:://front.eol.ucar.edu:8080:timrex/mdv/spol/rvp8/sur?use_http=true&SNRHC    snr.colors   dB     -5 80 5 radial 1 0
-SNRHC_SEC     SNRHC_SEC     mdvp:://front.eol.ucar.edu:8080:timrex/mdv/spol/rvp8/sec?use_http=true&SNRHC    snr.colors   dB     -5 80 5 radial 1 0
-
-SNRVC_F_SUR   SNRVC_F_SUR   mdvp:://front.eol.ucar.edu:8080:timrex/mdv/spol/rvp8/sur?use_http=true&SNRVC_F  snr.colors   dB     -5 80 5 radial 1 0
-SNRVC_F_SEC   SNRVC_F_SEC   mdvp:://front.eol.ucar.edu:8080:timrex/mdv/spol/rvp8/sec?use_http=true&SNRVC_F  snr.colors   dB     -5 80 5 radial 1 0
-SNRVC_SUR     SNRVC_SUR     mdvp:://front.eol.ucar.edu:8080:timrex/mdv/spol/rvp8/sur?use_http=true&SNRVC    snr.colors   dB     -5 80 5 radial 1 0
-SNRVC_SEC     SNRVC_SEC     mdvp:://front.eol.ucar.edu:8080:timrex/mdv/spol/rvp8/sec?use_http=true&SNRVC    snr.colors   dB     -5 80 5 radial 1 0
-
-SNRVX_F_SUR   SNRVX_F_SUR   mdvp:://front.eol.ucar.edu:8080:timrex/mdv/spol/rvp8/sur?use_http=true&SNRVX_F  snr.colors   dB     -5 80 5 radial 1 0
-SNRVX_F_SEC   SNRVX_F_SEC   mdvp:://front.eol.ucar.edu:8080:timrex/mdv/spol/rvp8/sec?use_http=true&SNRVX_F  snr.colors   dB     -5 80 5 radial 1 0
-SNRVX_SUR     SNRVX_SUR     mdvp:://front.eol.ucar.edu:8080:timrex/mdv/spol/rvp8/sur?use_http=true&SNRVX    snr.colors   dB     -5 80 5 radial 1 0
-SNRVX_SEC     SNRVX_SEC     mdvp:://front.eol.ucar.edu:8080:timrex/mdv/spol/rvp8/sec?use_http=true&SNRVX    snr.colors   dB     -5 80 5 radial 1 0
-
-SNRHX_F_SUR   SNRHX_F_SUR   mdvp:://front.eol.ucar.edu:8080:timrex/mdv/spol/rvp8/sur?use_http=true&SNRHX_F  snr.colors   dB     -5 80 5 radial 1 0
-SNRHX_F_SEC   SNRHX_F_SEC   mdvp:://front.eol.ucar.edu:8080:timrex/mdv/spol/rvp8/sec?use_http=true&SNRHX_F  snr.colors   dB     -5 80 5 radial 1 0
-SNRHX_SUR     SNRHX_SUR     mdvp:://front.eol.ucar.edu:8080:timrex/mdv/spol/rvp8/sur?use_http=true&SNRHX    snr.colors   dB     -5 80 5 radial 1 0
-SNRHX_SEC     SNRHX_SEC     mdvp:://front.eol.ucar.edu:8080:timrex/mdv/spol/rvp8/sec?use_http=true&SNRHX    snr.colors   dB     -5 80 5 radial 1 0
-
-DBMHC_F_SUR  DBMHC_F_SUR  mdvp:://front.eol.ucar.edu:8080:timrex/mdv/spol/rvp8/sur?use_http=true&DBMHC_F  dbmlow.colors dBm -5 80 5 radial 1 0
-DBMHC_F_SEC  DBMHC_F_SEC  mdvp:://front.eol.ucar.edu:8080:timrex/mdv/spol/rvp8/sec?use_http=true&DBMHC_F  dbmlow.colors dBm -5 80 5 radial 1 0
-DBMHC_SUR    DBMHC_SUR    mdvp:://front.eol.ucar.edu:8080:timrex/mdv/spol/rvp8/sur?use_http=true&DBMHC    dbmlow.colors dBm -5 80 5 radial 1 0
-DBMHC_SEC    DBMHC_SEC    mdvp:://front.eol.ucar.edu:8080:timrex/mdv/spol/rvp8/sec?use_http=true&DBMHC    dbmlow.colors dBm -5 80 5 radial 1 0
-
-DBMVC_F_SUR  DBMVC_F_SUR  mdvp:://front.eol.ucar.edu:8080:timrex/mdv/spol/rvp8/sur?use_http=true&DBMVC_F  dbmlow.colors dBm -5 80 5 radial 1 0
-DBMVC_F_SEC  DBMVC_F_SEC  mdvp:://front.eol.ucar.edu:8080:timrex/mdv/spol/rvp8/sec?use_http=true&DBMVC_F  dbmlow.colors dBm -5 80 5 radial 1 0
-DBMVC_SUR    DBMVC_SUR    mdvp:://front.eol.ucar.edu:8080:timrex/mdv/spol/rvp8/sur?use_http=true&DBMVC    dbmlow.colors dBm -5 80 5 radial 1 0
-DBMVC_SEC    DBMVC_SEC    mdvp:://front.eol.ucar.edu:8080:timrex/mdv/spol/rvp8/sec?use_http=true&DBMVC    dbmlow.colors dBm -5 80 5 radial 1 0
-
-======== ========  mdvp::static//front.eol.ucar.edu:8080:timrex/mdv/terrain?use_http=true&Elevation  none.colors   m   -5   80  5  dcont   1 0
-======== ========  mdvp::static//front.eol.ucar.edu:8080:timrex/mdv/terrain?use_http=true&Elevation  none.colors   m   -5   80  5  dcont   1 0
-======== ========  mdvp::static//front.eol.ucar.edu:8080:timrex/mdv/terrain?use_http=true&Elevation  none.colors   m   -5   80  5  dcont   1 0
-======== ========  mdvp::static//front.eol.ucar.edu:8080:timrex/mdv/terrain?use_http=true&Elevation  none.colors   m   -5   80  5  dcont   1 0
-
-CPA_SUR   CPA_SUR    mdvp:://front.eol.ucar.edu:8080:timrex/mdv/spol/rvp8/sur?use_http=true&CPA  fraction.colors  - -5 80 5 radial 1 0
-CPA_SEC   CPA_SEC    mdvp:://front.eol.ucar.edu:8080:timrex/mdv/spol/rvp8/sec?use_http=true&CPA  fraction.colors  - -5 80 5 radial 1 0
-NCP_SUR   NCP_SUR    mdvp:://front.eol.ucar.edu:8080:timrex/mdv/spol/rvp8/sur?use_http=true&NCP  fraction.colors  dB   -5   80  5  radial   1 0
-NCP_SEC   NCP_SEC    mdvp:://front.eol.ucar.edu:8080:timrex/mdv/spol/rvp8/sec?use_http=true&NCP  fraction.colors  dB   -5   80  5  radial   1 0
-
-CMD_SUR      CMD_SUR       mdvp:://front.eol.ucar.edu:8080:timrex/mdv/spol/rvp8/sur?use_http=true&CMD      cmd.colors  none -5 80 5 radial 1 0
-CMD_SEC      CMD_SEC       mdvp:://front.eol.ucar.edu:8080:timrex/mdv/spol/rvp8/sec?use_http=true&CMD      cmd.colors  none -5 80 5 radial 1 0
-CMD_FLAG_SUR CMD_FLAG_SUR  mdvp:://front.eol.ucar.edu:8080:timrex/mdv/spol/rvp8/sur?use_http=true&CMD_FLAG cmd_flag.colors  none -5 80 5 radial 1 0
-CMD_FLAG_SEC CMD_FLAG_SEC  mdvp:://front.eol.ucar.edu:8080:timrex/mdv/spol/rvp8/sec?use_http=true&CMD_FLAG cmd_flag.colors  none -5 80 5 radial 1 0
-
-CLUT_SUR    CLUT_SUR       mdvp:://front.eol.ucar.edu:8080:timrex/mdv/spol/rvp8/sur?use_http=true&CLUT   clut.colors    dB     -5   80  5  radial   1 0
-CLUT_SEC    CLUT_SEC       mdvp:://front.eol.ucar.edu:8080:timrex/mdv/spol/rvp8/sec?use_http=true&CLUT   clut.colors    dB     -5   80  5  radial   1 0
-======== ========  mdvp::static//front.eol.ucar.edu:8080:timrex/mdv/terrain?use_http=true&Elevation  none.colors   m   -5   80  5  dcont   1 0
-======== ========  mdvp::static//front.eol.ucar.edu:8080:timrex/mdv/terrain?use_http=true&Elevation  none.colors   m   -5   80  5  dcont   1 0
+KDP     KDP     mdvp:://front.eol.ucar.edu:8080:improveII/cfradial?use_http=true&KDP   kdp.colors   dB  -5 80 5 radial 1 0
+======== ========  mdvp::static//$(DATA_HOST):0:/spacer&Elevation  none.colors   m   -5   80  5  dcont   1 0
+======== ========  mdvp::static//$(DATA_HOST):0:/spacer&Elevation  none.colors   m   -5   80  5  dcont   1 0
+======== ========  mdvp::static//$(DATA_HOST):0:/spacer&Elevation  none.colors   m   -5   80  5  dcont   1 0
 
 </GRIDS>
 
@@ -183,27 +104,12 @@ CLUT_SEC    CLUT_SEC       mdvp:://front.eol.ucar.edu:8080:timrex/mdv/spol/rvp8/
 # MAP_CODE Control_Label   Map_File_Name   On/OFF Detail__min Detail_max Color     
 #------------------------------------------------------------------------------------------
 
-Taiwan        Taiwan         taiwan_coast.map        1  0.0 1000000.0  white
-World         World          world_states.map        1  0.0 1000000.0  white
-Liouchiou     Liouchiou      liouchiou.map           0  0.0 1000000.0  yellow
-islands       islands        taiwan_islands.map      0  0.0 1000000.0  pink
-TW_Airports   Airports       taiwan_airports.map     0  0.0 2000.0     red
+#World         World          world_states.map        1  0.0 1000000.0  white
 
+# Colorado
 
-Cities        Cities         taiwan_cities.map       0  0.0 2000.0     white
-Cities2       Cities2        Major_Cities.shp        0  0.0 2000.0     white
-Regional_B    Regional_B     Regional_Boundaries.shp 0  0.0 2000.0     gray
-hydro_basins  hydro_basins   hydro_basins.shp        1  0.0 2000.0     cyan
-
-DualDop_GoldenBeach30 DualDop_GoldenBeach30 SPol_GoldenBeach30.map 0 0.0 2000.0 yellow
-DualDop_JiuRuLevee DualDop_JiuRuLevee SPol_JiuRuLevee30.map 0 0.0 2000.0 orange
-DualDop_JDOP DualDop_JDOP SPol_Jdop.map 0 0.0 2000.0 orange
-
-#network_no_labels  network_no_labels network_no_labels.map 1 0.0 2000.0 white
-#network_labels  network_labels network_labels.map 0 0.0 2000.0 white
-
-#supersite_no_labels  supersite_no_labels supersite_no_labels.map 1 0.0 2000.0 white
-#supersite_labels  supersite_labels supersite_labels.map 0 0.0 2000.0 white
+Counties     Counties     us_counties.map   1      0.0      10000.0     blue 
+States       States       usa.map           2      0.0      10000.0     white
 
 </MAPS>
 
@@ -283,10 +189,7 @@ cidd.debug2_flag:           0
 #  System will startup using field 0, requesting data closest to the
 # demo time. The movie frame will be centered on the time after applying
 # temporal rounding. 
-cidd.demo_time:  10:00 06/02/2008
-#cidd.demo_time:  05:52 06/15/2008
-#cidd.demo_time:  01:00 06/16/2008
-
+cidd.demo_time:  20:00 12/14/2001
 
 # Set times to the nearest value divisible by the number of seconds
 cidd.temporal_rounding:    1
@@ -302,7 +205,7 @@ cidd.starting_movie_frames:  12
 # minutes per movie frame on startup
 # The display will atomatically update every this interval, throwing away its
 # oldest movie frame and creating and drawing a new one.
-cidd.time_interval:  7.5
+cidd.time_interval:  10
 
 # This parameter sets the maximum number of hours in the future a user can select
 # from the quick forecast menu. See SHOW_FORECAST_MENU menu bar button
@@ -335,7 +238,7 @@ cidd.stretch_factor:     20.0
 # Typically, real-time operation should operate as 1 (End point requests)
 # Choose mode 0 if you want to enter a time and have data the data
 # at that time appear, regardless of how wide the movie frame interval is.
-cidd.gather_data_mode:  0
+cidd.gather_data_mode:  1
 
 # Number of milliseconds between checks for images needing redrawn
 # Set this lower on faster hardware - Recommended 50-250
@@ -485,20 +388,20 @@ cidd.enable_save_image_panel: 1
  
 # On startup and each time the reset button is pressed, the display
 # will indicate a click at this point, as if the user had clicked..
-cidd.reset_click_longitude: 120.4336
-cidd.reset_click_latitude:  22.5269
+cidd.reset_click_longitude:  -122.855
+cidd.reset_click_latitude:   44.3865
 #
 # The Outer most domain: Overlays are clipped to this domain and 
 # pan/moves cannot exceed these edge limits.
-cidd.domain_limit_min_x:        -1000
-cidd.domain_limit_max_x:         1000
-cidd.domain_limit_min_y:        -1000
-cidd.domain_limit_max_y:         1000
+cidd.domain_limit_min_x:        -5000
+cidd.domain_limit_max_x:         5000
+cidd.domain_limit_min_y:        -5000
+cidd.domain_limit_max_y:         5000
  
 # The Lat, Long of the center of the display. Internal range rings
 # are relative to this point.
-cidd.origin_longitude:       120.4336
-cidd.origin_latitude:        22.5269
+cidd.origin_longitude:       -122.855
+cidd.origin_latitude:        44.3865
 #
 #
 # Select the data fields/page to start on.
@@ -508,39 +411,60 @@ cidd.xsect_start_page:      1
 
 #
 # The Outer most domain:
-cidd.num_zoom_levels:       4
+cidd.num_zoom_levels:       8
 cidd.start_zoom_level:      3
 
 # The number of Cached images for zooms.
-cidd.num_cache_zooms:       4
+cidd.num_cache_zooms:       0
 #
 # Note, the Domain labels are used for automated output imagery.
 # It's suggested that names without spaces be used when running
 # in.
 #
-cidd.level1_label:                  WIDE
-cidd.level1_min_xkm:                -1000.0
-cidd.level1_min_ykm:                -1000.0
-cidd.level1_max_xkm:                1000.0
-cidd.level1_max_ykm:                1000.0
+cidd.level1_label:                  40km
+cidd.level1_min_xkm:                -40.0
+cidd.level1_min_ykm:                -40.0
+cidd.level1_max_xkm:                40.0
+cidd.level1_max_ykm:                40.0
 #
-cidd.level2_label:                  TAIWAN
-cidd.level2_min_xkm:                -430.0
-cidd.level2_min_ykm:                -280.0
-cidd.level2_max_xkm:                530.0
-cidd.level2_max_ykm:                680.0
+cidd.level2_label:                  75km
+cidd.level2_min_xkm:                -75.0
+cidd.level2_min_ykm:                -75.0
+cidd.level2_max_xkm:                75.0
+cidd.level2_max_ykm:                75.0
 #
-cidd.level3_label:                  SPOL
-cidd.level3_min_xkm:                -150.0
-cidd.level3_min_ykm:                -150.0
-cidd.level3_max_xkm:                150.0
-cidd.level3_max_ykm:                150.0
 #
-cidd.level4_label:                  SAMPLE
-cidd.level4_min_xkm:                -50.0
-cidd.level4_min_ykm:                -50.0
-cidd.level4_max_xkm:                100.0
-cidd.level4_max_ykm:                100.0
+cidd.level3_label:                  210km
+cidd.level3_min_xkm:                -210.0
+cidd.level3_min_ykm:                -210.0
+cidd.level3_max_xkm:                210.0
+cidd.level3_max_ykm:                210.0
+#
+#
+cidd.level4_label:                  500km
+cidd.level4_min_xkm:                -500.0
+cidd.level4_min_ykm:                -500.0
+cidd.level4_max_xkm:                500.0
+cidd.level4_max_ykm:                500.0
+#
+cidd.level5_label:                  1000km
+cidd.level5_min_xkm:                -1000.0
+cidd.level5_min_ykm:                -1000.0
+cidd.level5_max_xkm:                1000.0
+cidd.level5_max_ykm:                1000.0
+#
+cidd.level6_label:                  3000km
+cidd.level6_min_xkm:                -3000.0
+cidd.level6_min_ykm:                -3000.0
+cidd.level6_max_xkm:                3000.0
+cidd.level6_max_ykm:                3000.0
+#
+cidd.level7_label:                  5000km
+cidd.level7_min_xkm:                -5000.0
+cidd.level7_min_ykm:                -5000.0
+cidd.level7_max_xkm:                5000.0
+cidd.level7_max_ykm:                5000.0
+#
 
 # Vertical Range and Resolution - Establishes a vertical coordinate system
 # for the cross sectional imagery.
@@ -567,14 +491,9 @@ cidd.max_adeg:               360.0
 
 # List of comma delimited local directories or HTTP URLs to search
 # Searchs . then each directory/URL in order 
-#cidd.color_file_subdir:   ./colorscales
-#cidd.map_file_subdir:     ./params/maps
 
 cidd.color_file_subdir:   http://front.eol.ucar.edu/color_scales
 cidd.map_file_subdir:     http://front.eol.ucar.edu/maps
-
-#cidd.color_file_subdir:   $(PROJ_DIR)/display/color_scales,http://front.eol.ucar.edu/content/projects/hawk/front/projDir/display/color_scales
-#cidd.map_file_subdir:     $(PROJ_DIR)/display/maps,http://front.eol.ucar.edu/content/projects/hawk/front/projDir/display/maps
 
 #
 # Station locator features
@@ -639,7 +558,7 @@ cidd.margin_color: black
 
 # Render values outside the data range of the color scale in this color
 # 'transparent' is the default
-cidd.out_of_range_color: gray20
+cidd.out_of_range_color: transparent
 
 # Color of the cross section reference line 
 cidd.route_path_color: yellow
@@ -756,7 +675,7 @@ cidd.horiz_legends_delta_y:  30
 #
 # WINDOW SIZE PARAMS
 #
-cidd.horiz_default_height:    950
+cidd.horiz_default_height:    900
 cidd.horiz_min_height:        400
 cidd.horiz_min_width:         400
 cidd.horiz_default_x_pos:     0
@@ -780,6 +699,7 @@ cidd.vert_right_margin:      30
 
 # Set range_ring_spacing to a negative value to dynamically determing spacing.
 cidd.range_ring_spacing:     25.0
+cidd.max_ring_range:     150.0
 # x_space, y_space in pixels determine allowable space for range ring labels
 cidd.range_ring_x_space:    40
 cidd.range_ring_y_space:    13
@@ -887,8 +807,8 @@ cidd.map_missing_to_min_value: 0
 #cidd.layer5_field:  KCYS-DBZ 
 #cidd.layer4_field:  KPUX-DBZ
 #cidd.layer3_field:  KGJX-DBZ
-#cidd.layer2_field:  KGLD-DBZ off
-#cidd.layer1_field:  KLNX-DBZ off
+#cidd.layer1_field:  IR
+#cidd.layer2_field:  DBZ_F_MDV
 
 # Rendering order for layers:
 #  0: render main field first then layers
@@ -949,7 +869,7 @@ cidd.click_posn_rel_to_origin: 1
 # Set this parameter to force the field menu popup to this many columns
 # If set <= 0, then cidd sets this dynamically, allowing at most 30 in each
 # column.
-cidd.num_field_menu_cols: 8
+cidd.num_field_menu_cols: 4
 
 # This parameter sets WSDDM specific behavior On -
 # - Go to end of loop when movie stops.
@@ -1002,7 +922,6 @@ not be availible.  For research/ post analysis most of them should be enabled.
 # 
 #
 #####################################################################################
-
 cidd.num_menu_bar_cells: 16
 #
 cidd.menu_bar_label1: Fields...
@@ -1097,7 +1016,7 @@ cidd.menu_bar_funct15: SHOW_STATUS_PANEL
 
 ##########################################
 
-cidd.horiz_frame_label: SPOL TIMREX KAOISHUNG TAIWAN
+cidd.horiz_frame_label: SPOL $(SITE_NAME)
 
 # Set the message to display when no data is availible
 cidd.no_data_message:     NO DATA FOUND (in this area at the selected time)
@@ -1159,7 +1078,7 @@ cidd.track_forecast_color:          red
 #  KEYS for SHARED MEMORY SEGMENTS
 
 # Key for coordinate shared memory
-cidd.coord_key:               91500
+cidd.coord_key:               61500
 
 # Key for TITAN control shared memory
 cidd.titan_key               61501
@@ -1185,7 +1104,8 @@ cidd.product_detail_adjustment3: +1
 # Product Scaling Constant. - Set this constant to determine
 # at what zoom icons and will have a scale factor of 1.0
 # Default = 300. Function = log10(Constant /km_across_screen) + 1.0;
-cidd.scale_constant: 300.0 
+# Set to 0 or less to leave icons unscaled
+cidd.scale_constant: -1
 
 # prevent CIDD from closing popup windows when changing desktops
 
@@ -1284,68 +1204,94 @@ short_requests = TRUE;
 prod_info = {
    {
     menu_label = "RHI-ticks",
-    url = "spdbp:Rhi2Symprod:ticks//front.eol.ucar.edu:8080:timrex/spdb/spol/rhi?use_http=true",
+    url = "spdbp:Rhi2Symprod:ticks//$(DATA_HOST):0:name/spdb/rhi/sband",
     data_type = 0,
-    render_type = RENDER_ALL,
+    render_type = RENDER_ALL_VALID,
     on_by_default = TRUE,
-    minutes_allow_before = 7.5,
-    minutes_allow_after = 7.5,
+    minutes_allow_before = 20,
+    minutes_allow_after = 10,
     text_off_threshold = 0.4,
-    FALSE,
-    FALSE
+    request_data_on_zoom = FALSE,
+    request_data_on_vert_change = FALSE
   }
   , 
   {
     menu_label = "RHI-label",
-    url = "spdbp:Rhi2Symprod:label//front.eol.ucar.edu:8080:timrex/spdb/spol/rhi?use_http=true",
+    url = "spdbp:Rhi2Symprod:label//$(DATA_HOST):0:name/spdb/rhi/sband",
     data_type = 0,
-    render_type = RENDER_ALL,
+    render_type = RENDER_ALL_VALID,
     on_by_default = FALSE,
-    minutes_allow_before = 7.5,
-    minutes_allow_after = 7.5,
+    minutes_allow_before = 20,
+    minutes_allow_after = 10,
     text_off_threshold = 0.4,
-    FALSE,
-    FALSE
+    request_data_on_zoom = FALSE,
+    request_data_on_vert_change = FALSE
   }
-  ,
-  {
-    menu_label = "Surface stations - simple",
-    url = "spdbp:Metar2Symprod:simple//front.eol.ucar.edu:8080:timrex/spdb/cwb/aws?use_http=true",
-    data_type = 0,
-    render_type = RENDER_LATEST_IN_FRAME,
-    on_by_default = TRUE,
-    minutes_allow_before = 90.0,
-    minutes_allow_after = 0.0,
-    text_off_threshold = 0.5,
-    FALSE,
-    FALSE
-  }
-  ,
-  {
-    menu_label = "Surface stations - labels",
-    url = "spdbp:Metar2Symprod:labels//front.eol.ucar.edu:8080:timrex/spdb/cwb/aws?use_http=true",
-    data_type = 0,
-    render_type = RENDER_LATEST_IN_FRAME,
-    on_by_default = FALSE,
-    minutes_allow_before = 90.0,
-    minutes_allow_after = 0.0,
-    text_off_threshold = 0.5,
-    FALSE,
-    FALSE
-  }
-  ,
-  {
-    menu_label = "Precip accum",
-    url = "spdbp:Metar2Symprod:precip//front.eol.ucar.edu:8080:timrex/spdb/cwb/precip?use_http=true",
-    data_type = 0,
-    render_type = RENDER_LATEST_IN_FRAME,
-    on_by_default = FALSE,
-    minutes_allow_before = 70.0,
-    minutes_allow_after = 0.0,
-    text_off_threshold = 0.5,
-    FALSE,
-    FALSE
-  }
+  // ,
+  // {
+  //   menu_label = "METARS-simple",
+  //   url = "spdbp:Metar2Symprod:simple//$(DATA_HOST):0:name/spdb/metar",
+  //   data_type = 0,
+  //   render_type = RENDER_LATEST_IN_FRAME,
+  //   on_by_default = FALSE,
+  //   minutes_allow_before = 90.0,
+  //   minutes_allow_after = 0.0,
+  //   text_off_threshold = 0.0,
+  //   request_data_on_zoom = FALSE,
+  //   request_data_on_vert_change = FALSE
+  // }
+  // ,
+  // {
+  //   menu_label = "METARS-full",
+  //   url = "spdbp:Metar2Symprod:labels//$(DATA_HOST):0:name/spdb/metar",
+  //   data_type = 0,
+  //   render_type = RENDER_LATEST_IN_FRAME,
+  //   on_by_default = FALSE,
+  //   minutes_allow_before = 90.0,
+  //   minutes_allow_after = 0.0,
+  //   text_off_threshold = 0.0,
+  //   request_data_on_zoom = FALSE,
+  //   request_data_on_vert_change = FALSE
+  // }
+  // ,
+  // {
+  //   menu_label = "SYN-OBS",
+  //   url = "spdbp:Metar2Symprod:simple//$(DATA_HOST):0:name/spdb/synop_obs",
+  //   data_type = 0,
+  //   render_type = RENDER_LATEST_IN_FRAME,
+  //   on_by_default = FALSE,
+  //   minutes_allow_before = 240.0,
+  //   minutes_allow_after = 6.0,
+  //   text_off_threshold = 0.0,
+  //   request_data_on_zoom = FALSE,
+  //   request_data_on_vert_change = FALSE
+  // }
+  // ,
+  // {
+  //   menu_label = "WWLLN-1hour" ,
+  //   url = "spdbp:Ltg2Symprod:wwlln//$(DATA_HOST):0:name/spdb/wwlln",
+  //   data_type = 0,
+  //   render_type = RENDER_ALL_BEFORE_DATA_TIME,
+  //   on_by_default = FALSE,
+  //   minutes_allow_before = 60.0,
+  //   minutes_allow_after = 0.0,
+  //   text_off_threshold = 0.0,
+  //   FALSE,
+  //   FALSE
+  // }
+  // ,                        
+  // {
+  //   menu_label = "Falcon Track 10-min",
+  //   url = "spdbp:AcTrack2Symprod:10_min//$(DATA_HOST):0:name/spdb/ac_posn/falcon",
+  //   data_type = 0,
+  //   render_type = RENDER_FIRST_BEFORE_FRAME_TIME,
+  //   on_by_default = FALSE,
+  //   minutes_allow_before = 15.0,
+  //   minutes_allow_after = 15.0,
+  //   text_off_threshold = 0.4,
+  //   FALSE,
+  //   FALSE
+  // }
 };
 
 </SYMPRODS> 
@@ -1372,8 +1318,7 @@ id_label = "Terrain";
 // Type: string
 //
 
-terrain_url = "mdvp::static//front.eol.ucar.edu:8080:timrex/mdv/terrain?use_http=true&Elevation";
-//terrain_url = "";
+terrain_url = "";
 
 ///////////// height_scaler ///////////////////////////
 //
@@ -1393,8 +1338,7 @@ height_scaler = 0.03280834;
 // Type: string
 //
 
-//landuse_url = "mdvp::static//front.eol.ucar.edu:8080:timrex/mdv/terrain?use_http=true&Elevation";
-//landuse_url = "";
+landuse_url = "";
 
  ///////////// landuse_colorscale //////////////////////
 //
