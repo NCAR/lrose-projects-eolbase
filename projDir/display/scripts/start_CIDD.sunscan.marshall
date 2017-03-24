@@ -25,13 +25,6 @@ xset fp= /usr/X11R6/lib/X11/fonts/misc/,/usr/X11R6/lib/X11/fonts/75dpi/,/usr/X11
 
 # set up display
 
-setenv project eolbase
-
-setenv PROJ_DIR ~/projDir
-if (-e /opt/local/git/lrose-projects-eolbase/projDir) then
-  setenv PROJ_DIR /opt/local/git/lrose-projects-eolbase/projDir
-endif
-
 CIDD -p http://front.eol.ucar.edu/git/lrose-projects-eolbase/projDir/display/params/CIDD.sunscan.marshall >& /dev/null &
 
 
