@@ -72,7 +72,7 @@ def main():
 
     # do rsync for last ndaysLookback days
 
-    idays = range(options.ndaysLookback)
+    idays = range(int(options.ndaysLookback))
 
     for iday in idays:
         dtime = timedelta(iday)
