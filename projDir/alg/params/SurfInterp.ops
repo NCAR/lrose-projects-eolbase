@@ -111,8 +111,8 @@ terrain_field_name = "Elevation";
 
 surface_data_urls = {
   "spdbp:://$(DATA_HOST)::$(project)/spdb/metar",
-  "spdbp:://$(DATA_HOST)::$(project)/spdb/madis",
-  "spdbp:://$(DATA_HOST)::$(project)/spdb/KSMeso"
+  "spdbp:://$(DATA_HOST)::$(project)/spdb/madis"
+//   "spdbp:://$(DATA_HOST)::$(project)/spdb/KSMeso"
 };
 
 ///////////// genpt_data_urls /////////////////////////
@@ -201,7 +201,7 @@ sounding_max_dist = 500;
 //
 //
 
-OutputProj = { PROJ_LATLON, 750, 750, 0.03, 0.03, -110, 25, 40.0, -104, 0, 0 };
+OutputProj = { PROJ_LATLON, 750, 750, 0.03, 0.03, -120, 30, 40.0, -104, 0, 0 };
 
 ///////////// altitude ////////////////////////////////
 //

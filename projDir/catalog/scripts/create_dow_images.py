@@ -14,7 +14,7 @@ import time
 import datetime
 from datetime import timedelta
 import string
-import paramiko
+#import paramiko
 import subprocess
 from optparse import OptionParser
 from stat import *
@@ -73,10 +73,10 @@ def main():
     os.environ['FLAT_MINX'] = '%f' % (options.max_range_km * -1.0)
     os.environ['FLAT_MAXX'] = '%f' % (options.max_range_km)
 
-    os.environ['MERCATOR_MINLAT'] = '%f' % (radar_lat - 1.0)
-    os.environ['MERCATOR_MAXLAT'] = '%f' % (radar_lat + 1.0)
-    os.environ['MERCATOR_MINLON'] = '%f' % (radar_lon - 1.0)
-    os.environ['MERCATOR_MAXLON'] = '%f' % (radar_lon + 1.0)
+    os.environ['MERCATOR_MINLAT'] = '%f' % (radar_lat - 0.75)
+    os.environ['MERCATOR_MAXLAT'] = '%f' % (radar_lat + 0.75)
+    os.environ['MERCATOR_MINLON'] = '%f' % (radar_lon - 0.75)
+    os.environ['MERCATOR_MAXLON'] = '%f' % (radar_lon + 0.75)
     
     # create the images
     

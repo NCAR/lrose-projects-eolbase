@@ -76,17 +76,17 @@
 
 # S-BAND MOMENTS
 
-DBZ     DBZ     mdvp:://$(DATA_HOST):0:improve/cfradial&DZ   dbz.colors   dBZ -5 80 5 radial 1 0
-VEL     VEL     mdvp:://$(DATA_HOST):0:improve/cfradial&VE    vel.colors   m/s -5 80 5 radial 1 0
-WIDTH   WIDTH   mdvp:://$(DATA_HOST):0:improve/cfradial&SW    width.colors m/s -5 80 5 radial 1 0
-NCP     NCP     mdvp:://$(DATA_HOST):0:improve/cfradial&NCP   ncp.colors  dB   -5   80  5  radial 1 0
+DBZ     DBZ     mdvp:://front.eol.ucar.edu:8080:improve/cfradial?use_http=true&DZ   dbz.colors   dBZ -5 80 5 radial 1 0
+VEL     VEL     mdvp:://front.eol.ucar.edu:8080:improve/cfradial?use_http=true&VE    vel.colors   m/s -5 80 5 radial 1 0
+WIDTH   WIDTH   mdvp:://front.eol.ucar.edu:8080:improve/cfradial?use_http=true&SW    width.colors m/s -5 80 5 radial 1 0
+NCP     NCP     mdvp:://front.eol.ucar.edu:8080:improve/cfradial?use_http=true&NCP   ncp.colors  dB   -5   80  5  radial 1 0
 
-ZDR     ZDR     mdvp:://$(DATA_HOST):0:improve/cfradial&ZDR   zdr.colors   dB  -5 80 5 radial 1 0
-PHIDP   PHIDP   mdvp:://$(DATA_HOST):0:improve/cfradial&PHI phidp.colors deg -5 80 5 radial 1 0
-RHOHV   RHOHV   mdvp:://$(DATA_HOST):0:improve/cfradial&RHOHV rhohv.colors _   -5 80 5 radial 1 0
-LDR     LDR     mdvp:://$(DATA_HOST):0:improve/cfradial&LDR   ldr.colors   dB  -5 80 5 radial 1 0
+ZDR     ZDR     mdvp:://front.eol.ucar.edu:8080:improve/cfradial?use_http=true&ZDR   zdr.colors   dB  -5 80 5 radial 1 0
+PHIDP   PHIDP   mdvp:://front.eol.ucar.edu:8080:improve/cfradial?use_http=true&PHI phidp.colors deg -5 80 5 radial 1 0
+RHOHV   RHOHV   mdvp:://front.eol.ucar.edu:8080:improve/cfradial?use_http=true&RHOHV rhohv.colors _   -5 80 5 radial 1 0
+LDR     LDR     mdvp:://front.eol.ucar.edu:8080:improve/cfradial?use_http=true&LDR   ldr.colors   dB  -5 80 5 radial 1 0
 
-KDP     KDP     mdvp:://$(DATA_HOST):0:improve/cfradial&KDP   kdp.colors   dB  -5 80 5 radial 1 0
+KDP     KDP     mdvp:://front.eol.ucar.edu:8080:improve/cfradial?use_http=true&KDP   kdp.colors   dB  -5 80 5 radial 1 0
 ======== ========  mdvp::static//$(DATA_HOST):0:/spacer&Elevation  none.colors   m   -5   80  5  dcont   1 0
 ======== ========  mdvp::static//$(DATA_HOST):0:/spacer&Elevation  none.colors   m   -5   80  5  dcont   1 0
 ======== ========  mdvp::static//$(DATA_HOST):0:/spacer&Elevation  none.colors   m   -5   80  5  dcont   1 0
@@ -104,38 +104,12 @@ KDP     KDP     mdvp:://$(DATA_HOST):0:improve/cfradial&KDP   kdp.colors   dB  -
 # MAP_CODE Control_Label   Map_File_Name   On/OFF Detail__min Detail_max Color     
 #------------------------------------------------------------------------------------------
 
-World         World          world_states.map        1  0.0 1000000.0  white
-#Maldives      Maldives       maldives.map            1  0.0 10000.0    white
-#Towers        Towers         dynamo_towers.map       0  0.0 10000.0    cyan
-#Points        Points         dynamo_points.map       0  0.0 1000000.0  cyan
+#World         World          world_states.map        1  0.0 1000000.0  white
 
 # Colorado
 
 Counties     Counties     us_counties.map   1      0.0      10000.0     blue 
-States       States       usa.map           1      0.0      10000.0     white
-roads        roads        colo_roads.map    0      0.0      10000.0     white
-dia          dia          DIA_all.map       1      0.0      10000.0     white
-BAO          BAO          bao_tower.map     1      0.0      10000.0     white
-SPOL         SPOL         spol_name.map 1      0.0      10000.0    yellow
-CHILL        CHILL        spol_name.map 1      0.0      10000.0    cyan
-
-# Taiwan
-
-#Taiwan        Taiwan         taiwan_coast.map        0  0.0 1000000.0  white
-#Liouchiou     Liouchiou      liouchiou.map           1  0.0 1000000.0  yellow
-#islands       islands        taiwan_islands.map      1  0.0 1000000.0  pink
-#TW_Airports   Airports       taiwan_airports.map     0  0.0 2000.0     red
-#Cities        Cities         taiwan_cities.map       0  0.0 2000.0     white
-#Cities2       Cities2        Major_Cities.shp        0  0.0 2000.0     white
-#Regional_B    Regional_B     Regional_Boundaries.shp 0  0.0 2000.0     gray
-#hydro_basins  hydro_basins   hydro_basins.shp        1  0.0 2000.0     cyan
-#DualDop_GoldenBeach30 DualDop_GoldenBeach30 SPol_GoldenBeach30.map 0 0.0 2000.0 yellow
-#DualDop_JiuRuLevee DualDop_JiuRuLevee SPol_JiuRuLevee30.map 0 0.0 2000.0 orange
-#DualDop_JDOP DualDop_JDOP SPol_Jdop.map 0 0.0 2000.0 orange
-#network_no_labels  network_no_labels network_no_labels.map 1 0.0 2000.0 white
-#network_labels  network_labels network_labels.map 0 0.0 2000.0 white
-#supersite_no_labels  supersite_no_labels supersite_no_labels.map 1 0.0 2000.0 white
-#supersite_labels  supersite_labels supersite_labels.map 0 0.0 2000.0 white
+States       States       usa.map           2      0.0      10000.0     white
 
 </MAPS>
 
@@ -215,7 +189,7 @@ cidd.debug2_flag:           0
 #  System will startup using field 0, requesting data closest to the
 # demo time. The movie frame will be centered on the time after applying
 # temporal rounding. 
-cidd.demo_time:  12:00 01/05/2001
+cidd.demo_time:  04:00 01/24/2001
 
 # Set times to the nearest value divisible by the number of seconds
 cidd.temporal_rounding:    1
@@ -517,9 +491,9 @@ cidd.max_adeg:               360.0
 
 # List of comma delimited local directories or HTTP URLs to search
 # Searchs . then each directory/URL in order 
-cidd.color_file_subdir:   $(PROJ_DIR)/display/color_scales
-cidd.map_file_subdir:     $(PROJ_DIR)/display/maps
-#cidd.map_file_subdir:     http://name/cidd/display/maps
+
+cidd.color_file_subdir:   http://front.eol.ucar.edu/color_scales
+cidd.map_file_subdir:     http://front.eol.ucar.edu/maps
 
 #
 # Station locator features

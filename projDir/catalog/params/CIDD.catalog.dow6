@@ -77,9 +77,10 @@ field_list = {
 #----------------------------------------------------------------------------------------------------------
 #
 
-DOW6-DBZ  DBZ$(IS_TRANS) mdvp:://localhost:0:$(DATA_DIR)/$(project)/cfradial/dow6/quicklook/high/sur&DBZ dbz.colors dBZ -5 80 5 radial 1 1
-DOW6-VEL VEL$(IS_TRANS) mdvp:://localhost:0:$(DATA_DIR)/$(project)/cfradial/dow6/quicklook/high/sur&VEL vel.colors m/s -5 80 5 radial 1 1
-DOW6-ZDR ZDR$(IS_TRANS) mdvp:://localhost:0:$(DATA_DIR)/$(project)/cfradial/dow6/quicklook/high/sur&ZDR zdr.colors dB  -5 80 5 radial 1 1
+DOW6-DBZ  DBZ$(IS_TRANS) mdvp:://localhost:0:incoming_dow6/cfradial/quicklook/high/sur&DBZHC_F dbz.colors dBZ -5 80 5 radial 1 1
+DOW6-VEL VEL$(IS_TRANS) mdvp:://localhost:0:incoming_dow6/cfradial/quicklook/high/sur&VEL_F vel.colors m/s -5 80 5 radial 1 1
+DOW6-ZDR ZDR$(IS_TRANS) mdvp:://localhost:0:incoming_dow6/cfradial/quicklook/high/sur&ZDR_F zdr.colors dB  -5 80 5 radial 1 1
+DOW6-RHOHV RHOHV$(IS_TRANS) mdvp:://localhost:0:incoming_dow6/cfradial/quicklook/high/sur&RHOHV_F rhohv.colors -  -5 80 5 radial 1 1
 
 </GRIDS>
 
