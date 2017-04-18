@@ -109,6 +109,11 @@ endif
 
 setenv PYTHONPATH ~/anaconda2/pkgs
 
+# HSRL
+
+setenv HSRL_CONFIG ~/hsrl_config
+setenv GRIB_CACHE /scr/eldora1/HSRL_data/GFS_cache
+
 # --- Path ---
 
 # Assemble path to include all scripts directories

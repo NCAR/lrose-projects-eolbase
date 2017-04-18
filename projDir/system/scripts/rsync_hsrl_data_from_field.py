@@ -43,7 +43,7 @@ def main():
                       help='Path of source directory')
     parser.add_option('--rsyncSource',
                       dest='rsyncSource',
-                      default='eol-lidar@hsrl.fl-guest.ucar.edu:/data/',
+                      default='hsrl@hsrl-router.eol.ucar.edu:/data/',
                       help='Source address for HSRL, from which to grab data')
     parser.add_option('--ndaysLookback',
                       dest='ndaysLookback',
