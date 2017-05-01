@@ -37,27 +37,29 @@
 # DIAL PROCESS(save_figure, save_data, save_netCDF, save_catalog, channel)
 # save (on=1, off=0), and channel (FF=standard channel, NF= wide field-of-view channel)
 # process and save only images every 15 min
-*/14 * * * * cd $HOME/projDir/dial/Matlab && ./DIAL_process 1 0 0 0 FF NCAR >/dev/null 2>&1
-*/15 * * * * cd $HOME/projDir/dial/Matlab && ./DIAL_process 1 0 0 0 NF NCAR >/dev/null 2>&1
-*/16 * * * * cd $HOME/projDir/dial/Matlab && ./DIAL_process 1 0 0 0 FF MSU  >/dev/null 2>&1
-#*/17 * * * * cd $HOME/projDir/dial/Matlab && ./DIAL_process 1 0 0 1 NF MSU  >/dev/null 2>&1
-#  process and save data at 6:10PM MST for full day
-10 18 * * * cd $HOME/projDir/dial/Matlab && ./DIAL_process 0 1 1 0 FF NCAR >/dev/null 2>&1
-11 18 * * * cd $HOME/projDir/dial/Matlab && ./DIAL_process 0 1 1 0 NF NCAR >/dev/null 2>&1
-12 18 * * * cd $HOME/projDir/dial/Matlab && ./DIAL_process 0 1 1 0 FF MSU  >/dev/null 2>&1
-#13 18 * * * cd $HOME/projDir/dial/Matlab && ./DIAL_process 0 1 1 1 NF MSU  >/dev/null 2>&1
+*/15 * * * * cd $HOME/projDir/dial/Matlab && ./DIAL_process 1 0 0 1 FF NCAR >/dev/null 2>&1
+#*/16 * * * * cd $HOME/projDir/dial/Matlab && ./DIAL_process 1 0 0 0 NF NCAR >/dev/null 2>&1
+#*/17 * * * * cd $HOME/projDir/dial/Matlab && ./DIAL_process 1 0 0 0 FF MSU  >/dev/null 2>&1
+#*/18 * * * * cd $HOME/projDir/dial/Matlab && ./DIAL_process 1 0 0 1 NF MSU  >/dev/null 2>&1
+#  process and save data at 18:10 (6:10PM) MDT for full day
+10 18 * * * cd $HOME/projDir/dial/Matlab && ./DIAL_process 1 1 1 1 FF NCAR >/dev/null 2>&1
+#11 18 * * * cd $HOME/projDir/dial/Matlab && ./DIAL_process 0 1 1 0 NF NCAR >/dev/null 2>&1
+#12 18 * * * cd $HOME/projDir/dial/Matlab && ./DIAL_process 0 1 1 0 FF MSU  >/dev/null 2>&1
+#13 18 * * * cd $HOME/projDir/dial/Matlab && ./DIAL_process 0 1 1 0 NF MSU  >/dev/null 2>&1
 #####################################################################
 #
 # unpack h2odata
-9  * * * *  /home/rsfdata/etc/unpack_h2o_archives.py 1>> /tmp/unpack_h2o.log 2>&1
+# 9  * * * *  /home/rsfdata/etc/unpack_h2o_archives.py 1>> /tmp/unpack_h2o.log 2>&1
 # verify h2odata is being transferred
 #
 # rsync dial data from field
-*/10 * * * * csh -c "run_rsync_dial_data" 1> /dev/null 2> /dev/null
+#*/10 * * * * csh -c "run_rsync_dial_data" 1> /dev/null 2> /dev/null
 */5  * * * * csh -c "run_rsync_hsrl_data" 1> /dev/null 2> /dev/null
 #
-# enable 2016/4/1 : Water Vapor dial is being tested in the EOL Parking lot
-# 15 * * * *  /home/rsfdata/etc/check_h2o_transfer.py 1>> /tmp/check_h2o_transfer.log 2&>1
+# Check Water Vapor DIAL transfer.  Notify users if unsuccessful
+#15 * * * *  /home/rsfdata/projDir/system/scripts/check_h2o_transfer.py 1>> /tmp/check_h2o_transfer.log 2&>1
+# This version is for Portugal, using BTSync instead of rsync
+1 * * * * /home/rsfdata/projDir/system/scripts/check_h2o_transfer.prev_hour.py 1>> /tmp/check_h2o_transfer.prev_hour.log 2&>1
 ####################################################################
 # TRANSFER IMAGES FROM RAL WEATHER PAGE TO CATALOG
 #
