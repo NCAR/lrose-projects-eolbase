@@ -59,7 +59,7 @@
 # Check Water Vapor DIAL transfer.  Notify users if unsuccessful
 #15 * * * *  /home/rsfdata/projDir/system/scripts/check_h2o_transfer.py 1>> /tmp/check_h2o_transfer.log 2&>1
 # This version is for Portugal, using BTSync instead of rsync
-1 * * * * /home/rsfdata/projDir/system/scripts/check_h2o_transfer.prev_hour.py 1>> /tmp/check_h2o_transfer.prev_hour.log 2&>1
+5 * * * * /home/rsfdata/projDir/system/scripts/check_h2o_transfer.prev_hour.py 1>> /tmp/check_h2o_transfer.prev_hour.log 2&>1
 ####################################################################
 # TRANSFER IMAGES FROM RAL WEATHER PAGE TO CATALOG
 #
