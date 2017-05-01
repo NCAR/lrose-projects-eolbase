@@ -42,7 +42,7 @@ cd(dd) % point back to original directory
 
 % loop through the files and open. Note that dir also lists the directories, so you have to check for them.
 %h=waitbar(0,'Online Retrieval');
-for d = f:length(dirListing);
+for d = f:length(dirListing)-1;
 %    waitbar(d/(length(dirListing)),h);
 % if ~dirListing(d).isdir
     dirListing_new = dir(strcat(folder,'/',dirListing(d).name,'/','Online_Raw_Data.dat'));
@@ -69,7 +69,7 @@ end % for-loop
 % loop through the files and open. Note that dir also lists the directories, so you have to check for them.
 amin=0;
 %h=waitbar(0,'Offline Retrieval');
-for d = f:length(dirListing);
+for d = f:length(dirListing)-1;
 %    waitbar(d/(length(dirListing)),h);
 % if ~dirListing(d).isdir
     dirListing_new = dir(strcat(folder,'/',dirListing(d).name,'/','Offline_Raw_Data.dat'));
