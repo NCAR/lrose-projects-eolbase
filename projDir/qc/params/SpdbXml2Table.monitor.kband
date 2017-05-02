@@ -166,6 +166,13 @@ data_type_2 = 0;
 
 xml_entries = {
   {
+    xml_tag_list = "<KaStatus><KaTransmitterStatus><Temperature>",
+    specify_label = TRUE,
+    label = "XmitTemperature",
+    required = TRUE
+  }
+  ,
+  {
     xml_tag_list = "<KaStatus><KaReceiverStatus><ProcEnclosureTemp>",
     specify_label = TRUE,
     label = "ProcEnclosureTemp",
