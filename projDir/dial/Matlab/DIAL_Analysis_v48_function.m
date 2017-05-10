@@ -101,6 +101,12 @@ catch err
     Online_Raw_Data = data_on(1:size(Offline_Raw_Data,1),1:end);
 end
 
+ % add trap error assocated with instument crash 
+  time2 = (Online_Raw_Data(:,1)); 
+  time2(time2<(nanmedian(time2)-2))= NaN;
+  time2(time2>(nanmedian(time2)+2))= NaN;
+  Online_Raw_Data = Online_Raw_Data(~isnan(time2),:);
+  Offline_Raw_Data = Offline_Raw_Data(~isnan(time2),:);
 
 %% read in weather station data
 
@@ -920,7 +926,8 @@ xData =  linspace(fix(min(time_new)),  ceil(max(time_new)), 25);
     test=ftp('catalog.eol.ucar.edu', 'anonymous', 'spuler@ucar.edu')
     %cd(test,'/pub/incoming/catalog/frappe');
     %cd(test,'/pub/incoming/catalog/pecan');
-    cd(test,'/pub/incoming/catalog/operations');
+    cd(test,'/pub/incoming/catalog/perdigao');
+    %cd(test,'/pub/incoming/catalog/operations');
     mput(test, name);
     dir(test)
     close(test);
