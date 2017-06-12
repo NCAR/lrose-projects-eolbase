@@ -254,7 +254,7 @@ def doPlot(biasData, biasTimes, cpData, cpTimes):
     validIceVals = biasIce[validIce]
     
     validIceMBtimes = btimes[validIceM]
-    validIceMVals = biasIce[validIceM]
+    validIceMVals = biasIceM[validIceM]
     
     #validBraggBtimes = btimes[validBragg]
     #validBraggVals = biasBragg[validBragg]
@@ -340,7 +340,7 @@ def doPlot(biasData, biasTimes, cpData, cpTimes):
 
     oneDay = datetime.timedelta(1.0)
     ax1a.set_xlim([btimes[0] - oneDay, btimes[-1] + oneDay])
-    ax1a.set_title("Residual ZDR bias in ice, compared with VERT and CP results (dB)")
+    ax1a.set_title("DYNAMO - ZDR bias in ice, compared with VERT results (dB)")
     ax1b.set_xlim([btimes[0] - oneDay, btimes[-1] + oneDay])
     ax1b.set_title("Daily mean ZDR bias in ice (dB)")
     #ax1c.set_xlim([btimes[0] - oneDay, btimes[-1] + oneDay])
@@ -362,9 +362,9 @@ def doPlot(biasData, biasTimes, cpData, cpTimes):
     #          label = 'ZDRM Bias In Bragg', linewidth=1, color='blue')
     
     ax1a.plot(validIceMBtimes, validIceMVals, \
-              "o", label = 'ZDRM Bias In Ice', color='red')
+              "o", label = 'ZDRM Bias In Ice', color='blue')
     ax1a.plot(validIceMBtimes, validIceMVals, \
-              label = 'ZDRM Bias In Ice', linewidth=1, color='red')
+              label = 'ZDRM Bias In Ice', linewidth=1, color='blue')
     
     #ax1a.plot(ctimes[validSunscanZdrm], SunscanZdrm[validSunscanZdrm], \
     #          linewidth=2, label = 'Zdrm Sun/CP (dB)', color = 'green')
@@ -382,12 +382,17 @@ def doPlot(biasData, biasTimes, cpData, cpTimes):
     ax1b.plot(dailyTimeIce, dailyValIce, \
               "^", label = 'Daily Bias Ice', color='red', markersize=10)
 
+    ax1b.plot(dailyTimeIceM, dailyValIceM, \
+              label = 'Daily Meas Bias Ice', linewidth=1, color='blue')
+    ax1b.plot(dailyTimeIceM, dailyValIceM, \
+              "^", label = 'Daily Meas Bias Ice', color='blue', markersize=10)
+
     #ax1c.plot(cptimes[validTempSite], tempSite[validTempSite], \
     #          linewidth=1, label = 'Site Temp', color = 'blue')
     
     #configDateAxis(ax1a, -9999, 9999, "ZDR Bias (dB)", 'upper right')
-    configDateAxis(ax1a, -0.3, 0.7, "ZDR Bias (dB)", 'upper right')
-    configDateAxis(ax1b, -0.5, 0.5, "ZDR Bias (dB)", 'upper right')
+    configDateAxis(ax1a, -0.2, 0.5, "ZDR Bias (dB)", 'upper right')
+    configDateAxis(ax1b, -0.2, 0.5, "ZDR Bias (dB)", 'upper right')
     #configDateAxis(ax1c, -9999, 9999, "Temp (C)", 'upper right')
 
     if (haveTemps):
@@ -409,7 +414,7 @@ def doPlot(biasData, biasTimes, cpData, cpTimes):
 
     fig1.autofmt_xdate()
     fig1.tight_layout()
-    fig1.subplots_adjust(bottom=0.08, left=0.06, right=0.97, top=0.96)
+    fig1.subplots_adjust(bottom=0.10, left=0.06, right=0.97, top=0.96)
     plt.show()
 
 ########################################################################
@@ -425,8 +430,8 @@ def configDateAxis(ax, miny, maxy, ylabel, legendLoc):
     ax.grid(True)
     if (miny > -9990 and maxy > -9990):
         ax.set_ylim([miny, maxy])
-    hfmt = dates.DateFormatter('%y/%m/%d')
-    ax.xaxis.set_major_locator(dates.DayLocator())
+    hfmt = dates.DateFormatter('%Y/%m/%d')
+    ax.xaxis.set_major_locator(dates.AutoDateLocator())
     ax.xaxis.set_major_formatter(hfmt)
     for tick in ax.xaxis.get_major_ticks():
         tick.label.set_fontsize(8) 

@@ -3,6 +3,8 @@
 # run the PID/PRECIP for DYNAMO QC SUR
 # also estimates Z and ZDR bias, stores in SPDB
 
+source $PROJ_DIR/system/params/site_info.dynamo
+
 cd $PROJ_DIR/qc/params
 
 RadxPartRain -debug -params RadxPartRain.dynamo.zdr_ice.sur -start "2011 10 01 00 00 00" -end "2011 11 01 00 00 00" >& ../data/dynamo/RadxPartRain.dynamo.zdr_ice.sur.oct2011.log &
