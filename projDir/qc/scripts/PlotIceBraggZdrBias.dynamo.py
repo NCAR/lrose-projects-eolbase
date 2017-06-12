@@ -231,11 +231,11 @@ def doPlot(biasData, biasTimes, cpData, cpTimes):
     # biasIce = np.array(biasData["ZdrInIceMean"]).astype(np.double)
     # biasIce = movingAverage(biasIce, lenMeanFilter)
 
-    biasIce = np.array(biasData["ZdrInIcePerc25.00"]).astype(np.double)
+    biasIce = np.array(biasData["ZdrInIcePerc22.50"]).astype(np.double)
     biasIce = movingAverage(biasIce, lenMeanFilter)
     validIce = np.isfinite(biasIce)
     
-    biasIceM = np.array(biasData["ZdrmInIcePerc25.00"]).astype(np.double)
+    biasIceM = np.array(biasData["ZdrmInIcePerc22.50"]).astype(np.double)
     biasIceM = movingAverage(biasIceM, lenMeanFilter)
     validIceM = np.isfinite(biasIceM)
     
