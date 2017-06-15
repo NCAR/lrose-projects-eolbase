@@ -113,9 +113,15 @@ def main():
 
     cpData, cpTimes = readInputData(options.cpFilePath, cpHdrs, cpData)
 
+    # set the vert pointing results
+
+    vertTimes = []
+    vertData = []
+    setVertPointResults(vertTimes, vertData)
+
     # render the plot
     
-    doPlot(biasData, biasTimes, cpData, cpTimes)
+    doPlot(biasData, biasTimes, cpData, cpTimes, vertTimes, vertData)
 
     sys.exit(0)
     
@@ -214,9 +220,64 @@ def movingAverage(values, window):
     return sma
 
 ########################################################################
+# Set the vert pointing results
+
+def setVertPointResults(vertTimes, vertData):
+
+    # obsTime = datetime.datetime(2011, 9, 30, 6, 0, 0)
+    # vertTimes.append(obsTime)
+    # vertData.append(0.237)
+
+    obsTime = datetime.datetime(2011, 10, 4, 11, 45, 0)
+    vertTimes.append(obsTime)
+    vertData.append(0.284)
+
+    obsTime = datetime.datetime(2011, 10, 10, 9, 48, 0)
+    vertTimes.append(obsTime)
+    vertData.append(0.276)
+
+    obsTime = datetime.datetime(2011, 10, 16, 6, 12, 0)
+    vertTimes.append(obsTime)
+    vertData.append(0.284)
+
+    obsTime = datetime.datetime(2011, 10, 24, 8, 42, 0)
+    vertTimes.append(obsTime)
+    vertData.append(0.289)
+
+    obsTime = datetime.datetime(2011, 11, 2, 11, 28, 0)
+    vertTimes.append(obsTime)
+    vertData.append(0.362)
+
+    obsTime = datetime.datetime(2011, 11, 11, 5, 50, 0)
+    vertTimes.append(obsTime)
+    vertData.append(0.315)
+
+    obsTime = datetime.datetime(2011, 11, 14, 6, 48, 0)
+    vertTimes.append(obsTime)
+    vertData.append(0.275)
+
+    obsTime = datetime.datetime(2011, 12, 2, 9, 26, 0)
+    vertTimes.append(obsTime)
+    vertData.append(0.293)
+
+    obsTime = datetime.datetime(2011, 12, 8, 13, 8, 0)
+    vertTimes.append(obsTime)
+    vertData.append(0.289)
+
+    obsTime = datetime.datetime(2011, 12, 9, 13, 7, 0)
+    vertTimes.append(obsTime)
+    vertData.append(0.273)
+
+    obsTime = datetime.datetime(2012, 1, 15, 0, 25, 0)
+    vertTimes.append(obsTime)
+    vertData.append(0.307)
+
+    return
+
+########################################################################
 # Plot
 
-def doPlot(biasData, biasTimes, cpData, cpTimes):
+def doPlot(biasData, biasTimes, cpData, cpTimes, vertTimes, vertVals):
 
     fileName = options.biasFilePath
     titleStr = "File: " + fileName
@@ -227,15 +288,18 @@ def doPlot(biasData, biasTimes, cpData, cpTimes):
     # set up arrays for ZDR bias
 
     btimes = np.array(biasTimes).astype(datetime.datetime)
+    vtimes = np.array(vertTimes).astype(datetime.datetime)
     
     # biasIce = np.array(biasData["ZdrInIceMean"]).astype(np.double)
     # biasIce = movingAverage(biasIce, lenMeanFilter)
 
     biasIce = np.array(biasData["ZdrInIcePerc22.50"]).astype(np.double)
+    #biasIce = np.array(biasData["ZdrInIcePerc25.00"]).astype(np.double)
     biasIce = movingAverage(biasIce, lenMeanFilter)
     validIce = np.isfinite(biasIce)
     
     biasIceM = np.array(biasData["ZdrmInIcePerc22.50"]).astype(np.double)
+    #biasIceM = np.array(biasData["ZdrmInIcePerc25.00"]).astype(np.double)
     biasIceM = movingAverage(biasIceM, lenMeanFilter)
     validIceM = np.isfinite(biasIceM)
     
@@ -387,12 +451,17 @@ def doPlot(biasData, biasTimes, cpData, cpTimes):
     ax1b.plot(dailyTimeIceM, dailyValIceM, \
               "^", label = 'Daily Meas Bias Ice', color='blue', markersize=10)
 
+    ax1b.plot(vtimes, vertVals, \
+              label = 'Vert Bias', linewidth=1, color='green')
+    ax1b.plot(vtimes, vertVals, \
+              "^", label = 'Vert Bias', linewidth=1, color='green', markersize=10)
+
     #ax1c.plot(cptimes[validTempSite], tempSite[validTempSite], \
     #          linewidth=1, label = 'Site Temp', color = 'blue')
     
     #configDateAxis(ax1a, -9999, 9999, "ZDR Bias (dB)", 'upper right')
-    configDateAxis(ax1a, -0.2, 0.5, "ZDR Bias (dB)", 'upper right')
-    configDateAxis(ax1b, -0.2, 0.5, "ZDR Bias (dB)", 'upper right')
+    configDateAxis(ax1a, -0.2, 0.6, "ZDR Bias (dB)", 'upper right')
+    configDateAxis(ax1b, -0.2, 0.6, "ZDR Bias (dB)", 'upper right')
     #configDateAxis(ax1c, -9999, 9999, "Temp (C)", 'upper right')
 
     if (haveTemps):
