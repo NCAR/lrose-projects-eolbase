@@ -92,7 +92,10 @@ def doPlot(zdr):
 
     # the histogram of ZDR
 
-    n1, bins1, patches1 = ax1.hist(zdrSorted, 50, normed=True, facecolor='slateblue', alpha=0.75)
+    n1, bins1, patches1 = ax1.hist(zdrSorted, 50, normed=True,
+                                   histtype='stepfilled',
+                                   facecolor='blue',
+                                   alpha=0.75)
 
     ax1.set_xlabel('ZDR')
     ax1.set_ylabel('Frequency')
@@ -103,10 +106,43 @@ def doPlot(zdr):
     yy1 = pdf(bins1)
     ll1 = ax1.plot(bins1, yy1, 'r', linewidth=3)
 
+    # draw line to show mean, annotate
+
+    pmean = pdf(mean)
+    llen = pmean * 0.1
+    toffy = pmean * 0.025
+    toffx = mean * 0.1
+
+    annotVal(ax1, mean, pmean, 'mean', llen, toffx, toffy, 'magenta', 'magenta')
+
+    # draw line to show mean - 0.2, annotate
+
+    annotVal(ax1, mean - 0.2, pdf(mean - 0.2), 'mean-0.2', llen, toffx, toffy, 'magenta', 'magenta')
+
+    # annotate percentiles
+
+    perc5 = percs[6]
+    annotVal(ax1, perc5, pdf(perc5), 'perc5', llen, toffx, toffy, 'cyan', 'cyan')
+
+    perc10 = percs[11]
+    annotVal(ax1, perc10, pdf(perc10), 'perc10', llen, toffx, toffy, 'cyan', 'cyan')
+
+    perc15 = percs[16]
+    annotVal(ax1, perc15, pdf(perc15), 'perc15', llen, toffx, toffy, 'cyan', 'cyan')
+
+    perc20 = percs[21]
+    annotVal(ax1, perc20, pdf(perc20), 'perc20', llen, toffx, toffy, 'cyan', 'cyan')
+
+    perc25 = percs[26]
+    annotVal(ax1, perc25, pdf(perc25), 'perc25', llen, toffx, toffy, 'cyan', 'cyan')
+
     # CDF of ZDR
 
-    n2, bins2, patches2 = ax2.hist(zdrSorted, 50, normed=True, cumulative=True,
-                                   facecolor='slateblue', alpha=0.75)
+    n2, bins2, patches2 = ax2.hist(zdrSorted, 50, normed=True,
+                                   cumulative=True,
+                                   histtype='stepfilled',
+                                   facecolor='blue',
+                                   alpha=0.75)
 
     ax2.set_xlabel('ZDR')
     ax2.set_ylabel('Cumulative probability')
@@ -120,6 +156,17 @@ def doPlot(zdr):
     # show
 
     plt.show()
+
+########################################################################
+# Annotate a value
+
+def annotVal(ax, val, pval, label, llen, toffx, toffy, linecol, textcol):
+
+    ax.plot([val, val], [pval - llen, pval + llen], color=linecol, linewidth=3)
+    ax.annotate(label + '=' + '{:.3f}'.format(val),
+                xy=(val, pval + toffx),
+                xytext=(val + toffx, pval + toffy),
+                color=textcol)
 
 ########################################################################
 # Run a command in a shell, wait for it to complete
