@@ -1085,7 +1085,7 @@ zdr_attenuation_exponent = 0.84;
 // Type: string
 //
 
-pid_thresholds_file_path = "$(PROJ_DIR)/alg/params/pid_thresholds.spol";
+pid_thresholds_file_path = "$(PROJ_DIR)/qc/params/pid_thresholds.zdr_bias";
 
 ///////////// PID_snr_threshold ///////////////////////
 //
@@ -1371,7 +1371,7 @@ use_soundings_from_spdb = TRUE;
 // Type: string
 //
 
-sounding_spdb_url = "spdbp:://rain:0:/scr/rain1/rsfdata/projects/dynamo/spdb/soundings/gan";
+sounding_spdb_url = "spdbp:://rain:0:dynamo/spdb/soundings/gan";
 
 ///////////// sounding_search_time_margin_secs ////////
 //
@@ -2110,7 +2110,7 @@ estimate_zdr_bias_in_bragg = TRUE;
 // Type: double
 //
 
-zdr_bias_max_abs_zdr = 0.5;
+zdr_bias_max_abs_zdr = 0.75;
 
 ///////////// zdr_bias_max_abs_zdrm ///////////////////
 //
@@ -2124,7 +2124,7 @@ zdr_bias_max_abs_zdr = 0.5;
 // Type: double
 //
 
-zdr_bias_max_abs_zdrm = 0.75;
+zdr_bias_max_abs_zdrm = 1.25;
 
 ///////////// zdr_bias_min_rhohv_nnc //////////////////
 //
@@ -2196,8 +2196,8 @@ zdr_bias_max_phidp_accum = 10;
 //
 
 zdr_bias_ice_pid_types = {
- 10,
- 13
+ 10
+ //  13
 };
 
 ///////////// zdr_bias_ice_min_range_km ///////////////
@@ -2326,7 +2326,7 @@ zdr_bias_ice_min_elevation_deg = 0;
 // Type: double
 //
 
-zdr_bias_ice_max_elevation_deg = 20;
+zdr_bias_ice_max_elevation_deg = 25;
 
 ///////////// zdr_bias_ice_min_gate_run ///////////////
 //
@@ -2399,7 +2399,7 @@ save_ice_zdr_to_file = TRUE;
 // Type: string
 //
 
-ice_zdr_save_dir = "/tmp/zdr_in_ice/dynamo";
+ice_zdr_save_dir = "$(DATA_DIR)/dynamo/zdr_in_ice/qcv2/rhi";
 
 //======================================================================
 //
@@ -2604,9 +2604,9 @@ zdr_bias_bragg_percentiles = {
  25,
  27.5,
  30,
- 32,
- 33,
+ 32.5,
  35,
+ 37.5,
  40
 };
 
@@ -2640,7 +2640,7 @@ zdr_bias_write_results_to_spdb = TRUE;
 // Type: string
 //
 
-zdr_bias_spdb_output_url = "spdbp:://rain:0:dynamo/spdb/spol/zdr_bias2";
+zdr_bias_spdb_output_url = "spdbp:://rain:0:dynamo/spdb/qcv2/zdr_bias";
 
 //======================================================================
 //
@@ -2907,7 +2907,7 @@ self_consistency_dbz_correction = 0;
 // Type: double
 //
 
-self_consistency_zdrm_correction = 0.0;
+self_consistency_zdrm_correction = 0;
 
 ///////////// self_consistency_max_phase_shift_on_backscatter 
 //
@@ -3076,7 +3076,7 @@ self_consistency_write_results_to_spdb = TRUE;
 // Type: string
 //
 
-self_consistency_spdb_output_url = "spdbp:://rain:0:dynamo/spdb/spol/selfcon2";
+self_consistency_spdb_output_url = "spdbp:://rain:0:dynamo/spdb/qcv2/selfcon";
 
 ///////////// self_consistency_debug //////////////////
 //
@@ -3136,7 +3136,7 @@ self_consistency_run_files_dir = "$(DATA_DIR)/$(project)/selfcon_run_files/qc";
 // Type: boolean
 //
 
-read_site_temp_from_spdb = FALSE;
+read_site_temp_from_spdb = TRUE;
 
 ///////////// site_temp_spdb_url //////////////////////
 //
@@ -3588,7 +3588,7 @@ compression_level = 4;
 // Type: boolean
 //
 
-write_output_volume = FALSE;
+write_output_volume = TRUE;
 
 ///////////// output_dir //////////////////////////////
 //
@@ -3600,7 +3600,7 @@ write_output_volume = FALSE;
 // Type: string
 //
 
-output_dir = "$(DATA_DIR)/dynamo/cfradial/spol/partrain/sband/rhi";
+output_dir = "$(DATA_DIR)/dynamo/cfradial/qcv2/partrain/sband/rhi";
 
 ///////////// output_filename_mode ////////////////////
 //
