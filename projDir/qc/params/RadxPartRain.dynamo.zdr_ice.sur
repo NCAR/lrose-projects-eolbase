@@ -3591,7 +3591,7 @@ compression_level = 4;
 // Type: boolean
 //
 
-write_output_volume = TRUE;
+write_output_volume = $(WRITE_OUTPUT_VOLUME);
 
 ///////////// output_dir //////////////////////////////
 //

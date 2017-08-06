@@ -4,6 +4,7 @@
 # also estimates Z and ZDR bias, stores in SPDB
 
 source $PROJ_DIR/system/params/site_info.dynamo
+setenv WRITE_OUTPUT_VOLUME TRUE
 
 cd $PROJ_DIR/qc/params
 
