@@ -44,7 +44,7 @@ debug = DEBUG_OFF;
 // Type: string
 //
 
-instance = "pecan.zdr_ice.rhi";
+instance = "pecan.zdr_ice.sur";
 
 ///////////// register_with_procmap ///////////////////
 //
@@ -127,7 +127,7 @@ n_compute_threads = 12;
 // Type: string
 //
 
-input_dir = "$(DATA_DIR)/pecan/cfradial/spol/qc_moments/sband/rhi";
+input_dir = "$(DATA_DIR)/pecan/cfradial/spol/qc_moments/sband/sur";
 
 ///////////// mode ////////////////////////////////////
 //
@@ -2399,7 +2399,7 @@ save_ice_zdr_to_file = TRUE;
 // Type: string
 //
 
-ice_zdr_save_dir = "$(DATA_DIR)/pecan/zdr_in_ice/qcv2/rhi";
+ice_zdr_save_dir = "$(DATA_DIR)/pecan/zdr_in_ice/qcv2/sur";
 
 //======================================================================
 //
@@ -3600,7 +3600,7 @@ write_output_volume = TRUE;
 // Type: string
 //
 
-output_dir = "$(DATA_DIR)/pecan/cfradial/qcv2/partrain/sband/rhi";
+output_dir = "$(DATA_DIR)/pecan/cfradial/qcv2/partrain/sband/sur";
 
 ///////////// output_filename_mode ////////////////////
 //
