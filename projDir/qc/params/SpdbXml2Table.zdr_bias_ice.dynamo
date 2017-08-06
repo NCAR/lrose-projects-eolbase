@@ -53,7 +53,7 @@ debug = DEBUG_OFF;
 // Type: string
 //
 
-input_url = "$(DATA_DIR)/dynamo/spdb/spol/zdr_bias";
+input_url = "$(DATA_DIR)/dynamo/spdb/qcv2/zdr_bias";
 
 ///////////// start_time //////////////////////////////
 //
