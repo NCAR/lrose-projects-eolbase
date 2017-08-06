@@ -106,40 +106,12 @@ def doPlot(zdr):
     pdf = stats.norm(mean, sdev).pdf
     yy1 = pdf(bins1)
     ll1 = ax1.plot(bins1, yy1, 'r', linewidth=3,
-                   label = ('NormalFit mean=' + '{:.3f}'.format(mean) + ' sdev=' + '{:.3f}'.format(sdev)))
+                   label = ('NormalFit mean=' + '{:.3f}'.format(mean) + 
+                            ' sdev=' + '{:.3f}'.format(sdev) +
+                            ' skew=' + '{:.3f}'.format(skew)))
     legend1 = ax1.legend(loc='upper left', ncol=4)
     for label in legend1.get_texts():
         label.set_fontsize('medium')
-
-    # draw line to show mean, annotate
-
-    pmean = pdf(mean)
-    llen = pmean * 0.1
-    toffy = pmean * 0.025
-    toffx = mean * 0.1
-
-    annotVal(ax1, mean, pmean, 'mean', llen, toffx, toffy, 'magenta', 'magenta')
-
-    # draw line to show mean - 0.2, annotate
-
-    annotVal(ax1, mean - 0.2, pdf(mean - 0.2), 'mean-0.2', llen, toffx, toffy, 'magenta', 'magenta')
-
-    # annotate percentiles
-
-    #perc5 = percs[6]
-    #annotVal(ax1, perc5, pdf(perc5), 'perc%5', llen, toffx, toffy, 'cyan', 'cyan')
-
-    perc10 = percs[11]
-    annotVal(ax1, perc10, pdf(perc10), 'p%10', llen, toffx, toffy, 'cyan', 'cyan')
-
-    perc15 = percs[16]
-    annotVal(ax1, perc15, pdf(perc15), 'p%15', llen, toffx, toffy, 'cyan', 'cyan')
-
-    perc20 = percs[21]
-    annotVal(ax1, perc20, pdf(perc20), 'p%20', llen, toffx, toffy, 'cyan', 'cyan')
-
-    perc25 = percs[26]
-    annotVal(ax1, perc25, pdf(perc25), 'p%25', llen, toffx, toffy, 'cyan', 'cyan')
 
     # CDF of ZDR
 
@@ -157,10 +129,39 @@ def doPlot(zdr):
     cdf = stats.norm(mean, sdev).cdf
     yy2 = cdf(bins1)
     ll2 = ax2.plot(bins1, yy2, 'r', linewidth=3,
-                   label = ('NormalFit mean=' + '{:.3f}'.format(mean) + ' sdev=' + '{:.3f}'.format(sdev)))
+                   label = ('NormalFit mean=' + '{:.3f}'.format(mean) +
+                            ' sdev=' + '{:.3f}'.format(sdev) +
+                            ' skew=' + '{:.3f}'.format(skew)))
     legend2 = ax2.legend(loc='upper left', ncol=4)
     for label in legend2.get_texts():
         label.set_fontsize('medium')
+
+    # draw line to show mean, annotate
+
+    pmean = pdf(mean)
+    plen = pmean * 0.1
+    toffy = pmean * 0.025
+    toffx = mean * 0.1
+
+    annotVal(ax1, ax2,  mean, pdf, cdf, 'mean', plen, toffx, toffy, 'magenta', 'magenta')
+
+    # draw line to show mean - 0.2, annotate
+    
+    annotVal(ax1, ax2,  mean - 0.2, pdf, cdf, 'mean-0.2', plen, toffx, toffy, 'magenta', 'magenta')
+
+    # annotate percentiles
+
+    #perc10 = percs[11]
+    #annotVal(ax1, ax2,  perc10, pdf, cdf, 'p%10', plen, toffx, toffy, 'cyan', 'cyan')
+
+    perc15 = percs[16]
+    annotVal(ax1, ax2,  perc15, pdf, cdf, 'p%15', plen, toffx, toffy, 'cyan', 'cyan')
+
+    perc20 = percs[21]
+    annotVal(ax1, ax2,  perc20, pdf, cdf, 'p%20', plen, toffx, toffy, 'cyan', 'cyan')
+
+    perc25 = percs[26]
+    annotVal(ax1, ax2,  perc25, pdf, cdf, 'p%25', plen, toffx, toffy, 'cyan', 'cyan')
 
     # show
 
@@ -169,13 +170,22 @@ def doPlot(zdr):
 ########################################################################
 # Annotate a value
 
-def annotVal(ax, val, pval, label, llen, toffx, toffy, linecol, textcol):
+def annotVal(ax1, ax2, val, pdf, cdf, label, plen, toffx, toffy, linecol, textcol):
 
-    ax.plot([val, val], [pval - llen, pval + llen], color=linecol, linewidth=3)
-    ax.annotate(label + '=' + '{:.3f}'.format(val),
-                xy=(val, pval + toffx),
-                xytext=(val + toffx, pval + toffy),
-                color=textcol)
+    pval = pdf(val)
+    ax1.plot([val, val], [pval - plen, pval + plen], color=linecol, linewidth=3)
+    ax1.annotate(label + '=' + '{:.3f}'.format(val),
+                 xy=(val, pval + toffx),
+                 xytext=(val + toffx, pval + toffy),
+                 color=textcol)
+
+    cval = cdf(val)
+    clen = 0.1
+    ax2.plot([val, val], [cval - clen, cval + clen], color=linecol, linewidth=3)
+    ax2.annotate(label + '=' + '{:.3f}'.format(val),
+                 xy=(val, cval + toffx),
+                 xytext=(val + toffx, cval + toffy),
+                 color=textcol)
 
 ########################################################################
 # Run a command in a shell, wait for it to complete

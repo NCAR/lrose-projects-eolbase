@@ -2907,7 +2907,7 @@ self_consistency_dbz_correction = 0;
 // Type: double
 //
 
-self_consistency_zdrm_correction = 0;
+self_consistency_zdrm_correction = $(SELF_CONSISTENCY_ZDRM_CORRECTION);
 
 ///////////// self_consistency_max_phase_shift_on_backscatter 
 //
@@ -3146,7 +3146,7 @@ read_site_temp_from_spdb = TRUE;
 // Type: string
 //
 
-site_temp_spdb_url = "spdbp:://rain:0:pecan/spdb/metar";
+site_temp_spdb_url = "spdbp:://rain:0:pecan/spdb/KSMeso";
 
 ///////////// site_temp_station_name //////////////////
 //
@@ -3156,7 +3156,7 @@ site_temp_spdb_url = "spdbp:://rain:0:pecan/spdb/metar";
 // Type: string
 //
 
-site_temp_station_name = "VRMM";
+site_temp_station_name = "CRKK";
 
 ///////////// site_temp_search_margin_secs ////////////
 //
@@ -3371,116 +3371,116 @@ copy_input_fields_to_output = TRUE;
 
 copy_fields = {
   {
-    input_name = "DBZ_S",
-    output_name = "DBZ_S",
+    input_name = "DBZ_F",
+    output_name = "DBZ_F",
     censor_non_precip = FALSE
   }
   ,
   {
-    input_name = "VEL_S",
-    output_name = "VEL_S",
+    input_name = "VEL_F",
+    output_name = "VEL_F",
     censor_non_precip = FALSE
   }
   ,
   {
-    input_name = "WIDTH_S",
-    output_name = "WIDTH_S",
+    input_name = "WIDTH_F",
+    output_name = "WIDTH_F",
     censor_non_precip = FALSE
   }
   ,
   {
-    input_name = "NCP_S",
-    output_name = "NCP_S",
+    input_name = "NCP_F",
+    output_name = "NCP_F",
     censor_non_precip = FALSE
   }
   ,
   {
-    input_name = "ZDRM_S",
-    output_name = "ZDRM_S",
+    input_name = "ZDRM_F",
+    output_name = "ZDRM_F",
     censor_non_precip = FALSE
   }
   ,
   {
-    input_name = "ZDR_S",
-    output_name = "ZDR_S",
+    input_name = "ZDR_F",
+    output_name = "ZDR_F",
     censor_non_precip = FALSE
   }
   ,
   {
-    input_name = "LDRH_S",
-    output_name = "LDRH_S",
+    input_name = "LDRH_F",
+    output_name = "LDRH_F",
     censor_non_precip = FALSE
   }
   ,
   {
-    input_name = "RHOHV_S",
-    output_name = "RHOHV_S",
+    input_name = "RHOHV_F",
+    output_name = "RHOHV_F",
     censor_non_precip = FALSE
   }
   ,
   {
-    input_name = "RHOHV_NNC_S",
-    output_name = "RHOHV_NNC_S",
+    input_name = "RHOHV_NNC_F",
+    output_name = "RHOHV_NNC_F",
     censor_non_precip = FALSE
   }
   ,
   {
-    input_name = "PHIDP_S",
-    output_name = "PHIDP_S",
+    input_name = "PHIDP_F",
+    output_name = "PHIDP_F",
     censor_non_precip = FALSE
   }
   ,
   {
-    input_name = "KDP_S",
-    output_name = "KDP_S",
+    input_name = "KDP_F",
+    output_name = "KDP_F",
     censor_non_precip = FALSE
   }
   ,
   {
-    input_name = "SNRHC_S",
-    output_name = "SNRHC_S",
+    input_name = "SNRHC_F",
+    output_name = "SNRHC_F",
     censor_non_precip = FALSE
   }
   ,
   {
-    input_name = "SNRVC_S",
-    output_name = "SNRVC_S",
+    input_name = "SNRVC_F",
+    output_name = "SNRVC_F",
     censor_non_precip = FALSE
   }
   ,
   {
-    input_name = "SNRHX_S",
-    output_name = "SNRHX_S",
+    input_name = "SNRHX_F",
+    output_name = "SNRHX_F",
     censor_non_precip = FALSE
   }
   ,
   {
-    input_name = "SNRVX_S",
-    output_name = "SNRVX_S",
+    input_name = "SNRVX_F",
+    output_name = "SNRVX_F",
     censor_non_precip = FALSE
   }
   ,
   {
-    input_name = "DBMHC_S",
-    output_name = "DBMHC_S",
+    input_name = "DBMHC_F",
+    output_name = "DBMHC_F",
     censor_non_precip = FALSE
   }
   ,
   {
-    input_name = "DBMVC_S",
-    output_name = "DBMVC_S",
+    input_name = "DBMVC_F",
+    output_name = "DBMVC_F",
     censor_non_precip = FALSE
   }
   ,
   {
-    input_name = "DBMHX_S",
-    output_name = "DBMHX_S",
+    input_name = "DBMHX_F",
+    output_name = "DBMHX_F",
     censor_non_precip = FALSE
   }
   ,
   {
-    input_name = "DBMVX_S",
-    output_name = "DBMVX_S",
+    input_name = "DBMVX_F",
+    output_name = "DBMVX_F",
     censor_non_precip = FALSE
   }
 };
