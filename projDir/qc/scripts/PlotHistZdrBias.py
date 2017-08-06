@@ -37,7 +37,7 @@ def main():
                       help='File path for bias results')
     parser.add_option('--title',
                       dest='title',
-                      default='ZDR BIAS IN ICE',
+                      default='ZDR DISTRIBUTION IN ICE',
                       help='Title for plot')
     parser.add_option('--width',
                       dest='figWidthMm',
@@ -45,7 +45,7 @@ def main():
                       help='Width of figure in mm')
     parser.add_option('--height',
                       dest='figHeightMm',
-                      default=400,
+                      default=300,
                       help='Height of figure in mm')
     (options, args) = parser.parse_args()
     
@@ -87,6 +87,7 @@ def doPlot(zdr):
     htIn = float(options.figHeightMm) / 25.4
     
     fig1 = plt.figure(1, (widthIn, htIn))
+    fig1.suptitle(options.title, fontsize=18)
     ax1 = fig1.add_subplot(2,1,1,xmargin=0.0)
     ax2 = fig1.add_subplot(2,1,2,xmargin=0.0)
 
@@ -94,17 +95,21 @@ def doPlot(zdr):
 
     n1, bins1, patches1 = ax1.hist(zdrSorted, 50, normed=True,
                                    histtype='stepfilled',
-                                   facecolor='blue',
-                                   alpha=0.75)
+                                   facecolor='slateblue',
+                                   alpha=1.0)
 
     ax1.set_xlabel('ZDR')
     ax1.set_ylabel('Frequency')
-    ax1.set_title('PDF Histogram of ZDR')
+    ax1.set_title('PDF - Probability Density Function', fontsize=14)
     ax1.grid(True)
 
     pdf = stats.norm(mean, sdev).pdf
     yy1 = pdf(bins1)
-    ll1 = ax1.plot(bins1, yy1, 'r', linewidth=3)
+    ll1 = ax1.plot(bins1, yy1, 'r', linewidth=3,
+                   label = ('NormalFit mean=' + '{:.3f}'.format(mean) + ' sdev=' + '{:.3f}'.format(sdev)))
+    legend1 = ax1.legend(loc='upper left', ncol=4)
+    for label in legend1.get_texts():
+        label.set_fontsize('medium')
 
     # draw line to show mean, annotate
 
@@ -121,37 +126,41 @@ def doPlot(zdr):
 
     # annotate percentiles
 
-    perc5 = percs[6]
-    annotVal(ax1, perc5, pdf(perc5), 'perc5', llen, toffx, toffy, 'cyan', 'cyan')
+    #perc5 = percs[6]
+    #annotVal(ax1, perc5, pdf(perc5), 'perc%5', llen, toffx, toffy, 'cyan', 'cyan')
 
     perc10 = percs[11]
-    annotVal(ax1, perc10, pdf(perc10), 'perc10', llen, toffx, toffy, 'cyan', 'cyan')
+    annotVal(ax1, perc10, pdf(perc10), 'p%10', llen, toffx, toffy, 'cyan', 'cyan')
 
     perc15 = percs[16]
-    annotVal(ax1, perc15, pdf(perc15), 'perc15', llen, toffx, toffy, 'cyan', 'cyan')
+    annotVal(ax1, perc15, pdf(perc15), 'p%15', llen, toffx, toffy, 'cyan', 'cyan')
 
     perc20 = percs[21]
-    annotVal(ax1, perc20, pdf(perc20), 'perc20', llen, toffx, toffy, 'cyan', 'cyan')
+    annotVal(ax1, perc20, pdf(perc20), 'p%20', llen, toffx, toffy, 'cyan', 'cyan')
 
     perc25 = percs[26]
-    annotVal(ax1, perc25, pdf(perc25), 'perc25', llen, toffx, toffy, 'cyan', 'cyan')
+    annotVal(ax1, perc25, pdf(perc25), 'p%25', llen, toffx, toffy, 'cyan', 'cyan')
 
     # CDF of ZDR
 
     n2, bins2, patches2 = ax2.hist(zdrSorted, 50, normed=True,
                                    cumulative=True,
                                    histtype='stepfilled',
-                                   facecolor='blue',
-                                   alpha=0.75)
+                                   facecolor='slateblue',
+                                   alpha=1.0)
 
     ax2.set_xlabel('ZDR')
-    ax2.set_ylabel('Cumulative probability')
-    ax2.set_title('CDF Histogram of ZDR')
+    ax2.set_ylabel('Cumulative frequency')
+    ax2.set_title('CDF - Cumulative Distribution Function', fontsize=14)
     ax2.grid(True)
 
     cdf = stats.norm(mean, sdev).cdf
     yy2 = cdf(bins1)
-    ll2 = ax2.plot(bins1, yy2, 'r', linewidth=3)
+    ll2 = ax2.plot(bins1, yy2, 'r', linewidth=3,
+                   label = ('NormalFit mean=' + '{:.3f}'.format(mean) + ' sdev=' + '{:.3f}'.format(sdev)))
+    legend2 = ax2.legend(loc='upper left', ncol=4)
+    for label in legend2.get_texts():
+        label.set_fontsize('medium')
 
     # show
 
