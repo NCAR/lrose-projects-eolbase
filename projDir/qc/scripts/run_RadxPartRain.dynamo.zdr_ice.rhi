@@ -9,13 +9,17 @@ setenv WRITE_OUTPUT_VOLUME TRUE
 
 cd $PROJ_DIR/qc/params
 
-RadxPartRain -debug -params RadxPartRain.dynamo.zdr_ice.rhi -start "2011 10 01 00 00 00" -end "2011 11 01 00 00 00"
+foreach dir (${DATA_DIR}/dynamo/cfradial/qcv1/moments/sband/rhi/*)
+  RadxPartRain -debug -params RadxPartRain.dynamo.zdr_ice.rhi -f ${dir}/*.nc
+end
 
-RadxPartRain -debug -params RadxPartRain.dynamo.zdr_ice.rhi -start "2011 11 01 00 00 00" -end "2011 12 01 00 00 00"
+#RadxPartRain -debug -params RadxPartRain.dynamo.zdr_ice.rhi -start "2011 10 01 00 00 00" -end "2011 11 01 00 00 00"
 
-RadxPartRain -debug -params RadxPartRain.dynamo.zdr_ice.rhi -start "2011 12 01 00 00 00" -end "2012 01 01 00 00 00"
+#RadxPartRain -debug -params RadxPartRain.dynamo.zdr_ice.rhi -start "2011 11 01 00 00 00" -end "2011 12 01 00 00 00"
 
-RadxPartRain -debug -params RadxPartRain.dynamo.zdr_ice.rhi -start "2012 01 01 00 00 00" -end "2012 01 16 00 00 00"
+#RadxPartRain -debug -params RadxPartRain.dynamo.zdr_ice.rhi -start "2011 12 01 00 00 00" -end "2012 01 01 00 00 00"
+
+#RadxPartRain -debug -params RadxPartRain.dynamo.zdr_ice.rhi -start "2012 01 01 00 00 00" -end "2012 01 16 00 00 00"
 
 #RadxPartRain -debug -params RadxPartRain.dynamo.zdr_ice.rhi -start "2011 10 01 00 00 00" -end "2011 11 01 00 00 00" >& ../data/dynamo/RadxPartRain.dynamo.zdr_ice.rhi.oct2011.log
 

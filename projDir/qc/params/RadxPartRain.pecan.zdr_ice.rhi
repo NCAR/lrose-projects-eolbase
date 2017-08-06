@@ -2366,6 +2366,8 @@ zdr_bias_ice_min_npoints_valid = 1000;
 //
 
 zdr_bias_ice_percentiles = {
+  5.0,
+  7.5,
   10.0,
   12.5,
   15.0,

@@ -8,18 +8,23 @@ source $PROJ_DIR/system/params/site_info.pecan
 cd $PROJ_DIR/qc/params
 
 setenv WRITE_OUTPUT_VOLUME TRUE
-
-setenv SELF_CONSISTENCY_ZDRM_CORRECTION 0.3
-
-RadxPartRain -params RadxPartRain.pecan.zdr_ice.rhi -d -start "2015 05 28 00 00 00" -end "2015 06 07 00 00 00"
-
 setenv SELF_CONSISTENCY_ZDRM_CORRECTION 0.0
 
-RadxPartRain -params RadxPartRain.pecan.zdr_ice.rhi -d -start "2015 06 07 00 00 00" -end "2015 06 20 00 00 00"
+foreach dir (${DATA_DIR}/pecan/cfradial/spol/qc_moments/sband/rhi/*)
+  RadxPartRain -debug -params RadxPartRain.pecan.zdr_ice.rhi -f ${dir}/*.nc
+end
 
-RadxPartRain -params RadxPartRain.pecan.zdr_ice.rhi -d -start "2015 06 20 00 00 00" -end "2015 07 01 00 00 00"
+#setenv SELF_CONSISTENCY_ZDRM_CORRECTION 0.3
 
-RadxPartRain -params RadxPartRain.pecan.zdr_ice.rhi -d -start "2015 07 01 00 00 00" -end "2015 07 17 00 00 00"
+#RadxPartRain -params RadxPartRain.pecan.zdr_ice.rhi -d -start "2015 05 28 00 00 00" -end "2015 06 07 00 00 00"
+
+#setenv SELF_CONSISTENCY_ZDRM_CORRECTION 0.0
+
+#RadxPartRain -params RadxPartRain.pecan.zdr_ice.rhi -d -start "2015 06 07 00 00 00" -end "2015 06 20 00 00 00"
+
+#RadxPartRain -params RadxPartRain.pecan.zdr_ice.rhi -d -start "2015 06 20 00 00 00" -end "2015 07 01 00 00 00"
+
+#RadxPartRain -params RadxPartRain.pecan.zdr_ice.rhi -d -start "2015 07 01 00 00 00" -end "2015 07 17 00 00 00"
 
 
 #setenv SELF_CONSISTENCY_ZDRM_CORRECTION 0.3
