@@ -447,15 +447,15 @@ def doPlot():
     htIn = float(options.figHeightMm) / 25.4
 
     fig1 = plt.figure(1, (widthIn, htIn))
+    fig1.suptitle(options.title, fontsize=18)
 
     nplots = 2
-    if (options.plotSiteTemp):
-        nplots = 3
 
     ax1a = fig1.add_subplot(nplots,1,1,xmargin=1.0)
-    ax1b = fig1.add_subplot(nplots,1,2,xmargin=1.0)
     if (options.plotSiteTemp):
-        ax1c = fig1.add_subplot(nplots,1,3,xmargin=1.0)
+        ax1c = fig1.add_subplot(nplots,1,2,xmargin=1.0)
+    else:
+        ax1b = fig1.add_subplot(nplots,1,2,xmargin=1.0)
 
     if (options.plotRegr):
         fig2 = plt.figure(2, (widthIn/2, htIn/2))
@@ -464,12 +464,12 @@ def doPlot():
     oneDay = datetime.timedelta(1.0)
     ax1a.set_xlim([btimes[0] - oneDay, btimes[-1] + oneDay])
     ax1a.set_title("PECAN - ZDR bias in ice, compared with VERT results (dB)")
-    ax1b.set_xlim([btimes[0] - oneDay, btimes[-1] + oneDay])
-    ax1b.set_title("Daily mean ZDR bias in ice (dB)")
-
     if (options.plotSiteTemp):
         ax1c.set_xlim([btimes[0] - oneDay, btimes[-1] + oneDay])
         ax1c.set_title("Site temperature (C)")
+    else:
+        ax1b.set_xlim([btimes[0] - oneDay, btimes[-1] + oneDay])
+        ax1b.set_title("Daily mean ZDR bias in ice (dB)")
 
     # volume by volume plots
 
@@ -497,37 +497,38 @@ def doPlot():
 
     # daily
 
-    if (options.plotMean):
-        ax1b.plot(dailyTimeMean, dailyAdjMean,
-                  label = 'ZDR Mean + ' + options.meanAdj, 
-                  linewidth=1, color='lightgreen')
-        ax1b.plot(dailyTimeMean, dailyAdjMean,
-                  "^", label = 'ZDR Mean + ' + options.meanAdj,
-                  color='lightgreen', markersize=10)
-    else:
-        ax1b.plot(dailyTimeIce, dailyValIce, \
-                  label = 'Daily Bias Ice', linewidth=1, color='red')
-        ax1b.plot(dailyTimeIce, dailyValIce, \
-                  "^", label = 'Daily Bias Ice', color='red', markersize=10)
-
-    ax1b.plot(dailyTimeIceM, dailyValIceM, \
-              label = 'Daily Meas Bias Ice', linewidth=1, color='blue')
-    ax1b.plot(dailyTimeIceM, dailyValIceM, \
-              "^", label = 'Daily Meas Bias Ice', color='blue', markersize=10)
-
-    ax1b.plot(ctimes[validZdrmVert], ZdrmVert[validZdrmVert], \
-              "^", markersize=10, linewidth=1, label = 'Zdrm Vert (dB)', color = 'yellow')
-
     if (options.plotSiteTemp):
         ax1c.plot(validTempTimes,  tempSite[validTempSite], \
                   linewidth=2, label = 'Site temp (C)', color = 'red')
+    else:
+        if (options.plotMean):
+            ax1b.plot(dailyTimeMean, dailyAdjMean,
+                      label = 'ZDR Mean + ' + options.meanAdj, 
+                      linewidth=1, color='lightgreen')
+            ax1b.plot(dailyTimeMean, dailyAdjMean,
+                      "^", label = 'ZDR Mean + ' + options.meanAdj,
+                      color='lightgreen', markersize=10)
+        else:
+            ax1b.plot(dailyTimeIce, dailyValIce,
+                      label = 'Daily Bias Ice', linewidth=1, color='red')
+            ax1b.plot(dailyTimeIce, dailyValIce,
+                      "^", label = 'Daily Bias Ice', color='red', markersize=10)
+            
+            ax1b.plot(dailyTimeIceM, dailyValIceM,
+                      label = 'Daily Meas Bias Ice', linewidth=1, color='blue')
+            ax1b.plot(dailyTimeIceM, dailyValIceM,
+                      "^", label = 'Daily Meas Bias Ice', color='blue', markersize=10)
+            
+            ax1b.plot(ctimes[validZdrmVert], ZdrmVert[validZdrmVert],
+                      "^", markersize=10, linewidth=1, label = 'Zdrm Vert (dB)', 
+                      color = 'yellow')
 
-    #configDateAxis(ax1a, -9999, 9999, "ZDR Bias (dB)", 'upper right')
     configDateAxis(ax1a, -0.5, 0.5, "ZDR Bias (dB)", 'upper right')
-    configDateAxis(ax1b, -0.5, 0.5, "ZDR Bias (dB)", 'upper right')
 
     if (options.plotSiteTemp):
         configDateAxis(ax1c, -9999, 9999, "Temp (C)", 'upper right')
+    else:
+        configDateAxis(ax1b, -0.5, 0.5, "ZDR Bias (dB)", 'upper right')
 
     if (options.plotRegr):
         label3 = "ZDR Bias In Ice = " + ("%.5f" % ww[0]) + " * temp + " + ("%.3f" % ww[1])

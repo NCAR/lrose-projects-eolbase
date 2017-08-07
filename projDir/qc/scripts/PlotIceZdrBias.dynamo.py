@@ -46,7 +46,7 @@ def main():
                       help='File path for bias results')
     parser.add_option('--title',
                       dest='title',
-                      default='ZDR BIAS FROM ICE',
+                      default='DYNAMO ZDR BIAS FROM SNOW - MEASURED and CORRECTED',
                       help='Title for plot')
     parser.add_option('--width',
                       dest='figWidthMm',
@@ -366,30 +366,31 @@ def doPlot():
     htIn = float(options.figHeightMm) / 25.4
 
     fig1 = plt.figure(1, (widthIn, htIn))
+    fig1.suptitle(options.title, fontsize=18)
 
     ax1a = fig1.add_subplot(2,1,1,xmargin=0.0)
     ax1b = fig1.add_subplot(2,1,2,xmargin=0.0)
 
     oneDay = datetime.timedelta(1.0)
     ax1a.set_xlim([btimes[0] - oneDay, btimes[-1] + oneDay])
-    ax1a.set_title("DYNAMO - ZDR bias in ice, compared with VERT results (dB)")
+    ax1a.set_title("ZDR bias, compared with VERT (dB)")
     ax1b.set_xlim([btimes[0] - oneDay, btimes[-1] + oneDay])
-    ax1b.set_title("Daily mean ZDR bias in ice (dB)")
+    ax1b.set_title("Daily ZDR bias, compared with VERT (dB)")
 
     # volume by volume
 
     if (options.plotMean):
         ax1a.plot(validMeanBtimes, adjMean,
-                  "o", label = 'ZDR Mean + ' + options.meanAdj,
+                  "o", label = 'Measured ZDR Mean + ' + options.meanAdj,
                   color='lightblue')
     else:
         ax1a.plot(validIceBtimes, validIceVals, \
-                  "o", label = 'ZDR Bias In Ice', color='red')
+                  "o", label = 'Corrected ZDR Bias', color='red')
     #ax1a.plot(validIceBtimes, validIceVals, \
     #          label = 'ZDR Bias In Ice', linewidth=1, color='red')
 
     ax1a.plot(validIceMBtimes, validIceMVals, \
-              "o", label = 'ZDRM Bias In Ice', color='blue')
+              "o", label = 'Measured ZDR Bias', color='blue')
     #ax1a.plot(validIceMBtimes, validIceMVals, \
     #          label = 'ZDRM Bias In Ice', linewidth=1, color='blue')
     
@@ -400,33 +401,33 @@ def doPlot():
 
     if (options.plotMean):
         ax1b.plot(dailyTimeMean, dailyAdjMean,
-                  label = 'ZDR Mean + ' + options.meanAdj, 
+                  label = 'Meas ZDR Mean + ' + options.meanAdj, 
                   linewidth=1, color='lightblue')
         ax1b.plot(dailyTimeMean, dailyAdjMean,
-                  "^", label = 'ZDR Mean + ' + options.meanAdj,
+                  "^", label = 'Meas ZDR Mean + ' + options.meanAdj,
                   color='lightblue', markersize=10)
     else:
         ax1b.plot(dailyTimeIce, dailyValIce, \
-                  label = 'Daily Bias Ice', linewidth=1, color='red')
+                  label = 'Corrected ZDR Bias', linewidth=1, color='red')
         ax1b.plot(dailyTimeIce, dailyValIce, \
-                  "^", label = 'Daily Bias Ice', color='red', markersize=10)
+                  "^", label = 'Corrected ZDR Bias', color='red', markersize=10)
 
     ax1b.plot(dailyTimeIceM, dailyValIceM, \
-              label = 'Daily Meas Bias Ice', linewidth=1, color='blue')
+              label = 'Meas Daily ZDR Bias', linewidth=1, color='blue')
     ax1b.plot(dailyTimeIceM, dailyValIceM, \
-              "^", label = 'Daily Meas Bias Ice', color='blue', markersize=10)
+              "^", label = 'Meas Daily ZDR Bias', color='blue', markersize=10)
 
     #ax1b.plot(vtimes, vertData, \
     #          label = 'Vert Bias', linewidth=1, color='yellow')
     ax1b.plot(vtimes, vertData, \
-              "^", label = 'Vert Bias', linewidth=1, color='yellow', markersize=10)
+              "^", label = 'Vert Results', linewidth=1, color='yellow', markersize=10)
 
     configDateAxis(ax1a, -0.2, 0.6, "ZDR Bias (dB)", 'upper right')
     configDateAxis(ax1b, -0.2, 0.6, "ZDR Bias (dB)", 'upper right')
 
     fig1.autofmt_xdate()
     fig1.tight_layout()
-    fig1.subplots_adjust(bottom=0.10, left=0.10, right=0.95, top=0.95)
+    fig1.subplots_adjust(bottom=0.10, left=0.10, right=0.95, top=0.9)
     plt.show()
 
 ########################################################################
