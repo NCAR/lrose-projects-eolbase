@@ -66,7 +66,7 @@ def main():
                       help='Len of moving mean filter')
     parser.add_option('--start',
                       dest='startTime',
-                      default='2015 06 01 00 00 00',
+                      default='2015 06 16 00 00 00',
                       help='Start time for XY plot')
     parser.add_option('--end',
                       dest='endTime',
@@ -92,6 +92,14 @@ def main():
                       dest='plotSunscanCp', default=False,
                       action="store_true",
                       help='Plot the CP method from sunscans')
+    parser.add_option('--mean',
+                      dest='plotMean', default=False,
+                      action="store_true",
+                      help='Plot the adjusted mean')
+    parser.add_option('--adj',
+                      dest='meanAdj',
+                      default='-0.15',
+                      help='Adjustment to mean for ZDR bias')
     
     (options, args) = parser.parse_args()
     
@@ -114,6 +122,7 @@ def main():
         print >>sys.stderr, "  endTime: ", endTime
         print >>sys.stderr, "  surOnly: ", options.surOnly
         print >>sys.stderr, "  rhiOnly: ", options.rhiOnly
+        print >>sys.stderr, "  meanAdj: ", options.meanAdj
 
     # read in column headers for bias results
 
@@ -256,6 +265,11 @@ def prepareData(biasData, biasTimes, cpData, cpTimes):
     btimes = np.array(biasTimes).astype(datetime.datetime)
     
     isRhi = np.array(biasData["IsRhi"]).astype(np.int)
+
+    global validMean
+    zdrMean = np.array(biasData["ZdrmInIceMean"]).astype(np.double)
+    zdrMean = movingAverage(zdrMean, lenMeanFilter)
+    validMean = np.isfinite(zdrMean)
     
     biasIce = np.array(biasData["ZdrInIcePerc15.00"]).astype(np.double)
     biasIce = movingAverage(biasIce, lenMeanFilter)
@@ -266,11 +280,18 @@ def prepareData(biasData, biasTimes, cpData, cpTimes):
     validIceM = np.isfinite(biasIceM)
     
     if (options.rhiOnly):
+        validMean = (np.isfinite(zdrMean) & (isRhi == 1))
         validIce = (np.isfinite(biasIce) & (isRhi == 1))
         validIceM = (np.isfinite(biasIceM) & (isRhi == 1))
     if (options.surOnly):
+        validMean = (np.isfinite(zdrMean) & (isRhi == 0))
         validIce = (np.isfinite(biasIce) & (isRhi == 0))
         validIceM = (np.isfinite(biasIceM) & (isRhi == 0))
+
+    global adjMean, validMeanBtimes, validMeanVals
+    validMeanBtimes = btimes[validMean]
+    validMeanVals = zdrMean[validMean]
+    adjMean = np.array(validMeanVals).astype(float) + float(options.meanAdj)
 
     global validIceBtimes, validIceVals
     validIceBtimes = btimes[validIce]
@@ -282,8 +303,13 @@ def prepareData(biasData, biasTimes, cpData, cpTimes):
 
     # daily stats
     
+    global dailyTimeMean, dailyValMean, dailyAdjMean
+    (dailyTimeMean, dailyValMean) = computeDailyStats(validMeanBtimes, validMeanVals)
+    dailyAdjMean = np.array(dailyValMean).astype(float) + float(options.meanAdj)
+
     global dailyTimeIce, dailyValIce
     (dailyTimeIce, dailyValIce) = computeDailyStats(validIceBtimes, validIceVals)
+
     global dailyTimeIceM, dailyValIceM
     (dailyTimeIceM, dailyValIceM) = computeDailyStats(validIceMBtimes, validIceMVals)
 
@@ -426,10 +452,10 @@ def doPlot():
     if (options.plotSiteTemp):
         nplots = 3
 
-    ax1a = fig1.add_subplot(nplots,1,1,xmargin=0.0)
-    ax1b = fig1.add_subplot(nplots,1,2,xmargin=0.0)
+    ax1a = fig1.add_subplot(nplots,1,1,xmargin=1.0)
+    ax1b = fig1.add_subplot(nplots,1,2,xmargin=1.0)
     if (options.plotSiteTemp):
-        ax1c = fig1.add_subplot(nplots,1,3,xmargin=0.0)
+        ax1c = fig1.add_subplot(nplots,1,3,xmargin=1.0)
 
     if (options.plotRegr):
         fig2 = plt.figure(2, (widthIn/2, htIn/2))
@@ -445,15 +471,22 @@ def doPlot():
         ax1c.set_xlim([btimes[0] - oneDay, btimes[-1] + oneDay])
         ax1c.set_title("Site temperature (C)")
 
-    ax1a.plot(validIceBtimes, validIceVals, \
-              "o", label = 'ZDR Bias In Ice', color='red')
-    ax1a.plot(validIceBtimes, validIceVals, \
-              label = 'ZDR Bias In Ice', linewidth=1, color='red')
+    # volume by volume plots
+
+    if (options.plotMean):
+        ax1a.plot(validMeanBtimes, adjMean,
+                  "o", label = 'ZDR Mean + ' + options.meanAdj, \
+                  color='lightgreen')
+    else:
+        ax1a.plot(validIceBtimes, validIceVals,
+                  "o", label = 'ZDR Bias In Ice', color='red')
+    #ax1a.plot(validIceBtimes, validIceVals, \
+    #          label = 'ZDR Bias In Ice', linewidth=1, color='red')
 
     ax1a.plot(validIceMBtimes, validIceMVals, \
               "o", label = 'ZDRM Bias In Ice', color='blue')
-    ax1a.plot(validIceMBtimes, validIceMVals, \
-              label = 'ZDRM Bias In Ice', linewidth=1, color='blue')
+    #ax1a.plot(validIceMBtimes, validIceMVals, \
+    #          label = 'ZDRM Bias In Ice', linewidth=1, color='blue')
     
     if (options.plotSunscanCp):
         ax1a.plot(ctimes[validSunscanZdrm], SunscanZdrm[validSunscanZdrm], \
@@ -462,10 +495,20 @@ def doPlot():
     ax1a.plot(ctimes[validZdrmVert], ZdrmVert[validZdrmVert], \
               "^", markersize=10, linewidth=1, label = 'Zdrm Vert (dB)', color = 'yellow')
 
-    ax1b.plot(dailyTimeIce, dailyValIce, \
-              label = 'Daily Bias Ice', linewidth=1, color='red')
-    ax1b.plot(dailyTimeIce, dailyValIce, \
-              "^", label = 'Daily Bias Ice', color='red', markersize=10)
+    # daily
+
+    if (options.plotMean):
+        ax1b.plot(dailyTimeMean, dailyAdjMean,
+                  label = 'ZDR Mean + ' + options.meanAdj, 
+                  linewidth=1, color='lightgreen')
+        ax1b.plot(dailyTimeMean, dailyAdjMean,
+                  "^", label = 'ZDR Mean + ' + options.meanAdj,
+                  color='lightgreen', markersize=10)
+    else:
+        ax1b.plot(dailyTimeIce, dailyValIce, \
+                  label = 'Daily Bias Ice', linewidth=1, color='red')
+        ax1b.plot(dailyTimeIce, dailyValIce, \
+                  "^", label = 'Daily Bias Ice', color='red', markersize=10)
 
     ax1b.plot(dailyTimeIceM, dailyValIceM, \
               label = 'Daily Meas Bias Ice', linewidth=1, color='blue')
@@ -476,14 +519,12 @@ def doPlot():
               "^", markersize=10, linewidth=1, label = 'Zdrm Vert (dB)', color = 'yellow')
 
     if (options.plotSiteTemp):
-        print >>sys.stderr, "validTempTimes:",validTempTimes
-        print >>sys.stderr, "validTempSite:",validTempSite
         ax1c.plot(validTempTimes,  tempSite[validTempSite], \
                   linewidth=2, label = 'Site temp (C)', color = 'red')
 
     #configDateAxis(ax1a, -9999, 9999, "ZDR Bias (dB)", 'upper right')
-    configDateAxis(ax1a, -0.3, 0.3, "ZDR Bias (dB)", 'upper right')
-    configDateAxis(ax1b, -0.3, 0.3, "ZDR Bias (dB)", 'upper right')
+    configDateAxis(ax1a, -0.5, 0.5, "ZDR Bias (dB)", 'upper right')
+    configDateAxis(ax1b, -0.5, 0.5, "ZDR Bias (dB)", 'upper right')
 
     if (options.plotSiteTemp):
         configDateAxis(ax1c, -9999, 9999, "Temp (C)", 'upper right')
@@ -502,12 +543,15 @@ def doPlot():
             ax2a.grid(True)
             ax2a.set_ylim([-0.5, 0.5])
             ax2a.set_xlim([minTemp - 1, maxTemp + 1])
-            title3 = "ZDR Bias In Ice Vs Temp: " + str(startTime) + " - " + str(endTime)
+            #title3 = "PECAN ZDR Bias In Ice Vs Temp: " + str(startTime) + " - " + str(endTime)
+            title3 = "PECAN ZDR Bias In Ice Vs Temp"
             ax2a.set_title(title3)
 
     fig1.autofmt_xdate()
     fig1.tight_layout()
-    fig1.subplots_adjust(bottom=0.10, left=0.06, right=0.97, top=0.96)
+    fig1.subplots_adjust(bottom=0.10, left=0.10, right=0.97, top=0.96)
+    if (options.plotRegr):
+        fig2.subplots_adjust(bottom=0.10, left=0.15, right=0.95, top=0.95)
     plt.show()
 
 ########################################################################
@@ -646,7 +690,6 @@ def computeDailyStats(times, vals):
             meanDeltaTime = datetime.timedelta(0, sumDeltaTime.total_seconds() / count)
             dailyMeans.append(mean)
             dailyTimes.append(thisDate + meanDeltaTime)
-            # print >>sys.stderr, " daily time, meanStrong: ", dailyTimes[-1], meanStrong
             result.sort()
             
         thisDate = thisDate + oneDay
