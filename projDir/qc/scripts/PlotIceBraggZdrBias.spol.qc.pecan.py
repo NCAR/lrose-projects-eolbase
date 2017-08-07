@@ -158,6 +158,11 @@ def readInputData(filePath, colHeaders, colData):
     fp = open(filePath, 'r')
     lines = fp.readlines()
 
+    obsTimes = []
+    colData = {}
+    for index, var in enumerate(colHeaders, start=0):
+        colData[var] = []
+
     # read in a line at a time, set colData
     for line in lines:
         
@@ -173,31 +178,34 @@ def readInputData(filePath, colHeaders, colData):
                 print >>sys.stderr, "skipping line: ", line
             continue;
 
+        values = {}
         for index, var in enumerate(colHeaders, start=0):
-            # print >>sys.stderr, "index, data[index]: ", index, ", ", data[index]
-            if (var == 'count' or var == 'year' or var == 'month' or var == 'day' or \
+            if (var == 'count' or \
+                var == 'year' or var == 'month' or var == 'day' or \
                 var == 'hour' or var == 'min' or var == 'sec' or \
                 var == 'unix_time'):
-                colData[var].append(int(data[index]))
+                values[var] = int(data[index])
             else:
-                colData[var].append(float(data[index]))
+                values[var] = float(data[index])
+
+        # load observation times array
+        
+        year = values['year']
+        month = values['month']
+        day = values['day']
+        hour = values['hour']
+        minute = values['min']
+        sec = values['sec']
+
+        thisTime = datetime.datetime(year, month, day,
+                                     hour, minute, sec)
+
+        if (thisTime >= startTime and thisTime <= endTime):
+            for index, var in enumerate(colHeaders, start=0):
+                colData[var].append(values[var])
+            obsTimes.append(thisTime)
 
     fp.close()
-
-    # load observation times array
-
-    year = colData['year']
-    month = colData['month']
-    day = colData['day']
-    hour = colData['hour']
-    minute = colData['min']
-    sec = colData['sec']
-
-    obsTimes = []
-    for ii, var in enumerate(year, start=0):
-        thisTime = datetime.datetime(year[ii], month[ii], day[ii],
-                                     hour[ii], minute[ii], sec[ii])
-        obsTimes.append(thisTime)
 
     return colData, obsTimes
 
@@ -369,8 +377,8 @@ def doPlot(biasData, biasTimes, cpData, cpTimes):
     #ax1a.plot(ctimes[validSunscanZdrm], SunscanZdrm[validSunscanZdrm], \
     #          linewidth=2, label = 'Zdrm Sun/CP (dB)', color = 'green')
     
-    #ax1a.plot(ctimes[validZdrmVert], ZdrmVert[validZdrmVert], \
-    #          "^", markersize=10, linewidth=1, label = 'Zdrm Vert (dB)', color = 'orange')
+    ax1a.plot(ctimes[validZdrmVert], ZdrmVert[validZdrmVert], \
+              "^", markersize=10, linewidth=1, label = 'Zdrm Vert (dB)', color = 'yellow')
 
     ax1b.plot(dailyTimeBragg, dailyValBragg, \
               label = 'Daily Bias Bragg', linewidth=1, color='blue')
@@ -381,6 +389,8 @@ def doPlot(biasData, biasTimes, cpData, cpTimes):
               label = 'Daily Bias Ice', linewidth=1, color='red')
     ax1b.plot(dailyTimeIce, dailyValIce, \
               "^", label = 'Daily Bias Ice', color='red', markersize=10)
+    ax1b.plot(ctimes[validZdrmVert], ZdrmVert[validZdrmVert], \
+              "^", markersize=10, linewidth=1, label = 'Zdrm Vert (dB)', color = 'yellow')
 
     #ax1c.plot(cptimes[validTempSite], tempSite[validTempSite], \
     #          linewidth=1, label = 'Site Temp', color = 'blue')

@@ -166,6 +166,13 @@ data_type_2 = 0;
 
 xml_entries = {
   {
+    xml_tag_list = "<ZdrBias><is_rhi>",
+    specify_label = TRUE,
+    label = "IsRhi",
+    required = TRUE
+  }
+  ,
+  {
     xml_tag_list = "<ZdrBias><ZdrmInIceMean>",
     specify_label = TRUE,
     label = "ZdrmInIceMean",

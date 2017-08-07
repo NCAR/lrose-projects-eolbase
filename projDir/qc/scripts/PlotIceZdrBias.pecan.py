@@ -54,11 +54,11 @@ def main():
                       help='Title for plot')
     parser.add_option('--width',
                       dest='figWidthMm',
-                      default=400,
+                      default=300,
                       help='Width of figure in mm')
     parser.add_option('--height',
                       dest='figHeightMm',
-                      default=200,
+                      default=300,
                       help='Height of figure in mm')
     parser.add_option('--lenMean',
                       dest='lenMean',
@@ -66,12 +66,32 @@ def main():
                       help='Len of moving mean filter')
     parser.add_option('--start',
                       dest='startTime',
-                      default='2011 10 01 00 00 00',
+                      default='2015 06 01 00 00 00',
                       help='Start time for XY plot')
     parser.add_option('--end',
                       dest='endTime',
-                      default='2012 01 16 00 00 00',
+                      default='2015 07 17 00 00 00',
                       help='End time for XY plot')
+    parser.add_option('--sur_only',
+                      dest='surOnly', default=False,
+                      action="store_true",
+                      help='Only process surveillance scans')
+    parser.add_option('--rhi_only',
+                      dest='rhiOnly', default=False,
+                      action="store_true",
+                      help='Only process RHI scans')
+    parser.add_option('--regr',
+                      dest='plotRegr', default=False,
+                      action="store_true",
+                      help='Plot the regression of ZDR vs Temp')
+    parser.add_option('--site_temp',
+                      dest='plotSiteTemp', default=False,
+                      action="store_true",
+                      help='Plot the site temperature')
+    parser.add_option('--sunscan',
+                      dest='plotSunscanCp', default=False,
+                      action="store_true",
+                      help='Plot the CP method from sunscans')
     
     (options, args) = parser.parse_args()
     
@@ -92,36 +112,36 @@ def main():
         print >>sys.stderr, "  biasFilePath: ", options.biasFilePath
         print >>sys.stderr, "  startTime: ", startTime
         print >>sys.stderr, "  endTime: ", endTime
+        print >>sys.stderr, "  surOnly: ", options.surOnly
+        print >>sys.stderr, "  rhiOnly: ", options.rhiOnly
 
     # read in column headers for bias results
 
-    iret, biasHdrs, biasData = readColumnHeaders(options.biasFilePath)
+    iret, biasHdrs = readColumnHeaders(options.biasFilePath)
     if (iret != 0):
         sys.exit(-1)
 
     # read in data for bias results
 
-    biasData, biasTimes = readInputData(options.biasFilePath, biasHdrs, biasData)
+    biasData, biasTimes = readInputData(options.biasFilePath, biasHdrs)
 
     # read in column headers for CP results
 
-    iret, cpHdrs, cpData = readColumnHeaders(options.cpFilePath)
+    iret, cpHdrs = readColumnHeaders(options.cpFilePath)
     if (iret != 0):
         sys.exit(-1)
 
     # read in data for CP results
 
-    cpData, cpTimes = readInputData(options.cpFilePath, cpHdrs, cpData)
+    cpData, cpTimes = readInputData(options.cpFilePath, cpHdrs)
 
-    # set the vert pointing results
+    # prepare the data for plotting
 
-    vertTimes = []
-    vertData = []
-    setVertPointResults(vertTimes, vertData)
+    prepareData(biasData, biasTimes, cpData, cpTimes)
 
     # render the plot
     
-    doPlot(biasData, biasTimes, cpData, cpTimes, vertTimes, vertData)
+    doPlot()
 
     sys.exit(0)
     
@@ -132,7 +152,6 @@ def main():
 def readColumnHeaders(filePath):
 
     colHeaders = []
-    colData = {}
 
     fp = open(filePath, 'r')
     line = fp.readline()
@@ -147,22 +166,24 @@ def readColumnHeaders(filePath):
     else:
         print >>sys.stderr, "ERROR - readColumnHeaders"
         print >>sys.stderr, "  First line does not start with #"
-        return -1, colHeaders, colData
+        return -1, colHeaders
     
-    for index, var in enumerate(colHeaders, start=0):
-        colData[var] = []
-        
-    return 0, colHeaders, colData
+    return 0, colHeaders
 
 ########################################################################
 # Read in the data
 
-def readInputData(filePath, colHeaders, colData):
+def readInputData(filePath, colHeaders):
 
     # open file
 
     fp = open(filePath, 'r')
     lines = fp.readlines()
+
+    obsTimes = []
+    colData = {}
+    for index, var in enumerate(colHeaders, start=0):
+        colData[var] = []
 
     # read in a line at a time, set colData
     for line in lines:
@@ -179,31 +200,34 @@ def readInputData(filePath, colHeaders, colData):
                 print >>sys.stderr, "skipping line: ", line
             continue;
 
+        values = {}
         for index, var in enumerate(colHeaders, start=0):
-            # print >>sys.stderr, "index, data[index]: ", index, ", ", data[index]
-            if (var == 'count' or var == 'year' or var == 'month' or var == 'day' or \
+            if (var == 'count' or \
+                var == 'year' or var == 'month' or var == 'day' or \
                 var == 'hour' or var == 'min' or var == 'sec' or \
                 var == 'unix_time'):
-                colData[var].append(int(data[index]))
+                values[var] = int(data[index])
             else:
-                colData[var].append(float(data[index]))
+                values[var] = float(data[index])
+
+        # load observation times array
+
+        year = values['year']
+        month = values['month']
+        day = values['day']
+        hour = values['hour']
+        minute = values['min']
+        sec = values['sec']
+
+        thisTime = datetime.datetime(year, month, day,
+                                     hour, minute, sec)
+
+        if (thisTime >= startTime and thisTime <= endTime):
+            for index, var in enumerate(colHeaders, start=0):
+                colData[var].append(values[var])
+            obsTimes.append(thisTime)
 
     fp.close()
-
-    # load observation times array
-
-    year = colData['year']
-    month = colData['month']
-    day = colData['day']
-    hour = colData['hour']
-    minute = colData['min']
-    sec = colData['sec']
-
-    obsTimes = []
-    for ii, var in enumerate(year, start=0):
-        thisTime = datetime.datetime(year[ii], month[ii], day[ii],
-                                     hour[ii], minute[ii], sec[ii])
-        obsTimes.append(thisTime)
 
     return colData, obsTimes
 
@@ -220,172 +244,176 @@ def movingAverage(values, window):
     return sma
 
 ########################################################################
-# Set the vert pointing results
+# Prepare data sets for plotting
 
-def setVertPointResults(vertTimes, vertData):
-
-    # obsTime = datetime.datetime(2011, 9, 30, 6, 0, 0)
-    # vertTimes.append(obsTime)
-    # vertData.append(0.237)
-
-    obsTime = datetime.datetime(2011, 10, 4, 11, 45, 0)
-    vertTimes.append(obsTime)
-    vertData.append(0.284)
-
-    obsTime = datetime.datetime(2011, 10, 10, 9, 48, 0)
-    vertTimes.append(obsTime)
-    vertData.append(0.276)
-
-    obsTime = datetime.datetime(2011, 10, 16, 6, 12, 0)
-    vertTimes.append(obsTime)
-    vertData.append(0.284)
-
-    obsTime = datetime.datetime(2011, 10, 24, 8, 42, 0)
-    vertTimes.append(obsTime)
-    vertData.append(0.289)
-
-    obsTime = datetime.datetime(2011, 11, 2, 11, 28, 0)
-    vertTimes.append(obsTime)
-    vertData.append(0.362)
-
-    obsTime = datetime.datetime(2011, 11, 11, 5, 50, 0)
-    vertTimes.append(obsTime)
-    vertData.append(0.315)
-
-    obsTime = datetime.datetime(2011, 11, 14, 6, 48, 0)
-    vertTimes.append(obsTime)
-    vertData.append(0.275)
-
-    obsTime = datetime.datetime(2011, 12, 2, 9, 26, 0)
-    vertTimes.append(obsTime)
-    vertData.append(0.293)
-
-    obsTime = datetime.datetime(2011, 12, 8, 13, 8, 0)
-    vertTimes.append(obsTime)
-    vertData.append(0.289)
-
-    obsTime = datetime.datetime(2011, 12, 9, 13, 7, 0)
-    vertTimes.append(obsTime)
-    vertData.append(0.273)
-
-    obsTime = datetime.datetime(2012, 1, 15, 0, 25, 0)
-    vertTimes.append(obsTime)
-    vertData.append(0.307)
-
-    return
-
-########################################################################
-# Plot
-
-def doPlot(biasData, biasTimes, cpData, cpTimes, vertTimes, vertVals):
-
-    fileName = options.biasFilePath
-    titleStr = "File: " + fileName
-    hfmt = dates.DateFormatter('%y/%m/%d')
+def prepareData(biasData, biasTimes, cpData, cpTimes):
 
     lenMeanFilter = int(options.lenMean)
 
     # set up arrays for ZDR bias
 
+    global btimes
     btimes = np.array(biasTimes).astype(datetime.datetime)
-    vtimes = np.array(vertTimes).astype(datetime.datetime)
     
-    # biasIce = np.array(biasData["ZdrInIceMean"]).astype(np.double)
-    # biasIce = movingAverage(biasIce, lenMeanFilter)
-
-    #biasIce = np.array(biasData["ZdrInIcePerc22.50"]).astype(np.double)
+    isRhi = np.array(biasData["IsRhi"]).astype(np.int)
+    
     biasIce = np.array(biasData["ZdrInIcePerc15.00"]).astype(np.double)
     biasIce = movingAverage(biasIce, lenMeanFilter)
     validIce = np.isfinite(biasIce)
     
-    #biasIceM = np.array(biasData["ZdrmInIcePerc22.50"]).astype(np.double)
     biasIceM = np.array(biasData["ZdrmInIcePerc15.00"]).astype(np.double)
     biasIceM = movingAverage(biasIceM, lenMeanFilter)
     validIceM = np.isfinite(biasIceM)
     
-    # biasBragg = np.array(biasData["ZdrInBraggMean"]).astype(np.double)
-    # biasBragg = movingAverage(biasBragg, lenMeanFilter)
+    if (options.rhiOnly):
+        validIce = (np.isfinite(biasIce) & (isRhi == 1))
+        validIceM = (np.isfinite(biasIceM) & (isRhi == 1))
+    if (options.surOnly):
+        validIce = (np.isfinite(biasIce) & (isRhi == 0))
+        validIceM = (np.isfinite(biasIceM) & (isRhi == 0))
 
-    #biasBragg = np.array(biasData["ZdrInBraggPerc32.00"]).astype(np.double)
-    #biasBragg = movingAverage(biasBragg, lenMeanFilter)
-    #validBragg = np.isfinite(biasBragg)
-
-    #biasBraggM = np.array(biasData["ZdrmInBraggPerc25.00"]).astype(np.double)
-    #biasBraggM = movingAverage(biasBraggM, lenMeanFilter)
-    #validBraggM = np.isfinite(biasBraggM)
-    
+    global validIceBtimes, validIceVals
     validIceBtimes = btimes[validIce]
     validIceVals = biasIce[validIce]
-    
+
+    global validIceMBtimes, validIceMVals
     validIceMBtimes = btimes[validIceM]
     validIceMVals = biasIceM[validIceM]
-    
-    #validBraggBtimes = btimes[validBragg]
-    #validBraggVals = biasBragg[validBragg]
-    
-    #validBraggMBtimes = btimes[validBraggM]
-    #validBraggMVals = biasBragg[validBraggM]
-    
-    # load up receiver gain etc - axis 4
-    
-    (dailyTimeIce, dailyValIce) = computeDailyStats(validIceBtimes, validIceVals)
-    #(dailyTimeBragg, dailyValBragg) = computeDailyStats(validBraggBtimes, validBraggVals)
 
+    # daily stats
+    
+    global dailyTimeIce, dailyValIce
+    (dailyTimeIce, dailyValIce) = computeDailyStats(validIceBtimes, validIceVals)
+    global dailyTimeIceM, dailyValIceM
     (dailyTimeIceM, dailyValIceM) = computeDailyStats(validIceMBtimes, validIceMVals)
-    #(dailyTimeBraggM, dailyValBraggM) = computeDailyStats(validBraggMBtimes, validBraggMVals)
 
     # site temp, vert pointing and sun scan results
 
+    global ctimes
     ctimes = np.array(cpTimes).astype(datetime.datetime)
+
+    global ZdrmVert, validZdrmVert
     ZdrmVert = np.array(cpData["ZdrmVert"]).astype(np.double)
     validZdrmVert = np.isfinite(ZdrmVert)
-    
+
+    global SunscanZdrm, validSunscanZdrm
     SunscanZdrm = np.array(cpData["SunscanZdrm"]).astype(np.double)
     validSunscanZdrm = np.isfinite(SunscanZdrm)
 
-    cptimes = np.array(cpTimes).astype(datetime.datetime)
+    global tempSite, validTempSite, validTempTimes
     tempSite = np.array(cpData["TempSite"]).astype(np.double)
     validTempSite = np.isfinite(tempSite)
+    validTempTimes = ctimes[validTempSite]
 
-    tempIceVals = []
-    biasIceVals = []
+    # tx ratio
 
-    for ii, biasVal in enumerate(validIceVals, start=0):
-        btime = validIceBtimes[ii]
-        if (btime >= startTime and btime <= endTime):
-            tempTime, tempVal = getClosestTemp(btime, cptimes, tempSite)
-            if (np.isfinite(tempVal)):
-                tempIceVals.append(tempVal)
-                biasIceVals.append(biasVal)
-                if (options.verbose):
-                    print >>sys.stderr, "==>> biasTime, biasVal, tempTime, tempVal:", \
-                        btime, biasVal, tempTime, tempVal
+    txPwrH = np.array(cpData["TxPwrH"]).astype(np.double)
+    txPwrV = np.array(cpData["TxPwrV"]).astype(np.double)
+
+    global ratioTimes, ratioIceVals, ratioIceBias, ratioTxCorrBias, ratioTempVals
+    ratioTimes = []
+    ratioIceVals = []
+    ratioTempVals = []
+    ratioIceBias = []
+
+    for ii, biasVal in enumerate(validIceMVals, start=0):
+        btime = validIceMBtimes[ii]
+        ratioTime, ratioTemp, ratioVal = getClosestRatio \
+                                         (btime, ctimes, tempSite, txPwrH, txPwrV)
+        ratioTempVals.append(ratioTemp)
+        txCorrBias = biasVal - ratioVal
+        ratioTimes.append(ratioTime)
+        ratioIceVals.append(ratioVal)
+        ratioIceBias.append(biasVal)
+        if (options.verbose):
+            print >>sys.stderr, \
+                "==>> btime, rtime, bias, txPwrH, txPwrV, ratioVal, txCorrBias:", \
+                btime, ratioTime, biasVal, txPwrH[ii], txPwrV[ii], ratioVal, txCorrBias
+
+    meanRatio = np.mean(ratioIceVals)
+    normRatios = ratioIceVals - meanRatio
+    ratioTxCorrBias = validIceMVals - normRatios
+        
+    # ZDR bias vs temp
+
+    global tempTimes, tempIceMVals, tempIceMBias
+    tempTimes = []
+    tempIceMVals = []
+    tempIceMBias = []
+
+    for ii, biasVal in enumerate(validIceMVals, start=0):
+        btime = validIceMBtimes[ii]
+        tempTime, tempVal = getClosestTemp(btime, validTempTimes, tempSite)
+        tempTimes.append(tempTime)
+        tempIceMVals.append(tempVal)
+        tempIceMBias.append(biasVal)
+        if (options.verbose):
+            print >>sys.stderr, "==>> biasTime, biasVal, tempTime, tempVal:", \
+                btime, biasVal, tempTime, tempVal
+
+    global tempMean, tempSdev, tempNorm
+    tempMean = np.mean(tempSite)
+    tempSdev = np.std(tempSite)
+    tempNorm = (tempSite - tempMean) / (tempSdev * 10.0)
+    if (options.debug):
+        print >>sys.stderr, "==>> tempMean, tempSdev: ", tempMean, tempSdev
 
     # linear regression for bias vs temp
+    # obtain the fit, ww[0] is slope, ww[1] is intercept
 
-    A = array([tempIceVals, ones(len(tempIceVals))])
+    global AA, ww, tempRegrX, tempRegrY, minTemp, maxTemp
 
-    if (len(tempIceVals) > 1):
-        # obtain the fit, ww[0] is slope, ww[1] is intercept
-        ww = linalg.lstsq(A.T, biasIceVals)[0]
-        minTemp = min(tempIceVals)
-        maxTemp = max(tempIceVals)
-        haveTemps = True
-    else:
-        ww = (1.0, 0.0)
-        minTemp = 0.0
-        maxTemp = 40.0
-        haveTemps = False
-        print >>sys.stderr, "NOTE - no valid temp vs ZDR data for period"
-        print >>sys.stderr, "  startTime: ", startTime
-        print >>sys.stderr, "  endTime  : ", endTime
-        
-    regrX = []
-    regrY = []
-    regrX.append(minTemp)
-    regrX.append(maxTemp)
-    regrY.append(ww[0] * minTemp + ww[1])
-    regrY.append(ww[0] * maxTemp + ww[1])
+    AA = array([tempIceMVals, ones(len(tempIceMVals))])
+    ww = linalg.lstsq(AA.T, tempIceMBias)[0]
+    minTemp = min(tempIceMVals)
+    maxTemp = max(tempIceMVals)
+
+    tempRegrX = []
+    tempRegrY = []
+    tempRegrX.append(minTemp)
+    tempRegrX.append(maxTemp)
+    tempRegrY.append(ww[0] * minTemp + ww[1])
+    tempRegrY.append(ww[0] * maxTemp + ww[1])
+
+    # linear regression for tx-corrected bias vs temp
+    # obtain the fit, ww[0] is slope, ww[1] is intercept
+
+    global AA2, ww2, tempRegrX2, tempRegrY2, minTemp2, maxTemp2
+
+    AA2 = array([ratioTempVals, ones(len(ratioTempVals))])
+    ww2 = linalg.lstsq(AA2.T, ratioTxCorrBias)[0]
+    minTemp2 = min(ratioTempVals)
+    maxTemp2 = max(ratioTempVals)
+
+    tempRegrX2 = []
+    tempRegrY2 = []
+    tempRegrX2.append(minTemp2)
+    tempRegrX2.append(maxTemp2)
+    tempRegrY2.append(ww2[0] * minTemp2 + ww2[1])
+    tempRegrY2.append(ww2[0] * maxTemp2 + ww2[1])
+
+    # correct bias for linear regression
+
+    slope = ww2[0]
+    intercept = ww2[1]
+
+    global ratioCorrBias
+    ratioCorrBias = []
+    for ii, rtime in enumerate(ratioTimes, start=0):
+        tempC = ratioTempVals[ii]
+        biasDb = ratioIceBias[ii]
+        tempCorr = intercept + tempC * slope
+        corrBias = biasDb - tempCorr
+        ratioCorrBias.append(corrBias)
+
+########################################################################
+# Plot
+
+def doPlot():
+
+    fileName = options.biasFilePath
+    titleStr = "File: " + fileName
+    hfmt = dates.DateFormatter('%y/%m/%d')
     
     # set up plots
 
@@ -394,11 +422,16 @@ def doPlot(biasData, biasTimes, cpData, cpTimes, vertTimes, vertVals):
 
     fig1 = plt.figure(1, (widthIn, htIn))
 
-    ax1a = fig1.add_subplot(2,1,1,xmargin=0.0)
-    ax1b = fig1.add_subplot(2,1,2,xmargin=0.0)
-    #ax1c = fig1.add_subplot(3,1,3,xmargin=0.0)
+    nplots = 2
+    if (options.plotSiteTemp):
+        nplots = 3
 
-    if (haveTemps):
+    ax1a = fig1.add_subplot(nplots,1,1,xmargin=0.0)
+    ax1b = fig1.add_subplot(nplots,1,2,xmargin=0.0)
+    if (options.plotSiteTemp):
+        ax1c = fig1.add_subplot(nplots,1,3,xmargin=0.0)
+
+    if (options.plotRegr):
         fig2 = plt.figure(2, (widthIn/2, htIn/2))
         ax2a = fig2.add_subplot(1,1,1,xmargin=1.0, ymargin=1.0)
 
@@ -407,39 +440,27 @@ def doPlot(biasData, biasTimes, cpData, cpTimes, vertTimes, vertVals):
     ax1a.set_title("PECAN - ZDR bias in ice, compared with VERT results (dB)")
     ax1b.set_xlim([btimes[0] - oneDay, btimes[-1] + oneDay])
     ax1b.set_title("Daily mean ZDR bias in ice (dB)")
-    #ax1c.set_xlim([btimes[0] - oneDay, btimes[-1] + oneDay])
-    #ax1c.set_title("Site temperature (C)")
 
-    #ax1a.plot(validBraggBtimes, validBraggVals, \
-    #          "o", label = 'ZDR Bias In Bragg', color='blue')
-    #ax1a.plot(validBraggBtimes, validBraggVals, \
-    #          label = 'ZDR Bias In Bragg', linewidth=1, color='blue')
-    
+    if (options.plotSiteTemp):
+        ax1c.set_xlim([btimes[0] - oneDay, btimes[-1] + oneDay])
+        ax1c.set_title("Site temperature (C)")
+
     ax1a.plot(validIceBtimes, validIceVals, \
               "o", label = 'ZDR Bias In Ice', color='red')
     ax1a.plot(validIceBtimes, validIceVals, \
               label = 'ZDR Bias In Ice', linewidth=1, color='red')
 
-    #ax1a.plot(validBraggMBtimes, validBraggMVals, \
-    #          "o", label = 'ZDRM Bias In Bragg', color='blue')
-    #ax1a.plot(validBraggMBtimes, validBraggMVals, \
-    #          label = 'ZDRM Bias In Bragg', linewidth=1, color='blue')
-    
     ax1a.plot(validIceMBtimes, validIceMVals, \
               "o", label = 'ZDRM Bias In Ice', color='blue')
     ax1a.plot(validIceMBtimes, validIceMVals, \
               label = 'ZDRM Bias In Ice', linewidth=1, color='blue')
     
-    #ax1a.plot(ctimes[validSunscanZdrm], SunscanZdrm[validSunscanZdrm], \
-    #          linewidth=2, label = 'Zdrm Sun/CP (dB)', color = 'green')
+    if (options.plotSunscanCp):
+        ax1a.plot(ctimes[validSunscanZdrm], SunscanZdrm[validSunscanZdrm], \
+                  "^", markersize=10, label = 'Zdrm Sun/CP (dB)', color = 'green')
     
-    #ax1a.plot(ctimes[validZdrmVert], ZdrmVert[validZdrmVert], \
-    #          "^", markersize=10, linewidth=1, label = 'Zdrm Vert (dB)', color = 'orange')
-
-    #ax1b.plot(dailyTimeBragg, dailyValBragg, \
-    #          label = 'Daily Bias Bragg', linewidth=1, color='blue')
-    #ax1b.plot(dailyTimeBragg, dailyValBragg, \
-    #          "^", label = 'Daily Bias Bragg', color='blue', markersize=10)
+    ax1a.plot(ctimes[validZdrmVert], ZdrmVert[validZdrmVert], \
+              "^", markersize=10, linewidth=1, label = 'Zdrm Vert (dB)', color = 'yellow')
 
     ax1b.plot(dailyTimeIce, dailyValIce, \
               label = 'Daily Bias Ice', linewidth=1, color='red')
@@ -451,24 +472,27 @@ def doPlot(biasData, biasTimes, cpData, cpTimes, vertTimes, vertVals):
     ax1b.plot(dailyTimeIceM, dailyValIceM, \
               "^", label = 'Daily Meas Bias Ice', color='blue', markersize=10)
 
-    ax1b.plot(vtimes, vertVals, \
-              label = 'Vert Bias', linewidth=1, color='green')
-    ax1b.plot(vtimes, vertVals, \
-              "^", label = 'Vert Bias', linewidth=1, color='green', markersize=10)
+    ax1b.plot(ctimes[validZdrmVert], ZdrmVert[validZdrmVert], \
+              "^", markersize=10, linewidth=1, label = 'Zdrm Vert (dB)', color = 'yellow')
 
-    #ax1c.plot(cptimes[validTempSite], tempSite[validTempSite], \
-    #          linewidth=1, label = 'Site Temp', color = 'blue')
-    
+    if (options.plotSiteTemp):
+        print >>sys.stderr, "validTempTimes:",validTempTimes
+        print >>sys.stderr, "validTempSite:",validTempSite
+        ax1c.plot(validTempTimes,  tempSite[validTempSite], \
+                  linewidth=2, label = 'Site temp (C)', color = 'red')
+
     #configDateAxis(ax1a, -9999, 9999, "ZDR Bias (dB)", 'upper right')
-    configDateAxis(ax1a, -0.5, 0.5, "ZDR Bias (dB)", 'upper right')
-    configDateAxis(ax1b, -0.5, 0.5, "ZDR Bias (dB)", 'upper right')
-    #configDateAxis(ax1c, -9999, 9999, "Temp (C)", 'upper right')
+    configDateAxis(ax1a, -0.3, 0.3, "ZDR Bias (dB)", 'upper right')
+    configDateAxis(ax1b, -0.3, 0.3, "ZDR Bias (dB)", 'upper right')
 
-    if (haveTemps):
+    if (options.plotSiteTemp):
+        configDateAxis(ax1c, -9999, 9999, "Temp (C)", 'upper right')
+
+    if (options.plotRegr):
         label3 = "ZDR Bias In Ice = " + ("%.5f" % ww[0]) + " * temp + " + ("%.3f" % ww[1])
-        ax2a.plot(tempIceVals, biasIceVals, 
+        ax2a.plot(tempIceMVals, tempIceMBias, 
                  "x", label = label3, color = 'blue')
-        ax2a.plot(regrX, regrY, linewidth=3, color = 'blue')
+        ax2a.plot(tempRegrX, tempRegrY, linewidth=3, color = 'blue')
     
         legend3 = ax2a.legend(loc="upper left", ncol=2)
         for label3 in legend3.get_texts():
@@ -537,6 +561,46 @@ def getClosestTemp(biasTime, tempTimes, obsTemps):
     return (ttime, temp)
 
 ########################################################################
+# get tx power ratio closest in time to the search time
+
+def getClosestRatio(biasTime, powerTimes, obsTemps, txPwrH, txPwrV):
+
+    twoHours = datetime.timedelta(0.0, 7200.0)
+
+    validTimes = ((powerTimes > (biasTime - twoHours)) & \
+                  (powerTimes < (biasTime + twoHours)))
+    
+    if (len(validTimes) < 1):
+        return (biasTime, float('NaN'))
+    
+    searchTimes = powerTimes[validTimes]
+    searchTemps = obsTemps[validTimes]
+    searchTxPwrH = txPwrH[validTimes]
+    searchTxPwrV = txPwrV[validTimes]
+
+    if (len(searchTimes) < 1 or len(searchTxPwrH) < 1):
+        return (biasTime, float('NaN'))
+
+    minDeltaTime = 1.0e99
+    rtime = searchTimes[0]
+    ratio = searchTxPwrH[0] - searchTxPwrV[0]
+    temp = searchTemps[0]
+    for ii, pwrtime in enumerate(searchTimes, start=0):
+        if (np.isfinite(searchTemps[ii]) &
+            np.isfinite(searchTxPwrH[ii]) &
+            np.isfinite(searchTxPwrV[ii])):
+            ttemp = searchTemps[ii]
+            tratio = searchTxPwrH[ii] - searchTxPwrV[ii]
+            deltaTime = math.fabs((pwrtime - biasTime).total_seconds())
+            if (deltaTime < minDeltaTime):
+                minDeltaTime = deltaTime
+                ratio = tratio
+                rtime = pwrtime
+                temp = ttemp
+
+    return (rtime, temp, ratio)
+
+########################################################################
 # compute daily stats for a variable
 
 def computeDailyStats(times, vals):
@@ -551,11 +615,11 @@ def computeDailyStats(times, vals):
     timesValid = nptimes[validFlag]
     valsValid = npvals[validFlag]
     
-    startTime = nptimes[0]
-    endTime = nptimes[-1]
+    stime = nptimes[0]
+    etime = nptimes[-1]
     
-    startDate = datetime.datetime(startTime.year, startTime.month, startTime.day, 0, 0, 0)
-    endDate = datetime.datetime(endTime.year, endTime.month, endTime.day, 0, 0, 0)
+    startDate = datetime.datetime(stime.year, stime.month, stime.day, 0, 0, 0)
+    endDate = datetime.datetime(etime.year, etime.month, etime.day, 0, 0, 0)
 
     oneDay = datetime.timedelta(1)
     halfDay = datetime.timedelta(0.5)
