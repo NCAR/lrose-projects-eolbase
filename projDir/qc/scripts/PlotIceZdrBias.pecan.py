@@ -42,7 +42,7 @@ def main():
                       help='Set verbose debugging on')
     parser.add_option('--bias_file',
                       dest='biasFilePath',
-                      default='../data/dynamo/zdr_bias_ice.dynamo.txt',
+                      default='../data/pecan/zdr_bias_ice.pecan.txt',
                       help='File path for bias results')
     parser.add_option('--cp_file',
                       dest='cpFilePath',
@@ -294,12 +294,12 @@ def doPlot(biasData, biasTimes, cpData, cpTimes, vertTimes, vertVals):
     # biasIce = movingAverage(biasIce, lenMeanFilter)
 
     #biasIce = np.array(biasData["ZdrInIcePerc22.50"]).astype(np.double)
-    biasIce = np.array(biasData["ZdrInIcePerc05.00"]).astype(np.double)
+    biasIce = np.array(biasData["ZdrInIcePerc15.00"]).astype(np.double)
     biasIce = movingAverage(biasIce, lenMeanFilter)
     validIce = np.isfinite(biasIce)
     
     #biasIceM = np.array(biasData["ZdrmInIcePerc22.50"]).astype(np.double)
-    biasIceM = np.array(biasData["ZdrmInIcePerc05.00"]).astype(np.double)
+    biasIceM = np.array(biasData["ZdrmInIcePerc15.00"]).astype(np.double)
     biasIceM = movingAverage(biasIceM, lenMeanFilter)
     validIceM = np.isfinite(biasIceM)
     
@@ -404,7 +404,7 @@ def doPlot(biasData, biasTimes, cpData, cpTimes, vertTimes, vertVals):
 
     oneDay = datetime.timedelta(1.0)
     ax1a.set_xlim([btimes[0] - oneDay, btimes[-1] + oneDay])
-    ax1a.set_title("DYNAMO - ZDR bias in ice, compared with VERT results (dB)")
+    ax1a.set_title("PECAN - ZDR bias in ice, compared with VERT results (dB)")
     ax1b.set_xlim([btimes[0] - oneDay, btimes[-1] + oneDay])
     ax1b.set_title("Daily mean ZDR bias in ice (dB)")
     #ax1c.set_xlim([btimes[0] - oneDay, btimes[-1] + oneDay])
@@ -460,8 +460,8 @@ def doPlot(biasData, biasTimes, cpData, cpTimes, vertTimes, vertVals):
     #          linewidth=1, label = 'Site Temp', color = 'blue')
     
     #configDateAxis(ax1a, -9999, 9999, "ZDR Bias (dB)", 'upper right')
-    configDateAxis(ax1a, -0.2, 0.6, "ZDR Bias (dB)", 'upper right')
-    configDateAxis(ax1b, -0.2, 0.6, "ZDR Bias (dB)", 'upper right')
+    configDateAxis(ax1a, -0.5, 0.5, "ZDR Bias (dB)", 'upper right')
+    configDateAxis(ax1b, -0.5, 0.5, "ZDR Bias (dB)", 'upper right')
     #configDateAxis(ax1c, -9999, 9999, "Temp (C)", 'upper right')
 
     if (haveTemps):
