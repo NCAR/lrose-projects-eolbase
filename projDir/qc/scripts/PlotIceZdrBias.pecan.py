@@ -495,8 +495,9 @@ def doPlot():
                   "o", label = 'Measured ZDR Mean + ' + options.meanAdj, \
                   color='lightblue')
     else:
-        ax1a.plot(validIceBtimes, validIceVals,
-                  "o", label = 'Corrected ZDR Bias', color='red')
+        if (options.plotSiteTemp == False):
+            ax1a.plot(validIceBtimes, validIceVals,
+                      "o", label = 'Corrected ZDR Bias', color='red')
     #ax1a.plot(validIceBtimes, validIceVals, \
     #          label = 'ZDR Bias In Ice', linewidth=1, color='red')
 

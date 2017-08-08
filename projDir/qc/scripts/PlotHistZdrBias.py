@@ -96,7 +96,7 @@ def doPlot(zdr):
     n1, bins1, patches1 = ax1.hist(zdrSorted, 50, normed=True,
                                    histtype='stepfilled',
                                    facecolor='slateblue',
-                                   alpha=1.0)
+                                   alpha=0.35)
 
     ax1.set_xlabel('ZDR')
     ax1.set_ylabel('Frequency')
@@ -105,7 +105,7 @@ def doPlot(zdr):
 
     pdf = stats.norm(mean, sdev).pdf
     yy1 = pdf(bins1)
-    ll1 = ax1.plot(bins1, yy1, 'r', linewidth=3,
+    ll1 = ax1.plot(bins1, yy1, 'b', linewidth=2,
                    label = ('NormalFit mean=' + '{:.3f}'.format(mean) + 
                             ' sdev=' + '{:.3f}'.format(sdev) +
                             ' skew=' + '{:.3f}'.format(skew)))
@@ -119,7 +119,7 @@ def doPlot(zdr):
                                    cumulative=True,
                                    histtype='stepfilled',
                                    facecolor='slateblue',
-                                   alpha=1.0)
+                                   alpha=0.35)
 
     ax2.set_xlabel('ZDR')
     ax2.set_ylabel('Cumulative frequency')
@@ -128,7 +128,7 @@ def doPlot(zdr):
 
     cdf = stats.norm(mean, sdev).cdf
     yy2 = cdf(bins1)
-    ll2 = ax2.plot(bins1, yy2, 'r', linewidth=3,
+    ll2 = ax2.plot(bins1, yy2, 'b', linewidth=2,
                    label = ('NormalFit mean=' + '{:.3f}'.format(mean) +
                             ' sdev=' + '{:.3f}'.format(sdev) +
                             ' skew=' + '{:.3f}'.format(skew)))
@@ -139,32 +139,34 @@ def doPlot(zdr):
     # draw line to show mean, annotate
 
     pmean = pdf(mean)
-    plen = pmean * 0.1
-    toffy = pmean * 0.025
-    toffx = mean * 0.1
+    plen = pmean * 0.05
+    toffx = mean * 0.05
 
-    annotVal(ax1, ax2,  mean, pdf, cdf, 'mean', plen, toffx, toffy, 'magenta', 'magenta')
+    annotVal(ax1, ax2,  mean, pdf, cdf, 'mean', plen, toffx,
+             'red', 'red', 'left', 'center')
 
     # draw line to show mean - 0.2, annotate
     
-    annotVal(ax1, ax2,  mean - 0.2, pdf, cdf, 'mean-0.2', plen, toffx, toffy, 'magenta', 'magenta')
+    annotVal(ax1, ax2,  mean - 0.2, pdf, cdf, 'mean-0.2', plen, -toffx,
+             'red', 'red', 'right', 'center')
 
     # annotate percentiles
 
     #perc5 = percs[6]
-    #annotVal(ax1, ax2,  perc5, pdf, cdf, 'p%5', plen, toffx, toffy, 'cyan', 'cyan')
+    #annotVal(ax1, ax2,  perc5, pdf, cdf, 'p%5', plen, toffx,
+    #         'black', 'black', 'left', 'center')
 
     perc10 = percs[11]
-    annotVal(ax1, ax2,  perc10, pdf, cdf, 'p%10', plen, toffx, toffy, 'cyan', 'cyan')
+    annotVal(ax1, ax2,  perc10, pdf, cdf, 'p%10', plen, toffx,
+             'black', 'black', 'left', 'center')
 
     #perc15 = percs[16]
-    #annotVal(ax1, ax2,  perc15, pdf, cdf, 'p%15', plen, toffx, toffy, 'cyan', 'cyan')
+    #annotVal(ax1, ax2,  perc15, pdf, cdf, 'p%15', plen, toffx,
+    #         'black', 'black', 'left', 'center')
 
     perc20 = percs[21]
-    annotVal(ax1, ax2,  perc20, pdf, cdf, 'p%20', plen, toffx, toffy, 'cyan', 'cyan')
-
-    #perc25 = percs[26]
-    #annotVal(ax1, ax2,  perc25, pdf, cdf, 'p%25', plen, toffx, toffy, 'cyan', 'cyan')
+    annotVal(ax1, ax2,  perc20, pdf, cdf, 'p%20', plen, toffx,
+             'black', 'black', 'left', 'center')
 
     # show
 
@@ -173,22 +175,28 @@ def doPlot(zdr):
 ########################################################################
 # Annotate a value
 
-def annotVal(ax1, ax2, val, pdf, cdf, label, plen, toffx, toffy, linecol, textcol):
+def annotVal(ax1, ax2, val, pdf, cdf, label, plen,
+             toffx, linecol, textcol,
+             horizAlign, vertAlign):
 
     pval = pdf(val)
-    ax1.plot([val, val], [pval - plen, pval + plen], color=linecol, linewidth=3)
+    ax1.plot([val, val], [pval - plen, pval + plen], color=linecol, linewidth=2)
     ax1.annotate(label + '=' + '{:.3f}'.format(val),
                  xy=(val, pval + toffx),
-                 xytext=(val + toffx, pval + toffy),
-                 color=textcol)
+                 xytext=(val + toffx, pval),
+                 color=textcol,
+                 horizontalalignment=horizAlign,
+                 verticalalignment=vertAlign)
 
     cval = cdf(val)
-    clen = 0.1
-    ax2.plot([val, val], [cval - clen, cval + clen], color=linecol, linewidth=3)
+    clen = 0.03
+    ax2.plot([val, val], [cval - clen, cval + clen], color=linecol, linewidth=2)
     ax2.annotate(label + '=' + '{:.3f}'.format(val),
                  xy=(val, cval + toffx),
-                 xytext=(val + toffx, cval + toffy),
-                 color=textcol)
+                 xytext=(val + toffx, cval),
+                 color=textcol,
+                 horizontalalignment=horizAlign,
+                 verticalalignment=vertAlign)
 
 ########################################################################
 # Run a command in a shell, wait for it to complete
