@@ -151,20 +151,20 @@ def doPlot(zdr):
 
     # annotate percentiles
 
-    perc5 = percs[6]
-    annotVal(ax1, ax2,  perc5, pdf, cdf, 'p%5', plen, toffx, toffy, 'cyan', 'cyan')
+    #perc5 = percs[6]
+    #annotVal(ax1, ax2,  perc5, pdf, cdf, 'p%5', plen, toffx, toffy, 'cyan', 'cyan')
 
     perc10 = percs[11]
     annotVal(ax1, ax2,  perc10, pdf, cdf, 'p%10', plen, toffx, toffy, 'cyan', 'cyan')
 
-    perc15 = percs[16]
-    annotVal(ax1, ax2,  perc15, pdf, cdf, 'p%15', plen, toffx, toffy, 'cyan', 'cyan')
+    #perc15 = percs[16]
+    #annotVal(ax1, ax2,  perc15, pdf, cdf, 'p%15', plen, toffx, toffy, 'cyan', 'cyan')
 
     perc20 = percs[21]
     annotVal(ax1, ax2,  perc20, pdf, cdf, 'p%20', plen, toffx, toffy, 'cyan', 'cyan')
 
-    perc25 = percs[26]
-    annotVal(ax1, ax2,  perc25, pdf, cdf, 'p%25', plen, toffx, toffy, 'cyan', 'cyan')
+    #perc25 = percs[26]
+    #annotVal(ax1, ax2,  perc25, pdf, cdf, 'p%25', plen, toffx, toffy, 'cyan', 'cyan')
 
     # show
 
