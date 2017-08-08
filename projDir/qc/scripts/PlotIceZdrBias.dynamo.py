@@ -84,6 +84,10 @@ def main():
                       dest='meanAdj',
                       default='-0.25',
                       help='Adjustment to mean for ZDR bias')
+    parser.add_option('--perc',
+                      dest='percentile',
+                      default='5.0',
+                      help='Histogram percentile value for ZDR bias')
     
     (options, args) = parser.parse_args()
     
@@ -100,13 +104,13 @@ def main():
 
     if (options.debug == True):
         print >>sys.stderr, "Running %prog"
-        print >>sys.stderr, "  cpFilePath: ", options.cpFilePath
         print >>sys.stderr, "  biasFilePath: ", options.biasFilePath
         print >>sys.stderr, "  startTime: ", startTime
         print >>sys.stderr, "  endTime: ", endTime
         print >>sys.stderr, "  surOnly: ", options.surOnly
         print >>sys.stderr, "  rhiOnly: ", options.rhiOnly
         print >>sys.stderr, "  meanAdj: ", options.meanAdj
+        print >>sys.stderr, "  percentile: ", options.percentile
 
     # read in column headers for bias results
 
@@ -308,12 +312,20 @@ def prepareData(biasData, biasTimes):
     zdrMean = np.array(biasData["ZdrmInIceMean"]).astype(np.double)
     zdrMean = movingAverage(zdrMean, lenMeanFilter)
     validMean = np.isfinite(zdrMean)
-    
-    biasIce = np.array(biasData["ZdrInIcePerc05.00"]).astype(np.double)
+
+    percVal = float(options.percentile)
+    percStr = 'ZdrInIcePerc' + '{:05.2f}'.format(percVal)
+    if (options.debug):
+        print >>sys.stderr, "=>> using: ", percStr
+
+    biasIce = np.array(biasData[percStr]).astype(np.double)
     biasIce = movingAverage(biasIce, lenMeanFilter)
     validIce = np.isfinite(biasIce)
     
-    biasIceM = np.array(biasData["ZdrmInIcePerc05.00"]).astype(np.double)
+    percmStr = 'ZdrmInIcePerc' + '{:05.2f}'.format(percVal)
+    if (options.debug):
+        print >>sys.stderr, "=>> using: ", percmStr
+    biasIceM = np.array(biasData[percmStr]).astype(np.double)
     biasIceM = movingAverage(biasIceM, lenMeanFilter)
     validIceM = np.isfinite(biasIceM)
     
@@ -360,6 +372,9 @@ def doPlot():
     titleStr = "File: " + fileName
     hfmt = dates.DateFormatter('%y/%m/%d')
 
+    percVal = float(options.percentile)
+    percStr = '{:g}'.format(percVal) + 'th%'
+
     # set up plots
 
     widthIn = float(options.figWidthMm) / 25.4
@@ -390,7 +405,7 @@ def doPlot():
     #          label = 'ZDR Bias In Ice', linewidth=1, color='red')
 
     ax1a.plot(validIceMBtimes, validIceMVals, \
-              "o", label = 'Measured ZDR Bias', color='blue')
+              "o", label = 'Measured ZDR Bias ' + percStr, color='blue')
     #ax1a.plot(validIceMBtimes, validIceMVals, \
     #          label = 'ZDRM Bias In Ice', linewidth=1, color='blue')
     
@@ -413,17 +428,17 @@ def doPlot():
                   "^", label = 'Corrected ZDR Bias', color='red', markersize=10)
 
     ax1b.plot(dailyTimeIceM, dailyValIceM, \
-              label = 'Meas Daily ZDR Bias', linewidth=1, color='blue')
+              label = 'Meas Daily ZDR Bias ' + percStr, linewidth=1, color='blue')
     ax1b.plot(dailyTimeIceM, dailyValIceM, \
-              "^", label = 'Meas Daily ZDR Bias', color='blue', markersize=10)
+              "^", label = 'Meas Daily ZDR Bias ' + percStr, color='blue', markersize=10)
 
     #ax1b.plot(vtimes, vertData, \
     #          label = 'Vert Bias', linewidth=1, color='yellow')
     ax1b.plot(vtimes, vertData, \
               "^", label = 'Vert Results', linewidth=1, color='yellow', markersize=10)
 
-    configDateAxis(ax1a, -0.2, 0.6, "ZDR Bias (dB)", 'upper right')
-    configDateAxis(ax1b, -0.2, 0.6, "ZDR Bias (dB)", 'upper right')
+    configDateAxis(ax1a, -0.3, 0.7, "ZDR Bias (dB)", 'upper right')
+    configDateAxis(ax1b, -0.3, 0.7, "ZDR Bias (dB)", 'upper right')
 
     fig1.autofmt_xdate()
     fig1.tight_layout()
@@ -435,7 +450,7 @@ def doPlot():
 
 def configDateAxis(ax, miny, maxy, ylabel, legendLoc):
     
-    legend = ax.legend(loc=legendLoc, ncol=5)
+    legend = ax.legend(loc=legendLoc, ncol=3)
     for label in legend.get_texts():
         label.set_fontsize('x-small')
     ax.set_xlabel("Date")

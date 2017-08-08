@@ -84,7 +84,7 @@ def main():
                       dest='plotRegr', default=False,
                       action="store_true",
                       help='Plot the regression of ZDR vs Temp')
-    parser.add_option('--site_temp',
+    parser.add_option('--temp',
                       dest='plotSiteTemp', default=False,
                       action="store_true",
                       help='Plot the site temperature')
@@ -100,7 +100,11 @@ def main():
                       dest='meanAdj',
                       default='-0.15',
                       help='Adjustment to mean for ZDR bias')
-    
+    parser.add_option('--perc',
+                      dest='percentile',
+                      default='15.0',
+                      help='Histogram percentile value for ZDR bias')
+      
     (options, args) = parser.parse_args()
     
     if (options.verbose == True):
@@ -123,6 +127,7 @@ def main():
         print >>sys.stderr, "  surOnly: ", options.surOnly
         print >>sys.stderr, "  rhiOnly: ", options.rhiOnly
         print >>sys.stderr, "  meanAdj: ", options.meanAdj
+        print >>sys.stderr, "  percentile: ", options.percentile
 
     # read in column headers for bias results
 
@@ -271,11 +276,20 @@ def prepareData(biasData, biasTimes, cpData, cpTimes):
     zdrMean = movingAverage(zdrMean, lenMeanFilter)
     validMean = np.isfinite(zdrMean)
     
-    biasIce = np.array(biasData["ZdrInIcePerc15.00"]).astype(np.double)
+    percVal = float(options.percentile)
+    percStr = 'ZdrInIcePerc' + '{:05.2f}'.format(percVal)
+    if (options.debug):
+        print >>sys.stderr, "=>> using: ", percStr
+
+    biasIce = np.array(biasData[percStr]).astype(np.double)
     biasIce = movingAverage(biasIce, lenMeanFilter)
     validIce = np.isfinite(biasIce)
     
-    biasIceM = np.array(biasData["ZdrmInIcePerc15.00"]).astype(np.double)
+    percmStr = 'ZdrmInIcePerc' + '{:05.2f}'.format(percVal)
+    if (options.debug):
+        print >>sys.stderr, "=>> using: ", percmStr
+
+    biasIceM = np.array(biasData[percmStr]).astype(np.double)
     biasIceM = movingAverage(biasIceM, lenMeanFilter)
     validIceM = np.isfinite(biasIceM)
     
@@ -441,6 +455,9 @@ def doPlot():
     titleStr = "File: " + fileName
     hfmt = dates.DateFormatter('%y/%m/%d')
     
+    percVal = float(options.percentile)
+    percStr = '{:g}'.format(percVal) + 'th%'
+
     # set up plots
 
     widthIn = float(options.figWidthMm) / 25.4
@@ -463,65 +480,65 @@ def doPlot():
 
     oneDay = datetime.timedelta(1.0)
     ax1a.set_xlim([btimes[0] - oneDay, btimes[-1] + oneDay])
-    ax1a.set_title("PECAN - ZDR bias in ice, compared with VERT results (dB)")
+    ax1a.set_title("ZDR bias in ice, compared with VERT results")
     if (options.plotSiteTemp):
         ax1c.set_xlim([btimes[0] - oneDay, btimes[-1] + oneDay])
-        ax1c.set_title("Site temperature (C)")
+        ax1c.set_title("Site temperature")
     else:
         ax1b.set_xlim([btimes[0] - oneDay, btimes[-1] + oneDay])
-        ax1b.set_title("Daily mean ZDR bias in ice (dB)")
+        ax1b.set_title("Daily mean ZDR bias in ice")
 
     # volume by volume plots
 
     if (options.plotMean):
         ax1a.plot(validMeanBtimes, adjMean,
-                  "o", label = 'ZDR Mean + ' + options.meanAdj, \
-                  color='lightgreen')
+                  "o", label = 'Measured ZDR Mean + ' + options.meanAdj, \
+                  color='lightblue')
     else:
         ax1a.plot(validIceBtimes, validIceVals,
-                  "o", label = 'ZDR Bias In Ice', color='red')
+                  "o", label = 'Corrected ZDR Bias', color='red')
     #ax1a.plot(validIceBtimes, validIceVals, \
     #          label = 'ZDR Bias In Ice', linewidth=1, color='red')
 
     ax1a.plot(validIceMBtimes, validIceMVals, \
-              "o", label = 'ZDRM Bias In Ice', color='blue')
+              "o", label = 'Measured ZDR bias ' + percStr, color='blue')
     #ax1a.plot(validIceMBtimes, validIceMVals, \
     #          label = 'ZDRM Bias In Ice', linewidth=1, color='blue')
     
     if (options.plotSunscanCp):
         ax1a.plot(ctimes[validSunscanZdrm], SunscanZdrm[validSunscanZdrm], \
-                  "^", markersize=10, label = 'Zdrm Sun/CP (dB)', color = 'green')
+                  "^", markersize=10, label = 'Zdrm Sun/CP', color = 'green')
     
     ax1a.plot(ctimes[validZdrmVert], ZdrmVert[validZdrmVert], \
-              "^", markersize=10, linewidth=1, label = 'Zdrm Vert (dB)', color = 'yellow')
+              "^", markersize=10, linewidth=1, label = 'Vert Results', color = 'yellow')
 
     # daily
 
     if (options.plotSiteTemp):
         ax1c.plot(validTempTimes,  tempSite[validTempSite], \
-                  linewidth=2, label = 'Site temp (C)', color = 'red')
+                  linewidth=2, label = 'Site temperature', color = 'red')
     else:
         if (options.plotMean):
             ax1b.plot(dailyTimeMean, dailyAdjMean,
-                      label = 'ZDR Mean + ' + options.meanAdj, 
-                      linewidth=1, color='lightgreen')
+                      label = 'Meas ZDR Mean + ' + options.meanAdj, 
+                      linewidth=1, color='lightblue')
             ax1b.plot(dailyTimeMean, dailyAdjMean,
-                      "^", label = 'ZDR Mean + ' + options.meanAdj,
-                      color='lightgreen', markersize=10)
+                      "^", label = 'Meas ZDR Mean + ' + options.meanAdj,
+                      color='lightblue', markersize=10)
         else:
             ax1b.plot(dailyTimeIce, dailyValIce,
-                      label = 'Daily Bias Ice', linewidth=1, color='red')
+                      label = 'Corrected ZDR Bias', linewidth=1, color='red')
             ax1b.plot(dailyTimeIce, dailyValIce,
-                      "^", label = 'Daily Bias Ice', color='red', markersize=10)
+                      "^", label = 'Corrected ZDR Bias', color='red', markersize=10)
             
-            ax1b.plot(dailyTimeIceM, dailyValIceM,
-                      label = 'Daily Meas Bias Ice', linewidth=1, color='blue')
-            ax1b.plot(dailyTimeIceM, dailyValIceM,
-                      "^", label = 'Daily Meas Bias Ice', color='blue', markersize=10)
-            
-            ax1b.plot(ctimes[validZdrmVert], ZdrmVert[validZdrmVert],
-                      "^", markersize=10, linewidth=1, label = 'Zdrm Vert (dB)', 
-                      color = 'yellow')
+        ax1b.plot(dailyTimeIceM, dailyValIceM,
+                  label = 'Meas Daily ZDR Bias ' + percStr, linewidth=1, color='blue')
+        ax1b.plot(dailyTimeIceM, dailyValIceM,
+                  "^", label = 'Meas Daily ZDR ' + percStr, color='blue', markersize=10)
+        
+        ax1b.plot(ctimes[validZdrmVert], ZdrmVert[validZdrmVert],
+                  "^", markersize=10, linewidth=1, label = 'Zdrm Vert (dB)', 
+                  color = 'yellow')
 
     configDateAxis(ax1a, -0.5, 0.5, "ZDR Bias (dB)", 'upper right')
 
@@ -550,7 +567,7 @@ def doPlot():
 
     fig1.autofmt_xdate()
     fig1.tight_layout()
-    fig1.subplots_adjust(bottom=0.10, left=0.10, right=0.97, top=0.96)
+    fig1.subplots_adjust(bottom=0.08, left=0.10, right=0.97, top=0.92)
     if (options.plotRegr):
         fig2.subplots_adjust(bottom=0.10, left=0.15, right=0.95, top=0.95)
     plt.show()
@@ -560,7 +577,7 @@ def doPlot():
 
 def configDateAxis(ax, miny, maxy, ylabel, legendLoc):
     
-    legend = ax.legend(loc=legendLoc, ncol=5)
+    legend = ax.legend(loc=legendLoc, ncol=3)
     for label in legend.get_texts():
         label.set_fontsize('x-small')
     ax.set_xlabel("Date")
