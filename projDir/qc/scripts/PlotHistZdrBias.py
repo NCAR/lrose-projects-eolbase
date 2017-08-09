@@ -47,6 +47,10 @@ def main():
                       dest='figHeightMm',
                       default=300,
                       help='Height of figure in mm')
+    parser.add_option('--adj',
+                      dest='meanAdj',
+                      default='-0.20',
+                      help='Adjustment to mean for ZDR bias')
     (options, args) = parser.parse_args()
     
     if (options.debug == True):
@@ -93,7 +97,7 @@ def doPlot(zdr):
 
     # the histogram of ZDR
 
-    n1, bins1, patches1 = ax1.hist(zdrSorted, 50, normed=True,
+    n1, bins1, patches1 = ax1.hist(zdrSorted, 60, normed=True,
                                    histtype='stepfilled',
                                    facecolor='slateblue',
                                    alpha=0.35)
@@ -115,7 +119,7 @@ def doPlot(zdr):
 
     # CDF of ZDR
 
-    n2, bins2, patches2 = ax2.hist(zdrSorted, 50, normed=True,
+    n2, bins2, patches2 = ax2.hist(zdrSorted, 60, normed=True,
                                    cumulative=True,
                                    histtype='stepfilled',
                                    facecolor='slateblue',
@@ -147,25 +151,23 @@ def doPlot(zdr):
 
     # draw line to show mean - 0.2, annotate
     
-    annotVal(ax1, ax2,  mean - 0.2, pdf, cdf, 'mean-0.2', plen, -toffx,
+    annotVal(ax1, ax2,  mean + float(options.meanAdj),
+             pdf, cdf, 
+             'mean' + options.meanAdj, plen, -toffx,
              'red', 'red', 'right', 'center')
 
     # annotate percentiles
 
-    #perc5 = percs[6]
-    #annotVal(ax1, ax2,  perc5, pdf, cdf, 'p%5', plen, toffx,
-    #         'black', 'black', 'left', 'center')
-
-    perc10 = percs[11]
-    annotVal(ax1, ax2,  perc10, pdf, cdf, 'p%10', plen, toffx,
+    perc5 = percs[6]
+    annotVal(ax1, ax2,  perc5, pdf, cdf, 'p%5', plen, toffx,
              'black', 'black', 'left', 'center')
 
-    #perc15 = percs[16]
-    #annotVal(ax1, ax2,  perc15, pdf, cdf, 'p%15', plen, toffx,
-    #         'black', 'black', 'left', 'center')
+    perc15 = percs[16]
+    annotVal(ax1, ax2,  perc15, pdf, cdf, 'p%15', plen, toffx,
+             'black', 'black', 'left', 'center')
 
-    perc20 = percs[21]
-    annotVal(ax1, ax2,  perc20, pdf, cdf, 'p%20', plen, toffx,
+    perc25 = percs[26]
+    annotVal(ax1, ax2,  perc25, pdf, cdf, 'p%25', plen, toffx,
              'black', 'black', 'left', 'center')
 
     # show
