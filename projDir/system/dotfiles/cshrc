@@ -107,7 +107,7 @@ endif
 
 # python
 
-setenv PYTHONPATH ~/anaconda2/pkgs
+setenv PYTHONPATH ~/anaconda2/pkgs:$HOME/projDir/dial/Python/ptvv1_python/python:$HOME/projDir/dial/Python/NCAR-LidarProcessing/libraries
 
 # HSRL
 

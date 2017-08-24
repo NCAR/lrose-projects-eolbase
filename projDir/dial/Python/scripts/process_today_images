@@ -1,0 +1,8 @@
+#! /bin/sh
+
+# make output dirs
+mkdir -p /scr/eldora1/processed_h2o_data
+mkdir -p /scr/eldora1/MSU_processed_h2o_data
+
+# run python processing command
+ipython ~/projDir/dial/Python/scripts/Process_Images_Today_Settings.py

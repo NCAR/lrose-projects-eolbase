@@ -42,7 +42,10 @@ def mail_warning(sender, receivers, msg):
 
 
 if __name__ == '__main__':
-    exists, file, delta = check_file('/export/eldora1/h2o_data/')
+# DIAL01
+#    exists, file, delta = check_file('/export/eldora1/h2o_data/')
+# DIAL02
+    exists, file, delta = check_file('/export/eldora1/MSU_h2o_data/') 
     max_delta = timedelta(minutes=9)
     sender = "rsfdata@eldora.eol.ucar.edu"
 

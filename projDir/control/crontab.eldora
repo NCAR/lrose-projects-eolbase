@@ -36,16 +36,23 @@
 # WVDIAL scheduler cron entries
 # DIAL PROCESS(save_figure, save_data, save_netCDF, save_catalog, channel)
 # save (on=1, off=0), and channel (FF=standard channel, NF= wide field-of-view channel)
-# process and save only images every 15 min
-*/15 * * * * cd $HOME/projDir/dial/Matlab && ./DIAL_process 1 0 0 1 FF NCAR >/dev/null 2>&1
+# process and save only images every 15 min 
+#*/15 * * * * cd $HOME/projDir/dial/Matlab && ./DIAL_process 1 0 0 1 FF NCAR >/dev/null 2>&1
 #*/16 * * * * cd $HOME/projDir/dial/Matlab && ./DIAL_process 1 0 0 0 NF NCAR >/dev/null 2>&1
-#*/17 * * * * cd $HOME/projDir/dial/Matlab && ./DIAL_process 1 0 0 0 FF MSU  >/dev/null 2>&1
+*/15 * * * * cd $HOME/projDir/dial/Matlab && ./DIAL_process 1 0 0 1 FF MSU  >/dev/null 2>&1
 #*/18 * * * * cd $HOME/projDir/dial/Matlab && ./DIAL_process 1 0 0 1 NF MSU  >/dev/null 2>&1
 #  process and save data at 18:10 (6:10PM) MDT for full day
-10 18 * * * cd $HOME/projDir/dial/Matlab && ./DIAL_process 1 1 1 1 FF NCAR >/dev/null 2>&1
+#10 18 * * * cd $HOME/projDir/dial/Matlab && ./DIAL_process 1 1 1 1 FF NCAR >/dev/null 2>&1
 #11 18 * * * cd $HOME/projDir/dial/Matlab && ./DIAL_process 0 1 1 0 NF NCAR >/dev/null 2>&1
-#12 18 * * * cd $HOME/projDir/dial/Matlab && ./DIAL_process 0 1 1 0 FF MSU  >/dev/null 2>&1
+5 18 * * * cd $HOME/projDir/dial/Matlab && ./DIAL_process 1 1 1 1 FF MSU  >/dev/null 2>&1
 #13 18 * * * cd $HOME/projDir/dial/Matlab && ./DIAL_process 0 1 1 0 NF MSU  >/dev/null 2>&1
+
+#Run Python Processing
+# save images every 2 hours
+# process and save data for the day at 18:20 MDT
+* */2 * * * cd $HOME/projDir/dial/Python/scripts/ && sh process_today_images >/dev/null 2>&1
+20 18 * * * cd $HOME/projDir/dial/Python/scripts/ && sh process_dlb_today >/dev/null 2>&1
+
 #####################################################################
 #
 # unpack h2odata
@@ -53,13 +60,14 @@
 # verify h2odata is being transferred
 #
 # rsync dial data from field
-#*/10 * * * * csh -c "run_rsync_dial_data" 1> /dev/null 2> /dev/null
+*/10 * * * * csh -c "run_rsync_dial_data" 1> /dev/null 2> /dev/null
 */5  * * * * csh -c "run_rsync_hsrl_data" 1> /dev/null 2> /dev/null
 #
 # Check Water Vapor DIAL transfer.  Notify users if unsuccessful
-#15 * * * *  /home/rsfdata/projDir/system/scripts/check_h2o_transfer.py 1>> /tmp/check_h2o_transfer.log 2&>1
+# This version is designed to run every 10 min starting at 15 min after the hour
+15-59/10 * * * *  /home/rsfdata/projDir/system/scripts/check_h2o_transfer.py 1>> /tmp/check_h2o_transfer.log 2&>1
 # This version is for Portugal, using BTSync instead of rsync
-5 * * * * /home/rsfdata/projDir/system/scripts/check_h2o_transfer.prev_hour.py 1>> /tmp/check_h2o_transfer.prev_hour.log 2&>1
+#5 * * * * /home/rsfdata/projDir/system/scripts/check_h2o_transfer.prev_hour.py 1>> /tmp/check_h2o_transfer.prev_hour.log 2&>1
 ####################################################################
 # TRANSFER IMAGES FROM RAL WEATHER PAGE TO CATALOG
 #

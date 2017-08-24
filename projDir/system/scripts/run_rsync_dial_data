@@ -7,8 +7,8 @@
 #    LogFilter -d $ERRORS_LOG_DIR -p rsync_dial_data_from_field.ncar -i cron >& /dev/null &
 
 rsync_dial_data_from_field.py --debug \
-   # --rsyncSource rsync://166.164.215.174/wvdial/ \
-    --rsyncSource rsync://128.117.47.87/wvdial/ \
+    --rsyncSource rsync://166.164.215.174/wvdial/ \
+   # --rsyncSource rsync://128.117.47.87/wvdial/ \
     --targetDir /export/eldora1/MSU_h2o_data |& \
     LogFilter -d $ERRORS_LOG_DIR -p rsync_dial_data_from_field.msu -i cron >& /dev/null &
 

@@ -1,5 +1,5 @@
-function[] = DIAL_Analysis_v48_function(folder_in, MCS, write_data_folder, flag, node, ...
-    profiles2ave, P0, switch_ratio, ave_time, timing_range_correction, blank_range, p_hour)
+function[] = DIAL_Analysis_v49_function(folder_in, MCS, write_data_folder, flag, node, ...
+    profiles2ave, P0, switch_ratio, ave_time, timing_range_correction, blank_range, p_hour, catalog)
 
 %% notes
 %Amin Nehrir (original author)
@@ -91,7 +91,9 @@ spatial_average3 = 600/gate; %600 meter smoothing above range 2
 %% Importing online and offline files from the selected date
 
 [data_on,data_off,folder_in] = File_Retrieval_v12(MCS.bins, folder_in); %use to read binary data (bin number passed in) 
- 
+%[data_on,data_off,folder_in] = File_Retrieval_v13(MCS.bins, folder_in); %use to read binary data (bin number passed in)  
+% v13 ingores the last hour
+
 %Making the online and offline data files the same size
 try
     Online_Raw_Data = data_on(1:size(data_on,1),1:end);
@@ -101,12 +103,14 @@ catch err
     Online_Raw_Data = data_on(1:size(Offline_Raw_Data,1),1:end);
 end
 
- % add trap error assocated with instument crash 
+  % add trap error associated with Perdigao instrument crash 
   time2 = (Online_Raw_Data(:,1)); 
   time2(time2<(nanmedian(time2)-2))= NaN;
   time2(time2>(nanmedian(time2)+2))= NaN;
   Online_Raw_Data = Online_Raw_Data(~isnan(time2),:);
   Offline_Raw_Data = Offline_Raw_Data(~isnan(time2),:);
+
+
 
 %% read in weather station data
 
@@ -166,9 +170,31 @@ end
 
  lambda_off = median(lambda_all_off)
  lambda = median(lambda_all)
- if nanstd(lambda_all) >= 5e-4
+ if nanstd(lambda_all) >= 5e-4    
     h = msgbox('Online wavelength not stable during time period', 'Warning','warn');
  end
+    % check for multiple wavelengths
+    edges_on=828.180:.00001:828.220;
+    [value,edges]=histcounts(round(lambda_all,4),edges_on); % bin rounded wavelengths
+    lambda_N = edges(value~=0)  % wavelength values
+    %lambda_F = value(value~=0);  % frequency of occurance
+    lambda_all_N = round(lambda_all,4); 
+   % figure(1234)
+   % plot(lambda_all_N)
+   % hold on
+   % plot(lambda_all)
+   % hold off
+
+    edges_off=828.280:.00001:828.320;
+    [value,edges]=histcounts(round(lambda_all_off,3),edges_off); % bin rounded wavelengths
+    lambda_off_N = edges(value~=0)  % wavelength values
+    %lambda_off_F = value(value~=0);  % frequency of occurance
+    lambda_all_off_N=round(lambda_all_off,2);
+   % figure(5678)
+   % plot(lambda_all_off_N)
+   % hold on
+   % plot(lambda_all_off)
+   % hold off
 
  folder_date = textscan(folder_in(end-7:end-2), '%6f', 1); folder_date=folder_date{1}; % change to read ingore the NF and FF 
  folder_CH = textscan(folder_in(end-1:end), '%s'); folder_CH=folder_CH{1}; % change to read ingore the NF and FF 
@@ -195,7 +221,7 @@ end
 %Range vector in meters
 range = single(0:gate:(size(Online,2)-1)*gate);
 time = (Online_Raw_Data(:,1)); 
-%clear Online_Raw_Data  Offline_Raw_Data
+%clear Online_Raw_Data  Offline_Raw_Data 
  
 if flag.pileup == 1
 % apply linear correction factor to raw counts 
@@ -344,12 +370,12 @@ end
    hold off
    title('Average counts with lowest gates blanked')
   end
-  
-    
+ 
   % grid data in time to final array size 
   time_grid = (floor(min(time)):1/24/60*(ave_time.gr):ceil(min(time)))';
   
-  lambda_all = interp1(time, lambda_all, time_grid, 'next', extrapolation);  
+  lambda_all = interp1(time, lambda_all, time_grid, 'next', extrapolation); 
+  lambda_all_N = interp1(time, lambda_all_N, time_grid, 'nearest', extrapolation); %added for multiwavelength processing
   if flag.WS == 1
     Surf_T = interp1(time, Surf_T, time_grid, method, extrapolation);
     Surf_P = interp1(time, Surf_P, time_grid, method, extrapolation);
@@ -362,6 +388,7 @@ end
     Bench_T = interp1(time, Bench_T, time_grid, method, extrapolation);
   end
   lambda_all_off = interp1(time, lambda_all_off, time_grid, method, extrapolation);
+  lambda_all_off_N = interp1(time, lambda_all_off_N, time_grid, 'nearest', extrapolation);  %added for multiwavelength processing
   background_off = interp1(time,background_off, time_grid, method, extrapolation);  
   background_on = interp1(time, background_on, time_grid, method, extrapolation);
   Offline_sum2 = interp1(time,Offline_sum2, time_grid, method, extrapolation);  
@@ -460,8 +487,13 @@ Hitran.E = line(:,6);          % ground state transition energy from HITRAN [cm^
 Hitran.alpha = line(:,7);      % linewidth temperature dependence factor from HITRAN
 Hitran.delta = line(:,8);      % pressure shift from HiTRAN [cm^-1 atm^-1]
 
-Hitran.nu_on = 1/(lambda)*1e7;
-Hitran.nu_off = 1/(lambda_off)*1e7;
+% new code to handle multiple wavelength changes during a single day
+for l=1:length(lambda_N)
+
+Hitran.nu_on = 1/(lambda_N(l))*1e7;
+Hitran.nu_off = 1/(lambda_off_N(l))*1e7;
+%Hitran.nu_on = 1/(lambda)*1e7;
+%Hitran.nu_off = 1/(lambda_off)*1e7;
 
 %sigma_on_total = zeros(size(Online_Temp_Spatial_Avg,1),size(Online_Temp_Spatial_Avg,2));
 
@@ -483,7 +515,7 @@ for i = 1:size(Online_Temp_Spatial_Avg,2); % calculate the absorption cross sect
     const.m = 18.015E-3./6.022E23; % mass of a single water molecule
     const.k_B = 1.3806488e-23; % (J/K)
     const.c = 299792458; % (m/s) (exact)
-    
+   
     Hitran.gammad = (Hitran.nu0).*((2.0.*const.k_B.*T(i).*log(2.0))./(const.m.*const.c^2)).^(0.5);  %Calculate HWHM Doppler linewidth at T(i)
     
     % term 1 in the Voigt profile
@@ -532,15 +564,33 @@ for i = 1:size(Online_Temp_Spatial_Avg,2); % calculate the absorption cross sect
 end;
 
 sigma_on_total = repmat(sigma_on_total,size(Online_Temp_Spatial_Avg,1),1);
-
 sigma_off_total = repmat(sigma_off_total,size(Online_Temp_Spatial_Avg,1),1);
 
-%if a change in wavlength was detected fix it here
+% new lines to handle multiple wavelengths during the day
+S_on_N(:,:,l) = sigma_on_total;
+S_off_N(:,:,l) = sigma_off_total;
 
+clear sigma_on_total sigma_off_total sigmav_on sigmav_off
 
+end
 % delete(h)
-    
-           
+ 
+% combine the multiwavelenth into a single cross section matrix
+sigma_on_total=zeros(size(S_on_N,1),size(S_on_N,2));
+sigma_off_total=zeros(size(S_on_N,1),size(S_on_N,2));
+
+for l=1:length(lambda_N)
+  for i = 1:size(Online_Temp_Spatial_Avg,1)
+    if single(lambda_all_N(i))==single(lambda_N(l))
+     sigma_on_total(i,:)= S_on_N(i,:,l); 
+    end
+    if single(lambda_all_off_N(i))==single(lambda_off_N(l))
+     sigma_off_total(i,:)= S_off_N(i,:,l); 
+    end   
+  end
+end
+
+
 %% DIAL Equation to calculate Number Density and error
 
  Inside = (Online_Temp_Spatial_Avg.*(circshift(Offline_Temp_Spatial_Avg, [0, -1])))./...
@@ -593,7 +643,7 @@ sigma_off_total = repmat(sigma_off_total,size(Online_Temp_Spatial_Avg,1),1);
  N_masked = N_avg;
  N_masked(N_avg < 0) = nan; % remove non-pysical (negative) wv regions
  N_masked(abs(N_error./N_avg) > 2.00) = nan; % remove high error regions
- N_masked(Offline_Raw_Data(:,8:end)./(MCS.bin_duration*1e-9*MCS.accum) > 2E6) = nan; % remove raw counts above linear count threshold (5MC/s)
+ N_masked(Offline_Raw_Data(:,8:end)./(MCS.bin_duration*1e-9*MCS.accum) > 5E6) = nan; % remove raw counts above linear count threshold (5MC/s)
  if strcmp(folder_CH,'NF') == 1
    N_masked(abs(N_error./N_avg) > 1.00) = nan; % remove high error regions
    N_masked(Offline_Raw_Data(:,8:end)./(MCS.bin_duration*1e-9*MCS.accum) > 1.25E6) = nan; % remove raw counts above linear count threshold (5MC/s)
@@ -695,6 +745,7 @@ end
 if flag.decimate == 1 
     decimate_time = ave_time.wv/ave_time.gr/2; %ave_time.wv/ave_time.gr;
     decimate_range = spatial_average1/2; %spatial_average1;
+    decimate_range = 1; % keep native gate spacing 
     % average RB data before decimating
       RB = nanmoving_average(RB,decimate_time/2,1,flag.int);
       RB_on = nanmoving_average(RB_on,decimate_time/2,1,flag.int);
@@ -731,16 +782,16 @@ if flag.decimate == 1
     end
 end
     
+  background_off = background_off/(MCS.bin_duration*1e-9*MCS.accum*(1-switch_ratio)); % change background to counts/sec
+  background_on = background_on/(MCS.bin_duration*1e-9*MCS.accum*switch_ratio); % change background to counts/sec
+  
 
 %% save data
   
  if flag.save_data == 1
   %cd('/Users/spuler/Desktop/WV_DIAL_data') % point to the directory where data is stored 
   %cd('/Volumes/documents/WV_DIAL_data/processed_data') % point to the directory where data is stored 
-  
-  background_off = background_off/(MCS.bin_duration*1e-9*MCS.accum*(1-switch_ratio)); % change background to counts/sec
-  background_on = background_on/(MCS.bin_duration*1e-9*MCS.accum*switch_ratio); % change background to counts/sec
-  
+ 
   
   cd(write_data_folder)
   name=strcat(date, folder_CH);
@@ -867,6 +918,7 @@ xData =  linspace(fix(min(time_new)),  ceil(max(time_new)), 25);
   box(subplot1,'on');
   set(gcf,'renderer','zbuffer');
   Z = double(log10((real(RB')./RB_scale)));
+  %Z = real(double(log10(Offline_Temp_Spatial_Avg_act')));
   %Z(isnan(Z)) = -1;
   h = pcolor(x,y,Z);
   set(h, 'EdgeColor', 'none');
@@ -891,6 +943,7 @@ xData =  linspace(fix(min(time_new)),  ceil(max(time_new)), 25);
   box(subplot1,'on'); %(number density in mol/cm3)(1e6 cm3/m3)/(N_A mol/mole)*(18g/mole)
   set(gcf,'renderer','zbuffer');
   Z = double(real(N_avg'.*1e6./6.022E23.*18.015));
+  %Z = real(double(log10(Online_Temp_Spatial_Avg_act')));
   %Z(isnan(Z)) = -1;
   h = pcolor(x,y,Z);
   set(h, 'EdgeColor', 'none');
@@ -926,8 +979,9 @@ xData =  linspace(fix(min(time_new)),  ceil(max(time_new)), 25);
     test=ftp('catalog.eol.ucar.edu', 'anonymous', 'spuler@ucar.edu')
     %cd(test,'/pub/incoming/catalog/frappe');
     %cd(test,'/pub/incoming/catalog/pecan');
+    %cd(test,'/pub/incoming/catalog/operations');
     %cd(test,'/pub/incoming/catalog/perdigao');
-    cd(test,'/pub/incoming/catalog/operations');
+    cd(test, catalog);
     mput(test, name);
     dir(test)
     close(test);
@@ -958,7 +1012,7 @@ if flag.plot_data == 1
   %Z(isnan(Z)) = -1;
   h = pcolor(x,y,Z);
   set(h, 'EdgeColor', 'none'); 
-  axis xy; colorbar('EastOutside'); caxis([0 12]);
+  axis xy; colorbar('EastOutside'); caxis([0 18]);
   title({[date,' masked wv']},...
      'fontweight','b','fontsize',font_size)
   ylabel('Altitude (km)','fontweight','b','fontsize',font_size); 
@@ -1027,6 +1081,19 @@ if flag.plot_data == 1
  plot(nanmean(OD,1), range)
  %plot(nanmean(OD(5:650,:)),)
  xlim([0 2])
+
+%receiver_scale_factor=0.75;
+
+figure(122)
+profile_start = round(5.2/24.*size(N_avg,1));  
+profile_end = round(5.3/24.*size(N_avg,1));  
+semilogx(N_avg(profile_start:profile_end,:), range, 'r') % molecular
+hold on
+semilogx(nanmean(N_avg(profile_start:profile_end,:)), range, 'b') % combined 
+hold off
+ylim([0 9e3]);
+%xlim([1e-2 1e6]);
+
 
  if flag.WS ==1
   figure(201)
