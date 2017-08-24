@@ -173,6 +173,27 @@ nonzeroPPIVel nonzeroPPIVel     mdvp:://front.eol.ucar.edu:8080:ihop/mdv/nonzero
 #
 
 #########################################################################
+# SPOL CfRadial
+#
+Spol-DBZ    Spol-DBZ     mdvp:://front.eol.ucar.edu:8080:ihop/cfradial/sur?use_http=true&DZ     dbz.colors     dBZ    -5   80  5  radial   1 0
+Spol-DBZ    Spol-DBZ     mdvp:://front.eol.ucar.edu:8080:ihop/cfradial/sur?use_http=true&DZ     dbz_bragg.colors  dBZ    -5   80  5  radial   1 0
+Spol-VEL    Spol-VEL     mdvp:://front.eol.ucar.edu:8080:ihop/cfradial/sur?use_http=true&VE     vel.colors     m/s    -5   80  5  radial   1 0
+Spol-WIDTH  Spol-WIDTH   mdvp:://front.eol.ucar.edu:8080:ihop/cfradial/sur?use_http=true&SW     width.colors   m/s    -5   80  5  radial   1 0
+Spol-NCP    Spol-NCP     mdvp:://front.eol.ucar.edu:8080:ihop/cfradial/sur?use_http=true&NCP    ncp.colors     dB     -5   80  5  radial   1 0
+Spol-ZDR    Spol-ZDR     mdvp:://front.eol.ucar.edu:8080:ihop/cfradial/sur?use_http=true&ZDR    zdr.colors     dB     -5   80  5  radial   1 0
+Spol-LDRH   Spol-LDRH    mdvp:://front.eol.ucar.edu:8080:ihop/cfradial/sur?use_http=true&LDR    zdr.colors     dB     -5   80  5  radial   1 0
+Spol-LDRV   Spol-LDRV    mdvp:://front.eol.ucar.edu:8080:ihop/cfradial/sur?use_http=true&LVDR   zdr.colors     dB     -5   80  5  radial   1 0
+Spol-RHOHV  Spol-RHOHV   mdvp:://front.eol.ucar.edu:8080:ihop/cfradial/sur?use_http=true&RHOHV  rhohv.colors   -      -5   80  5  radial   1 0
+Spol-PHIDP  Spol-PHIDP   mdvp:://front.eol.ucar.edu:8080:ihop/cfradial/sur?use_http=true&PHI    phidp.colors   deg    -5   80  5  radial   1 0
+Spol-KDP    Spol-KDP     mdvp:://front.eol.ucar.edu:8080:ihop/cfradial/sur?use_http=true&KDP    kdp.colors     deg/km -5   80  5  radial   1 0
+Spol-DBMHC  Spol-DBMHC   mdvp:://front.eol.ucar.edu:8080:ihop/cfradial/sur?use_http=true&DM     dbm.colors     dBm    -5   80  5  radial   1 0
+Spol-DBMVC  Spol-DBMVC   mdvp:://front.eol.ucar.edu:8080:ihop/cfradial/sur?use_http=true&DL     dbm.colors     dBm    -5   80  5  radial   1 0
+Spol-DBMHX  Spol-DBMHX   mdvp:://front.eol.ucar.edu:8080:ihop/cfradial/sur?use_http=true&DX     dbm.colors     dBm    -5   80  5  radial   1 0
+#Spol-DBMVX Spol-DBMVX   mdvp:://front.eol.ucar.edu:8080:ihop/cfradial/sur?use_http=true&DX     dbm.colors     dBm    -5   80  5  radial   1 0
+Spol-AIQ    Spol-AIQ     mdvp:://front.eol.ucar.edu:8080:ihop/cfradial/sur?use_http=true&AIQ    deg.colors      deg    -5   80  5  radial   1 0
+Spol-NIQ    Spol-NIQ     mdvp:://front.eol.ucar.edu:8080:ihop/cfradial/sur?use_http=true&NIQ    dbmlow.colors   dBm    -5   80  5  radial   1 0
+
+#########################################################################
 # Polar radar
 #
 polarDBZ    polarDBZ     mdvp:://front.eol.ucar.edu:8080:ihop/mdv/radarPolar?use_http=true&DBZ     dbz.colors     dBZ  -5   80  5  radial   1 0
@@ -561,7 +582,7 @@ cidd.debug2_flag:           0
 # temporal rounding. 
 # cidd.demo_time:  20:00 6/12/2002
 
-cidd.demo_time:  15:00 6/14/2002
+cidd.demo_time:  15:00 6/15/2002
 
 # Set times to the nearest value divisible by the number of seconds
 cidd.temporal_rounding:    360
@@ -1019,7 +1040,14 @@ cidd.azmith_radius:         200.0
 
 # Toggles to turn on/off  Extras features on startup
 cidd.range_rings:             0
-cidd.azmith_lines:            0
+cidd.azmith_lines:            1
+
+#  Render Range rings at the origin of the data, instead of the origin of the display.
+cidd.range_ring_follows_data: 1
+
+#  Render Range rings only for radar type data.
+cidd.range_ring_for_radar_only: 1
+
 
 # Starting state of the All Winds ON/OFF feature
 cidd.all_winds_on: 1

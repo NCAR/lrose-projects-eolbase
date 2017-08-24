@@ -40,17 +40,17 @@ def main():
                       dest='verbose', default=False,
                       action="store_true",
                       help='Set verbose debugging on')
-    parser.add_option('--bias_file',
-                      dest='biasFilePath',
-                      default='../data/pecan/zdr_bias.spol.qc.txt',
-                      help='File path for bias results')
     parser.add_option('--cp_file',
                       dest='cpFilePath',
-                      default='../data/pecan/spol_pecan_CP_analysis_20150528_000553.txt',
+                      default='../data/pecan/spol_pecan_CP_analysis_20150524_000021.txt',
                       help='CP results file path')
+    parser.add_option('--bias_file',
+                      dest='biasFilePath',
+                      default='../data/pecan/spol_zdr_bias_in_snow.txt',
+                      help='File path for bias results')
     parser.add_option('--title',
                       dest='title',
-                      default='ZDR BIAS FROM ICE AND BRAGG',
+                      default='ZDR BIAS FROM ICE',
                       help='Title for plot')
     parser.add_option('--width',
                       dest='figWidthMm',
@@ -58,7 +58,7 @@ def main():
                       help='Width of figure in mm')
     parser.add_option('--height',
                       dest='figHeightMm',
-                      default=200,
+                      default=320,
                       help='Height of figure in mm')
     parser.add_option('--lenMean',
                       dest='lenMean',
@@ -66,11 +66,11 @@ def main():
                       help='Len of moving mean filter')
     parser.add_option('--start',
                       dest='startTime',
-                      default='1970 01 01 00 00 00',
+                      default='2015 06 26 00 00 00',
                       help='Start time for XY plot')
     parser.add_option('--end',
                       dest='endTime',
-                      default='1970 01 01 01 00 00',
+                      default='2015 06 27 00 00 00',
                       help='End time for XY plot')
     
     (options, args) = parser.parse_args()
@@ -157,7 +157,6 @@ def readInputData(filePath, colHeaders, colData):
 
     fp = open(filePath, 'r')
     lines = fp.readlines()
-
     obsTimes = []
     colData = {}
     for index, var in enumerate(colHeaders, start=0):
@@ -173,15 +172,10 @@ def readInputData(filePath, colHeaders, colData):
         # data
         
         data = line.strip().split()
-        if (len(data) != len(colHeaders)):
-            if (options.debug == True):
-                print >>sys.stderr, "skipping line: ", line
-            continue;
-
         values = {}
+
         for index, var in enumerate(colHeaders, start=0):
-            if (var == 'count' or \
-                var == 'year' or var == 'month' or var == 'day' or \
+            if (var == 'count' or var == 'year' or var == 'month' or var == 'day' or \
                 var == 'hour' or var == 'min' or var == 'sec' or \
                 var == 'unix_time'):
                 values[var] = int(data[index])
@@ -189,17 +183,17 @@ def readInputData(filePath, colHeaders, colData):
                 values[var] = float(data[index])
 
         # load observation times array
-        
+
         year = values['year']
         month = values['month']
         day = values['day']
         hour = values['hour']
         minute = values['min']
         sec = values['sec']
-
+        
         thisTime = datetime.datetime(year, month, day,
                                      hour, minute, sec)
-
+    
         if (thisTime >= startTime and thisTime <= endTime):
             for index, var in enumerate(colHeaders, start=0):
                 colData[var].append(values[var])
@@ -213,9 +207,6 @@ def readInputData(filePath, colHeaders, colData):
 # Moving average filter
 
 def movingAverage(values, window):
-
-    if (window < 2):
-        return values
 
     weights = np.repeat(1.0, window)/window
     sma = np.convolve(values, weights, 'same')
@@ -232,53 +223,30 @@ def doPlot(biasData, biasTimes, cpData, cpTimes):
 
     lenMeanFilter = int(options.lenMean)
 
-    # set up arrays for ZDR bias
+    #   set up np arrays
 
     btimes = np.array(biasTimes).astype(datetime.datetime)
-    
-    # biasIce = np.array(biasData["ZdrInIceMean"]).astype(np.double)
-    # biasIce = movingAverage(biasIce, lenMeanFilter)
 
-    biasIce = np.array(biasData["ZdrInIcePerc25.00"]).astype(np.double)
-    biasIce = movingAverage(biasIce, lenMeanFilter)
-    validIce = np.isfinite(biasIce)
-    
-    biasIceM = np.array(biasData["ZdrmInIcePerc25.00"]).astype(np.double)
-    biasIceM = movingAverage(biasIceM, lenMeanFilter)
-    validIceM = np.isfinite(biasIceM)
-    
-    # biasBragg = np.array(biasData["ZdrInBraggMean"]).astype(np.double)
-    # biasBragg = movingAverage(biasBragg, lenMeanFilter)
+    biasMean = np.array(biasData["ZdrBiasMean"]).astype(np.double)
+    biasMean = movingAverage(biasMean, lenMeanFilter)
 
-    biasBragg = np.array(biasData["ZdrInBraggPerc32.00"]).astype(np.double)
-    biasBragg = movingAverage(biasBragg, lenMeanFilter)
-    validBragg = np.isfinite(biasBragg)
+    biasPercent15 = np.array(biasData["ZdrBiasPercentile15"]).astype(np.double)
+    biasPercent15 = movingAverage(biasPercent15, lenMeanFilter)
 
-    biasBraggM = np.array(biasData["ZdrmInBraggPerc25.00"]).astype(np.double)
-    biasBraggM = movingAverage(biasBraggM, lenMeanFilter)
-    validBraggM = np.isfinite(biasBraggM)
-    
-    validIceBtimes = btimes[validIce]
-    validIceVals = biasIce[validIce]
-    
-    validIceMBtimes = btimes[validIceM]
-    validIceMVals = biasIce[validIceM]
-    
-    validBraggBtimes = btimes[validBragg]
-    validBraggVals = biasBragg[validBragg]
-    
-    validBraggMBtimes = btimes[validBraggM]
-    validBraggMVals = biasBragg[validBraggM]
-    
-    # load up receiver gain etc - axis 4
-    
-    (dailyTimeIce, dailyValIce) = computeDailyStats(validIceBtimes, validIceVals)
-    (dailyTimeBragg, dailyValBragg) = computeDailyStats(validBraggBtimes, validBraggVals)
+    biasPercent20 = np.array(biasData["ZdrBiasPercentile20"]).astype(np.double)
+    biasPercent20 = movingAverage(biasPercent20, lenMeanFilter)
 
-    (dailyTimeIceM, dailyValIceM) = computeDailyStats(validIceMBtimes, validIceMVals)
-    (dailyTimeBraggM, dailyValBraggM) = computeDailyStats(validBraggMBtimes, validBraggMVals)
+    biasPercent25 = np.array(biasData["ZdrBiasPercentile25"]).astype(np.double)
+    biasPercent25 = movingAverage(biasPercent25, lenMeanFilter)
 
-    # site temp, vert pointing and sun scan results
+    biasPercent33 = np.array(biasData["ZdrBiasPercentile33"]).astype(np.double)
+    biasPercent33 = movingAverage(biasPercent33, lenMeanFilter)
+
+    validMean = np.isfinite(biasMean)
+    validPercent15 = np.isfinite(biasPercent15)
+    validPercent20 = np.isfinite(biasPercent20)
+    validPercent25 = np.isfinite(biasPercent25)
+    validPercent33 = np.isfinite(biasPercent33)
 
     ctimes = np.array(cpTimes).astype(datetime.datetime)
     ZdrmVert = np.array(cpData["ZdrmVert"]).astype(np.double)
@@ -287,45 +255,37 @@ def doPlot(biasData, biasTimes, cpData, cpTimes):
     SunscanZdrm = np.array(cpData["SunscanZdrm"]).astype(np.double)
     validSunscanZdrm = np.isfinite(SunscanZdrm)
 
+    # ax4 - Site Temperature
+
     cptimes = np.array(cpTimes).astype(datetime.datetime)
     tempSite = np.array(cpData["TempSite"]).astype(np.double)
     validTempSite = np.isfinite(tempSite)
 
-    tempIceVals = []
-    biasIceVals = []
+    validBtimes = btimes[validPercent20]
+    validBiases = biasPercent20[validPercent20]
+    
+    tempVals = []
+    biasVals = []
 
-    for ii, biasVal in enumerate(validIceVals, start=0):
-        btime = validIceBtimes[ii]
+    for ii, biasVal in enumerate(validBiases, start=0):
+        btime = validBtimes[ii]
         if (btime >= startTime and btime <= endTime):
             tempTime, tempVal = getClosestTemp(btime, cptimes, tempSite)
             if (np.isfinite(tempVal)):
-                tempIceVals.append(tempVal)
-                biasIceVals.append(biasVal)
+                tempVals.append(tempVal)
+                biasVals.append(biasVal)
                 if (options.verbose):
                     print >>sys.stderr, "==>> biasTime, biasVal, tempTime, tempVal:", \
                         btime, biasVal, tempTime, tempVal
 
-    # linear regression for bias vs temp
+    # linear regression bias vs temp
 
-    A = array([tempIceVals, ones(len(tempIceVals))])
-
-    if (len(tempIceVals) > 1):
-        # obtain the fit, ww[0] is slope, ww[1] is intercept
-        ww = linalg.lstsq(A.T, biasIceVals)[0]
-        minTemp = min(tempIceVals)
-        maxTemp = max(tempIceVals)
-        haveTemps = True
-    else:
-        ww = (1.0, 0.0)
-        minTemp = 0.0
-        maxTemp = 40.0
-        haveTemps = False
-        print >>sys.stderr, "NOTE - no valid temp vs ZDR data for period"
-        print >>sys.stderr, "  startTime: ", startTime
-        print >>sys.stderr, "  endTime  : ", endTime
-        
+    A = array([tempVals, ones(len(tempVals))])
+    ww = linalg.lstsq(A.T, biasVals)[0] # obtaining the fit, ww[0] is slope, ww[1] is intercept
     regrX = []
     regrY = []
+    minTemp = min(tempVals)
+    maxTemp = max(tempVals)
     regrX.append(minTemp)
     regrX.append(maxTemp)
     regrY.append(ww[0] * minTemp + ww[1])
@@ -337,89 +297,59 @@ def doPlot(biasData, biasTimes, cpData, cpTimes):
     htIn = float(options.figHeightMm) / 25.4
 
     fig1 = plt.figure(1, (widthIn, htIn))
+    fig2 = plt.figure(2, (widthIn/2, htIn/2))
 
-    ax1a = fig1.add_subplot(2,1,1,xmargin=0.0)
-    ax1b = fig1.add_subplot(2,1,2,xmargin=0.0)
-    #ax1c = fig1.add_subplot(3,1,3,xmargin=0.0)
+    ax1 = fig1.add_subplot(2,1,1,xmargin=0.0)
+    ax2 = fig1.add_subplot(2,1,2,xmargin=0.0)
 
-    if (haveTemps):
-        fig2 = plt.figure(2, (widthIn/2, htIn/2))
-        ax2a = fig2.add_subplot(1,1,1,xmargin=1.0, ymargin=1.0)
+    ax3 = fig2.add_subplot(1,1,1,xmargin=1.0, ymargin=1.0)
+    #ax3 = fig2.add_subplot(1,1,1,xmargin=0.0)
 
     oneDay = datetime.timedelta(1.0)
-    ax1a.set_xlim([btimes[0] - oneDay, btimes[-1] + oneDay])
-    ax1a.set_title("Residual ZDR bias in ice and Bragg, compared with VERT and CP results (dB)")
-    ax1b.set_xlim([btimes[0] - oneDay, btimes[-1] + oneDay])
-    ax1b.set_title("Daily mean ZDR bias in ice and Bragg (dB)")
-    #ax1c.set_xlim([btimes[0] - oneDay, btimes[-1] + oneDay])
-    #ax1c.set_title("Site temperature (C)")
+    ax1.set_xlim([btimes[0] - oneDay, btimes[-1] + oneDay])
+    ax1.set_title("Daily mean ZDRM bias in ice/snow, compared with VERT and CP results")
+    ax2.set_xlim([btimes[0] - oneDay, btimes[-1] + oneDay])
+    ax2.set_title("Site temperature (C)")
 
-    ax1a.plot(validBraggBtimes, validBraggVals, \
-              "o", label = 'ZDR Bias In Bragg', color='blue')
-    ax1a.plot(validBraggBtimes, validBraggVals, \
-              label = 'ZDR Bias In Bragg', linewidth=1, color='blue')
-    
-    ax1a.plot(validIceBtimes, validIceVals, \
-              "o", label = 'ZDR Bias In Ice', color='red')
-    ax1a.plot(validIceBtimes, validIceVals, \
-              label = 'ZDR Bias In Ice', linewidth=1, color='red')
+    ax1.plot(btimes[validPercent20], biasPercent20[validPercent20], \
+             "ro", label = 'ZDR Bias percentile 20', linewidth=1)
 
-    ax1a.plot(validBraggMBtimes, validBraggMVals, \
-              "o", label = 'ZDRM Bias In Bragg', color='blue')
-    ax1a.plot(validBraggMBtimes, validBraggMVals, \
-              label = 'ZDRM Bias In Bragg', linewidth=1, color='blue')
-    
-    ax1a.plot(validIceMBtimes, validIceMVals, \
-              "o", label = 'ZDRM Bias In Ice', color='red')
-    ax1a.plot(validIceMBtimes, validIceMVals, \
-              label = 'ZDRM Bias In Ice', linewidth=1, color='red')
-    
-    #ax1a.plot(ctimes[validSunscanZdrm], SunscanZdrm[validSunscanZdrm], \
-    #          linewidth=2, label = 'Zdrm Sun/CP (dB)', color = 'green')
-    
-    ax1a.plot(ctimes[validZdrmVert], ZdrmVert[validZdrmVert], \
-              "^", markersize=10, linewidth=1, label = 'Zdrm Vert (dB)', color = 'yellow')
+    ax1.plot(btimes[validPercent20], biasPercent20[validPercent20], \
+             label = 'ZDR Bias percentile 20', linewidth=1, color='red')
 
-    ax1b.plot(dailyTimeBragg, dailyValBragg, \
-              label = 'Daily Bias Bragg', linewidth=1, color='blue')
-    ax1b.plot(dailyTimeBragg, dailyValBragg, \
-              "^", label = 'Daily Bias Bragg', color='blue', markersize=10)
-
-    ax1b.plot(dailyTimeIce, dailyValIce, \
-              label = 'Daily Bias Ice', linewidth=1, color='red')
-    ax1b.plot(dailyTimeIce, dailyValIce, \
-              "^", label = 'Daily Bias Ice', color='red', markersize=10)
-    ax1b.plot(ctimes[validZdrmVert], ZdrmVert[validZdrmVert], \
-              "^", markersize=10, linewidth=1, label = 'Zdrm Vert (dB)', color = 'yellow')
-
-    #ax1c.plot(cptimes[validTempSite], tempSite[validTempSite], \
-    #          linewidth=1, label = 'Site Temp', color = 'blue')
+    ax1.plot(ctimes[validSunscanZdrm], SunscanZdrm[validSunscanZdrm], \
+             linewidth=2, label = 'Zdrm Sun/CP (dB)', color = 'green')
     
-    #configDateAxis(ax1a, -9999, 9999, "ZDR Bias (dB)", 'upper right')
-    configDateAxis(ax1a, -0.3, 0.7, "ZDR Bias (dB)", 'upper right')
-    configDateAxis(ax1b, -0.5, 0.5, "ZDR Bias (dB)", 'upper right')
-    #configDateAxis(ax1c, -9999, 9999, "Temp (C)", 'upper right')
+    ax1.plot(ctimes[validZdrmVert], ZdrmVert[validZdrmVert], \
+             "^", markersize=10, linewidth=1, label = 'Zdrm Vert (dB)', color = 'yellow')
 
-    if (haveTemps):
-        label3 = "ZDR Bias In Ice = " + ("%.5f" % ww[0]) + " * temp + " + ("%.3f" % ww[1])
-        ax2a.plot(tempIceVals, biasIceVals, 
-                 "x", label = label3, color = 'blue')
-        ax2a.plot(regrX, regrY, linewidth=3, color = 'blue')
+
+    ax2.plot(cptimes[validTempSite], tempSite[validTempSite], \
+             linewidth=1, label = 'Site Temp', color = 'blue')
+
+    configDateAxis(ax1, -9999, 9999, "ZDR Bias (dB)", 'upper right')
+    configDateAxis(ax2, -9999, 9999, "Temp (C)", 'upper right')
+    label3 = "ZDR Bias = " + ("%.5f" % ww[0]) + " * temp + " + ("%.3f" % ww[1])
+    ax3.plot(tempVals, biasVals, 
+             "x", label = label3, color = 'blue')
+    ax3.plot(regrX, regrY, linewidth=3, color = 'blue')
     
-        legend3 = ax2a.legend(loc="upper left", ncol=2)
-        for label3 in legend3.get_texts():
-            label3.set_fontsize(12)
-            ax2a.set_xlabel("Site temperature (C)")
-            ax2a.set_ylabel("ZDR Bias (dB)")
-            ax2a.grid(True)
-            ax2a.set_ylim([-0.5, 0.5])
-            ax2a.set_xlim([minTemp - 1, maxTemp + 1])
-            title3 = "ZDR Bias In Ice Vs Temp: " + str(startTime) + " - " + str(endTime)
-            ax2a.set_title(title3)
+    legend3 = ax3.legend(loc="upper left", ncol=2)
+    for label3 in legend3.get_texts():
+        label3.set_fontsize(12)
+    ax3.set_xlabel("Site temperature (C)")
+    ax3.set_ylabel("ZDR Bias (dB)")
+    ax3.grid(True)
+    ax3.set_ylim([-0.5, 0.5])
+    ax3.set_xlim([minTemp - 1, maxTemp + 1])
+    title3 = "ZDR bias Vs Temp: " + str(startTime) + " - " + str(endTime)
+    ax3.set_title(title3)
 
     fig1.autofmt_xdate()
+
     fig1.tight_layout()
-    fig1.subplots_adjust(bottom=0.08, left=0.06, right=0.97, top=0.96)
+    fig1.subplots_adjust(bottom=0.03, left=0.06, right=0.97, top=0.97)
+    #plt.subplots_adjust(top=0.96)
     plt.show()
 
 ########################################################################
@@ -427,7 +357,7 @@ def doPlot(biasData, biasTimes, cpData, cpTimes):
 
 def configDateAxis(ax, miny, maxy, ylabel, legendLoc):
     
-    legend = ax.legend(loc=legendLoc, ncol=5)
+    legend = ax.legend(loc=legendLoc, ncol=6)
     for label in legend.get_texts():
         label.set_fontsize('x-small')
     ax.set_xlabel("Date")
@@ -471,60 +401,6 @@ def getClosestTemp(biasTime, tempTimes, obsTemps):
             ttime = temptime
 
     return (ttime, temp)
-
-########################################################################
-# compute daily stats for a variable
-
-def computeDailyStats(times, vals):
-
-    dailyTimes = []
-    dailyMeans = []
-
-    nptimes = np.array(times).astype(datetime.datetime)
-    npvals = np.array(vals).astype(np.double)
-
-    validFlag = np.isfinite(npvals)
-    timesValid = nptimes[validFlag]
-    valsValid = npvals[validFlag]
-    
-    startTime = nptimes[0]
-    endTime = nptimes[-1]
-    
-    startDate = datetime.datetime(startTime.year, startTime.month, startTime.day, 0, 0, 0)
-    endDate = datetime.datetime(endTime.year, endTime.month, endTime.day, 0, 0, 0)
-
-    oneDay = datetime.timedelta(1)
-    halfDay = datetime.timedelta(0.5)
-    
-    thisDate = startDate
-    while (thisDate < endDate + oneDay):
-        
-        nextDate = thisDate + oneDay
-        result = []
-        
-        sum = 0.0
-        sumDeltaTime = datetime.timedelta(0)
-        count = 0.0
-        for ii, val in enumerate(valsValid, start=0):
-            thisTime = timesValid[ii]
-            if (thisTime >= thisDate and thisTime < nextDate):
-                sum = sum + val
-                deltaTime = thisTime - thisDate
-                sumDeltaTime = sumDeltaTime + deltaTime
-                count = count + 1
-                result.append(val)
-        if (count > 5):
-            mean = sum / count
-            meanDeltaTime = datetime.timedelta(0, sumDeltaTime.total_seconds() / count)
-            dailyMeans.append(mean)
-            dailyTimes.append(thisDate + meanDeltaTime)
-            # print >>sys.stderr, " daily time, meanStrong: ", dailyTimes[-1], meanStrong
-            result.sort()
-            
-        thisDate = thisDate + oneDay
-
-    return (dailyTimes, dailyMeans)
-
 
 ########################################################################
 # Run a command in a shell, wait for it to complete

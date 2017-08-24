@@ -53,7 +53,7 @@ debug = DEBUG_OFF;
 // Type: string
 //
 
-input_url = "spdbp:://hail:0:pecan/qc/spdb/spol/zdr_bias";
+input_url = "$(DATA_DIR)/pecan/spdb/qcv2/zdr_bias";
 
 ///////////// start_time //////////////////////////////
 //
@@ -75,9 +75,9 @@ input_url = "spdbp:://hail:0:pecan/qc/spdb/spol/zdr_bias";
 //
 
 start_time = {
-    year = 2011,
-    month = 1,
-    day = 1,
+    year = 2015,
+    month = 06,
+    day = 01,
     hour = 0,
     min = 0,
     sec = 0
@@ -103,9 +103,9 @@ start_time = {
 //
 
 end_time = {
-    year = 2011,
-    month = 1,
-    day = 1,
+    year = 2015,
+    month = 07,
+    day = 17,
     hour = 0,
     min = 0,
     sec = 0
@@ -165,6 +165,13 @@ data_type_2 = 0;
 //
 
 xml_entries = {
+  {
+    xml_tag_list = "<ZdrBias><is_rhi>",
+    specify_label = TRUE,
+    label = "IsRhi",
+    required = TRUE
+  }
+  ,
   {
     xml_tag_list = "<ZdrBias><ZdrmInIceMean>",
     specify_label = TRUE,
