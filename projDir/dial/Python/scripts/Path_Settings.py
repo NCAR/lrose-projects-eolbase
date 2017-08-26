@@ -21,6 +21,12 @@ cal_path = software_path + 'calibrations/'
 # UNADVISEABLE TO MAKE THIS THE SAME AS THE CALIBRATION FILE PATH
 cal_save_path = '/h/eol/mhayman/Python/tmp_cals/'
 
+if push_ftp:
+	ftp_address = 'catalog.eol.ucar.edu'
+	ftp_usr = 'anonymous'
+	ftp_pw = 'mhayman@ucar.edu'
+	ftp_dir = '/pub/incoming/catalog/operations'
+
 # path to data
 if LidarNumber == 0:
     basepath = '/scr/eldora1/h2o_data/'

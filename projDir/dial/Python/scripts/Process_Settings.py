@@ -32,6 +32,7 @@ save_figs = False
 nctag = ''  # tag added to saved files
 overwrite_nc = False  # overwrite netcdf data if it already exists
 offical_day_file = False # save data to eldora day file location
+push_ftp = False  # Push images to ftp site
 
 run_geo_cal = False
 lin_fit_lower = 140  # index where the geo calibration switches to a fit routine

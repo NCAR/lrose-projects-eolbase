@@ -1,3 +1,6 @@
+import matplotlib
+matplotlib.use('Agg')   # disable figure displays to avoid crontab error
+
 import LidarProfileFunctions as lp
 import numpy as np
 import matplotlib.pyplot as plt
@@ -42,6 +45,7 @@ save_figs = True
 nctag = ''  # tag added to saved files
 overwrite_nc = True  # overwrite netcdf data if it already exists
 official_day_file = True  # save to offical path and according to standard filenaming
+push_ftp = True  # write images to ftp site
 
 run_geo_cal = False
 lin_fit_lower = 140  # index where the geo calibration switches to a fit routine

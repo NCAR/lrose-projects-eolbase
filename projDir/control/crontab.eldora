@@ -50,8 +50,8 @@
 #Run Python Processing
 # save images every 2 hours
 # process and save data for the day at 18:20 MDT
-* */2 * * * cd $HOME/projDir/dial/Python/scripts/ && sh process_today_images >/dev/null 2>&1
-20 18 * * * cd $HOME/projDir/dial/Python/scripts/ && sh process_dlb_today >/dev/null 2>&1
+*  */2  * * * $HOME/projDir/dial/Python/scripts/process_today_images >/dev/null 2>&1
+20 18   * * * $HOME/projDir/dial/Python/scripts/process_dlb_today >/dev/null 2>&1
 
 #####################################################################
 #
