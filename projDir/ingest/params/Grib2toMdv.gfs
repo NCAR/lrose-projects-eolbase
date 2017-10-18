@@ -666,25 +666,25 @@ output_fields = {
     use_additional_missing_data_value = FALSE,
     additional_missing_data_value = 0
   }
-  ,
-  {
-    param = "VVEL",
-    level = "ISBL",
-    mdv_name = "VVEL",
-    units = NO_CHANGE,
-    upper_range_limit = 0,
-    lower_range_limit = 0,
-    encoding_type = ENCODING_FLOAT32,
-    qc_default_type = BAD_VALUE,
-    qc_default_value = 0,
-    vert_level_min = -1,
-    vert_level_max = -1,
-    vert_level_dz = 1,
-    use_additional_bad_data_value = FALSE,
-    additional_bad_data_value = 0,
-    use_additional_missing_data_value = FALSE,
-    additional_missing_data_value = 0
-  }
+  // ,
+  // {
+  //   param = "VVEL",
+  //   level = "ISBL",
+  //   mdv_name = "VVEL",
+  //   units = NO_CHANGE,
+  //   upper_range_limit = 0,
+  //   lower_range_limit = 0,
+  //   encoding_type = ENCODING_FLOAT32,
+  //   qc_default_type = BAD_VALUE,
+  //   qc_default_value = 0,
+  //   vert_level_min = -1,
+  //   vert_level_max = -1,
+  //   vert_level_dz = 1,
+  //   use_additional_bad_data_value = FALSE,
+  //   additional_bad_data_value = 0,
+  //   use_additional_missing_data_value = FALSE,
+  //   additional_missing_data_value = 0
+  // }
   ,
   {
     param = "HGT",
@@ -833,11 +833,11 @@ out_projection_info = {
 
 out_grid_info = {
     nx = 300,
-    ny = 200,
-    minx = -120,
-    miny = 25,
-    dx = 0.15,
-    dy = 0.15
+    ny = 300,
+    minx = -140,
+    miny = 0,
+    dx = 0.25,
+    dy = 0.25
 };
 
 ///////////// override_vlevels ////////////////////////
