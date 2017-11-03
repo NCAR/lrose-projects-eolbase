@@ -54,7 +54,7 @@ def main():
                       help='File path for bias results')
     parser.add_option('--title',
                       dest='title',
-                      default='ZDR BIAS FROM ICE',
+                      default='ZDR BIAS FROM CLUTTER',
                       help='Title for plot')
     parser.add_option('--width',
                       dest='figWidthMm',
