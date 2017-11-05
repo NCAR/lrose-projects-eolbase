@@ -188,7 +188,7 @@ def doPlot(filePath, colHeaders, colData):
 
     # the histogram of ZDR
 
-    n1, bins1, patches1 = ax1.hist(zdrSorted, 75, normed=True,
+    n1, bins1, patches1 = ax1.hist(zdrSorted, 101, normed=True,
                                    histtype='stepfilled',
                                    facecolor='slateblue',
                                    alpha=0.35)
