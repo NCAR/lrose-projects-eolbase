@@ -33,7 +33,7 @@ def main():
                       help='Set debugging on')
     parser.add_option('--zdr_file',
                       dest='zdrFile',
-                      default='./zdr.txt',
+                      default='../data/pecan/ZdrInIce.txt',
                       help='File path for bias results')
     parser.add_option('--title',
                       dest='title',

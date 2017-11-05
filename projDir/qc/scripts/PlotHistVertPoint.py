@@ -188,7 +188,7 @@ def doPlot(filePath, colHeaders, colData):
 
     # the histogram of ZDR
 
-    n1, bins1, patches1 = ax1.hist(zdrSorted, 60, normed=True,
+    n1, bins1, patches1 = ax1.hist(zdrSorted, 75, normed=True,
                                    histtype='stepfilled',
                                    facecolor='slateblue',
                                    alpha=0.35)
@@ -200,14 +200,7 @@ def doPlot(filePath, colHeaders, colData):
 
     pdf = stats.norm(mean, sdev).pdf
     yy1 = pdf(bins1)
-    # ll1 = ax1.plot(bins1, yy1, 'b', linewidth=2,
-    #                label = ('NormalFit mean=' + '{:.3f}'.format(mean) + 
-    #                         ' sdev=' + '{:.3f}'.format(sdev) +
-    #                         ' skew=' + '{:.3f}'.format(skew)))
     ll1 = ax1.plot(bins1, yy1, 'b', linewidth=2)
-    #legend1 = ax1.legend(loc='upper left', ncol=4)
-    #for label in legend1.get_texts():
-    #    label.set_fontsize('medium')
 
     ax1.set_xlim([mean -sdev * 3, mean + sdev * 3])
 
@@ -245,7 +238,7 @@ def doPlot(filePath, colHeaders, colData):
     # draw line to show mean, annotate
 
     annotVal(ax1, ax2,  mean, pdf, cdf, 'mean', plen, toffx,
-             'red', 'red', 'left', 'center')
+             'black', 'black', 'left', 'center')
 
     # annotate percentiles
 
