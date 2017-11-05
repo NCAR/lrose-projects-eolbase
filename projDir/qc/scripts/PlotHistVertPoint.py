@@ -54,6 +54,27 @@ def main():
                       dest='maxHt',
                       default='4.0',
                       help='Max height for ZDR data')
+    parser.add_option('--setZdrRange',
+                      dest='setZdrRange', default=False,
+                      action="store_true",
+                      help='Set the ZDR range to plot from minZdr to maxZdr. If false, we plot to 4 * stddev.')
+    parser.add_option('--minZdr',
+                      dest='minZdr',
+                      default='-2.0',
+                      help='Min val on ZDR data axis')
+    parser.add_option('--maxZdr',
+                      dest='maxZdr',
+                      default='2.0',
+                      help='Max val on ZDR axis')
+    parser.add_option('--plotPercentile',
+                      dest='plotPercentile', default=False,
+                      action="store_true",
+                      help='Plot the specified percentile value.')
+    parser.add_option('--percentile',
+                      dest='percentile',
+                      default='10',
+                      help='Percentile value to plot')
+
     (options, args) = parser.parse_args()
     
     if (options.debug == True):
@@ -202,8 +223,6 @@ def doPlot(filePath, colHeaders, colData):
     yy1 = pdf(bins1)
     ll1 = ax1.plot(bins1, yy1, 'b', linewidth=2)
 
-    ax1.set_xlim([mean -sdev * 3, mean + sdev * 3])
-
     # CDF of ZDR
 
     n2, bins2, patches2 = ax2.hist(zdrSorted, 60, normed=True,
@@ -227,7 +246,16 @@ def doPlot(filePath, colHeaders, colData):
     for label in legend2.get_texts():
         label.set_fontsize('medium')
 
-    ax2.set_xlim([mean -sdev * 3, mean + sdev * 3])
+    # axis limits
+
+    minZdr = mean - (sdev * 3)
+    maxZdr = mean + (sdev * 3)
+    if (options.setZdrRange):
+        minZdr = float(options.minZdr)
+        maxZdr = float(options.maxZdr)
+
+    ax1.set_xlim([minZdr, maxZdr])
+    ax2.set_xlim([minZdr, maxZdr])
 
     # draw line to show mean, annotate
 
@@ -237,22 +265,34 @@ def doPlot(filePath, colHeaders, colData):
 
     # draw line to show mean, annotate
 
-    annotVal(ax1, ax2,  mean, pdf, cdf, 'mean', plen, toffx,
-             'black', 'black', 'left', 'center')
+    #annotVal(ax1, ax2,  mean, pdf, cdf, 'mean', plen, toffx,
+    #         'black', 'black', 'left', 'center', 16)
+
+    annotVal(ax1, mean, pdf, 'mean', plen, toffx,
+             'black', 'black', 'left', 'center', 16)
+    annotVal(ax2, mean, cdf, 'mean', 0.03, toffx,
+             'black', 'black', 'left', 'center', 16)
 
     # annotate percentiles
 
-    # perc5 = percs[6]
-    # annotVal(ax1, ax2,  perc5, pdf, cdf, 'p%5', plen, toffx,
-    #          'black', 'black', 'left', 'center')
+    if (options.plotPercentile):
+        perc = percs[int(options.percentile)]
+        label = 'p' + options.percentile + '%'
+        annotVal(ax2, perc, cdf, label, 0.03, toffx,
+                 'blue', 'blue', 'left', 'center', 14)
 
-    # perc15 = percs[16]
-    # annotVal(ax1, ax2,  perc15, pdf, cdf, 'p%15', plen, toffx,
-    #          'black', 'black', 'left', 'center')
+    #perc15 = percs[16]
+    #annotVal(ax1, ax2,  perc15, pdf, cdf, 'p%15', plen, toffx,
+    #         'black', 'black', 'left', 'center', 14)
 
     # perc25 = percs[26]
     # annotVal(ax1, ax2,  perc25, pdf, cdf, 'p%25', plen, toffx,
-    #          'black', 'black', 'left', 'center')
+    #          'black', 'black', 'left', 'center', 14)
+
+    # adjust margins
+
+    fig1.tight_layout()
+    fig1.subplots_adjust(bottom=0.04, left=0.07, right=0.97, top=0.92)
 
     # show
 
@@ -261,28 +301,41 @@ def doPlot(filePath, colHeaders, colData):
 ########################################################################
 # Annotate a value
 
-def annotVal(ax1, ax2, val, pdf, cdf, label, plen,
-             toffx, linecol, textcol,
-             horizAlign, vertAlign):
+# def annotVal(ax1, ax2, val, pdf, cdf, label, plen,
+#              toffx, linecol, textcol,
+#              horizAlign, vertAlign, fsize):
 
-    pval = pdf(val)
-    ax1.plot([val, val], [pval - plen, pval + plen], color=linecol, linewidth=2)
-    ax1.annotate(label + '=' + '{:.3f}'.format(val),
-                 xy=(val, pval + toffx),
-                 xytext=(val + toffx, pval),
-                 color=textcol,
-                 horizontalalignment=horizAlign,
-                 verticalalignment=vertAlign)
+#     pval = pdf(val)
+#     ax1.plot([val, val], [pval - plen, pval + plen], color=linecol, linewidth=2)
+#     ax1.annotate(label + '=' + '{:.3f}'.format(val),
+#                  xy=(val, pval + toffx),
+#                  xytext=(val + toffx, pval),
+#                  color=textcol,
+#                  horizontalalignment=horizAlign,
+#                  verticalalignment=vertAlign, fontsize=fsize)
 
-    cval = cdf(val)
-    clen = 0.03
-    ax2.plot([val, val], [cval - clen, cval + clen], color=linecol, linewidth=2)
-    ax2.annotate(label + '=' + '{:.3f}'.format(val),
-                 xy=(val, cval + toffx),
-                 xytext=(val + toffx, cval),
-                 color=textcol,
-                 horizontalalignment=horizAlign,
-                 verticalalignment=vertAlign)
+#     cval = cdf(val)
+#     clen = 0.03
+#     ax2.plot([val, val], [cval - clen, cval + clen], color=linecol, linewidth=2)
+#     ax2.annotate(label + '=' + '{:.3f}'.format(val),
+#                  xy=(val, cval + toffx),
+#                  xytext=(val + toffx, cval),
+#                  color=textcol,
+#                  horizontalalignment=horizAlign,
+#                  verticalalignment=vertAlign, fontsize=fsize)
+
+def annotVal(ax, val, distrib, label, tickLen, toffx,
+             linecol, textcol, horizAlign, vertAlign, fsize):
+
+    dval = distrib(val)
+    ax.plot([val, val], [dval - tickLen, dval + tickLen],
+            color=linecol, linewidth=2)
+    ax.annotate(label + '=' + '{:.3f}'.format(val),
+                xy=(val, dval + toffx),
+                xytext=(val + toffx, dval),
+                color=textcol,
+                horizontalalignment=horizAlign,
+                verticalalignment=vertAlign, fontsize=fsize)
 
 ########################################################################
 # Run a command in a shell, wait for it to complete
