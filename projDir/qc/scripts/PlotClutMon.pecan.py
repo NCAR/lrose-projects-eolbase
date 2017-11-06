@@ -23,6 +23,8 @@ def main():
 
     global options
     global debug
+    global startTime
+    global endTime
 
 # parse the command line
 
@@ -60,16 +62,33 @@ def main():
                       dest='lenMean',
                       default=1,
                       help='Len of moving mean filter')
+    parser.add_option('--start',
+                      dest='startTime',
+                      default='2015 06 21 00 00 00',
+                      help='Start time for plots')
+    parser.add_option('--end',
+                      dest='endTime',
+                      default='2015 07 16 00 00 00',
+                      help='End time for plots')
     
     (options, args) = parser.parse_args()
     
     if (options.verbose == True):
         options.debug = True
 
+    year, month, day, hour, minute, sec = options.startTime.split()
+    startTime = datetime.datetime(int(year), int(month), int(day),
+                                  int(hour), int(minute), int(sec))
+
+    year, month, day, hour, minute, sec = options.endTime.split()
+    endTime = datetime.datetime(int(year), int(month), int(day),
+                                int(hour), int(minute), int(sec))
     if (options.debug == True):
         print >>sys.stderr, "Running %prog"
         print >>sys.stderr, "  cmFilePath: ", options.cmFilePath
         print >>sys.stderr, "  cpFilePath: ", options.cpFilePath
+        print >>sys.stderr, "  startTime: ", startTime
+        print >>sys.stderr, "  endTime: ", endTime
 
     # read in column headers for self_con results
 
@@ -136,6 +155,11 @@ def readInputData(filePath, colHeaders, colData):
     fp = open(filePath, 'r')
     lines = fp.readlines()
 
+    obsTimes = []
+    colData = {}
+    for index, var in enumerate(colHeaders, start=0):
+        colData[var] = []
+
     # read in a line at a time, set colData
     for line in lines:
         
@@ -147,6 +171,7 @@ def readInputData(filePath, colHeaders, colData):
         
         data = line.strip().split()
 
+        values = {}
         for index, var in enumerate(colHeaders, start=0):
             if (var == 'count' or var == 'obsNum' or \
                 var == 'year' or var == 'month' or var == 'day' or \
@@ -160,28 +185,30 @@ def readInputData(filePath, colHeaders, colData):
                 var == 'nDbmvxWeak' or var == 'nZdrWeak' or \
                 var == 'nXpolrWeak' or \
                 var == 'unix_time'):
-                colData[var].append(int(data[index]))
+                values[var] = int(data[index])
             elif (var == 'fileName' or var == 'volTime'):
-                colData[var].append(data[index])
+                values[var] = data[index]
             else:
-                colData[var].append(float(data[index]))
+                values[var] = float(data[index])
+
+        # load observation times array
+
+        year = values['year']
+        month = values['month']
+        day = values['day']
+        hour = values['hour']
+        minute = values['min']
+        sec = values['sec']
+
+        thisTime = datetime.datetime(year, month, day,
+                                     hour, minute, sec)
+
+        if (thisTime >= startTime and thisTime <= endTime):
+            for index, var in enumerate(colHeaders, start=0):
+                colData[var].append(values[var])
+            obsTimes.append(thisTime)
 
     fp.close()
-
-    # load observation times array
-
-    year = colData['year']
-    month = colData['month']
-    day = colData['day']
-    hour = colData['hour']
-    minute = colData['min']
-    sec = colData['sec']
-
-    obsTimes = []
-    for ii, var in enumerate(year, start=0):
-        thisTime = datetime.datetime(year[ii], month[ii], day[ii],
-                                     hour[ii], minute[ii], sec[ii])
-        obsTimes.append(thisTime)
 
     return colData, obsTimes
 
