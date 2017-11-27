@@ -11,8 +11,8 @@ date -u >>& /tmp/process_today_images.log
 
 # make output dirs
 
-mkdir -p /scr/eldora1/processed_h2o_data >>& /tmp/process_today_images.log
-mkdir -p /scr/eldora1/MSU_processed_h2o_data >>& /tmp/process_today_images.log
+mkdir -p /scr/eldora1/wvdial_1_processed_data >>& /tmp/process_today_images.log
+mkdir -p /scr/eldora1/wvdial_2_processed_data >>& /tmp/process_today_images.log
 
 # run python processing command
 

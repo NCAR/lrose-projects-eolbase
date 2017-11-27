@@ -15,12 +15,12 @@ USER INPUTS
 #    1:  MSU  (NCAR1)
 LidarNumber = 1  
 
-if datetime.datetime.today().hour > 1.0:
+if datetime.datetime.today().hour > 4.0:
 	process_day =datetime.datetime.today()
 else:
 	process_day =datetime.datetime.today()-datetime.timedelta(days=1)
 
-# process_day = datetime.datetime(2017,8,18) # override for processing day
+#process_day = datetime.datetime(2017,8,29) # override for processing day
 
 Years,Months,Days,Hours = lp.generate_WVDIAL_day_list(process_day.year,process_day.month,process_day.day,startHr=0,duration=24)
 
@@ -43,7 +43,7 @@ WV_Denoise = True  # Use horizontal (time) denoising on water vapor profiles
 save_as_nc = True
 save_figs = True
 nctag = ''  # tag added to saved files
-overwrite_nc = True  # overwrite netcdf data if it already exists
+overwrite_nc = False  # overwrite netcdf data if it already exists
 official_day_file = True  # save to offical path and according to standard filenaming
 push_ftp = True  # push images to ftp site
 
@@ -93,4 +93,5 @@ t_plot = [0,24]  # time limits on plot (in hours).  Setting to nans results in a
 exec(open(os.path.abspath(__file__+'/../Path_Settings.py')).read())
 exec(open(os.environ['HOME']+'/projDir/dial/Python/NCAR-LidarProcessing/processors/Processor_DiodeLaserLidar.py').read())
 
+print('\nProcessing Completed successfully\n')
 #plt.show()
