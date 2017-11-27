@@ -26,6 +26,11 @@ SunCal2Symprod    manager  start_inst(no-params)     snuff_inst
 Tstorms2Symprod   manager  start_inst(no-params)     snuff_inst
 #
 ######################################################################
+# GFS GRIB data to MDV
+#
+Grib2toMdv      gfs.conus  start_Grib2toMdv.gfs.conus  snuff_inst
+#
+######################################################################
 # moments FMQ relay from SPOL
 #
 # Fmq2Fmq relay.moments.sband  start_inst(ingest)      snuff_inst

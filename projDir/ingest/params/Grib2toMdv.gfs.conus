@@ -28,7 +28,7 @@
 // Type: int
 //
 
-debug = 2;
+debug = 0;
 
 ///////////// instance ////////////////////////////////
 //
@@ -93,7 +93,7 @@ input_suffix = "grib2";
 // Type: string
 //
 
-input_substring = "";
+input_substring = "gfs";
 
 ///////////// max_input_data_age //////////////////////
 //
@@ -153,7 +153,7 @@ latest_file_only = TRUE;
 // Type: int
 //
 
-data_check_interval_secs = 5;
+data_check_interval_secs = 60;
 
 //======================================================================
 //
@@ -624,25 +624,25 @@ output_fields = {
     use_additional_missing_data_value = FALSE,
     additional_missing_data_value = 0
   }
-  ,
-  {
-    param = "VVEL",
-    level = "ISBL",
-    mdv_name = "VVEL",
-    units = NO_CHANGE,
-    upper_range_limit = 0,
-    lower_range_limit = 0,
-    encoding_type = ENCODING_FLOAT32,
-    qc_default_type = BAD_VALUE,
-    qc_default_value = 0,
-    vert_level_min = -1,
-    vert_level_max = -1,
-    vert_level_dz = 1,
-    use_additional_bad_data_value = FALSE,
-    additional_bad_data_value = 0,
-    use_additional_missing_data_value = FALSE,
-    additional_missing_data_value = 0
-  }
+  // ,
+  // {
+  //   param = "VVEL",
+  //   level = "ISBL",
+  //   mdv_name = "VVEL",
+  //   units = NO_CHANGE,
+  //   upper_range_limit = 0,
+  //   lower_range_limit = 0,
+  //   encoding_type = ENCODING_FLOAT32,
+  //   qc_default_type = BAD_VALUE,
+  //   qc_default_value = 0,
+  //   vert_level_min = -1,
+  //   vert_level_max = -1,
+  //   vert_level_dz = 1,
+  //   use_additional_bad_data_value = FALSE,
+  //   additional_bad_data_value = 0,
+  //   use_additional_missing_data_value = FALSE,
+  //   additional_missing_data_value = 0
+  // }
   ,
   {
     param = "HGT",
@@ -879,7 +879,9 @@ height_field_mdv_name = "HGT";
 
 height_levels = {
  0,
+ 0.25,
  0.5,
+ 0.75,
  1,
  1.5,
  2,
@@ -889,8 +891,11 @@ height_levels = {
  4,
  4.5,
  5,
+ 5.5,
  6,
+ 6.5,
  7,
+ 7.5,
  8,
  9,
  10,
