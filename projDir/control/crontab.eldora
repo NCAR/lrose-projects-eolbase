@@ -61,7 +61,7 @@
 #
 # rsync dial data from field
 */10 * * * * csh -c "run_rsync_dial_data" 1> /dev/null 2> /dev/null
-*/5  * * * * csh -c "run_rsync_hsrl_data" 1> /dev/null 2> /dev/null
+#*/5  * * * * csh -c "run_rsync_hsrl_data" 1> /dev/null 2> /dev/null
 #
 # Check Water Vapor DIAL transfer.  Notify users if unsuccessful
 # This version is designed to run every 10 min starting at 15 min after the hour
