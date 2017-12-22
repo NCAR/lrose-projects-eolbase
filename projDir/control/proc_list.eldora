@@ -28,7 +28,8 @@ Tstorms2Symprod   manager  start_inst(no-params)     snuff_inst
 ######################################################################
 # GFS GRIB data to MDV
 #
-Grib2toMdv      gfs.conus  start_Grib2toMdv.gfs.conus  snuff_inst
+Grib2toMdv      gfs.conus     start_Grib2toMdv.gfs.conus     snuff_inst
+Grib2toMdv      gfs.socrates  start_Grib2toMdv.gfs.socrates  snuff_inst
 #
 ######################################################################
 # moments FMQ relay from SPOL

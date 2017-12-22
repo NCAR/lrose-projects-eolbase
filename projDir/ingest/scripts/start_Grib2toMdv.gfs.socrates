@@ -1,0 +1,11 @@
+#! /bin/csh
+
+cd $PROJ_DIR/ingest/params
+
+running "Grib2toMdv -params Grib2toMdv.gfs.socrates"
+
+if ($status == 1) then
+    Grib2toMdv -params Grib2toMdv.gfs.socrates -debug |& \
+	LogFilter -d $ERRORS_LOG_DIR -p Grib2toMdv -i gfs.socrates >& /dev/null &
+endif
+
