@@ -70,19 +70,27 @@ SurfInterp         ops                start_inst(alg)     snuff_inst
 #
 # NEXRAD file ingest - from LDM
 #
-#RadxConvert  kabx    start_RadxConvert.kabx   snuff_inst
-#RadxConvert  kama    start_RadxConvert.kama   snuff_inst
+# FRONT RANGE
 RadxConvert   kcys    start_RadxConvert.kcys   snuff_inst
-#RadxConvert  kddc    start_RadxConvert.kddc   snuff_inst
-#RadxConvert  keax    start_RadxConvert.keax   snuff_inst
 RadxConvert   kftg    start_RadxConvert.kftg   snuff_inst
 RadxConvert   kgjx    start_RadxConvert.kgjx   snuff_inst
 RadxConvert   kgld    start_RadxConvert.kgld   snuff_inst
+RadxConvert   kpux    start_RadxConvert.kpux   snuff_inst
+# HAWAII
+RadxConvert   phki    start_RadxConvert.phki   snuff_inst
+RadxConvert   phmo    start_RadxConvert.phmo   snuff_inst
+RadxConvert   phkm    start_RadxConvert.phkm   snuff_inst
+RadxConvert   phwa    start_RadxConvert.phwa   snuff_inst
+#
+# PECAN
+#RadxConvert  kabx    start_RadxConvert.kabx   snuff_inst
+#RadxConvert  kama    start_RadxConvert.kama   snuff_inst
+#RadxConvert  kddc    start_RadxConvert.kddc   snuff_inst
+#RadxConvert  keax    start_RadxConvert.keax   snuff_inst
 #RadxConvert  kict    start_RadxConvert.kict   snuff_inst
 #RadxConvert  kinx    start_RadxConvert.kinx   snuff_inst
 #RadxConvert  klnx    start_RadxConvert.klnx   snuff_inst
 #RadxConvert  koax    start_RadxConvert.koax   snuff_inst
-RadxConvert   kpux    start_RadxConvert.kpux   snuff_inst
 #RadxConvert  kriw    start_RadxConvert.kriw   snuff_inst
 #RadxConvert  ksgf    start_RadxConvert.ksgf   snuff_inst
 #RadxConvert  ktlx    start_RadxConvert.ktlx   snuff_inst
