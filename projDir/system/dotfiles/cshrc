@@ -239,6 +239,8 @@ if ($?prompt) then
   alias pgen1_data 'cd /scr/pgen1'
   alias pgen2_data 'cd /scr/pgen2'
 
+  alias maps 'cd /scr/hail1/rsfdata/mapserv/maps'
+
 #  alias spol 'ssh -p 20022 -a -C -XY spol@spol.dyndns.org'
 #  alias control1 'ssh -a -x -C -Y -R 2401:localhost:2401 control1'
 #  alias control2 'ssh -a -x -C -Y -R 2401:localhost:2401 control2'
