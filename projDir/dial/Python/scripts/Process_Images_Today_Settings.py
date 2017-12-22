@@ -93,4 +93,6 @@ t_plot = [0,24]  # time limits on plot (in hours).  Setting to nans results in a
 exec(open(os.path.abspath(__file__+'/../Path_Settings.py')).read())
 exec(open(os.environ['HOME']+'/projDir/dial/Python/NCAR-LidarProcessing/processors/Processor_DiodeLaserLidar.py').read())
 
+print('\nProcessing Completed Successfully\n')
+
 #plt.show()

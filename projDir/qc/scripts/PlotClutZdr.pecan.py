@@ -2,7 +2,7 @@
 
 #===========================================================================
 #
-# Produce plots for clutter monitor analysis
+# Produce plots for ZDR bias from clutter
 #
 #===========================================================================
 
@@ -12,10 +12,12 @@ import subprocess
 from optparse import OptionParser
 import numpy as np
 from numpy import convolve
+from numpy import linalg, array, ones
 import matplotlib.pyplot as plt
 from matplotlib import dates
 import math
 import datetime
+import contextlib
 
 def main():
 
@@ -46,9 +48,13 @@ def main():
                       dest='cpFilePath',
                       default='../data/pecan/spol_pecan_CP_analysis_20150524_000021.txt',
                       help='CP results file path')
+    parser.add_option('--bias_file',
+                      dest='biasFilePath',
+                      default='../data/pecan/spol_zdr_bias_in_snow.txt',
+                      help='File path for bias results')
     parser.add_option('--title',
                       dest='title',
-                      default='CLUTTER MONITORING ANALYSIS',
+                      default='ZDR BIAS FROM CLUTTER',
                       help='Title for plot')
     parser.add_option('--width',
                       dest='figWidthMm',
@@ -56,20 +62,20 @@ def main():
                       help='Width of figure in mm')
     parser.add_option('--height',
                       dest='figHeightMm',
-                      default=250,
+                      default=320,
                       help='Height of figure in mm')
     parser.add_option('--lenMean',
                       dest='lenMean',
-                      default=1,
+                      default=11,
                       help='Len of moving mean filter')
     parser.add_option('--start',
                       dest='startTime',
-                      default='2015 06 21 00 00 00',
-                      help='Start time for plots')
+                      default='2015 06 20 00 00 00',
+                      help='Start time for plot')
     parser.add_option('--end',
                       dest='endTime',
                       default='2015 07 16 00 00 00',
-                      help='End time for plots')
+                      help='End time for plot')
     
     (options, args) = parser.parse_args()
     
@@ -83,22 +89,34 @@ def main():
     year, month, day, hour, minute, sec = options.endTime.split()
     endTime = datetime.datetime(int(year), int(month), int(day),
                                 int(hour), int(minute), int(sec))
+
     if (options.debug == True):
         print >>sys.stderr, "Running %prog"
         print >>sys.stderr, "  cmFilePath: ", options.cmFilePath
         print >>sys.stderr, "  cpFilePath: ", options.cpFilePath
+        print >>sys.stderr, "  biasFilePath: ", options.biasFilePath
         print >>sys.stderr, "  startTime: ", startTime
         print >>sys.stderr, "  endTime: ", endTime
 
-    # read in column headers for self_con results
+    # read in column headers for clutter monitoring results
 
     iret, cmHdrs, cmData = readColumnHeaders(options.cmFilePath)
     if (iret != 0):
         sys.exit(-1)
 
-    # read in data for self_con results
+    # read in data for clutter monitoring results
 
     cmData, cmTimes = readInputData(options.cmFilePath, cmHdrs, cmData)
+
+    # read in column headers for bias results
+
+    iret, biasHdrs, biasData = readColumnHeaders(options.biasFilePath)
+    if (iret != 0):
+        sys.exit(-1)
+
+    # read in data for bias results
+
+    biasData, biasTimes = readInputData(options.biasFilePath, biasHdrs, biasData)
 
     # read in column headers for CP results
 
@@ -112,7 +130,7 @@ def main():
 
     # render the plot
     
-    doPlot(cmData, cmTimes, cpData, cpTimes)
+    doPlot(biasData, biasTimes, cpData, cpTimes, cmData, cmTimes)
 
     sys.exit(0)
     
@@ -160,7 +178,7 @@ def readInputData(filePath, colHeaders, colData):
     for index, var in enumerate(colHeaders, start=0):
         colData[var] = []
 
-    # read in a line at a time, set colData
+   # read in a line at a time, set colData
     for line in lines:
         
         commentIndex = line.find("#")
@@ -170,6 +188,10 @@ def readInputData(filePath, colHeaders, colData):
         # data
         
         data = line.strip().split()
+        if (len(data) != len(colHeaders)):
+            if (options.debug == True):
+                print >>sys.stderr, "skipping line: ", line
+            continue;
 
         values = {}
         for index, var in enumerate(colHeaders, start=0):
@@ -224,155 +246,176 @@ def movingAverage(values, window):
 ########################################################################
 # Plot
 
-def doPlot(cmData, cmTimes, cpData, cpTimes):
+def doPlot(biasData, biasTimes, cpData, cpTimes, cmData, cmTimes):
 
-    # running filter
+    fileName = options.biasFilePath
+    titleStr = "File: " + fileName
+    hfmt = dates.DateFormatter('%y/%m/%d')
 
     lenMeanFilter = int(options.lenMean)
-    
-    # times
-    
-    cmtimes = np.array(cmTimes).astype(datetime.datetime)
 
-    # set up plot structure
+    #   set up np arrays
+
+    btimes = np.array(biasTimes).astype(datetime.datetime)
+
+    biasMean = np.array(biasData["ZdrBiasMean"]).astype(np.double)
+    biasMean = movingAverage(biasMean, lenMeanFilter)
+
+    biasPercent15 = np.array(biasData["ZdrBiasPercentile15"]).astype(np.double)
+    biasPercent15 = movingAverage(biasPercent15, lenMeanFilter)
+
+    biasPercent20 = np.array(biasData["ZdrBiasPercentile20"]).astype(np.double)
+    biasPercent20 = movingAverage(biasPercent20, lenMeanFilter)
+
+    biasPercent25 = np.array(biasData["ZdrBiasPercentile25"]).astype(np.double)
+    biasPercent25 = movingAverage(biasPercent25, lenMeanFilter)
+
+    biasPercent33 = np.array(biasData["ZdrBiasPercentile33"]).astype(np.double)
+    biasPercent33 = movingAverage(biasPercent33, lenMeanFilter)
+
+    validMean = np.isfinite(biasMean)
+    validPercent15 = np.isfinite(biasPercent15)
+    validPercent20 = np.isfinite(biasPercent20)
+    validPercent25 = np.isfinite(biasPercent25)
+    validPercent33 = np.isfinite(biasPercent33)
+
+    ctimes = np.array(cpTimes).astype(datetime.datetime)
+    ZdrmVert = np.array(cpData["ZdrmVert"]).astype(np.double)
+    validZdrmVert = np.isfinite(ZdrmVert)
+    
+    SunscanZdrm = np.array(cpData["SunscanZdrm"]).astype(np.double)
+    validSunscanZdrm = np.isfinite(SunscanZdrm)
+
+    # ZDR from strong clutter
+
+    zdrStrong = np.array(cmData["meanZdrStrong"]).astype(np.double)
+    zdrStrong = movingAverage(zdrStrong, lenMeanFilter)
+    ztimes = np.array(cmTimes).astype(datetime.datetime)
+
+    # remove end points
+
+    lenBy2 = lenMeanFilter / 2 + 1
+    zdrStrong = zdrStrong[lenBy2:-lenBy2]
+    validZdrStrong = np.isfinite(zdrStrong)
+    ztimes = ztimes[lenBy2:-lenBy2]
+
+    # ax4 - Site Temperature
+
+    cptimes = np.array(cpTimes).astype(datetime.datetime)
+    tempSite = np.array(cpData["TempSite"]).astype(np.double)
+    validTempSite = np.isfinite(tempSite)
+
+    #validBtimes = btimes[validPercent20]
+    #validBiases = biasPercent20[validPercent20]
+    
+    validBtimes = ztimes[validZdrStrong]
+    validBiases = zdrStrong[validZdrStrong]
+    
+    tempVals = []
+    biasVals = []
+
+    for ii, biasVal in enumerate(validBiases, start=0):
+        btime = validBtimes[ii]
+        if (btime >= startTime and btime <= endTime):
+            tempTime, tempVal = getClosestTemp(btime, cptimes, tempSite)
+            if (np.isfinite(tempVal)):
+                tempVals.append(tempVal)
+                biasVals.append(biasVal)
+                if (options.verbose):
+                    print >>sys.stderr, "==>> biasTime, biasVal, tempTime, tempVal:", \
+                        btime, biasVal, tempTime, tempVal
+
+    # linear regression bias vs temp
+
+    A = array([tempVals, ones(len(tempVals))])
+    ww = linalg.lstsq(A.T, biasVals)[0] # obtaining the fit, ww[0] is slope, ww[1] is intercept
+    regrX = []
+    regrY = []
+    minTemp = min(tempVals)
+    maxTemp = max(tempVals)
+    regrX.append(minTemp)
+    regrX.append(maxTemp)
+    regrY.append(ww[0] * minTemp + ww[1])
+    regrY.append(ww[0] * maxTemp + ww[1])
+    
+    # set up plots
 
     widthIn = float(options.figWidthMm) / 25.4
     htIn = float(options.figHeightMm) / 25.4
 
     fig1 = plt.figure(1, (widthIn, htIn))
+    fig2 = plt.figure(2, (widthIn/2, htIn/2))
+
     ax1 = fig1.add_subplot(2,1,1,xmargin=0.0)
     ax2 = fig1.add_subplot(2,1,2,xmargin=0.0)
-    # ax3 = fig1.add_subplot(3,1,3,xmargin=0.0)
 
-    ax1.plot(cmTimes, np.zeros(len(cmTimes)), linewidth=1, color = 'gray')
-    ax2.plot(cmTimes, np.zeros(len(cmTimes)), linewidth=1, color = 'gray')
-    #ax3.plot(cmTimes, np.zeros(len(cmTimes)), linewidth=1, color = 'gray')
+    ax3 = fig2.add_subplot(1,1,1,xmargin=1.0, ymargin=1.0)
+    #ax3 = fig2.add_subplot(1,1,1,xmargin=0.0)
 
-    ax1.set_xlim([cmtimes[0], cmtimes[-1]])
-    ax2.set_xlim([cmtimes[0], cmtimes[-1]])
-    #ax3.set_xlim([cmtimes[0], cmtimes[-1]])
+    oneDay = datetime.timedelta(1.0)
+    ax1.set_xlim([btimes[0] - oneDay, btimes[-1] + oneDay])
+    ax1.set_title("ZDR bias from clutter, SPOL, PECAN")
+    ax2.set_xlim([btimes[0] - oneDay, btimes[-1] + oneDay])
+    ax2.set_title("Site temperature (C)")
+
+    # ax1.plot(btimes[validPercent20], biasPercent20[validPercent20], \
+    #          "ro", label = 'ZDR Bias percentile 20', linewidth=1)
+
+    # ax1.plot(btimes[validPercent20], biasPercent20[validPercent20], \
+    #          label = 'ZDR Bias percentile 20', linewidth=1, color='red')
+
+    # ax1.plot(ctimes[validSunscanZdrm], SunscanZdrm[validSunscanZdrm], \
+    #          linewidth=2, label = 'Zdrm Sun/CP (dB)', color = 'green')
     
-    fileName = options.cmFilePath
-    titleStr = "File: " + fileName
-    hfmt = dates.DateFormatter('%y/%m/%d')
+    # ax1.plot(ctimes[validZdrmVert], ZdrmVert[validZdrmVert], \
+    #          "^", markersize=10, linewidth=1, label = 'Zdrm Vert (dB)', color = 'yellow')
 
-    # weather contamination
+    ax1.plot(ztimes[validZdrStrong], zdrStrong[validZdrStrong], \
+             "o", label = 'ZDR Bias clutter', color='red')
 
-    fractionWxWeak = np.array(cmData["fractionWxWeak"]).astype(np.double)
-    wxContam = np.array(cmData["wxContamination"]).astype(np.double)
-    # noWx = (wxContam < 1)
-    noWx = (fractionWxWeak < 0.15)
-    timesNoWx = cmtimes[noWx]
+    ax1.plot(ztimes[validZdrStrong], zdrStrong[validZdrStrong], \
+             label = 'ZDR Bias clutter', linewidth=2, color='red')
 
-    # HC power - axis 1
 
-    dbmhcStrong = np.array(cmData["meanDbmhcStrong"]).astype(np.double)
-    dbmhcStrong = movingAverage(dbmhcStrong, lenMeanFilter)
-    validDbmhcStrong = np.isfinite(dbmhcStrong)
+    ax2.plot(cptimes[validTempSite], tempSite[validTempSite], \
+             linewidth=1, label = 'Site Temp', color = 'blue')
 
-    ax1.plot(cmtimes[validDbmhcStrong], dbmhcStrong[validDbmhcStrong], \
-             label = 'DBMHC strong', linewidth=1, color='orange')
+    configDateAxis(ax1, -9999, 9999, "ZDR Bias (dB)", 'upper right')
+    configDateAxis(ax2, -9999, 9999, "Temp (C)", 'upper right')
+    label3 = "ZDR Bias = " + ("%.5f" % ww[0]) + " * temp + " + ("%.3f" % ww[1])
+    ax3.plot(tempVals, biasVals, 
+             "x", label = label3, color = 'blue')
+    ax3.plot(regrX, regrY, linewidth=3, color = 'blue')
     
-    dbmhcNoWx = dbmhcStrong[noWx]
-    (dbmhcTimes, dbmhcMeans, dbmhcPerc) = computeDailyStats(timesNoWx, dbmhcNoWx)
+    legend3 = ax3.legend(loc="upper left", ncol=2)
+    for label3 in legend3.get_texts():
+        label3.set_fontsize(12)
+    ax3.set_xlabel("Site temperature (C)")
+    ax3.set_ylabel("Clutter ZDR Bias (dB)")
+    ax3.grid(True)
+    ax3.set_ylim([-3.0, 0.0])
+    ax3.set_xlim([minTemp - 1, maxTemp + 1])
 
-    # VC power - axis 1
-    
-    dbmvcStrong = np.array(cmData["meanDbmvcStrong"]).astype(np.double)
-    dbmvcStrong = movingAverage(dbmvcStrong, lenMeanFilter)
-    validDbmvcStrong = np.isfinite(dbmvcStrong)
-    
-    ax1.plot(cmtimes[validDbmvcStrong], dbmvcStrong[validDbmvcStrong], \
-             label = 'DBMVC strong', linewidth=1, color='cyan')
+    fig2.suptitle("Clutter ZDR bias Vs Temp, SPOL, PECAN", fontsize=16)
+    timeTitle = str(startTime) + " - " + str(endTime)
+    ax3.set_title(timeTitle, fontsize=12)
 
-    dbmvcNoWx = dbmvcStrong[noWx]
-    (dbmvcTimes, dbmvcMeans, dbmvcPerc) = computeDailyStats(timesNoWx, dbmvcNoWx)
-
-    # daily means
-
-    ax1.plot(dbmhcTimes, dbmhcMeans, \
-             linewidth=2, label = 'DBMHC daily mean', color = 'red')
-    ax1.plot(dbmhcTimes, dbmhcMeans, "^", color = 'red', markersize=9)
-
-    ax1.plot(dbmvcTimes, dbmvcMeans, \
-             linewidth=2, label = 'DBMVC daily mean', color = 'blue')
-    ax1.plot(dbmvcTimes, dbmvcMeans, "^", color = 'blue', markersize=9)
-
-    # ZDR from strong clutter - axis 2
-    
-    zdrStrong = np.array(cmData["meanZdrStrong"]).astype(np.double)
-    zdrStrong = movingAverage(zdrStrong, lenMeanFilter)
-    validZdrStrong = np.isfinite(zdrStrong)
-
-    ax2.plot(cmtimes[validZdrStrong], zdrStrong[validZdrStrong], \
-             label = 'ZDR strong clutter', linewidth=1, color='red')
-
-    zdrNoWx = zdrStrong[noWx]
-    (zdrTimes, zdrMeans, zdrPerc) = computeDailyStats(timesNoWx, zdrNoWx)
-    ax2.plot(zdrTimes, zdrMeans, \
-             linewidth=2, label = 'ZDR daily mean (dB)', color = 'black')
-    ax2.plot(zdrTimes, zdrMeans, \
-             "k^", color = 'black', markersize=9)
-
-    # cross polar power ratio - axis 2
-
-    xpolrStrong = np.array(cmData["meanXpolrStrong"]).astype(np.double)
-    xpolrStrong = movingAverage(xpolrStrong, lenMeanFilter)
-    validXpolrStrong = np.isfinite(xpolrStrong)
-
-    ax2.plot(cmtimes[validXpolrStrong], xpolrStrong[validXpolrStrong], \
-             label = 'XPOLR strong clutter', linewidth=1, color='green')
-
-    validFraction = np.isfinite(fractionWxWeak)
-    ax2.plot(cmtimes[validFraction], fractionWxWeak[validFraction], \
-             label = 'Weather fraction weak', linewidth=1, color='purple')
-
-    ax2.plot(cmtimes[noWx], fractionWxWeak[noWx], \
-             "o", label = 'No wx', color='purple', markersize=2)
-    
-    # transmit power - axis 3
-
-    cptimes = np.array(cpTimes).astype(datetime.datetime)
-    timeStart1us = datetime.datetime(2015, 6, 8, 0, 0, 0)
-    pwrCorrFlag = cptimes < timeStart1us
-    pwrCorr = np.zeros(len(cptimes))
-    pwrCorr[cptimes < timeStart1us] = -1.76
-
-    TxPwrH = np.array(cpData["TxPwrH"]).astype(np.double)
-    TxPwrH = movingAverage(TxPwrH, lenMeanFilter)
-    TxPwrH = TxPwrH + pwrCorr
-    validTxPwrH = np.isfinite(TxPwrH)
-
-    TxPwrV = np.array(cpData["TxPwrV"]).astype(np.double)
-    TxPwrV = movingAverage(TxPwrV, lenMeanFilter)
-    TxPwrV = TxPwrV + pwrCorr
-    validTxPwrV = np.isfinite(TxPwrV)
-
-    # ax3.plot(cptimes[validTxPwrH], TxPwrH[validTxPwrH], \
-    #          label = 'TxPwrH', linewidth=1, color='blue')
-
-    # ax3.plot(cptimes[validTxPwrV], TxPwrV[validTxPwrV], \
-    #          label = 'TxPwrV', linewidth=1, color='cyan')
-
-    # legends etc
-    
-    configureAxis(ax1, -20.0, 0.0, "Clutter power strong/weak (dBm)")
-    configureAxis(ax2, -2.5, 1.5, "Wx fraction and ZDR (dB/fraction)")
-    #configureAxis(ax3, 87, 87.8, "Measured Xmit power (dBm)")
-
-    fig1.suptitle("SPOL PECAN CLUTTER MONITORING ANALYSIS")
     fig1.autofmt_xdate()
 
-    plt.tight_layout()
-    plt.subplots_adjust(top=0.96)
+    fig1.tight_layout()
+    fig1.subplots_adjust(bottom=0.05, left=0.06, right=0.97, top=0.95)
+
+    fig2.tight_layout()
+    fig2.subplots_adjust(bottom=0.07, left=0.1, right=0.95, top=0.9)
+
     plt.show()
 
 ########################################################################
 # initialize legends etc
 
-def configureAxis(ax, miny, maxy, ylabel):
+def configDateAxis(ax, miny, maxy, ylabel, legendLoc):
     
-    legend = ax.legend(loc='upper right', ncol=6)
+    legend = ax.legend(loc=legendLoc, ncol=6)
     for label in legend.get_texts():
         label.set_fontsize('x-small')
     ax.set_xlabel("Date")
@@ -387,63 +430,35 @@ def configureAxis(ax, miny, maxy, ylabel):
         tick.label.set_fontsize(8) 
 
 ########################################################################
-# compute daily means for dbz bias
+# get temp closest in time to the search time
 
-def computeDailyStats(times, vals):
+def getClosestTemp(biasTime, tempTimes, obsTemps):
 
-    dailyTimes = []
-    dailyMeans = []
-    dailyPercs = []
+    twoHours = datetime.timedelta(0.0, 7200.0)
 
-    nptimes = np.array(times).astype(datetime.datetime)
-    npvals = np.array(vals).astype(np.double)
+    validTimes = ((tempTimes > (biasTime - twoHours)) & \
+                  (tempTimes < (biasTime + twoHours)))
 
-    validFlag = np.isfinite(npvals)
-    timesValid = nptimes[validFlag]
-    valsValid = npvals[validFlag]
+    if (len(validTimes) < 1):
+        return (biasTime, float('NaN'))
     
-    startTime = nptimes[0]
-    endTime = nptimes[-1]
-    
-    startDate = datetime.datetime(startTime.year, startTime.month, startTime.day, 0, 0, 0)
-    endDate = datetime.datetime(endTime.year, endTime.month, endTime.day, 0, 0, 0)
+    searchTimes = tempTimes[validTimes]
+    searchTemps = obsTemps[validTimes]
 
-    oneDay = datetime.timedelta(1)
-    halfDay = datetime.timedelta(0.5)
-    
-    thisDate = startDate
-    while (thisDate < endDate + oneDay):
-        
-        nextDate = thisDate + oneDay
-        result = []
-        
-        sum = 0.0
-        sumDeltaTime = datetime.timedelta(0)
-        count = 0.0
-        for ii, val in enumerate(valsValid, start=0):
-            thisTime = timesValid[ii]
-            if (thisTime >= thisDate and thisTime < nextDate):
-                # only use times before 10 UTC (late afternoon and night hours)
-                if (thisTime.hour > 10):
-                    continue
-                sum = sum + val
-                deltaTime = thisTime - thisDate
-                sumDeltaTime = sumDeltaTime + deltaTime
-                count = count + 1
-                result.append(val)
-        if (count > 1):
-            mean = sum / count
-            meanDeltaTime = datetime.timedelta(0, sumDeltaTime.total_seconds() / count)
-            dailyMeans.append(mean)
-            dailyTimes.append(thisDate + meanDeltaTime)
-            # print >>sys.stderr, " daily time, meanStrong: ", dailyTimes[-1], meanStrong
-            result.sort()
-            dailyPercs.append(result[len(result)/5])
-            
-        thisDate = thisDate + oneDay
+    if (len(searchTimes) < 1 or len(searchTemps) < 1):
+        return (biasTime, float('NaN'))
 
-    return (dailyTimes, dailyMeans, dailyPercs)
+    minDeltaTime = 1.0e99
+    ttime = searchTimes[0]
+    temp = searchTemps[0]
+    for ii, temptime in enumerate(searchTimes, start=0):
+        deltaTime = math.fabs((temptime - biasTime).total_seconds())
+        if (deltaTime < minDeltaTime):
+            minDeltaTime = deltaTime
+            temp = searchTemps[ii]
+            ttime = temptime
 
+    return (ttime, temp)
 
 ########################################################################
 # Run a command in a shell, wait for it to complete

@@ -29,21 +29,21 @@ if push_ftp:
 
 # path to data
 if LidarNumber == 0:
-    basepath = '/scr/eldora1/h2o_data/'
+    basepath = '/scr/eldora1/wvdial_1_data/'
     cal_file = cal_path+'dlb_calvals_ncar0.json'
     LidarName = 'NCAR-WV-DIAL'
     if official_day_file:
-	save_data_path = '/scr/eldora1/processed_h2o_data/'
-	save_fig_path = '/scr/eldora1/processed_h2o_data/'
+	save_data_path = '/scr/eldora1/wvdial_1_processed_data/'
+	save_fig_path = '/scr/eldora1/wvdial_1_processed_data/'
     process_HSRL = False  # no HSRL in NCAR 1
 elif LidarNumber == 1:
-    basepath = '/scr/eldora1/MSU_h2o_data/'
+    basepath = '/scr/eldora1/wvdial_2_data/'
     cal_file = cal_path+'dlb_calvals_msu.json'
     LidarName = 'MSU-WV-DIAL'
     if official_day_file:
 	LidarName = 'NDIAL'  # name for LAFE
-	save_data_path = '/scr/eldora1/MSU_processed_h2o_data/'
-	save_fig_path = '/scr/eldora1/MSU_processed_h2o_data/'
+	save_data_path = '/scr/eldora1/wvdial_2_processed_data/'
+	save_fig_path = '/scr/eldora1/wvdial_2_processed_data/'
 else:
     print('LidarNumber == %d\n   value not recognized'%LidarNumber)
 

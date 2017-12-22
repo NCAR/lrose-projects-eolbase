@@ -39,7 +39,7 @@ def main():
                       help='Set verbose debugging on')
     parser.add_option('--targetDir',
                       dest='targetDir',
-                      default='/export/eldora1/h2o_data',
+                      default='/export/eldora1/wvdial_1_data',
                       help='Path of source directory')
     parser.add_option('--rsyncSource',
                       dest='rsyncSource',
