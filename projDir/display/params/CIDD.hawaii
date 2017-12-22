@@ -223,10 +223,10 @@ MODEL_==== ==Model==  mdvp::static//localhost::/spacer?&None  none.colors   m   
 MODEL_==== ==Model==  mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
 MODEL_==== ==Model==  mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
 
-MODEL_RUC-temp   RUC-temp   mdvp:://front.eol.ucar.edu:8080:hawaii/mdv/ruc?use_http=true&TMP  temp.colors   C   -5   80  5  dcont   1 0
-MODEL_RUC-RH     RUC-RH     mdvp:://front.eol.ucar.edu:8080:hawaii/mdv/ruc?use_http=true&RH   rh.colors   %   -5   80  5  dcont   1 0
-MODEL_RUC-Wspd   RUC-Wspd   mdvp:://front.eol.ucar.edu:8080:hawaii/mdv/ruc?use_http=true&speed   wind_speed.colors   m/s   -5   80  5  dcont   1 0
-MODEL_VdrasTemp  VdrasTemp  mdvp:://vdras.eol.ucar.edu::front-vdras/mdv/adjoint/anal?use_http=true&temp surf_temp.colors   C   -5   80  5  dcont   1 0
+MODEL_GFS-TMP   GFS-TMP  mdvp:://eldora.eol.ucar.edu::eolbase/mdv/gfs/hawaii?use_http=true&TMP  temp.colors   C   -5   80  5  dcont   1 0
+MODEL_GFS-RH    GFS-RH   mdvp:://eldora.eol.ucar.edu::eolbase/mdv/gfs/hawaii?use_http=true&RH   rh.colors   %   -5   80  5  dcont   1 0
+MODEL_GFS-PRES  GFS-PRES mdvp:://eldora.eol.ucar.edu::eolbase/mdv/gfs/hawaii?use_http=true&Pressure pressure_mb.colors   m/s   -5   80  5  dcont   1 0
+MODEL_========   =========  mdvp::static//front.eol.ucar.edu:8080:/spacer?use_http=true&Elevation  none.colors   m   -5   80  5  dcont   1 0
 MODEL_========   =========  mdvp::static//front.eol.ucar.edu:8080:/spacer?use_http=true&Elevation  none.colors   m   -5   80  5  dcont   1 0
 MODEL_========   =========  mdvp::static//front.eol.ucar.edu:8080:/spacer?use_http=true&Elevation  none.colors   m   -5   80  5  dcont   1 0
 MODEL_========   =========  mdvp::static//front.eol.ucar.edu:8080:/spacer?use_http=true&Elevation  none.colors   m   -5   80  5  dcont   1 0
