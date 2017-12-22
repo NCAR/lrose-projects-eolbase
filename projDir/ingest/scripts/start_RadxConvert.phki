@@ -9,6 +9,6 @@ setenv RADAR_NAME PHKI
 running "RadxConvert -instance $radar_name"
 
 if ($status == 1) then
-    RadxConvert -instance $radar_name -params RadxConvert.nexrad |& \
+    RadxConvert -instance $radar_name -params RadxConvert.hawaii |& \
         LogFilter -d $ERRORS_LOG_DIR -p RadxConvert -i $radar_name >& /dev/null &
 endif

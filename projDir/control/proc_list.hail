@@ -99,6 +99,10 @@ RadxConvert   phwa    start_RadxConvert.phwa   snuff_inst
 #RadxConvert  kvnx    start_RadxConvert.kvnx   snuff_inst
 #
 ######################################################################
+# GFS GRIB data to MDV
+#
+Grib2toMdv      gfs.hawaii     start_Grib2toMdv.gfs.hawaii   snuff_inst
+######################################################################
 # NEXRAD ingest for OLYMPEX
 #
 #DsFileDist   olympex start_inst(system)       snuff_inst
