@@ -16,25 +16,6 @@ setenv RADAR_LON                  -99.535739
 setenv RADAR_ALT_KM               0.667
 setenv RADAR_ALT_M                667.0
 
-# FRONT - FIRESTONE
-
-#setenv PROJECT_NAME               "FRONT"
-#setenv project                    "front"
-#setenv SITE_NAME                  "FIRESTONE"
-#setenv RADAR_LAT                  40.123333
-#setenv RADAR_LON                  -104.89133
-#setenv RADAR_ALT_KM               1.55296
-#setenv RADAR_ALT_M                1552.96
-
-# Marshall
-
-#setenv PROJECT_NAME               "marshall"
-#setenv SITE_NAME                  "MARSHALL"
-#setenv RADAR_LAT                  39.9502
-#setenv RADAR_LON                  -105.1951
-#setenv RADAR_ALT_KM               1.748
-#setenv RADAR_ALT_M                1748
-
 #############################################
 
 # PRECIP RATE

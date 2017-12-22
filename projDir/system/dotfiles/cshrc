@@ -28,7 +28,7 @@ setenv LANG C
 #  DARWIN
 #  CYGWIN
 
-setenv HOST_OS LINUX_64
+setenv HOST_OS LINUX_CX11
 
 setenv LROSE_CORE_DIR $HOME/git/lrose-core
 setenv LROSE_INSTALL_DIR $HOME/lrose
@@ -107,7 +107,7 @@ endif
 
 # python
 
-setenv PYTHONPATH ~/anaconda2/pkgs
+setenv PYTHONPATH ~/anaconda2/pkgs:$HOME/projDir/dial/Python/ptvv1_python/python:$HOME/projDir/dial/Python/NCAR-LidarProcessing/libraries
 
 # HSRL
 

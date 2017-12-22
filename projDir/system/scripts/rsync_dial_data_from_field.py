@@ -39,12 +39,12 @@ def main():
                       help='Set verbose debugging on')
     parser.add_option('--targetDir',
                       dest='targetDir',
-                      default='/export/eldora1/h2o_data',
+                      default='/export/eldora1/wvdial_1_data',
                       help='Path of source directory')
     parser.add_option('--rsyncSource',
                       dest='rsyncSource',
-                      #default='rsync://166.164.215.174/wvdial/',
-                      default='rsync://128.117.47.87/wvdial/',
+                      default='rsync://166.164.215.174/wvdial/',
+                      #default='rsync://128.117.47.87/wvdial/',
                       help='Source address for dial, from which to grab data')
     parser.add_option('--ndaysLookback',
                       dest='ndaysLookback',

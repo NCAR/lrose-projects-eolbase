@@ -1,0 +1,11 @@
+#! /bin/csh
+
+# run the PID/PRECIP for PECAN and DYNAMO QC
+
+run_RadxPartRain.pecan.zdr_ice.sur >& ../data/pecan/RadxPartRain.pecan.zdr_ice.sur &
+run_RadxPartRain.pecan.zdr_ice.rhi >& ../data/pecan/RadxPartRain.pecan.zdr_ice.rhi &
+
+run_RadxPartRain.dynamo.zdr_ice.sur >& ../data/dynamo/RadxPartRain.dynamo.zdr_ice.sur &
+run_RadxPartRain.dynamo.zdr_ice.rhi >& ../data/dynamo/RadxPartRain.dynamo.zdr_ice.rhi &
+
+

@@ -9,7 +9,7 @@ dd = pwd; % get the current path
 %cd('/Users/spuler/Dropbox/WV_DIAL/data/') % point to the directory where data is stored  
 %cd('/Users/spuler/Desktop/WV_DIAL_data/data/2014/') % point to the directory where data is stored 
 %cd('/Volumes/documents/WV_DIAL_data/data/2014/') % point to the directory where data is stored 
-%cd('/scr/eldora1/h2o_data/2014/') % point to the directory where data is stored 
+cd('/scr/eldora1/h2o_data/2014/') % point to the directory where data is stored 
 
 amin=0;
 data=0;
@@ -21,7 +21,7 @@ cd(folder)
 delete('._*') 
 
 % get the names of all files. dirListing is a struct array. 
-dirListing = dir(strcat(folder))
+dirListing = dir(strcat(folder));
 % dirListing=dir(strcat(folder,'\'));
 % for jj=1:length(
 
@@ -32,7 +32,7 @@ if  strcmp(test,'.DS_Store')
 else
     f=3;
 end
-d=f 
+d=f; 
 
 cd(dd) % point back to original directory
 

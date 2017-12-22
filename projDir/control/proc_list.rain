@@ -24,3 +24,14 @@ AcTrack2Symprod   manager  start_inst(no-params)     snuff_inst
 SunCal2Symprod    manager  start_inst(no-params)     snuff_inst
 Tstorms2Symprod   manager  start_inst(no-params)     snuff_inst
 #
+######################################################################
+#
+# NEXRAD file ingest - from LDM
+#
+# HAWAII radars
+#
+RadxConvert       phki     start_RadxConvert.phki    snuff_inst
+RadxConvert       phmo     start_RadxConvert.phmo    snuff_inst
+RadxConvert       phkm     start_RadxConvert.phkm    snuff_inst
+RadxConvert       phwa     start_RadxConvert.phwa    snuff_inst
+######################################################################

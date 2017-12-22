@@ -5,8 +5,10 @@ close all
 %location to write files
 if strcmp(node,'NCAR')==1
   write_data_folder = '/scr/eldora1/processed_h2o_data';
+  catalog = '/pub/incoming/catalog/perdigao';
 else
   write_data_folder = '/scr/eldora1/MSU_processed_h2o_data';
+  catalog = '/pub/incoming/catalog/operations';
 end
 
 flag.save_quicklook = save_quicklook; %1;  % save quicklook to local directory
@@ -18,7 +20,7 @@ flag.mask_data = 1;  % mask applied to data based on error analysis threshold
 flag.gradient_filter = 1;  % this is used to mask regions with 'high' backscatter gradients which tend to cause errors
 flag.pileup = 1; % use pileup correction for detectors
 flag.WS = 1; % use the surface weather station data to calcuate spectroscopy
-flag.decimate = 1; % decimate all data to half the wv resoltuion
+flag.decimate = 0; % decimate all data to half the wv resoltuion
 flag.int = 0; % interpolate nans in nanmoving_average
 flag.mark_gaps = 1; % sets gaps in data to NaNs
 
@@ -43,6 +45,8 @@ j=1;
       MSU_DIAL_settings_v1 % this loads the instrument settings which have changed over time  
     end
     folder_in=folder;
-    DIAL_Analysis_v48_function(folder, MCS, write_data_folder, flag, node, ...
-        profiles2ave, P0, switch_ratio, ave_time, timing_range_correction, blank_range, p_hour)%
+    %DIAL_Analysis_v48_function(folder, MCS, write_data_folder, flag, node, ...
+    %    profiles2ave, P0, switch_ratio, ave_time, timing_range_correction, blank_range, p_hour)%
+    DIAL_Analysis_v51_function(folder, MCS, write_data_folder, flag, node, ...
+        profiles2ave, P0, switch_ratio, ave_time, timing_range_correction, blank_range, p_hour, catalog)
 %end

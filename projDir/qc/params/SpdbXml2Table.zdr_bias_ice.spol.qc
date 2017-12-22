@@ -173,6 +173,41 @@ xml_entries = {
   }
   ,
   {
+    xml_tag_list = "<ZdrBias><ZdrmInIcePerc05.00>",
+    specify_label = TRUE,
+    label = "ZdrmInIcePerc05.00",
+    required = TRUE
+  }
+  ,
+  {
+    xml_tag_list = "<ZdrBias><ZdrmInIcePerc07.50>",
+    specify_label = TRUE,
+    label = "ZdrmInIcePerc07.50",
+    required = TRUE
+  }
+  ,
+  {
+    xml_tag_list = "<ZdrBias><ZdrmInIcePerc10.00>",
+    specify_label = TRUE,
+    label = "ZdrmInIcePerc10.00",
+    required = TRUE
+  }
+  ,
+  {
+    xml_tag_list = "<ZdrBias><ZdrmInIcePerc12.50>",
+    specify_label = TRUE,
+    label = "ZdrmInIcePerc12.50",
+    required = TRUE
+  }
+  ,
+  {
+    xml_tag_list = "<ZdrBias><ZdrmInIcePerc15.00>",
+    specify_label = TRUE,
+    label = "ZdrmInIcePerc15.00",
+    required = TRUE
+  }
+  ,
+  {
     xml_tag_list = "<ZdrBias><ZdrmInIcePerc17.50>",
     specify_label = TRUE,
     label = "ZdrmInIcePerc17.50",
@@ -218,6 +253,41 @@ xml_entries = {
     xml_tag_list = "<ZdrBias><ZdrInIceMean>",
     specify_label = TRUE,
     label = "ZdrInIceMean",
+    required = TRUE
+  }
+  ,
+  {
+    xml_tag_list = "<ZdrBias><ZdrInIcePerc05.00>",
+    specify_label = TRUE,
+    label = "ZdrInIcePerc05.00",
+    required = TRUE
+  }
+  ,
+  {
+    xml_tag_list = "<ZdrBias><ZdrInIcePerc07.50>",
+    specify_label = TRUE,
+    label = "ZdrInIcePerc07.50",
+    required = TRUE
+  }
+  ,
+  {
+    xml_tag_list = "<ZdrBias><ZdrInIcePerc10.00>",
+    specify_label = TRUE,
+    label = "ZdrInIcePerc10.00",
+    required = TRUE
+  }
+  ,
+  {
+    xml_tag_list = "<ZdrBias><ZdrInIcePerc12.50>",
+    specify_label = TRUE,
+    label = "ZdrInIcePerc12.50",
+    required = TRUE
+  }
+  ,
+  {
+    xml_tag_list = "<ZdrBias><ZdrInIcePerc15.00>",
+    specify_label = TRUE,
+    label = "ZdrInIcePerc15.00",
     required = TRUE
   }
   ,
