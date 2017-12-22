@@ -45,6 +45,7 @@
 
 field_list = {
   { "SPOL surveillance",  "SPOL_" },
+  { "KBAND surveillance",  "KBAND_" },
   { "NEXRAD moments", "NEX_" },
   { "NEXRAD PID/precip", "NEXP_ " },
   { "REFRACT surveillance",  "REFR_" },
@@ -250,6 +251,27 @@ REFR_N             REFR_N             mdvp:://front.eol.ucar.edu:8080:eolbase/md
 REFR_DELTA_N       REFR_DELTA_N       mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/refract/spol_refr?use_http=true&DELTA_N delta_N.colors  dB -5 80 5 radial 1 0
 REFR_SIGMA_N       REFR_SIGMA_N       mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/refract/spol_refr?use_http=true&SIGMA_N refrac_sigmaN.colors  dB -5 80 5 radial 1 0
 REFR_SIGMA_DN      REFR_SIGMA_DN      mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/refract/spol_refr?use_http=true&SIGMA_DN refrac_sigmaN.colors  dB -5 80 5 radial 1 0
+
+##############################
+# K-BAND MOMENTS
+
+KBAND_DBZ    KBAND_DBZ   mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/kband/sur?use_http=true&DBZ     dbz.colors   dBZ -5 80 5 radial 1 0
+KBAND_VEL    KBAND_VEL   mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/kband/sur?use_http=true&VEL     vel_k.colors   m/s -5 80 5 radial 1 0
+KBAND_WIDTH  KBAND_WIDTH  mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/kband/sur?use_http=true&WIDTH   width_k.colors m/s -5 80 5 radial 1 0
+KBAND_LDRH   KBAND_LDRH    mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/kband/sur?use_http=true&LDRH   ldr.colors   dB  -5 80 5 radial 1 0
+KBAND_SNRHC  KBAND_SNRHC  mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/kband/sur?use_http=true&SNRHC  snr.colors   dB  -5 80 5 radial 1 0
+KBAND_SNRVX  KBAND_SNRVX   mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/kband/sur?use_http=true&SNRVX  snr.colors dB -5 80 5 radial 1 0
+KBAND_DBMHC  KBAND_DBMHC  mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/kband/sur?use_http=true&DBMHC  dbmlow.colors dBm -5 80 5 radial 1 0
+KBAND_DBMVX  KBAND_DBMVX  mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/kband/sur?use_http=true&DBMVX  dbmlow.colors dBm -5 80 5 radial 1 0
+
+KBAND_CPA  KBAND_CPA  mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/kband/sur?use_http=true&CPA  cpa.colors  - -5 80 5 radial 1 0
+KBAND_NCP  KBAND_NCP  mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/kband/sur?use_http=true&NCP  ncp.colors  dB -5 80  5  radial   1 0
+KBAND_======== =KBAND=  mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
+KBAND_======== =KBAND=  mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
+KBAND_======== =KBAND=  mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
+KBAND_======== =KBAND=  mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
+KBAND_======== =KBAND=  mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
+KBAND_======== =KBAND=  mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
 
 ##############################
 # SPOL MOMENTS - SECTORS
