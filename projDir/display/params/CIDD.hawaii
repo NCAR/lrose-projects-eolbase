@@ -223,9 +223,9 @@ MODEL_==== ==Model==  mdvp::static//localhost::/spacer?&None  none.colors   m   
 MODEL_==== ==Model==  mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
 MODEL_==== ==Model==  mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
 
-MODEL_GFS-TMP   GFS-TMP  mdvp:://eldora.eol.ucar.edu::eolbase/mdv/gfs/hawaii?use_http=true&TMP  temp.colors   C   -5   80  5  dcont   1 0
-MODEL_GFS-RH    GFS-RH   mdvp:://eldora.eol.ucar.edu::eolbase/mdv/gfs/hawaii?use_http=true&RH   rh.colors   %   -5   80  5  dcont   1 0
-MODEL_GFS-PRES  GFS-PRES mdvp:://eldora.eol.ucar.edu::eolbase/mdv/gfs/hawaii?use_http=true&Pressure pressure_mb.colors   m/s   -5   80  5  dcont   1 0
+MODEL_GFS-TMP   GFS-TMP  mdvp:://front.eol.ucar.edu:8080:hawaii/mdv/gfs/hawaii?use_http=true&TMP  temp.colors   C   -5   80  5  dcont   1 0
+MODEL_GFS-RH    GFS-RH   mdvp:://front.eol.ucar.edu:8080:hawaii/mdv/gfs/hawaii?use_http=true&RH   rh.colors   %   -5   80  5  dcont   1 0
+MODEL_GFS-PRES  GFS-PRES mdvp:://front.eol.ucar.edu:8080:hawaii/mdv/gfs/hawaii?use_http=true&Pressure pressure_mb.colors   m/s   -5   80  5  dcont   1 0
 MODEL_========   =========  mdvp::static//front.eol.ucar.edu:8080:/spacer?use_http=true&Elevation  none.colors   m   -5   80  5  dcont   1 0
 MODEL_========   =========  mdvp::static//front.eol.ucar.edu:8080:/spacer?use_http=true&Elevation  none.colors   m   -5   80  5  dcont   1 0
 MODEL_========   =========  mdvp::static//front.eol.ucar.edu:8080:/spacer?use_http=true&Elevation  none.colors   m   -5   80  5  dcont   1 0
@@ -592,8 +592,8 @@ cidd.xsect_start_page:      1
 
 #
 # The Outer most domain:
-cidd.num_zoom_levels:       8
-cidd.start_zoom_level:      3
+cidd.num_zoom_levels:       7
+cidd.start_zoom_level:      2
 
 # The number of Cached images for zooms.
 cidd.num_cache_zooms:       0
@@ -641,11 +641,11 @@ cidd.level6_min_ykm:                -1000.0
 cidd.level6_max_xkm:                1000.0
 cidd.level6_max_ykm:                1000.0
 #
-cidd.level7_label:                  3000km
-cidd.level7_min_xkm:                -3000.0
-cidd.level7_min_ykm:                -3000.0
-cidd.level7_max_xkm:                3000.0
-cidd.level7_max_ykm:                3000.0
+cidd.level7_label:                  2000km
+cidd.level7_min_xkm:                -2000.0
+cidd.level7_min_ykm:                -2000.0
+cidd.level7_max_xkm:                2000.0
+cidd.level7_max_ykm:                2000.0
 #
 cidd.level8_label:                  5000km
 cidd.level8_min_xkm:                -5000.0
@@ -1401,45 +1401,6 @@ short_requests = TRUE;
 
 prod_info = {
   {
-    menu_label = "RHI-spol",
-    url = "spdbp:Rhi2Symprod:ticks//front.eol.ucar.edu:8080:hawaii/spdb/spol/rhi/sband?use_http=true",
-    data_type = 0,
-    render_type = RENDER_ALL_VALID,
-    on_by_default = TRUE,
-    minutes_allow_before = 20,
-    minutes_allow_after = 10,
-    text_off_threshold = 0.4,
-    request_data_on_zoom = FALSE,
-    request_data_on_vert_change = FALSE
-  }
-  // , 
-  // {
-  //   menu_label = "RHI-chill",
-  //   url = "spdbp:Rhi2Symprod:ticks//front.eol.ucar.edu:8080:chill/spdb/rhi/sband?use_http=true",
-  //   data_type = 0,
-  //   render_type = RENDER_ALL_VALID,
-  //   on_by_default = TRUE,
-  //   minutes_allow_before = 20,
-  //   minutes_allow_after = 10,
-  //   text_off_threshold = 0.4,
-  //   request_data_on_zoom = FALSE,
-  //   request_data_on_vert_change = FALSE
-  // }
-  // , 
-  // {
-  //   menu_label = "RHI-label",
-  //   url = "spdbp:Rhi2Symprod:label//front.eol.ucar.edu:8080:hawaii/spdb/spol/rhi/sband?use_http=true",
-  //   data_type = 0,
-  //   render_type = RENDER_ALL_VALID,
-  //   on_by_default = FALSE,
-  //   minutes_allow_before = 20,
-  //   minutes_allow_after = 10,
-  //   text_off_threshold = 0.4,
-  //   request_data_on_zoom = FALSE,
-  //   request_data_on_vert_change = FALSE
-  // }
-  ,
-  {
     menu_label = "METARS-simple",
     url = "spdbp:Metar2Symprod:simple//front.eol.ucar.edu:8080:hawaii/spdb/metar?use_http=true",
     data_type = 0,
@@ -1490,19 +1451,19 @@ prod_info = {
     request_data_on_zoom = FALSE,
     request_data_on_vert_change = FALSE
   }
-  ,
-  {
-    menu_label = "NLDN" ,
-    url = "spdbp:Ltg2Symprod://front.eol.ucar.edu:8080:hawaii/spdb/ltg/nldn?use_http=true",
-    data_type = 0,
-    render_type = RENDER_ALL_BEFORE_DATA_TIME,
-    on_by_default = FALSE,
-    minutes_allow_before = 60.0,
-    minutes_allow_after = 0.0,
-    text_off_threshold = 0.0,
-    FALSE,
-    FALSE
-  }
+  // ,
+  // {
+  //   menu_label = "NLDN" ,
+  //   url = "spdbp:Ltg2Symprod://front.eol.ucar.edu:8080:hawaii/spdb/ltg/nldn?use_http=true",
+  //   data_type = 0,
+  //   render_type = RENDER_ALL_BEFORE_DATA_TIME,
+  //   on_by_default = FALSE,
+  //   minutes_allow_before = 60.0,
+  //   minutes_allow_after = 0.0,
+  //   text_off_threshold = 0.0,
+  //   FALSE,
+  //   FALSE
+  // }
   // ,                        
   // {
   //   menu_label = "Falcon Track 10-min",

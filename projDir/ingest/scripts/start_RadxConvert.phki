@@ -2,7 +2,6 @@
 
 cd $PROJ_DIR/ingest/params
 
-setenv project hawaii
 setenv radar_name phki
 setenv RADAR_NAME PHKI
 

@@ -2,7 +2,6 @@
 
 cd $PROJ_DIR/ingest/params
 
-setenv project hawaii
 setenv radar_name phmo
 setenv RADAR_NAME PHMO
 

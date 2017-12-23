@@ -76,12 +76,6 @@ RadxConvert   kftg    start_RadxConvert.kftg   snuff_inst
 RadxConvert   kgjx    start_RadxConvert.kgjx   snuff_inst
 RadxConvert   kgld    start_RadxConvert.kgld   snuff_inst
 RadxConvert   kpux    start_RadxConvert.kpux   snuff_inst
-# HAWAII
-RadxConvert   phki    start_RadxConvert.phki   snuff_inst
-RadxConvert   phmo    start_RadxConvert.phmo   snuff_inst
-RadxConvert   phkm    start_RadxConvert.phkm   snuff_inst
-RadxConvert   phwa    start_RadxConvert.phwa   snuff_inst
-#
 # PECAN
 #RadxConvert  kabx    start_RadxConvert.kabx   snuff_inst
 #RadxConvert  kama    start_RadxConvert.kama   snuff_inst
@@ -98,10 +92,6 @@ RadxConvert   phwa    start_RadxConvert.phwa   snuff_inst
 #RadxConvert  kuex    start_RadxConvert.kuex   snuff_inst
 #RadxConvert  kvnx    start_RadxConvert.kvnx   snuff_inst
 #
-######################################################################
-# GFS GRIB data to MDV
-#
-Grib2toMdv      gfs.hawaii     start_Grib2toMdv.gfs.hawaii   snuff_inst
 ######################################################################
 # NEXRAD ingest for OLYMPEX
 #
@@ -192,3 +182,22 @@ Grib2toMdv      gfs.hawaii     start_Grib2toMdv.gfs.hawaii   snuff_inst
 #LdataWatcher       catalog.images           start_inst(catalog) snuff_inst
 #LdataWatcher       catalog.dow_images       start_inst(catalog) snuff_inst
 #LdataWatcher       catalog.dow_rhi_images   start_inst(catalog) snuff_inst
+#
+######################################################################
+# HAWAII
+#
+# NEXRAD
+RadxConvert   phki    start_RadxConvert.phki   snuff_inst
+RadxConvert   phmo    start_RadxConvert.phmo   snuff_inst
+RadxConvert   phkm    start_RadxConvert.phkm   snuff_inst
+RadxConvert   phwa    start_RadxConvert.phwa   snuff_inst
+#
+# GFS GRIB data to MDV
+#
+Grib2toMdv    gfs.hawaii  start_inst(ingest)   snuff_inst
+#
+# SURFACE OBS
+#
+Metar2Spdb    hawaii      start_inst(ingest)   snuff_inst 
+madis2Spdb    hawaii      start_inst(ingest)   snuff_inst 
+######################################################################
