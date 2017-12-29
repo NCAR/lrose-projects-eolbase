@@ -641,8 +641,8 @@ cidd.max_adeg:               360.0
 
 # List of comma delimited local directories or HTTP URLs to search
 # Search . then each directory/URL in order 
-cidd.color_file_subdir:  $(PROJ_DIR)/display/color_scales, http://www.rap.ucar.edu/colorscales
-cidd.map_file_subdir:    $(PROJ_DIR)/display/maps, http://www.rap.ucar.edu/maps
+cidd.color_file_subdir:   http://front.eol.ucar.edu/color_scales
+cidd.map_file_subdir:     http://front.eol.ucar.edu/maps
 
 #
 # Station locator features
