@@ -1,0 +1,5 @@
+#! /bin/csh
+
+cd $PROJ_DIR/display/scripts
+
+javaws http://rap.ucar.edu/projects/jazz/lib.stable.20170807/jazz.jnlp -open jazz4hawaii.xml
