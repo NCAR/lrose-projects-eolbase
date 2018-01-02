@@ -196,8 +196,12 @@ RadxConvert   phwa    start_RadxConvert.phwa   snuff_inst
 #
 Grib2toMdv    gfs.hawaii  start_inst(ingest)   snuff_inst
 #
+# model soundings at each radar
+#
+Mdv2SoundingSpdb  hawaii  start_inst(ingest)  snuff_inst
+#
 # SURFACE OBS
 #
-Metar2Spdb    hawaii      start_inst(ingest)   snuff_inst 
-madis2Spdb    hawaii      start_inst(ingest)   snuff_inst 
+Metar2Spdb        hawaii  start_inst(ingest)   snuff_inst 
+madis2Spdb        hawaii  start_inst(ingest)   snuff_inst 
 ######################################################################
