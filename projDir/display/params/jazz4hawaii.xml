@@ -399,9 +399,9 @@
        field="RATE_HYBRID" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/precip_rate.colors"
        menuGroup="menu2" menuName="PHWA-RATE-HYBRID" />
 
-<Layer vis="off" type="MDV" name="MODEL GFS-TMP" location="mdvp:://front.eol.ucar.edu:8080:hawaii/mdv/gfs/hawaii?use_http=true"
+<!--Layer vis="off" type="MDV" name="MODEL GFS-TMP" location="mdvp:://front.eol.ucar.edu:8080:hawaii/mdv/gfs/hawaii?use_http=true"
        field="TMP" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/temp.colors"
-       menuGroup="menu3" menuName="GFS-TMP" request="closest" margin="14400s" />
+       menuGroup="menu3" menuName="GFS-TMP" request="closest" margin="14400s" /-->
 
 <Layer vis="off" type="MDV" name="MODEL GFS-RH" location="mdvp:://front.eol.ucar.edu:8080:hawaii/mdv/gfs/hawaii?use_http=true"
        field="RH" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/rh.colors"
