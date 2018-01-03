@@ -46,10 +46,9 @@
 field_list = {
   { "NEXRAD moments", "NEX_" },
   { "NEXRAD PID/precip", "NEXP_ " },
-  { "Surface", "SURF_" },
+  //  { "Surface", "SURF_" },
   { "Model", "MODEL_"},
-  { "Satellite", "SAT_"},
-  { "Lightning", "LTG_"}
+  { "Satellite", "SAT_"}
 };
 
 </GUI_CONFIG>
@@ -193,23 +192,23 @@ NEXP_PHWA_RATE_HYBRID PHWA_RATE_HYBRID mdvp:://front.eol.ucar.edu:8080:hawaii/cf
 ############################
 # SURFACE data
 
-SURF_===== ==Surf==   mdvp:://front.eol.ucar.edu:8080:hawaii/mdv/surf_interp?use_http=true&Temp        temp.colors m -5 80 5 dcont 1 0
-SURF_===== ==Surf==   mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
-SURF_===== ==Surf==   mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
-SURF_===== ==Surf==   mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
-SURF_===== ==Surf==   mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
-SURF_===== ==Surf==   mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
-SURF_===== ==Surf==   mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
-SURF_===== ==Surf==   mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
+# SURF_===== ==Surf==   mdvp:://front.eol.ucar.edu:8080:hawaii/mdv/surf_interp?use_http=true&Temp        temp.colors m -5 80 5 dcont 1 0
+# SURF_===== ==Surf==   mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
+# SURF_===== ==Surf==   mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
+# SURF_===== ==Surf==   mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
+# SURF_===== ==Surf==   mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
+# SURF_===== ==Surf==   mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
+# SURF_===== ==Surf==   mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
+# SURF_===== ==Surf==   mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
 
-SURF_Temp  SURF_Temp  mdvp:://front.eol.ucar.edu:8080:hawaii/mdv/surf_interp?use_http=true&Temp        temp.colors m -5 80 5 dcont 1 0
-SURF_DewPt SURF_DewPt mdvp:://front.eol.ucar.edu:8080:hawaii/mdv/surf_interp?use_http=true&DewPoint    temp.colors m -5 80 5 dcont 1 0
-SURF_Conv  SURF_Conv  mdvp:://front.eol.ucar.edu:8080:hawaii/mdv/surf_interp?use_http=true&Convergence conv.colors m -5 80 5 dcont 1 0
-SURF_Terrain Terrain  mdvp::terrain//front.eol.ucar.edu:8080:hawaii/mdv/terrain?use_http=true&Elevation     terrain_front.colors m -5 80 5 dcont 1 0
-SURF_===== ========   mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
-SURF_===== ========   mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
-SURF_===== ========   mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
-SURF_===== ========   mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
+# SURF_Temp  SURF_Temp  mdvp:://front.eol.ucar.edu:8080:hawaii/mdv/surf_interp?use_http=true&Temp        temp.colors m -5 80 5 dcont 1 0
+# SURF_DewPt SURF_DewPt mdvp:://front.eol.ucar.edu:8080:hawaii/mdv/surf_interp?use_http=true&DewPoint    temp.colors m -5 80 5 dcont 1 0
+# SURF_Conv  SURF_Conv  mdvp:://front.eol.ucar.edu:8080:hawaii/mdv/surf_interp?use_http=true&Convergence conv.colors m -5 80 5 dcont 1 0
+# SURF_Terrain Terrain  mdvp::terrain//front.eol.ucar.edu:8080:hawaii/mdv/terrain?use_http=true&Elevation     terrain_front.colors m -5 80 5 dcont 1 0
+# SURF_===== ========   mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
+# SURF_===== ========   mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
+# SURF_===== ========   mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
+# SURF_===== ========   mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
 
 ############################
 # Model data
@@ -253,28 +252,6 @@ SAT_==== ========  mdvp::static//front.eol.ucar.edu:8080:/spacer?use_http=true&E
 SAT_==== ========  mdvp::static//front.eol.ucar.edu:8080:/spacer?use_http=true&Elevation  none.colors   m   -5   80  5  dcont   1 0
 SAT_==== ========  mdvp::static//front.eol.ucar.edu:8080:/spacer?use_http=true&Elevation  none.colors   m   -5   80  5  dcont   1 0
 SAT_==== ========  mdvp::static//front.eol.ucar.edu:8080:/spacer?use_http=true&Elevation  none.colors   m   -5   80  5  dcont   1 0
-
-############################
-# Lightning data
-
-LTG_==== ==Ltg==  mdvp:://front.eol.ucar.edu:8080:hawaii/mdv/sat/goes1km?use_http=true&gvar_ch1  sat_albedo.colors  albedo   -5   80  5  dcont   1 0
-LTG_==== ==Ltg==  mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
-LTG_==== ==Ltg==  mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
-LTG_==== ==Ltg==  mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
-LTG_==== ==Ltg==  mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
-LTG_==== ==Ltg==  mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
-LTG_==== ==Ltg==  mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
-LTG_==== ==Ltg==  mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
-
-LTG_LMA_2D LMA_2D mdvp:://front.eol.ucar.edu:8080:hawaii/mdv/lma/lmaGridder_2min?use_http=true&counts2D counts2D_v2.colors Counts  0 0 0   cart    1 0
-LTG_LMA_3D LMA_3D mdvp:://front.eol.ucar.edu:8080:hawaii/mdv/lma/lmaGridder_2min?use_http=true&counts3D counts3D_v2.colors Counts  0 0 0   cart    1 0
-LTG_LMA_extent LMA_extent mdvp:://front.eol.ucar.edu:8080:hawaii/mdv/lma/lmaFlashExtent_2min?use_http=true&flashExtent flashExt.colors Fl/Km2/2min 0 0 0   cart    1 0
-
-LTG_==== ==Ltg==  mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
-LTG_==== ==Ltg==  mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
-LTG_==== ==Ltg==  mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
-LTG_==== ==Ltg==  mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
-LTG_==== ==Ltg==  mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
 
 </GRIDS>
 

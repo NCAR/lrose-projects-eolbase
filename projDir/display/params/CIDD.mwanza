@@ -105,32 +105,32 @@ field_list = {
 #Label    Label       URL           Colorscale Units Cont-lo-hi-interv Format Display_in_menu Bkgnd_Render
 #---------------------------------------------------------------------------------------------------------
 
-DBZH    DBZH     mdvp:://rain.eol.ucar.edu:0:lakevic/cfradial/mwanza&DBZH   dbz.colors   dbz   0 0 0   cart  1 0
-DBZV    DBZV     mdvp:://rain.eol.ucar.edu:0:lakevic/cfradial/mwanza&DBZV   dbz.colors   dbz   0 0 0   cart  1 0
-UH      UH       mdvp:://rain.eol.ucar.edu:0:lakevic/cfradial/mwanza&UH     dbz.colors   dbz   0 0 0   cart  1 0
-UV      UV       mdvp:://rain.eol.ucar.edu:0:lakevic/cfradial/mwanza&UV     dbz.colors   dbz   0 0 0   cart  1 0
+DBZH    DBZH     mdvp:://front.eol.ucar.edu:8080:lakevic/cfradial/mwanza?use_http=true&DBZH   dbz.colors   dbz   0 0 0   cart  1 0
+DBZV    DBZV     mdvp:://front.eol.ucar.edu:8080:lakevic/cfradial/mwanza?use_http=true&DBZV   dbz.colors   dbz   0 0 0   cart  1 0
+UH      UH       mdvp:://front.eol.ucar.edu:8080:lakevic/cfradial/mwanza?use_http=true&UH     dbz.colors   dbz   0 0 0   cart  1 0
+UV      UV       mdvp:://front.eol.ucar.edu:8080:lakevic/cfradial/mwanza?use_http=true&UV     dbz.colors   dbz   0 0 0   cart  1 0
 
-VELH    VELH     mdvp:://rain.eol.ucar.edu:0:lakevic/cfradial/mwanza&VELH   vel.colors   m/s   0 0 0   cart  1 0
-VELV    VELV     mdvp:://rain.eol.ucar.edu:0:lakevic/cfradial/mwanza&VELV   vel.colors   m/s   0 0 0   cart  1 0
-WIDTHH  WIDTHH   mdvp:://rain.eol.ucar.edu:0:lakevic/cfradial/mwanza&WIDTHH width.colors m/s   0 0 0   cart  1 0
-WIDTHV  WIDTHV   mdvp:://rain.eol.ucar.edu:0:lakevic/cfradial/mwanza&WIDTHV width.colors m/s   0 0 0   cart  1 0
+VELH    VELH     mdvp:://front.eol.ucar.edu:8080:lakevic/cfradial/mwanza?use_http=true&VELH   vel.colors   m/s   0 0 0   cart  1 0
+VELV    VELV     mdvp:://front.eol.ucar.edu:8080:lakevic/cfradial/mwanza?use_http=true&VELV   vel.colors   m/s   0 0 0   cart  1 0
+WIDTHH  WIDTHH   mdvp:://front.eol.ucar.edu:8080:lakevic/cfradial/mwanza?use_http=true&WIDTHH width.colors m/s   0 0 0   cart  1 0
+WIDTHV  WIDTHV   mdvp:://front.eol.ucar.edu:8080:lakevic/cfradial/mwanza?use_http=true&WIDTHV width.colors m/s   0 0 0   cart  1 0
 
-SNRHC   SNRHC    mdvp:://rain.eol.ucar.edu:0:lakevic/cfradial/mwanza&SNRHC  snr.colors   db    0 0 0   cart  1 0
-SNRVC   SNRVC    mdvp:://rain.eol.ucar.edu:0:lakevic/cfradial/mwanza&SNRVC  snr.colors   db    0 0 0   cart  1 0
-NCPH    NCPH     mdvp:://rain.eol.ucar.edu:0:lakevic/cfradial/mwanza&NCPH   ncp.colors   -     0 0 0   cart  1 0
-NCPV    NCPV     mdvp:://rain.eol.ucar.edu:0:lakevic/cfradial/mwanza&NCPV   ncp.colors   -     0 0 0   cart  1 0
+SNRHC   SNRHC    mdvp:://front.eol.ucar.edu:8080:lakevic/cfradial/mwanza?use_http=true&SNRHC  snr.colors   db    0 0 0   cart  1 0
+SNRVC   SNRVC    mdvp:://front.eol.ucar.edu:8080:lakevic/cfradial/mwanza?use_http=true&SNRVC  snr.colors   db    0 0 0   cart  1 0
+NCPH    NCPH     mdvp:://front.eol.ucar.edu:8080:lakevic/cfradial/mwanza?use_http=true&NCPH   ncp.colors   -     0 0 0   cart  1 0
+NCPV    NCPV     mdvp:://front.eol.ucar.edu:8080:lakevic/cfradial/mwanza?use_http=true&NCPV   ncp.colors   -     0 0 0   cart  1 0
 
-ZDR     ZDR      mdvp:://rain.eol.ucar.edu:0:lakevic/cfradial/mwanza&ZDR    zdr.colors   db    0 0 0   cart  1 0
-RHOHV   RHOHV    mdvp:://rain.eol.ucar.edu:0:lakevic/cfradial/mwanza&RHOHV  rhohv.colors dbz   0 0 0   cart  1 0
-PHIDP   PHIDP    mdvp:://rain.eol.ucar.edu:0:lakevic/cfradial/mwanza&PHIDP  phidp.colors dbz   0 0 0   cart  1 0
-=====   ======   mdvp:://rain.eol.ucar.edu:0:$(HOME)/data/uae/junk/junk          dbz.colors   dbz   0 0 0   cart  1 0
+ZDR     ZDR      mdvp:://front.eol.ucar.edu:8080:lakevic/cfradial/mwanza?use_http=true&ZDR    zdr.colors   db    0 0 0   cart  1 0
+RHOHV   RHOHV    mdvp:://front.eol.ucar.edu:8080:lakevic/cfradial/mwanza?use_http=true&RHOHV  rhohv.colors dbz   0 0 0   cart  1 0
+PHIDP   PHIDP    mdvp:://front.eol.ucar.edu:8080:lakevic/cfradial/mwanza?use_http=true&PHIDP  phidp.colors dbz   0 0 0   cart  1 0
+=====   ======   mdvp:://front.eol.ucar.edu:8080:$(HOME)/data/uae/junk/junk          dbz.colors   dbz   0 0 0   cart  1 0
 
-CLUTH  CLUTH     mdvp:://rain.eol.ucar.edu:0:lakevic/cfradial/mwanza&CCORH  clut.colors  dB  0 0 0   cart  1 0
-CLUTV  CLUTV     mdvp:://rain.eol.ucar.edu:0:lakevic/cfradial/mwanza&CCORV  clut.colors  dB   0 0 0   cart  1 0
-=====   ======   mdvp:://rain.eol.ucar.edu:0:$(HOME)/data/uae/junk/junk          dbz.colors   dbz   0 0 0   cart  1 0
-=====   ======   mdvp:://rain.eol.ucar.edu:0:$(HOME)/data/uae/junk/junk          dbz.colors   dbz   0 0 0   cart  1 0
+CLUTH  CLUTH     mdvp:://front.eol.ucar.edu:8080:lakevic/cfradial/mwanza?use_http=true&CCORH  clut.colors  dB  0 0 0   cart  1 0
+CLUTV  CLUTV     mdvp:://front.eol.ucar.edu:8080:lakevic/cfradial/mwanza?use_http=true&CCORV  clut.colors  dB   0 0 0   cart  1 0
+=====   ======   mdvp:://front.eol.ucar.edu:8080:$(HOME)/data/uae/junk/junk          dbz.colors   dbz   0 0 0   cart  1 0
+=====   ======   mdvp:://front.eol.ucar.edu:8080:$(HOME)/data/uae/junk/junk          dbz.colors   dbz   0 0 0   cart  1 0
 
-LDR     LDR      mdvp:://rain.eol.ucar.edu:0:lakevic/cfradial/mwanza&LDR    ldr.colors   db    0 0 0   cart  1 0
+LDR     LDR      mdvp:://front.eol.ucar.edu:8080:lakevic/cfradial/mwanza?use_http=true&LDR    ldr.colors   db    0 0 0   cart  1 0
 
 </GRIDS>
 
@@ -641,8 +641,8 @@ cidd.max_adeg:               360.0
 
 # List of comma delimited local directories or HTTP URLs to search
 # Search . then each directory/URL in order 
-cidd.color_file_subdir:  $(PROJ_DIR)/display/color_scales, http://www.rap.ucar.edu/colorscales
-cidd.map_file_subdir:    $(PROJ_DIR)/display/maps, http://www.rap.ucar.edu/maps
+cidd.color_file_subdir:   http://front.eol.ucar.edu/color_scales
+cidd.map_file_subdir:     http://front.eol.ucar.edu/maps
 
 #
 # Station locator features
@@ -1510,7 +1510,7 @@ gzip_requests = FALSE;
 //
 
 // prod_info = {
-//   { "RHI-ticks", "spdbp:Rhi2Symprod://rain.eol.ucar.edu::spdb/rhi", 0, RENDER_ALL_VALID, FALSE, 20, 10, 0.4, FALSE, FALSE}
+//   { "RHI-ticks", "spdbp:Rhi2Symprod://front.eol.ucar.edu::spdb/rhi", 0, RENDER_ALL_VALID, FALSE, 20, 10, 0.4, FALSE, FALSE}
 // };
 
 </SYMPRODS>
@@ -1568,7 +1568,7 @@ height_scaler = 0.0328083;
 // Type: string
 //
 
-landuse_url = "mdvp:://tempest:0:topo/relief/mdv&RGBA";
+landuse_url = "mdvp:://tempest:8080:topo/relief/mdv&RGBA";
 
 ///////////// landuse_colorscale //////////////////////
 //
