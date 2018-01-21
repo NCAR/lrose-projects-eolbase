@@ -1,0 +1,5 @@
+#! /bin/csh
+
+javaws http://rap.ucar.edu/projects/jazz/lib/jazz.jnlp -open https://raw.githubusercontent.com/NCAR/lrose-projects-eolbase/master/projDir/display/params/jazz4eolbase.xml
+
+
