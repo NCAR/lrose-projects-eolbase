@@ -319,22 +319,6 @@
        field="KDP" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/kdp_sband.colors"
        menuGroup="menu1" menuName="SPOL-KDP" />
 
-<Layer vis="off" type="MDV" name="SPOL ========" location="mdvp::static//localhost::/spacer?"
-       field="None" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/none.colors"
-       menuGroup="menu1" menuName="==SPOL==" />
-
-<Layer vis="off" type="MDV" name="SPOL ========" location="mdvp::static//localhost::/spacer?"
-       field="None" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/none.colors"
-       menuGroup="menu1" menuName="==SPOL==" />
-
-<Layer vis="off" type="MDV" name="SPOL ========" location="mdvp::static//localhost::/spacer?"
-       field="None" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/none.colors"
-       menuGroup="menu1" menuName="==SPOL==" />
-
-<Layer vis="off" type="MDV" name="SPOL ========" location="mdvp::static//localhost::/spacer?"
-       field="None" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/none.colors"
-       menuGroup="menu1" menuName="==SPOL==" />
-
 <Layer vis="off" type="MDV" name="SPOL RHOHV F" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sur?use_http=true"
        field="RHOHV_F" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/rhohv.colors"
        menuGroup="menu1" menuName="SPOL-RHOHV-F" />
@@ -491,10 +475,6 @@
        field="RATE_Z_ZDR" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/precip_rate.colors"
        menuGroup="menu1" menuName="SPOL-RATE-ZZDR" />
 
-<Layer vis="off" type="MDV" name="SPOL ========" location="mdvp::static//localhost::/spacer?"
-       field="None" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/none.colors"
-       menuGroup="menu1" menuName="==SPOL==" />
-
 <Layer vis="off" type="MDV" name="SPOL RATE ZH" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/partrain/sband/sur?use_http=true"
        field="RATE_ZH" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/precip_rate.colors"
        menuGroup="menu1" menuName="SPOL-RATE-ZH" />
@@ -527,38 +507,6 @@
        field="RATE_BRINGI" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/precip_rate.colors"
        menuGroup="menu1" menuName="SPOL-RATE-BRINGI" />
 
-<Layer vis="off" type="MDV" name="REFR ========" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sur?use_http=true"
-       field="DBZ_F" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/dbz.colors"
-       menuGroup="menu5" menuName="==REFR==" />
-
-<Layer vis="off" type="MDV" name="REFR ========" location="mdvp::static//localhost::/spacer?"
-       field="None" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/none.colors"
-       menuGroup="menu5" menuName="==REFR==" />
-
-<Layer vis="off" type="MDV" name="REFR ========" location="mdvp::static//localhost::/spacer?"
-       field="None" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/none.colors"
-       menuGroup="menu5" menuName="==REFR==" />
-
-<Layer vis="off" type="MDV" name="REFR ========" location="mdvp::static//localhost::/spacer?"
-       field="None" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/none.colors"
-       menuGroup="menu5" menuName="==REFR==" />
-
-<Layer vis="off" type="MDV" name="REFR ========" location="mdvp::static//localhost::/spacer?"
-       field="None" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/none.colors"
-       menuGroup="menu5" menuName="==REFR==" />
-
-<Layer vis="off" type="MDV" name="REFR ========" location="mdvp::static//localhost::/spacer?"
-       field="None" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/none.colors"
-       menuGroup="menu5" menuName="==REFR==" />
-
-<Layer vis="off" type="MDV" name="REFR ========" location="mdvp::static//localhost::/spacer?"
-       field="None" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/none.colors"
-       menuGroup="menu5" menuName="==REFR==" />
-
-<Layer vis="off" type="MDV" name="REFR ========" location="mdvp::static//localhost::/spacer?"
-       field="None" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/none.colors"
-       menuGroup="menu5" menuName="==REFR==" />
-
 <Layer vis="off" type="MDV" name="REFR CAL STRENGTH" location="mdvp::refract_calib//front.eol.ucar.edu:8080:eolbase/mdv/refract/calib?use_http=true"
        field="strength" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/power_AIQ.colors"
        menuGroup="menu5" menuName="REFR-CAL-STRENGTH" />
@@ -582,14 +530,6 @@
 <Layer vis="off" type="MDV" name="REFR CAL NCP" location="mdvp::refract_calib//front.eol.ucar.edu:8080:eolbase/mdv/refract/calib?use_http=true"
        field="ncp" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/ncp.colors"
        menuGroup="menu5" menuName="REFR-CAL-NCP" />
-
-<Layer vis="off" type="MDV" name="REFR ========" location="mdvp::static//localhost::/spacer?"
-       field="None" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/none.colors"
-       menuGroup="menu5" menuName="==REFR==" />
-
-<Layer vis="off" type="MDV" name="REFR ========" location="mdvp::static//localhost::/spacer?"
-       field="None" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/none.colors"
-       menuGroup="menu5" menuName="==REFR==" />
 
 <Layer vis="off" type="MDV" name="REFR MEAN I" location="mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/refract/spol_refr?use_http=true"
        field="MeanI" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/iqz.colors"
@@ -662,62 +602,6 @@
 <Layer vis="off" type="MDV" name="KBAND NCP" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/kband/sur?use_http=true"
        field="NCP" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/ncp.colors"
        menuGroup="menu2" menuName="KBAND-NCP" />
-
-<Layer vis="off" type="MDV" name="KBAND ========" location="mdvp::static//localhost::/spacer?"
-       field="None" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/none.colors"
-       menuGroup="menu2" menuName="=KBAND=" />
-
-<Layer vis="off" type="MDV" name="KBAND ========" location="mdvp::static//localhost::/spacer?"
-       field="None" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/none.colors"
-       menuGroup="menu2" menuName="=KBAND=" />
-
-<Layer vis="off" type="MDV" name="KBAND ========" location="mdvp::static//localhost::/spacer?"
-       field="None" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/none.colors"
-       menuGroup="menu2" menuName="=KBAND=" />
-
-<Layer vis="off" type="MDV" name="KBAND ========" location="mdvp::static//localhost::/spacer?"
-       field="None" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/none.colors"
-       menuGroup="menu2" menuName="=KBAND=" />
-
-<Layer vis="off" type="MDV" name="KBAND ========" location="mdvp::static//localhost::/spacer?"
-       field="None" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/none.colors"
-       menuGroup="menu2" menuName="=KBAND=" />
-
-<Layer vis="off" type="MDV" name="KBAND ========" location="mdvp::static//localhost::/spacer?"
-       field="None" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/none.colors"
-       menuGroup="menu2" menuName="=KBAND=" />
-
-<Layer vis="off" type="MDV" name="SPSEC ========" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sec?use_http=true"
-       field="DBZ_F" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/dbz.colors"
-       menuGroup="menu10" menuName="=SPOLSEC=" />
-
-<Layer vis="off" type="MDV" name="SPSEC ========" location="mdvp::static//localhost::/spacer?"
-       field="None" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/none.colors"
-       menuGroup="menu10" menuName="=SPOLSEC=" />
-
-<Layer vis="off" type="MDV" name="SPSEC ========" location="mdvp::static//localhost::/spacer?"
-       field="None" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/none.colors"
-       menuGroup="menu10" menuName="=SPOLSEC=" />
-
-<Layer vis="off" type="MDV" name="SPSEC ========" location="mdvp::static//localhost::/spacer?"
-       field="None" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/none.colors"
-       menuGroup="menu10" menuName="=SPOLSEC=" />
-
-<Layer vis="off" type="MDV" name="SPSEC ========" location="mdvp::static//localhost::/spacer?"
-       field="None" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/none.colors"
-       menuGroup="menu10" menuName="=SPOLSEC=" />
-
-<Layer vis="off" type="MDV" name="SPSEC ========" location="mdvp::static//localhost::/spacer?"
-       field="None" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/none.colors"
-       menuGroup="menu10" menuName="=SPOLSEC=" />
-
-<Layer vis="off" type="MDV" name="SPSEC ========" location="mdvp::static//localhost::/spacer?"
-       field="None" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/none.colors"
-       menuGroup="menu10" menuName="=SPOLSEC=" />
-
-<Layer vis="off" type="MDV" name="SPSEC ========" location="mdvp::static//localhost::/spacer?"
-       field="None" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/none.colors"
-       menuGroup="menu10" menuName="=SPOLSEC=" />
 
 <Layer vis="off" type="MDV" name="SPSEC DBZ F" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sec?use_http=true"
        field="DBZ_F" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/dbz.colors"
@@ -862,22 +746,6 @@
 <Layer vis="off" type="MDV" name="SPSEC KDP" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sec?use_http=true"
        field="KDP" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/kdp_sband.colors"
        menuGroup="menu10" menuName="SPSEC-KDP" />
-
-<Layer vis="off" type="MDV" name="SPSEC ========" location="mdvp::static//localhost::/spacer?"
-       field="None" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/none.colors"
-       menuGroup="menu10" menuName="=SPOLSEC=" />
-
-<Layer vis="off" type="MDV" name="SPSEC ========" location="mdvp::static//localhost::/spacer?"
-       field="None" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/none.colors"
-       menuGroup="menu10" menuName="=SPOLSEC=" />
-
-<Layer vis="off" type="MDV" name="SPSEC ========" location="mdvp::static//localhost::/spacer?"
-       field="None" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/none.colors"
-       menuGroup="menu10" menuName="=SPOLSEC=" />
-
-<Layer vis="off" type="MDV" name="SPSEC ========" location="mdvp::static//localhost::/spacer?"
-       field="None" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/none.colors"
-       menuGroup="menu10" menuName="=SPOLSEC=" />
 
 <Layer vis="off" type="MDV" name="SPSEC RHOHV F" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sec?use_http=true"
        field="RHOHV_F" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/rhohv.colors"
@@ -1035,10 +903,6 @@
        field="RATE_Z_ZDR" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/precip_rate.colors"
        menuGroup="menu10" menuName="SPSEC-RATE-ZZDR" />
 
-<Layer vis="off" type="MDV" name="SPSEC ========" location="mdvp::static//localhost::/spacer?"
-       field="None" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/none.colors"
-       menuGroup="menu10" menuName="=SPOLSEC=" />
-
 <Layer vis="off" type="MDV" name="SPSEC RATE ZH" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/partrain/sband/sec?use_http=true"
        field="RATE_ZH" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/precip_rate.colors"
        menuGroup="menu10" menuName="SPSEC-RATE-ZH" />
@@ -1075,34 +939,6 @@
        field="DBZ" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/dbz.colors"
        menuGroup="menu3" menuName="KFTG-DBZ" />
 
-<Layer vis="off" type="MDV" name="NEX ========" location="mdvp::static//localhost::/spacer?"
-       field="None" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/none.colors"
-       menuGroup="menu3" menuName="=NEXRAD=" />
-
-<Layer vis="off" type="MDV" name="NEX ========" location="mdvp::static//localhost::/spacer?"
-       field="None" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/none.colors"
-       menuGroup="menu3" menuName="=NEXRAD=" />
-
-<Layer vis="off" type="MDV" name="NEX ========" location="mdvp::static//localhost::/spacer?"
-       field="None" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/none.colors"
-       menuGroup="menu3" menuName="=NEXRAD=" />
-
-<Layer vis="off" type="MDV" name="NEX ========" location="mdvp::static//localhost::/spacer?"
-       field="None" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/none.colors"
-       menuGroup="menu3" menuName="=NEXRAD=" />
-
-<Layer vis="off" type="MDV" name="NEX ========" location="mdvp::static//localhost::/spacer?"
-       field="None" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/none.colors"
-       menuGroup="menu3" menuName="=NEXRAD=" />
-
-<Layer vis="off" type="MDV" name="NEX ========" location="mdvp::static//localhost::/spacer?"
-       field="None" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/none.colors"
-       menuGroup="menu3" menuName="=NEXRAD=" />
-
-<Layer vis="off" type="MDV" name="NEX ========" location="mdvp::static//localhost::/spacer?"
-       field="None" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/none.colors"
-       menuGroup="menu3" menuName="=NEXRAD=" />
-
 <Layer vis="off" type="MDV" name="NEX COMP DBZ" location="mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/nssl_mosaic?use_http=true"
        field="mosaicked_refl" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/dbz.colors"
        menuGroup="menu3" menuName="COMP-DBZ" />
@@ -1130,10 +966,6 @@
 <Layer vis="off" type="MDV" name="NEX KFTG RHOHV" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/kftg/moments?use_http=true"
        field="RHOHV" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/rhohv.colors"
        menuGroup="menu3" menuName="KFTG-RHOHV" />
-
-<Layer vis="off" type="MDV" name="NEX ========" location="mdvp::static//front.eol.ucar.edu:8080:/spacer/moments?use_http=true"
-       field="Elevation" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/none.colors"
-       menuGroup="menu3" menuName="========" />
 
 <Layer vis="off" type="MDV" name="NEX MOSAIC DBZ" location="mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/nssl_mosaic?use_http=true"
        field="mosaicked_refl" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/dbz.colors"
@@ -1163,10 +995,6 @@
        field="RHOHV" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/rhohv.colors"
        menuGroup="menu3" menuName="KCYS-RHOHV" />
 
-<Layer vis="off" type="MDV" name="NEX ========" location="mdvp::static//front.eol.ucar.edu:8080:/spacer/moments?use_http=true"
-       field="Elevation" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/none.colors"
-       menuGroup="menu3" menuName="========" />
-
 <Layer vis="off" type="MDV" name="NEX MOSAIC DBZ" location="mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/nssl_mosaic?use_http=true"
        field="mosaicked_refl" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/dbz.colors"
        menuGroup="menu3" menuName="MOSAIC-DBZ" />
@@ -1194,10 +1022,6 @@
 <Layer vis="off" type="MDV" name="NEX KPUX RHOHV" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/kpux/moments?use_http=true"
        field="RHOHV" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/rhohv.colors"
        menuGroup="menu3" menuName="KPUX-RHOHV" />
-
-<Layer vis="off" type="MDV" name="NEX ========" location="mdvp::static//front.eol.ucar.edu:8080:/spacer/moments?use_http=true"
-       field="Elevation" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/none.colors"
-       menuGroup="menu3" menuName="========" />
 
 <Layer vis="off" type="MDV" name="NEX MOSAIC DBZ" location="mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/nssl_mosaic?use_http=true"
        field="mosaicked_refl" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/dbz.colors"
@@ -1227,10 +1051,6 @@
        field="RHOHV" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/rhohv.colors"
        menuGroup="menu3" menuName="KGLD-RHOHV" />
 
-<Layer vis="off" type="MDV" name="NEX ========" location="mdvp::static//front.eol.ucar.edu:8080:/spacer/moments?use_http=true"
-       field="Elevation" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/none.colors"
-       menuGroup="menu3" menuName="========" />
-
 <Layer vis="off" type="MDV" name="NEX MOSAIC DBZ" location="mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/nssl_mosaic?use_http=true"
        field="mosaicked_refl" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/dbz.colors"
        menuGroup="menu3" menuName="MOSAIC-DBZ" />
@@ -1258,42 +1078,6 @@
 <Layer vis="off" type="MDV" name="NEX KGJX RHOHV" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/kgjx/moments?use_http=true"
        field="RHOHV" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/rhohv.colors"
        menuGroup="menu3" menuName="KGJX-RHOHV" />
-
-<Layer vis="off" type="MDV" name="NEX ========" location="mdvp::static//front.eol.ucar.edu:8080:/spacer/moments?use_http=true"
-       field="Elevation" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/none.colors"
-       menuGroup="menu3" menuName="========" />
-
-<Layer vis="off" type="MDV" name="NEXP ========" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/kftg/partrain?use_http=true"
-       field="KDP" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/kdp_sband.colors"
-       menuGroup="menu4" menuName="=NEXPID=" />
-
-<Layer vis="off" type="MDV" name="NEXP ========" location="mdvp::static//localhost::/spacer?"
-       field="None" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/none.colors"
-       menuGroup="menu4" menuName="=NEXPID=" />
-
-<Layer vis="off" type="MDV" name="NEXP ========" location="mdvp::static//localhost::/spacer?"
-       field="None" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/none.colors"
-       menuGroup="menu4" menuName="=NEXPID=" />
-
-<Layer vis="off" type="MDV" name="NEXP ========" location="mdvp::static//localhost::/spacer?"
-       field="None" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/none.colors"
-       menuGroup="menu4" menuName="=NEXPID=" />
-
-<Layer vis="off" type="MDV" name="NEXP ========" location="mdvp::static//localhost::/spacer?"
-       field="None" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/none.colors"
-       menuGroup="menu4" menuName="=NEXPID=" />
-
-<Layer vis="off" type="MDV" name="NEXP ========" location="mdvp::static//localhost::/spacer?"
-       field="None" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/none.colors"
-       menuGroup="menu4" menuName="=NEXPID=" />
-
-<Layer vis="off" type="MDV" name="NEXP ========" location="mdvp::static//localhost::/spacer?"
-       field="None" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/none.colors"
-       menuGroup="menu4" menuName="=NEXPID=" />
-
-<Layer vis="off" type="MDV" name="NEXP ========" location="mdvp::static//localhost::/spacer?"
-       field="None" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/none.colors"
-       menuGroup="menu4" menuName="=NEXPID=" />
 
 <Layer vis="off" type="MDV" name="NEXP KFTG KDP" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/kftg/partrain?use_http=true"
        field="KDP" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/kdp_sband.colors"
@@ -1455,38 +1239,6 @@
        field="RATE_HYBRID" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/precip_rate.colors"
        menuGroup="menu4" menuName="KGJX-RATE-HYBRID" />
 
-<Layer vis="off" type="MDV" name="SURF =====" location="mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/surf_interp?use_http=true"
-       field="Temp" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/temp.colors"
-       menuGroup="menu6" menuName="==Surf==" />
-
-<Layer vis="off" type="MDV" name="SURF =====" location="mdvp::static//localhost::/spacer?"
-       field="None" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/none.colors"
-       menuGroup="menu6" menuName="==Surf==" />
-
-<Layer vis="off" type="MDV" name="SURF =====" location="mdvp::static//localhost::/spacer?"
-       field="None" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/none.colors"
-       menuGroup="menu6" menuName="==Surf==" />
-
-<Layer vis="off" type="MDV" name="SURF =====" location="mdvp::static//localhost::/spacer?"
-       field="None" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/none.colors"
-       menuGroup="menu6" menuName="==Surf==" />
-
-<Layer vis="off" type="MDV" name="SURF =====" location="mdvp::static//localhost::/spacer?"
-       field="None" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/none.colors"
-       menuGroup="menu6" menuName="==Surf==" />
-
-<Layer vis="off" type="MDV" name="SURF =====" location="mdvp::static//localhost::/spacer?"
-       field="None" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/none.colors"
-       menuGroup="menu6" menuName="==Surf==" />
-
-<Layer vis="off" type="MDV" name="SURF =====" location="mdvp::static//localhost::/spacer?"
-       field="None" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/none.colors"
-       menuGroup="menu6" menuName="==Surf==" />
-
-<Layer vis="off" type="MDV" name="SURF =====" location="mdvp::static//localhost::/spacer?"
-       field="None" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/none.colors"
-       menuGroup="menu6" menuName="==Surf==" />
-
 <Layer vis="off" type="MDV" name="SURF Temp" location="mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/surf_interp?use_http=true"
        field="Temp" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/temp.colors"
        menuGroup="menu6" menuName="SURF-Temp" />
@@ -1503,54 +1255,6 @@
        field="Elevation" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/terrain_front.colors"
        menuGroup="menu6" menuName="Terrain" />
 
-<Layer vis="off" type="MDV" name="SURF =====" location="mdvp::static//localhost::/spacer?"
-       field="None" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/none.colors"
-       menuGroup="menu6" menuName="========" />
-
-<Layer vis="off" type="MDV" name="SURF =====" location="mdvp::static//localhost::/spacer?"
-       field="None" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/none.colors"
-       menuGroup="menu6" menuName="========" />
-
-<Layer vis="off" type="MDV" name="SURF =====" location="mdvp::static//localhost::/spacer?"
-       field="None" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/none.colors"
-       menuGroup="menu6" menuName="========" />
-
-<Layer vis="off" type="MDV" name="SURF =====" location="mdvp::static//localhost::/spacer?"
-       field="None" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/none.colors"
-       menuGroup="menu6" menuName="========" />
-
-<Layer vis="off" type="MDV" name="MODEL ====" location="mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/ruc?use_http=true"
-       field="TMP" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/temp.colors"
-       menuGroup="menu7" menuName="==Model==" />
-
-<Layer vis="off" type="MDV" name="MODEL ====" location="mdvp::static//localhost::/spacer?"
-       field="None" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/none.colors"
-       menuGroup="menu7" menuName="==Model==" />
-
-<Layer vis="off" type="MDV" name="MODEL ====" location="mdvp::static//localhost::/spacer?"
-       field="None" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/none.colors"
-       menuGroup="menu7" menuName="==Model==" />
-
-<Layer vis="off" type="MDV" name="MODEL ====" location="mdvp::static//localhost::/spacer?"
-       field="None" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/none.colors"
-       menuGroup="menu7" menuName="==Model==" />
-
-<Layer vis="off" type="MDV" name="MODEL ====" location="mdvp::static//localhost::/spacer?"
-       field="None" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/none.colors"
-       menuGroup="menu7" menuName="==Model==" />
-
-<Layer vis="off" type="MDV" name="MODEL ====" location="mdvp::static//localhost::/spacer?"
-       field="None" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/none.colors"
-       menuGroup="menu7" menuName="==Model==" />
-
-<Layer vis="off" type="MDV" name="MODEL ====" location="mdvp::static//localhost::/spacer?"
-       field="None" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/none.colors"
-       menuGroup="menu7" menuName="==Model==" />
-
-<Layer vis="off" type="MDV" name="MODEL ====" location="mdvp::static//localhost::/spacer?"
-       field="None" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/none.colors"
-       menuGroup="menu7" menuName="==Model==" />
-
 <Layer vis="off" type="MDV" name="MODEL RUC-temp" location="mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/ruc?use_http=true"
        field="TMP" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/temp.colors"
        menuGroup="menu7" menuName="RUC-temp" />
@@ -1566,54 +1270,6 @@
 <Layer vis="off" type="MDV" name="MODEL VdrasTemp" location="mdvp:://vdras.eol.ucar.edu::front-vdras/mdv/adjoint/anal?use_http=true"
        field="temp" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/surf_temp.colors"
        menuGroup="menu7" menuName="VdrasTemp" />
-
-<Layer vis="off" type="MDV" name="MODEL ========" location="mdvp::static//front.eol.ucar.edu:8080:/spacer?use_http=true"
-       field="Elevation" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/none.colors"
-       menuGroup="menu7" menuName="=========" />
-
-<Layer vis="off" type="MDV" name="MODEL ========" location="mdvp::static//front.eol.ucar.edu:8080:/spacer?use_http=true"
-       field="Elevation" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/none.colors"
-       menuGroup="menu7" menuName="=========" />
-
-<Layer vis="off" type="MDV" name="MODEL ========" location="mdvp::static//front.eol.ucar.edu:8080:/spacer?use_http=true"
-       field="Elevation" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/none.colors"
-       menuGroup="menu7" menuName="=========" />
-
-<Layer vis="off" type="MDV" name="MODEL ========" location="mdvp::static//front.eol.ucar.edu:8080:/spacer?use_http=true"
-       field="Elevation" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/none.colors"
-       menuGroup="menu7" menuName="=========" />
-
-<Layer vis="off" type="MDV" name="SAT ====" location="mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/sat/goes1km?use_http=true"
-       field="gvar_ch1" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/sat_albedo.colors"
-       menuGroup="menu8" menuName="==Sat==" />
-
-<Layer vis="off" type="MDV" name="SAT ====" location="mdvp::static//localhost::/spacer?"
-       field="None" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/none.colors"
-       menuGroup="menu8" menuName="==Sat==" />
-
-<Layer vis="off" type="MDV" name="SAT ====" location="mdvp::static//localhost::/spacer?"
-       field="None" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/none.colors"
-       menuGroup="menu8" menuName="==Sat==" />
-
-<Layer vis="off" type="MDV" name="SAT ====" location="mdvp::static//localhost::/spacer?"
-       field="None" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/none.colors"
-       menuGroup="menu8" menuName="==Sat==" />
-
-<Layer vis="off" type="MDV" name="SAT ====" location="mdvp::static//localhost::/spacer?"
-       field="None" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/none.colors"
-       menuGroup="menu8" menuName="==Sat==" />
-
-<Layer vis="off" type="MDV" name="SAT ====" location="mdvp::static//localhost::/spacer?"
-       field="None" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/none.colors"
-       menuGroup="menu8" menuName="==Sat==" />
-
-<Layer vis="off" type="MDV" name="SAT ====" location="mdvp::static//localhost::/spacer?"
-       field="None" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/none.colors"
-       menuGroup="menu8" menuName="==Sat==" />
-
-<Layer vis="off" type="MDV" name="SAT ====" location="mdvp::static//localhost::/spacer?"
-       field="None" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/none.colors"
-       menuGroup="menu8" menuName="==Sat==" />
 
 <Layer vis="off" type="MDV" name="SAT Vis" location="mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/sat/goes13_1km?use_http=true"
        field="gvar_ch1" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/sat_cloud.colors"
@@ -1635,54 +1291,6 @@
        field="gvar_ch6" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/wv.colors"
        menuGroup="menu8" menuName="SAT-WV" />
 
-<Layer vis="off" type="MDV" name="SAT ====" location="mdvp::static//front.eol.ucar.edu:8080:/spacer?use_http=true"
-       field="Elevation" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/none.colors"
-       menuGroup="menu8" menuName="========" />
-
-<Layer vis="off" type="MDV" name="SAT ====" location="mdvp::static//front.eol.ucar.edu:8080:/spacer?use_http=true"
-       field="Elevation" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/none.colors"
-       menuGroup="menu8" menuName="========" />
-
-<Layer vis="off" type="MDV" name="SAT ====" location="mdvp::static//front.eol.ucar.edu:8080:/spacer?use_http=true"
-       field="Elevation" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/none.colors"
-       menuGroup="menu8" menuName="========" />
-
-<Layer vis="off" type="MDV" name="SAT ====" location="mdvp::static//front.eol.ucar.edu:8080:/spacer?use_http=true"
-       field="Elevation" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/none.colors"
-       menuGroup="menu8" menuName="========" />
-
-<Layer vis="off" type="MDV" name="LTG ====" location="mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/sat/goes1km?use_http=true"
-       field="gvar_ch1" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/sat_albedo.colors"
-       menuGroup="menu9" menuName="==Ltg==" />
-
-<Layer vis="off" type="MDV" name="LTG ====" location="mdvp::static//localhost::/spacer?"
-       field="None" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/none.colors"
-       menuGroup="menu9" menuName="==Ltg==" />
-
-<Layer vis="off" type="MDV" name="LTG ====" location="mdvp::static//localhost::/spacer?"
-       field="None" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/none.colors"
-       menuGroup="menu9" menuName="==Ltg==" />
-
-<Layer vis="off" type="MDV" name="LTG ====" location="mdvp::static//localhost::/spacer?"
-       field="None" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/none.colors"
-       menuGroup="menu9" menuName="==Ltg==" />
-
-<Layer vis="off" type="MDV" name="LTG ====" location="mdvp::static//localhost::/spacer?"
-       field="None" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/none.colors"
-       menuGroup="menu9" menuName="==Ltg==" />
-
-<Layer vis="off" type="MDV" name="LTG ====" location="mdvp::static//localhost::/spacer?"
-       field="None" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/none.colors"
-       menuGroup="menu9" menuName="==Ltg==" />
-
-<Layer vis="off" type="MDV" name="LTG ====" location="mdvp::static//localhost::/spacer?"
-       field="None" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/none.colors"
-       menuGroup="menu9" menuName="==Ltg==" />
-
-<Layer vis="off" type="MDV" name="LTG ====" location="mdvp::static//localhost::/spacer?"
-       field="None" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/none.colors"
-       menuGroup="menu9" menuName="==Ltg==" />
-
 <Layer vis="off" type="MDV" name="LTG LMA 2D" location="mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/lma/lmaGridder_2min?use_http=true"
        field="counts2D" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/counts2D_v2.colors"
        menuGroup="menu9" menuName="LMA-2D" />
@@ -1694,26 +1302,6 @@
 <Layer vis="off" type="MDV" name="LTG LMA extent" location="mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/lma/lmaFlashExtent_2min?use_http=true"
        field="flashExtent" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/flashExt.colors"
        menuGroup="menu9" menuName="LMA-extent" />
-
-<Layer vis="off" type="MDV" name="LTG ====" location="mdvp::static//localhost::/spacer?"
-       field="None" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/none.colors"
-       menuGroup="menu9" menuName="==Ltg==" />
-
-<Layer vis="off" type="MDV" name="LTG ====" location="mdvp::static//localhost::/spacer?"
-       field="None" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/none.colors"
-       menuGroup="menu9" menuName="==Ltg==" />
-
-<Layer vis="off" type="MDV" name="LTG ====" location="mdvp::static//localhost::/spacer?"
-       field="None" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/none.colors"
-       menuGroup="menu9" menuName="==Ltg==" />
-
-<Layer vis="off" type="MDV" name="LTG ====" location="mdvp::static//localhost::/spacer?"
-       field="None" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/none.colors"
-       menuGroup="menu9" menuName="==Ltg==" />
-
-<Layer vis="off" type="MDV" name="LTG ====" location="mdvp::static//localhost::/spacer?"
-       field="None" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/none.colors"
-       menuGroup="menu9" menuName="==Ltg==" />
 
 <!-- MDVTOPO Layers -->
 
