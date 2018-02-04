@@ -177,763 +177,763 @@
 
 <Layer vis="on" type="MDV" name="SPOL DBZ F" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sur?use_http=true"
        field="DBZ_F" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/dbz.colors"
-       menuGroup="menu1" menuName="SPOL-DBZ-F" />
+       menuGroup="menu1" menuName="DBZ-F" />
 
 <Layer vis="off" type="MDV" name="SPOL DBZ" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sur?use_http=true"
        field="DBZ" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/dbz.colors"
-       menuGroup="menu1" menuName="SPOL-DBZ" />
+       menuGroup="menu1" menuName="DBZ" />
 
 <Layer vis="off" type="MDV" name="SPOL DBZ BRAGG F" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sur?use_http=true"
        field="DBZ_F" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/dbz_bragg.colors"
-       menuGroup="menu1" menuName="SPOL-DBZ-BRAGG-F" />
+       menuGroup="menu1" menuName="DBZ-BRAGG-F" />
 
 <Layer vis="off" type="MDV" name="SPOL DBZ BRAGG" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sur?use_http=true"
        field="DBZ" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/dbz_bragg.colors"
-       menuGroup="menu1" menuName="SPOL-DBZ-BRAGG" />
+       menuGroup="menu1" menuName="DBZ-BRAGG" />
 
 <Layer vis="off" type="MDV" name="SPOL VEL F" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sur?use_http=true"
        field="VEL_F" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/vel.colors"
-       menuGroup="menu1" menuName="SPOL-VEL-F" />
+       menuGroup="menu1" menuName="VEL-F" />
 
 <Layer vis="off" type="MDV" name="SPOL VEL" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sur?use_http=true"
        field="VEL" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/vel.colors"
-       menuGroup="menu1" menuName="SPOL-VEL" />
+       menuGroup="menu1" menuName="VEL" />
 
 <Layer vis="off" type="MDV" name="SPOL VELALT F" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sur?use_http=true"
        field="VEL_ALT_F" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/vel.colors"
-       menuGroup="menu1" menuName="SPOL-VELALT-F" />
+       menuGroup="menu1" menuName="VELALT-F" />
 
 <Layer vis="off" type="MDV" name="SPOL VELALT" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sur?use_http=true"
        field="VEL_ALT" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/vel.colors"
-       menuGroup="menu1" menuName="SPOL-VELALT" />
+       menuGroup="menu1" menuName="VELALT" />
 
 <Layer vis="off" type="MDV" name="SPOL VEL HV F" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sur?use_http=true"
        field="VEL_HV_F" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/vel.colors"
-       menuGroup="menu1" menuName="SPOL-VEL-HV-F" />
+       menuGroup="menu1" menuName="VEL-HV-F" />
 
 <Layer vis="off" type="MDV" name="SPOL VEL HV" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sur?use_http=true"
        field="VEL_HV" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/vel.colors"
-       menuGroup="menu1" menuName="SPOL-VEL-HV" />
+       menuGroup="menu1" menuName="VEL-HV" />
 
 <Layer vis="off" type="MDV" name="SPOL WIDTH F" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sur?use_http=true"
        field="WIDTH_F" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/width.colors"
-       menuGroup="menu1" menuName="SPOL-WIDTH-F" />
+       menuGroup="menu1" menuName="WIDTH-F" />
 
 <Layer vis="off" type="MDV" name="SPOL WIDTH" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sur?use_http=true"
        field="WIDTH" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/width.colors"
-       menuGroup="menu1" menuName="SPOL-WIDTH" />
+       menuGroup="menu1" menuName="WIDTH" />
 
 <Layer vis="off" type="MDV" name="SPOL PHIDP F" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sur?use_http=true"
        field="PHIDP_F" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/phidp_alt.colors"
-       menuGroup="menu1" menuName="SPOL-PHIDP-F" />
+       menuGroup="menu1" menuName="PHIDP-F" />
 
 <Layer vis="off" type="MDV" name="SPOL PHIDP" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sur?use_http=true"
        field="PHIDP" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/phidp_alt.colors"
-       menuGroup="menu1" menuName="SPOL-PHIDP" />
+       menuGroup="menu1" menuName="PHIDP" />
 
 <Layer vis="off" type="MDV" name="SPOL PHIDPSIM F" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sur?use_http=true"
        field="PHIDP0_F" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/phidp.colors"
-       menuGroup="menu1" menuName="SPOL-PHIDPSIM-F" />
+       menuGroup="menu1" menuName="PHIDPSIM-F" />
 
 <Layer vis="off" type="MDV" name="SPOL PHIDPSIM" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sur?use_http=true"
        field="PHIDP0" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/phidp.colors"
-       menuGroup="menu1" menuName="SPOL-PHIDP-SIM" />
+       menuGroup="menu1" menuName="PHIDP-SIM" />
 
 <Layer vis="off" type="MDV" name="SPOL ZDR F" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sur?use_http=true"
        field="ZDR_F" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/zdr.colors"
-       menuGroup="menu1" menuName="SPOL-ZDR-F" />
+       menuGroup="menu1" menuName="ZDR-F" />
 
 <Layer vis="off" type="MDV" name="SPOL ZDR" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sur?use_http=true"
        field="ZDR" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/zdr.colors"
-       menuGroup="menu1" menuName="SPOL-ZDR" />
+       menuGroup="menu1" menuName="ZDR" />
 
 <Layer vis="off" type="MDV" name="SPOL ZDRM F" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sur?use_http=true"
        field="ZDRM_F" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/zdr.colors"
-       menuGroup="menu1" menuName="SPOL-ZDRM-F" />
+       menuGroup="menu1" menuName="ZDRM-F" />
 
 <Layer vis="off" type="MDV" name="SPOL ZDRM" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sur?use_http=true"
        field="ZDRM" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/zdr.colors"
-       menuGroup="menu1" menuName="SPOL-ZDRM" />
+       menuGroup="menu1" menuName="ZDRM" />
 
 <Layer vis="off" type="MDV" name="SPOL ZDR BIAS F" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sur?use_http=true"
        field="ZDR_BIAS_F" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/zdr_bias.colors"
-       menuGroup="menu1" menuName="SPOL-ZDR-BIAS-F" />
+       menuGroup="menu1" menuName="ZDR-BIAS-F" />
 
 <Layer vis="off" type="MDV" name="SPOL ZDR BIAS" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sur?use_http=true"
        field="ZDR_BIAS" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/zdr_bias.colors"
-       menuGroup="menu1" menuName="SPOL-ZDR-BIAS" />
+       menuGroup="menu1" menuName="ZDR-BIAS" />
 
 <Layer vis="off" type="MDV" name="SPOL PHIDP0 F" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sur?use_http=true"
        field="PHIDP0_F" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/phidp_alt.colors"
-       menuGroup="menu1" menuName="SPOL-PHIDP0-F" />
+       menuGroup="menu1" menuName="PHIDP0-F" />
 
 <Layer vis="off" type="MDV" name="SPOL PHIDP0" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sur?use_http=true"
        field="PHIDP0" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/phidp_alt.colors"
-       menuGroup="menu1" menuName="SPOL-PHIDP0" />
+       menuGroup="menu1" menuName="PHIDP0" />
 
 <Layer vis="off" type="MDV" name="SPOL LDRH F" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sur?use_http=true"
        field="LDRH_F" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/ldr.colors"
-       menuGroup="menu1" menuName="SPOL-LDRH-F" />
+       menuGroup="menu1" menuName="LDRH-F" />
 
 <Layer vis="off" type="MDV" name="SPOL LDRH" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sur?use_http=true"
        field="LDRH" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/ldr.colors"
-       menuGroup="menu1" menuName="SPOL-LDRH" />
+       menuGroup="menu1" menuName="LDRH" />
 
 <Layer vis="off" type="MDV" name="SPOL LDRV F" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sur?use_http=true"
        field="LDRV_F" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/ldr.colors"
-       menuGroup="menu1" menuName="SPOL-LDRV-F" />
+       menuGroup="menu1" menuName="LDRV-F" />
 
 <Layer vis="off" type="MDV" name="SPOL LDRV" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sur?use_http=true"
        field="LDRV" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/ldr.colors"
-       menuGroup="menu1" menuName="SPOL-LDRV" />
+       menuGroup="menu1" menuName="LDRV" />
 
 <Layer vis="off" type="MDV" name="SPOL LDR MEAN" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sur?use_http=true"
        field="LDR_MEAN" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/ldr.colors"
-       menuGroup="menu1" menuName="SPOL-LDR-MEAN" />
+       menuGroup="menu1" menuName="LDR-MEAN" />
 
 <Layer vis="off" type="MDV" name="SPOL LDR MEAN F" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sur?use_http=true"
        field="LDR_MEAN_F" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/ldr.colors"
-       menuGroup="menu1" menuName="SPOL-LDR-MEAN-F" />
+       menuGroup="menu1" menuName="LDR-MEAN-F" />
 
 <Layer vis="off" type="MDV" name="SPOL LDR DIFF" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sur?use_http=true"
        field="LDR_DIFF" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/zdr.colors"
-       menuGroup="menu1" menuName="SPOL-LDR-DIFF" />
+       menuGroup="menu1" menuName="LDR-DIFF" />
 
 <Layer vis="off" type="MDV" name="SPOL LDR DIFF F" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sur?use_http=true"
        field="LDR_DIFF_F" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/zdr.colors"
-       menuGroup="menu1" menuName="SPOL-LDR-DIFF-F" />
+       menuGroup="menu1" menuName="LDR-DIFF-F" />
 
 <Layer vis="off" type="MDV" name="SPOL NCP" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sur?use_http=true"
        field="NCP" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/ncp.colors"
-       menuGroup="menu1" menuName="SPOL-NCP" />
+       menuGroup="menu1" menuName="NCP" />
 
 <Layer vis="off" type="MDV" name="SPOL NCP F" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sur?use_http=true"
        field="NCP_F" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/ncp.colors"
-       menuGroup="menu1" menuName="SPOL-NCP-F" />
+       menuGroup="menu1" menuName="NCP-F" />
 
 <Layer vis="off" type="MDV" name="SPOL KDP F" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sur?use_http=true"
        field="KDP_F" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/kdp_sband.colors"
-       menuGroup="menu1" menuName="SPOL-KDP-F" />
+       menuGroup="menu1" menuName="KDP-F" />
 
 <Layer vis="off" type="MDV" name="SPOL KDP" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sur?use_http=true"
        field="KDP" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/kdp_sband.colors"
-       menuGroup="menu1" menuName="SPOL-KDP" />
+       menuGroup="menu1" menuName="KDP" />
 
 <Layer vis="off" type="MDV" name="SPOL RHOHV F" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sur?use_http=true"
        field="RHOHV_F" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/rhohv.colors"
-       menuGroup="menu1" menuName="SPOL-RHOHV-F" />
+       menuGroup="menu1" menuName="RHOHV-F" />
 
 <Layer vis="off" type="MDV" name="SPOL RHOHV" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sur?use_http=true"
        field="RHOHV" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/rhohv.colors"
-       menuGroup="menu1" menuName="SPOL-RHOHV" />
+       menuGroup="menu1" menuName="RHOHV" />
 
 <Layer vis="off" type="MDV" name="SPOL RHONNC F" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sur?use_http=true"
        field="RHOHV_NNC_F" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/rhohv.colors"
-       menuGroup="menu1" menuName="SPOL-RHONNC-F" />
+       menuGroup="menu1" menuName="RHONNC-F" />
 
 <Layer vis="off" type="MDV" name="SPOL RHONNC" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sur?use_http=true"
        field="RHOHV_NNC" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/rhohv.colors"
-       menuGroup="menu1" menuName="SPOL-RHONNC" />
+       menuGroup="menu1" menuName="RHONNC" />
 
 <Layer vis="off" type="MDV" name="SPOL RHO HC VX" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sur?use_http=true"
        field="RHO_HC_VX" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/rho_cross.colors"
-       menuGroup="menu1" menuName="SPOL-RHO-HC-VX" />
+       menuGroup="menu1" menuName="RHO-HC-VX" />
 
 <Layer vis="off" type="MDV" name="SPOL RHO VC HX" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sur?use_http=true"
        field="RHO_VC_HX" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/rho_cross.colors"
-       menuGroup="menu1" menuName="SPOL-RHO-VC-HX" />
+       menuGroup="menu1" menuName="RHO-VC-HX" />
 
 <Layer vis="off" type="MDV" name="SPOL RHO VX HX" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sur?use_http=true"
        field="RHO_VX_HX" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/rho_cross.colors"
-       menuGroup="menu1" menuName="SPOL-RHO-VX-HX" />
+       menuGroup="menu1" menuName="RHO-VX-HX" />
 
 <Layer vis="off" type="MDV" name="SPOL NOISE BIAS" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sur?use_http=true"
        field="NOISE_BIAS" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/noise_bias.colors"
-       menuGroup="menu1" menuName="SPOL-NOISE-BIAS" />
+       menuGroup="menu1" menuName="NOISE-BIAS" />
 
 <Layer vis="off" type="MDV" name="SPOL SNRHC F" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sur?use_http=true"
        field="SNRHC_F" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/snr.colors"
-       menuGroup="menu1" menuName="SPOL-SNRHC-F" />
+       menuGroup="menu1" menuName="SNRHC-F" />
 
 <Layer vis="off" type="MDV" name="SPOL SNRHC" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sur?use_http=true"
        field="SNRHC" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/snr.colors"
-       menuGroup="menu1" menuName="SPOL-SNRHC" />
+       menuGroup="menu1" menuName="SNRHC" />
 
 <Layer vis="off" type="MDV" name="SPOL SNRVC F" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sur?use_http=true"
        field="SNRVC_F" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/snr.colors"
-       menuGroup="menu1" menuName="SPOL-SNRVC-F" />
+       menuGroup="menu1" menuName="SNRVC-F" />
 
 <Layer vis="off" type="MDV" name="SPOL SNRVC" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sur?use_http=true"
        field="SNRVC" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/snr.colors"
-       menuGroup="menu1" menuName="SPOL-SNRVC" />
+       menuGroup="menu1" menuName="SNRVC" />
 
 <Layer vis="off" type="MDV" name="SPOL SNRHX F" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sur?use_http=true"
        field="SNRHX_F" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/snr.colors"
-       menuGroup="menu1" menuName="SPOL-SNRHX-F" />
+       menuGroup="menu1" menuName="SNRHX-F" />
 
 <Layer vis="off" type="MDV" name="SPOL SNRHX" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sur?use_http=true"
        field="SNRHX" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/snr.colors"
-       menuGroup="menu1" menuName="SPOL-SNRHX" />
+       menuGroup="menu1" menuName="SNRHX" />
 
 <Layer vis="off" type="MDV" name="SPOL SNRVX F" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sur?use_http=true"
        field="SNRVX_F" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/snr.colors"
-       menuGroup="menu1" menuName="SPOL-SNRVX-F" />
+       menuGroup="menu1" menuName="SNRVX-F" />
 
 <Layer vis="off" type="MDV" name="SPOL SNRVX" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sur?use_http=true"
        field="SNRVX" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/snr.colors"
-       menuGroup="menu1" menuName="SPOL-SNRVX" />
+       menuGroup="menu1" menuName="SNRVX" />
 
 <Layer vis="off" type="MDV" name="SPOL DBMHC F" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sur?use_http=true"
        field="DBMHC_F" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/dbmlow.colors"
-       menuGroup="menu1" menuName="SPOL-DBMHC-F" />
+       menuGroup="menu1" menuName="DBMHC-F" />
 
 <Layer vis="off" type="MDV" name="SPOL DBMHC" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sur?use_http=true"
        field="DBMHC" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/dbmlow.colors"
-       menuGroup="menu1" menuName="SPOL-DBMHC" />
+       menuGroup="menu1" menuName="DBMHC" />
 
 <Layer vis="off" type="MDV" name="SPOL DBMVC F" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sur?use_http=true"
        field="DBMVC_F" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/dbmlow.colors"
-       menuGroup="menu1" menuName="SPOL-DBMVC-F" />
+       menuGroup="menu1" menuName="DBMVC-F" />
 
 <Layer vis="off" type="MDV" name="SPOL DBMVC" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sur?use_http=true"
        field="DBMVC" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/dbmlow.colors"
-       menuGroup="menu1" menuName="SPOL-DBMVC" />
+       menuGroup="menu1" menuName="DBMVC" />
 
 <Layer vis="off" type="MDV" name="SPOL DBMHX F" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sur?use_http=true"
        field="DBMHX_F" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/dbmlow.colors"
-       menuGroup="menu1" menuName="SPOL-DBMHX-F" />
+       menuGroup="menu1" menuName="DBMHX-F" />
 
 <Layer vis="off" type="MDV" name="SPOL DBMHX" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sur?use_http=true"
        field="DBMHX" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/dbmlow.colors"
-       menuGroup="menu1" menuName="SPOL-DBMHX" />
+       menuGroup="menu1" menuName="DBMHX" />
 
 <Layer vis="off" type="MDV" name="SPOL DBMVX F" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sur?use_http=true"
        field="DBMVX_F" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/dbmlow.colors"
-       menuGroup="menu1" menuName="SPOL-DBMVX-F" />
+       menuGroup="menu1" menuName="DBMVX-F" />
 
 <Layer vis="off" type="MDV" name="SPOL DBMVX" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sur?use_http=true"
        field="DBMVX" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/dbmlow.colors"
-       menuGroup="menu1" menuName="SPOL-DBMVX" />
+       menuGroup="menu1" menuName="DBMVX" />
 
 <Layer vis="off" type="MDV" name="SPOL CPA" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sur?use_http=true"
        field="CPA" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/cpa.colors"
-       menuGroup="menu1" menuName="SPOL-CPA" />
+       menuGroup="menu1" menuName="CPA" />
 
 <Layer vis="off" type="MDV" name="SPOL CMD" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sur?use_http=true"
        field="CMD" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/cmd.colors"
-       menuGroup="menu1" menuName="SPOL-CMD" />
+       menuGroup="menu1" menuName="CMD" />
 
 <Layer vis="off" type="MDV" name="SPOL CMD FLAG" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sur?use_http=true"
        field="CMD_FLAG" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/cmd_flag.colors"
-       menuGroup="menu1" menuName="SPOL-CMD-FLAG" />
+       menuGroup="menu1" menuName="CMD-FLAG" />
 
 <Layer vis="off" type="MDV" name="SPOL TDBZ" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sur?use_http=true"
        field="TDBZ" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/tdbz.colors"
-       menuGroup="menu1" menuName="SPOL-TDBZ" />
+       menuGroup="menu1" menuName="TDBZ" />
 
 <Layer vis="off" type="MDV" name="SPOL SPIN" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sur?use_http=true"
        field="SPIN" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/spin.colors"
-       menuGroup="menu1" menuName="SPOL-SPIN" />
+       menuGroup="menu1" menuName="SPIN" />
 
 <Layer vis="off" type="MDV" name="SPOL ZDR SDEV" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sur?use_http=true"
        field="ZDR_SDEV" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/sdzdr.colors"
-       menuGroup="menu1" menuName="SPOL-ZDR-SDEV" />
+       menuGroup="menu1" menuName="ZDR-SDEV" />
 
 <Layer vis="off" type="MDV" name="SPOL PHI SDEV" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sur?use_http=true"
        field="PHIDP_SDEV" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/sdphidp.colors"
-       menuGroup="menu1" menuName="SPOL-PHI-SDEV" />
+       menuGroup="menu1" menuName="PHI-SDEV" />
 
 <Layer vis="off" type="MDV" name="SPOL CLUT" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sur?use_http=true"
        field="CLUT" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/dbz.colors"
-       menuGroup="menu1" menuName="SPOL-CLUT" />
+       menuGroup="menu1" menuName="CLUT" />
 
 <Layer vis="off" type="MDV" name="SPOL PID" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/partrain/sband/sur?use_http=true"
        field="PID" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/pid.colors"
-       menuGroup="menu1" menuName="SPOL-PID" />
+       menuGroup="menu1" menuName="PID" />
 
 <Layer vis="off" type="MDV" name="SPOL PID TEMP" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/partrain/sband/sur?use_http=true"
        field="TEMP_FOR_PID" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/temp.colors"
-       menuGroup="menu1" menuName="SPOL-PID-TEMP" />
+       menuGroup="menu1" menuName="PID-TEMP" />
 
 <Layer vis="off" type="MDV" name="SPOL DBZ FOR RATE" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/partrain/sband/sur?use_http=true"
        field="DBZ_FOR_RATE" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/dbz.colors"
-       menuGroup="menu1" menuName="SPOL-DBZ-FOR-RATE" />
+       menuGroup="menu1" menuName="DBZ-FOR-RATE" />
 
 <Layer vis="off" type="MDV" name="SPOL ZDR FOR RATE" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/partrain/sband/sur?use_http=true"
        field="ZDR_FOR_RATE" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/zdr.colors"
-       menuGroup="menu1" menuName="SPOL-ZDR-FOR-RATE" />
+       menuGroup="menu1" menuName="ZDR-FOR-RATE" />
 
 <Layer vis="off" type="MDV" name="SPOL KDP FOR RATE" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/partrain/sband/sur?use_http=true"
        field="KDP_FOR_RATE" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/kdp_sband.colors"
-       menuGroup="menu1" menuName="SPOL-KDP-FOR-RATE" />
+       menuGroup="menu1" menuName="KDP-FOR-RATE" />
 
 <Layer vis="off" type="MDV" name="SPOL KDP2" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/partrain/sband/sur?use_http=true"
        field="KDP" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/kdp_sband.colors"
-       menuGroup="menu1" menuName="SPOL-KDP2" />
+       menuGroup="menu1" menuName="KDP2" />
 
 <Layer vis="off" type="MDV" name="SPOL RATE ZZDR" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/partrain/sband/sur?use_http=true"
        field="RATE_Z_ZDR" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/precip_rate.colors"
-       menuGroup="menu1" menuName="SPOL-RATE-ZZDR" />
+       menuGroup="menu1" menuName="RATE-ZZDR" />
 
 <Layer vis="off" type="MDV" name="SPOL RATE ZH" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/partrain/sband/sur?use_http=true"
        field="RATE_ZH" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/precip_rate.colors"
-       menuGroup="menu1" menuName="SPOL-RATE-ZH" />
+       menuGroup="menu1" menuName="RATE-ZH" />
 
 <Layer vis="off" type="MDV" name="SPOL RATE ZH SNOW" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/partrain/sband/sur?use_http=true"
        field="RATE_ZH_SNOW" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/precip_rate.colors"
-       menuGroup="menu1" menuName="SPOL-RATE-ZH-SNOW" />
+       menuGroup="menu1" menuName="RATE-ZH-SNOW" />
 
 <Layer vis="off" type="MDV" name="SPOL RATE KDP" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/partrain/sband/sur?use_http=true"
        field="RATE_KDP" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/precip_rate.colors"
-       menuGroup="menu1" menuName="SPOL-RATE-KDP" />
+       menuGroup="menu1" menuName="RATE-KDP" />
 
 <Layer vis="off" type="MDV" name="SPOL RATE KZDR" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/partrain/sband/sur?use_http=true"
        field="RATE_KDP_ZDR" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/precip_rate.colors"
-       menuGroup="menu1" menuName="SPOL-RATE-KZDR" />
+       menuGroup="menu1" menuName="RATE-KZDR" />
 
 <Layer vis="off" type="MDV" name="SPOL RATE HYBRID" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/partrain/sband/sur?use_http=true"
        field="RATE_HYBRID" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/precip_rate.colors"
-       menuGroup="menu1" menuName="SPOL-RATE-HYBRID" />
+       menuGroup="menu1" menuName="RATE-HYBRID" />
 
 <Layer vis="off" type="MDV" name="SPOL RATE PID" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/partrain/sband/sur?use_http=true"
        field="RATE_PID" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/precip_rate.colors"
-       menuGroup="menu1" menuName="SPOL-RATE-PID" />
+       menuGroup="menu1" menuName="RATE-PID" />
 
 <Layer vis="off" type="MDV" name="SPOL RATE HIDRO" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/partrain/sband/sur?use_http=true"
        field="RATE_HIDRO" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/precip_rate.colors"
-       menuGroup="menu1" menuName="SPOL-RATE-HIDRO" />
+       menuGroup="menu1" menuName="RATE-HIDRO" />
 
 <Layer vis="off" type="MDV" name="SPOL RATE BRINGI" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/partrain/sband/sur?use_http=true"
        field="RATE_BRINGI" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/precip_rate.colors"
-       menuGroup="menu1" menuName="SPOL-RATE-BRINGI" />
+       menuGroup="menu1" menuName="RATE-BRINGI" />
 
 <Layer vis="off" type="MDV" name="REFR CAL STRENGTH" location="mdvp::refract_calib//front.eol.ucar.edu:8080:eolbase/mdv/refract/calib?use_http=true"
        field="strength" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/power_AIQ.colors"
-       menuGroup="menu5" menuName="REFR-CAL-STRENGTH" />
+       menuGroup="menu5" menuName="CAL-STRENGTH" />
 
 <Layer vis="off" type="MDV" name="REFR CAL AV I" location="mdvp::refract_calib//front.eol.ucar.edu:8080:eolbase/mdv/refract/calib?use_http=true"
        field="av_i" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/power_AIQ.colors"
-       menuGroup="menu5" menuName="REFR-CAL-AV-I" />
+       menuGroup="menu5" menuName="CAL-AV-I" />
 
 <Layer vis="off" type="MDV" name="REFR CAL AV Q" location="mdvp::refract_calib//front.eol.ucar.edu:8080:eolbase/mdv/refract/calib?use_http=true"
        field="av_q" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/power_AIQ.colors"
-       menuGroup="menu5" menuName="REFR-CAL-AV-Q" />
+       menuGroup="menu5" menuName="CAL-AV-Q" />
 
 <Layer vis="off" type="MDV" name="REFR CAL PHASE ERR" location="mdvp::refract_calib//front.eol.ucar.edu:8080:eolbase/mdv/refract/calib?use_http=true"
        field="phase_er" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/power_AIQ.colors"
-       menuGroup="menu5" menuName="REFR-CAL-PHASE-ERR" />
+       menuGroup="menu5" menuName="CAL-PHASE-ERR" />
 
 <Layer vis="off" type="MDV" name="REFR CAL QUALOTY" location="mdvp::refract_calib//front.eol.ucar.edu:8080:eolbase/mdv/refract/calib?use_http=true"
        field="quality" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/power_AIQ.colors"
-       menuGroup="menu5" menuName="REFR-CAL-QUALITY" />
+       menuGroup="menu5" menuName="CAL-QUALITY" />
 
 <Layer vis="off" type="MDV" name="REFR CAL NCP" location="mdvp::refract_calib//front.eol.ucar.edu:8080:eolbase/mdv/refract/calib?use_http=true"
        field="ncp" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/ncp.colors"
-       menuGroup="menu5" menuName="REFR-CAL-NCP" />
+       menuGroup="menu5" menuName="CAL-NCP" />
 
 <Layer vis="off" type="MDV" name="REFR MEAN I" location="mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/refract/spol_refr?use_http=true"
        field="MeanI" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/iqz.colors"
-       menuGroup="menu5" menuName="REFR-MEAN-I" />
+       menuGroup="menu5" menuName="MEAN-I" />
 
 <Layer vis="off" type="MDV" name="REFR MEAN Q" location="mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/refract/spol_refr?use_http=true"
        field="MeanI" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/iqz.colors"
-       menuGroup="menu5" menuName="REFR-MEAN-Q" />
+       menuGroup="menu5" menuName="MEAN-Q" />
 
 <Layer vis="off" type="MDV" name="REFR CPA" location="mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/refract/spol_refr?use_http=true"
        field="CPA" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/cpa.colors"
-       menuGroup="menu5" menuName="REFR-CPA" />
+       menuGroup="menu5" menuName="CPA" />
 
 <Layer vis="off" type="MDV" name="REFR SNR" location="mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/refract/spol_refr?use_http=true"
        field="SNRHC" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/cpa.colors"
-       menuGroup="menu5" menuName="REFR-SNR" />
+       menuGroup="menu5" menuName="SNR" />
 
 <Layer vis="off" type="MDV" name="REFR N" location="mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/refract/spol_refr?use_http=true"
        field="N" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/refrac_N_fabry2.colors"
-       menuGroup="menu5" menuName="REFR-N" />
+       menuGroup="menu5" menuName="N" />
 
 <Layer vis="off" type="MDV" name="REFR DELTA N" location="mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/refract/spol_refr?use_http=true"
        field="DELTA_N" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/delta_N.colors"
-       menuGroup="menu5" menuName="REFR-DELTA-N" />
+       menuGroup="menu5" menuName="DELTA-N" />
 
 <Layer vis="off" type="MDV" name="REFR SIGMA N" location="mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/refract/spol_refr?use_http=true"
        field="SIGMA_N" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/refrac_sigmaN.colors"
-       menuGroup="menu5" menuName="REFR-SIGMA-N" />
+       menuGroup="menu5" menuName="SIGMA-N" />
 
 <Layer vis="off" type="MDV" name="REFR SIGMA DN" location="mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/refract/spol_refr?use_http=true"
        field="SIGMA_DN" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/refrac_sigmaN.colors"
-       menuGroup="menu5" menuName="REFR-SIGMA-DN" />
+       menuGroup="menu5" menuName="SIGMA-DN" />
 
 <Layer vis="off" type="MDV" name="KBAND DBZ" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/kband/sur?use_http=true"
        field="DBZ" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/dbz.colors"
-       menuGroup="menu2" menuName="KBAND-DBZ" />
+       menuGroup="menu2" menuName="DBZ" />
 
 <Layer vis="off" type="MDV" name="KBAND VEL" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/kband/sur?use_http=true"
        field="VEL" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/vel_k.colors"
-       menuGroup="menu2" menuName="KBAND-VEL" />
+       menuGroup="menu2" menuName="VEL" />
 
 <Layer vis="off" type="MDV" name="KBAND WIDTH" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/kband/sur?use_http=true"
        field="WIDTH" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/width_k.colors"
-       menuGroup="menu2" menuName="KBAND-WIDTH" />
+       menuGroup="menu2" menuName="WIDTH" />
 
 <Layer vis="off" type="MDV" name="KBAND LDRH" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/kband/sur?use_http=true"
        field="LDRH" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/ldr.colors"
-       menuGroup="menu2" menuName="KBAND-LDRH" />
+       menuGroup="menu2" menuName="LDRH" />
 
 <Layer vis="off" type="MDV" name="KBAND SNRHC" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/kband/sur?use_http=true"
        field="SNRHC" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/snr.colors"
-       menuGroup="menu2" menuName="KBAND-SNRHC" />
+       menuGroup="menu2" menuName="SNRHC" />
 
 <Layer vis="off" type="MDV" name="KBAND SNRVX" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/kband/sur?use_http=true"
        field="SNRVX" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/snr.colors"
-       menuGroup="menu2" menuName="KBAND-SNRVX" />
+       menuGroup="menu2" menuName="SNRVX" />
 
 <Layer vis="off" type="MDV" name="KBAND DBMHC" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/kband/sur?use_http=true"
        field="DBMHC" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/dbmlow.colors"
-       menuGroup="menu2" menuName="KBAND-DBMHC" />
+       menuGroup="menu2" menuName="DBMHC" />
 
 <Layer vis="off" type="MDV" name="KBAND DBMVX" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/kband/sur?use_http=true"
        field="DBMVX" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/dbmlow.colors"
-       menuGroup="menu2" menuName="KBAND-DBMVX" />
+       menuGroup="menu2" menuName="DBMVX" />
 
 <Layer vis="off" type="MDV" name="KBAND CPA" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/kband/sur?use_http=true"
        field="CPA" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/cpa.colors"
-       menuGroup="menu2" menuName="KBAND-CPA" />
+       menuGroup="menu2" menuName="CPA" />
 
 <Layer vis="off" type="MDV" name="KBAND NCP" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/kband/sur?use_http=true"
        field="NCP" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/ncp.colors"
-       menuGroup="menu2" menuName="KBAND-NCP" />
+       menuGroup="menu2" menuName="NCP" />
 
 <Layer vis="off" type="MDV" name="SPSEC DBZ F" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sec?use_http=true"
        field="DBZ_F" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/dbz.colors"
-       menuGroup="menu10" menuName="SPSEC-DBZ-F" />
+       menuGroup="menu10" menuName="DBZ-F" />
 
 <Layer vis="off" type="MDV" name="SPSEC DBZ" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sec?use_http=true"
        field="DBZ" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/dbz.colors"
-       menuGroup="menu10" menuName="SPSEC-DBZ" />
+       menuGroup="menu10" menuName="DBZ" />
 
 <Layer vis="off" type="MDV" name="SPSEC DBZ BRAGG F" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sec?use_http=true"
        field="DBZ_F" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/dbz_bragg.colors"
-       menuGroup="menu10" menuName="SPSEC-DBZ-BRAGG-F" />
+       menuGroup="menu10" menuName="DBZ-BRAGG-F" />
 
 <Layer vis="off" type="MDV" name="SPSEC DBZ BRAGG" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sec?use_http=true"
        field="DBZ" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/dbz_bragg.colors"
-       menuGroup="menu10" menuName="SPSEC-DBZ-BRAGG" />
+       menuGroup="menu10" menuName="DBZ-BRAGG" />
 
 <Layer vis="off" type="MDV" name="SPSEC VEL F" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sec?use_http=true"
        field="VEL_F" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/vel.colors"
-       menuGroup="menu10" menuName="SPSEC-VEL-F" />
+       menuGroup="menu10" menuName="VEL-F" />
 
 <Layer vis="off" type="MDV" name="SPSEC VEL" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sec?use_http=true"
        field="VEL" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/vel.colors"
-       menuGroup="menu10" menuName="SPSEC-VEL" />
+       menuGroup="menu10" menuName="VEL" />
 
 <Layer vis="off" type="MDV" name="SPSEC VELALT F" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sec?use_http=true"
        field="VEL_ALT_F" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/vel.colors"
-       menuGroup="menu10" menuName="SPSEC-VELALT-F" />
+       menuGroup="menu10" menuName="VELALT-F" />
 
 <Layer vis="off" type="MDV" name="SPSEC VELALT" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sec?use_http=true"
        field="VEL_ALT" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/vel.colors"
-       menuGroup="menu10" menuName="SPSEC-VELALT" />
+       menuGroup="menu10" menuName="VELALT" />
 
 <Layer vis="off" type="MDV" name="SPSEC VEL HV F" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sec?use_http=true"
        field="VEL_HV_F" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/vel.colors"
-       menuGroup="menu10" menuName="SPSEC-VEL-HV-F" />
+       menuGroup="menu10" menuName="VEL-HV-F" />
 
 <Layer vis="off" type="MDV" name="SPSEC VEL HV" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sec?use_http=true"
        field="VEL_HV" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/vel.colors"
-       menuGroup="menu10" menuName="SPSEC-VEL-HV" />
+       menuGroup="menu10" menuName="VEL-HV" />
 
 <Layer vis="off" type="MDV" name="SPSEC WIDTH F" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sec?use_http=true"
        field="WIDTH_F" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/width.colors"
-       menuGroup="menu10" menuName="SPSEC-WIDTH-F" />
+       menuGroup="menu10" menuName="WIDTH-F" />
 
 <Layer vis="off" type="MDV" name="SPSEC WIDTH" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sec?use_http=true"
        field="WIDTH" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/width.colors"
-       menuGroup="menu10" menuName="SPSEC-WIDTH" />
+       menuGroup="menu10" menuName="WIDTH" />
 
 <Layer vis="off" type="MDV" name="SPSEC PHIDP F" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sec?use_http=true"
        field="PHIDP_F" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/phidp_alt.colors"
-       menuGroup="menu10" menuName="SPSEC-PHIDP-F" />
+       menuGroup="menu10" menuName="PHIDP-F" />
 
 <Layer vis="off" type="MDV" name="SPSEC PHIDP" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sec?use_http=true"
        field="PHIDP" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/phidp_alt.colors"
-       menuGroup="menu10" menuName="SPSEC-PHIDP" />
+       menuGroup="menu10" menuName="PHIDP" />
 
 <Layer vis="off" type="MDV" name="SPSEC PHIDPSIM F" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sec?use_http=true"
        field="PHIDP0_F" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/phidp.colors"
-       menuGroup="menu10" menuName="SPSEC-PHIDPSIM-F" />
+       menuGroup="menu10" menuName="PHIDPSIM-F" />
 
 <Layer vis="off" type="MDV" name="SPSEC PHIDPSIM" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sec?use_http=true"
        field="PHIDP0" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/phidp.colors"
-       menuGroup="menu10" menuName="SPSEC-PHIDP-SIM" />
+       menuGroup="menu10" menuName="PHIDP-SIM" />
 
 <Layer vis="off" type="MDV" name="SPSEC ZDR F" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sec?use_http=true"
        field="ZDR_F" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/zdr.colors"
-       menuGroup="menu10" menuName="SPSEC-ZDR-F" />
+       menuGroup="menu10" menuName="ZDR-F" />
 
 <Layer vis="off" type="MDV" name="SPSEC ZDR" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sec?use_http=true"
        field="ZDR" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/zdr.colors"
-       menuGroup="menu10" menuName="SPSEC-ZDR" />
+       menuGroup="menu10" menuName="ZDR" />
 
 <Layer vis="off" type="MDV" name="SPSEC ZDRM F" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sec?use_http=true"
        field="ZDRM_F" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/zdr.colors"
-       menuGroup="menu10" menuName="SPSEC-ZDRM-F" />
+       menuGroup="menu10" menuName="ZDRM-F" />
 
 <Layer vis="off" type="MDV" name="SPSEC ZDRM" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sec?use_http=true"
        field="ZDRM" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/zdr.colors"
-       menuGroup="menu10" menuName="SPSEC-ZDRM" />
+       menuGroup="menu10" menuName="ZDRM" />
 
 <Layer vis="off" type="MDV" name="SPSEC ZDR BIAS F" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sec?use_http=true"
        field="ZDR_BIAS_F" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/zdr_bias.colors"
-       menuGroup="menu10" menuName="SPSEC-ZDR-BIAS-F" />
+       menuGroup="menu10" menuName="ZDR-BIAS-F" />
 
 <Layer vis="off" type="MDV" name="SPSEC ZDR BIAS" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sec?use_http=true"
        field="ZDR_BIAS" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/zdr_bias.colors"
-       menuGroup="menu10" menuName="SPSEC-ZDR-BIAS" />
+       menuGroup="menu10" menuName="ZDR-BIAS" />
 
 <Layer vis="off" type="MDV" name="SPSEC PHIDP0 F" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sec?use_http=true"
        field="PHIDP0_F" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/phidp_alt.colors"
-       menuGroup="menu10" menuName="SPSEC-PHIDP0-F" />
+       menuGroup="menu10" menuName="PHIDP0-F" />
 
 <Layer vis="off" type="MDV" name="SPSEC PHIDP0" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sec?use_http=true"
        field="PHIDP0" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/phidp_alt.colors"
-       menuGroup="menu10" menuName="SPSEC-PHIDP0" />
+       menuGroup="menu10" menuName="PHIDP0" />
 
 <Layer vis="off" type="MDV" name="SPSEC LDRH F" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sec?use_http=true"
        field="LDRH_F" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/ldr.colors"
-       menuGroup="menu10" menuName="SPSEC-LDRH-F" />
+       menuGroup="menu10" menuName="LDRH-F" />
 
 <Layer vis="off" type="MDV" name="SPSEC LDRH" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sec?use_http=true"
        field="LDRH" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/ldr.colors"
-       menuGroup="menu10" menuName="SPSEC-LDRH" />
+       menuGroup="menu10" menuName="LDRH" />
 
 <Layer vis="off" type="MDV" name="SPSEC LDRV F" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sec?use_http=true"
        field="LDRV_F" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/ldr.colors"
-       menuGroup="menu10" menuName="SPSEC-LDRV-F" />
+       menuGroup="menu10" menuName="LDRV-F" />
 
 <Layer vis="off" type="MDV" name="SPSEC LDRV" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sec?use_http=true"
        field="LDRV" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/ldr.colors"
-       menuGroup="menu10" menuName="SPSEC-LDRV" />
+       menuGroup="menu10" menuName="LDRV" />
 
 <Layer vis="off" type="MDV" name="SPSEC LDR MEAN" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sec?use_http=true"
        field="LDR_MEAN" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/ldr.colors"
-       menuGroup="menu10" menuName="SPSEC-LDR-MEAN" />
+       menuGroup="menu10" menuName="LDR-MEAN" />
 
 <Layer vis="off" type="MDV" name="SPSEC LDR MEAN F" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sec?use_http=true"
        field="LDR_MEAN_F" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/ldr.colors"
-       menuGroup="menu10" menuName="SPSEC-LDR-MEAN-F" />
+       menuGroup="menu10" menuName="LDR-MEAN-F" />
 
 <Layer vis="off" type="MDV" name="SPSEC LDR DIFF" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sec?use_http=true"
        field="LDR_DIFF" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/zdr.colors"
-       menuGroup="menu10" menuName="SPSEC-LDR-DIFF" />
+       menuGroup="menu10" menuName="LDR-DIFF" />
 
 <Layer vis="off" type="MDV" name="SPSEC LDR DIFF F" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sec?use_http=true"
        field="LDR_DIFF_F" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/zdr.colors"
-       menuGroup="menu10" menuName="SPSEC-LDR-DIFF-F" />
+       menuGroup="menu10" menuName="LDR-DIFF-F" />
 
 <Layer vis="off" type="MDV" name="SPSEC NCP" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sec?use_http=true"
        field="NCP" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/ncp.colors"
-       menuGroup="menu10" menuName="SPSEC-NCP" />
+       menuGroup="menu10" menuName="NCP" />
 
 <Layer vis="off" type="MDV" name="SPSEC NCP F" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sec?use_http=true"
        field="NCP_F" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/ncp.colors"
-       menuGroup="menu10" menuName="SPSEC-NCP-F" />
+       menuGroup="menu10" menuName="NCP-F" />
 
 <Layer vis="off" type="MDV" name="SPSEC KDP F" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sec?use_http=true"
        field="KDP_F" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/kdp_sband.colors"
-       menuGroup="menu10" menuName="SPSEC-KDP-F" />
+       menuGroup="menu10" menuName="KDP-F" />
 
 <Layer vis="off" type="MDV" name="SPSEC KDP" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sec?use_http=true"
        field="KDP" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/kdp_sband.colors"
-       menuGroup="menu10" menuName="SPSEC-KDP" />
+       menuGroup="menu10" menuName="KDP" />
 
 <Layer vis="off" type="MDV" name="SPSEC RHOHV F" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sec?use_http=true"
        field="RHOHV_F" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/rhohv.colors"
-       menuGroup="menu10" menuName="SPSEC-RHOHV-F" />
+       menuGroup="menu10" menuName="RHOHV-F" />
 
 <Layer vis="off" type="MDV" name="SPSEC RHOHV" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sec?use_http=true"
        field="RHOHV" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/rhohv.colors"
-       menuGroup="menu10" menuName="SPSEC-RHOHV" />
+       menuGroup="menu10" menuName="RHOHV" />
 
 <Layer vis="off" type="MDV" name="SPSEC RHONNC F" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sec?use_http=true"
        field="RHOHV_NNC_F" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/rhohv.colors"
-       menuGroup="menu10" menuName="SPSEC-RHONNC-F" />
+       menuGroup="menu10" menuName="RHONNC-F" />
 
 <Layer vis="off" type="MDV" name="SPSEC RHONNC" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sec?use_http=true"
        field="RHOHV_NNC" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/rhohv.colors"
-       menuGroup="menu10" menuName="SPSEC-RHONNC" />
+       menuGroup="menu10" menuName="RHONNC" />
 
 <Layer vis="off" type="MDV" name="SPSEC RHO HC VX" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sec?use_http=true"
        field="RHO_HC_VX" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/rho_cross.colors"
-       menuGroup="menu10" menuName="SPSEC-RHO-HC-VX" />
+       menuGroup="menu10" menuName="RHO-HC-VX" />
 
 <Layer vis="off" type="MDV" name="SPSEC RHO VC HX" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sec?use_http=true"
        field="RHO_VC_HX" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/rho_cross.colors"
-       menuGroup="menu10" menuName="SPSEC-RHO-VC-HX" />
+       menuGroup="menu10" menuName="RHO-VC-HX" />
 
 <Layer vis="off" type="MDV" name="SPSEC RHO VX HX" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sec?use_http=true"
        field="RHO_VX_HX" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/rho_cross.colors"
-       menuGroup="menu10" menuName="SPSEC-RHO-VX-HX" />
+       menuGroup="menu10" menuName="RHO-VX-HX" />
 
 <Layer vis="off" type="MDV" name="SPSEC NOISE BIAS" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sec?use_http=true"
        field="NOISE_BIAS" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/noise_bias.colors"
-       menuGroup="menu10" menuName="SPSEC-NOISE-BIAS" />
+       menuGroup="menu10" menuName="NOISE-BIAS" />
 
 <Layer vis="off" type="MDV" name="SPSEC SNRHC F" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sec?use_http=true"
        field="SNRHC_F" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/snr.colors"
-       menuGroup="menu10" menuName="SPSEC-SNRHC-F" />
+       menuGroup="menu10" menuName="SNRHC-F" />
 
 <Layer vis="off" type="MDV" name="SPSEC SNRHC" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sec?use_http=true"
        field="SNRHC" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/snr.colors"
-       menuGroup="menu10" menuName="SPSEC-SNRHC" />
+       menuGroup="menu10" menuName="SNRHC" />
 
 <Layer vis="off" type="MDV" name="SPSEC SNRVC F" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sec?use_http=true"
        field="SNRVC_F" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/snr.colors"
-       menuGroup="menu10" menuName="SPSEC-SNRVC-F" />
+       menuGroup="menu10" menuName="SNRVC-F" />
 
 <Layer vis="off" type="MDV" name="SPSEC SNRVC" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sec?use_http=true"
        field="SNRVC" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/snr.colors"
-       menuGroup="menu10" menuName="SPSEC-SNRVC" />
+       menuGroup="menu10" menuName="SNRVC" />
 
 <Layer vis="off" type="MDV" name="SPSEC SNRHX F" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sec?use_http=true"
        field="SNRHX_F" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/snr.colors"
-       menuGroup="menu10" menuName="SPSEC-SNRHX-F" />
+       menuGroup="menu10" menuName="SNRHX-F" />
 
 <Layer vis="off" type="MDV" name="SPSEC SNRHX" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sec?use_http=true"
        field="SNRHX" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/snr.colors"
-       menuGroup="menu10" menuName="SPSEC-SNRHX" />
+       menuGroup="menu10" menuName="SNRHX" />
 
 <Layer vis="off" type="MDV" name="SPSEC SNRVX F" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sec?use_http=true"
        field="SNRVX_F" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/snr.colors"
-       menuGroup="menu10" menuName="SPSEC-SNRVX-F" />
+       menuGroup="menu10" menuName="SNRVX-F" />
 
 <Layer vis="off" type="MDV" name="SPSEC SNRVX" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sec?use_http=true"
        field="SNRVX" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/snr.colors"
-       menuGroup="menu10" menuName="SPSEC-SNRVX" />
+       menuGroup="menu10" menuName="SNRVX" />
 
 <Layer vis="off" type="MDV" name="SPSEC DBMHC F" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sec?use_http=true"
        field="DBMHC_F" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/dbmlow.colors"
-       menuGroup="menu10" menuName="SPSEC-DBMHC-F" />
+       menuGroup="menu10" menuName="DBMHC-F" />
 
 <Layer vis="off" type="MDV" name="SPSEC DBMHC" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sec?use_http=true"
        field="DBMHC" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/dbmlow.colors"
-       menuGroup="menu10" menuName="SPSEC-DBMHC" />
+       menuGroup="menu10" menuName="DBMHC" />
 
 <Layer vis="off" type="MDV" name="SPSEC DBMVC F" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sec?use_http=true"
        field="DBMVC_F" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/dbmlow.colors"
-       menuGroup="menu10" menuName="SPSEC-DBMVC-F" />
+       menuGroup="menu10" menuName="DBMVC-F" />
 
 <Layer vis="off" type="MDV" name="SPSEC DBMVC" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sec?use_http=true"
        field="DBMVC" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/dbmlow.colors"
-       menuGroup="menu10" menuName="SPSEC-DBMVC" />
+       menuGroup="menu10" menuName="DBMVC" />
 
 <Layer vis="off" type="MDV" name="SPSEC DBMHX F" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sec?use_http=true"
        field="DBMHX_F" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/dbmlow.colors"
-       menuGroup="menu10" menuName="SPSEC-DBMHX-F" />
+       menuGroup="menu10" menuName="DBMHX-F" />
 
 <Layer vis="off" type="MDV" name="SPSEC DBMHX" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sec?use_http=true"
        field="DBMHX" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/dbmlow.colors"
-       menuGroup="menu10" menuName="SPSEC-DBMHX" />
+       menuGroup="menu10" menuName="DBMHX" />
 
 <Layer vis="off" type="MDV" name="SPSEC DBMVX F" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sec?use_http=true"
        field="DBMVX_F" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/dbmlow.colors"
-       menuGroup="menu10" menuName="SPSEC-DBMVX-F" />
+       menuGroup="menu10" menuName="DBMVX-F" />
 
 <Layer vis="off" type="MDV" name="SPSEC DBMVX" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sec?use_http=true"
        field="DBMVX" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/dbmlow.colors"
-       menuGroup="menu10" menuName="SPSEC-DBMVX" />
+       menuGroup="menu10" menuName="DBMVX" />
 
 <Layer vis="off" type="MDV" name="SPSEC CPA" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sec?use_http=true"
        field="CPA" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/cpa.colors"
-       menuGroup="menu10" menuName="SPSEC-CPA" />
+       menuGroup="menu10" menuName="CPA" />
 
 <Layer vis="off" type="MDV" name="SPSEC CMD" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sec?use_http=true"
        field="CMD" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/cmd.colors"
-       menuGroup="menu10" menuName="SPSEC-CMD" />
+       menuGroup="menu10" menuName="CMD" />
 
 <Layer vis="off" type="MDV" name="SPSEC CMD FLAG" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sec?use_http=true"
        field="CMD_FLAG" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/cmd_flag.colors"
-       menuGroup="menu10" menuName="SPSEC-CMD-FLAG" />
+       menuGroup="menu10" menuName="CMD-FLAG" />
 
 <Layer vis="off" type="MDV" name="SPSEC TDBZ" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sec?use_http=true"
        field="TDBZ" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/tdbz.colors"
-       menuGroup="menu10" menuName="SPSEC-TDBZ" />
+       menuGroup="menu10" menuName="TDBZ" />
 
 <Layer vis="off" type="MDV" name="SPSEC SPIN" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sec?use_http=true"
        field="SPIN" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/spin.colors"
-       menuGroup="menu10" menuName="SPSEC-SPIN" />
+       menuGroup="menu10" menuName="SPIN" />
 
 <Layer vis="off" type="MDV" name="SPSEC ZDR SDEV" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sec?use_http=true"
        field="ZDR_SDEV" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/sdzdr.colors"
-       menuGroup="menu10" menuName="SPSEC-ZDR-SDEV" />
+       menuGroup="menu10" menuName="ZDR-SDEV" />
 
 <Layer vis="off" type="MDV" name="SPSEC PHI SDEV" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sec?use_http=true"
        field="PHIDP_SDEV" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/sdphidp.colors"
-       menuGroup="menu10" menuName="SPSEC-PHI-SDEV" />
+       menuGroup="menu10" menuName="PHI-SDEV" />
 
 <Layer vis="off" type="MDV" name="SPSEC CLUT" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sec?use_http=true"
        field="CLUT" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/dbz.colors"
-       menuGroup="menu10" menuName="SPSEC-CLUT" />
+       menuGroup="menu10" menuName="CLUT" />
 
 <Layer vis="off" type="MDV" name="SPSEC PID" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/partrain/sband/sec?use_http=true"
        field="PID" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/pid.colors"
-       menuGroup="menu10" menuName="SPSEC-PID" />
+       menuGroup="menu10" menuName="PID" />
 
 <Layer vis="off" type="MDV" name="SPSEC PID TEMP" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/partrain/sband/sec?use_http=true"
        field="TEMP_FOR_PID" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/temp.colors"
-       menuGroup="menu10" menuName="SPSEC-PID-TEMP" />
+       menuGroup="menu10" menuName="PID-TEMP" />
 
 <Layer vis="off" type="MDV" name="SPSEC DBZ FOR RATE" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/partrain/sband/sec?use_http=true"
        field="DBZ_FOR_RATE" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/dbz.colors"
-       menuGroup="menu10" menuName="SPSEC-DBZ-FOR-RATE" />
+       menuGroup="menu10" menuName="DBZ-FOR-RATE" />
 
 <Layer vis="off" type="MDV" name="SPSEC ZDR FOR RATE" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/partrain/sband/sec?use_http=true"
        field="ZDR_FOR_RATE" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/zdr.colors"
-       menuGroup="menu10" menuName="SPSEC-ZDR-FOR-RATE" />
+       menuGroup="menu10" menuName="ZDR-FOR-RATE" />
 
 <Layer vis="off" type="MDV" name="SPSEC KDP FOR RATE" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/partrain/sband/sec?use_http=true"
        field="KDP_FOR_RATE" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/kdp_sband.colors"
-       menuGroup="menu10" menuName="SPSEC-KDP-FOR-RATE" />
+       menuGroup="menu10" menuName="KDP-FOR-RATE" />
 
 <Layer vis="off" type="MDV" name="SPSEC KDP2" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/partrain/sband/sec?use_http=true"
        field="KDP" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/kdp_sband.colors"
-       menuGroup="menu10" menuName="SPSEC-KDP2" />
+       menuGroup="menu10" menuName="KDP2" />
 
 <Layer vis="off" type="MDV" name="SPSEC RATE ZZDR" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/partrain/sband/sec?use_http=true"
        field="RATE_Z_ZDR" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/precip_rate.colors"
-       menuGroup="menu10" menuName="SPSEC-RATE-ZZDR" />
+       menuGroup="menu10" menuName="RATE-ZZDR" />
 
 <Layer vis="off" type="MDV" name="SPSEC RATE ZH" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/partrain/sband/sec?use_http=true"
        field="RATE_ZH" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/precip_rate.colors"
-       menuGroup="menu10" menuName="SPSEC-RATE-ZH" />
+       menuGroup="menu10" menuName="RATE-ZH" />
 
 <Layer vis="off" type="MDV" name="SPSEC RATE ZH SNOW" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/partrain/sband/sec?use_http=true"
        field="RATE_ZH_SNOW" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/precip_rate.colors"
-       menuGroup="menu10" menuName="SPSEC-RATE-ZH-SNOW" />
+       menuGroup="menu10" menuName="RATE-ZH-SNOW" />
 
 <Layer vis="off" type="MDV" name="SPSEC RATE KDP" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/partrain/sband/sec?use_http=true"
        field="RATE_KDP" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/precip_rate.colors"
-       menuGroup="menu10" menuName="SPSEC-RATE-KDP" />
+       menuGroup="menu10" menuName="RATE-KDP" />
 
 <Layer vis="off" type="MDV" name="SPSEC RATE KZDR" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/partrain/sband/sec?use_http=true"
        field="RATE_KDP_ZDR" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/precip_rate.colors"
-       menuGroup="menu10" menuName="SPSEC-RATE-KZDR" />
+       menuGroup="menu10" menuName="RATE-KZDR" />
 
 <Layer vis="off" type="MDV" name="SPSEC RATE HYBRID" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/partrain/sband/sec?use_http=true"
        field="RATE_HYBRID" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/precip_rate.colors"
-       menuGroup="menu10" menuName="SPSEC-RATE-HYBRID" />
+       menuGroup="menu10" menuName="RATE-HYBRID" />
 
 <Layer vis="off" type="MDV" name="SPSEC RATE PID" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/partrain/sband/sec?use_http=true"
        field="RATE_PID" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/precip_rate.colors"
-       menuGroup="menu10" menuName="SPSEC-RATE-PID" />
+       menuGroup="menu10" menuName="RATE-PID" />
 
 <Layer vis="off" type="MDV" name="SPSEC RATE HIDRO" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/partrain/sband/sec?use_http=true"
        field="RATE_HIDRO" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/precip_rate.colors"
-       menuGroup="menu10" menuName="SPSEC-RATE-HIDRO" />
+       menuGroup="menu10" menuName="RATE-HIDRO" />
 
 <Layer vis="off" type="MDV" name="SPSEC RATE BRINGI" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/partrain/sband/sec?use_http=true"
        field="RATE_BRINGI" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/precip_rate.colors"
-       menuGroup="menu10" menuName="SPSEC-RATE-BRINGI" />
+       menuGroup="menu10" menuName="RATE-BRINGI" />
 
 <Layer vis="off" type="MDV" name="NEX KFTG DBZ" location="mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/kftg/moments?use_http=true"
        field="DBZ" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/dbz.colors"
