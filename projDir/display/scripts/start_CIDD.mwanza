@@ -25,7 +25,7 @@ xset fp= /usr/X11R6/lib/X11/fonts/misc/,/usr/X11R6/lib/X11/fonts/75dpi/,/usr/X11
 
 # start CIDD
 
-CIDD -font fixed -p http://front.eol.ucar.edu/displayParams/CIDD.mwanza >& /dev/null &
+/opt/local/lrose/bin/CIDD -font fixed -p http://front.eol.ucar.edu/displayParams/CIDD.mwanza >& /dev/null &
 
 
 
