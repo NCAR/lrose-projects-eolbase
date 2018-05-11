@@ -16,6 +16,7 @@ import matplotlib.mlab as mlab
 import matplotlib.pyplot as plt
 import matplotlib.mlab as mlab
 from optparse import OptionParser
+import subprocess
 
 def main():
 
@@ -33,7 +34,7 @@ def main():
                       help='Set debugging on')
     parser.add_option('--ice_file',
                       dest='iceFile',
-                      default='../data/pecan/ZdrmInIce.txt',
+                      default='/scr/rain2/rsfdata/projects/pecan/zdr_in_ice/qcv3/rhi/ZdrmInIce_june.txt',
                       help='File path for zdr in ice data')
     parser.add_option('--title',
                       dest='title',
