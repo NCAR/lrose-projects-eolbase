@@ -2,10 +2,18 @@
 
 cd /var/www/html
 
-rsync -av /usr/local/home/dixon/git/lrose-displays/color_scales .
-mkdir -p displayParams
-rsync -av /usr/local/home/dixon/git/lrose-projects-eolbase/projDir/display/params/* displayParams
+rsync -av ~dixon/git/lrose-displays/color_scales .
+rsync -av ~dixon/git/lrose-displays/maps .
 
-rsync -av /usr/local/home/dixon/git/lrose-titan/docs/html .
-rsync -av /usr/local/home/dixon/git/lrose-displays/maps .
+mkdir -p titan/html
+rsync -av ~dixon/git/lrose-titan/docs/html/* titan/html
+
+mkdir -p displayParams
+rsync -av ~dixon/git/lrose-projects-eolbase/projDir/display/params/* displayParams
+
+mkdir -p displayScripts
+rsync -av ~dixon/git/lrose-projects-eolbase/projDir/display/scripts/* displayScripts
+
+rsync -av ~dixon/git/lrose-projects-eolbase/projDir/front/index.html .
+rsync -av ~dixon/git/lrose-projects-eolbase/projDir/front/lrose .
 
