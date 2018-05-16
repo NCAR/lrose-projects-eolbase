@@ -1,0 +1,11 @@
+#! /bin/csh
+
+cd /var/www/html
+
+rsync -av /usr/local/home/dixon/git/lrose-displays/color_scales .
+mkdir -p displayParams
+rsync -av /usr/local/home/dixon/git/lrose-projects-eolbase/projDir/display/params/* displayParams
+
+rsync -av /usr/local/home/dixon/git/lrose-titan/docs/html .
+rsync -av /usr/local/home/dixon/git/lrose-displays/maps .
+
