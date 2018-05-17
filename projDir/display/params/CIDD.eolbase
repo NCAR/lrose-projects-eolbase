@@ -123,10 +123,10 @@ SPOL_DBZ_F     SPOL_DBZ_F      mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/
 SPOL_DBZ       SPOL_DBZ        mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sur?use_http=true&DBZ        dbz.colors   dBZ -5 80 5 radial 1 0
 SPOL_DBZ_BRAGG_F  SPOL_DBZ_BRAGG_F  mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sur?use_http=true&DBZ_F      dbz_bragg.colors   dBZ -5 80 5 radial 1 0
 SPOL_DBZ_BRAGG    SPOL_DBZ_BRAGG    mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sur?use_http=true&DBZ        dbz_bragg.colors   dBZ -5 80 5 radial 1 0
-SPOL_VEL_F     SPOL_VEL_F      mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sur?use_http=true&VEL_ALT_F      vel30.colors   m/s -5 80 5 radial 1 0
-SPOL_VEL       SPOL_VEL        mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sur?use_http=true&VEL_ALT        vel30.colors   m/s -5 80 5 radial 1 0
-SPOL_VELNEX_F     SPOL_VELNEX_F      mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sur?use_http=true&VEL_ALT_F      vel_nexrad.colors   m/s -5 80 5 radial 1 0
-SPOL_VEL0_F    SPOL_VEL0_F     mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sur?use_http=true&VEL_F   vel30.colors   m/s -5 80 5 radial 1 0
+SPOL_VEL_F     SPOL_VEL_F      mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sur?use_http=true&VEL_F      vel30.colors   m/s -5 80 5 radial 1 0
+SPOL_VEL       SPOL_VEL        mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sur?use_http=true&VEL        vel30.colors   m/s -5 80 5 radial 1 0
+SPOL_VELNEX_F     SPOL_VELNEX_F      mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sur?use_http=true&VEL_F      vel_nexrad.colors   m/s -5 80 5 radial 1 0
+SPOL_VEL_ALT_F    SPOL_VEL_ALT_F     mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sur?use_http=true&VEL_ALT_F   vel30.colors   m/s -5 80 5 radial 1 0
 #SPOL_VEL0      SPOL_VEL0       mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sur?use_http=true&VEL     vel30.colors   m/s -5 80 5 radial 1 0
 
 SPOL_VEL_HV_F  SPOL_VEL_HV_F   mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sur?use_http=true&VEL_HV_F   vel30.colors   m/s -5 80 5 radial 1 0
