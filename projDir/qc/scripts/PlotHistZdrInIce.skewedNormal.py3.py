@@ -12,6 +12,8 @@ import sys
 
 import numpy as np
 import scipy.stats as stats
+from scipy.stats import skewnorm
+import matplotlib as mpl
 import matplotlib.mlab as mlab
 import matplotlib.pyplot as plt
 import matplotlib.mlab as mlab
@@ -75,11 +77,13 @@ def main():
     if (iret != 0):
         sys.exit(1)
 
-    # render the plot
+    # close all existing figures    
+    mpl.pyplot.close("all")
     
+    # render the plot
     doPlot(options.iceFile, colHeaders, colData)
 
-    sys.exit(0)
+    exit
     
 ########################################################################
 # Read columm headers for the data
@@ -149,20 +153,25 @@ def readInputData(filePath, colHeaders):
 def doPlot(filePath, colHeaders, colData):
 
     zdr = np.array(colData["zdr"]).astype(np.double)
-    elev = np.array(colData["elev"]).astype(np.double)
-
-    minElev = float(options.minElev)
-    maxElev = float(options.maxElev)
-
+    
     print("  ==>> zdr: ", zdr, file=sys.stderr)
-    print("  ==>> minElev: ", minElev, file=sys.stderr)
-    print("  ==>> maxElev: ", maxElev, file=sys.stderr)
-
-    zdrValid = zdr[(elev >= minElev) & (elev <= maxElev)]
-
     print("  ==>> size of zdr: ", len(zdr), file=sys.stderr)
-    print("  ==>> size of elev: ", len(elev), file=sys.stderr)
-    print("  ==>> size of zdrValid: ", len(zdrValid), file=sys.stderr)
+    
+    if "elev" in colData:
+        elev = np.array(colData["elev"]).astype(np.double)
+
+        minElev = float(options.minElev)
+        maxElev = float(options.maxElev)
+
+        print("  ==>> minElev: ", minElev, file=sys.stderr)
+        print("  ==>> maxElev: ", maxElev, file=sys.stderr)
+
+        zdrValid = zdr[(elev >= minElev) & (elev <= maxElev)]
+
+        print("  ==>> size of elev: ", len(elev), file=sys.stderr)
+        print("  ==>> size of zdrValid: ", len(zdrValid), file=sys.stderr)
+    else:
+        zdrValid=zdr
 
     zdrSorted = np.sort(zdrValid)
     mean = np.mean(zdrSorted)
@@ -183,8 +192,7 @@ def doPlot(filePath, colHeaders, colData):
     htIn = float(options.figHeightMm) / 25.4
     
     fig1 = plt.figure(1, (widthIn, htIn))
-    title = (options.title + '  for Elev Limits [ ' +
-             options.minElev + ' : ' + options.maxElev + ' ]')
+    title = (options.title)
     fig1.suptitle(title, fontsize=16)
     ax1 = fig1.add_subplot(2,1,1,xmargin=0.0)
     ax2 = fig1.add_subplot(2,1,2,xmargin=0.0)
@@ -198,7 +206,7 @@ def doPlot(filePath, colHeaders, colData):
 
     ax1.set_xlabel('ZDR')
     ax1.set_ylabel('Frequency')
-    ax1.set_title('PDF - Probability Density Function', fontsize=14)
+    ax1.set_title('PDF - Normal distribution', fontsize=14)
     ax1.grid(True)
 
     pdf = stats.norm(mean, sdev).pdf
@@ -206,42 +214,65 @@ def doPlot(filePath, colHeaders, colData):
     ll1 = ax1.plot(bins1, yy1, 'b', linewidth=2)
 
     ax1.set_xlim([mean -sdev * 3, mean + sdev * 3])
-
-    # CDF of ZDR
-
-    n2, bins2, patches2 = ax2.hist(zdrSorted, 60, normed=True,
-                                   cumulative=True,
+    
+    ax1Xlims=ax1.get_xlim()
+    
+    ax2.hist(zdrSorted, 60, normed=True,
                                    histtype='stepfilled',
                                    facecolor='slateblue',
                                    alpha=0.35)
 
+    ae, loce, scalee=skewnorm.fit(zdrValid)
+    xmin, xmax = ax2.get_xlim()
+    xplot = np.linspace(xmin, xmax, 60)
+    p = skewnorm.pdf(xplot,ae, loce, scalee)#.rvs(100)
+    ll2 = ax2.plot(xplot, p, 'b', linewidth=2)
+    ax2.set_xlim(ax1Xlims)
+    
     ax2.set_xlabel('ZDR')
-    ax2.set_ylabel('Cumulative frequency')
-    ax2.set_title('CDF - Cumulative Distribution Function', fontsize=14)
+    ax2.set_ylabel('Frequency')
+    ax2.set_title('PDF - Skewed normal distribution', fontsize=14)
     ax2.grid(True)
+    
+    plt.savefig('/h/eol/romatsch/nex-Spol/figs/ZDRice/skewedNormal_novDYNAMO.png')
 
-    cdf = stats.norm(mean, sdev).cdf
-    yy2 = cdf(bins1)
-    ll2 = ax2.plot(bins1, yy2, 'b', linewidth=2,
-                   label = ('NormalFit mean=' + '{:.3f}'.format(mean) +
-                            ' sdev=' + '{:.3f}'.format(sdev) +
-                            ' skew=' + '{:.3f}'.format(skew)))
-    legend2 = ax2.legend(loc='upper left', ncol=4)
-    for label in legend2.get_texts():
-        label.set_fontsize('medium')
+    # plot the histogram
+    #plt.hist(y, normed=True, bins=30)
+    # CDF of ZDR
 
-    ax2.set_xlim([mean -sdev * 3, mean + sdev * 3])
+#    n2, bins2, patches2 = ax2.hist(zdrSorted, 60, normed=True,
+#                                   cumulative=True,
+#                                   histtype='stepfilled',
+#                                   facecolor='slateblue',
+#                                   alpha=0.35)
 
-    # draw line to show mean, annotate
-
-    pmean = pdf(mean)
-    plen = pmean * 0.05
-    toffx = mean * 0.1
-
-    # draw line to show mean, annotate
-
-    annotVal(ax1, ax2,  mean, pdf, cdf, 'mean', plen, toffx,
-             'black', 'black', 'left', 'center')
+#    ax2.set_xlabel('ZDR')
+#    ax2.set_ylabel('Cumulative frequency')
+#    ax2.set_title('CDF - Cumulative Distribution Function', fontsize=14)
+#    ax2.grid(True)
+#
+#    cdf = stats.norm(mean, sdev).cdf
+#    yy2 = cdf(bins1)
+#    ll2 = ax2.plot(bins1, yy2, 'b', linewidth=2,
+#                   label = ('NormalFit mean=' + '{:.3f}'.format(mean) +
+#                            ' sdev=' + '{:.3f}'.format(sdev) +
+#                            ' skew=' + '{:.3f}'.format(skew)))
+#    legend2 = ax2.legend(loc='upper left', ncol=4)
+#    for label in legend2.get_texts():
+#        label.set_fontsize('medium')
+#
+#    ax2.set_xlim([mean -sdev * 3, mean + sdev * 3])
+#
+#    # draw line to show mean, annotate
+#
+#    pmean = pdf(mean)
+#    plen = pmean * 0.05
+#    toffx = mean * 0.1
+#
+#    # draw line to show mean, annotate
+#
+#    annotVal(ax1, ax2,  mean, pdf, cdf, 'mean', plen, toffx,
+#             'black', 'black', 'left', 'center')
 
     # annotate percentiles
 
