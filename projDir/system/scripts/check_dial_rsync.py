@@ -42,7 +42,11 @@ def main():
     parser.add_option('--emails',
                       dest='emails',
                       default='wvdial@ucar.edu',
-                      help='Comma-delimited list of email addresses for error messages')
+                      help='Comma-delimited list of email addresses for warning messages')
+    parser.add_option('--maxDelayMins',
+                      dest='maxDelayMins',
+                      default=12,
+                      help='Max number of minutes delay in data arrival before warning')
     
     (options, args) = parser.parse_args()
 
@@ -69,18 +73,18 @@ def main():
     # check if the latest data has updated
 
     exists, file, delta = check_dir(options.dataDir)
-    max_delta = timedelta(minutes=9)
+    max_delta = timedelta(minutes=int(options.maxDelayMins))
     sender = "rsfdata@eldora.eol.ucar.edu"
 
     missing_msg = """From: {0}
 To: {1}
-Subject: missing h2o data 
+Subject: missing DIAL data 
 
 {2} not found
 """
     stale_msg = """From: {0}
 To: {1}
-Subject: stale h2o data 
+Subject: stale DIAL data 
 
 {2} has not been updated for {3}
 """
