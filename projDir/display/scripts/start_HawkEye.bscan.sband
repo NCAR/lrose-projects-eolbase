@@ -1,0 +1,12 @@
+#! /bin/csh
+
+setenv PROJ_DIR /opt/local/git/lrose-projects-eolbase/projDir
+cd $PROJ_DIR/display/params
+
+if ($#argv < 6) then
+  /opt/local/lrose/bin/HawkEye -params HawkEye.bscan.sband -start_time "2018 03 26 12 00 00" >& /dev/null &
+else
+  /opt/local/lrose/bin/HawkEye -params HawkEye.bscan.sband -start_time "$1 $2 $3 $4 $5 $6" >& /dev/null &
+endif
+
+

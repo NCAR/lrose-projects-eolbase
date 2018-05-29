@@ -139,7 +139,7 @@ set path = ($path ~/bin $QTDIR/bin \
 	$NCARG_ROOT/bin \
 	/usr/local/bin /usr/local/sbin /usr/bin/X11 \
         /usr/sbin /usr/bin /sbin /bin /usr/X11R6/bin \
-	/opt/gfortran/irun/bin /opt/spol/bin /opt/local/bin \
+	/opt/gfortran/irun/bin /opt/spol/bin /opt/local/lrose/bin \
         /usr/sigmet/bin /usr/sigmet/bin/rda $QTDIR/bin )
 
 # -- core files --
@@ -238,6 +238,8 @@ if ($?prompt) then
   alias pgen_data 'cd /scr/pgen'
   alias pgen1_data 'cd /scr/pgen1'
   alias pgen2_data 'cd /scr/pgen2'
+
+  alias maps 'cd /scr/hail1/rsfdata/mapserv/maps'
 
 #  alias spol 'ssh -p 20022 -a -C -XY spol@spol.dyndns.org'
 #  alias control1 'ssh -a -x -C -Y -R 2401:localhost:2401 control1'
