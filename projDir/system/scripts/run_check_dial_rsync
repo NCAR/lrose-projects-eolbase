@@ -1,0 +1,13 @@
+#! /bin/csh
+#
+
+check_dial_rsync.py --debug \
+    --dataDir /scr/eldora1/wvdial_1_data \
+    --emails "stillwel@ucar.edu,spuler@ucar.edu,dixon@ucar.edu" |& \
+    LogFilter -d $ERRORS_LOG_DIR -p check_dial_rsync.py -i wvdial_01 >& /dev/null &
+
+check_dial_rsync.py --debug \
+    --dataDir /scr/eldora1/wvdial_2_data \
+    --emails "stillwel@ucar.edu,spuler@ucar.edu,dixon@ucar.edu" |& \
+    LogFilter -d $ERRORS_LOG_DIR -p check_dial_rsync.py -i wvdial_02 >& /dev/null &
+

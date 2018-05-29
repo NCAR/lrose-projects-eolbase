@@ -31,3 +31,9 @@ cmd="/opt/local/bin/matlab -nodisplay -nosplash -r \"$matcmd\""
 echo "cmd = $cmd"
 # run the command
 eval $cmd
+
+# Note that you need to make the function executable. This is done by 
+# changing the file permissions for (owner = 7 = rwx, group = 5 = r-x, and 
+# other = 5 = r-x. To do this the key strokes are 
+# chmod 755 DIAL_processV02
+

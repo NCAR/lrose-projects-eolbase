@@ -73,7 +73,7 @@ def main():
 
     # do rsync for last ndaysLookback days
 
-    idays = range(options.ndaysLookback)
+    idays = range(int(options.ndaysLookback))
 
     for iday in idays:
         dtime = timedelta(iday)
@@ -88,7 +88,9 @@ def main():
 def doRsyncForDay(dayTime, iday):
 
     yearStr = str(dayTime.year)
-    yrStr = yearStr[-2:]
+    yrStr = yearStr
+    # yrStr modified to use full 4 digit year as updated software uses. 
+    #yrStr = yearStr[-2:]
 
     sourceDirRoot = yrStr + ('%.2d%.2d' % (dayTime.month, dayTime.day))
 
