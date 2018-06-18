@@ -35,7 +35,7 @@ for m=1:1:size(Cell,1)
             Cell{m,1} = Temp;
         end
     end
-   FieldNames2{m,1} = FieldNames{m,1}; %#ok<AGROW>
+   FieldNames2{m,1} = FieldNames{m,1}; 
 end
 Struct = cell2struct(Cell,FieldNames2);
 end

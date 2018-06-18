@@ -8,7 +8,7 @@ clear; close all; clc
 
 %% Defining processing options
 Options = DefineOptions;
-Options.System   = 'DIAL02';
+Options.System   = 'DIAL03';
 Options.Location = 'FL1';
 Options.Node     = 'DIAL2';   % Keep for now because hacking jsonde files
 
@@ -17,7 +17,10 @@ Options.Node     = 'DIAL2';   % Keep for now because hacking jsonde files
 % DatesDesired = {'180415';'180416';'180417';'180418';'180419';'180420';
 %                 '180421';'180422';'180423';'180424';'180425';'180426';
 %                 '180427';'180428';'180429';'180430'};
-DatesDesired = {'180521'};
+% DatesDesired = {'180523';'180524';'180525';'180526';'180527';'180528';
+%                 '180529';'180530';'180531'};
+DatesDesired = {'180614'};
+
 for m=1:1:size(DatesDesired,1)
     % Parsing the dates out for processing
     Date = DatesDesired{m,1};
@@ -37,7 +40,7 @@ for m=1:1:size(DatesDesired,1)
     else
         read_dial2_calvals 
         JSondeData.MCS.accum = 14000;
-        JSondeData.BlankRange = 300;
+        JSondeData.BlankRange = 450;
         DIALAnalysis_V01_01(JSondeData, Options, Paths)
     end
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

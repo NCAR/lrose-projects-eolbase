@@ -43,6 +43,17 @@ elseif strcmp(Paths.FigureType,'DIAL02')
     HardwareMap.Power          = [0;6;1;1];
     HardwareMap.Etalon         = [0;0;1;1];
     HardwareMap.Laser          = [0;1;2;2];
+elseif strcmp(Paths.FigureType,'DIAL03')
+    % Map in the stored cell arrays
+    Map.Channels  = {'Offline';'Online'};
+    Map.Offline   = 1;
+    Map.Online    = 2;
+    % Map to get to hardware location
+    HardwareMap.ChannelName    = {'WV Offline';'WV Online'};
+    HardwareMap.Etalon         = [0;0];
+    HardwareMap.Laser          = [0;1];
+    HardwareMap.PhotonCounting = [0;8];
+    HardwareMap.Power          = [0;6];
 end
 
 DataTypes = {'Etalonsample*.nc';'LLsample*.nc';'MCSsample*.nc';'Powsample*.nc';'WSsample*.nc'};
@@ -257,9 +268,24 @@ if Options.flag.gradient_filter == 1
 end
 
 %% Spectral Line Fitting
-[DataProducts.Sigma{2,1},DataProducts.Sigma{1,1}] =  ...
-    SpectralLineFitting(Options.flag, PulseInfo.LambdaNearest{2,1}, PulseInfo.LambdaNearest{1,1}, PulseInfo.LambdaNumber{2,1}, PulseInfo.LambdaNumber{1,1}, HitranData,Counts.CountRate{2,1},Altitude.RangeOriginal, SurfaceWeather.Pressure, SurfaceWeather.Temperature);
+if strcmp(Options.System, 'DIAL03')
+    Options.flag.WS = 0;
+end
 
+[DataProducts.Sigma{Map.Online,1},DataProducts.Sigma{Map.Offline,1}] =  ...
+    SpectralLineFitting(Options.flag, PulseInfo.LambdaNearest{Map.Online,1},  ...
+                                      PulseInfo.LambdaNearest{Map.Offline,1}, ...
+                                      PulseInfo.LambdaNumber{Map.Online,1},   ...
+                                      PulseInfo.LambdaNumber{Map.Offline,1},  ...
+                                      HitranData,                             ...
+                                      Counts.CountRate{Map.Offline,1},        ...
+                                      Altitude.RangeOriginal,                 ...
+                                      SurfaceWeather.Pressure,                ...
+                                      SurfaceWeather.Temperature);
+if strcmp(Options.System, 'DIAL03')
+    Options.flag.WS = 1;
+end
+                                  
 % [DataProducts.Sigma{Map.Online,1},DataProducts.Sigma{Map.Offline,1}] =  ...
 %     SpectralLineFitting(Options.flag, PulseInfo.LambdaNearest{Map.Online,1}, PulseInfo.LambdaNearest{Map.Offline,1}, PulseInfo.LambdaNumber{Map.Online,1}, PulseInfo.LambdaNumber{Map.Offline,1}, HitranData,Counts.CountRate{Map.Online,1},Altitude.RangeOriginal, SurfaceWeather.Pressure, SurfaceWeather.Temperature);
 
@@ -491,8 +517,6 @@ end
 
 function [sigma_on_total,sigma_off_total] = SpectralLineFitting(flag, lambda_all_N, lambda_all_off_N, lambda_N, lambda_off_N, hitran, Online_Temp_Spatial_Avg, range, Surf_P, Surf_T)
 
-
-
 %Voigt profile calculation
 WNmin = 1/(828+4)*1e7;  % 832.0 nm converted to wavenumber
 WNmax = 1/(828-4)*1e7;  % 824.0 nm converted to wavenumber
@@ -508,6 +532,7 @@ if flag.WS == 1
     P0 = nanmedian(Surf_P);
 else
   T0 = 273+30; % surface temperature
+  P0 = 0.83;
 end
 
 T = T0-0.0065.*range; % set to match the sounding
@@ -863,7 +888,19 @@ if isempty(BadData) == 0
 end
 clear BadData 
 
+%% Filling in bad data
+TimeBounds = linspace(0,24,100)';
+if isempty(WStation.TimeStamp)
+   WStation.TimeStamp        = TimeBounds;
+   WStation.AbsoluteHumidity = TimeBounds.*nan;
+   WStation.Pressure         = TimeBounds.*nan;
+   WStation.RelativeHumidity = TimeBounds.*nan;
+   WStation.Temperature      = TimeBounds.*nan;
+end
+
 %% Marking time gaps
+
+
 Laser    = PaddingDataStructureTimeSeries(Laser,5);
 Etalon   = PaddingDataStructureTimeSeries(Etalon,5);
 WStation = PaddingDataStructureTimeSeries(WStation,5);
@@ -996,7 +1033,7 @@ else
                 end
                 % Padding the new cell array
                 NewCell{m,1} = [NewCell{m,1};
-                                CellArray{m,1}(EndIndexOld,:)-ToAdd;
+                                CellArray{m,1}(StartIndexOld,:)-ToAdd;
                                 CellArray{m,1}(StartIndexOld:EndIndexOld,:)];
                 StartIndexOld = EndIndexOld+1;
             elseif A(n) == size(CellArray{m,1},1) + 1
