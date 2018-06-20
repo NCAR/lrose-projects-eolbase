@@ -30,7 +30,7 @@ def main():
 
 # parse the command line
 
-    usage = "usage: %prog [options]"
+    usage = "usage: " + __file__ + " [options]"
     parser = OptionParser(usage)
     parser.add_option('--debug',
                       dest='debug', default=False,
@@ -42,7 +42,7 @@ def main():
                       help='Set verbose debugging on')
     parser.add_option('--cp_file',
                       dest='cpFilePath',
-                      default='../data/pecan/spol_pecan_CP_analysis_20150524_000021.txt',
+                      default='/home/mdtest/git/lrose-projects-eolbase/projDir/qc/data/pecan/spol_pecan_CP_analysis_20150524_000021.txt',
                       help='CP results file path')
     parser.add_option('--stats_file',
                       dest='statsFilePath',
@@ -76,10 +76,14 @@ def main():
                       dest='endTime',
                       default='2015 07 17 00 00 00',
                       help='End time for XY plot')
+    parser.add_option('--scanMode',
+                      dest='scanMode',
+                      default='both',
+                      help='Scan mode: sur, rhi or both')
     
     (options, args) = parser.parse_args()
     
-    if (options.verbose == True):
+    if (options.verbose):
         options.debug = True
 
     year, month, day, hour, minute, sec = options.startTime.split()
@@ -90,12 +94,20 @@ def main():
     endTime = datetime.datetime(int(year), int(month), int(day),
                                 int(hour), int(minute), int(sec))
 
-    if (options.debug == True):
-        print >>sys.stderr, "Running %prog"
+    if (options.debug):
+        print >>sys.stderr, "Running ", __file__
         print >>sys.stderr, "  cpFilePath: ", options.cpFilePath
         print >>sys.stderr, "  statsFilePath: ", options.statsFilePath
         print >>sys.stderr, "  startTime: ", startTime
         print >>sys.stderr, "  endTime: ", endTime
+        print >>sys.stderr, "  scanMode: ", options.scanMode
+        
+    if (options.scanMode != 'both' and \
+        options.scanMode != 'sur' and \
+        options.scanMode != 'rhi'):
+        print >>sys.stderr, "ERROR - scan mode: ", options.scanMode
+        print >>sys.stderr, "  Must be: sur, rhi or both"
+        sys.exit(-1)
 
     # read in column headers for stats results
 
@@ -168,10 +180,28 @@ def readInputData(filePath, colHeaders, colData):
         commentIndex = line.find("#")
         if (commentIndex >= 0):
             continue
-            
+        
         # data
         
         data = line.strip().split()
+
+        # check scan mode
+        
+        process = False
+        rhiFlag = 0
+        for index, var in enumerate(colHeaders, start=0):
+            if (var == 'IsRhi'):
+                rhiFlag = int(data[index])
+                break
+        if (options.scanMode == 'both'):
+            process = True
+        elif (options.scanMode == 'sur' and rhiFlag == 0):
+            process = True
+        elif (options.scanMode == 'rhi' and rhiFlag == 1):
+            process = True
+
+        if (process == False):
+            continue
 
         for index, var in enumerate(colHeaders, start=0):
             if (var == 'count' or var == 'year' or var == 'month' or var == 'day' or \
@@ -179,7 +209,7 @@ def readInputData(filePath, colHeaders, colData):
                 var == 'unix_time'):
                 colData[var].append(int(data[index]))
             elif (var == 'PidLabel' or var == 'TempTime' or \
-                  var == 'HistCounts'):
+                  var == 'HistCounts' or var == 'HistX'):
                 colData[var].append(data[index])
             else:
                 colData[var].append(float(data[index]))
@@ -234,7 +264,12 @@ def doPlot(statsData, statsTimes, cpData, cpTimes):
     statsSdev = np.array(statsData["ZdrmSdev"]).astype(np.double)
     statsSdev = movingAverage(statsSdev, lenMeanFilter)
 
+    meanMinusSdev = statsMean - 0.3 * statsSdev
+
     perc = np.array(computePercentile(statsData, float(options.percentile))).astype(np.double)
+
+    histMedian = np.array(statsData["HistMedian"]).astype(np.double)
+    histMedian = movingAverage(histMedian, lenMeanFilter)
 
     tempSite = np.array(statsData["TempSite"]).astype(np.double)
     tempSite = movingAverage(tempSite, lenMeanFilter)
@@ -253,13 +288,17 @@ def doPlot(statsData, statsTimes, cpData, cpTimes):
     validStimes = stimes[validMean]
     validStats = statsMean[validMean]
     
-#    tempVals = []
-#    statsVals = []
+    tempVals = []
+    statsVals = []
 
-#    for ii, statsVal in enumerate(validStats, start=0):
-#        stime = validStimes[ii]
-#        if (stime >= startTime and stime <= endTime):
-#            tempTime, tempVal = getClosestTemp(stime, cpTimes, tempSite)
+    for ii, statsVal in enumerate(statsMean, start=0):
+        stime = validStimes[ii]
+        tempVal = tempSite[ii]
+        if (stime >= startTime and stime <= endTime):
+            tempVals.append(tempVal)
+            statsVals.append(statsVal)
+
+#           tempTime, tempVal = getClosestTemp(stime, cpTimes, tempSite)
 #            if (np.isfinite(tempVal)):
 #                tempVals.append(tempVal)
 #                statsVals.append(statsVal)
@@ -269,16 +308,16 @@ def doPlot(statsData, statsTimes, cpData, cpTimes):
 
     # linear regression stats vs temp
 
-#    A = array([tempVals, ones(len(tempVals))])
-#    ww = linalg.lstsq(A.T, statsVals)[0] # obtaining the fit, ww[0] is slope, ww[1] is intercept
-#    regrX = []
-#    regrY = []
-#    minTemp = min(tempVals)
-#    maxTemp = max(tempVals)
-#    regrX.append(minTemp)
-#    regrX.append(maxTemp)
-#    regrY.append(ww[0] * minTemp + ww[1])
-#    regrY.append(ww[0] * maxTemp + ww[1])
+    A = array([tempVals, ones(len(tempVals))])
+    ww = linalg.lstsq(A.T, statsVals)[0] # obtaining the fit, ww[0] is slope, ww[1] is intercept
+    regrX = []
+    regrY = []
+    minTemp = min(tempVals)
+    maxTemp = max(tempVals)
+    regrX.append(minTemp)
+    regrX.append(maxTemp)
+    regrY.append(ww[0] * minTemp + ww[1])
+    regrY.append(ww[0] * maxTemp + ww[1])
     
     # set up plots
 
@@ -286,53 +325,64 @@ def doPlot(statsData, statsTimes, cpData, cpTimes):
     htIn = float(options.figHeightMm) / 25.4
 
     fig1 = plt.figure(1, (widthIn, htIn))
-#    fig2 = plt.figure(2, (widthIn/2, htIn/2))
+    fig2 = plt.figure(2, (widthIn/2, htIn/2))
 
     ax1 = fig1.add_subplot(2,1,1,xmargin=0.0)
-#    ax2 = fig1.add_subplot(2,1,2,xmargin=0.0)
+    ax2 = fig1.add_subplot(2,1,2,xmargin=0.0)
 
-#    ax3 = fig2.add_subplot(1,1,1,xmargin=1.0, ymargin=1.0)
+    ax3 = fig2.add_subplot(1,1,1,xmargin=1.0, ymargin=1.0)
     #ax3 = fig2.add_subplot(1,1,1,xmargin=0.0)
 
     oneDay = datetime.timedelta(1.0)
     ax1.set_xlim([stimes[0] - oneDay, stimes[-1] + oneDay])
     ax1.set_title("ZDRM stats by volume in " + label + ", compared with VERT and CP results")
-#    ax2.set_xlim([stimes[0] - oneDay, stimes[-1] + oneDay])
-#    ax2.set_title("Site temperature (C)")
+    ax2.set_xlim([stimes[0] - oneDay, stimes[-1] + oneDay])
+    ax2.set_title("Site temperature (C)")
 
     ax1.plot(stimes[validMean], statsMean[validMean], \
              "ro", label = 'ZDR Mean', linewidth=1)
 
     ax1.plot(stimes[validMean], perc[validMean], \
              "bo", label = 'ZDR perc ' + str(options.percentile))
-
-#    ax1.plot(ctimes[validSunscanZdrm], SunscanZdrm[validSunscanZdrm], \
-#             linewidth=2, label = 'Zdrm Sun/CP (dB)', color = 'green')
     
-#    ax1.plot(ctimes[validZdrmVert], ZdrmVert[validZdrmVert], \
-#             "^", markersize=10, linewidth=1, label = 'Zdrm Vert (dB)', color = 'yellow')
+    ax1.plot(stimes[validMean], statsSdev[validMean], \
+             "go", label = 'ZDR Sdev')
+
+    #ax1.plot(stimes[validMean], meanMinusSdev[validMean], \
+    #         "yo", label = 'ZDR Mean-Sdev')
+
+    #ax1.plot(stimes[validMean], histMedian[validMean], \
+    #         "yo", label = 'ZDR Hist-Median')
+
+    ax2.plot(stimes[validTempSite], tempSite[validTempSite], \
+             linewidth=1, label = 'Site Temp', color = 'blue')
+
+    ax1.plot(ctimes[validSunscanZdrm], SunscanZdrm[validSunscanZdrm], \
+             linewidth=2, label = 'Zdrm Sun/CP (dB)', color = 'green')
+    
+    ax1.plot(ctimes[validZdrmVert], ZdrmVert[validZdrmVert], \
+             "^", markersize=10, linewidth=1, label = 'Zdrm Vert (dB)', color = 'yellow')
 
 
-#    ax2.plot(cptimes[validTempSite], tempSite[validTempSite], \
-#             linewidth=1, label = 'Site Temp', color = 'blue')
 
     configDateAxis(ax1, -9999, 9999, "ZDR Stats (dB)", 'upper right')
-#    configDateAxis(ax2, -9999, 9999, "Temp (C)", 'upper right')
-#   label3 = "ZDR Stats = " + ("%.5f" % ww[0]) + " * temp + " + ("%.3f" % ww[1])
-#    ax3.plot(tempVals, statsVals, 
-#             "x", label = label3, color = 'blue')
-#    ax3.plot(regrX, regrY, linewidth=3, color = 'blue')
+    configDateAxis(ax2, -9999, 9999, "Temp (C)", 'upper right')
+
+    label3 = "ZDR Stats = " + ("%.5f" % ww[0]) + " * temp + " + ("%.3f" % ww[1])
+    ax3.plot(tempVals, statsVals, 
+             "x", label = label3, color = 'blue')
+    ax3.plot(regrX, regrY, linewidth=3, color = 'cyan')
     
-#    legend3 = ax3.legend(loc="upper left", ncol=2)
-#    for label3 in legend3.get_texts():
-#        label3.set_fontsize(12)
-#    ax3.set_xlabel("Site temperature (C)")
-#    ax3.set_ylabel("ZDR Stats (dB)")
-#    ax3.grid(True)
-#    ax3.set_ylim([-0.5, 0.5])
-#    ax3.set_xlim([minTemp - 1, maxTemp + 1])
-#    title3 = "ZDR stats Vs Temp: " + str(startTime) + " - " + str(endTime)
-#    ax3.set_title(title3)
+    legend3 = ax3.legend(loc="upper left", ncol=2)
+    for label3 in legend3.get_texts():
+        label3.set_fontsize(12)
+    ax3.set_xlabel("Site temperature (C)")
+    ax3.set_ylabel("ZDR Stats (dB)")
+    ax3.grid(True)
+    ax3.set_ylim([-1.5, 1.5])
+    ax3.set_xlim([minTemp - 1, maxTemp + 1])
+    title3 = "ZDR stats Vs Temp: " + str(startTime) + " - " + str(endTime)
+    ax3.set_title(title3)
 
     fig1.autofmt_xdate()
 
@@ -428,8 +478,6 @@ def computePercentile(statsData, perc):
                 xx = hmin + float(jj) * hdel
                 prevXx = xx - hdel
                 percVal = prevXx + frac * hdel
-                #print >>sys.stderr, "jj, xx, count, countSum: ", jj, ", ", xx, ", ", count, ", ", countSum
-                #print >>sys.stderr, "===>> percVal: ", percVal
                 break
             prevSum = countSum
 
