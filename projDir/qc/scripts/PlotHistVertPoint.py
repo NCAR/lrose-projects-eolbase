@@ -9,6 +9,7 @@
 import os
 import sys
 
+import math
 import numpy as np
 import scipy.stats as stats
 import matplotlib.mlab as mlab
@@ -177,18 +178,27 @@ def doPlot(filePath, colHeaders, colData):
     print >>sys.stderr, "  ==>> maxHt: ", maxHt
 
     zdrValid = zdrm[(height >= minHt) & (height <= maxHt)]
+    minZdr = -2.0
+    maxZdr = 2.0
+    if (options.setZdrRange):
+        minZdr = float(options.minZdr)
+        maxZdr = float(options.maxZdr)
+        zdrValid = zdrm[(height >= minHt) & \
+                        (height <= maxHt) & \
+                        (zdrm >= minZdr) & \
+                        (zdrm <= maxZdr)]
 
     print >>sys.stderr, "  ==>> size of zdrm: ", len(zdrm)
     print >>sys.stderr, "  ==>> size of height: ", len(height)
     print >>sys.stderr, "  ==>> size of zdrValid: ", len(zdrValid)
 
-    zdrSorted = np.sort(zdrValid)
-    mean = np.mean(zdrSorted)
-    sdev = np.std(zdrSorted)
-    skew = stats.skew(zdrSorted)
-    kurtosis = stats.kurtosis(zdrSorted)
+    mean = np.mean(zdrValid)
+    sdev = np.std(zdrValid)
+    skew = stats.skew(zdrValid)
+    kurtosis = stats.kurtosis(zdrValid)
 
     percPoints = np.arange(0,100,1.0)
+    zdrSorted = np.sort(zdrValid)
     percs = np.percentile(zdrSorted, percPoints)
 
     print >>sys.stderr, "  ==>> mean: ", mean
@@ -223,7 +233,11 @@ def doPlot(filePath, colHeaders, colData):
     yy1 = pdf(bins1)
     ll1 = ax1.plot(bins1, yy1, 'b', linewidth=2)
 
-    # CDF of ZDR
+    dd, pp = stats.kstest(zdrSorted,'norm', alternative = 'two-sided')
+    print >>sys.stderr, "  ==>> smk dd: ", dd
+    print >>sys.stderr, "  ==>> smk pp: ", pp
+
+   # CDF of ZDR
 
     n2, bins2, patches2 = ax2.hist(zdrSorted, 60, normed=True,
                                    cumulative=True,
@@ -248,11 +262,11 @@ def doPlot(filePath, colHeaders, colData):
 
     # axis limits
 
-    minZdr = mean - (sdev * 3)
-    maxZdr = mean + (sdev * 3)
-    if (options.setZdrRange):
-        minZdr = float(options.minZdr)
-        maxZdr = float(options.maxZdr)
+    # minZdr = mean - (sdev * 3)
+    # maxZdr = mean + (sdev * 3)
+    # if (options.setZdrRange):
+    #     minZdr = float(options.minZdr)
+    #     maxZdr = float(options.maxZdr)
 
     ax1.set_xlim([minZdr, maxZdr])
     ax2.set_xlim([minZdr, maxZdr])

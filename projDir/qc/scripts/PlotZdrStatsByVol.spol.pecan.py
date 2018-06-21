@@ -62,7 +62,7 @@ def main():
                       help='Width of figure in mm')
     parser.add_option('--height',
                       dest='figHeightMm',
-                      default=320,
+                      default=200,
                       help='Height of figure in mm')
     parser.add_option('--lenMean',
                       dest='lenMean',
@@ -291,20 +291,12 @@ def doPlot(statsData, statsTimes, cpData, cpTimes):
     tempVals = []
     statsVals = []
 
-    for ii, statsVal in enumerate(statsMean, start=0):
+    for ii, statsVal in enumerate(perc, start=0):
         stime = validStimes[ii]
         tempVal = tempSite[ii]
         if (stime >= startTime and stime <= endTime):
             tempVals.append(tempVal)
             statsVals.append(statsVal)
-
-#           tempTime, tempVal = getClosestTemp(stime, cpTimes, tempSite)
-#            if (np.isfinite(tempVal)):
-#                tempVals.append(tempVal)
-#                statsVals.append(statsVal)
-#                if (options.verbose):
-#                    print >>sys.stderr, "==>> statsTime, statsVal, tempTime, tempVal:", \
-#                        stime, statsVal, tempTime, tempVal
 
     # linear regression stats vs temp
 
@@ -325,37 +317,29 @@ def doPlot(statsData, statsTimes, cpData, cpTimes):
     htIn = float(options.figHeightMm) / 25.4
 
     fig1 = plt.figure(1, (widthIn, htIn))
-    fig2 = plt.figure(2, (widthIn/2, htIn/2))
+    fig2 = plt.figure(2, (widthIn/2, htIn))
 
-    ax1 = fig1.add_subplot(2,1,1,xmargin=0.0)
-    ax2 = fig1.add_subplot(2,1,2,xmargin=0.0)
-
-    ax3 = fig2.add_subplot(1,1,1,xmargin=1.0, ymargin=1.0)
-    #ax3 = fig2.add_subplot(1,1,1,xmargin=0.0)
+    ax1 = fig1.add_subplot(1,1,1,xmargin=0.0)
+    ax2 = fig2.add_subplot(1,1,1,xmargin=1.0, ymargin=1.0)
 
     oneDay = datetime.timedelta(1.0)
     ax1.set_xlim([stimes[0] - oneDay, stimes[-1] + oneDay])
-    ax1.set_title("ZDRM stats by volume in " + label + ", compared with VERT and CP results")
-    ax2.set_xlim([stimes[0] - oneDay, stimes[-1] + oneDay])
-    ax2.set_title("Site temperature (C)")
+    ax1.set_title("ZDR by volume in " + label + ", compared with VERT and CP results")
+
+    #ax1.plot(stimes[validMean], statsSdev[validMean], \
+    #         "go", label = 'ZDR-sdev')
 
     ax1.plot(stimes[validMean], statsMean[validMean], \
-             "ro", label = 'ZDR Mean', linewidth=1)
+             "ro", label = 'ZDR-mean', linewidth=1)
 
     ax1.plot(stimes[validMean], perc[validMean], \
-             "bo", label = 'ZDR perc ' + str(options.percentile))
+             "bo", label = 'ZDR-percentile-' + str(options.percentile))
     
-    ax1.plot(stimes[validMean], statsSdev[validMean], \
-             "go", label = 'ZDR Sdev')
-
     #ax1.plot(stimes[validMean], meanMinusSdev[validMean], \
     #         "yo", label = 'ZDR Mean-Sdev')
 
     #ax1.plot(stimes[validMean], histMedian[validMean], \
     #         "yo", label = 'ZDR Hist-Median')
-
-    ax2.plot(stimes[validTempSite], tempSite[validTempSite], \
-             linewidth=1, label = 'Site Temp', color = 'blue')
 
     ax1.plot(ctimes[validSunscanZdrm], SunscanZdrm[validSunscanZdrm], \
              linewidth=2, label = 'Zdrm Sun/CP (dB)', color = 'green')
@@ -366,29 +350,38 @@ def doPlot(statsData, statsTimes, cpData, cpTimes):
 
 
     configDateAxis(ax1, -9999, 9999, "ZDR Stats (dB)", 'upper right')
-    configDateAxis(ax2, -9999, 9999, "Temp (C)", 'upper right')
+    #configDateAxis(ax1, -0.5, 1.0, "ZDR Stats (dB)", 'upper right')
 
-    label3 = "ZDR Stats = " + ("%.5f" % ww[0]) + " * temp + " + ("%.3f" % ww[1])
-    ax3.plot(tempVals, statsVals, 
-             "x", label = label3, color = 'blue')
-    ax3.plot(regrX, regrY, linewidth=3, color = 'cyan')
+    #axt = fig1.add_subplot(2,1,2,xmargin=0.0)
+    #axt.set_xlim([stimes[0] - oneDay, stimes[-1] + oneDay])
+    #axt.set_title("Site temperature (C)")
+    #axt.plot(stimes[validTempSite], tempSite[validTempSite], \
+    #         linewidth=1, label = 'Site Temp', color = 'blue')
+    #configDateAxis(axt, -9999, 9999, "Temp (C)", 'upper right')
+
+    label2 = "ZDR = " + ("%.5f" % ww[0]) + " * temp + " + ("%.3f" % ww[1])
+    ax2.plot(tempVals, statsVals, 
+             "x", label = label2, color = 'blue')
+    ax2.plot(regrX, regrY, linewidth=3, color = 'cyan')
     
-    legend3 = ax3.legend(loc="upper left", ncol=2)
-    for label3 in legend3.get_texts():
-        label3.set_fontsize(12)
-    ax3.set_xlabel("Site temperature (C)")
-    ax3.set_ylabel("ZDR Stats (dB)")
-    ax3.grid(True)
-    ax3.set_ylim([-1.5, 1.5])
-    ax3.set_xlim([minTemp - 1, maxTemp + 1])
-    title3 = "ZDR stats Vs Temp: " + str(startTime) + " - " + str(endTime)
-    ax3.set_title(title3)
+    legend2 = ax2.legend(loc="upper left", ncol=2)
+    for label2 in legend2.get_texts():
+        label2.set_fontsize(12)
+    ax2.set_xlabel("Site temperature (C)")
+    ax2.set_ylabel("ZDR Stats (dB)")
+    ax2.grid(True)
+    #ax2.set_ylim([-0.5, 0.5])
+    ax2.set_xlim([minTemp - 1, maxTemp + 1])
+    title2 = "ZDR vs. Temp in " + label + ": " + str(startTime) + " - " + str(endTime)
+    ax2.set_title(title2)
 
     fig1.autofmt_xdate()
-
     fig1.tight_layout()
-    fig1.subplots_adjust(bottom=0.03, left=0.06, right=0.97, top=0.97)
-    #plt.subplots_adjust(top=0.96)
+    fig1.subplots_adjust(bottom=0.10, left=0.06, right=0.97, top=0.97)
+
+    fig2.tight_layout()
+    fig2.subplots_adjust(bottom=0.15, left=0.1, right=0.95, top=0.9)
+
     plt.show()
 
 ########################################################################
