@@ -577,7 +577,7 @@ site_temp_search_margin_secs = 3600;
 // Type: boolean
 //
 
-write_results_to_text_files = TRUE;
+write_results_to_text_files = FALSE;
 
 ///////////// text_output_dir /////////////////////////
 //
