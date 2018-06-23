@@ -25,7 +25,7 @@ def main():
 
 # parse the command line
 
-    usage = "usage: %prog [options]"
+    usage = "usage: " + __file__ + " [options]"
     parser = OptionParser(usage)
     parser.add_option('--debug',
                       dest='debug', default=False,
@@ -37,15 +37,15 @@ def main():
                       help='File path for vert point zdr data')
     parser.add_option('--title',
                       dest='title',
-                      default='ZDR DISTRIBUTION FROM VERT POINTING',
+                      default='ZDR DISTRIB VERT POINT',
                       help='Title for plot')
     parser.add_option('--width',
                       dest='figWidthMm',
-                      default=300,
+                      default=200,
                       help='Width of figure in mm')
     parser.add_option('--height',
                       dest='figHeightMm',
-                      default=300,
+                      default=150,
                       help='Height of figure in mm')
     parser.add_option('--minHt',
                       dest='minHt',
@@ -78,10 +78,23 @@ def main():
 
     (options, args) = parser.parse_args()
     
-    if (options.debug == True):
-        print >>sys.stderr, "Running %prog"
-        print >>sys.stderr, "  vertFile: ", options.vertFile
+    # get date and time from filename
 
+    (dir, fileName) = os.path.split(options.vertFile)
+    (baseName, ext) = os.path.splitext(fileName)
+    baseNameParts = baseName.split('_')
+    nParts = len(baseNameParts)
+    global dateStr, timeStr
+    dateStr = baseNameParts[nParts-2]
+    timeStr = baseNameParts[nParts-1]
+
+    if (options.debug == True):
+        print >>sys.stderr, "Running " + __file__
+        print >>sys.stderr, "  vertFile: ", options.vertFile
+        print >>sys.stderr, "  fileName: ", fileName
+        print >>sys.stderr, "  dateStr: ", dateStr
+        print >>sys.stderr, "  timeStr: ", timeStr
+    
     # read in headers
 
     (iret, colHeaders) = readColumnHeaders(options.vertFile)
@@ -211,11 +224,10 @@ def doPlot(filePath, colHeaders, colData):
     htIn = float(options.figHeightMm) / 25.4
     
     fig1 = plt.figure(1, (widthIn, htIn))
-    title = (options.title + '  for Ht Limits [ ' +
-             options.minHt + ' : ' + options.maxHt + ' ]')
+    title = (options.title + " " + dateStr + '-' + timeStr)
     fig1.suptitle(title, fontsize=16)
-    ax1 = fig1.add_subplot(2,1,1,xmargin=0.0)
-    ax2 = fig1.add_subplot(2,1,2,xmargin=0.0)
+    ax1 = fig1.add_subplot(1,1,1,xmargin=0.0)
+    # ax2 = fig1.add_subplot(2,1,2,xmargin=0.0)
 
     # the histogram of ZDR
 
@@ -226,39 +238,47 @@ def doPlot(filePath, colHeaders, colData):
 
     ax1.set_xlabel('ZDR')
     ax1.set_ylabel('Frequency')
-    ax1.set_title('PDF - Probability Density Function', fontsize=14)
+    ax1.set_title('Probability Density Function', fontsize=14)
     ax1.grid(True)
 
     pdf = stats.norm(mean, sdev).pdf
     yy1 = pdf(bins1)
-    ll1 = ax1.plot(bins1, yy1, 'b', linewidth=2)
-
-    dd, pp = stats.kstest(zdrSorted,'norm', alternative = 'two-sided')
-    print >>sys.stderr, "  ==>> smk dd: ", dd
-    print >>sys.stderr, "  ==>> smk pp: ", pp
-
-   # CDF of ZDR
-
-    n2, bins2, patches2 = ax2.hist(zdrSorted, 60, normed=True,
-                                   cumulative=True,
-                                   histtype='stepfilled',
-                                   facecolor='slateblue',
-                                   alpha=0.35)
-
-    ax2.set_xlabel('ZDR')
-    ax2.set_ylabel('Cumulative frequency')
-    ax2.set_title('CDF - Cumulative Distribution Function', fontsize=14)
-    ax2.grid(True)
-
-    cdf = stats.norm(mean, sdev).cdf
-    yy2 = cdf(bins1)
-    ll2 = ax2.plot(bins1, yy2, 'b', linewidth=2,
-                   label = ('NormalFit mean=' + '{:.3f}'.format(mean) +
-                            ' sdev=' + '{:.3f}'.format(sdev) +
-                            ' skew=' + '{:.3f}'.format(skew)))
-    legend2 = ax2.legend(loc='upper left', ncol=4)
-    for label in legend2.get_texts():
+    label1 = ('NormalFit' +
+              '\nmean = ' + '{:.3f}'.format(mean) +
+              '\nsdev = ' + '{:.3f}'.format(sdev) +
+              '\nskew = ' + '{:.3f}'.format(skew) +
+              '\nminHt = ' + options.minHt +
+              '\nmaxHt = ' + options.maxHt)
+    ll1 = ax1.plot(bins1, yy1, 'b', linewidth=2,
+                   label = label1)
+    legend1 = ax1.legend(loc='upper left', ncol=4)
+    for label in legend1.get_texts():
         label.set_fontsize('medium')
+
+    ax1.set_xlim([minZdr, maxZdr])
+    
+    # CDF of ZDR
+
+    # n2, bins2, patches2 = ax2.hist(zdrSorted, 60, normed=True,
+    #                                cumulative=True,
+    #                                histtype='stepfilled',
+    #                                facecolor='slateblue',
+    #                                alpha=0.35)
+
+    # ax2.set_xlabel('ZDR')
+    # ax2.set_ylabel('Cumulative frequency')
+    # ax2.set_title('CDF - Cumulative Distribution Function', fontsize=14)
+    # ax2.grid(True)
+
+    # cdf = stats.norm(mean, sdev).cdf
+    # yy2 = cdf(bins1)
+    # ll2 = ax2.plot(bins1, yy2, 'b', linewidth=2,
+    #                label = ('NormalFit mean=' + '{:.3f}'.format(mean) +
+    #                         ' sdev=' + '{:.3f}'.format(sdev) +
+    #                         ' skew=' + '{:.3f}'.format(skew)))
+    # legend2 = ax2.legend(loc='upper left', ncol=4)
+    # for label in legend2.get_texts():
+    #     label.set_fontsize('medium')
 
     # axis limits
 
@@ -268,8 +288,7 @@ def doPlot(filePath, colHeaders, colData):
     #     minZdr = float(options.minZdr)
     #     maxZdr = float(options.maxZdr)
 
-    ax1.set_xlim([minZdr, maxZdr])
-    ax2.set_xlim([minZdr, maxZdr])
+    #ax2.set_xlim([minZdr, maxZdr])
 
     # draw line to show mean, annotate
 
@@ -284,16 +303,16 @@ def doPlot(filePath, colHeaders, colData):
 
     annotVal(ax1, mean, pdf, 'mean', plen, toffx,
              'black', 'black', 'left', 'center', 16)
-    annotVal(ax2, mean, cdf, 'mean', 0.03, toffx,
-             'black', 'black', 'left', 'center', 16)
+    #annotVal(ax2, mean, cdf, 'mean', 0.03, toffx,
+    #         'black', 'black', 'left', 'center', 16)
 
     # annotate percentiles
 
     if (options.plotPercentile):
         perc = percs[int(options.percentile)]
         label = 'p' + options.percentile + '%'
-        annotVal(ax2, perc, cdf, label, 0.03, toffx,
-                 'blue', 'blue', 'left', 'center', 14)
+        #annotVal(ax2, perc, cdf, label, 0.03, toffx,
+        #         'blue', 'blue', 'left', 'center', 14)
 
     #perc15 = percs[16]
     #annotVal(ax1, ax2,  perc15, pdf, cdf, 'p%15', plen, toffx,
@@ -306,7 +325,7 @@ def doPlot(filePath, colHeaders, colData):
     # adjust margins
 
     fig1.tight_layout()
-    fig1.subplots_adjust(bottom=0.04, left=0.07, right=0.97, top=0.92)
+    fig1.subplots_adjust(bottom=0.04, left=0.07, right=0.97, top=0.88)
 
     # show
 

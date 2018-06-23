@@ -531,18 +531,42 @@ max_ht_for_stats = 10;
 
 output_dir = "$(DATA_DIR)/pecan/cal/vert/sband";
 
-///////////// nrevs_for_global_stats //////////////////
+///////////// write_global_stats_to_text_file /////////
 //
-// Number of revolutions for global stats.
+// Option to write global statistics to a text file.
 //
-// A global stats file will be output each time the number of 
-//   revolutions reaches this value.
+// If true, stats for the entire run will be writted to a text file.
 //
 //
-// Type: int
+// Type: boolean
 //
 
-nrevs_for_global_stats = 4;
+write_global_stats_to_text_file = TRUE;
+
+///////////// write_360deg_stats_to_text_file /////////
+//
+// Option to write statistics for each rotation to a text file.
+//
+// If true, stats for each rotation will be writted to a text file.
+//
+//
+// Type: boolean
+//
+
+write_360deg_stats_to_text_file = FALSE;
+
+///////////// write_zdr_point_values_to_text_file /////
+//
+// Option to write individual ZDR values to a text file.
+//
+// If true, the individual zdrm values, plus metadata such as height, is 
+//   written to a text file.
+//
+//
+// Type: boolean
+//
+
+write_zdr_point_values_to_text_file = FALSE;
 
 ///////////// write_results_to_spdb ///////////////////
 //

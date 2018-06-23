@@ -576,7 +576,7 @@ site_temp_search_margin_secs = 3600;
 // Type: boolean
 //
 
-write_results_to_text_files = FALSE;
+write_results_to_text_files = TRUE;
 
 ///////////// text_output_dir /////////////////////////
 //
@@ -603,7 +603,7 @@ text_output_dir = "$(HOME)/data/PidZdrStats/pecan/rhi/txt";
 // Type: boolean
 //
 
-write_one_text_file_per_volume = TRUE;
+write_one_text_file_per_volume = FALSE;
 
 //======================================================================
 //
