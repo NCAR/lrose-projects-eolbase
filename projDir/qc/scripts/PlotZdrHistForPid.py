@@ -2,7 +2,7 @@
 
 #===========================================================================
 #
-# Produce histogram for ZDR bias in ice
+# Produce histogram for ZDR for different PID types
 #
 #===========================================================================
 
@@ -24,19 +24,19 @@ def main():
 
 # parse the command line
 
-    usage = "usage: %prog [options]"
+    usage = "usage: " + __file__ + " [options]"
     parser = OptionParser(usage)
     parser.add_option('--debug',
                       dest='debug', default=False,
                       action="store_true",
                       help='Set debugging on')
-    parser.add_option('--ice_file',
-                      dest='iceFile',
+    parser.add_option('--zdr_file',
+                      dest='zdrFile',
                       default='../data/pecan/ZdrmInIce.txt',
                       help='File path for zdr in ice data')
     parser.add_option('--title',
                       dest='title',
-                      default='ZDR DISTRIBUTION IN ICE',
+                      default='ZDR DISTRIB',
                       help='Title for plot')
     parser.add_option('--width',
                       dest='figWidthMm',
@@ -44,7 +44,7 @@ def main():
                       help='Width of figure in mm')
     parser.add_option('--height',
                       dest='figHeightMm',
-                      default=300,
+                      default=200,
                       help='Height of figure in mm')
     parser.add_option('--minElev',
                       dest='minElev',
@@ -54,27 +54,55 @@ def main():
                       dest='maxElev',
                       default='90.0',
                       help='Max elevation for ZDR data')
+    parser.add_option('--setZdrRange',
+                      dest='setZdrRange', default=False,
+                      action="store_true",
+                      help='Set the ZDR range to plot from minZdr to maxZdr. If false, we plot to 4 * stddev.')
+    parser.add_option('--minZdr',
+                      dest='minZdr',
+                      default='-2.0',
+                      help='Min val on ZDR data axis')
+    parser.add_option('--maxZdr',
+                      dest='maxZdr',
+                      default='2.0',
+                      help='Max val on ZDR axis')
     (options, args) = parser.parse_args()
     
-    if (options.debug == True):
-        print >>sys.stderr, "Running %prog"
-        print >>sys.stderr, "  iceFile: ", options.iceFile
+    # get date and time from filename
+
+    global fileName, dateStr, timeStr, pidLabel
+    (dir, fileName) = os.path.split(options.zdrFile)
+    fileNameParts = fileName.split('.')
+    dateTime = fileNameParts[1]
+    dateTimeParts = dateTime.split('_')
+    nParts = len(dateTimeParts)
+    dateStr = dateTimeParts[nParts-2]
+    timeStr = dateTimeParts[nParts-1]
+    pidLabel = fileNameParts[2]
+
+    if (options.debug):
+        print >>sys.stderr, "Running " + __file__
+        print >>sys.stderr, "  zdrFile: ", options.zdrFile
+        print >>sys.stderr, "  fileName: ", fileName
+        print >>sys.stderr, "  dateStr: ", dateStr
+        print >>sys.stderr, "  timeStr: ", timeStr
+        print >>sys.stderr, "  pidLabel: ", pidLabel
 
     # read in headers
 
-    (iret, colHeaders) = readColumnHeaders(options.iceFile)
+    (iret, colHeaders) = readColumnHeaders(options.zdrFile)
     if (iret != 0):
         sys.exit(1)
 
     # read in data
 
-    (iret, colData) = readInputData(options.iceFile, colHeaders)
+    (iret, colData) = readInputData(options.zdrFile, colHeaders)
     if (iret != 0):
         sys.exit(1)
 
     # render the plot
     
-    doPlot(options.iceFile, colHeaders, colData)
+    doPlot(options.zdrFile, colHeaders, colData)
 
     sys.exit(0)
     
@@ -133,6 +161,16 @@ def readInputData(filePath, colHeaders):
                 print >>sys.stderr, "skipping line: ", line
             continue;
 
+        zdr = 0.0
+        for index, var in enumerate(colHeaders, start=0):
+            if (colHeaders[index] == 'zdr'):
+                zdr = float(data[index])
+
+        if (options.setZdrRange):
+            if (zdr < float(options.minZdr) or
+                zdr > float(options.maxZdr)):
+                continue
+
         for index, var in enumerate(colHeaders, start=0):
             colData[var].append(float(data[index]))
 
@@ -180,11 +218,14 @@ def doPlot(filePath, colHeaders, colData):
     htIn = float(options.figHeightMm) / 25.4
     
     fig1 = plt.figure(1, (widthIn, htIn))
-    title = (options.title + '  for Elev Limits [ ' +
-             options.minElev + ' : ' + options.maxElev + ' ]')
+    if (minElev == 0.0 and maxElev == 90.0):
+        title = (options.title + ' for ' + fileName)
+    else:
+        title = (options.title + ' for ' + fileName + ' Elev Limits [' +
+                 options.minElev + ':' + options.maxElev + ']')
     fig1.suptitle(title, fontsize=16)
-    ax1 = fig1.add_subplot(2,1,1,xmargin=0.0)
-    ax2 = fig1.add_subplot(2,1,2,xmargin=0.0)
+    ax1 = fig1.add_subplot(1,1,1,xmargin=0.0)
+    #ax2 = fig1.add_subplot(2,1,2,xmargin=0.0)
 
     # the histogram of ZDR
 
@@ -195,39 +236,51 @@ def doPlot(filePath, colHeaders, colData):
 
     ax1.set_xlabel('ZDR')
     ax1.set_ylabel('Frequency')
-    ax1.set_title('PDF - Probability Density Function', fontsize=14)
+    ax1.set_title('Probability Density Function - ' + pidLabel, fontsize=14)
     ax1.grid(True)
 
     pdf = stats.norm(mean, sdev).pdf
     yy1 = pdf(bins1)
-    ll1 = ax1.plot(bins1, yy1, 'b', linewidth=2)
-
-    ax1.set_xlim([mean -sdev * 3, mean + sdev * 3])
-
-    # CDF of ZDR
-
-    n2, bins2, patches2 = ax2.hist(zdrSorted, 60, normed=True,
-                                   cumulative=True,
-                                   histtype='stepfilled',
-                                   facecolor='slateblue',
-                                   alpha=0.35)
-
-    ax2.set_xlabel('ZDR')
-    ax2.set_ylabel('Cumulative frequency')
-    ax2.set_title('CDF - Cumulative Distribution Function', fontsize=14)
-    ax2.grid(True)
-
-    cdf = stats.norm(mean, sdev).cdf
-    yy2 = cdf(bins1)
-    ll2 = ax2.plot(bins1, yy2, 'b', linewidth=2,
-                   label = ('NormalFit mean=' + '{:.3f}'.format(mean) +
-                            ' sdev=' + '{:.3f}'.format(sdev) +
-                            ' skew=' + '{:.3f}'.format(skew)))
-    legend2 = ax2.legend(loc='upper left', ncol=4)
-    for label in legend2.get_texts():
+    label1 = ('NormalFit' +
+              '\npidType = ' + pidLabel +
+              '\nmean = ' + '{:.3f}'.format(mean) +
+              '\nstdev = ' + '{:.3f}'.format(sdev) +
+              '\nskewness = ' + '{:.3f}'.format(skew) +
+              '\nkurtosis = ' + '{:.3f}'.format(kurtosis) +
+              '\nminElev = ' + options.minElev +
+              '\nmaxElev = ' + options.maxElev)
+    ll1 = ax1.plot(bins1, yy1, 'b', linewidth=2,
+                   label = label1)
+    legend1 = ax1.legend(loc='upper left', ncol=4)
+    for label in legend1.get_texts():
         label.set_fontsize('medium')
 
-    ax2.set_xlim([mean -sdev * 3, mean + sdev * 3])
+    #ax1.set_xlim([mean -sdev * 3, mean + sdev * 3])
+    
+    # CDF of ZDR
+
+    #n2, bins2, patches2 = ax2.hist(zdrSorted, 60, normed=True,
+    #                               cumulative=True,
+    #                               histtype='stepfilled',
+    #                               facecolor='slateblue',
+    #                               alpha=0.35)
+
+    #ax2.set_xlabel('ZDR')
+    #ax2.set_ylabel('Cumulative frequency')
+    #ax2.set_title('CDF - Cumulative Distribution Function', fontsize=14)
+    #ax2.grid(True)
+
+    #cdf = stats.norm(mean, sdev).cdf
+    #yy2 = cdf(bins1)
+    #ll2 = ax2.plot(bins1, yy2, 'b', linewidth=2,
+    #               label = ('NormalFit mean=' + '{:.3f}'.format(mean) +
+    #                        ' sdev=' + '{:.3f}'.format(sdev) +
+    #                        ' skew=' + '{:.3f}'.format(skew)))
+    #legend2 = ax2.legend(loc='upper left', ncol=4)
+    #for label in legend2.get_texts():
+    #    label.set_fontsize('medium')
+
+    # ax2.set_xlim([mean -sdev * 3, mean + sdev * 3])
 
     # draw line to show mean, annotate
 
@@ -237,7 +290,7 @@ def doPlot(filePath, colHeaders, colData):
 
     # draw line to show mean, annotate
 
-    annotVal(ax1, ax2,  mean, pdf, cdf, 'mean', plen, toffx,
+    annotVal(ax1, mean, pdf, 'mean', plen, toffx,
              'black', 'black', 'left', 'center')
 
     # annotate percentiles
@@ -256,12 +309,30 @@ def doPlot(filePath, colHeaders, colData):
 
     # show
 
+    plt.savefig('zdr_hist_' + pidLabel + '.png')
     plt.show()
 
-########################################################################
-# Annotate a value
 
-def annotVal(ax1, ax2, val, pdf, cdf, label, plen,
+########################################################################
+# Annotate a value in the PDF
+
+def annotVal(ax1, val, pdf, label, plen,
+             toffx, linecol, textcol,
+             horizAlign, vertAlign):
+
+    pval = pdf(val)
+    ax1.plot([val, val], [pval - plen, pval + plen], color=linecol, linewidth=2)
+    ax1.annotate(label + '=' + '{:.3f}'.format(val),
+                 xy=(val, pval + toffx),
+                 xytext=(val + toffx, pval),
+                 color=textcol,
+                 horizontalalignment=horizAlign,
+                 verticalalignment=vertAlign)
+
+########################################################################
+# Annotate a value for PDF and CDF
+
+def annotVal2(ax1, ax2, val, pdf, cdf, label, plen,
              toffx, linecol, textcol,
              horizAlign, vertAlign):
 

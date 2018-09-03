@@ -50,7 +50,7 @@ debug = DEBUG_OFF;
 // Type: string
 //
 
-instance = "pecan";
+instance = "pecan.rhi";
 
 //======================================================================
 //
@@ -68,8 +68,7 @@ instance = "pecan";
 // Type: string
 //
 
-// input_dir = "/scr/rain1/rsfdata/projects/pecan/cfradial/qcv2/partrain/sband/rhi";
-input_dir = "/scr/rain1/rsfdata/projects/pecan/cfradial/qcv2/partrain/sband/sur";
+input_dir = "/scr/rain1/rsfdata/projects/pecan/cfradial/qcv2/partrain/sband/rhi";
 
 ///////////// mode ////////////////////////////////////
 //
@@ -591,8 +590,7 @@ write_results_to_text_files = TRUE;
 // Type: string
 //
 
-// text_output_dir = "$(HOME)/data/PidZdrStats/pecan_rhi/txt2";
-text_output_dir = "$(HOME)/data/PidZdrStats/pecan_sur/txt2";
+text_output_dir = "$(HOME)/data/PidZdrStats/pecan/rhi/txt";
 
 ///////////// write_one_text_file_per_volume //////////
 //
@@ -605,7 +603,7 @@ text_output_dir = "$(HOME)/data/PidZdrStats/pecan_sur/txt2";
 // Type: boolean
 //
 
-write_one_text_file_per_volume = TRUE;
+write_one_text_file_per_volume = FALSE;
 
 //======================================================================
 //
@@ -637,7 +635,7 @@ write_results_to_spdb = TRUE;
 // Type: string
 //
 
-spdb_output_url = "$(HOME)/data/PidZdrStats/pecan/spdb2";
+spdb_output_url = "$(HOME)/data/PidZdrStats/pecan/spdb";
 
 ///////////// write_histogram_to_spdb /////////////////
 //

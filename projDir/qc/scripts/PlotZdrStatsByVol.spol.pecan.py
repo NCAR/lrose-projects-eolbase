@@ -80,6 +80,24 @@ def main():
                       dest='scanMode',
                       default='both',
                       help='Scan mode: sur, rhi or both')
+    parser.add_option('--setZdrRange',
+                      dest='setZdrRange', default=False,
+                      action="store_true",
+                      help= \
+                      'Set the ZDR range to plot from minZdr to maxZdr. ' + \
+                      'If false, plot all data')
+    parser.add_option('--minZdr',
+                      dest='minZdr',
+                      default='-1.0',
+                      help='Min val on ZDR data axis')
+    parser.add_option('--maxZdr',
+                      dest='maxZdr',
+                      default='1.0',
+                      help='Max val on ZDR axis')
+    parser.add_option('--normalize',
+                      dest='normalize', default=False,
+                      action="store_true",
+                      help='Normalize stats before plotting')
     
     (options, args) = parser.parse_args()
     
@@ -267,6 +285,8 @@ def doPlot(statsData, statsTimes, cpData, cpTimes):
     meanMinusSdev = statsMean - 0.3 * statsSdev
 
     perc = np.array(computePercentile(statsData, float(options.percentile))).astype(np.double)
+    if (options.normalize):
+        perc = (perc - statsMean) / statsSdev
 
     histMedian = np.array(statsData["HistMedian"]).astype(np.double)
     histMedian = movingAverage(histMedian, lenMeanFilter)
@@ -347,10 +367,11 @@ def doPlot(statsData, statsTimes, cpData, cpTimes):
     ax1.plot(ctimes[validZdrmVert], ZdrmVert[validZdrmVert], \
              "^", markersize=10, linewidth=1, label = 'Zdrm Vert (dB)', color = 'yellow')
 
-
-
-    configDateAxis(ax1, -9999, 9999, "ZDR Stats (dB)", 'upper right')
-    #configDateAxis(ax1, -0.5, 1.0, "ZDR Stats (dB)", 'upper right')
+    if (options.setZdrRange):
+        configDateAxis(ax1, float(options.minZdr), float(options.maxZdr),
+                       "ZDR Stats (dB)", 'upper right')
+    else:
+        configDateAxis(ax1, -9999, 9999, "ZDR Stats (dB)", 'upper right')
 
     #axt = fig1.add_subplot(2,1,2,xmargin=0.0)
     #axt.set_xlim([stimes[0] - oneDay, stimes[-1] + oneDay])
@@ -370,7 +391,8 @@ def doPlot(statsData, statsTimes, cpData, cpTimes):
     ax2.set_xlabel("Site temperature (C)")
     ax2.set_ylabel("ZDR Stats (dB)")
     ax2.grid(True)
-    #ax2.set_ylim([-0.5, 0.5])
+    if (options.setZdrRange):
+        ax2.set_ylim([float(options.minZdr), float(options.maxZdr)])
     ax2.set_xlim([minTemp - 1, maxTemp + 1])
     title2 = "ZDR vs. Temp in " + label + ": " + str(startTime) + " - " + str(endTime)
     ax2.set_title(title2)
