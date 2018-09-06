@@ -166,6 +166,17 @@ WIDE_QPE_PID         QPE_PID     mdvp:://front.eol.ucar.edu:8080:pecan/mdv/qpe_m
 WIDE_QPE_HEIGHT      QPE_HEIGHT  mdvp:://front.eol.ucar.edu:8080:pecan/mdv/qpe_mosaic?use_http=true&HEIGHT       qpe_height.colors   km     -5 80 5 radial 1 0
 WIDE_QPE_RANGE       QPE_RANGE   mdvp:://front.eol.ucar.edu:8080:pecan/mdv/qpe_mosaic?use_http=true&RANGE        range_250.colors    km     -5 80 5 radial 1 0
 
+# QPE max
+
+WIDE_QPEM_RATE_PID    QPEM_RATE_PID    mdvp:://front.eol.ucar.edu:8080:pecan/mdv/qpe_max?use_http=true&RATE_PID     precip_rate.colors  mm/hr  -5 80 5 radial 1 0
+WIDE_QPEM_RATE_HYBRID QPEM_RATE_HYBRID mdvp:://front.eol.ucar.edu:8080:pecan/mdv/qpe_max?use_http=true&RATE_HYBRID  precip_rate.colors  mm/hr  -5 80 5 radial 1 0
+WIDE_QPEM_RATE_ZH     QPEM_RATE_ZH     mdvp:://front.eol.ucar.edu:8080:pecan/mdv/qpe_max?use_http=true&RATE_ZH      precip_rate.colors  mm/hr  -5 80 5 radial 1 0
+WIDE_QPEM_RATE_Z_ZDR  QPEM_RATE_Z_ZDR  mdvp:://front.eol.ucar.edu:8080:pecan/mdv/qpe_max?use_http=true&RATE_Z_ZDR   precip_rate.colors  mm/hr  -5 80 5 radial 1 0
+WIDE_QPEM_RATE_KDP    QPEM_RATE_KDP    mdvp:://front.eol.ucar.edu:8080:pecan/mdv/qpe_max?use_http=true&RATE_KDP     precip_rate.colors  mm/hr  -5 80 5 radial 1 0
+WIDE_QPEM_PID         QPEM_PID     mdvp:://front.eol.ucar.edu:8080:pecan/mdv/qpe_max?use_http=true&PID          pid.colors          -      -5 80 5 radial 1 0
+WIDE_QPEM_HEIGHT      QPEM_HEIGHT  mdvp:://front.eol.ucar.edu:8080:pecan/mdv/qpe_max?use_http=true&HEIGHT       qpe_height.colors   km     -5 80 5 radial 1 0
+WIDE_QPEM_RANGE       QPEM_RANGE   mdvp:://front.eol.ucar.edu:8080:pecan/mdv/qpe_max?use_http=true&RANGE        range_250.colors    km     -5 80 5 radial 1 0
+
 WIDE_1HR_ACCUM_PID    1HR_ACCUM_PID    mdvp:://front.eol.ucar.edu:8080:pecan/mdv/qpe_accum_1hr?use_http=true&ACCUM_PID     precip_accum.colors  mm  -5 80 5 radial 1 0
 WIDE_1HR_ACCUM_HYBRID 1HR_ACCUM_HYBRID mdvp:://front.eol.ucar.edu:8080:pecan/mdv/qpe_accum_1hr?use_http=true&ACCUM_HYBRID  precip_accum.colors  mm  -5 80 5 radial 1 0
 WIDE_1HR_ACCUM_Z_ZDR  1HR_ACCUM_Z_ZDR  mdvp:://front.eol.ucar.edu:8080:pecan/mdv/qpe_accum_1hr?use_http=true&ACCUM_Z_ZDR   precip_accum.colors  mm  -5 80 5 radial 1 0
