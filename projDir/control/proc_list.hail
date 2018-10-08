@@ -224,5 +224,6 @@ Grib2toMdv  gfs.relampago start_inst(ingest)   snuff_inst
 #
 # SURFACE OBS
 #
-Metar2Spdb   relampago  start_inst(ingest)   snuff_inst 
+Metar2Spdb   relampago         start_inst(ingest)    snuff_inst 
+InputWatcher relampago_surface start_inst(ingest)    snuff_inst
 ######################################################################
