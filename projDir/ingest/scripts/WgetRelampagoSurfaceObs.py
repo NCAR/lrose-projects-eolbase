@@ -110,11 +110,10 @@ def main():
 
     # run wget
 
-    #if (now.tm_hour < 2):
-
-    os.chdir(yesterdayOutDir)
-    cmd = 'wget -m -nd --accept "*.csv" -e robots=off --level=1 ' + yesterdayUrl
-    runCommand(cmd)
+    if (now.tm_hour < 3):
+        os.chdir(yesterdayOutDir)
+        cmd = 'wget -m -nd --accept "*.csv" -e robots=off --level=1 ' + yesterdayUrl
+        runCommand(cmd)
     
     os.chdir(todayOutDir)
     cmd = 'wget -m -nd --accept "*.csv" -e robots=off --level=1 ' + todayUrl

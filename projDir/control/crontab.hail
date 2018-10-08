@@ -34,3 +34,8 @@
 # TRANSFER IMAGES FROM RAL WEATHER PAGE TO CATALOG
 #
 #*/10 * * * *   csh -c "retrieve_ral_products" 1> /dev/null 2> /dev/null
+####################################################################
+# RELAMPAGO
+#
+# Wget surface station data
+*/1 * * * *   csh -c "run_WgetRelampagoSurfaceObs" 1> /dev/null 2> /dev/null
