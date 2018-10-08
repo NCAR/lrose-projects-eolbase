@@ -790,7 +790,7 @@ out_projection_info = {
 //
 
 out_grid_info = {
-    nx = 250,
+    nx = 300,
     ny = 250,
     minx = -80,
     miny = -45,
