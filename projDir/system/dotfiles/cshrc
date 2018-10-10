@@ -107,7 +107,9 @@ endif
 
 # python
 
-setenv PYTHONPATH ~/anaconda2/pkgs:$HOME/projDir/dial/Python/ptvv1_python/python:$HOME/projDir/dial/Python/NCAR-LidarProcessing/libraries
+#setenv PYTHONPATH ~/anaconda2/pkgs:$HOME/projDir/dial/Python/ptvv1_python/python:$HOME/projDir/dial/Python/NCAR-LidarProcessing/libraries
+
+setenv PYTHONPATH ~/anaconda3/pkgs
 
 # HSRL
 
@@ -134,7 +136,8 @@ set path = ($path $LROSE_INSTALL_DIR/bin)
 set path = ($path $PROJ_DIR/dial/Matlab)
 
 set path = ($path ~/bin $QTDIR/bin \
-        ~/anaconda2/bin \
+#       ~/anaconda2/bin \
+        ~/anaconda3/bin \
 	$JAVA_HOME/bin $ANT_HOME/bin \
 	$NCARG_ROOT/bin \
 	/usr/local/bin /usr/local/sbin /usr/bin/X11 \

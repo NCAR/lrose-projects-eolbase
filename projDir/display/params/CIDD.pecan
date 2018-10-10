@@ -186,6 +186,15 @@ WIDE_2HR_ACCUM_HYBRID 2HR_ACCUM_HYBRID mdvp:://front.eol.ucar.edu:8080:pecan/mdv
 WIDE_2HR_ACCUM_Z_ZDR  2HR_ACCUM_Z_ZDR  mdvp:://front.eol.ucar.edu:8080:pecan/mdv/qpe_accum_2hr?use_http=true&ACCUM_Z_ZDR   precip_accum.colors  mm  -5 80 5 radial 1 0
 WIDE_2HR_ACCUM_ZH     2HR_ACCUM_ZH     mdvp:://front.eol.ucar.edu:8080:pecan/mdv/qpe_accum_2hr?use_http=true&ACCUM_ZH      precip_accum.colors  mm  -5 80 5 radial 1 0
 
+WIDE_1HR_ACCUM_PID    1HRM_ACCUM_PID    mdvp:://front.eol.ucar.edu:8080:pecan/mdv/qpe_max_accum_1hr?use_http=true&ACCUM_PID     precip_accum.colors  mm  -5 80 5 radial 1 0
+WIDE_1HR_ACCUM_HYBRID 1HRM_ACCUM_HYBRID mdvp:://front.eol.ucar.edu:8080:pecan/mdv/qpe_max_accum_1hr?use_http=true&ACCUM_HYBRID  precip_accum.colors  mm  -5 80 5 radial 1 0
+WIDE_1HR_ACCUM_Z_ZDR  1HRM_ACCUM_Z_ZDR  mdvp:://front.eol.ucar.edu:8080:pecan/mdv/qpe_max_accum_1hr?use_http=true&ACCUM_Z_ZDR   precip_accum.colors  mm  -5 80 5 radial 1 0
+WIDE_1HR_ACCUM_ZH     1HRM_ACCUM_ZH     mdvp:://front.eol.ucar.edu:8080:pecan/mdv/qpe_max_accum_1hr?use_http=true&ACCUM_ZH      precip_accum.colors  mm  -5 80 5 radial 1 0
+WIDE_2HR_ACCUM_PID    2HRM_ACCUM_PID    mdvp:://front.eol.ucar.edu:8080:pecan/mdv/qpe_max_accum_2hr?use_http=true&ACCUM_PID     precip_accum.colors  mm  -5 80 5 radial 1 0
+WIDE_2HR_ACCUM_HYBRID 2HRM_ACCUM_HYBRID mdvp:://front.eol.ucar.edu:8080:pecan/mdv/qpe_max_accum_2hr?use_http=true&ACCUM_HYBRID  precip_accum.colors  mm  -5 80 5 radial 1 0
+WIDE_2HR_ACCUM_Z_ZDR  2HRM_ACCUM_Z_ZDR  mdvp:://front.eol.ucar.edu:8080:pecan/mdv/qpe_max_accum_2hr?use_http=true&ACCUM_Z_ZDR   precip_accum.colors  mm  -5 80 5 radial 1 0
+WIDE_2HR_ACCUM_ZH     2HRM_ACCUM_ZH     mdvp:://front.eol.ucar.edu:8080:pecan/mdv/qpe_max_accum_2hr?use_http=true&ACCUM_ZH      precip_accum.colors  mm  -5 80 5 radial 1 0
+
 WIDE_3HR_ACCUM_PID      3HR_ACCUM_PID      mdvp:://front.eol.ucar.edu:8080:pecan/mdv/qpe_accum_3hr?use_http=true&ACCUM_PID     precip_accum.colors  mm  -5 80 5 radial 1 0
 WIDE_3HR_ACCUM_HYBRID   3HR_ACCUM_HYBRID   mdvp:://front.eol.ucar.edu:8080:pecan/mdv/qpe_accum_3hr?use_http=true&ACCUM_HYBRID  precip_accum.colors  mm  -5 80 5 radial 1 0
 WIDE_3HR_ACCUM_Z_ZDR    3HR_ACCUM_Z_ZDR    mdvp:://front.eol.ucar.edu:8080:pecan/mdv/qpe_accum_3hr?use_http=true&ACCUM_Z_ZDR   precip_accum.colors  mm  -5 80 5 radial 1 0
@@ -217,10 +226,11 @@ WIDE_DAILY_ACCUM_PID    DAILY_ACCUM_PID    mdvp:://front.eol.ucar.edu:8080:pecan
 WIDE_DAILY_ACCUM_HYBRID DAILY_ACCUM_HYBRID mdvp:://front.eol.ucar.edu:8080:pecan/mdv/qpe_accum_daily?use_http=true&ACCUM_HYBRID  precip_accum.colors  mm  -5 80 5 radial 1 0
 WIDE_DAILY_ACCUM_Z_ZDR  DAILY_ACCUM_Z_ZDR  mdvp:://front.eol.ucar.edu:8080:pecan/mdv/qpe_accum_daily?use_http=true&ACCUM_Z_ZDR   precip_accum.colors  mm  -5 80 5 radial 1 0
 WIDE_DAILY_ACCUM_ZH     DAILY_ACCUM_ZH     mdvp:://front.eol.ucar.edu:8080:pecan/mdv/qpe_accum_daily?use_http=true&ACCUM_ZH      precip_accum.colors  mm  -5 80 5 radial 1 0
-WIDE_===== ========   mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
-WIDE_===== ========   mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
-WIDE_===== ========   mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
-WIDE_===== ========   mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
+
+WIDE_DAILYMAX_ACCUM_PID    DAILYMAX_ACCUM_PID    mdvp:://front.eol.ucar.edu:8080:pecan/mdv/qpe_accum_daily.max?use_http=true&ACCUM_PID     precip_accum.colors  mm  -5 80 5 radial 1 0
+WIDE_DAILYMAX_ACCUM_HYBRID DAILYMAX_ACCUM_HYBRID mdvp:://front.eol.ucar.edu:8080:pecan/mdv/qpe_accum_daily.max?use_http=true&ACCUM_HYBRID  precip_accum.colors  mm  -5 80 5 radial 1 0
+WIDE_DAILYMAX_ACCUM_Z_ZDR  DAILYMAX_ACCUM_Z_ZDR  mdvp:://front.eol.ucar.edu:8080:pecan/mdv/qpe_accum_daily.max?use_http=true&ACCUM_Z_ZDR   precip_accum.colors  mm  -5 80 5 radial 1 0
+WIDE_DAILYMAX_ACCUM_ZH     DAILYMAX_ACCUM_ZH     mdvp:://front.eol.ucar.edu:8080:pecan/mdv/qpe_accum_daily.max?use_http=true&ACCUM_ZH      precip_accum.colors  mm  -5 80 5 radial 1 0
 
 # SURFACE data, LTG rate
 
