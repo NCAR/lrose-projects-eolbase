@@ -1,0 +1,18 @@
+#! /bin/csh
+
+cd $PROJ_DIR/ingest/params
+
+setenv project hawaii
+
+setenv radar_name phki
+Radx2Grid -instance $radar_name -params Radx2Grid.hawaii -debug >& /tmp/Radx2Grid.hawaii.${radar_name}.log &
+
+setenv radar_name phkm
+Radx2Grid -instance $radar_name -params Radx2Grid.hawaii -debug >& /tmp/Radx2Grid.hawaii.${radar_name}.log &
+
+setenv radar_name phmo
+Radx2Grid -instance $radar_name -params Radx2Grid.hawaii -debug >& /tmp/Radx2Grid.hawaii.${radar_name}.log &
+
+setenv radar_name phwa
+Radx2Grid -instance $radar_name -params Radx2Grid.hawaii -debug >& /tmp/Radx2Grid.hawaii.${radar_name}.log &
+

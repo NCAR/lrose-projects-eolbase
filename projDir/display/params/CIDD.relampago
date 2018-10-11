@@ -1348,8 +1348,8 @@ prod_info = {
   }
   ,
   {
-    menu_label = "MADIS-simple",
-    url = "spdbp:Metar2Symprod:simple//front.eol.ucar.edu:8080:relampago/spdb/madis?use_http=true",
+    menu_label = "AWS-simple",
+    url = "spdbp:Metar2Symprod:simple//front.eol.ucar.edu:8080:relampago/spdb/aws?use_http=true",
     data_type = 0,
     render_type = RENDER_LATEST_IN_FRAME,
     on_by_default = FALSE,
@@ -1361,8 +1361,8 @@ prod_info = {
   }
   ,
   {
-    menu_label = "MADIS-full",
-    url = "spdbp:Metar2Symprod:labels//front.eol.ucar.edu:8080:relampago/spdb/madis?use_http=true",
+    menu_label = "AWS-full",
+    url = "spdbp:Metar2Symprod:labels//front.eol.ucar.edu:8080:relampago/spdb/aws?use_http=true",
     data_type = 0,
     render_type = RENDER_LATEST_IN_FRAME,
     on_by_default = FALSE,

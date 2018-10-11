@@ -45,6 +45,7 @@
 
 field_list = {
   { "NEXRAD moments", "NEX_" },
+  { "NEXRAD cart moments", "CART_" },
   { "NEXRAD PID/precip", "NEXP_ " },
   //  { "Surface", "SURF_" },
   { "Model", "MODEL_"},
@@ -140,6 +141,45 @@ NEX_PHWA_PHIDP PHWA_PHIDP  mdvp:://front.eol.ucar.edu:8080:hawaii/cfradial/phwa/
 NEX_PHWA_RHOHV PHWA_RHOHV  mdvp:://front.eol.ucar.edu:8080:hawaii/cfradial/phwa/moments?use_http=true&RHOHV       rhohv.colors -   -5 80 5 radial 1 0
 NEX_========   ========    mdvp::static//front.eol.ucar.edu:8080:/spacer/moments?use_http=true&Elevation       none.colors  m   -5 80 5 dcont  1 0
 NEX_========   ========    mdvp::static//front.eol.ucar.edu:8080:/spacer/moments?use_http=true&Elevation       none.colors  m   -5 80 5 dcont  1 0
+
+#############################
+# NEXRAD CART MOMENTS
+
+CART_PHMO_DBZ   PHMO_DBZ    mdvp:://front.eol.ucar.edu:8080:hawaii/mdv/radarCart/phmo?use_http=true&DBZ       dbz.colors   dBZ -5 80 5 radial 1 0
+CART_PHMO_VEL   PHMO_VEL    mdvp:://front.eol.ucar.edu:8080:hawaii/mdv/radarCart/phmo?use_http=true&VEL       vel.colors   m/s -5 80 5 radial 1 0
+CART_PHMO_WIDTH PHMO_WIDTH  mdvp:://front.eol.ucar.edu:8080:hawaii/mdv/radarCart/phmo?use_http=true&WIDTH        width.colors m/s -5 80 5 radial 1 0
+CART_PHMO_ZDR   PHMO_ZDR    mdvp:://front.eol.ucar.edu:8080:hawaii/mdv/radarCart/phmo?use_http=true&ZDR       zdr.colors   dB  -5 80 5 radial 1 0
+CART_PHMO_RHOHV PHMO_RHOHV  mdvp:://front.eol.ucar.edu:8080:hawaii/mdv/radarCart/phmo?use_http=true&RHOHV       rhohv.colors -   -5 80 5 radial 1 0
+CART_========   ========    mdvp::static//front.eol.ucar.edu:8080:/spacer?use_http=true&Elevation       none.colors  m   -5 80 5 dcont  1 0
+CART_========   ========    mdvp::static//front.eol.ucar.edu:8080:/spacer?use_http=true&Elevation       none.colors  m   -5 80 5 dcont  1 0
+CART_========   ========    mdvp::static//front.eol.ucar.edu:8080:/spacer?use_http=true&Elevation       none.colors  m   -5 80 5 dcont  1 0
+
+CART_PHKI_DBZ   PHKI_DBZ    mdvp:://front.eol.ucar.edu:8080:hawaii/mdv/radarCart/phki?use_http=true&DBZ       dbz.colors   dBZ -5 80 5 radial 1 0
+CART_PHKI_VEL   PHKI_VEL    mdvp:://front.eol.ucar.edu:8080:hawaii/mdv/radarCart/phki?use_http=true&VEL       vel.colors   m/s -5 80 5 radial 1 0
+CART_PHKI_WIDTH PHKI_WIDTH  mdvp:://front.eol.ucar.edu:8080:hawaii/mdv/radarCart/phki?use_http=true&WIDTH        width.colors m/s -5 80 5 radial 1 0
+CART_PHKI_ZDR   PHKI_ZDR    mdvp:://front.eol.ucar.edu:8080:hawaii/mdv/radarCart/phki?use_http=true&ZDR       zdr.colors   dB  -5 80 5 radial 1 0
+CART_PHKI_RHOHV PHKI_RHOHV  mdvp:://front.eol.ucar.edu:8080:hawaii/mdv/radarCart/phki?use_http=true&RHOHV       rhohv.colors -   -5 80 5 radial 1 0
+CART_========   ========    mdvp::static//front.eol.ucar.edu:8080:/spacer?use_http=true&Elevation       none.colors  m   -5 80 5 dcont  1 0
+CART_========   ========    mdvp::static//front.eol.ucar.edu:8080:/spacer?use_http=true&Elevation       none.colors  m   -5 80 5 dcont  1 0
+CART_========   ========    mdvp::static//front.eol.ucar.edu:8080:/spacer?use_http=true&Elevation       none.colors  m   -5 80 5 dcont  1 0
+
+CART_PHKM_DBZ   PHKM_DBZ    mdvp:://front.eol.ucar.edu:8080:hawaii/mdv/radarCart/phkm?use_http=true&DBZ       dbz.colors   dBZ -5 80 5 radial 1 0
+CART_PHKM_VEL   PHKM_VEL    mdvp:://front.eol.ucar.edu:8080:hawaii/mdv/radarCart/phkm?use_http=true&VEL       vel.colors   m/s -5 80 5 radial 1 0
+CART_PHKM_WIDTH PHKM_WIDTH  mdvp:://front.eol.ucar.edu:8080:hawaii/mdv/radarCart/phkm?use_http=true&WIDTH        width.colors m/s -5 80 5 radial 1 0
+CART_PHKM_ZDR   PHKM_ZDR    mdvp:://front.eol.ucar.edu:8080:hawaii/mdv/radarCart/phkm?use_http=true&ZDR       zdr.colors   dB  -5 80 5 radial 1 0
+CART_PHKM_RHOHV PHKM_RHOHV  mdvp:://front.eol.ucar.edu:8080:hawaii/mdv/radarCart/phkm?use_http=true&RHOHV       rhohv.colors -   -5 80 5 radial 1 0
+CART_========   ========    mdvp::static//front.eol.ucar.edu:8080:/spacer?use_http=true&Elevation       none.colors  m   -5 80 5 dcont  1 0
+CART_========   ========    mdvp::static//front.eol.ucar.edu:8080:/spacer?use_http=true&Elevation       none.colors  m   -5 80 5 dcont  1 0
+CART_========   ========    mdvp::static//front.eol.ucar.edu:8080:/spacer?use_http=true&Elevation       none.colors  m   -5 80 5 dcont  1 0
+
+CART_PHWA_DBZ   PHWA_DBZ    mdvp:://front.eol.ucar.edu:8080:hawaii/mdv/radarCart/phwa?use_http=true&DBZ       dbz.colors   dBZ -5 80 5 radial 1 0
+CART_PHWA_VEL   PHWA_VEL    mdvp:://front.eol.ucar.edu:8080:hawaii/mdv/radarCart/phwa?use_http=true&VEL       vel.colors   m/s -5 80 5 radial 1 0
+CART_PHWA_WIDTH PHWA_WIDTH  mdvp:://front.eol.ucar.edu:8080:hawaii/mdv/radarCart/phwa?use_http=true&WIDTH        width.colors m/s -5 80 5 radial 1 0
+CART_PHWA_ZDR   PHWA_ZDR    mdvp:://front.eol.ucar.edu:8080:hawaii/mdv/radarCart/phwa?use_http=true&ZDR       zdr.colors   dB  -5 80 5 radial 1 0
+CART_PHWA_RHOHV PHWA_RHOHV  mdvp:://front.eol.ucar.edu:8080:hawaii/mdv/radarCart/phwa?use_http=true&RHOHV       rhohv.colors -   -5 80 5 radial 1 0
+CART_========   ========    mdvp::static//front.eol.ucar.edu:8080:/spacer?use_http=true&Elevation       none.colors  m   -5 80 5 dcont  1 0
+CART_========   ========    mdvp::static//front.eol.ucar.edu:8080:/spacer?use_http=true&Elevation       none.colors  m   -5 80 5 dcont  1 0
+CART_========   ========    mdvp::static//front.eol.ucar.edu:8080:/spacer?use_http=true&Elevation       none.colors  m   -5 80 5 dcont  1 0
 
 ############################
 # NEXRAD PID AND PRECIP RATE
