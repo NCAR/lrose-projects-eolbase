@@ -115,7 +115,7 @@ field_list = {
 MODEL_GFS-RH    GFS-RH   mdvp:://front.eol.ucar.edu:8080:relampago/mdv/gfs/relampago?use_http=true&RH   rh.colors   %   -5   80  5  dcont   1 0
 MODEL_GFS-TMP   GFS-TMP  mdvp:://front.eol.ucar.edu:8080:relampago/mdv/gfs/relampago?use_http=true&TMP  temp.colors   C   -5   80  5  dcont   1 0
 MODEL_GFS-PRES  GFS-PRES mdvp:://front.eol.ucar.edu:8080:relampago/mdv/gfs/relampago?use_http=true&Pressure pressure_mb.colors   m/s   -5   80  5  dcont   1 0
-SURF_Terrain Terrain  mdvp::terrain//front.eol.ucar.edu:8080:relampago/mdv/terrain?use_http=true&Elevation     terrain_front.colors m -5 80 5 dcont 1 0
+SURF_Terrain Terrain  mdvp::terrain//front.eol.ucar.edu:8080:relampago/mdv/terrain?use_http=true&Elevation     terrain_relampago.colors m -5 80 5 dcont 1 0
 MODEL_========   =========  mdvp::static//front.eol.ucar.edu:8080:/spacer?use_http=true&Elevation  none.colors   m   -5   80  5  dcont   1 0
 MODEL_========   =========  mdvp::static//front.eol.ucar.edu:8080:/spacer?use_http=true&Elevation  none.colors   m   -5   80  5  dcont   1 0
 MODEL_========   =========  mdvp::static//front.eol.ucar.edu:8080:/spacer?use_http=true&Elevation  none.colors   m   -5   80  5  dcont   1 0
