@@ -115,11 +115,32 @@ field_list = {
 MODEL_GFS-RH    GFS-RH   mdvp:://front.eol.ucar.edu:8080:relampago/mdv/gfs/relampago?use_http=true&RH   rh.colors   %   -5   80  5  dcont   1 0
 MODEL_GFS-TMP   GFS-TMP  mdvp:://front.eol.ucar.edu:8080:relampago/mdv/gfs/relampago?use_http=true&TMP  temp.colors   C   -5   80  5  dcont   1 0
 MODEL_GFS-PRES  GFS-PRES mdvp:://front.eol.ucar.edu:8080:relampago/mdv/gfs/relampago?use_http=true&Pressure pressure_mb.colors   m/s   -5   80  5  dcont   1 0
-SURF_Terrain Terrain  mdvp::terrain//front.eol.ucar.edu:8080:relampago/mdv/terrain?use_http=true&Elevation     terrain_relampago.colors m -5 80 5 dcont 1 0
+SURF_Terrain Terrain  mdvp::terrain//front.eol.ucar.edu:8080:relampago/mdv/terrain?use_http=true&Elevation terrain_relampago.colors m -5 80 5 dcont 1 0
+SURF_Temp  SURF_Temp  mdvp:://front.eol.ucar.edu:8080:relampago/mdv/surf_interp?use_http=true&Temp        temp.colors m -5 80 5 dcont 1 0
+SURF_DewPt SURF_DewPt mdvp:://front.eol.ucar.edu:8080:relampago/mdv/surf_interp?use_http=true&DewPoint    temp.colors m -5 80 5 dcont 1 0
+SURF_Conv  SURF_Conv  mdvp:://front.eol.ucar.edu:8080:relampago/mdv/surf_interp?use_http=true&Convergence conv.colors m -5 80 5 dcont 1 0
 MODEL_========   =========  mdvp::static//front.eol.ucar.edu:8080:/spacer?use_http=true&Elevation  none.colors   m   -5   80  5  dcont   1 0
-MODEL_========   =========  mdvp::static//front.eol.ucar.edu:8080:/spacer?use_http=true&Elevation  none.colors   m   -5   80  5  dcont   1 0
-MODEL_========   =========  mdvp::static//front.eol.ucar.edu:8080:/spacer?use_http=true&Elevation  none.colors   m   -5   80  5  dcont   1 0
-MODEL_========   =========  mdvp::static//front.eol.ucar.edu:8080:/spacer?use_http=true&Elevation  none.colors   m   -5   80  5  dcont   1 0
+
+#MODEL_========   =========  mdvp::static//front.eol.ucar.edu:8080:/spacer?use_http=true&Elevation  no#ne.colors   m   -5   80  5  dcont   1 0
+#MODEL_========   =========  mdvp::static//front.eol.ucar.edu:8080:/spacer?use_http=true&Elevation  no#ne.colors   m   -5   80  5  dcont   1 0
+#MODEL_========   =========  mdvp::static//front.eol.ucar.edu:8080:/spacer?use_http=true&Elevation  no#ne.colors   m   -5   80  5  dcont   1 0
+
+############################
+# SURFACE data
+
+# SURF_===== ==Surf==   mdvp:://front.eol.ucar.edu:8080:relampago/mdv/surf_interp?use_http=true&Temp        temp.colors m -5 80 5 dcont 1 0
+# SURF_===== ==Surf==   mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
+# SURF_===== ==Surf==   mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
+# SURF_===== ==Surf==   mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
+# SURF_===== ==Surf==   mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
+# SURF_===== ==Surf==   mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
+# SURF_===== ==Surf==   mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
+# SURF_===== ==Surf==   mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
+
+# SURF_===== ========   mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
+# SURF_===== ========   mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
+# SURF_===== ========   mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
+# SURF_===== ========   mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
 
 #############################
 # RADAR MOMENTS
@@ -153,27 +174,6 @@ NEXP_PHMO_RATE_Z_ZDR  PHMO_RATE_Z_ZDR  mdvp:://front.eol.ucar.edu:8080:relampago
 NEXP_PHMO_RATE_KDP    PHMO_RATE_KDP    mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/phmo/partrain?use_http=true&RATE_KDP     precip_rate.colors  mm/hr  -5 80 5 radial 1 0
 NEXP_PHMO_RATE_PID    PHMO_RATE_PID    mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/phmo/partrain?use_http=true&RATE_PID     precip_rate.colors  mm/hr  -5 80 5 radial 1 0
 NEXP_PHMO_RATE_HYBRID PHMO_RATE_HYBRID mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/phmo/partrain?use_http=true&RATE_HYBRID  precip_rate.colors  mm/hr  -5 80 5 radial 1 0
-
-############################
-# SURFACE data
-
-# SURF_===== ==Surf==   mdvp:://front.eol.ucar.edu:8080:relampago/mdv/surf_interp?use_http=true&Temp        temp.colors m -5 80 5 dcont 1 0
-# SURF_===== ==Surf==   mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
-# SURF_===== ==Surf==   mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
-# SURF_===== ==Surf==   mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
-# SURF_===== ==Surf==   mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
-# SURF_===== ==Surf==   mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
-# SURF_===== ==Surf==   mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
-# SURF_===== ==Surf==   mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
-
-# SURF_Temp  SURF_Temp  mdvp:://front.eol.ucar.edu:8080:relampago/mdv/surf_interp?use_http=true&Temp        temp.colors m -5 80 5 dcont 1 0
-# SURF_DewPt SURF_DewPt mdvp:://front.eol.ucar.edu:8080:relampago/mdv/surf_interp?use_http=true&DewPoint    temp.colors m -5 80 5 dcont 1 0
-# SURF_Conv  SURF_Conv  mdvp:://front.eol.ucar.edu:8080:relampago/mdv/surf_interp?use_http=true&Convergence conv.colors m -5 80 5 dcont 1 0
-# SURF_Terrain Terrain  mdvp::terrain//front.eol.ucar.edu:8080:relampago/mdv/terrain?use_http=true&Elevation     terrain_front.colors m -5 80 5 dcont 1 0
-# SURF_===== ========   mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
-# SURF_===== ========   mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
-# SURF_===== ========   mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
-# SURF_===== ========   mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
 
 ############################
 # Satellite data
@@ -601,7 +601,8 @@ cidd.max_adeg:               360.0
 # List of comma delimited local directories or HTTP URLs to search
 # Searchs . then each directory/URL in order 
 
-cidd.color_file_subdir:   http://front.eol.ucar.edu/color_scales
+#cidd.color_file_subdir:   http://front.eol.ucar.edu/color_scales
+cidd.color_file_subdir:   $(PROJ_DIR)/display/color_scales
 cidd.map_file_subdir:     http://front.eol.ucar.edu/maps
 
 #cidd.color_file_subdir:   $(PROJ_DIR)/display/color_scales,http://front.eol.ucar.edu/content/projects/hawk/relampago/projDir/display/color_scales
@@ -988,7 +989,7 @@ cidd.click_posn_rel_to_origin: 1
 # Set this parameter to force the field menu popup to this many columns
 # If set <= 0, then cidd sets this dynamically, allowing at most 30 in each
 # column.
-cidd.num_field_menu_cols: 8
+cidd.num_field_menu_cols: 4
 
 # This parameter sets WSDDM specific behavior On -
 # - Go to end of loop when movie stops.

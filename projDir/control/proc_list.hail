@@ -227,4 +227,7 @@ Mdv2SoundingSpdb  relampago  start_inst(ingest)  snuff_inst
 Metar2Spdb          relampago      start_inst(ingest)    snuff_inst 
 InputWatcher        relampago_aws  start_inst(ingest)    snuff_inst
 ArgentineAwsIngest  relampago      start_inst(ingest)    snuff_inst
+# Interpolate surface data
+#
+SurfInterp         relampago       start_inst(alg)     snuff_inst
 ######################################################################
