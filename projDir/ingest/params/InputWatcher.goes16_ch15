@@ -46,7 +46,7 @@ debug = DEBUG_OFF;
 // Type: string
 //
 
-instance = "goes16_ch01";
+instance = "goes16_ch15";
 
 //======================================================================
 //
@@ -66,7 +66,7 @@ instance = "goes16_ch01";
 // Type: string
 //
 
-input_dir = "/scr/typhoon-ldm/pub/native/satellite/GOES/GRB16/ABI/FullDisk/Channel01/current";
+input_dir = "/scr/typhoon-ldm/pub/native/satellite/GOES/GRB16/ABI/FullDisk/Channel15/current";
 
 ///////////// wait_between_checks /////////////////////
 //
@@ -544,7 +544,7 @@ without_date_directory = FALSE;
 // Type: string
 //
 
-copy_dir = "$(DATA_DIR)/relampago/raw/goes16/ch01";
+copy_dir = "$(DATA_DIR)/relampago/raw/goes16/ch15";
 
 ///////////// copy_prefix /////////////////////////////
 //
@@ -556,7 +556,7 @@ copy_dir = "$(DATA_DIR)/relampago/raw/goes16/ch01";
 // Type: string
 //
 
-copy_prefix = "goes16_ch01";
+copy_prefix = "goes16_ch15";
 
 ///////////// copy_ext ////////////////////////////////
 //

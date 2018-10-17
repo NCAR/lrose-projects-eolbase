@@ -1,0 +1,634 @@
+/**********************************************************************
+ * TDRP params for GoesRnetCDF2Mdv
+ **********************************************************************/
+
+//======================================================================
+//
+// GoesRnetCDF2Mdv.
+//
+// This program reads a set of GOES-R netCDF-formatted files             
+//   and writes the data to an MDV file.
+//
+//======================================================================
+ 
+//======================================================================
+//
+// DEBUGGING PARAMETERS.
+//
+// Parameters controlling debug outputs.
+//
+//======================================================================
+ 
+///////////// debug ///////////////////////////////////
+//
+// Debug option.
+//
+//
+// Type: enum
+// Options:
+//     DEBUG_OFF
+//     DEBUG_NORM
+//     DEBUG_VERBOSE
+//
+
+debug = DEBUG_OFF;
+
+//======================================================================
+//
+// PROCESS PARAMETERS.
+//
+//======================================================================
+ 
+///////////// instance ////////////////////////////////
+//
+// Instance.
+//
+// Used for process registration.
+//
+//
+// Type: string
+//
+
+instance = "relampago_ch13";
+
+//======================================================================
+//
+// INPUT PARAMETERS.
+//
+//======================================================================
+ 
+///////////// trigger_mode ////////////////////////////
+//
+// Input triggering mode.
+//
+// In LATEST_DATA mode, the program will trigger whenever a new ldata 
+//   file in the input_dir indicates that there is a new file ready to be 
+//   processed.
+// In REALTIME mode, the program will trigger whenever a new file 
+//   appears in the specified input directories that is ready to be 
+//   processed.In FILE_LIST mode, the program operates on the input files 
+//   specified on the command line.
+//
+//
+// Type: enum
+// Options:
+//     LATEST_DATA
+//     REALTIME
+//     FILE_LIST
+//
+
+trigger_mode = LATEST_DATA;
+
+///////////// input_dir ///////////////////////////////
+//
+// List of Input directories to watch.
+//
+// There can be one directory that is watched and recursed. It may be 
+//   that there is a directory for each channel, band, or derived product.
+//
+//
+// Type: string
+//
+
+input_dir = "$(DATA_DIR)/relampago/raw/goes16/ch13";
+
+///////////// max_valid_secs //////////////////////////
+//
+// Maximum age of input data that will be processed in realtime, in 
+//   seconds.
+//
+//
+// Type: long
+//
+
+max_valid_secs = 3600;
+
+///////////// scene_sub_str ///////////////////////////
+//
+// Sub-string used in filename that identifies the scene or scan.
+//
+// For files named following the G-16 PUG, the names are: RadC, RadF, 
+//   RadM1, and RadM2.
+//
+//
+// Type: string
+//
+
+scene_sub_str = "";
+
+///////////// channel_sub_str /////////////////////////
+//
+// Sub-string used in filename that identifies the band or channel.
+//
+// For files named following the G-16 PUG, the level-1 names are: C01 
+//   through C16.
+//
+//
+// Type: string
+//
+
+channel_sub_str = "";
+
+//======================================================================
+//
+// OUTPUT PARAMETERS.
+//
+//======================================================================
+ 
+///////////// output_timestamp ////////////////////////
+//
+// Flag indicating how to time stamp the output file.
+//
+// For TIMESTAMP_BEGIN, the time of the first line in the image will be 
+//   used. For TIMESTAMP_END, the time of the last line in the image will 
+//   be used. For TIMESTAMP_MIDDLE, the timestamp will be the average of 
+//   the times of the first and last lines in the file.
+//
+//
+// Type: enum
+// Options:
+//     TIMESTAMP_BEGIN
+//     TIMESTAMP_END
+//     TIMESTAMP_MIDDLE
+//
+
+output_timestamp = TIMESTAMP_END;
+
+///////////// expire_offset ///////////////////////////
+//
+//
+// Type: int
+//
+
+expire_offset = 0;
+
+///////////// output_vlevel_type //////////////////////
+//
+// Vertical level type to use for the output fields.
+//
+// By default, we use the satellite image vertical type, but some 
+//   applications need a different vertical level type for the data. Note 
+//   that the vertical level is set to 0.0, no matter what vertical type 
+//   is chosen.
+//
+//
+// Type: enum
+// Options:
+//     VERT_TYPE_SURFACE
+//     VERT_TYPE_Z
+//     VERT_SATELLITE_IMAGE
+//     VERT_FLIGHT_LEVEL
+//
+
+output_vlevel_type = VERT_SATELLITE_IMAGE;
+
+//======================================================================
+//
+// DATA OUTPUT.
+//
+//======================================================================
+ 
+///////////// output_url //////////////////////////////
+//
+// Output URL.
+//
+// Output data is written to this URL.
+//
+//
+// Type: string
+//
+
+output_url = "$(DATA_DIR)/relampago/mdv/goes16_ch13";
+
+///////////// init_zero ///////////////////////////////
+//
+// Option to output data with zero rather than MISSING_DATA_VALIUE.
+//
+//
+// Type: boolean
+//
+
+init_zero = FALSE;
+
+//======================================================================
+//
+// OUTPUT DOMAIN PARAMETERS.
+//
+//======================================================================
+ 
+///////////// out_projection //////////////////////////
+//
+// Projection for mapping in x,y. See projection param below.
+//
+// 	PROJ_LATLON: simple lat/lon grid (Equidistant Cylindrical)
+// 	PROJ_FLAT: Azimuthal Equidistant (Radar)
+// 	PROJ_LAMBERT_CONF: Lambert Conformal Conic
+// 	PROJ_LAMBERT_AZIM: Lambert Azimuthal Equal Area
+// 	PROJ_MERCATOR: Mercator - EW orientation
+// 	PROJ_TRANS_MERCATOR: Tranverse Mercator - NS orientation
+// 	PROJ_POLAR_STEREO: Stereographic- polar aspect
+// 	PROJ_OBLIQUE_STEREO: Stereographic - oblique aspect
+// 	PROJ_ALBERS: Albers Equal Area Conic.
+//
+//
+// Type: enum
+// Options:
+//     PROJ_LATLON
+//     PROJ_LAMBERT_CONF
+//     PROJ_MERCATOR
+//     PROJ_POLAR_STEREO
+//     PROJ_FLAT
+//     PROJ_OBLIQUE_STEREO
+//     PROJ_TRANS_MERCATOR
+//     PROJ_ALBERS
+//     PROJ_LAMBERT_AZIM
+//
+
+out_projection = PROJ_LATLON;
+
+///////////// out_grid ////////////////////////////////
+//
+// Grid parameters for remapping in x,y.
+//
+// Units in km, except for LATLON, which is in degrees.
+//
+//
+// Type: struct
+//   typedef struct {
+//      int nx;
+//      int ny;
+//      double minx;
+//      double miny;
+//      double dx;
+//      double dy;
+//   }
+//
+//
+
+out_grid = {
+    nx = 3000,
+    ny = 2500,
+    minx = -80,
+    miny = -45,
+    dx = 0.01,
+    dy = 0.01
+};
+
+///////////// out_rotation ////////////////////////////
+//
+// Grid rotation.
+//
+// This applies only to PROJ_FLAT projections.
+//
+//
+// Type: double
+//
+
+out_rotation = 0;
+
+///////////// out_origin_lat //////////////////////////
+//
+// Grid origin latitude.
+//
+// This applies to all projections except LATLON.
+//
+//
+// Type: double
+//
+
+out_origin_lat = 0;
+
+///////////// out_origin_lon //////////////////////////
+//
+// Grid origin longitude.
+//
+// This applies to all projections except LATLON.
+//
+//
+// Type: double
+//
+
+out_origin_lon = 0;
+
+///////////// out_lat1 ////////////////////////////////
+//
+// Grid reference latitude 1.
+//
+// This applies to LAMBERT_CONF and ALBERS projections.
+//
+//
+// Type: double
+//
+
+out_lat1 = 0;
+
+///////////// out_lat2 ////////////////////////////////
+//
+// Grid reference latitude 2.
+//
+// This applies to LAMBERT_CONF and ALBERS projections.
+//
+//
+// Type: double
+//
+
+out_lat2 = 0;
+
+///////////// out_central_scale ///////////////////////
+//
+// Central scale for projections.
+//
+// This applies to POLAR_STEREO, OBLIQUE_STEREO and TRANSVERSE_MERCATOR 
+//   projections.
+//
+//
+// Type: double
+//
+
+out_central_scale = 1;
+
+///////////// out_tangent_lat /////////////////////////
+//
+// Tangent latitude (deg).
+//
+// This applies to OBLIQUE_STEREO only.
+//
+//
+// Type: double
+//
+
+out_tangent_lat = 0;
+
+///////////// out_tangent_lon /////////////////////////
+//
+// Tangent longitude (deg).
+//
+// This applies to OBLIQUE_STEREO and POLAR_STEREO.
+//
+//
+// Type: double
+//
+
+out_tangent_lon = 0;
+
+///////////// out_pole_is_north ///////////////////////
+//
+// Flag indicating stereogtraphic is over the NORTH pole.
+//
+// This applies to POLAR_STEREO. If false, the projection is over the 
+//   south pole.
+//
+//
+// Type: boolean
+//
+
+out_pole_is_north = TRUE;
+
+///////////// set_earth_radius ////////////////////////
+//
+// Flag indicating that earth radius should be taken from earth_radius 
+//   parameter.
+//
+// If true, the earth's radius is taken from TaPjg staic class. radius 
+//   is 6378.137 km.
+//
+//
+// Type: boolean
+//
+
+set_earth_radius = FALSE;
+
+///////////// earth_radius ////////////////////////////
+//
+// Alternate earth radius used in projective geometry caclulation.
+//
+// Use set_earth_radius parameter to set radius in km.
+//
+//
+// Type: double
+//
+
+earth_radius = 6378.14;
+
+//======================================================================
+//
+// UNITS CONVERSION PARAMETERS.
+//
+//======================================================================
+ 
+///////////// convert_units ///////////////////////////
+//
+// Flag indicating whether to convert the field units on output.
+//
+//
+// Type: boolean
+//
+
+convert_units = FALSE;
+
+///////////// units_convert_type //////////////////////
+//
+// Type of units conversion to do on the data before putting it into the 
+//   MDV file.
+//
+// Used only if convert_units is set to true.
+//
+//
+// Type: enum
+// Options:
+//     CONVERT_K_TO_C
+//
+
+units_convert_type = CONVERT_K_TO_C;
+
+//======================================================================
+//
+// ENCODING AND COMPRESSION CONVERSION.
+//
+//======================================================================
+ 
+///////////// out_data_prep ///////////////////////////
+//
+// Data prep for the output data.
+//
+// This is only relevant when converting from float32 to int8 or int16 
+//   or if force_scale_change is set.
+//
+//
+// Type: struct
+//   typedef struct {
+//      string short_name;
+//      string long_name;
+//      string units;
+//      encoding_type_t encoding_type;
+//        Options:
+//          ENCODING_ASIS
+//          ENCODING_INT8
+//          ENCODING_INT16
+//          ENCODING_FLOAT32
+//      compression_type_t compression_type;
+//        Options:
+//          COMPRESSION_ASIS
+//          COMPRESSION_NONE
+//          COMPRESSION_RLE
+//          COMPRESSION_LZO
+//          COMPRESSION_ZLIB
+//          COMPRESSION_BZIP
+//          COMPRESSION_GZIP
+//          COMPRESSION_GZIP_VOL
+//          COMPRESSION_TYPES_N
+//      scaling_type_t scaling_type;
+//        Options:
+//          SCALING_ASIS
+//          SCALING_NONE
+//          SCALING_ROUNDED
+//          SCALING_INTEGRAL
+//          SCALING_DYNAMIC
+//          SCALING_SPECIFIED
+//      float scale;
+//      float bias;
+//   }
+//
+//
+
+out_data_prep = {
+  short_name = "GOESR_CH13",
+  long_name = "GOESR_CH13_clean_longwave_IR",
+  units = "mW.m-2.sr-1.(cm-1)-1",
+  encoding_type = ENCODING_ASIS,
+  compression_type = COMPRESSION_ASIS,
+  scaling_type = SCALING_ASIS,
+  scale = 1,
+  bias = 0
+};
+
+///////////// include_qc_field ////////////////////////
+//
+// Flag to include the QC field in the MDV output.
+//
+//
+// Type: boolean
+//
+
+include_qc_field = FALSE;
+
+///////////// qc_data_prep ////////////////////////////
+//
+// Data prep for the QC data.
+//
+// This is only relevant when converting from float32 to int8 or int16 
+//   or if force_scale_change is set.
+//
+//
+// Type: struct
+//   typedef struct {
+//      string short_name;
+//      string long_name;
+//      string units;
+//      encoding_type_t encoding_type;
+//        Options:
+//          ENCODING_ASIS
+//          ENCODING_INT8
+//          ENCODING_INT16
+//          ENCODING_FLOAT32
+//      compression_type_t compression_type;
+//        Options:
+//          COMPRESSION_ASIS
+//          COMPRESSION_NONE
+//          COMPRESSION_RLE
+//          COMPRESSION_LZO
+//          COMPRESSION_ZLIB
+//          COMPRESSION_BZIP
+//          COMPRESSION_GZIP
+//          COMPRESSION_GZIP_VOL
+//          COMPRESSION_TYPES_N
+//      scaling_type_t scaling_type;
+//        Options:
+//          SCALING_ASIS
+//          SCALING_NONE
+//          SCALING_ROUNDED
+//          SCALING_INTEGRAL
+//          SCALING_DYNAMIC
+//          SCALING_SPECIFIED
+//      float scale;
+//      float bias;
+//   }
+//
+//
+
+qc_data_prep = {
+    short_name = "QC",
+    long_name = "long_QC",
+    units = "units",
+    encoding_type = ENCODING_ASIS,
+    compression_type = COMPRESSION_ASIS,
+    scaling_type = SCALING_ASIS,
+    scale = 1,
+    bias = 0
+};
+
+///////////// include_rad_field ///////////////////////
+//
+// Flag to include the radiance field in the MDV output.
+//
+//
+// Type: boolean
+//
+
+include_rad_field = FALSE;
+
+///////////// rad_data_prep ///////////////////////////
+//
+// Data prep for the radiance data.
+//
+// This is only relevant when converting from float32 to int8 or int16 
+//   or if force_scale_change is set.
+//
+//
+// Type: struct
+//   typedef struct {
+//      string short_name;
+//      string long_name;
+//      string units;
+//      encoding_type_t encoding_type;
+//        Options:
+//          ENCODING_ASIS
+//          ENCODING_INT8
+//          ENCODING_INT16
+//          ENCODING_FLOAT32
+//      compression_type_t compression_type;
+//        Options:
+//          COMPRESSION_ASIS
+//          COMPRESSION_NONE
+//          COMPRESSION_RLE
+//          COMPRESSION_LZO
+//          COMPRESSION_ZLIB
+//          COMPRESSION_BZIP
+//          COMPRESSION_GZIP
+//          COMPRESSION_GZIP_VOL
+//          COMPRESSION_TYPES_N
+//      scaling_type_t scaling_type;
+//        Options:
+//          SCALING_ASIS
+//          SCALING_NONE
+//          SCALING_ROUNDED
+//          SCALING_INTEGRAL
+//          SCALING_DYNAMIC
+//          SCALING_SPECIFIED
+//      float scale;
+//      float bias;
+//   }
+//
+//
+
+rad_data_prep = {
+    short_name = "radiance",
+    long_name = "long_radinace",
+    units = "units",
+    encoding_type = ENCODING_ASIS,
+    compression_type = COMPRESSION_ASIS,
+    scaling_type = SCALING_ASIS,
+    scale = 1,
+    bias = 0
+};
+
