@@ -1,0 +1,335 @@
+/**********************************************************************
+ * TDRP params for GoesRGLM2Spdb
+ **********************************************************************/
+
+//======================================================================
+//
+// GoesRGLM2Spdb.
+//
+// This program reads a set of GOES-R netCDF-formatted files and writes 
+//   the data to an MDV file. The netCDF files used are from running 
+//   goes-restitch.py which can be found at 
+//   https://github.com/Unidata/ldm-alchemy/blob/master/goes-restitch.py 
+//   goes-restitch.py works on the NOTHER LDM feed (TI....) and stitches 
+//   the Sectorized Cloud Moisture Images (SCMI) back together.
+//
+//  This currently only works on the CONUS and MESOSCLAE scans with a 
+//   lambert conformal projection. There are issues when testing on the 
+//   Puerto Rico region which uses a Mercator projection. The Full Disk 
+//   data from NoaaPort has 6km resolution and there is no current need 
+//   for this data so the GEOSTATIONARY mapping has not been implemented.
+//
+//  Flashes and Groups have data quality flags associated with them: 
+//  flag_values = 0, 1, 3, 5 
+//  flag_meanings = 
+//  good_quality 
+//  degraded_due_to_flash_constituent_events_out_of_time_order 
+//  degraded_due_to_flash_constituent_event_count_exceeds_threshold 
+//  degraded_due_to_flash_duration_exceeds_threshold.
+//
+//======================================================================
+ 
+//======================================================================
+//
+// DEBUGGING PARAMETERS.
+//
+// Parameters controlling debug outputs.
+//
+//======================================================================
+ 
+///////////// debug ///////////////////////////////////
+//
+// Debug option.
+//
+//
+// Type: enum
+// Options:
+//     DEBUG_OFF
+//     DEBUG_NORM
+//     DEBUG_VERBOSE
+//
+
+debug = DEBUG_OFF;
+
+//======================================================================
+//
+// PROCESS PARAMETERS.
+//
+//======================================================================
+ 
+///////////// instance ////////////////////////////////
+//
+// Instance.
+//
+// Used for process registration.
+//
+//
+// Type: string
+//
+
+instance = "relampago";
+
+///////////// procmap_reg_interval ////////////////////
+//
+// Procmap registration interval.
+//
+//
+// Type: int
+//
+
+procmap_reg_interval = 120;
+
+//======================================================================
+//
+// INPUT PARAMETERS.
+//
+//======================================================================
+ 
+///////////// mode ////////////////////////////////////
+//
+// Input triggering mode.
+//
+// In REALTIME mode, the program will trigger whenever a new file 
+//   appears in the specified input directory.
+// In FILE_LIST mode, the program operates on the input files specified 
+//   on the command line.
+//
+//
+// Type: enum
+// Options:
+//     REALTIME
+//     FILE_LIST
+//
+
+mode = REALTIME;
+
+///////////// input_dir ///////////////////////////////
+//
+// List of Input directories to watch.
+//
+// There can be one directory that is watched and recursed. It may be 
+//   that there is a directory for each channel, band, or derived product.
+//
+//
+// Type: string
+//
+
+input_dir = "/scr/typhoon-ldm/pub/native/satellite/GOES/GRB16/GLM/LCFA/current";
+
+///////////// max_valid_realtime_age_min //////////////
+//
+// Maximum age of file in minutes.
+//
+// Used in REALTIME mode only.
+//
+//
+// Type: int
+//
+
+max_valid_realtime_age_min = 15;
+
+///////////// ldata_info_avail ////////////////////////
+//
+// Latest data info file available.
+//
+//
+// Type: boolean
+//
+
+ldata_info_avail = FALSE;
+
+///////////// file_quiescence_sec /////////////////////
+//
+// Set wait for file to be written to disk before being served.
+//
+// Used in REALTIME mode only.
+//
+//
+// Type: int
+//
+
+file_quiescence_sec = 5;
+
+///////////// check_input_sec /////////////////////////
+//
+// Set wait for file between checks for new data.
+//
+// Used in REALTIME mode only.
+//
+//
+// Type: int
+//
+
+check_input_sec = 30;
+
+///////////// Dir_search_depth ////////////////////////
+//
+// Search no more than this level deep in the realtime_input_dir.
+//
+// This can be used to only ingest one domain.
+//
+//
+// Type: int
+//
+
+Dir_search_depth = 3;
+
+///////////// DomainString ////////////////////////////
+//
+// If set to other than NULL, filenames must contain this string to be 
+//   ingested.
+//
+// This allows you to control which files will be processed. The app 
+//   checks that this substring exists in the file name before processing.
+//
+//
+// Type: string
+//
+
+DomainString = "";
+
+///////////// File_extension //////////////////////////
+//
+// If set to other than NULL, filenames must have this extension to be 
+//   ingested.
+//
+// This can be used to limit the type of files processed.
+//
+//
+// Type: string
+//
+
+File_extension = "";
+
+///////////// data_type ///////////////////////////////
+//
+// Type of data to extract.
+//
+//
+// Type: enum
+// Options:
+//     EVENTS
+//     GROUPS
+//     FLASHES
+//
+
+data_type = FLASHES;
+
+//======================================================================
+//
+// BOUNDING BOX.
+//
+// Optionally limit the data to within a bounding box.
+//
+//======================================================================
+ 
+///////////// limit_location_to_bounding_box //////////
+//
+// Set to TRUE to check that location is within a bounding box.
+//
+//
+// Type: boolean
+//
+
+limit_location_to_bounding_box = TRUE;
+
+///////////// bounding_box ////////////////////////////
+//
+// Bounding box to check.
+//
+// See limit_location_to_bounding_box.
+//
+//
+// Type: struct
+//   typedef struct {
+//      double min_lat;
+//      double max_lat;
+//      double min_lon;
+//      double max_lon;
+//   }
+//
+//
+
+bounding_box = {
+    min_lat = -90,
+    max_lat = 90,
+    min_lon = -180,
+    max_lon = 180
+};
+
+//======================================================================
+//
+// OUTPUT PARAMETERS.
+//
+//======================================================================
+ 
+///////////// output_url //////////////////////////////
+//
+// Output URL.
+//
+// Output data is written to this URL.
+//
+//
+// Type: string
+//
+
+output_url = "spdbp:://localhost::relampago/spdb/ltg/glm";
+
+///////////// expire_seconds //////////////////////////
+//
+// Expire time in seconds for each strike.
+//
+//
+// Type: int
+//
+
+expire_seconds = 300;
+
+///////////// quality_values_to_remove ////////////////
+//
+// Remove groups or flashes with these data quality values. Events have 
+//   no quality values associated with them.
+//
+// Description from netcdf files: 
+// 0 - good_quality 
+// 1 - degraded_due_to_flash_constituent_events_out_of_time_order 
+// 3 - degraded_due_to_flash_constituent_event_count_exceeds_threshold 
+// 5 - degraded_due_to_flash_duration_exceeds_threshold.
+//
+//
+// Type: int
+// 1D array - variable length.
+//
+
+quality_values_to_remove = {
+ 1,
+ 3,
+ 5
+};
+
+///////////// quality_control /////////////////////////
+//
+// Set this to true in order to remove flashes, groups, or events from 
+//   the output (depending on what data type is requested).
+//
+// If a flash has no more than this number_of_groups, and all of these 
+//   groups have no more than this number_of_events then the flash and all 
+//   corresponding groups and events will be flagged as low quality and 
+//   will not be included in the output.
+//
+//
+// Type: struct
+//   typedef struct {
+//      boolean do_user_defined_quality_control;
+//      int number_of_groups;
+//      int number_of_events;
+//   }
+//
+//
+
+quality_control = {
+    do_user_defined_quality_control = FALSE,
+    number_of_groups = 2,
+    number_of_events = 3
+};
+

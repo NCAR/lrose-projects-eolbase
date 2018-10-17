@@ -230,4 +230,8 @@ ArgentineAwsIngest  relampago      start_inst(ingest)    snuff_inst
 # Interpolate surface data
 #
 SurfInterp         relampago       start_inst(alg)     snuff_inst
+#
+# Lightning
+#
+GoesRGLM2Spdb      relampago      start_inst(ingest)    snuff_inst 
 ######################################################################
