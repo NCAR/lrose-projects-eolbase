@@ -60,7 +60,7 @@ instance = "RMA1";
 // Type: string
 //
 
-input_dir = "/net/ftp/data/incoming/relampago/radar/RMA1";
+input_dir = "$(DATA_DIR)/relampago/raw/radar/RMA1";
 
 //======================================================================
 //
@@ -100,7 +100,7 @@ tables = "";
 //     FILELIST
 //
 
-mode = ARCHIVE;
+mode = REALTIME;
 
 ///////////// max_realtime_data_age_secs //////////////
 //
@@ -112,7 +112,7 @@ mode = ARCHIVE;
 // Type: int
 //
 
-max_realtime_data_age_secs = 300;
+max_realtime_data_age_secs = 900;
 
 ///////////// latest_data_info_avail //////////////////
 //
@@ -655,7 +655,7 @@ override_instrument_name = FALSE;
 // Type: string
 //
 
-instrument_name = "unknown";
+instrument_name = "RMA1";
 
 ///////////// override_site_name //////////////////////
 //
@@ -679,7 +679,7 @@ override_site_name = FALSE;
 // Type: string
 //
 
-site_name = "unknown";
+site_name = "Corboba";
 
 //======================================================================
 //
@@ -1250,9 +1250,9 @@ set_output_fields = FALSE;
 
 output_fields = {
   {
-    input_field_name = "TH",
-    output_field_name = "DBZ",
-    long_name = "reflectivity",
+    input_field_name = "DBZH",
+    output_field_name = "DBZH",
+    long_name = "reflectivity_horizontal_channel",
     standard_name = "equivalent_reflectivity_factor",
     output_units = "dBZ",
     encoding = OUTPUT_ENCODING_INT16,
@@ -1260,102 +1260,102 @@ output_fields = {
     output_scale = 0.01,
     output_offset = 0
   }
-  ,
-  {
-    input_field_name = "TV",
-    output_field_name = "DBZV",
-    long_name = "vertical_reflectivity",
-    standard_name = "equivalent_reflectivity_factor",
-    output_units = "dBZ",
-    encoding = OUTPUT_ENCODING_INT16,
-    output_scaling = SCALING_DYNAMIC,
-    output_scale = 0.01,
-    output_offset = 0
-  }
-  ,
-  {
-    input_field_name = "VRAD",
-    output_field_name = "VEL",
-    long_name = "radial_velocity",
-    standard_name = "radial_velocity_of_scatterers_away_from_instrument",
-    output_units = "m/s",
-    encoding = OUTPUT_ENCODING_INT16,
-    output_scaling = SCALING_DYNAMIC,
-    output_scale = 0.01,
-    output_offset = 0
-  }
-  ,
-  {
-    input_field_name = "WRAD",
-    output_field_name = "WIDTH",
-    long_name = "spectrum_width",
-    standard_name = "doppler_spectrum_width",
-    output_units = "m/s",
-    encoding = OUTPUT_ENCODING_INT16,
-    output_scaling = SCALING_DYNAMIC,
-    output_scale = 0.01,
-    output_offset = 0
-  }
-  ,
-  {
-    input_field_name = "TDR",
-    output_field_name = "ZDR",
-    long_name = "differential_reflectivity",
-    standard_name = "differential_reflectivity_hv",
-    output_units = "dB",
-    encoding = OUTPUT_ENCODING_ASIS,
-    output_scaling = SCALING_DYNAMIC,
-    output_scale = 0.01,
-    output_offset = 0
-  }
-  ,
-  {
-    input_field_name = "PHIDP",
-    output_field_name = "PHIDP",
-    long_name = "differential_phase",
-    standard_name = "differential_phase_hv",
-    output_units = "deg",
-    encoding = OUTPUT_ENCODING_INT16,
-    output_scaling = SCALING_DYNAMIC,
-    output_scale = 0.01,
-    output_offset = 0
-  }
-  ,
-  {
-    input_field_name = "RHOHV",
-    output_field_name = "RHOHV",
-    long_name = "correlation_coefficient",
-    standard_name = "correlation_coefficient_hv",
-    output_units = "",
-    encoding = OUTPUT_ENCODING_INT16,
-    output_scaling = SCALING_DYNAMIC,
-    output_scale = 0.01,
-    output_offset = 0
-  }
-  ,
-  {
-    input_field_name = "KDP",
-    output_field_name = "KDP",
-    long_name = "specific_differential_phase",
-    standard_name = "specific_differential_phase_hv",
-    output_units = "deg/km",
-    encoding = OUTPUT_ENCODING_INT16,
-    output_scaling = SCALING_DYNAMIC,
-    output_scale = 0.01,
-    output_offset = 0
-  }
-  ,
-  {
-    input_field_name = "CM",
-    output_field_name = "CM",
-    long_name = "what_is_this",
-    standard_name = "what_is_this",
-    output_units = "??",
-    encoding = OUTPUT_ENCODING_INT16,
-    output_scaling = SCALING_DYNAMIC,
-    output_scale = 0.01,
-    output_offset = 0
-  }
+  // ,
+  // {
+  //   input_field_name = "TV",
+  //   output_field_name = "DBZV",
+  //   long_name = "vertical_reflectivity",
+  //   standard_name = "equivalent_reflectivity_factor",
+  //   output_units = "dBZ",
+  //   encoding = OUTPUT_ENCODING_INT16,
+  //   output_scaling = SCALING_DYNAMIC,
+  //   output_scale = 0.01,
+  //   output_offset = 0
+  // }
+  // ,
+  // {
+  //   input_field_name = "VRAD",
+  //   output_field_name = "VEL",
+  //   long_name = "radial_velocity",
+  //   standard_name = "radial_velocity_of_scatterers_away_from_instrument",
+  //   output_units = "m/s",
+  //   encoding = OUTPUT_ENCODING_INT16,
+  //   output_scaling = SCALING_DYNAMIC,
+  //   output_scale = 0.01,
+  //   output_offset = 0
+  // }
+  // ,
+  // {
+  //   input_field_name = "WRAD",
+  //   output_field_name = "WIDTH",
+  //   long_name = "spectrum_width",
+  //   standard_name = "doppler_spectrum_width",
+  //   output_units = "m/s",
+  //   encoding = OUTPUT_ENCODING_INT16,
+  //   output_scaling = SCALING_DYNAMIC,
+  //   output_scale = 0.01,
+  //   output_offset = 0
+  // }
+  // ,
+  // {
+  //   input_field_name = "TDR",
+  //   output_field_name = "ZDR",
+  //   long_name = "differential_reflectivity",
+  //   standard_name = "differential_reflectivity_hv",
+  //   output_units = "dB",
+  //   encoding = OUTPUT_ENCODING_ASIS,
+  //   output_scaling = SCALING_DYNAMIC,
+  //   output_scale = 0.01,
+  //   output_offset = 0
+  // }
+  // ,
+  // {
+  //   input_field_name = "PHIDP",
+  //   output_field_name = "PHIDP",
+  //   long_name = "differential_phase",
+  //   standard_name = "differential_phase_hv",
+  //   output_units = "deg",
+  //   encoding = OUTPUT_ENCODING_INT16,
+  //   output_scaling = SCALING_DYNAMIC,
+  //   output_scale = 0.01,
+  //   output_offset = 0
+  // }
+  // ,
+  // {
+  //   input_field_name = "RHOHV",
+  //   output_field_name = "RHOHV",
+  //   long_name = "correlation_coefficient",
+  //   standard_name = "correlation_coefficient_hv",
+  //   output_units = "",
+  //   encoding = OUTPUT_ENCODING_INT16,
+  //   output_scaling = SCALING_DYNAMIC,
+  //   output_scale = 0.01,
+  //   output_offset = 0
+  // }
+  // ,
+  // {
+  //   input_field_name = "KDP",
+  //   output_field_name = "KDP",
+  //   long_name = "specific_differential_phase",
+  //   standard_name = "specific_differential_phase_hv",
+  //   output_units = "deg/km",
+  //   encoding = OUTPUT_ENCODING_INT16,
+  //   output_scaling = SCALING_DYNAMIC,
+  //   output_scale = 0.01,
+  //   output_offset = 0
+  // }
+  // ,
+  // {
+  //   input_field_name = "CM",
+  //   output_field_name = "CM",
+  //   long_name = "what_is_this",
+  //   standard_name = "what_is_this",
+  //   output_units = "??",
+  //   encoding = OUTPUT_ENCODING_INT16,
+  //   output_scaling = SCALING_DYNAMIC,
+  //   output_scale = 0.01,
+  //   output_offset = 0
+  // }
 };
 
 ///////////// write_other_fields_unchanged ////////////
@@ -1779,7 +1779,7 @@ compression_level = 4;
 // Type: string
 //
 
-output_dir = "/scr/rain1/rsfdata/projects/relampago/cfradial/cordoba";
+output_dir = "$(DATA_DIR)/relampago/cfradial/RMA1";
 
 ///////////// output_filename_mode ////////////////////
 //
@@ -1969,7 +1969,7 @@ write_individual_sweeps = FALSE;
 // Type: boolean
 //
 
-write_latest_data_info = FALSE;
+write_latest_data_info = TRUE;
 
 ///////////// write_using_proposed_standard_name_attr /
 //

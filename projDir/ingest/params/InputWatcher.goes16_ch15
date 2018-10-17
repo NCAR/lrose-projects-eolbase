@@ -505,7 +505,7 @@ data_late_secs = 3600;
 // Type: boolean
 //
 
-copy_to_time_stamped_file = TRUE;
+copy_to_time_stamped_file = FALSE;
 
 ///////////// copy_using_original_name ////////////////
 //
@@ -520,7 +520,7 @@ copy_to_time_stamped_file = TRUE;
 // Type: boolean
 //
 
-copy_using_original_name = FALSE;
+copy_using_original_name = TRUE;
 
 ///////////// without_date_directory //////////////////
 //
