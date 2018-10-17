@@ -231,7 +231,12 @@ ArgentineAwsIngest  relampago      start_inst(ingest)    snuff_inst
 #
 SurfInterp         relampago       start_inst(alg)     snuff_inst
 #
-# Lightning
+# GOES16 Lightning
 #
 GoesRGLM2Spdb      relampago      start_inst(ingest)    snuff_inst 
+#
+# GOES16 sat data
+InputWatcher       goes16_ch01      start_inst(ingest)    snuff_inst
+GoesRnetCDF2Mdv    relampago_ch01   start_inst(ingest)    snuff_inst
+# 
 ######################################################################
