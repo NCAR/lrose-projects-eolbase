@@ -112,6 +112,10 @@ field_list = {
 #MODEL_==== ==Model==  mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
 #MODEL_==== ==Model==  mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
 
+GOES16_CH01  GOES16_CH01  mdvp:://front.eol.ucar.edu:8080:relampago/mdv/goes16_ch01/?use_http=true&GOESR_CH01 sat_cloud.colors  %   -5   80  5  dcont   1 0
+GOES16_CH13  GOES16_CH13  mdvp:://front.eol.ucar.edu:8080:relampago/mdv/goes16_ch13/?use_http=true&GOESR_CH13 sat_tempC.colors C  -5   80  5  dcont   1 0
+GOES16_CH15  GOES16_CH15  mdvp:://front.eol.ucar.edu:8080:relampago/mdv/goes16_ch15/?use_http=true&GOESR_CH15 sat_tempC.colors C  -5   80  5  dcont   1 0
+
 MODEL_GFS-RH    GFS-RH   mdvp:://front.eol.ucar.edu:8080:relampago/mdv/gfs/relampago?use_http=true&RH   rh.colors   %   -5   80  5  dcont   1 0
 MODEL_GFS-TMP   GFS-TMP  mdvp:://front.eol.ucar.edu:8080:relampago/mdv/gfs/relampago?use_http=true&TMP  temp.colors   C   -5   80  5  dcont   1 0
 MODEL_GFS-PRES  GFS-PRES mdvp:://front.eol.ucar.edu:8080:relampago/mdv/gfs/relampago?use_http=true&Pressure pressure_mb.colors   m/s   -5   80  5  dcont   1 0
@@ -124,7 +128,9 @@ MODEL_========   =========  mdvp::static//front.eol.ucar.edu:8080:/spacer?use_ht
 ############################
 # Satellite data
 
-GOES16_CH01  GOES16_CH01  mdvp:://front.eol.ucar.edu:8080:relampago/mdv/goes16_ch01/?use_http=true&GOESR_CH01 sat_cloud.colors  Wm-2sr-1um-1   -5   80  5  dcont   1 0
+#VIS_D   VIS_D    mdvp:://front.eol.ucar.edu:8080:relampago/mdv/goes16_ch01/?use_http=true&VISIBLE sat_albedo_enh.colors  %    0    100  5  cart  1 0
+#VIS_QC  VIS_QC   mdvp:://front.eol.ucar.edu:8080:relampago/mdv/goes16_ch01/?use_http=true&QC_VISIBLE   fuzzy.colors  non-dim    0    1.0  5  cart  1 0
+
 SAT_IR2   SAT_IR2  mdvp:://front.eol.ucar.edu:8080:relampago/mdv/sat/goes13_4km?use_http=true&gvar_ch2   sat_temp.colors   C   -5   80  5  dcont   1 0
 SAT_IR3   SAT_IR3  mdvp:://front.eol.ucar.edu:8080:relampago/mdv/sat/goes13_4km?use_http=true&gvar_ch3   sat_temp.colors   C   -5   80  5  dcont   1 0
 SAT_IR4   SAT_IR4  mdvp:://front.eol.ucar.edu:8080:relampago/mdv/sat/goes13_4km?use_http=true&gvar_ch4   sat_temp.colors   C   -5   80  5  dcont   1 0
@@ -488,8 +494,8 @@ cidd.domain_limit_max_y:         5000
  
 # The Lat, Long of the center of the display. Internal range rings
 # are relative to this point.
-cidd.origin_longitude:       -64.0
-cidd.origin_latitude:        -31.5
+cidd.origin_longitude:       -65.0
+cidd.origin_latitude:        -32.5
 
 #
 #
@@ -501,7 +507,7 @@ cidd.xsect_start_page:      1
 #
 # The Outer most domain:
 cidd.num_zoom_levels:       8
-cidd.start_zoom_level:      4
+cidd.start_zoom_level:      6
 
 # The number of Cached images for zooms.
 cidd.num_cache_zooms:       0
@@ -543,11 +549,11 @@ cidd.level5_min_ykm:                -800.0
 cidd.level5_max_xkm:                800.0
 cidd.level5_max_ykm:                800.0
 #
-cidd.level6_label:                  1000km
-cidd.level6_min_xkm:                -1000.0
-cidd.level6_min_ykm:                -1000.0
-cidd.level6_max_xkm:                1000.0
-cidd.level6_max_ykm:                1000.0
+cidd.level6_label:                  1500km
+cidd.level6_min_xkm:                -1500.0
+cidd.level6_min_ykm:                -1500.0
+cidd.level6_max_xkm:                1500.0
+cidd.level6_max_ykm:                1500.0
 #
 cidd.level7_label:                  3000km
 cidd.level7_min_xkm:                -3000.0
@@ -784,7 +790,7 @@ cidd.horiz_default_y_pos:     0
 cidd.horiz_top_margin:        30
 cidd.horiz_bot_margin:        20
 cidd.horiz_left_margin:       20
-cidd.horiz_right_margin:      60
+cidd.horiz_right_margin:      80
 
 cidd.vert_min_height:        120
 cidd.vert_min_width:         120
@@ -814,8 +820,8 @@ cidd.azmith_interval:       30.0
 cidd.azmith_radius:         200.0
 
 # Toggles to turn on/off  Extras features on startup
-cidd.range_rings:             1
-cidd.azmith_lines:            1
+cidd.range_rings:             0
+cidd.azmith_lines:            0
 
 # Starting state of the All Winds ON/OFF feature
 cidd.all_winds_on: 0

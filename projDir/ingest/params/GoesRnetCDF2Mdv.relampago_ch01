@@ -114,7 +114,7 @@ max_valid_secs = 3600;
 // Type: string
 //
 
-scene_sub_str = "";
+scene_sub_str = "RadF";
 
 ///////////// channel_sub_str /////////////////////////
 //
@@ -127,7 +127,7 @@ scene_sub_str = "";
 // Type: string
 //
 
-channel_sub_str = "";
+channel_sub_str = "C01";
 
 //======================================================================
 //
@@ -160,7 +160,7 @@ output_timestamp = TIMESTAMP_END;
 // Type: int
 //
 
-expire_offset = 0;
+expire_offset = 900;
 
 ///////////// output_vlevel_type //////////////////////
 //
@@ -296,7 +296,7 @@ out_rotation = 0;
 // Type: double
 //
 
-out_origin_lat = 0;
+out_origin_lat = -32.5;
 
 ///////////// out_origin_lon //////////////////////////
 //
@@ -308,7 +308,7 @@ out_origin_lat = 0;
 // Type: double
 //
 
-out_origin_lon = 0;
+out_origin_lon = -65;
 
 ///////////// out_lat1 ////////////////////////////////
 //
@@ -494,10 +494,10 @@ units_convert_type = CONVERT_K_TO_C;
 out_data_prep = {
   short_name = "GOESR_CH01",
   long_name = "GOESR_CH01_blue_channel",
-  units = "W.m-2.sr-1.um-1",
-  encoding_type = ENCODING_ASIS,
-  compression_type = COMPRESSION_ASIS,
-  scaling_type = SCALING_ASIS,
+  units = "%",
+  encoding_type = ENCODING_FLOAT32,
+  compression_type = COMPRESSION_GZIP,
+  scaling_type = SCALING_DYNAMIC,
   scale = 1,
   bias = 0
 };
