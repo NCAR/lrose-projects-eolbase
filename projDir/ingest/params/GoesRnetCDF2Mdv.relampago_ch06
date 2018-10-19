@@ -424,7 +424,7 @@ earth_radius = 6378.14;
 // Type: boolean
 //
 
-convert_units = TRUE;
+convert_units = FALSE;
 
 ///////////// units_convert_type //////////////////////
 //
