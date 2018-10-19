@@ -176,81 +176,81 @@
 <!-- MDV Layers -->
 
 <Layer vis="on" type="MDV" name="GOES16 CH13" location="mdvp:://front.eol.ucar.edu:8080:relampago/mdv/goes16_ch13/?use_http=true"
-       field="GOESR_CH13" render="fillcontours" colorscale="$(PROJ_DIR)/display/color_scales/sat_tempC.colors" menuName="GOES16-CH13" />
+       field="GOESR_CH13" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/sat_tempC.colors" menuName="GOES16-CH13" />
 
 <Layer vis="off" type="MDV" name="GOES16 CH15" location="mdvp:://front.eol.ucar.edu:8080:relampago/mdv/goes16_ch15/?use_http=true"
-       field="GOESR_CH15" render="fillcontours" colorscale="$(PROJ_DIR)/display/color_scales/sat_tempC.colors" menuName="GOES16-CH15" />
+       field="GOESR_CH15" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/sat_tempC.colors" menuName="GOES16-CH15" />
 
 <Layer vis="off" type="MDV" name="GOES16 SWD" location="mdvp::swd//front.eol.ucar.edu:8080:relampago/mdv/goes16_ch13/?use_http=true"
-       field="GOESR_SWD" render="fillcontours" colorscale="$(PROJ_DIR)/display/color_scales/goesr_swd.colors" menuName="GOES16-SWD" />
+       field="GOESR_SWD" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/goesr_swd.colors" menuName="GOES16-SWD" />
 
 <Layer vis="off" type="MDV" name="GOES16 CH10" location="mdvp:://front.eol.ucar.edu:8080:relampago/mdv/goes16_ch10/?use_http=true"
-       field="GOESR_CH10" render="fillcontours" colorscale="$(PROJ_DIR)/display/color_scales/sat_tempC.colors" menuName="GOES16-CH10" />
+       field="GOESR_CH10" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/sat_tempC.colors" menuName="GOES16-CH10" />
 
 <Layer vis="off" type="MDV" name="GOES16 CH01" location="mdvp:://front.eol.ucar.edu:8080:relampago/mdv/goes16_ch01/?use_http=true"
-       field="GOESR_CH01" render="fillcontours" colorscale="$(PROJ_DIR)/display/color_scales/sat_cloud.colors" menuName="GOES16-CH01" />
+       field="GOESR_CH01" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/sat_cloud.colors" menuName="GOES16-CH01" />
 
 <Layer vis="off" type="MDV" name="GOES16 CH02" location="mdvp:://front.eol.ucar.edu:8080:relampago/mdv/goes16_ch02/?use_http=true"
-       field="GOESR_CH02" render="fillcontours" colorscale="$(PROJ_DIR)/display/color_scales/sat_cloud.colors" menuName="GOES16-CH02" />
+       field="GOESR_CH02" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/sat_cloud.colors" menuName="GOES16-CH02" />
 
 <Layer vis="off" type="MDV" name="GOES16 CH03" location="mdvp:://front.eol.ucar.edu:8080:relampago/mdv/goes16_ch03/?use_http=true"
-       field="GOESR_CH03" render="fillcontours" colorscale="$(PROJ_DIR)/display/color_scales/sat_cloud.colors" menuName="GOES16-CH03" />
+       field="GOESR_CH03" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/sat_cloud.colors" menuName="GOES16-CH03" />
 
 <Layer vis="off" type="MDV" name="GOES16 CH06" location="mdvp:://front.eol.ucar.edu:8080:relampago/mdv/goes16_ch06/?use_http=true"
-       field="GOESR_CH06" render="fillcontours" colorscale="$(PROJ_DIR)/display/color_scales/sat_cloud.colors" menuName="GOES16-CH06" />
+       field="GOESR_CH06" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/sat_cloud.colors" menuName="GOES16-CH06" />
 
 <Layer vis="off" type="MDV" name="MODEL GFS-RH" location="mdvp:://front.eol.ucar.edu:8080:relampago/mdv/gfs/relampago?use_http=true"
-       field="RH" render="fillcontours" colorscale="$(PROJ_DIR)/display/color_scales/rh.colors" menuName="GFS-RH" />
+       field="RH" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/rh.colors" menuName="GFS-RH" />
 
 <Layer vis="off" type="MDV" name="MODEL GFS-TMP" location="mdvp:://front.eol.ucar.edu:8080:relampago/mdv/gfs/relampago?use_http=true"
-       field="TMP" render="fillcontours" colorscale="$(PROJ_DIR)/display/color_scales/temp.colors" menuName="GFS-TMP" />
+       field="TMP" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/temp.colors" menuName="GFS-TMP" />
 
 <Layer vis="off" type="MDV" name="MODEL GFS-PRES" location="mdvp:://front.eol.ucar.edu:8080:relampago/mdv/gfs/relampago?use_http=true"
-       field="Pressure" render="fillcontours" colorscale="$(PROJ_DIR)/display/color_scales/pressure_mb.colors" menuName="GFS-PRES" />
+       field="Pressure" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/pressure_mb.colors" menuName="GFS-PRES" />
 
 <Layer vis="off" type="MDV" name="SURF Terrain" location="mdvp::terrain//front.eol.ucar.edu:8080:relampago/mdv/terrain?use_http=true"
-       field="Elevation" render="fillcontours" colorscale="$(PROJ_DIR)/display/color_scales/terrain_relampago.colors" menuName="Terrain" />
+       field="Elevation" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/terrain_relampago.colors" menuName="Terrain" />
 
 <Layer vis="off" type="MDV" name="SURF Temp" location="mdvp:://front.eol.ucar.edu:8080:relampago/mdv/surf_interp?use_http=true"
-       field="Temp" render="fillcontours" colorscale="$(PROJ_DIR)/display/color_scales/temp.colors" menuName="SURF-Temp" />
+       field="Temp" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/temp.colors" menuName="SURF-Temp" />
 
 <Layer vis="off" type="MDV" name="SURF DewPt" location="mdvp:://front.eol.ucar.edu:8080:relampago/mdv/surf_interp?use_http=true"
-       field="DewPoint" render="fillcontours" colorscale="$(PROJ_DIR)/display/color_scales/temp.colors" menuName="SURF-DewPt" />
+       field="DewPoint" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/temp.colors" menuName="SURF-DewPt" />
 
 <Layer vis="off" type="MDV" name="SURF Conv" location="mdvp:://front.eol.ucar.edu:8080:relampago/mdv/surf_interp?use_http=true"
-       field="Convergence" render="fillcontours" colorscale="$(PROJ_DIR)/display/color_scales/conv.colors" menuName="SURF-Conv" />
+       field="Convergence" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/conv.colors" menuName="SURF-Conv" />
 
 <Layer vis="off" type="MDV" name="MODEL ========" location="mdvp::static//front.eol.ucar.edu:8080:/spacer?use_http=true"
-       field="Elevation" render="fillcontours" colorscale="$(PROJ_DIR)/display/color_scales/none.colors" menuName="=========" />
+       field="Elevation" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/none.colors" menuName="=========" />
 
 <Layer vis="off" type="MDV" name="RMA1 DBZH" location="mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/RMA1?use_http=true"
-       field="DBZH" render="grid" colorscale="$(PROJ_DIR)/display/color_scales/dbz.colors" menuName="RMA1-DBZH" />
+       field="DBZH" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/dbz.colors" menuName="RMA1-DBZH" />
 
 <Layer vis="off" type="MDV" name="CDBA VEL" location="mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/cordoba?use_http=true"
-       field="VRAD" render="grid" colorscale="$(PROJ_DIR)/display/color_scales/vel.colors" menuName="CDBA-VEL" />
+       field="VRAD" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/vel.colors" menuName="CDBA-VEL" />
 
 <Layer vis="off" type="MDV" name="CDBA WIDTH" location="mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/cordoba?use_http=true"
-       field="WRAD" render="grid" colorscale="$(PROJ_DIR)/display/color_scales/width.colors" menuName="CDBA-WIDTH" />
+       field="WRAD" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/width.colors" menuName="CDBA-WIDTH" />
 
 <Layer vis="off" type="MDV" name="CDBA ZDR" location="mdvp::zdr//front.eol.ucar.edu:8080:relampago/cfradial/cordoba?use_http=true"
-       field="ZDR" render="grid" colorscale="$(PROJ_DIR)/display/color_scales/zdr.colors" menuName="CDBA-ZDR" />
+       field="ZDR" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/zdr.colors" menuName="CDBA-ZDR" />
 
 <Layer vis="off" type="MDV" name="CDBA PHIDP" location="mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/cordoba?use_http=true"
-       field="PHIDP" render="grid" colorscale="$(PROJ_DIR)/display/color_scales/phidp.colors" menuName="PHMO-PHIDP" />
+       field="PHIDP" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/phidp.colors" menuName="PHMO-PHIDP" />
 
 <Layer vis="off" type="MDV" name="CDBA RHOHV" location="mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/cordoba?use_http=true"
-       field="RHOHV" render="grid" colorscale="$(PROJ_DIR)/display/color_scales/rhohv.colors" menuName="PHMO-RHOHV" />
+       field="RHOHV" render="grid" colorscale="http://front.eol.ucar.edu/color_scales/rhohv.colors" menuName="PHMO-RHOHV" />
 
 <Layer vis="off" type="MDV" name="NEX ========" location="mdvp::static//front.eol.ucar.edu:8080:/spacer/moments?use_http=true"
-       field="Elevation" render="fillcontours" colorscale="$(PROJ_DIR)/display/color_scales/none.colors" menuName="========" />
+       field="Elevation" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/none.colors" menuName="========" />
 
 <Layer vis="off" type="MDV" name="NEX ========" location="mdvp::static//front.eol.ucar.edu:8080:/spacer/moments?use_http=true"
-       field="Elevation" render="fillcontours" colorscale="$(PROJ_DIR)/display/color_scales/none.colors" menuName="========" />
+       field="Elevation" render="fillcontours" colorscale="http://front.eol.ucar.edu/color_scales/none.colors" menuName="========" />
 
 <!-- MDVTOPO Layers -->
 
 <Layer vis="on" type="MDVTOPO" name="Terrain" location="mdvp::terrain//front.eol.ucar.edu:8080:relampago/mdv/terrain?use_http=true"
-       field="Elevation" colorscale="$(PROJ_DIR)/display/color_scales/terrain_front.colors" menuName="Terrain" />
+       field="Elevation" colorscale="http://front.eol.ucar.edu/color_scales/terrain_front.colors" menuName="Terrain" />
 
 <!-- MDVWIND Layers -->
 
@@ -276,22 +276,22 @@
 
 <!-- CIDDMAP Layers -->
 
-<Layer vis="on" type="CIDDMAP" name="World" location="$(PROJ_DIR)/display/maps/world_states.map"
+<Layer vis="on" type="CIDDMAP" name="World" location="http://front.eol.ucar.edu/maps/world_states.map"
        color="white" width="2" />
 
-<Layer vis="off" type="CIDDMAP" name="Roads" location="$(PROJ_DIR)/display/maps/ARG_roads.shp"
+<Layer vis="off" type="CIDDMAP" name="Roads" location="http://front.eol.ucar.edu/maps/ARG_roads.shp"
        color="gray" width="0" />
 
-<Layer vis="off" type="CIDDMAP" name="Rivers" location="$(PROJ_DIR)/display/maps/ARG_water_lines_dcw.shp"
+<Layer vis="off" type="CIDDMAP" name="Rivers" location="http://front.eol.ucar.edu/maps/ARG_water_lines_dcw.shp"
        color="blue" width="0" />
 
-<Layer vis="off" type="CIDDMAP" name="Lakes" location="$(PROJ_DIR)/display/maps/ARG_water_areas_dcw.shp"
+<Layer vis="off" type="CIDDMAP" name="Lakes" location="http://front.eol.ucar.edu/maps/ARG_water_areas_dcw.shp"
        color="blue" width="0" />
 
-<Layer vis="on" type="CIDDMAP" name="States" location="$(PROJ_DIR)/display/maps/ARG_adm1.shp"
+<Layer vis="on" type="CIDDMAP" name="States" location="http://front.eol.ucar.edu/maps/ARG_adm1.shp"
        color="brown" width="1" />
 
-<Layer vis="off" type="CIDDMAP" name="Counties" location="$(PROJ_DIR)/display/maps/ARG_adm2.shp"
+<Layer vis="off" type="CIDDMAP" name="Counties" location="http://front.eol.ucar.edu/maps/ARG_adm2.shp"
        color="pink" width="0" />
 
 

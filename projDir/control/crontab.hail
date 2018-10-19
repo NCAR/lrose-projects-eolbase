@@ -39,3 +39,5 @@
 #
 # Wget surface station data
 */1 * * * *   csh -c "run_WgetRelampagoSurfaceObs" 1> /dev/null 2> /dev/null
+# Get WWLLN data via http
+*/10 * * * *  csh -c "run_GetWwllnRelampago"    1> /dev/null 2> /dev/null
