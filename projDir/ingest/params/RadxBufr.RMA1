@@ -1210,7 +1210,7 @@ user_defined_global_attributes = {
 // Type: boolean
 //
 
-set_output_fields = FALSE;
+set_output_fields = TRUE;
 
 ///////////// output_fields ///////////////////////////
 //

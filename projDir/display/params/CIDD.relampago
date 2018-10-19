@@ -168,8 +168,13 @@ NEX_========   ========    mdvp::static//front.eol.ucar.edu:8080:/spacer/moments
 # MAP_CODE Control_Label   Map_File_Name   On/OFF Detail__min Detail_max Color     
 #------------------------------------------------------------------------------------------
 
-World         World          world_states.map        1  0.0 1000000.0  white
-
+World         World          world_states.map            2  0.0 1000000.0  white
+Roads         Roads          ARG_roads.shp               0  0.0 1000000.0  gray
+Rivers        Rivers         ARG_water_lines_dcw.shp     0  0.0 1000000.0  blue
+Lakes         Lakes          ARG_water_areas_dcw.shp     0  0.0 1000000.0  blue
+#Admin0        Admin0         ARG_adm0.shp               0  0.0 1000000.0  orange
+States        States         ARG_adm1.shp                1  0.0 1000000.0  brown
+Counties      Counties       ARG_adm2.shp                0  0.0 1000000.0  pink
 </MAPS>
 
 <WINDS>
@@ -561,7 +566,8 @@ cidd.max_adeg:               360.0
 
 #cidd.color_file_subdir:   http://front.eol.ucar.edu/color_scales
 cidd.color_file_subdir:   $(PROJ_DIR)/display/color_scales
-cidd.map_file_subdir:     http://front.eol.ucar.edu/maps
+#cidd.map_file_subdir:     http://front.eol.ucar.edu/maps
+cidd.map_file_subdir:     $(PROJ_DIR)/display/maps
 
 #cidd.color_file_subdir:   $(PROJ_DIR)/display/color_scales,http://front.eol.ucar.edu/content/projects/hawk/relampago/projDir/display/color_scales
 #cidd.map_file_subdir:     $(PROJ_DIR)/display/maps,http://front.eol.ucar.edu/content/projects/hawk/relampago/projDir/display/maps
