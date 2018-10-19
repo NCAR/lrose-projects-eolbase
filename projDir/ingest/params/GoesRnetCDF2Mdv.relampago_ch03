@@ -49,7 +49,7 @@ debug = DEBUG_OFF;
 // Type: string
 //
 
-instance = "relampago_ch15";
+instance = "relampago_ch03";
 
 //======================================================================
 //
@@ -90,7 +90,7 @@ trigger_mode = LATEST_DATA;
 // Type: string
 //
 
-input_dir = "$(DATA_DIR)/relampago/raw/goes16/ch15";
+input_dir = "$(DATA_DIR)/relampago/raw/goes16/ch03";
 
 ///////////// max_valid_secs //////////////////////////
 //
@@ -120,14 +120,14 @@ scene_sub_str = "RadF";
 //
 // Sub-string used in filename that identifies the band or channel.
 //
-// For files named following the G-16 PUG, the level-1 names are: C15 
+// For files named following the G-16 PUG, the level-1 names are: C03 
 //   through C16.
 //
 //
 // Type: string
 //
 
-channel_sub_str = "C15";
+channel_sub_str = "C03";
 
 //======================================================================
 //
@@ -198,7 +198,7 @@ output_vlevel_type = VERT_SATELLITE_IMAGE;
 // Type: string
 //
 
-output_url = "$(DATA_DIR)/relampago/mdv/goes16_ch15";
+output_url = "$(DATA_DIR)/relampago/mdv/goes16_ch03";
 
 ///////////// init_zero ///////////////////////////////
 //
@@ -266,12 +266,12 @@ out_projection = PROJ_LATLON;
 //
 
 out_grid = {
-    nx = 1500,
-    ny = 1250,
+    nx = 3000,
+    ny = 2500,
     minx = -80,
     miny = -45,
-    dx = 0.02,
-    dy = 0.02
+    dx = 0.01,
+    dy = 0.01
 };
 
 ///////////// out_rotation ////////////////////////////
@@ -424,7 +424,7 @@ earth_radius = 6378.14;
 // Type: boolean
 //
 
-convert_units = TRUE;
+convert_units = FALSE;
 
 ///////////// units_convert_type //////////////////////
 //
@@ -492,9 +492,9 @@ units_convert_type = CONVERT_K_TO_C;
 //
 
 out_data_prep = {
-  short_name = "GOESR_CH15",
-  long_name = "GOESR_CH15_dirty_IR_12.3um",
-  units = "C",
+  short_name = "GOESR_CH03",
+  long_name = "GOESR_CH03_green_nearIR_0.86um",
+  units = "%",
   encoding_type = ENCODING_FLOAT32,
   compression_type = COMPRESSION_GZIP,
   scaling_type = SCALING_DYNAMIC,

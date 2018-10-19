@@ -493,7 +493,7 @@ units_convert_type = CONVERT_K_TO_C;
 
 out_data_prep = {
   short_name = "GOESR_CH13",
-  long_name = "GOESR_CH13_10.3um_clear_IR",
+  long_name = "GOESR_CH13_clean_IR_10.3um",
   units = "C",
   encoding_type = ENCODING_FLOAT32,
   compression_type = COMPRESSION_GZIP,

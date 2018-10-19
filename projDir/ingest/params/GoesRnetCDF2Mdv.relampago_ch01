@@ -493,7 +493,7 @@ units_convert_type = CONVERT_K_TO_C;
 
 out_data_prep = {
   short_name = "GOESR_CH01",
-  long_name = "GOESR_CH01_blue_channel",
+  long_name = "GOESR_CH01_blue_visible_0.47um",
   units = "%",
   encoding_type = ENCODING_FLOAT32,
   compression_type = COMPRESSION_GZIP,

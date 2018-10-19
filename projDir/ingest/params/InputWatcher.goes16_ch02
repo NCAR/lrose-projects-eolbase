@@ -46,7 +46,7 @@ debug = DEBUG_OFF;
 // Type: string
 //
 
-instance = "radar_RMA1";
+instance = "goes16_ch02";
 
 //======================================================================
 //
@@ -66,7 +66,7 @@ instance = "radar_RMA1";
 // Type: string
 //
 
-input_dir = "/net/ftp/pub/data/incoming/relampago/radar/RMA1";
+input_dir = "/scr/typhoon-ldm/pub/native/satellite/GOES/GRB16/ABI/FullDisk/Channel02/current";
 
 ///////////// wait_between_checks /////////////////////
 //
@@ -227,7 +227,7 @@ use_inotify = FALSE;
 // Type: string
 //
 
-search_ext = "BUFR";
+search_ext = "nc";
 
 ///////////// search_substr ///////////////////////////
 //
@@ -240,7 +240,7 @@ search_ext = "BUFR";
 // Type: string
 //
 
-search_substr = "RMA1";
+search_substr = "ABI";
 
 ///////////// save_latest_read_time ///////////////////
 //
@@ -544,7 +544,7 @@ without_date_directory = FALSE;
 // Type: string
 //
 
-copy_dir = "$(DATA_DIR)/relampago/raw/radar/RMA1";
+copy_dir = "$(DATA_DIR)/relampago/raw/goes16/ch02";
 
 ///////////// copy_prefix /////////////////////////////
 //
@@ -556,7 +556,7 @@ copy_dir = "$(DATA_DIR)/relampago/raw/radar/RMA1";
 // Type: string
 //
 
-copy_prefix = "radar_RMA1";
+copy_prefix = "goes16_ch02";
 
 ///////////// copy_ext ////////////////////////////////
 //
@@ -568,7 +568,7 @@ copy_prefix = "radar_RMA1";
 // Type: string
 //
 
-copy_ext = "BUFR";
+copy_ext = "nc";
 
 ///////////// add_day_to_filename /////////////////////
 //
@@ -581,7 +581,7 @@ copy_ext = "BUFR";
 // Type: boolean
 //
 
-add_day_to_filename = FALSE;
+add_day_to_filename = TRUE;
 
 ///////////// remove_after_copy ///////////////////////
 //

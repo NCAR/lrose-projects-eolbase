@@ -49,7 +49,7 @@ debug = DEBUG_OFF;
 // Type: string
 //
 
-instance = "relampago_ch15";
+instance = "relampago_ch06";
 
 //======================================================================
 //
@@ -90,7 +90,7 @@ trigger_mode = LATEST_DATA;
 // Type: string
 //
 
-input_dir = "$(DATA_DIR)/relampago/raw/goes16/ch15";
+input_dir = "$(DATA_DIR)/relampago/raw/goes16/ch06";
 
 ///////////// max_valid_secs //////////////////////////
 //
@@ -120,14 +120,14 @@ scene_sub_str = "RadF";
 //
 // Sub-string used in filename that identifies the band or channel.
 //
-// For files named following the G-16 PUG, the level-1 names are: C15 
+// For files named following the G-16 PUG, the level-1 names are: C06 
 //   through C16.
 //
 //
 // Type: string
 //
 
-channel_sub_str = "C15";
+channel_sub_str = "C06";
 
 //======================================================================
 //
@@ -198,7 +198,7 @@ output_vlevel_type = VERT_SATELLITE_IMAGE;
 // Type: string
 //
 
-output_url = "$(DATA_DIR)/relampago/mdv/goes16_ch15";
+output_url = "$(DATA_DIR)/relampago/mdv/goes16_ch06";
 
 ///////////// init_zero ///////////////////////////////
 //
@@ -492,8 +492,8 @@ units_convert_type = CONVERT_K_TO_C;
 //
 
 out_data_prep = {
-  short_name = "GOESR_CH15",
-  long_name = "GOESR_CH15_dirty_IR_12.3um",
+  short_name = "GOESR_CH06",
+  long_name = "GOESR_CH06_cloud_near_IR_2.24um",
   units = "C",
   encoding_type = ENCODING_FLOAT32,
   compression_type = COMPRESSION_GZIP,
