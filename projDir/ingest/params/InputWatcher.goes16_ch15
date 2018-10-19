@@ -215,7 +215,7 @@ follow_links = TRUE;
 // Type: boolean
 //
 
-use_inotify = TRUE;
+use_inotify = FALSE;
 
 ///////////// search_ext //////////////////////////////
 //
