@@ -112,14 +112,16 @@ field_list = {
 #MODEL_==== ==Model==  mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
 #MODEL_==== ==Model==  mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
 
-GOES16_CH01  GOES16_CH01  mdvp:://front.eol.ucar.edu:8080:relampago/mdv/goes16_ch01/?use_http=true&GOESR_CH01 sat_cloud.colors  %   -5   80  5  dcont   1 0
 GOES16_CH13  GOES16_CH13  mdvp:://front.eol.ucar.edu:8080:relampago/mdv/goes16_ch13/?use_http=true&GOESR_CH13 sat_tempC.colors C  -5   80  5  dcont   1 0
 GOES16_CH15  GOES16_CH15  mdvp:://front.eol.ucar.edu:8080:relampago/mdv/goes16_ch15/?use_http=true&GOESR_CH15 sat_tempC.colors C  -5   80  5  dcont   1 0
+GOES16_CH01  GOES16_CH01  mdvp:://front.eol.ucar.edu:8080:relampago/mdv/goes16_ch01/?use_http=true&GOESR_CH01 sat_cloud.colors  %   -5   80  5  dcont   1 0
+GOES16_SWD  GOES16_SWD  mdvp::swd//front.eol.ucar.edu:8080:relampago/mdv/goes16_ch13/?use_http=true&GOESR_SWD goesr_swd.colors C  -5   80  5  dcont   1 0
 
 MODEL_GFS-RH    GFS-RH   mdvp:://front.eol.ucar.edu:8080:relampago/mdv/gfs/relampago?use_http=true&RH   rh.colors   %   -5   80  5  dcont   1 0
 MODEL_GFS-TMP   GFS-TMP  mdvp:://front.eol.ucar.edu:8080:relampago/mdv/gfs/relampago?use_http=true&TMP  temp.colors   C   -5   80  5  dcont   1 0
 MODEL_GFS-PRES  GFS-PRES mdvp:://front.eol.ucar.edu:8080:relampago/mdv/gfs/relampago?use_http=true&Pressure pressure_mb.colors   m/s   -5   80  5  dcont   1 0
 SURF_Terrain Terrain  mdvp::terrain//front.eol.ucar.edu:8080:relampago/mdv/terrain?use_http=true&Elevation terrain_relampago.colors m -5 80 5 dcont 1 0
+
 SURF_Temp  SURF_Temp  mdvp:://front.eol.ucar.edu:8080:relampago/mdv/surf_interp?use_http=true&Temp        temp.colors m -5 80 5 dcont 1 0
 SURF_DewPt SURF_DewPt mdvp:://front.eol.ucar.edu:8080:relampago/mdv/surf_interp?use_http=true&DewPoint    temp.colors m -5 80 5 dcont 1 0
 SURF_Conv  SURF_Conv  mdvp:://front.eol.ucar.edu:8080:relampago/mdv/surf_interp?use_http=true&Convergence conv.colors m -5 80 5 dcont 1 0
