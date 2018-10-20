@@ -116,8 +116,8 @@ GOES16_CH06  GOES16_CH06  mdvp:://front.eol.ucar.edu:8080:relampago/mdv/goes16_c
 ############################
 # Model data
 
-MODEL_GFS-RH    GFS-RH   mdvp:://front.eol.ucar.edu:8080:relampago/mdv/gfs/relampago?use_http=true&RH   rh.colors   %   -5   80  5  dcont   1 0
 MODEL_GFS-TMP   GFS-TMP  mdvp:://front.eol.ucar.edu:8080:relampago/mdv/gfs/relampago?use_http=true&TMP  temp.colors   C   -5   80  5  dcont   1 0
+MODEL_GFS-RH    GFS-RH   mdvp:://front.eol.ucar.edu:8080:relampago/mdv/gfs/relampago?use_http=true&RH   rh.colors   %   -5   80  5  dcont   1 0
 MODEL_GFS-PRES  GFS-PRES mdvp:://front.eol.ucar.edu:8080:relampago/mdv/gfs/relampago?use_http=true&Pressure pressure_mb.colors   m/s   -5   80  5  dcont   1 0
 SURF_Terrain Terrain  mdvp::terrain//front.eol.ucar.edu:8080:relampago/mdv/terrain?use_http=true&Elevation terrain_relampago.colors m -5 80 5 dcont 1 0
 
@@ -132,13 +132,13 @@ MODEL_========   =========  mdvp::static//front.eol.ucar.edu:8080:/spacer?use_ht
 #############################
 # RADAR MOMENTS
 
-RMA1_DBZH  RMA1_DBZH   mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/RMA1?use_http=true&DBZH      dbz.colors   dBZ -5 80 5 radial 1 0
-CDBA_VEL   CDBA_VEL    mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/cordoba?use_http=true&VRAD      vel.colors   m/s -5 80 5 radial 1 0
-CDBA_WIDTH CDBA_WIDTH  mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/cordoba?use_http=true&WRAD      width.colors m/s -5 80 5 radial 1 0
-CDBA_ZDR   CDBA_ZDR    mdvp::zdr//front.eol.ucar.edu:8080:relampago/cfradial/cordoba?use_http=true&ZDR       zdr.colors   dB  -5 80 5 radial 1 0
+CORD_DBZH  CORD_DBZH   mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/RMA1?use_http=true&DBZH      dbz.colors   dBZ -5 80 5 radial 1 0
+CORD_VEL   CORD_VEL    mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/cordoba?use_http=true&VRAD      vel.colors   m/s -5 80 5 radial 1 0
+CORD_WIDTH CORD_WIDTH  mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/cordoba?use_http=true&WRAD      width.colors m/s -5 80 5 radial 1 0
+CORD_ZDR   CORD_ZDR    mdvp::zdr//front.eol.ucar.edu:8080:relampago/cfradial/cordoba?use_http=true&ZDR       zdr.colors   dB  -5 80 5 radial 1 0
 
-CDBA_PHIDP PHMO_PHIDP  mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/cordoba?use_http=true&PHIDP       phidp.colors deg -5 80 5 radial 1 0
-CDBA_RHOHV PHMO_RHOHV  mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/cordoba?use_http=true&RHOHV       rhohv.colors -   -5 80 5 radial 1 0
+CORD_PHIDP CORD_PHIDP  mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/cordoba?use_http=true&PHIDP       phidp.colors deg -5 80 5 radial 1 0
+CORD_RHOHV CORD_RHOHV  mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/cordoba?use_http=true&RHOHV       rhohv.colors -   -5 80 5 radial 1 0
 NEX_========   ========    mdvp::static//front.eol.ucar.edu:8080:/spacer/moments?use_http=true&Elevation       none.colors  m   -5 80 5 dcont  1 0
 NEX_========   ========    mdvp::static//front.eol.ucar.edu:8080:/spacer/moments?use_http=true&Elevation       none.colors  m   -5 80 5 dcont  1 0
 
@@ -169,7 +169,7 @@ NEX_========   ========    mdvp::static//front.eol.ucar.edu:8080:/spacer/moments
 #------------------------------------------------------------------------------------------
 
 World         World          world_states.map            2  0.0 1000000.0  white
-Roads         Roads          ARG_roads.shp               0  0.0 1000000.0  gray
+Roads         Roads          ARG_roads.shp               0  0.0 1000000.0  gray25
 Rivers        Rivers         ARG_water_lines_dcw.shp     0  0.0 1000000.0  blue
 Lakes         Lakes          ARG_water_areas_dcw.shp     0  0.0 1000000.0  blue
 #Admin0        Admin0         ARG_adm0.shp               0  0.0 1000000.0  orange
@@ -413,7 +413,8 @@ cidd.request_compressed_data: 1
 #
 # Sets the projection for cidd's plan view - Current valid choices are:
 # CARTESIAN, LAT_LON, LAMBERT,  STEREOGRAPHIC
-cidd.projection_type:    CARTESIAN
+#cidd.projection_type:    CARTESIAN
+cidd.projection_type:    LAT_LON
 
 # These must be set if using a Lambert conformal projection - Ignored otherwise
 cidd.lambert_lat1: 20.0
@@ -476,8 +477,8 @@ cidd.xsect_start_page:      1
 
 #
 # The Outer most domain:
-cidd.num_zoom_levels:       8
-cidd.start_zoom_level:      6
+cidd.num_zoom_levels:       7
+cidd.start_zoom_level:      5
 
 # The number of Cached images for zooms.
 cidd.num_cache_zooms:       0
@@ -486,57 +487,50 @@ cidd.num_cache_zooms:       0
 # It's suggested that names without spaces be used when running
 # in.
 #
-cidd.level1_label:                  200km
-cidd.level1_min_xkm:                -200.0
-cidd.level1_min_ykm:                -200.0
-cidd.level1_max_xkm:                200.0
-cidd.level1_max_ykm:                200.0
+cidd.level1_label:                  300km
+cidd.level1_min_xkm:                -68
+cidd.level1_min_ykm:                -35
+cidd.level1_max_xkm:                -62
+cidd.level1_max_ykm:                -30
 #
-cidd.level2_label:                  300km
-cidd.level2_min_xkm:                -300.0
-cidd.level2_min_ykm:                -300.0
-cidd.level2_max_xkm:                300.0
-cidd.level2_max_ykm:                300.0
-#
-#
-cidd.level3_label:                  400km
-cidd.level3_min_xkm:                -400.0
-cidd.level3_min_ykm:                -400.0
-cidd.level3_max_xkm:                400.0
-cidd.level3_max_ykm:                400.0
+cidd.level2_label:                  400km
+cidd.level2_min_xkm:                -69
+cidd.level2_min_ykm:                -36
+cidd.level2_max_xkm:                -61
+cidd.level2_max_ykm:                -29
 #
 #
-cidd.level4_label:                  600km
-cidd.level4_min_xkm:                -600.0
-cidd.level4_min_ykm:                -600.0
-cidd.level4_max_xkm:                600.0
-cidd.level4_max_ykm:                600.0
+cidd.level3_label:                  600km
+cidd.level3_min_xkm:                -71
+cidd.level3_min_ykm:                -37.5
+cidd.level3_max_xkm:                -59
+cidd.level3_max_ykm:                -27.5
 #
 #
-cidd.level5_label:                  800km
-cidd.level5_min_xkm:                -800.0
-cidd.level5_min_ykm:                -800.0
-cidd.level5_max_xkm:                800.0
-cidd.level5_max_ykm:                800.0
+cidd.level4_label:                  800km
+cidd.level4_min_xkm:                -73.5
+cidd.level4_min_ykm:                -40
+cidd.level4_max_xkm:                -56.5
+cidd.level4_max_ykm:                -25
 #
-cidd.level6_label:                  1500km
-cidd.level6_min_xkm:                -1500.0
-cidd.level6_min_ykm:                -1500.0
-cidd.level6_max_xkm:                1500.0
-cidd.level6_max_ykm:                1500.0
 #
-cidd.level7_label:                  3000km
-cidd.level7_min_xkm:                -3000.0
-cidd.level7_min_ykm:                -3000.0
-cidd.level7_max_xkm:                3000.0
-cidd.level7_max_ykm:                3000.0
+cidd.level5_label:                  1500km
+cidd.level5_min_xkm:                -80
+cidd.level5_min_ykm:                -45
+cidd.level5_max_xkm:                -50
+cidd.level5_max_ykm:                -20
 #
-cidd.level8_label:                  8000km
-cidd.level8_min_xkm:                -8000.0
-cidd.level8_min_ykm:                -8000.0
-cidd.level8_max_xkm:                8000.0
-cidd.level8_max_ykm:                8000.0
+cidd.level6_label:                  3000km
+cidd.level6_min_xkm:                -95
+cidd.level6_min_ykm:                -60
+cidd.level6_max_xkm:                -35
+cidd.level6_max_ykm:                -5
 #
+cidd.level7_label:                  6000km
+cidd.level7_min_xkm:                -120
+cidd.level7_min_ykm:                -72.5
+cidd.level7_max_xkm:                -10
+cidd.level7_max_ykm:                7.5
 
 # Vertical Range and Resolution - Establishes a vertical coordinate system
 # for the cross sectional imagery.
@@ -1351,6 +1345,20 @@ prod_info = {
     request_data_on_zoom = FALSE,
     request_data_on_vert_change = FALSE
   }
+  ,
+  {
+    menu_label = "WWLLN" ,
+    url = "spdbp:Ltg2Symprod:wwlln//front.eol.ucar.edu:8080:relampago/spdb/ltg/wwlln?use_http=true",
+    data_type = 0,
+    render_type = RENDER_ALL_VALID,
+    // render_type = RENDER_ALL_BEFORE_DATA_TIME,
+    on_by_default = FALSE,
+    minutes_allow_before = 60.0,
+    minutes_allow_after = 0.0,
+    text_off_threshold = 0.0,
+    request_data_on_zoom = FALSE,
+    request_data_on_vert_change = FALSE
+  }
   // ,                        
   // {
   //   menu_label = "Falcon Track 10-min",
@@ -1390,7 +1398,8 @@ id_label = "Terrain";
 // Type: string
 //
 
-terrain_url = "mdvp::terrain//front.eol.ucar.edu:8080:relampago/mdv/terrain?use_http=true&Elevation";
+// terrain_url = "mdvp::terrain//front.eol.ucar.edu:8080:relampago/mdv/terrain?use_http=true&Elevation";
+terrain_url = "";
 
 ///////////// height_scaler ///////////////////////////
 //
