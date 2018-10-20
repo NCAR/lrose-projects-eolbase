@@ -1,7 +1,7 @@
 #! /bin/csh
 
-snuff GetWwllnRelampagoy
+snuff GetWwllnRelampago.py
 
-GetWwllnRelampago --debug --pastSecs=7200 \
+GetWwllnRelampago.py --debug --pastSecs=7200 \
     |& LogFilter -d $ERRORS_LOG_DIR -p GetWwllnRelampago >& /dev/null &
 
