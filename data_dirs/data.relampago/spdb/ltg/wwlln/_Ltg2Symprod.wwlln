@@ -97,7 +97,7 @@ max_clients = 64;
 // Type: string
 //
 
-display_color = "darkmagenta";
+display_color = "orange";
 
 ///////////// line_width //////////////////////////////
 //
@@ -165,7 +165,7 @@ recent_strike_age = 3600;
 // Type: string
 //
 
-recent_strike_color = "magenta";
+recent_strike_color = "orange";
 
 ///////////// useWallClockForAge //////////////////////
 //
