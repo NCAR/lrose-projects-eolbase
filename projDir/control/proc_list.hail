@@ -233,7 +233,11 @@ SurfInterp         relampago       start_inst(alg)     snuff_inst
 #
 # GOES16 Lightning
 #
-GoesRGLM2Spdb      relampago      start_inst(ingest)    snuff_inst 
+GoesRGLM2Spdb      relampago       start_inst(ingest)    snuff_inst 
+#
+# WWLLN Lightning
+#
+Ltg2Spdb          wwlln_relampago  start_inst(ingest)    snuff_inst 
 #
 # GOES16 sat data
 #
