@@ -1,0 +1,10 @@
+#! /bin/csh
+
+snuff GetMendozaRadarsByFtp.py
+
+GetMendozaRadarsByFtp.py --debug --pastSecs=108000 \
+    --sourceDir /mendoza/san_rafael \
+    --targetDir ${DATA_DIR}/relampago/mdv/radar/SanRafael \
+    |& LogFilter -d $ERRORS_LOG_DIR -p GetMendozaRadarsByFtp \
+    -i SanRafael >& /dev/null &
+
