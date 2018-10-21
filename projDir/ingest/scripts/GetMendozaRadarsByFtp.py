@@ -108,11 +108,18 @@ def main():
     # got to radar directory on the ftp site
 
     ftp.cwd(options.sourceDir)
+    ftpDateList = ftp.nlst()
 
     # loop through days
 
     count = 0
     for dateStr in dateStrList:
+
+        if (dateStr not in ftpDateList):
+            if (options.verbose):
+                print >>sys.stderr, "WARNING: ignoring date, does not exist on ftp site"
+                print >>sys.stderr, "  dateStr: ", dateStr
+            continue
 
         # make the target directory
 
@@ -128,6 +135,7 @@ def main():
         # get local file list - i.e. those which have already been downloaded
 
         localFileList = os.listdir('.')
+        localFileList.reverse()
         if (options.verbose):
             print >>sys.stderr, "  localFileList: ", localFileList
             
@@ -136,6 +144,7 @@ def main():
         ftpDayDir = os.path.join(options.sourceDir, dateStr)
         ftp.cwd(ftpDayDir)
         ftpFileList = ftp.nlst()
+        ftpFileList.reverse()
         if (options.verbose):
             print >>sys.stderr, "  ftpFileList: ", ftpFileList
 

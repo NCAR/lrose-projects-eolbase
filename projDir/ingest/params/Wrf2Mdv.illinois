@@ -568,6 +568,19 @@ output_fields = {
   }
 };
 
+// T
+// HGT
+// PSFC
+// REFL_10CM
+// QVAPOR
+// QCLOUD
+// QRAIN
+// QICE
+// QSNOW
+// QGRAUPEL
+
+
+
 ///////////// field_name_map //////////////////////////
 //
 // These tuples match a field to a new name and long name.
@@ -708,37 +721,37 @@ field_name_map = {
   ,
   {
     original_name = Q_FIELD,
-    name = "Q",
-    long_name = "Mixing ratio kg/kg"
+    name = "QVAPOR",
+    long_name = "Vapor mixing ratio kg/kg"
   }
   ,
   {
     original_name = CLW_FIELD,
-    name = "clw",
+    name = "QCLOUD",
     long_name = "Cloud liquid mixing ratio"
   }
   ,
   {
     original_name = RNW_FIELD,
-    name = "rnw",
+    name = "QRAIN",
     long_name = "Rain mixing ratio"
   }
   ,
   {
     original_name = ICE_FIELD,
-    name = "ice",
+    name = "QICE",
     long_name = "Ice mixing ratio"
   }
   ,
   {
     original_name = SNOW_FIELD,
-    name = "snow",
+    name = "QSNOW",
     long_name = "Snow mixing ratio"
   }
   ,
   {
     original_name = GRAUPEL_FIELD,
-    name = "graupel",
+    name = "QGRAUPEL",
     long_name = "Graupel mixing ratio"
   }
   ,
