@@ -124,12 +124,29 @@ SURF_Terrain Terrain  mdvp::terrain//front.eol.ucar.edu:8080:relampago/mdv/terra
 ############################
 # WRF Model data
 
-WRF-Temp   WRF-Temp  mdvp:://front.eol.ucar.edu:8080:relampago/mdv/wrf/illinois?use_http=true&Temp  temp.colors   C   -5   80  5  dcont   1 0
-WRF-RH     WRF-RH    mdvp:://front.eol.ucar.edu:8080:relampago/mdv/wrf/illinois?use_http=true&RH    rh.colors   C   -5   80  5  dcont   1 0
-WRF-Q      WRF-Q     mdvp:://front.eol.ucar.edu:8080:relampago/mdv/wrf/illinois?use_http=true&Q     mixr_kgpkg.colors kg/kg   -5   80  5  dcont   1 0
-WRF-THETA  WRF-THETA mdvp:://front.eol.ucar.edu:8080:relampago/mdv/wrf/illinois?use_http=true&THETA theta_e.colors  K -5   80  5  dcont   1 0
+WRF-Temp   WRF-Temp   mdvp:://front.eol.ucar.edu:8080:relampago/mdv/wrf/illinois?use_http=true&Temp    temp.colors     C    -5   80  5  dcont   1 0
+WRF-THETA  WRF-THETA  mdvp:://front.eol.ucar.edu:8080:relampago/mdv/wrf/illinois?use_http=true&THETA   theta_e.colors  K    -5   80  5  dcont   1 0
+WRF-RH     WRF-RH     mdvp:://front.eol.ucar.edu:8080:relampago/mdv/wrf/illinois?use_http=true&RH      rh.colors       %    -5   80  5  dcont   1 0
+WRF-W      WRF-W      mdvp:://front.eol.ucar.edu:8080:relampago/mdv/wrf/illinois?use_http=true&W       wvel_new.colors m/s  -5   80  5  dcont   1 0
 
-WRF-DBZ    WRF-DBZ   mdvp:://front.eol.ucar.edu:8080:relampago/mdv/wrf/illinois?use_http=true&DBZ   dbz.colors    dBZ -5   80  5  dcont   1 0
+WRF-QVAPOR   WRF-QVAPOR   mdvp:://front.eol.ucar.edu:8080:relampago/mdv/wrf/illinois?use_http=true&QVAPOR   mixr_kgpkg.colors  kg/kg   -5   80  5  dcont   1 0
+WRF-QCLOUD   WRF-QCLOUD   mdvp:://front.eol.ucar.edu:8080:relampago/mdv/wrf/illinois?use_http=true&QCLOUD   mixr_kgpkg.colors  kg/kg   -5   80  5  dcont   1 0
+WRF-QRAIN    WRF-QRAIN    mdvp:://front.eol.ucar.edu:8080:relampago/mdv/wrf/illinois?use_http=true&QRAIN    mixr_kgpkg.colors  kg/kg   -5   80  5  dcont   1 0
+WRF-QICE     WRF-QICE     mdvp:://front.eol.ucar.edu:8080:relampago/mdv/wrf/illinois?use_http=true&QICE     mixr_kgpkg.colors  kg/kg   -5   80  5  dcont   1 0
+
+WRF-QSNOW    WRF-QSNOW    mdvp:://front.eol.ucar.edu:8080:relampago/mdv/wrf/illinois?use_http=true&QSNOW    mixr_kgpkg.colors  kg/kg   -5   80  5  dcont   1 0
+WRF-QGRAUPEL WRF-QGRAUPEL mdvp:://front.eol.ucar.edu:8080:relampago/mdv/wrf/illinois?use_http=true&QGRAUPEL mixr_kgpkg.colors  kg/kg   -5   80  5  dcont   1 0
+WRF-DBZ      WRF-DBZ      mdvp:://front.eol.ucar.edu:8080:relampago/mdv/wrf/illinois?use_http=true&DBZ      dbz.colors         dBZ     -5   80  5  dcont   1 0
+WRF-WSPD   WRF-WSPD   mdvp:://front.eol.ucar.edu:8080:relampago/mdv/wrf/illinois?use_http=true&Wspeed       wind_speed.colors  m/s     -5   80  5  dcont   1 0
+
+WRF-SURFP    WRF-SURFP    mdvp:://front.eol.ucar.edu:8080:relampago/mdv/wrf/illinois?use_http=true&surfP    surf_press_pa.colors   Pa      -5   80  5  dcont   1 0
+WRF-Temp2    WRF-Temp2    mdvp:://front.eol.ucar.edu:8080:relampago/mdv/wrf/illinois?use_http=true&T2       temp.colors            C       -5   80  5  dcont   1 0
+WRF-Q2       WRF-Q2       mdvp:://front.eol.ucar.edu:8080:relampago/mdv/wrf/illinois?use_http=true&Q2       mixr_kgpkg.colors      kg/kg   -5   80  5  dcont   1 0
+WRF-PBLHT    WRF-PBLHT    mdvp:://front.eol.ucar.edu:8080:relampago/mdv/wrf/illinois?use_http=true&pbl_hgt  dbz.colors             M       -5   80  5  dcont   1 0
+
+# WRF-GHT      WRF-GHT      mdvp:://front.eol.ucar.edu:8080:relampago/mdv/wrf/illinois?use_http=true&geo_hgt  dbz.colors        dBZ     -5   80  5  dcont   1 0
+
+========   ========    mdvp::static//front.eol.ucar.edu:8080:/spacer/moments?use_http=true&Elevation       none.colors  m   -5 80 5 dcont  1 0
 ========   ========    mdvp::static//front.eol.ucar.edu:8080:/spacer/moments?use_http=true&Elevation       none.colors  m   -5 80 5 dcont  1 0
 ========   ========    mdvp::static//front.eol.ucar.edu:8080:/spacer/moments?use_http=true&Elevation       none.colors  m   -5 80 5 dcont  1 0
 ========   ========    mdvp::static//front.eol.ucar.edu:8080:/spacer/moments?use_http=true&Elevation       none.colors  m   -5 80 5 dcont  1 0
@@ -650,7 +667,7 @@ cidd.locator_margin_km:   50
 cidd.foreground_color: white
 
 # Background of Images use this color
-cidd.background_color: black
+cidd.background_color: gray20
 
 # Background of margins will be this color
 cidd.margin_color: black
@@ -681,9 +698,10 @@ cidd.range_ring_color: gray
 # Set the follwing colors to 'transparent' to avoid having these
 # plotted. (This is the default) Otherwise, these data will be
 # plotted in the indicated color
-cidd.missing_data_color: grey20
 
+cidd.missing_data_color: grey20
 cidd.bad_data_color: grey20
+
 #
 # Time Control (Movie) Popup Colors
 cidd.epoch_indicator_color: orange

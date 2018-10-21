@@ -548,6 +548,31 @@ output_fields = {
   }
   ,
   {
+    name = CLW_FIELD,
+    encoding = OUT_INT16
+  }
+  ,
+  {
+    name = RNW_FIELD,
+    encoding = OUT_INT16
+  }
+  ,
+  {
+    name = ICE_FIELD,
+    encoding = OUT_INT16
+  }
+  ,
+  {
+    name = SNOW_FIELD,
+    encoding = OUT_INT16
+  }
+  ,
+  {
+    name = GRAUPEL_FIELD,
+    encoding = OUT_INT16
+  }
+  ,
+  {
     name = THETA_FIELD,
     encoding = OUT_INT16
   }
@@ -566,20 +591,64 @@ output_fields = {
     name = DBZ_3D_FIELD,
     encoding = OUT_INT16
   }
+  ,
+  {
+    name = PBL_HGT_FIELD,
+    encoding = OUT_INT16
+  }
+  ,
+  {
+    name = T2C_FIELD,
+    encoding = OUT_INT16
+  }
+  ,
+  {
+    name = TH2_FIELD,
+    encoding = OUT_INT16
+  }
+  ,
+  {
+    name = Q2_FIELD,
+    encoding = OUT_INT16
+  }
+  ,
+  {
+    name = SFC_PRES_FIELD,
+    encoding = OUT_INT16
+  }
+  ,
+  {
+    name = U10_FIELD,
+    encoding = OUT_INT16
+  }
+  ,
+  {
+    name = V10_FIELD,
+    encoding = OUT_INT16
+  }
 };
 
-// T
-// HGT
-// PSFC
-// REFL_10CM
-// QVAPOR
-// QCLOUD
-// QRAIN
-// QICE
-// QSNOW
-// QGRAUPEL
+// PBL_HGT_FIELD
+// T2_FIELD, Q2_FIELD, U10_FIELD, V10_FIELD,
+// SNOWH_FIELD
+// SFC_PRES_FIELD, LAND_MASK_FIELD, TH2_FIELD,
+// HFX_FIELD, LH_FIELD, SNOW_WE_FIELD, SOIL_TYPE_FIELD
+// SNOW_NC_FIELD, GRAUPEL_NC_FIELD
 
+// FZLEVEL_FIELD, RAIN_TOTAL_FIELD,
+// RH2_FIELD, T2C_FIELD
+// WSPD10_FIELD, WDIR10_FIELD,
+// TWP_FIELD, RWP_FIELD, VIL_FIELD
+// DBZ_2D_FIELD, SPEC_H_2M_FIELD 
+//      =====  CAPE/CIN 2D fields ======
+// CAPE_FIELD, CIN_FIELD, LCL_FIELD, LFC_FIELD, EL_FIELD
 
+// U_FIELD, V_FIELD, Q_FIELD,
+// CLW_FIELD, RNW_FIELD, ICE_FIELD,
+// SNOW_FIELD, GRAUPEL_FIELD
+// W_FIELD, P_FIELD, PB_FIELD
+// PHB_FIELD, PH_FIELD, DNW_FIELD,
+// MUB_FIELD, MU_FIELD, REFL_10CM_FIELD
 
 ///////////// field_name_map //////////////////////////
 //
