@@ -96,16 +96,6 @@ arcs = {
     center_lon = -68.02,
     start_az_deg = 0,
     end_az_deg = 360,
-    radius_km = 25,
-    n_segments = 360
-  }
-  ,
-  {
-    label = "SAN_RAFAEL",
-    center_lat = -33.65,
-    center_lon = -68.02,
-    start_az_deg = 0,
-    end_az_deg = 360,
     radius_km = 50,
     n_segments = 360
   }
@@ -137,16 +127,6 @@ arcs = {
     start_az_deg = 0,
     end_az_deg = 360,
     radius_km = 200,
-    n_segments = 360
-  }
-  ,
-  {
-    label = "SAN_RAFAEL",
-    center_lat = -33.65,
-    center_lon = -68.02,
-    start_az_deg = 0,
-    end_az_deg = 360,
-    radius_km = 225,
     n_segments = 360
   }
 };
@@ -192,8 +172,8 @@ az_lines = {
     start_az_deg = 0,
     delta_az_deg = 30,
     n_lines = 12,
-    min_radius_km = 25,
-    max_radius_km = 225
+    min_radius_km = 50,
+    max_radius_km = 200
   }
 };
 
