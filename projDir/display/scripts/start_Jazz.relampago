@@ -1,5 +1,5 @@
 #! /bin/csh
 
-javaws http://rap.ucar.edu/projects/jazz/app/jazz.jnlp -open https://raw.githubusercontent.com/NCAR/lrose-projects-eolbase/master/projDir/display/params/jazz4relampago.xml
+javaws http://rap.ucar.edu/projects/jazz/app/jazz.jnlp -open http://front.eol.ucar.edu/displayParams/jazz4relampago.xml
 
 
