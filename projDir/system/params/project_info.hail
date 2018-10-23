@@ -8,7 +8,7 @@
 
 setenv PROJECT_NAME               "EOLBASE"
 setenv project                    "eolbase"
-setenv catalog_name               "snowie"
+setenv catalog_name               "relampago"
 
 # Marshall
 
