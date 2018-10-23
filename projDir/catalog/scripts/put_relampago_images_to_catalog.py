@@ -93,7 +93,7 @@ def main():
     # compute catalog file name
 
     catalogName = (category + "." + platform + "." +
-                   validTimeStr + "." +
+                   validTimeStr + "." + "Cordoba_" +
                    field_name + "." + "png")
 
     if (options.debug == True):

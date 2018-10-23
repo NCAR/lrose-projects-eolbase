@@ -389,7 +389,7 @@ script_min_interval_secs = 0;
 //
 
 supplementary_args = {
-  "--ftp_server", "catalog1111111.eol.ucar.edu",
+  "--ftp_server", "catalog1111.eol.ucar.edu",
   "--target_dir", "pub/incoming/catalog/$(catalog_name)",
   "--move_after_copy",
   "--debug"
