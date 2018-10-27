@@ -225,6 +225,20 @@ use_ldata = TRUE;
 
 get_times_from_filenames = FALSE;
 
+///////////// gen_time_offset /////////////////////////
+//
+// Number of seconds to apply as an offset to the gen time.
+//
+// This is useful if the file name time or the time found in the data 
+//   has an offset error. The default is no offset. Use negative values to 
+//   decrease the time.
+//
+//
+// Type: int
+//
+
+gen_time_offset = 0;
+
 ///////////// max_realtime_valid_age //////////////////
 //
 // Max age of input data - REALTIME mode.
@@ -329,6 +343,7 @@ output_url = "$(DATA_DIR)/relampago/mdv/wrf/illinois";
 // W_FIELD, P_FIELD, PB_FIELD
 // PHB_FIELD, PH_FIELD, DNW_FIELD,
 // MUB_FIELD, MU_FIELD, REFL_10CM_FIELD
+// QNRAIN_FIELD, QNCLOUD_FIELD
 // 	
 // ======= raw WRF 3-d fields - on dot (corner) points =====
 // 	
@@ -414,6 +429,8 @@ output_url = "$(DATA_DIR)/relampago/mdv/wrf/illinois";
 //          MUB_FIELD
 //          MU_FIELD
 //          REFL_10CM_FIELD
+//          QNRAIN_FIELD
+//          QNCLOUD_FIELD
 //          U_EDGE_FIELD
 //          V_EDGE_FIELD
 //          TK_FIELD
@@ -583,16 +600,6 @@ output_fields = {
   }
   ,
   {
-    name = PB_FIELD,
-    encoding = OUT_INT16
-  }
-  ,
-  {
-    name = HGT_FIELD,
-    encoding = OUT_INT16
-  }
-  ,
-  {
     name = DBZ_3D_FIELD,
     encoding = OUT_INT16
   }
@@ -631,29 +638,52 @@ output_fields = {
     name = V10_FIELD,
     encoding = OUT_INT16
   }
+  ,
+  {
+    name = CAPE_FIELD,
+    encoding = OUT_INT16
+  }
+  ,
+  {
+    name = CIN_FIELD,
+    encoding = OUT_INT16
+  }
+  ,
+  {
+    name = LCL_FIELD,
+    encoding = OUT_INT16
+  }
+  ,
+  {
+    name = LFC_FIELD,
+    encoding = OUT_INT16
+  }
+  ,
+  {
+    name = EL_FIELD,
+    encoding = OUT_INT16
+  }
+  ,
+  {
+    name = DBZ_2D_FIELD,
+    encoding = OUT_INT16
+  }
+  ,
+  {
+    name = VIL_FIELD,
+    encoding = OUT_INT16
+  }
+  ,
+  {
+    name = FZLEVEL_FIELD,
+    encoding = OUT_INT16
+  }
+  ,
+  {
+    name = RAIN_TOTAL_FIELD,
+    encoding = OUT_INT16
+  }
 };
-
-// PBL_HGT_FIELD
-// T2_FIELD, Q2_FIELD, U10_FIELD, V10_FIELD,
-// SNOWH_FIELD
-// SFC_PRES_FIELD, LAND_MASK_FIELD, TH2_FIELD,
-// HFX_FIELD, LH_FIELD, SNOW_WE_FIELD, SOIL_TYPE_FIELD
-// SNOW_NC_FIELD, GRAUPEL_NC_FIELD
-
-// FZLEVEL_FIELD, RAIN_TOTAL_FIELD,
-// RH2_FIELD, T2C_FIELD
-// WSPD10_FIELD, WDIR10_FIELD,
-// TWP_FIELD, RWP_FIELD, VIL_FIELD
-// DBZ_2D_FIELD, SPEC_H_2M_FIELD 
-//      =====  CAPE/CIN 2D fields ======
-// CAPE_FIELD, CIN_FIELD, LCL_FIELD, LFC_FIELD, EL_FIELD
-
-// U_FIELD, V_FIELD, Q_FIELD,
-// CLW_FIELD, RNW_FIELD, ICE_FIELD,
-// SNOW_FIELD, GRAUPEL_FIELD
-// W_FIELD, P_FIELD, PB_FIELD
-// PHB_FIELD, PH_FIELD, DNW_FIELD,
-// MUB_FIELD, MU_FIELD, REFL_10CM_FIELD
 
 ///////////// field_name_map //////////////////////////
 //
@@ -686,6 +716,8 @@ output_fields = {
 //          MUB_FIELD
 //          MU_FIELD
 //          REFL_10CM_FIELD
+//          QNRAIN_FIELD
+//          QNCLOUD_FIELD
 //          U_EDGE_FIELD
 //          V_EDGE_FIELD
 //          TK_FIELD
@@ -794,6 +826,12 @@ field_name_map = {
   }
   ,
   {
+    original_name = W_FIELD,
+    name = "W",
+    long_name = "w-component of wind"
+  }
+  ,
+  {
     original_name = Q_FIELD,
     name = "QVAPOR",
     long_name = "Vapor mixing ratio kg/kg"
@@ -825,14 +863,8 @@ field_name_map = {
   ,
   {
     original_name = GRAUPEL_FIELD,
-    name = "QGRAUPEL",
+    name = "QGRAUP",
     long_name = "Graupel mixing ratio"
-  }
-  ,
-  {
-    original_name = W_FIELD,
-    name = "W",
-    long_name = "w-component of wind"
   }
   ,
   {
@@ -1143,43 +1175,43 @@ field_name_map = {
   ,
   {
     original_name = RAINC_FIELD,
-    name = "rainc",
+    name = "RAINC",
     long_name = "Accumulated Total Cumulus Precipitation"
   }
   ,
   {
     original_name = RAINNC_FIELD,
-    name = "rainnc",
+    name = "RAINNC",
     long_name = "Accumulated Total Grid Scale Precipitation"
   }
   ,
   {
     original_name = TERRAIN_FIELD,
-    name = "terrain",
+    name = "HGT",
     long_name = "Terrain height"
   }
   ,
   {
     original_name = LAND_USE_FIELD,
-    name = "land_use",
+    name = "LU_INDEX",
     long_name = "Land use category"
   }
   ,
   {
     original_name = SNOWCOVR_FIELD,
-    name = "snowcovr",
+    name = "SNOWC",
     long_name = "Snow cover flags"
   }
   ,
   {
     original_name = TSEASFC_FIELD,
-    name = "tseasfc",
+    name = "SST",
     long_name = "Sea surface temperature"
   }
   ,
   {
     original_name = PBL_HGT_FIELD,
-    name = "pbl_hgt",
+    name = "PBLH",
     long_name = "Pbl height"
   }
   ,
@@ -1209,19 +1241,19 @@ field_name_map = {
   ,
   {
     original_name = SNOWH_FIELD,
-    name = "snowh",
+    name = "SNOWH",
     long_name = "Physical snow depth"
   }
   ,
   {
     original_name = SFC_PRES_FIELD,
-    name = "surfP",
+    name = "PSFC",
     long_name = "Surface Pressure"
   }
   ,
   {
     original_name = LAND_MASK_FIELD,
-    name = "land_mask",
+    name = "LANDMASK",
     long_name = "Land Mask (1-land 0-water)"
   }
   ,
@@ -1275,7 +1307,7 @@ field_name_map = {
   ,
   {
     original_name = RAIN_TOTAL_FIELD,
-    name = "rain_total",
+    name = "RAINNC",
     long_name = "Rain accumulation - con + non"
   }
   ,
