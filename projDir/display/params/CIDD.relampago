@@ -135,7 +135,7 @@ SURF_Terrain Terrain  mdvp::terrain//front.eol.ucar.edu:8080:relampago/mdv/terra
 ========   ========    mdvp::static//front.eol.ucar.edu:8080:/spacer/moments?use_http=true&Elevation       none.colors  m   -5 80 5 dcont  1 0
 
 WRF-Temp   WRF-Temp   mdvp:://front.eol.ucar.edu:8080:relampago/mdv/wrf/illinois?use_http=true&Temp    temp.colors     C    -5   80  5  dcont   1 0
-WRF-THETA  WRF-THETA  mdvp:://front.eol.ucar.edu:8080:relampago/mdv/wrf/illinois?use_http=true&THETA   theta_e.colors  K    -5   80  5  dcont   1 0
+WRF-THETAE WRF-THETAE mdvp:://front.eol.ucar.edu:8080:relampago/mdv/wrf/illinois?use_http=true&THETA   theta_e.colors  K    -5   80  5  dcont   1 0
 WRF-RH     WRF-RH     mdvp:://front.eol.ucar.edu:8080:relampago/mdv/wrf/illinois?use_http=true&RH      rh.colors       %    -5   80  5  dcont   1 0
 WRF-W      WRF-W      mdvp:://front.eol.ucar.edu:8080:relampago/mdv/wrf/illinois?use_http=true&W       wvel_new.colors m/s  -5   80  5  dcont   1 0
 
@@ -145,16 +145,29 @@ WRF-QRAIN    WRF-QRAIN    mdvp:://front.eol.ucar.edu:8080:relampago/mdv/wrf/illi
 WRF-QICE     WRF-QICE     mdvp:://front.eol.ucar.edu:8080:relampago/mdv/wrf/illinois?use_http=true&QICE     mixr_kgpkg.colors  kg/kg   -5   80  5  dcont   1 0
 
 WRF-QSNOW    WRF-QSNOW    mdvp:://front.eol.ucar.edu:8080:relampago/mdv/wrf/illinois?use_http=true&QSNOW    mixr_kgpkg.colors  kg/kg   -5   80  5  dcont   1 0
-WRF-QGRAUPEL WRF-QGRAUPEL mdvp:://front.eol.ucar.edu:8080:relampago/mdv/wrf/illinois?use_http=true&QGRAUPEL mixr_kgpkg.colors  kg/kg   -5   80  5  dcont   1 0
-WRF-DBZ      WRF-DBZ      mdvp:://front.eol.ucar.edu:8080:relampago/mdv/wrf/illinois?use_http=true&DBZ      dbz.colors         dBZ     -5   80  5  dcont   1 0
+WRF-QGRAUPEL WRF-QGRAUPEL mdvp:://front.eol.ucar.edu:8080:relampago/mdv/wrf/illinois?use_http=true&QGRAUP   mixr_kgpkg.colors  kg/kg   -5   80  5  dcont   1 0
 WRF-WSPD     WRF-WSPD     mdvp:://front.eol.ucar.edu:8080:relampago/mdv/wrf/illinois?use_http=true&Wspeed   wind_speed.colors  m/s     -5   80  5  dcont   1 0
+WRF-Press    WRF-Press    mdvp:://front.eol.ucar.edu:8080:relampago/mdv/wrf/illinois?use_http=true&P        press_pert_pa.colors   Pa      -5   80  5  dcont   1 0
 
-WRF-PPert    WRF-PPert    mdvp:://front.eol.ucar.edu:8080:relampago/mdv/wrf/illinois?use_http=true&P        press_pert_pa.colors   Pa      -5   80  5  dcont   1 0
-WRF-Temp2m   WRF-Temp2m   mdvp:://front.eol.ucar.edu:8080:relampago/mdv/wrf/illinois?use_http=true&T2C      temp.colors            C       -5   80  5  dcont   1 0
-WRF-Q2       WRF-Q2       mdvp:://front.eol.ucar.edu:8080:relampago/mdv/wrf/illinois?use_http=true&Q2       mixr_kgpkg.colors      kg/kg   -5   80  5  dcont   1 0
-WRF-PBLHT    WRF-PBLHT    mdvp:://front.eol.ucar.edu:8080:relampago/mdv/wrf/illinois?use_http=true&pbl_hgt  pblht_m.colors         M       -5   80  5  dcont   1 0
+WRF-T2m      WRF-T2m      mdvp:://front.eol.ucar.edu:8080:relampago/mdv/wrf/illinois?use_http=true&T2C      temp.colors            C    -5   80  5  dcont   1 0
+WRF-Q2m      WRF-Q2m      mdvp:://front.eol.ucar.edu:8080:relampago/mdv/wrf/illinois?use_http=true&Q2       mixr_kgpkg.colors  kg/kg    -5   80  5  dcont   1 0
+WRF-PBLHT    WRF-PBLHT    mdvp:://front.eol.ucar.edu:8080:relampago/mdv/wrf/illinois?use_http=true&PBLH     pblht_m.colors         M       -5   80  5  dcont   1 0
+WRF-PSFC     WRF-PSFC     mdvp:://front.eol.ucar.edu:8080:relampago/mdv/wrf/illinois?use_http=true&PSFC     press_sfc_pa.colors   Pa      -5   80  5  dcont   1 0
 
-# WRF-GHT      WRF-GHT      mdvp:://front.eol.ucar.edu:8080:relampago/mdv/wrf/illinois?use_http=true&geo_hgt  dbz.colors        dBZ     -5   80  5  dcont   1 0
+WRF-DBZ3D    WRF-DBZ3D    mdvp:://front.eol.ucar.edu:8080:relampago/mdv/wrf/illinois?use_http=true&DBZ      dbz.colors         dBZ     -5   80  5  dcont   1 0
+WRF-DBZ2D    WRF-DBZ2D    mdvp:://front.eol.ucar.edu:8080:relampago/mdv/wrf/illinois?use_http=true&dbz_2d   dbz.colors         dBZ     -5   80  5  dcont   1 0
+WRF-VIL      WRF-VIl      mdvp:://front.eol.ucar.edu:8080:relampago/mdv/wrf/illinois?use_http=true&vil      vil.colors         kg/m2   -5   80  5  dcont   1 0
+WRF-FZLEVEL  WRF-FZLEVEL  mdvp:://front.eol.ucar.edu:8080:relampago/mdv/wrf/illinois?use_http=true&FZLevel  fzlevel.colors         m       -5   80  5  dcont   1 0
+
+WRF-LCL      WRF-LCL      mdvp:://front.eol.ucar.edu:8080:relampago/mdv/wrf/illinois?use_http=true&LCL      lcl.colors             m       -5   80  5  dcont   1 0
+WRF-LFC      WRF-LFC      mdvp:://front.eol.ucar.edu:8080:relampago/mdv/wrf/illinois?use_http=true&LFC      lfc.colors             m       -5   80  5  dcont   1 0
+WRF-EL       WRF-EL       mdvp:://front.eol.ucar.edu:8080:relampago/mdv/wrf/illinois?use_http=true&EL       el.colors              m       -5   80  5  dcont   1 0
+========   ========    mdvp::static//front.eol.ucar.edu:8080:/spacer/moments?use_http=true&Elevation       none.colors  m   -5 80 5 dcont  1 0
+
+WRF-CAPE     WRF-CAPE     mdvp:://front.eol.ucar.edu:8080:relampago/mdv/wrf/illinois?use_http=true&CAPE     cape.colors            J/kg    -5   80  5  dcont   1 0
+WRF-CIN      WRF-CIN      mdvp:://front.eol.ucar.edu:8080:relampago/mdv/wrf/illinois?use_http=true&CIN      cin.colors             J/kg    -5   80  5  dcont   1 0
+========   ========    mdvp::static//front.eol.ucar.edu:8080:/spacer/moments?use_http=true&Elevation       none.colors  m   -5 80 5 dcont  1 0
+========   ========    mdvp::static//front.eol.ucar.edu:8080:/spacer/moments?use_http=true&Elevation       none.colors  m   -5 80 5 dcont  1 0
 
 ========   ========    mdvp::static//front.eol.ucar.edu:8080:/spacer/moments?use_http=true&Elevation       none.colors  m   -5 80 5 dcont  1 0
 ========   ========    mdvp::static//front.eol.ucar.edu:8080:/spacer/moments?use_http=true&Elevation       none.colors  m   -5 80 5 dcont  1 0
@@ -178,6 +191,16 @@ SURF_Conv  SURF_Conv  mdvp:://front.eol.ucar.edu:8080:relampago/mdv/surf_interp?
 # RADAR DATA
 
 CORD_DBZH  CORD_DBZH   mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/RMA1?use_http=true&DBZH      dbz.colors   dBZ -5 80 5 radial 1 0
+CORD_DBZV  CORD_DBZV   mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/RMA1?use_http=true&DBZV      dbz.colors   dBZ -5 80 5 radial 1 0
+CORD_ZDR   CORD_ZDR    mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/RMA1?use_http=true&ZDR       zdr.colors   dB  -5 80 5 radial 1 0
+CORD_KDP   CORD_KDP    mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/RMA1?use_http=true&KDP       kdp.colors   dB  -5 80 5 radial 1 0
+
+CORD_VEL   CORD_VEL    mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/RMA1?use_http=true&VEL      vel.colors   m/s -5 80 5 radial 1 0
+CORD_WIDTH CORD_WIDTH  mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/RMA1?use_http=true&WIDTH      width.colors m/s -5 80 5 radial 1 0
+CORD_PHIDP CORD_PHIDP  mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/RMA1?use_http=true&PHIDP       phidp.colors deg -5 80 5 radial 1 0
+CORD_RHOHV CORD_RHOHV  mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/RMA1?use_http=true&RHOHV       rhohv.colors -   -5 80 5 radial 1 0
+
+========   ========    mdvp::static//front.eol.ucar.edu:8080:/spacer/moments?use_http=true&Elevation       none.colors  m   -5 80 5 dcont  1 0
 ========   ========    mdvp::static//front.eol.ucar.edu:8080:/spacer/moments?use_http=true&Elevation       none.colors  m   -5 80 5 dcont  1 0
 ========   ========    mdvp::static//front.eol.ucar.edu:8080:/spacer/moments?use_http=true&Elevation       none.colors  m   -5 80 5 dcont  1 0
 ========   ========    mdvp::static//front.eol.ucar.edu:8080:/spacer/moments?use_http=true&Elevation       none.colors  m   -5 80 5 dcont  1 0
@@ -187,12 +210,6 @@ SAN_RAFAEL_DBZ  SAN_RAFAEL_DBZ   mdvp:://front.eol.ucar.edu:8080:relampago/mdv/r
 ========   ========    mdvp::static//front.eol.ucar.edu:8080:/spacer/moments?use_http=true&Elevation       none.colors  m   -5 80 5 dcont  1 0
 ========   ========    mdvp::static//front.eol.ucar.edu:8080:/spacer/moments?use_http=true&Elevation       none.colors  m   -5 80 5 dcont  1 0
 
-#CORD_VEL   CORD_VEL    mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/cordoba?use_http=true&VRAD      vel.colors   m/s -5 80 5 radial 1 0
-#CORD_WIDTH CORD_WIDTH  mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/cordoba?use_http=true&WRAD      width.colors m/s -5 80 5 radial 1 0
-#CORD_ZDR   CORD_ZDR    mdvp::zdr//front.eol.ucar.edu:8080:relampago/cfradial/cordoba?use_http=true&ZDR       zdr.colors   dB  -5 80 5 radial 1 0
-
-#CORD_PHIDP CORD_PHIDP  mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/cordoba?use_http=true&PHIDP       phidp.colors deg -5 80 5 radial 1 0
-#CORD_RHOHV CORD_RHOHV  mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/cordoba?use_http=true&RHOHV       rhohv.colors -   -5 80 5 radial 1 0
 #========   ========    mdvp::static//front.eol.ucar.edu:8080:/spacer/moments?use_http=true&Elevation       none.colors  m   -5 80 5 dcont  1 0
 #========   ========    mdvp::static//front.eol.ucar.edu:8080:/spacer/moments?use_http=true&Elevation       none.colors  m   -5 80 5 dcont  1 0
 
@@ -625,8 +642,9 @@ cidd.max_adeg:               360.0
 
 #cidd.color_file_subdir:   $(PROJ_DIR)/display/color_scales,http://front.eol.ucar.edu/color_scales
 #cidd.map_file_subdir:     $(PROJ_DIR)/display/maps,http://front.eol.ucar.edu/maps
-cidd.color_file_subdir:   http://front.eol.ucar.edu/color_scales
-cidd.map_file_subdir:     http://front.eol.ucar.edu/maps
+
+cidd.color_file_subdir:   $(PROJ_DIR)/display/color_scales,http://front.eol.ucar.edu/color_scales
+cidd.map_file_subdir:     $(PROJ_DIR)/display/maps,http://front.eol.ucar.edu/maps
 
 #
 # Station locator features
@@ -1157,7 +1175,7 @@ cidd.menu_bar_funct18: EXIT_BUTTON
 
 ##########################################
 
-cidd.horiz_frame_label: FRONT - COLORADO
+cidd.horiz_frame_label: RELAMPAGO
 
 # Set the message to display when no data is availible
 cidd.no_data_message:     NO DATA FOUND (in this area at the selected time)
