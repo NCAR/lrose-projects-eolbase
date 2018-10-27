@@ -1915,7 +1915,7 @@ severe_severity = 1;
 // Type: string
 //
 
-adiabat_temp_lookup_filename = "null";
+adiabat_temp_lookup_filename = "$(PROJ_DIR)/ingest/params/psadilookup.dat";
 
 ///////////// negative_cin ////////////////////////////
 //
