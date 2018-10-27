@@ -178,6 +178,16 @@ SURF_Conv  SURF_Conv  mdvp:://front.eol.ucar.edu:8080:relampago/mdv/surf_interp?
 # RADAR DATA
 
 CORD_DBZH  CORD_DBZH   mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/RMA1?use_http=true&DBZH      dbz.colors   dBZ -5 80 5 radial 1 0
+CORD_DBZV  CORD_DBZV   mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/RMA1?use_http=true&DBZV      dbz.colors   dBZ -5 80 5 radial 1 0
+CORD_ZDR   CORD_ZDR    mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/RMA1?use_http=true&ZDR       zdr.colors   dB  -5 80 5 radial 1 0
+CORD_KDP   CORD_KDP    mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/RMA1?use_http=true&KDP       kdp.colors   dB  -5 80 5 radial 1 0
+
+CORD_VEL   CORD_VEL    mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/RMA1?use_http=true&VEL      vel.colors   m/s -5 80 5 radial 1 0
+CORD_WIDTH CORD_WIDTH  mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/RMA1?use_http=true&WIDTH      width.colors m/s -5 80 5 radial 1 0
+CORD_PHIDP CORD_PHIDP  mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/RMA1?use_http=true&PHIDP       phidp.colors deg -5 80 5 radial 1 0
+CORD_RHOHV CORD_RHOHV  mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/RMA1?use_http=true&RHOHV       rhohv.colors -   -5 80 5 radial 1 0
+
+========   ========    mdvp::static//front.eol.ucar.edu:8080:/spacer/moments?use_http=true&Elevation       none.colors  m   -5 80 5 dcont  1 0
 ========   ========    mdvp::static//front.eol.ucar.edu:8080:/spacer/moments?use_http=true&Elevation       none.colors  m   -5 80 5 dcont  1 0
 ========   ========    mdvp::static//front.eol.ucar.edu:8080:/spacer/moments?use_http=true&Elevation       none.colors  m   -5 80 5 dcont  1 0
 ========   ========    mdvp::static//front.eol.ucar.edu:8080:/spacer/moments?use_http=true&Elevation       none.colors  m   -5 80 5 dcont  1 0
@@ -187,12 +197,6 @@ SAN_RAFAEL_DBZ  SAN_RAFAEL_DBZ   mdvp:://front.eol.ucar.edu:8080:relampago/mdv/r
 ========   ========    mdvp::static//front.eol.ucar.edu:8080:/spacer/moments?use_http=true&Elevation       none.colors  m   -5 80 5 dcont  1 0
 ========   ========    mdvp::static//front.eol.ucar.edu:8080:/spacer/moments?use_http=true&Elevation       none.colors  m   -5 80 5 dcont  1 0
 
-#CORD_VEL   CORD_VEL    mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/cordoba?use_http=true&VRAD      vel.colors   m/s -5 80 5 radial 1 0
-#CORD_WIDTH CORD_WIDTH  mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/cordoba?use_http=true&WRAD      width.colors m/s -5 80 5 radial 1 0
-#CORD_ZDR   CORD_ZDR    mdvp::zdr//front.eol.ucar.edu:8080:relampago/cfradial/cordoba?use_http=true&ZDR       zdr.colors   dB  -5 80 5 radial 1 0
-
-#CORD_PHIDP CORD_PHIDP  mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/cordoba?use_http=true&PHIDP       phidp.colors deg -5 80 5 radial 1 0
-#CORD_RHOHV CORD_RHOHV  mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/cordoba?use_http=true&RHOHV       rhohv.colors -   -5 80 5 radial 1 0
 #========   ========    mdvp::static//front.eol.ucar.edu:8080:/spacer/moments?use_http=true&Elevation       none.colors  m   -5 80 5 dcont  1 0
 #========   ========    mdvp::static//front.eol.ucar.edu:8080:/spacer/moments?use_http=true&Elevation       none.colors  m   -5 80 5 dcont  1 0
 
