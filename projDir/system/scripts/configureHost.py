@@ -20,7 +20,7 @@ def main():
     homeDir = os.environ['HOME']
     projDir = os.path.join(homeDir, 'projDir')
     controlDir = os.path.join(projDir, 'control')
-    defaultGitDir = os.path.join(homeDir, "git/spol-configuration")
+    defaultGitDir = os.path.join(homeDir, "git/lrose-projects-eolbase")
 
     # parse the command line
 
@@ -38,7 +38,7 @@ def main():
                       dest='gitDir', default=defaultGitDir,
                       help='Path of main directory in git')
     parser.add_option('--dataDir',
-                      dest='dataDir', default='/data/spol',
+                      dest='dataDir', default='/data/eolbase',
                       help='Path of installed data dir')
     (options, args) = parser.parse_args()
     
