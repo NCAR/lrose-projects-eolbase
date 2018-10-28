@@ -93,13 +93,6 @@ RadxConvert   kpux    start_RadxConvert.kpux   snuff_inst
 #RadxConvert  kvnx    start_RadxConvert.kvnx   snuff_inst
 #
 ######################################################################
-# NEXRAD ingest for OLYMPEX
-#
-#DsFileDist   olympex start_inst(system)       snuff_inst
-#RadxConvert  katx    start_RadxConvert.katx   snuff_inst
-#RadxConvert  klgx    start_RadxConvert.klgx   snuff_inst
-#
-######################################################################
 # Convective/stratiform partitioning
 #
 #StratFinder        mrms                start_inst(alg)     snuff_inst
@@ -268,3 +261,5 @@ InputWatcher       radar_RMA1      start_inst(ingest)    snuff_inst
 RadxBufr           RMA1            start_inst(ingest)    snuff_inst
 #
 ######################################################################
+DsFileDist    relampago  start_inst(system)       snuff_inst
+#

@@ -29,7 +29,7 @@
 //     DEBUG_EXTRA
 //
 
-debug = DEBUG_OFF;
+debug = DEBUG_NORM;
 
 ///////////// instance ////////////////////////////////
 //
@@ -2060,6 +2060,63 @@ vert_subdir = "vert";
 //
 
 sun_subdir = "sun";
+
+//======================================================================
+//
+// SEPARATING OUTPUT VOLUMES BASED ON RANGE GEOMETRY.
+//
+//======================================================================
+ 
+///////////// separate_output_dirs_by_range_geometry //
+//
+// Option to separate the files based on range geometry.
+//
+// In some scan strategies, the operational mode alternates between long 
+//   and short range scans. For example there may be a long range scan 
+//   without doppler moments, followed by a short range scan. The range 
+//   gate length varies for each of these scans. This option allows you to 
+//   write the volumes into separate directories based on the range 
+//   geometry.
+//
+//
+// Type: boolean
+//
+
+separate_output_dirs_by_range_geometry = TRUE;
+
+///////////// dir_from_range_geometry /////////////////
+//
+// Sub-directories to be used for different range geometry.
+//
+// If the gate spacing is within the specified limits, the specified 
+//   sub-directory is used (appended to 'output_dir'). If the gate spacing 
+//   is not within any of the specified limits, then 'output_dir' is used 
+//   as-is.
+//
+//
+// Type: struct
+//   typedef struct {
+//      double min_range_gate_spacing_km;
+//      double max_range_gate_spacing_km;
+//      string output_subdir;
+//   }
+//
+// 1D array - variable length.
+//
+
+dir_from_range_geometry = {
+  {
+    min_range_gate_spacing_km = 0,
+    max_range_gate_spacing_km = 0.2,
+    output_subdir = "short_range"
+  }
+  ,
+  {
+    min_range_gate_spacing_km = 0.2,
+    max_range_gate_spacing_km = 0.5,
+    output_subdir = "long_range"
+  }
+};
 
 //======================================================================
 //

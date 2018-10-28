@@ -99,6 +99,12 @@ setenv MDV_WRITE_FORMAT FORMAT_NCF
 setenv MDV_WRITE_USING_EXTENDED_PATHS TRUE
 setenv MDV2NETCDF_WRITE_LATLON_ARRAYS FALSE
 
+# relampago server host               
+
+setenv RELAMP_SERVER_IPADDR 181.30.169.202
+
+setenv PROCMAP_HOST localhost
+
 # --- project info --- 
 
 if (-f $PROJ_DIR/system/params/project_info) then
