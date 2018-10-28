@@ -107,9 +107,9 @@ endif
 
 # python
 
-#setenv PYTHONPATH ~/anaconda2/pkgs:$HOME/projDir/dial/Python/ptvv1_python/python:$HOME/projDir/dial/Python/NCAR-LidarProcessing/libraries
+setenv PYTHONPATH ~/anaconda2/pkgs:$HOME/projDir/dial/Python/ptvv1_python/python:$HOME/projDir/dial/Python/NCAR-LidarProcessing/libraries
 
-setenv PYTHONPATH ~/anaconda3/pkgs
+#setenv PYTHONPATH ~/anaconda3/pkgs
 
 # HSRL
 
@@ -132,8 +132,8 @@ if ( -d $PROJ_DIR ) then
 endif
 
 set path = ($path $LROSE_INSTALL_DIR/bin)
-
 set path = ($path $PROJ_DIR/dial/Matlab)
+set path = ($path $HOME/cidd/bin)
 
 set path = ($path ~/bin $QTDIR/bin \
 #       ~/anaconda2/bin \
