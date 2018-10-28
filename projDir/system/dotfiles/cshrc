@@ -244,6 +244,11 @@ if ($?prompt) then
 
   alias maps 'cd /scr/hail1/rsfdata/mapserv/maps'
 
+  alias relamp 'ssh -XY relamp@relampago'
+  alias ops1 'ssh -XY sci@ops1'
+  alias ops2 'ssh -XY sci@ops2'
+  alias ops3 'ssh -XY sci@ops3'
+
 #  alias spol 'ssh -p 20022 -a -C -XY spol@spol.dyndns.org'
 #  alias control1 'ssh -a -x -C -Y -R 2401:localhost:2401 control1'
 #  alias control2 'ssh -a -x -C -Y -R 2401:localhost:2401 control2'
