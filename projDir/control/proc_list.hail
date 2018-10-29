@@ -227,18 +227,14 @@ InputWatcher        relampago_aws  start_inst(ingest)    snuff_inst
 ArgentineAwsIngest  relampago      start_inst(ingest)    snuff_inst
 # Interpolate surface data
 #
-SurfInterp         relampago       start_inst(alg)     snuff_inst
+SurfInterp        relampago       start_inst(alg)     snuff_inst
 #
-# GOES16 Lightning
+# Lightning
 #
-GoesRGLM2Spdb      relampago       start_inst(ingest)    snuff_inst 
-#
-# WWLLN Lightning
-#
-Ltg2Spdb          wwlln_relampago  start_inst(ingest)    snuff_inst 
-#
-# Starnet lightning
-InputWatcher      starnet          start_inst(ingest)    snuff_inst
+GoesRGLM2Spdb     relampago          start_inst(ingest)    snuff_inst 
+Ltg2Spdb          wwlln_relampago    start_inst(ingest)    snuff_inst 
+InputWatcher      starnet            start_inst(ingest)    snuff_inst
+Ltg2Spdb          starnet_relampago  start_inst(ingest)    snuff_inst 
 #
 # GOES16 sat data
 #
