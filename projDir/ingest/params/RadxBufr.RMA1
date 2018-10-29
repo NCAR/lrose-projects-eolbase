@@ -222,7 +222,7 @@ incremental_realtime_mode = TRUE;
 // Type: int
 //
 
-incremental_realtime_wait_secs = 90;
+incremental_realtime_wait_secs = 60;
 
 //======================================================================
 //
