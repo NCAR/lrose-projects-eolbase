@@ -181,7 +181,7 @@ Dir_scan_interval_secs = 10;
 // Type: string
 //
 
-DomainString = "wrfout_d01";
+DomainString = "";
 
 ///////////// File_extension //////////////////////////
 //
@@ -194,7 +194,7 @@ DomainString = "wrfout_d01";
 // Type: string
 //
 
-File_extension = "0000";
+File_extension = "";
 
 ///////////// use_ldata ///////////////////////////////
 //
@@ -279,7 +279,7 @@ min_forecast_dtime = 0;
 // Type: int
 //
 
-max_forecast_dtime = 150000;
+max_forecast_dtime = 300000;
 
 ///////////// specify_lead_times //////////////////////
 //
