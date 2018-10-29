@@ -46,7 +46,7 @@ use_dest_host_list_file = FALSE;
 
 dest_url_list = {
   "spdbp:://localhost::relampago/spdb/metar",
-  "spdbp:://${RELAMP_SERVER_IPADDR}::relampago/spdb/metar"
+  "spdbp:://$(RELAMP_SERVER_IPADDR)::relampago/spdb/metar"
 };
 
 ///////////// put_timeout_secs ////////////////////////

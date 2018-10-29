@@ -184,7 +184,7 @@ write_to_spdb = TRUE;
 // Type: string
 //
 
-spdb_output_url = "$(DATA_DIR)/relampago/spdb/aws";
+spdb_output_url = "spdbp:://localhost:0:relampago/spdb/aws";
 
 ///////////// spdb_expire_seconds /////////////////////
 //
