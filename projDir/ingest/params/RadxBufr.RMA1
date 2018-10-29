@@ -197,35 +197,32 @@ file_quiescence = 5;
 
 search_ext = "";
 
-///////////// gematronik_realtime_mode ////////////////
+///////////// incremental_realtime_mode ///////////////
 //
-// Set to TRUE if we are watching for Gematronik XML volumes.
+// Set to TRUE if fields come in incrementally.
 //
-// Gematronik volumes (for a given time) are stored in multiple files, 
-//   one for each field. Therefore, after the time on a volume changes and 
-//   a new field file is detected, we need to wait a while to ensure that 
-//   all of the files have had a chance to be writted to disk. You need to 
-//   set gematronik_realtime_wait_secs to a value in excess of the time it 
-//   takes for all of the files to be written.
+// Some systems write fields from the same volume to separate files, so 
+//   they come in incrementally. In this case, we need to wait some time 
+//   for all of the fields to arrive before processing.
 //
 //
 // Type: boolean
 //
 
-gematronik_realtime_mode = FALSE;
+incremental_realtime_mode = TRUE;
 
-///////////// gematronik_realtime_wait_secs ///////////
+///////////// incremental_realtime_wait_secs //////////
 //
 // Number of seconds to wait, so that all field files can be written to 
 //   disk before we start to read.
 //
-// See 'gematronik_realtime_mode'.
+// See 'incremental_realtime_mode'.
 //
 //
 // Type: int
 //
 
-gematronik_realtime_wait_secs = 60;
+incremental_realtime_wait_secs = 90;
 
 //======================================================================
 //
