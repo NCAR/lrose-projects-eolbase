@@ -60,7 +60,7 @@ alg_debug = DEBUG_NONE;
 // Type: string
 //
 
-instance = "illinois_forecasts";
+instance = "illinois_f";
 
 ///////////// Procmap_reg_interval_secs ///////////////
 //
@@ -329,7 +329,7 @@ lead_times = {
 // Type: string
 //
 
-output_url = "$(DATA_DIR)/relampago/mdv/wrf/illinois_forecasts";
+output_url = "$(DATA_DIR)/relampago/mdv/wrf/illinois_f";
 
 //======================================================================
 //

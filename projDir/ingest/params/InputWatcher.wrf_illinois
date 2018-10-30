@@ -499,7 +499,8 @@ data_late_secs = 3600;
 //
 // If TRUE, the file will be copied to a file, in the directory 
 //   'output_dir', with the path based on the file modify time. The path 
-//   will be: 'copy_dir/yyyymmdd/hhmmss.copy_ext'.
+//   will be: 'copy_dir/yyyymmdd/hhmmss.copy_ext'. This option takes 
+//   precedence over copy_using_original_name.
 //
 //
 // Type: boolean
@@ -521,6 +522,19 @@ copy_to_time_stamped_file = FALSE;
 //
 
 copy_using_original_name = TRUE;
+
+///////////// append_date_time_to_original_name ///////
+//
+// Option to append the date and time to the original name.
+//
+// If TRUE, yyyymmdd_hhmmss will be appended to the original file name. 
+//   This helps to keep forecast data unique, if applicable.
+//
+//
+// Type: boolean
+//
+
+append_date_time_to_original_name = TRUE;
 
 ///////////// without_date_directory //////////////////
 //
@@ -556,7 +570,7 @@ copy_dir = "$(DATA_DIR)/relampago/raw/wrf/illinois";
 // Type: string
 //
 
-copy_prefix = "";
+copy_prefix = "wrfout_d01";
 
 ///////////// copy_ext ////////////////////////////////
 //
@@ -581,7 +595,7 @@ copy_ext = "nc";
 // Type: boolean
 //
 
-add_day_to_filename = FALSE;
+add_day_to_filename = TRUE;
 
 ///////////// remove_after_copy ///////////////////////
 //
