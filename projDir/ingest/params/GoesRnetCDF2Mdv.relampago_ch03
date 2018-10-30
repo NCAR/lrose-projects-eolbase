@@ -120,7 +120,7 @@ scene_sub_str = "RadF";
 //
 // Sub-string used in filename that identifies the band or channel.
 //
-// For files named following the G-16 PUG, the level-1 names are: C03 
+// For files named following the G-16 PUG, the level-1 names are: C01 
 //   through C16.
 //
 //
@@ -443,6 +443,25 @@ units_convert_type = CONVERT_K_TO_C;
 
 //======================================================================
 //
+// CORRECT ALBEDO FOR SUN ANGLE.
+//
+//======================================================================
+ 
+///////////// correct_albedo_for_sun_angle ////////////
+//
+// Option to correct albedo fields for sun angle.
+//
+// If true, the albedo fields are corrected for sun incidence angle. 
+//   This brigtens the scene at low sun angles.
+//
+//
+// Type: boolean
+//
+
+correct_albedo_for_sun_angle = TRUE;
+
+//======================================================================
+//
 // ENCODING AND COMPRESSION CONVERSION.
 //
 //======================================================================
@@ -492,14 +511,14 @@ units_convert_type = CONVERT_K_TO_C;
 //
 
 out_data_prep = {
-  short_name = "GOESR_CH03",
-  long_name = "GOESR_CH03_green_nearIR_0.86um",
-  units = "%",
-  encoding_type = ENCODING_FLOAT32,
-  compression_type = COMPRESSION_GZIP,
-  scaling_type = SCALING_DYNAMIC,
-  scale = 1,
-  bias = 0
+    short_name = "GOESR_CH03",
+    long_name = "GOESR_CH03_green_nearIR_0.86um",
+    units = "%",
+    encoding_type = ENCODING_FLOAT32,
+    compression_type = COMPRESSION_GZIP,
+    scaling_type = SCALING_DYNAMIC,
+    scale = 1,
+    bias = 0
 };
 
 ///////////// include_qc_field ////////////////////////

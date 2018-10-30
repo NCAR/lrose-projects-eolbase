@@ -69,7 +69,7 @@ allow_redistribution = TRUE;
 // Type: boolean
 //
 
-force_copy = FALSE;
+force_copy = TRUE;
 
 ///////////// overwrite_age ///////////////////////////
 //
