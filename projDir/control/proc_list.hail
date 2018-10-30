@@ -209,8 +209,9 @@ madis2Spdb        hawaii  start_inst(ingest)   snuff_inst
 #
 # WRF ILLINOIS MODEL
 #
-InputWatcher      wrf_illinois start_inst(ingest)   snuff_inst
-Wrf2Mdv           illinois     start_inst(ingest)   snuff_inst
+InputWatcher      wrf_illinois          start_inst(ingest)   snuff_inst
+Wrf2Mdv           illinois              start_inst(ingest)   snuff_inst
+Wrf2Mdv           illinois_forecasts    start_inst(ingest)   snuff_inst
 #
 # GFS MODEL
 #
