@@ -462,6 +462,25 @@ correct_albedo_for_sun_angle = TRUE;
 
 //======================================================================
 //
+// CHECK QUALITY FIELD.
+//
+//======================================================================
+ 
+///////////// check_quality_field /////////////////////
+//
+// Option to check quality field when filling output data field.
+//
+// If true, the output data field will only be filled if the quality 
+//   field value is 0. If false, the quality field will not be checked.
+//
+//
+// Type: boolean
+//
+
+check_quality_field = FALSE;
+
+//======================================================================
+//
 // ENCODING AND COMPRESSION CONVERSION.
 //
 //======================================================================
@@ -514,7 +533,7 @@ out_data_prep = {
     short_name = "GOESR_CH01",
     long_name = "GOESR_CH01_blue_visible_0.47um",
     units = "%",
-    encoding_type = ENCODING_FLOAT32,
+    encoding_type = ENCODING_INT16,
     compression_type = COMPRESSION_GZIP,
     scaling_type = SCALING_DYNAMIC,
     scale = 1,
@@ -644,9 +663,9 @@ rad_data_prep = {
     short_name = "radiance",
     long_name = "long_radinace",
     units = "units",
-    encoding_type = ENCODING_ASIS,
-    compression_type = COMPRESSION_ASIS,
-    scaling_type = SCALING_ASIS,
+    encoding_type = ENCODING_INT16,
+    compression_type = COMPRESSION_GZIP,
+    scaling_type = SCALING_DYNAMIC,
     scale = 1,
     bias = 0
 };

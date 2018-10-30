@@ -120,7 +120,7 @@ scene_sub_str = "RadF";
 //
 // Sub-string used in filename that identifies the band or channel.
 //
-// For files named following the G-16 PUG, the level-1 names are: C13 
+// For files named following the G-16 PUG, the level-1 names are: C01 
 //   through C16.
 //
 //
@@ -443,6 +443,44 @@ units_convert_type = CONVERT_K_TO_C;
 
 //======================================================================
 //
+// CORRECT ALBEDO FOR SUN ANGLE.
+//
+//======================================================================
+ 
+///////////// correct_albedo_for_sun_angle ////////////
+//
+// Option to correct albedo fields for sun angle.
+//
+// If true, the albedo fields are corrected for sun incidence angle. 
+//   This brigtens the scene at low sun angles.
+//
+//
+// Type: boolean
+//
+
+correct_albedo_for_sun_angle = FALSE;
+
+//======================================================================
+//
+// CHECK QUALITY FIELD.
+//
+//======================================================================
+ 
+///////////// check_quality_field /////////////////////
+//
+// Option to check quality field when filling output data field.
+//
+// If true, the output data field will only be filled if the quality 
+//   field value is 0. If false, the quality field will not be checked.
+//
+//
+// Type: boolean
+//
+
+check_quality_field = FALSE;
+
+//======================================================================
+//
 // ENCODING AND COMPRESSION CONVERSION.
 //
 //======================================================================
@@ -492,14 +530,14 @@ units_convert_type = CONVERT_K_TO_C;
 //
 
 out_data_prep = {
-  short_name = "GOESR_CH13",
-  long_name = "GOESR_CH13_clean_IR_10.3um",
-  units = "C",
-  encoding_type = ENCODING_FLOAT32,
-  compression_type = COMPRESSION_GZIP,
-  scaling_type = SCALING_DYNAMIC,
-  scale = 1,
-  bias = 0
+    short_name = "GOESR_CH13",
+    long_name = "GOESR_CH13_clean_IR_10.3um",
+    units = "C",
+    encoding_type = ENCODING_INT16,
+    compression_type = COMPRESSION_GZIP,
+    scaling_type = SCALING_DYNAMIC,
+    scale = 1,
+    bias = 0
 };
 
 ///////////// include_qc_field ////////////////////////
