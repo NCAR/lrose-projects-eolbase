@@ -66,7 +66,7 @@ instance = "wrf_illinois";
 // Type: string
 //
 
-input_dir = "/net/ftp/pub/data/incoming/relampago/model";
+input_dir = "/net/ftp/pub/data/incoming/relampago/model/illinois";
 
 ///////////// wait_between_checks /////////////////////
 //
@@ -161,7 +161,7 @@ skip_to_latest_file = FALSE;
 // Type: boolean
 //
 
-search_recursively = FALSE;
+search_recursively = TRUE;
 
 ///////////// max_dir_age /////////////////////////////
 //
@@ -189,7 +189,7 @@ max_dir_age = 900;
 // Type: int
 //
 
-max_recursion_depth = 2;
+max_recursion_depth = 3;
 
 ///////////// follow_links ////////////////////////////
 //
