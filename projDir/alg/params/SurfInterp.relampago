@@ -33,7 +33,7 @@
 //     DEBUG_VERBOSE
 //
 
-debug = DEBUG_OFF;
+debug = DEBUG_NORM;
 
 ///////////// instance ////////////////////////////////
 //
@@ -430,6 +430,61 @@ outputFields = {
 //
 
 outputFieldsEncoding = {
+  {
+    encoding_type = ENCODING_FLOAT32,
+    use_scaling_info = FALSE,
+    scaling_type = SCALING_DYNAMIC,
+    scale = 1,
+    bias = 0
+  }
+  ,
+  {
+    encoding_type = ENCODING_FLOAT32,
+    use_scaling_info = FALSE,
+    scaling_type = SCALING_DYNAMIC,
+    scale = 1,
+    bias = 0
+  }
+  ,
+  {
+    encoding_type = ENCODING_FLOAT32,
+    use_scaling_info = FALSE,
+    scaling_type = SCALING_DYNAMIC,
+    scale = 1,
+    bias = 0
+  }
+  ,
+  {
+    encoding_type = ENCODING_FLOAT32,
+    use_scaling_info = FALSE,
+    scaling_type = SCALING_DYNAMIC,
+    scale = 1,
+    bias = 0
+  }
+  ,
+  {
+    encoding_type = ENCODING_FLOAT32,
+    use_scaling_info = FALSE,
+    scaling_type = SCALING_DYNAMIC,
+    scale = 1,
+    bias = 0
+  }
+  ,
+  {
+    encoding_type = ENCODING_FLOAT32,
+    use_scaling_info = FALSE,
+    scaling_type = SCALING_DYNAMIC,
+    scale = 1,
+    bias = 0
+  }
+  ,
+  {
+    encoding_type = ENCODING_FLOAT32,
+    use_scaling_info = FALSE,
+    scaling_type = SCALING_DYNAMIC,
+    scale = 1,
+    bias = 0
+  }
 };
 
 ///////////// genptFields /////////////////////////////
@@ -496,7 +551,7 @@ genptFields = {
     missing_value = -9999,
     output_field_name = "Cape",
     output_field_units = "none",
-    encoding_type = ENCODING_INT8,
+    encoding_type = ENCODING_FLOAT32,
     use_scaling_info = FALSE,
     scaling_type = SCALING_ROUNDED,
     scale = 1,
@@ -509,7 +564,7 @@ genptFields = {
     missing_value = -99999,
     output_field_name = "Cin",
     output_field_units = "none",
-    encoding_type = ENCODING_INT8,
+    encoding_type = ENCODING_FLOAT32,
     use_scaling_info = FALSE,
     scaling_type = SCALING_ROUNDED,
     scale = 1,
