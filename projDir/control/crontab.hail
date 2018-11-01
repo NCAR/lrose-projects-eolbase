@@ -39,8 +39,12 @@
 #
 # Wget surface station data
 */1 * * * *   csh -c "run_WgetRelampagoSurfaceObs" 1> /dev/null 2> /dev/null
+#
 # Get WWLLN data via http
 */10 * * * *  csh -c "run_GetWwllnRelampago"    1> /dev/null 2> /dev/null
+#
 # Get Mendoza radar data
 */2 * * * *  csh -c "run_GetMendozaRadarsByFtp.SanMartin"    1> /dev/null 2> /dev/null
 */2 * * * *  csh -c "run_GetMendozaRadarsByFtp.SanRafael"    1> /dev/null 2> /dev/null
+# Sync soundings to raw
+*/10 * * * *  csh -c "rsync_soundings_to_raw.relampago"    1> /dev/null 2> /dev/null
