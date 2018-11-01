@@ -66,7 +66,7 @@ procmap_register_interval_secs = 60;
 // Type: string
 //
 
-input_dir = "/net/ldm/data/grib/gfs";
+input_dir = "$(DATA_DIR)/relampago/raw/gfs";
 
 ///////////// input_suffix ////////////////////////////
 //
@@ -118,7 +118,7 @@ max_input_data_age = 43200;
 // Type: boolean
 //
 
-latest_data_info_avail = FALSE;
+latest_data_info_avail = TRUE;
 
 ///////////// recursive_search ////////////////////////
 //

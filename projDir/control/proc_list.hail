@@ -215,7 +215,8 @@ Wrf2Mdv           illinois_f       start_inst(ingest)   snuff_inst
 #
 # GFS MODEL
 #
-Grib2toMdv  gfs.relampago start_inst(ingest)   snuff_inst
+InputWatcher  gfs.relampago  start_inst(ingest)   snuff_inst
+Grib2toMdv    gfs.relampago  start_inst(ingest)   snuff_inst
 #
 # model soundings at each radar
 #
