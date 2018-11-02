@@ -1643,6 +1643,74 @@ variable_transform_fields = {
 
 //======================================================================
 //
+// OPTION TO COMPUTE ZDR FROM OTHER FIELDS.
+//
+// Normally ZDR = DBZH - DBZV.
+//
+//======================================================================
+ 
+///////////// zdr_compute_from_input_fields ///////////
+//
+// Compute ZDR from 2 other fields.
+//
+// Normally ZDR = DBZH - DBZV.
+//
+//
+// Type: boolean
+//
+
+zdr_compute_from_input_fields = TRUE;
+
+///////////// zdr_compute_input_field_1 ///////////////
+//
+// First field for computing ZDR.
+//
+// ZDR will be (field_1 - field_2) + correction.
+//
+//
+// Type: string
+//
+
+zdr_compute_input_field_1 = "TH";
+
+///////////// zdr_compute_input_field_2 ///////////////
+//
+// Second field for computing ZDR.
+//
+// ZDR will be (field_1 - field_2) + correction.
+//
+//
+// Type: string
+//
+
+zdr_compute_input_field_2 = "TV";
+
+///////////// zdr_compute_correction_db ///////////////
+//
+// Correction applied when computing ZDR.
+//
+// ZDR will be (field_1 - field_2) + correction.
+//
+//
+// Type: double
+//
+
+zdr_compute_correction_db = 0;
+
+///////////// zdr_compute_output_field_name ///////////
+//
+// Name for computed ZDR fields.
+//
+// Units will be dB.
+//
+//
+// Type: string
+//
+
+zdr_compute_output_field_name = "ZDR";
+
+//======================================================================
+//
 // OUTPUT FORMAT.
 //
 //======================================================================
