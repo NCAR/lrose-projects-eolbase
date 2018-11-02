@@ -259,8 +259,12 @@ GoesRnetCDF2Mdv    relampago_ch15   start_inst(ingest)    snuff_inst
 # Radars
 #
 InputWatcher       radar_RMA1      start_inst(ingest)    snuff_inst
-RadxBufr           RMA1            start_inst(ingest)    snuff_inst
+InputWatcher       radar_RMA2      start_inst(ingest)    snuff_inst
 #
-######################################################################
+RadxBufr           RMA1            start_inst(ingest)    snuff_inst
+RadxBufr           RMA2            start_inst(ingest)    snuff_inst
+#
+# Send data to Relampago ops center
+#
 DsFileDist    relampago  start_inst(system)       snuff_inst
 #
