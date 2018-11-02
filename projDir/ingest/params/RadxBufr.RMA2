@@ -222,7 +222,7 @@ incremental_realtime_mode = TRUE;
 // Type: int
 //
 
-incremental_realtime_wait_secs = 60;
+incremental_realtime_wait_secs = 100;
 
 //======================================================================
 //
@@ -1247,7 +1247,7 @@ set_output_fields = TRUE;
 
 output_fields = {
   {
-    input_field_name = "DBZH",
+    input_field_name = "TH",
     output_field_name = "DBZH",
     long_name = "reflectivity_horizontal_channel",
     standard_name = "equivalent_reflectivity_factor",
@@ -1259,7 +1259,7 @@ output_fields = {
   }
   ,
   {
-    input_field_name = "DBZV",
+    input_field_name = "TV",
     output_field_name = "DBZV",
     long_name = "vertical_reflectivity",
     standard_name = "equivalent_reflectivity_factor",
