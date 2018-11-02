@@ -260,6 +260,9 @@ GoesRnetCDF2Mdv    relampago_ch15   start_inst(ingest)    snuff_inst
 #
 InputWatcher       radar_RMA1      start_inst(ingest)    snuff_inst
 InputWatcher       radar_RMA2      start_inst(ingest)    snuff_inst
+InputWatcher       radar_ANG       start_inst(ingest)    snuff_inst
+InputWatcher       radar_PAR       start_inst(ingest)    snuff_inst
+InputWatcher       radar_PER       start_inst(ingest)    snuff_inst
 #
 RadxBufr           RMA1            start_inst(ingest)    snuff_inst
 RadxBufr           RMA2            start_inst(ingest)    snuff_inst
