@@ -266,6 +266,9 @@ InputWatcher       radar_PER       start_inst(ingest)    snuff_inst
 #
 RadxBufr           RMA1            start_inst(ingest)    snuff_inst
 RadxBufr           RMA2            start_inst(ingest)    snuff_inst
+RadxConvert        ANG             start_inst(ingest)    snuff_inst
+RadxConvert        PAR             start_inst(ingest)    snuff_inst
+RadxConvert        PER             start_inst(ingest)    snuff_inst
 #
 # Send data to Relampago ops center
 #
