@@ -190,15 +190,15 @@ SURF_Conv  SURF_Conv  mdvp:://front.eol.ucar.edu:8080:relampago/mdv/surf_interp?
 #############################
 # RADAR DATA
 
-CORD_DBZH  CORD_DBZH   mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/RMA1?use_http=true&DBZH      dbz.colors   dBZ -5 80 5 radial 1 0
-CORD_DBZV  CORD_DBZV   mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/RMA1?use_http=true&DBZV      dbz.colors   dBZ -5 80 5 radial 1 0
-CORD_ZDR   CORD_ZDR    mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/RMA1?use_http=true&ZDR       zdr.colors   dB  -5 80 5 radial 1 0
-CORD_KDP   CORD_KDP    mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/RMA1?use_http=true&KDP       kdp.colors   dB  -5 80 5 radial 1 0
+CORD_DBZ  CORD_DBZ   mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/RMA1/short_range?use_http=true&DBZH      dbz.colors   dBZ -5 80 5 radial 1 0
+CORD_DBZ_LONG  CORD_DBZ_LONG mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/RMA1/long_range?use_http=true&DBZH      dbz.colors   dBZ -5 80 5 radial 1 0
+CORD_ZDR   CORD_ZDR    mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/RMA1/short_range?use_http=true&ZDR       zdr.colors   dB  -5 80 5 radial 1 0
+CORD_KDP   CORD_KDP    mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/RMA1/short_range?use_http=true&KDP       kdp.colors   dB  -5 80 5 radial 1 0
 
-CORD_VEL   CORD_VEL    mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/RMA1?use_http=true&VEL      vel.colors   m/s -5 80 5 radial 1 0
-CORD_WIDTH CORD_WIDTH  mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/RMA1?use_http=true&WIDTH      width.colors m/s -5 80 5 radial 1 0
-CORD_PHIDP CORD_PHIDP  mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/RMA1?use_http=true&PHIDP       phidp.colors deg -5 80 5 radial 1 0
-CORD_RHOHV CORD_RHOHV  mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/RMA1?use_http=true&RHOHV       rhohv.colors -   -5 80 5 radial 1 0
+CORD_VEL   CORD_VEL    mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/RMA1/short_range?use_http=true&VEL      vel.colors   m/s -5 80 5 radial 1 0
+CORD_WIDTH CORD_WIDTH  mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/RMA1/short_range?use_http=true&WIDTH      width.colors m/s -5 80 5 radial 1 0
+CORD_PHIDP CORD_PHIDP  mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/RMA1/short_range?use_http=true&PHIDP       phidp.colors deg -5 80 5 radial 1 0
+CORD_RHOHV CORD_RHOHV  mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/RMA1/short_range?use_http=true&RHOHV       rhohv.colors -   -5 80 5 radial 1 0
 
 ========   ========    mdvp::static//front.eol.ucar.edu:8080:/spacer/moments?use_http=true&Elevation       none.colors  m   -5 80 5 dcont  1 0
 ========   ========    mdvp::static//front.eol.ucar.edu:8080:/spacer/moments?use_http=true&Elevation       none.colors  m   -5 80 5 dcont  1 0
@@ -243,12 +243,14 @@ Countries      Countries      world_states.map            2  0.0 1000000.0  whit
 Roads          Roads          ARG_roads.map               0  0.0 1000000.0  gray25
 Rivers         Rivers         ARG_water_lines_dcw.map     0  0.0 1000000.0  blue
 Lakes          Lakes          ARG_water_areas_dcw.map     0  0.0 1000000.0  blue
-#Admin0        Admin0         ARG_adm0.map                0  0.0 1000000.0  orange
+Admin0        Admin0         ARG_adm0.map                0  0.0 1000000.0  orange
 States         States         ARG_adm1.map                1  0.0 1000000.0  brown
 Counties       Counties       ARG_adm2.map                0  0.0 1000000.0  pink
 CordobaRings   CordobaRings   cordoba_rings.map           1  0.0 1000000.0  white
 SanMartinRings SanMartinRings san_martin_rings.map        0  0.0 1000000.0  white
 SanRafaelRings SanRafaelRings san_rafael_rings.map        0  0.0 1000000.0  white
+Points         Points         relampago_points.map        1  0.0 1000000.0  yellow
+
 </MAPS>
 
 <WINDS>
@@ -634,14 +636,6 @@ cidd.max_adeg:               360.0
 
 # List of comma delimited local directories or HTTP URLs to search
 # Searchs . then each directory/URL in order 
-
-#cidd.color_file_subdir:   http://raw.githubusercontent.com/NCAR/lrose-projects-eolbase/master/projDir/display/color_scales,$(PROJ_DIR)/display/color_scales
-#cidd.color_file_subdir:   $(PROJ_DIR)/display/color_scales
-#cidd.map_file_subdir:     http://raw.githubusercontent.com/NCAR/lrose-projects-eolbase/master/projDir/display/maps,$(PROJ_DIR)/display/maps
-#cidd.map_file_subdir:     $(PROJ_DIR)/display/maps
-
-#cidd.color_file_subdir:   $(PROJ_DIR)/display/color_scales,http://front.eol.ucar.edu/color_scales
-#cidd.map_file_subdir:     $(PROJ_DIR)/display/maps,http://front.eol.ucar.edu/maps
 
 cidd.color_file_subdir:   $(PROJ_DIR)/display/color_scales,http://front.eol.ucar.edu/color_scales
 cidd.map_file_subdir:     $(PROJ_DIR)/display/maps,http://front.eol.ucar.edu/maps
@@ -1430,6 +1424,20 @@ prod_info = {
   {
     menu_label = "WWLLN" ,
     url = "spdbp:Ltg2Symprod:wwlln//front.eol.ucar.edu:8080:relampago/spdb/ltg/wwlln?use_http=true",
+    data_type = 0,
+    render_type = RENDER_ALL_VALID,
+    // render_type = RENDER_ALL_BEFORE_DATA_TIME,
+    on_by_default = FALSE,
+    minutes_allow_before = 60.0,
+    minutes_allow_after = 0.0,
+    text_off_threshold = 0.0,
+    request_data_on_zoom = FALSE,
+    request_data_on_vert_change = FALSE
+  }
+  ,
+  {
+    menu_label = "STARNET" ,
+    url = "spdbp:Ltg2Symprod://front.eol.ucar.edu:8080:relampago/spdb/ltg/starnet?use_http=true",
     data_type = 0,
     render_type = RENDER_ALL_VALID,
     // render_type = RENDER_ALL_BEFORE_DATA_TIME,

@@ -243,7 +243,7 @@ Countries      Countries      world_states.map            2  0.0 1000000.0  whit
 Roads          Roads          ARG_roads.map               0  0.0 1000000.0  gray25
 Rivers         Rivers         ARG_water_lines_dcw.map     0  0.0 1000000.0  blue
 Lakes          Lakes          ARG_water_areas_dcw.map     0  0.0 1000000.0  blue
-#Admin0        Admin0         ARG_adm0.map                0  0.0 1000000.0  orange
+Admin0         Admin0         ARG_adm0.map                0  0.0 1000000.0  orange
 States         States         ARG_adm1.map                1  0.0 1000000.0  brown
 Counties       Counties       ARG_adm2.map                0  0.0 1000000.0  pink
 CordobaRings   CordobaRings   cordoba_rings.map           1  0.0 1000000.0  white
