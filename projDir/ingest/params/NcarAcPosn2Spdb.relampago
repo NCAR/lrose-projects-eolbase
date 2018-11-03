@@ -1,0 +1,233 @@
+/**********************************************************************
+ * TDRP params for NcarAcPosn2Spdb
+ **********************************************************************/
+
+//======================================================================
+//
+// NcarAcPosn2Spdb reads aircraft position data from ASCII file in JSON 
+//   format. These files updated frequently and are overwritten. They are 
+//   read each time they update, and the position data is then stored in 
+//   SPDB.
+//
+//======================================================================
+ 
+//======================================================================
+//
+// DEBUGGING AND PROCESS CONTROL.
+//
+//======================================================================
+ 
+///////////// debug ///////////////////////////////////
+//
+// Debug option.
+//
+// If set, debug messages will be printed appropriately.
+//
+//
+// Type: enum
+// Options:
+//     DEBUG_OFF
+//     DEBUG_NORM
+//     DEBUG_VERBOSE
+//     DEBUG_EXTRA
+//
+
+debug = DEBUG_OFF;
+
+///////////// instance ////////////////////////////////
+//
+// Process instance.
+//
+// Used for registration with procmap.
+//
+//
+// Type: string
+//
+
+instance = "relampago";
+
+///////////// mode ////////////////////////////////////
+//
+// Operating mode.
+//
+// 	REALTIME_JSON: JSON files are read and processed as they update.
+// 	SIM: aircraft data is generated for simulation putposes.
+//
+//
+// Type: enum
+// Options:
+//     REALTIME_JSON
+//     SIM
+//
+
+mode = REALTIME_JSON;
+
+//======================================================================
+//
+// REALTIME JSON MODE.
+//
+//======================================================================
+ 
+///////////// aircraft_json ///////////////////////////
+//
+// Details of JSON files for each aircraft in realtime mode.
+//
+// The JSON files update every few seconds. We watch the files and 
+//   reread them when they change, storing the data in SPDB using the 
+//   callsign as the data_type.
+//
+//
+// Type: struct
+//   typedef struct {
+//      string callsign;
+//      string input_path;
+//   }
+//
+// 1D array - variable length.
+//
+
+aircraft_json = {
+  {
+    callsign = "G1",
+    input_path = "/net/www/docs/flight_data/DOE_G1/position.json"
+  }
+};
+
+///////////// repeat_location_if_no_change ////////////
+//
+// Repeat the last location at regular intervals if it does not change.
+//
+// This can be used with mobile ground assets that stop reporting when 
+//   then are stationary. See 'repeat_period_secs'.
+//
+//
+// Type: boolean
+//
+
+repeat_location_if_no_change = TRUE;
+
+///////////// repeat_period_secs //////////////////////
+//
+// Period at which to repeat the location if the position has not been 
+//   updated (secs).
+//
+// See 'repeat_location_if_no_change'.
+//
+//
+// Type: int
+//
+
+repeat_period_secs = 10;
+
+///////////// repeat_max_age_secs /////////////////////
+//
+// Age at which we no longer repeat the data (secs).
+//
+// If the input file exceeds this age, the data is no longer repeated.
+//
+//
+// Type: int
+//
+
+repeat_max_age_secs = 2000000000;
+
+//======================================================================
+//
+// SIMULATION MODE.
+//
+//======================================================================
+ 
+///////////// sim_aircraft ////////////////////////////
+//
+// Details of aircraft for SIM mode.
+//
+// The test aircraft have a starting location, speed (knots) and 
+//   altitude (ft). They wander randomly around. If they go further that 
+//   100 km from their starting location they are brought back to the 
+//   start.
+//
+//
+// Type: struct
+//   typedef struct {
+//      string callsign;
+//      double start_lat;
+//      double start_lon;
+//      double altitude;
+//      double speed;
+//   }
+//
+// 1D array - variable length.
+//
+
+sim_aircraft = {
+  {
+    callsign = "DOE_G2",
+    start_lat = -31,
+    start_lon = -64,
+    altitude = 9500,
+    speed = 350
+  }
+};
+
+//======================================================================
+//
+// DATA QUALITY.
+//
+//======================================================================
+ 
+///////////// change_lat_sign /////////////////////////
+//
+// Change the latitude sign.
+//
+// Use if southern latitudes are positive.
+//
+//
+// Type: boolean
+//
+
+change_lat_sign = FALSE;
+
+///////////// change_lon_sign /////////////////////////
+//
+// Change the longitude sign.
+//
+// Use if western longitudes are positive.
+//
+//
+// Type: boolean
+//
+
+change_lon_sign = FALSE;
+
+//======================================================================
+//
+// DATA OUTPUT.
+//
+//======================================================================
+ 
+///////////// output_url //////////////////////////////
+//
+// Output SPDB URL.
+//
+// This is the path to the output data directory. You can use full URL 
+//   sytnax and optionally put the data to a remote machine.
+//
+//
+// Type: string
+//
+
+output_url = "spdbp:://localhost:0:relampago/spdb/ac_posn";
+
+///////////// valid_period ////////////////////////////
+//
+// Valid period (secs).
+//
+// Time period over which the aircraft position is considered valid.
+//
+// Minimum val: 1
+//
+// Type: int
+//
+
+valid_period = 60;
+
