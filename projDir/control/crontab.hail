@@ -31,10 +31,6 @@
 # backup weather station data from S-Pol
 #*/10 * * * *   csh -c "rsync_nidas.spol" 1> /dev/null 2> /dev/null
 ####################################################################
-# TRANSFER IMAGES FROM RAL WEATHER PAGE TO CATALOG
-#
-#*/10 * * * *   csh -c "retrieve_ral_products" 1> /dev/null 2> /dev/null
-####################################################################
 # RELAMPAGO
 #
 # Wget surface station data
@@ -44,7 +40,14 @@
 */10 * * * *  csh -c "run_GetWwllnRelampago"    1> /dev/null 2> /dev/null
 #
 # Get Mendoza radar data
+#
 */2 * * * *  csh -c "run_GetMendozaRadarsByFtp.SanMartin"    1> /dev/null 2> /dev/null
 */2 * * * *  csh -c "run_GetMendozaRadarsByFtp.SanRafael"    1> /dev/null 2> /dev/null
+#
 # Sync soundings to raw
 */10 * * * *  csh -c "rsync_soundings_to_raw.relampago"    1> /dev/null 2> /dev/null
+#
+# Sync data to rain as a backup
+#
+*/5 * * * *  csh -c "rsync_backup_to_rain.relampago"    1> /dev/null 2> /dev/null
+#

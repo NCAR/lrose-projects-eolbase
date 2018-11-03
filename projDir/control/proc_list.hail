@@ -231,13 +231,6 @@ ArgentineAwsIngest  relampago      start_inst(ingest)    snuff_inst
 #
 SurfInterp        relampago       start_inst(alg)     snuff_inst
 #
-# Lightning
-#
-GoesRGLM2Spdb     relampago          start_inst(ingest)    snuff_inst 
-Ltg2Spdb          wwlln_relampago    start_inst(ingest)    snuff_inst 
-InputWatcher      starnet            start_inst(ingest)    snuff_inst
-Ltg2Spdb          starnet_relampago  start_inst(ingest)    snuff_inst 
-#
 # GOES16 sat data
 #
 InputWatcher       goes16_ch01      start_inst(ingest)    snuff_inst
@@ -255,6 +248,14 @@ GoesRnetCDF2Mdv    relampago_ch06   start_inst(ingest)    snuff_inst
 GoesRnetCDF2Mdv    relampago_ch10   start_inst(ingest)    snuff_inst
 GoesRnetCDF2Mdv    relampago_ch13   start_inst(ingest)    snuff_inst
 GoesRnetCDF2Mdv    relampago_ch15   start_inst(ingest)    snuff_inst
+#
+# Lightning
+#
+InputWatcher       goes16_glm        start_inst(ingest)    snuff_inst
+GoesRGLM2Spdb      relampago         start_inst(ingest)    snuff_inst 
+Ltg2Spdb           wwlln_relampago   start_inst(ingest)    snuff_inst 
+InputWatcher       starnet           start_inst(ingest)    snuff_inst
+Ltg2Spdb           starnet_relampago start_inst(ingest)    snuff_inst 
 # 
 # Radars
 #
