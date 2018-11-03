@@ -117,7 +117,7 @@ repeat_location_if_no_change = TRUE;
 // Type: int
 //
 
-repeat_period_secs = 10;
+repeat_period_secs = 60;
 
 ///////////// repeat_max_age_secs /////////////////////
 //
