@@ -222,7 +222,7 @@ incremental_realtime_mode = TRUE;
 // Type: int
 //
 
-incremental_realtime_wait_secs = 100;
+incremental_realtime_wait_secs = 60;
 
 //======================================================================
 //
@@ -1695,7 +1695,7 @@ zdr_compute_input_field_2 = "TV";
 // Type: double
 //
 
-zdr_compute_correction_db = 0;
+zdr_compute_correction_db = -1.5;
 
 ///////////// zdr_compute_output_field_name ///////////
 //
