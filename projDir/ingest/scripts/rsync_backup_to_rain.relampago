@@ -1,0 +1,10 @@
+#! /bin/csh
+
+# rsync to rain as a backup for relampago
+
+cd /scr/hail1/rsfdata
+
+rsync -av relampago rain:/scr/rain2/rsfdata/projects |& LogFilter -d $ERRORS_LOG_DIR -p rsync_backup_to_rain -i relampago &
+
+
+
