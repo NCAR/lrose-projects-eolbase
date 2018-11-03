@@ -128,7 +128,7 @@ search_recursively = TRUE;
 // Type: int
 //
 
-max_dir_age = 900;
+max_dir_age = 21600;
 
 ///////////// max_recursion_depth /////////////////////
 //
