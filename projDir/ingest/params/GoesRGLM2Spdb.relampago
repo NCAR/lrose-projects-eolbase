@@ -114,7 +114,8 @@ mode = REALTIME;
 // Type: string
 //
 
-input_dir = "/scr/typhoon-ldm/pub/native/satellite/GOES/GRB16/GLM/LCFA/current";
+// input_dir = "/scr/typhoon-ldm/pub/native/satellite/GOES/GRB16/GLM/LCFA/current";
+input_dir = "$(DATA_DIR)/relampago/raw/goes16/glm";
 
 ///////////// max_valid_realtime_age_min //////////////
 //
@@ -136,7 +137,7 @@ max_valid_realtime_age_min = 15;
 // Type: boolean
 //
 
-ldata_info_avail = FALSE;
+ldata_info_avail = TRUE;
 
 ///////////// file_quiescence_sec /////////////////////
 //
