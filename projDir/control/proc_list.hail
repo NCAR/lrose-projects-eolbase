@@ -278,3 +278,7 @@ DsFileDist    relampago  start_inst(system)       snuff_inst
 # Aircraft track data
 #
 NcarAcPosn2Spdb  relampago          start_inst(ingest)  snuff_inst
+#
+# Mobile ground assets
+#
+InputWatcher     mobile_assets     start_inst(ingest)  snuff_inst 
