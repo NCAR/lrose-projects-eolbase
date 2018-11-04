@@ -281,4 +281,5 @@ NcarAcPosn2Spdb  relampago          start_inst(ingest)  snuff_inst
 #
 # Mobile ground assets
 #
-InputWatcher     mobile_assets     start_inst(ingest)  snuff_inst 
+InputWatcher       mobile_assets    start_inst(ingest)  snuff_inst 
+EolMobileKml2Spdb  relampago        start_inst(ingest)  snuff_inst
