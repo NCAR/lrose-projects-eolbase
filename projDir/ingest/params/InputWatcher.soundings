@@ -106,7 +106,7 @@ file_quiescence = 30;
 // Type: int
 //
 
-max_valid_age = 9000000;
+max_valid_age = 86400;
 
 ///////////// latest_data_info_avail //////////////////
 //
@@ -175,7 +175,7 @@ search_recursively = TRUE;
 // Type: int
 //
 
-max_dir_age = 1000000000;
+max_dir_age = 86400;
 
 ///////////// max_recursion_depth /////////////////////
 //
