@@ -229,7 +229,7 @@ use_inotify = FALSE;
 // Type: string
 //
 
-search_ext = "txt,lst";
+search_ext = "txt,lst,png";
 
 ///////////// search_substr ///////////////////////////
 //
