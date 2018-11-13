@@ -1,0 +1,14 @@
+#! /bin/sh
+
+# rsync cfradial data from replampago ops center
+
+cd $DATA_DIR/relampago/cfradial
+
+rsync -av --rsh='ssh -p 20022' relamp@181.30.169.202:/data/relamp/data.server/relampago/cfradial/quicklook .
+
+rsync -av --rsh='ssh -p 20022' relamp@181.30.169.202:/data/relamp/data.server/relampago/cfradial/csu_chivo .
+
+
+
+
+

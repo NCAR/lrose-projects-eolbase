@@ -640,7 +640,7 @@ gate_spacing_km = 0.0075;
 // Type: boolean
 //
 
-override_instrument_name = FALSE;
+override_instrument_name = TRUE;
 
 ///////////// instrument_name /////////////////////////
 //
@@ -664,7 +664,7 @@ instrument_name = "RMA1";
 // Type: boolean
 //
 
-override_site_name = FALSE;
+override_site_name = TRUE;
 
 ///////////// site_name ///////////////////////////////
 //
@@ -694,7 +694,7 @@ site_name = "Corboba";
 // Type: boolean
 //
 
-override_volume_number = FALSE;
+override_volume_number = TRUE;
 
 ///////////// starting_volume_number //////////////////
 //
@@ -718,7 +718,7 @@ starting_volume_number = 1;
 // Type: boolean
 //
 
-autoincrement_volume_number = FALSE;
+autoincrement_volume_number = TRUE;
 
 //======================================================================
 //
