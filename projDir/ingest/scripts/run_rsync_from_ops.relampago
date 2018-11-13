@@ -1,0 +1,8 @@
+#! /bin/csh
+
+snuff rsync_from_ops.relampago
+
+rsync_from_ops.relampago \
+    |& LogFilter -d $ERRORS_LOG_DIR -p rsync_from_ops \
+    -i relampago >& /dev/null &
+

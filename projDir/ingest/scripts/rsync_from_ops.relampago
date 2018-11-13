@@ -8,6 +8,8 @@ rsync -av --rsh='ssh -p 20022' relamp@181.30.169.202:/data/relamp/data.server/re
 
 rsync -av --rsh='ssh -p 20022' relamp@181.30.169.202:/data/relamp/data.server/relampago/cfradial/csu_chivo .
 
+rsync -av --rsh='ssh -p 20022' relamp@181.30.169.202:/data/relamp/data.server/relampago/cfradial/CSU_CHIVO .
+
 
 
 
