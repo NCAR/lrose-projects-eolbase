@@ -54,5 +54,5 @@
 #
 # Sync data from ops
 #
-45 * * * *  csh -c "run_rsync_from_ops.relampago" 1> /dev/null 2> /dev/null
+*/5 * * * *  csh -c "run_rsync_from_ops.relampago" 1> /dev/null 2> /dev/null
 #
