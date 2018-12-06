@@ -50,6 +50,7 @@
 # Sync data to rain as a backup
 #
 */5 * * * *  csh -c "run_rsync_backup_to_rain.replampago" 1> /dev/null 2> /dev/null
+*/5 * * * *  csh -c "run_rsync_raw_to_rain.replampago" 1> /dev/null 2> /dev/null
 #
 #
 # Sync data from ops

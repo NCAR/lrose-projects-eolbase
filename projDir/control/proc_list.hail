@@ -5,7 +5,7 @@
 # SYSTEM processes
 #
 Janitor           logs     start_Janitor.logs        snuff_inst
-Janitor           raw      start_Janitor.raw         snuff_inst
+#Janitor           raw      start_Janitor.raw         snuff_inst
 Scout             primary  start_Scout               kill_Scout
 DataMapper        primary  start_DataMapper          kill_DataMapper
 #
@@ -265,7 +265,7 @@ InputWatcher       radar_ANG       start_inst(ingest)    snuff_inst
 InputWatcher       radar_PAR       start_inst(ingest)    snuff_inst
 InputWatcher       radar_PER       start_inst(ingest)    snuff_inst
 #
-RadxBufr           RMA1            start_inst(ingest)    snuff_inst
+#RadxBufr           RMA1            start_inst(ingest)    snuff_inst
 RadxBufr           RMA2            start_inst(ingest)    snuff_inst
 RadxConvert        ANG             start_inst(ingest)    snuff_inst
 RadxConvert        PAR             start_inst(ingest)    snuff_inst
