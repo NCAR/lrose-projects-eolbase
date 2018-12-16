@@ -42,7 +42,7 @@ debug = DEBUG_NORM;
 // Type: string
 //
 
-instance = "RMA1";
+instance = "RMA1_catchup";
 
 //======================================================================
 //
@@ -60,7 +60,7 @@ instance = "RMA1";
 // Type: string
 //
 
-input_dir = "$(DATA_DIR)/relampago/raw/radar/RMA1";
+input_dir = "$(DATA_DIR)/relampago/raw/radar/catchup/RMA1";
 
 //======================================================================
 //
@@ -195,7 +195,7 @@ file_quiescence = 5;
 // Type: string
 //
 
-search_ext = "";
+search_ext = "BUFR";
 
 ///////////// incremental_realtime_mode ///////////////
 //
@@ -1788,7 +1788,7 @@ compression_level = 4;
 // Type: string
 //
 
-output_dir = "$(DATA_DIR)/relampago/cfradial/RMA1";
+output_dir = "$(DATA_DIR)/relampago/cfradial/RMA1/catchup";
 
 ///////////// output_filename_mode ////////////////////
 //
@@ -1978,7 +1978,7 @@ write_individual_sweeps = FALSE;
 // Type: boolean
 //
 
-write_latest_data_info = TRUE;
+write_latest_data_info = FALSE;
 
 ///////////// write_using_proposed_standard_name_attr /
 //
