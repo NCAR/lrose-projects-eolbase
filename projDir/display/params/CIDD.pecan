@@ -1296,11 +1296,12 @@ SPOLQC_CENSOR_FLAG SPOLQC_CENSOR_FLAG  mdvp:://front.eol.ucar.edu:8080:pecan/cfr
 SPOLQC_RATE_ZH      SPOLQC_RATE_ZH       mdvp:://front.eol.ucar.edu:8080:pecan/cfradial/spol/qc_moments/sband/sur?use_http=true&RATE_ZH       precip_rate.colors mm/hr -5 80 5 radial 1 0
 SPOLQC_RATE_ZH_SNOW SPOLQC_RATE_ZH_SNOW  mdvp:://front.eol.ucar.edu:8080:pecan/cfradial/spol/qc_moments/sband/sur?use_http=true&RATE_ZH_SNOW  precip_rate.colors mm/hr -5 80 5 radial 1 0
 SPOLQC_RATE_KDP     SPOLQC_RATE_KDP      mdvp:://front.eol.ucar.edu:8080:pecan/cfradial/spol/qc_moments/sband/sur?use_http=true&RATE_KDP      precip_rate.colors mm/hr -5 80 5 radial 1 0
-SPOLQC_RATE_KZDR    SPOLQC_RATE_KZDR     mdvp:://front.eol.ucar.edu:8080:pecan/cfradial/spol/qc_moments/sband/sur?use_http=true&RATE_KDP_ZDR  precip_rate.colors mm/hr -5 80 5 radial 1 0
+SPOLQC_RATE_Z_ZDR    SPOLQC_RATE_Z_ZDR     mdvp:://front.eol.ucar.edu:8080:pecan/cfradial/spol/qc_moments/sband/sur?use_http=true&RATE_Z_ZDR  precip_rate.colors mm/hr -5 80 5 radial 1 0
+SPOLQC_RATE_KDP_ZDR    SPOLQC_RATE_KDP_ZDR     mdvp:://front.eol.ucar.edu:8080:pecan/cfradial/spol/qc_moments/sband/sur?use_http=true&RATE_KDP_ZDR  precip_rate.colors mm/hr -5 80 5 radial 1 0
 SPOLQC_RATE_HYBRID  SPOLQC_RATE_HYBRID   mdvp:://front.eol.ucar.edu:8080:pecan/cfradial/spol/qc_moments/sband/sur?use_http=true&RATE_HYBRID   precip_rate.colors mm/hr -5 80 5 radial 1 0
 SPOLQC_RATE_PID     SPOLQC_RATE_PID      mdvp:://front.eol.ucar.edu:8080:pecan/cfradial/spol/qc_moments/sband/sur?use_http=true&RATE_PID      precip_rate.colors mm/hr -5 80 5 radial 1 0
 SPOLQC_RATE_HIDRO   SPOLQC_RATE_HIDRO    mdvp:://front.eol.ucar.edu:8080:pecan/cfradial/spol/qc_moments/sband/sur?use_http=true&RATE_HIDRO    precip_rate.colors mm/hr -5 80 5 radial 1 0
-SPOLQC_RATE_BRINGI  SPOLQC_RATE_BRINGI   mdvp:://front.eol.ucar.edu:8080:pecan/cfradial/spol/qc_moments/sband/sur?use_http=true&RATE_BRINGI   precip_rate.colors mm/hr -5 80 5 radial 1 0
+#SPOLQC_RATE_BRINGI  SPOLQC_RATE_BRINGI   mdvp:://front.eol.ucar.edu:8080:pecan/cfradial/spol/qc_moments/sband/sur?use_http=true&RATE_BRINGI   precip_rate.colors mm/hr -5 80 5 radial 1 0
 
 SPOLQC_PID           SPOLQC_PID           mdvp:://front.eol.ucar.edu:8080:pecan/qc/cfradial/spol/paper_moments/sband/sur?use_http=true&PID           pid.colors  none -5 80 5 radial 1 0
 SPOLQC_PID_TEMP      SPOLQC_PID_TEMP      mdvp:://front.eol.ucar.edu:8080:pecan/qc/cfradial/spol/paper_moments/sband/sur?use_http=true&TEMP_FOR_PID  temp.colors  C -5 80 5 radial 1 0
