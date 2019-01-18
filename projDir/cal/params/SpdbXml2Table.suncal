@@ -207,6 +207,12 @@ xml_entries = {
   }
   ,
   {
+    xml_tag_list = "<RadarSunCal><validCentroid>",
+    specify_label = TRUE,
+    label = "validCentroid"
+  }
+  ,
+  {
     xml_tag_list = "<RadarSunCal><meanSunEl>",
     specify_label = TRUE,
     label = "meanSunEl"
@@ -222,12 +228,6 @@ xml_entries = {
     xml_tag_list = "<RadarSunCal><nBeamsNoise>",
     specify_label = TRUE,
     label = "nBeamsNoise"
-  }
-  ,
-  {
-    xml_tag_list = "<RadarSunCal><noiseDbm>",
-    specify_label = TRUE,
-    label = "noiseDbm"
   }
   ,
   {
@@ -333,18 +333,6 @@ xml_entries = {
   }
   ,
   {
-    xml_tag_list = "<RadarSunCal><meanXpolPowerHxDbm>",
-    specify_label = TRUE,
-    label = "meanXpolPowerHxDbm"
-  }
-  ,
-  {
-    xml_tag_list = "<RadarSunCal><meanXpolPowerVxDbm>",
-    specify_label = TRUE,
-    label = "meanXpolPowerVxDbm"
-  }
-  ,
-  {
     xml_tag_list = "<RadarSunCal><meanXpolRatioDb>",
     specify_label = TRUE,
     label = "meanXpolRatioDb"
@@ -375,15 +363,39 @@ xml_entries = {
   }
   ,
   {
-    xml_tag_list = "<RadarSunCal><xpolRatioDbFromSpdb>",
+    xml_tag_list = "<RadarSunCal><widthRatioElAzHc>",
     specify_label = TRUE,
-    label = "xpolRatioDb"
+    label = "widthRatioElAzHc"
   }
   ,
   {
-    xml_tag_list = "<RadarSunCal><siteTempFromSpdb>",
+    xml_tag_list = "<RadarSunCal><widthRatioElAzVc>",
+    specify_label = TRUE,
+    label = "widthRatioElAzVc"
+  }
+  ,
+  {
+    xml_tag_list = "<RadarSunCal><widthRatioElAzDiffHV>",
+    specify_label = TRUE,
+    label = "widthRatioElAzDiffHV"
+  }
+  ,
+  {
+    xml_tag_list = "<RadarSunCal><zdrDiffElAz>",
+    specify_label = TRUE,
+    label = "zdrDiffElAz"
+  }
+  ,
+  {
+    xml_tag_list = "<RadarSunCal><siteTemp>",
     specify_label = TRUE,
     label = "siteTemp"
+  }
+  ,
+  {
+    xml_tag_list = "<RadarSunCal><timeForSiteTemp>",
+    specify_label = TRUE,
+    label = "timeForSiteTemp"
   }
 };
 
