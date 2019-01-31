@@ -78,7 +78,7 @@ num_bin_subsample = 20;
 // Type: string
 //
 
-input_dem_path = "/scr/snow2/rafdata/srtm30";
+input_dem_path = "/scr/snow2/rsfdata/srtm30";
 
 ///////////// input_data_format ///////////////////////
 //
