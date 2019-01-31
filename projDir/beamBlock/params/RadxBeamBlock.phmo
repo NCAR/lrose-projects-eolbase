@@ -126,7 +126,7 @@ time = { 2014, 1, 1, 0, 0, 0 };
 // Type: string
 //
 
-site_name = "PHKI";
+site_name = "PHMO";
 
 ///////////// radar_name //////////////////////////////
 //
@@ -134,7 +134,7 @@ site_name = "PHKI";
 // Type: string
 //
 
-radar_name = "PHKI";
+radar_name = "PHMO";
 
 ///////////// radar_location //////////////////////////
 //
@@ -150,7 +150,7 @@ radar_name = "PHKI";
 //
 //
 
-radar_location = { 21.8939, -159.553, 0.013 };
+radar_location = { 21.1328, -157.18, 0.439 };
 
 ///////////// radar_wavelength_cm /////////////////////
 //
@@ -421,7 +421,7 @@ compression_level = 4;
 // Type: string
 //
 
-output_dir = "/scr/snow2/rsfdata/BeamBlock/PHKI";
+output_dir = "/scr/snow2/rsfdata/BeamBlock/PHMO";
 
 ///////////// output_filename_mode ////////////////////
 //
