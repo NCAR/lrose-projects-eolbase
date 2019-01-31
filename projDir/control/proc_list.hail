@@ -43,7 +43,7 @@ InputWatcher        mesonet1           start_inst(ingest)  snuff_inst
 #MdvConvert         mrms_comp          start_inst(ingest)  snuff_inst
 InputWatcher        ruc                start_inst(ingest)  snuff_inst 
 Grib2toMdv          ruc                start_inst(ingest)  snuff_inst 
-Grib2toMdv          ruc_fcasts         start_inst(ingest)  snuff_inst 
+#Grib2toMdv          ruc_fcasts         start_inst(ingest)  snuff_inst 
 Mdv2SoundingSpdb    ruc                start_inst(ingest)  snuff_inst
 #NcGeneric2Mdv      sat_1km            start_inst(ingest)  snuff_inst 
 #NcGeneric2Mdv      sat_4km            start_inst(ingest)  snuff_inst 
