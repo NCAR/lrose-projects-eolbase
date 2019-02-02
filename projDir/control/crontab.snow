@@ -1,0 +1,36 @@
+######################################################################
+# EOL BASE crontab - on snow
+#
+#
+####################################################################
+# ============= DO NOT  edit with crontab -e  ======================
+# master copy is:
+#   github.com/NCAR/lrose-projects-eolbase/projDir/control/crontab
+# install with install_crontab
+####################################################################
+# SYSTEM
+#
+# Process restarters
+*/1 * * * *  csh -c "start_auto_restart_check_cron" 1> /dev/null 2> /dev/null
+*/1 * * * *  csh -c "start_procmap_check_cron"      1> /dev/null 2> /dev/null
+#
+# Build links to log date subdirs
+*/5 * * * *   csh -c "start_build_logdir_links" 1> /dev/null 2> /dev/null
+#
+####################################################################
+# RELAMPAGO
+#
+# Wget surface station data
+*/1 * * * *   csh -c "run_WgetRelampagoSurfaceObs" 1> /dev/null 2> /dev/null
+#
+# Get WWLLN data via http
+*/10 * * * *  csh -c "run_GetWwllnRelampago"    1> /dev/null 2> /dev/null
+#
+# Get Mendoza radar data
+#
+*/2 * * * *  csh -c "run_GetMendozaRadarsByFtp.SanMartin"    1> /dev/null 2> /dev/null
+*/2 * * * *  csh -c "run_GetMendozaRadarsByFtp.SanRafael"    1> /dev/null 2> /dev/null
+#
+# Sync soundings to raw
+*/10 * * * *  csh -c "rsync_soundings_to_raw.relampago"    1> /dev/null 2> /dev/null
+#
