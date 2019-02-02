@@ -425,9 +425,9 @@ xml_entries = {
   }
   ,
   {
-    xml_tag_list = "<RadarSunCal><siteTemp>",
+    xml_tag_list = "<RadarSunCal><siteTempC>",
     specify_label = TRUE,
-    label = "siteTemp",
+    label = "siteTempC",
     required = FALSE
   }
   ,
@@ -475,7 +475,7 @@ comment_character = "#";
 // Type: string
 //
 
-column_delimiter = " ";
+column_delimiter = ",";
 
 ///////////// convert_boolean_to_integer //////////////
 //

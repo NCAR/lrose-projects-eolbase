@@ -15,7 +15,6 @@ DataMapper        primary  start_DataMapper          kill_DataMapper
 DsServerMgr       primary  start_inst(no-params)     snuff_inst
 DsProxyServer     primary  start_inst(no-params)     snuff_inst
 DsMdvServer       manager  start_inst(no-params)     snuff_inst
-NcMdvServer       manager  start_inst(no-params)     snuff_inst
 DsFmqServer       manager  start_inst(no-params)     snuff_inst
 DsSpdbServer      manager  start_inst(no-params)     snuff_inst
 DsFCopyServer     manager  start_inst(no-params)     snuff_inst
@@ -43,7 +42,7 @@ InputWatcher        mesonet1           start_inst(ingest)  snuff_inst
 #MdvConvert         mrms_comp          start_inst(ingest)  snuff_inst
 InputWatcher        ruc                start_inst(ingest)  snuff_inst 
 Grib2toMdv          ruc                start_inst(ingest)  snuff_inst 
-Grib2toMdv          ruc_fcasts         start_inst(ingest)  snuff_inst 
+#Grib2toMdv          ruc_fcasts         start_inst(ingest)  snuff_inst 
 Mdv2SoundingSpdb    ruc                start_inst(ingest)  snuff_inst
 #NcGeneric2Mdv      sat_1km            start_inst(ingest)  snuff_inst 
 #NcGeneric2Mdv      sat_4km            start_inst(ingest)  snuff_inst 
