@@ -192,6 +192,76 @@ xml_entries = {
     label = "TestPulsePowerDbVx",
     required = FALSE
   }
+  ,
+  {
+    xml_tag_list = "<SpolTemperatures><Klystron>",
+    specify_label = TRUE,
+    label = "Temp_Klystron",
+    required = FALSE
+  }
+  ,
+  {
+    xml_tag_list = "<SpolTemperatures><>",
+    specify_label = TRUE,
+    label = "Temp_",
+    required = FALSE
+  }
+  ,
+  {
+    xml_tag_list = "<SpolTemperatures><>",
+    specify_label = TRUE,
+    label = "Temp_",
+    required = FALSE
+  }
+  ,
+  {
+    xml_tag_list = "<SpolTemperatures><>",
+    specify_label = TRUE,
+    label = "Temp_",
+    required = FALSE
+  }
+  ,
+  {
+    xml_tag_list = "<SpolTemperatures><>",
+    specify_label = TRUE,
+    label = "Temp_",
+    required = FALSE
+  }
+  ,
+  {
+    xml_tag_list = "<SpolTemperatures><>",
+    specify_label = TRUE,
+    label = "Temp_",
+    required = FALSE
+  }
+  ,
+  {
+    xml_tag_list = "<SpolTemperatures><>",
+    specify_label = TRUE,
+    label = "Temp_",
+    required = FALSE
+  }
+  ,
+  {
+    xml_tag_list = "<SpolTemperatures><>",
+    specify_label = TRUE,
+    label = "Temp_",
+    required = FALSE
+  }
+  ,
+  {
+    xml_tag_list = "<SpolTemperatures><>,
+    specify_label = TRUE,
+    label = "",
+    required = FALSE
+  }
+  ,
+  {
+    xml_tag_list = "<SpolTemperatures><>",
+    specify_label = TRUE,
+    label = "Temp_",
+    required = FALSE
+  }
 };
 
 //======================================================================

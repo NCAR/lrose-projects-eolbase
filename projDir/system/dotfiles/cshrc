@@ -31,7 +31,7 @@ setenv LANG C
 setenv HOST_OS LINUX_LROSE
 
 setenv LROSE_CORE_DIR $HOME/git/lrose-core
-setenv LROSE_INSTALL_DIR $HOME/lrose1
+setenv LROSE_INSTALL_DIR $HOME/lrose
 
 setenv RAP_MAKE_INC_DIR $LROSE_CORE_DIR/codebase/make_include
 setenv RAP_MAKE_BIN_DIR $LROSE_CORE_DIR/codebase/make_bin
