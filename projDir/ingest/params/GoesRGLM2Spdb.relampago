@@ -274,7 +274,7 @@ bounding_box = {
 // Type: string
 //
 
-output_url = "spdbp:://localhost:0:relampago/spdb/ltg/glm";
+output_url = "spdbp:://localhost::relampago/spdb/ltg/glm";
 
 ///////////// expire_seconds //////////////////////////
 //

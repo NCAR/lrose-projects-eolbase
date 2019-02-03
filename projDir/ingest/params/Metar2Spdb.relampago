@@ -248,7 +248,7 @@ write_decoded_metars = TRUE;
 // Type: string
 //
 
-decoded_output_url = "spdbp:://localhost:0:relampago/spdb/metar";
+decoded_output_url = "spdbp:://localhost::relampago/spdb/metar";
 
 ///////////// decoded_compression /////////////////////
 //

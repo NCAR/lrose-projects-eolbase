@@ -351,7 +351,7 @@ input_format = WWLLN;
 // Type: string
 //
 
-output_url = "spdbp:://localhost:0:relampago/spdb/ltg/wwlln";
+output_url = "spdbp:://localhost::relampago/spdb/ltg/wwlln";
 
 ///////////// expire_seconds //////////////////////////
 //
