@@ -951,7 +951,7 @@ g
        location="spdbp:Metar2Symprod:labels//front.eol.ucar.edu:8080:relampago/spdb/metar?use_http=true"
        before="90mins" after="0hrs" textOff="0" request="latest" menuName="METARS-full" />
 
-<Layer vis="off" type="SYMPROD" name="AWS-simple"
+<Layer vis="on" type="SYMPROD" name="AWS-simple"
        location="spdbp:Metar2Symprod:simple//front.eol.ucar.edu:8080:relampago/spdb/aws?use_http=true"
        before="90mins" after="0hrs" textOff="0" request="latest" menuName="AWS-simple" />
 
@@ -983,9 +983,17 @@ g
        location="spdbp:AcTrack2Symprod:20_min//front.eol.ucar.edu:8080:relampago/spdb/ac_posn?use_http=true"
        before="15mins" after="15mins" textOff="0.4" request="firstBefore" menuName="G1-20min" />
 
-<Layer vis="off" type="SYMPROD" name="MobilePosn"
+<Layer vis="off" type="SYMPROD" name="MobilePosn22"
        location="spdbp:AcTrack2Symprod://front.eol.ucar.edu:8080:relampago/spdb/mobile_assets?use_http=true"
-       before="2hrs" after="2hrs" textOff="0.4" request="interval" menuName="MobilePosn" />
+       before="2hrs" after="2hrs" textOff="0.4" request="interval" menuName="MobilePosn22" />
+
+<Layer vis="on" type="SYMPROD" name="RHI-CSU"
+       location="spdbp:Rhi2Symprod:ticks//front.eol.ucar.edu:8080:relampago/spdb/rhi/csu_chivo?use_http=true"
+       before="20mins" after="10mins" textOff="0.4" request="interval" menuName="RHI-CSU" />
+
+<!--Layer vis="on" type="SYMPROD" name="RHI-CSU"
+       location="spdbp:Rhi2Symprod:ticks//front.eol.ucar.edu:8080:relampago/spdb/rhi/csu_chivo?use_http=true",
+       before="20mins" after="10mins" textOff="0.4" request="interval" menuName="RHI-spol" /-->
 
 <!-- CIDDMAP Layers -->
 
