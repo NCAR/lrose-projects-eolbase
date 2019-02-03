@@ -18,7 +18,7 @@
 // Type: boolean
 //
 
-recurse = TRUE;
+recurse = FALSE;
 
 ///////////// FollowDangerousLinks ////////////////////
 //
@@ -38,7 +38,7 @@ FollowDangerousLinks = FALSE;
 // Type: boolean
 //
 
-process = TRUE;
+process = FALSE;
 
 ///////////// report //////////////////////////////////
 //
