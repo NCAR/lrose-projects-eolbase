@@ -89,3 +89,13 @@ To perform the download correctly, you need to click the 'Raw' button first (top
   ./start_CIDD.relampago
 ```
 
+3. Repeatedly starting CIDD:
+
+If you have run CIDD once from a terminal, you can start it again just from the command line.
+
+Just paste the following into a terminal window:
+
+```
+  CIDD -font fixed -p http://front.eol.ucar.edu/displayParams/CIDD.relampago
+```
+
