@@ -1,7 +1,5 @@
 #! /bin/csh
 
-#! /bin/csh
-
 # set X resources
 
 set timestr = `date -u +%Y%m%d%H%M%S`
