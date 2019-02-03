@@ -75,7 +75,7 @@ polyline_width = 2;
 // Type: boolean
 //
 
-plot_dirn_arrow = FALSE;
+plot_dirn_arrow = TRUE;
 
 ///////////// dirn_arrow_head_len /////////////////////
 //
@@ -120,7 +120,7 @@ sparse_icons_min_distance = 1;
 // Type: int
 //
 
-before_secs = 0;
+before_secs = 300;
 
 ///////////// display_before_icon /////////////////////
 //
@@ -177,7 +177,7 @@ display_before_polyline = TRUE;
 // Type: string
 //
 
-before_polyline_color = "brown";
+before_polyline_color = "orange";
 
 //======================================================================
 //
@@ -209,15 +209,15 @@ display_current_icon = TRUE;
 
 current_icon = {
   { 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0 },
-  { 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0 },
-  { 0, 1, 1, 1, 0, 0, 0, 1, 1, 1, 0 },
-  { 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 0 },
-  { 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1 },
-  { 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1 },
-  { 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1 },
-  { 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 0 },
-  { 0, 1, 1, 1, 0, 0, 0, 1, 1, 1, 0 },
-  { 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0 },
+  { 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0 },
+  { 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0 },
+  { 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0 },
+  { 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 },
+  { 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 },
+  { 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 },
+  { 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0 },
+  { 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0 },
+  { 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0 },
   { 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0 }
 };
 
@@ -228,7 +228,7 @@ current_icon = {
 // Type: string
 //
 
-current_icon_color = "cyan";
+current_icon_color = "yellow";
 
 ///////////// display_label ///////////////////////////
 //
@@ -239,7 +239,7 @@ current_icon_color = "cyan";
 // Type: boolean
 //
 
-display_label = TRUE;
+display_label = FALSE;
 
 ///////////// label_color /////////////////////////////
 //
@@ -248,7 +248,7 @@ display_label = TRUE;
 // Type: string
 //
 
-label_color = "cyan";
+label_color = "orange";
 
 ///////////// label_font //////////////////////////////
 //
@@ -303,7 +303,7 @@ label_vert_align = VERT_ALIGN_CENTER;
 //
 //
 
-label_offset = { 12, 12 };
+label_offset = { 0, 0 };
 
 //======================================================================
 //
@@ -321,7 +321,7 @@ label_offset = { 12, 12 };
 // Type: int
 //
 
-after_secs = 3600;
+after_secs = 300;
 
 ///////////// display_after_icon //////////////////////
 //
@@ -360,7 +360,7 @@ after_icon = {
 // Type: string
 //
 
-after_icon_color = "yellow";
+after_icon_color = "orange";
 
 ///////////// display_after_polyline //////////////////
 //
@@ -369,7 +369,7 @@ after_icon_color = "yellow";
 // Type: boolean
 //
 
-display_after_polyline = FALSE;
+display_after_polyline = TRUE;
 
 ///////////// after_polyline_color ////////////////////
 //
@@ -470,8 +470,7 @@ color_by_callsign = FALSE;
 //
 
 callsign_colors = {
-  { "WKA", "orange"},
-  { "47RF", "cyan"},
-  { "DC8", "yellow"}
+  { "ZJRA", "orange"},
+  { "47RE", "cyan"}
 };
 
