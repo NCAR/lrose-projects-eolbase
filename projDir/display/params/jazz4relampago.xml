@@ -683,13 +683,13 @@ g
 
 <Layer vis="off" type="MDV" name="CSU RAW DBZ"
        location="mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/csu_raw/sur?use_http=true"
-       field="DBZH" render="grid" 
+       field="DBZ" render="grid" 
        colorscale="http://front.eol.ucar.edu/color_scales/dbz.colors" 
        menuName="CSU-RAW-DBZ"   menuGroup="CSU-RAW" />
 
 <Layer vis="off" type="MDV" name="CSU RAW DBZT"
        location="mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/csu_raw/sur?use_http=true"
-       field="DBZT" render="grid" 
+       field="DBZ_TOT" render="grid" 
        colorscale="http://front.eol.ucar.edu/color_scales/dbz.colors" 
        menuName="CSU-RAW-DBZT"   menuGroup="CSU-RAW" />
 
@@ -729,17 +729,17 @@ g
        colorscale="http://front.eol.ucar.edu/color_scales/kdp.colors" 
        menuName="CSU-RAW-KDP"   menuGroup="CSU-RAW" />
 
-<Layer vis="off" type="MDV" name="CSU RAW SNR"
+<Layer vis="off" type="MDV" name="CSU RAW SQI"
        location="mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/csu_raw/sur?use_http=true"
-       field="SNR" render="grid" 
-       colorscale="http://front.eol.ucar.edu/color_scales/snr.colors" 
-       menuName="CSU-RAW-SNR"   menuGroup="CSU-RAW" />
+       field="SQI" render="grid" 
+       colorscale="http://front.eol.ucar.edu/color_scales/ncp.colors" 
+       menuName="CSU-RAW-SQI"   menuGroup="CSU-RAW" />
 
-<Layer vis="off" type="MDV" name="CSU RAW PID"
+<!--Layer vis="off" type="MDV" name="CSU RAW PID"
        location="mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/csu_raw/sur?use_http=true"
-       field="PID" render="grid" 
+       field="HCLASS" render="grid" 
        colorscale="http://front.eol.ucar.edu/color_scales/pid.colors" 
-       menuName="CSU-RAW-HCA"   menuGroup="CSU-RAW" />
+       menuName="CSU-RAW-HCA"   menuGroup="CSU-RAW" /-->
 
 <!-- ============= CSU-RADAR =============== -->
 
@@ -1112,7 +1112,7 @@ g
 -->
 
 <!--Time mode="realtime" start="-6hrs" end="+0hrs" interval="15mins" update="30secs"/ -->
-<Time mode="archive" start="2018-11-12T03:00" end="2018-11-12T05:00" interval="15mins" update="120secs"/>
+<Time mode="archive" start="2018-11-12T05:00" end="2018-11-12T07:00" interval="10mins" update="120secs"/>
 
 <!--
 ####################################################################################################################################
