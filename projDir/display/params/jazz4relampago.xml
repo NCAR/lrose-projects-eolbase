@@ -679,6 +679,166 @@ g
        colorscale="http://front.eol.ucar.edu/color_scales/width.colors" 
        menuName="PER-WIDTH"   menuGroup="SMN-RADAR" />
 
+<!-- ============= CSU-RAW =============== -->
+
+<Layer vis="off" type="MDV" name="CSU RAW DBZ"
+       location="mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/csu_raw/sur?use_http=true"
+       field="DBZH" render="grid" 
+       colorscale="http://front.eol.ucar.edu/color_scales/dbz.colors" 
+       menuName="CSU-RAW-DBZ"   menuGroup="CSU-RAW" />
+
+<Layer vis="off" type="MDV" name="CSU RAW DBZT"
+       location="mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/csu_raw/sur?use_http=true"
+       field="DBZT" render="grid" 
+       colorscale="http://front.eol.ucar.edu/color_scales/dbz.colors" 
+       menuName="CSU-RAW-DBZT"   menuGroup="CSU-RAW" />
+
+<Layer vis="off" type="MDV" name="CSU RAW VEL"
+       location="mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/csu_raw/sur?use_http=true"
+       field="VEL" render="grid" 
+       colorscale="http://front.eol.ucar.edu/color_scales/vel.colors" 
+       menuName="CSU-RAW-VEL"   menuGroup="CSU-RAW" />
+
+<Layer vis="off" type="MDV" name="CSU RAW WIDTH"
+       location="mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/csu_raw/sur?use_http=true"
+       field="WIDTH" render="grid" 
+       colorscale="http://front.eol.ucar.edu/color_scales/width.colors" 
+       menuName="CSU-RAW-WIDTH"   menuGroup="CSU-RAW" />
+
+<Layer vis="off" type="MDV" name="CSU RAW ZDR"
+       location="mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/csu_raw/sur?use_http=true"
+       field="ZDR" render="grid" 
+       colorscale="http://front.eol.ucar.edu/color_scales/zdr.colors" 
+       menuName="CSU-RAW-ZDR"   menuGroup="CSU-RAW" />
+
+<Layer vis="off" type="MDV" name="CSU RAW RHOHV"
+       location="mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/csu_raw/sur?use_http=true"
+       field="RHOHV" render="grid" 
+       colorscale="http://front.eol.ucar.edu/color_scales/rhohv.colors" 
+       menuName="CSU-RAW-RHOHV"   menuGroup="CSU-RAW" />
+
+<Layer vis="off" type="MDV" name="CSU RAW PHIDP"
+       location="mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/csu_raw/sur?use_http=true"
+       field="PHIDP" render="grid" 
+       colorscale="http://front.eol.ucar.edu/color_scales/phidp.colors" 
+       menuName="CSU-RAW-PHIDP"   menuGroup="CSU-RAW" />
+
+<Layer vis="off" type="MDV" name="CSU RAW KDP"
+       location="mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/csu_raw/sur?use_http=true"
+       field="KDP" render="grid" 
+       colorscale="http://front.eol.ucar.edu/color_scales/kdp.colors" 
+       menuName="CSU-RAW-KDP"   menuGroup="CSU-RAW" />
+
+<Layer vis="off" type="MDV" name="CSU RAW SNR"
+       location="mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/csu_raw/sur?use_http=true"
+       field="SNR" render="grid" 
+       colorscale="http://front.eol.ucar.edu/color_scales/snr.colors" 
+       menuName="CSU-RAW-SNR"   menuGroup="CSU-RAW" />
+
+<Layer vis="off" type="MDV" name="CSU RAW PID"
+       location="mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/csu_raw/sur?use_http=true"
+       field="PID" render="grid" 
+       colorscale="http://front.eol.ucar.edu/color_scales/pid.colors" 
+       menuName="CSU-RAW-HCA"   menuGroup="CSU-RAW" />
+
+<!-- ============= CSU-RADAR =============== -->
+
+<Layer vis="off" type="MDV" name="CSU DBZ"
+       location="mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/csu_chivo/sur?use_http=true"
+       field="DBZ2" render="grid" 
+       colorscale="http://front.eol.ucar.edu/color_scales/dbz.colors" 
+       menuName="CSU-DBZ"   menuGroup="CSU-RADAR" />
+
+<Layer vis="off" type="MDV" name="CSU DBZ QC"
+       location="mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/csu_chivo/sur?use_http=true"
+       field="DZQC" render="grid" 
+       colorscale="http://front.eol.ucar.edu/color_scales/dbz.colors" 
+       menuName="CSU-DBZ-QC"   menuGroup="CSU-RADAR" />
+
+<Layer vis="off" type="MDV" name="CSU DBZ QCC"
+       location="mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/csu_chivo/sur?use_http=true"
+       field="DZQCC" render="grid" 
+       colorscale="http://front.eol.ucar.edu/color_scales/dbz.colors" 
+       menuName="CSU-DBZ-QCC"   menuGroup="CSU-RADAR" />
+
+<Layer vis="off" type="MDV" name="CSU VEL"
+       location="mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/csu_chivo/sur?use_http=true"
+       field="VEL2" render="grid" 
+       colorscale="http://front.eol.ucar.edu/color_scales/vel.colors" 
+       menuName="CSU-VEL"   menuGroup="CSU-RADAR" />
+
+<Layer vis="off" type="MDV" name="CSU WIDTH"
+       location="mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/csu_chivo/sur?use_http=true"
+       field="WIDTH2" render="grid" 
+       colorscale="http://front.eol.ucar.edu/color_scales/width.colors" 
+       menuName="CSU-WIDTH"   menuGroup="CSU-RADAR" />
+
+<Layer vis="off" type="MDV" name="CSU ZDR QC"
+       location="mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/csu_chivo/sur?use_http=true"
+       field="ZDRC" render="grid" 
+       colorscale="http://front.eol.ucar.edu/color_scales/zdr.colors" 
+       menuName="CSU-ZDR-QC"   menuGroup="CSU-RADAR" />
+
+<Layer vis="off" type="MDV" name="CSU ZDR"
+       location="mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/csu_chivo/sur?use_http=true"
+       field="ZDR2" render="grid" 
+       colorscale="http://front.eol.ucar.edu/color_scales/zdr.colors" 
+       menuName="CSU-ZDR"   menuGroup="CSU-RADAR" />
+
+<Layer vis="off" type="MDV" name="CSU RHOHV"
+       location="mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/csu_chivo/sur?use_http=true"
+       field="RHOHV2" render="grid" 
+       colorscale="http://front.eol.ucar.edu/color_scales/rhohv.colors" 
+       menuName="CSU-RHOHV"   menuGroup="CSU-RADAR" />
+
+<Layer vis="off" type="MDV" name="CSU PHIDP"
+       location="mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/csu_chivo/sur?use_http=true"
+       field="PHIDP2" render="grid" 
+       colorscale="http://front.eol.ucar.edu/color_scales/phidp_360.colors" 
+       menuName="CSU-PHIDP"   menuGroup="CSU-RADAR" />
+
+<Layer vis="off" type="MDV" name="CSU FDP"
+       location="mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/csu_chivo/sur?use_http=true"
+       field="FDP" render="grid" 
+       colorscale="http://front.eol.ucar.edu/color_scales/phidp.colors" 
+       menuName="CSU-FDP"   menuGroup="CSU-RADAR" />
+
+<Layer vis="off" type="MDV" name="CSU KDP"
+       location="mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/csu_chivo/sur?use_http=true"
+       field="KDP" render="grid" 
+       colorscale="http://front.eol.ucar.edu/color_scales/kdp.colors" 
+       menuName="CSU-KDP"   menuGroup="CSU-RADAR" />
+
+<Layer vis="off" type="MDV" name="CSU KDP2"
+       location="mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/csu_chivo/sur?use_http=true"
+       field="KDP2" render="grid" 
+       colorscale="http://front.eol.ucar.edu/color_scales/kdp.colors" 
+       menuName="CSU-KDP2"   menuGroup="CSU-RADAR" />
+
+<Layer vis="off" type="MDV" name="CSU SQI"
+       location="mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/csu_chivo/sur?use_http=true"
+       field="SQI2" render="grid" 
+       colorscale="http://front.eol.ucar.edu/color_scales/ncp.colors" 
+       menuName="CSU-SQI"   menuGroup="CSU-RADAR" />
+
+<Layer vis="off" type="MDV" name="CSU SNR"
+       location="mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/csu_chivo/sur?use_http=true"
+       field="SNR16" render="grid" 
+       colorscale="http://front.eol.ucar.edu/color_scales/snr.colors" 
+       menuName="CSU-SNR"   menuGroup="CSU-RADAR" />
+
+<Layer vis="off" type="MDV" name="CSU HCA"
+       location="mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/csu_chivo/sur?use_http=true"
+       field="HCLASS2" render="grid" 
+       colorscale="http://front.eol.ucar.edu/color_scales/pid.colors" 
+       menuName="CSU-HCA"   menuGroup="CSU-RADAR" />
+
+<Layer vis="off" type="MDV" name="CSU SDP"
+       location="mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/csu_chivo/sur?use_http=true"
+       field="SDP" render="grid" 
+       colorscale="http://front.eol.ucar.edu/color_scales/phidp.colors" 
+       menuName="CSU-SDP"   menuGroup="CSU-RADAR" />
+
 <!-- ============= DOW-RADAR =============== -->
 
 <Layer vis="off" type="MDV" name="DOW6 DBZ"
@@ -926,6 +1086,8 @@ g
   <MenuGroup name="SURF-INTERP" label="SURF-INTERP" parentGroup="GRIDS_MENU" />
   <MenuGroup name="RMA1-RADAR" label="RMA1-RADAR" parentGroup="GRIDS_MENU" />
   <MenuGroup name="SMN-RADAR" label="SMN-RADAR" parentGroup="GRIDS_MENU" />
+  <MenuGroup name="CSU-RADAR" label="CSU-RADAR" parentGroup="GRIDS_MENU" />
+  <MenuGroup name="CSU-RAW" label="CSU-RAW" parentGroup="GRIDS_MENU" />
   <MenuGroup name="DOW-RADAR" label="DOW-RADAR" parentGroup="GRIDS_MENU" />
   <MenuGroup name="MENDOZA-RADAR" label="MENDOZA-RADAR" parentGroup="GRIDS_MENU" />
 
