@@ -50,11 +50,11 @@ or:
 2. Alternatively you and download the scripts from your browser:
 
 ```
-  https://github.com/NCAR/lrose-projects-eolbase/tree/master/projDir/display/scripts/start_CIDD.relampago
+  [start_CIDD.relampago](https://github.com/NCAR/lrose-projects-eolbase/tree/master/projDir/display/scripts/start_CIDD.relampago)
 ```
 
 ```
-  https://github.com/NCAR/lrose-projects-eolbase/tree/master/projDir/display/scripts/start_Jazz.relampago
+  [start_Jazz.relampago](https://github.com/NCAR/lrose-projects-eolbase/tree/master/projDir/display/scripts/start_Jazz.relampago)
 ```
 
 To perform the download correctly, you need to click the 'Raw' button first (top right), and then right-click to get 'Save-as' or equivalent. This will download the script as a text file rather than html, which is what you need.
