@@ -365,7 +365,7 @@ input_format = STARNET;
 // Type: string
 //
 
-output_url = "spdbp:://localhost:0:relampago/spdb/ltg/starnet";
+output_url = "spdbp:://localhost::relampago/spdb/ltg/starnet";
 
 ///////////// expire_seconds //////////////////////////
 //

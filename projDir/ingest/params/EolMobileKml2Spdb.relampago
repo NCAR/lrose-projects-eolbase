@@ -261,7 +261,7 @@ id_lookups = {
 // Type: string
 //
 
-output_spdb_url = "spdbp:://localhost:0:relampago/spdb/mobile_assets";
+output_spdb_url = "spdbp:://localhost::relampago/spdb/mobile_assets";
 
 ///////////// expire_seconds //////////////////////////
 //

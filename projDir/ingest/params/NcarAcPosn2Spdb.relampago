@@ -216,7 +216,7 @@ change_lon_sign = FALSE;
 // Type: string
 //
 
-output_url = "spdbp:://localhost:0:relampago/spdb/ac_posn";
+output_url = "spdbp:://localhost::relampago/spdb/ac_posn";
 
 ///////////// valid_period ////////////////////////////
 //
