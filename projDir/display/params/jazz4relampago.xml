@@ -1013,7 +1013,11 @@ g
        location="http://front.eol.ucar.edu/maps/ARG_adm2.map"
        color="pink" width="0" />
 
-<Layer vis="off" type="CIDDMAP" name="RMA1Rings"
+<Layer vis="off" type="CIDDMAP" name="CSURings"
+       location="http://front.eol.ucar.edu/maps/csu_chivo_rings.map"
+       color="white" width="0" />
+
+<Layer vis="on" type="CIDDMAP" name="RMA1Rings"
        location="http://front.eol.ucar.edu/maps/rma1_rings.map"
        color="white" width="0" />
 
