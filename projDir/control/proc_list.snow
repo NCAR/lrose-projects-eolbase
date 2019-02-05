@@ -4,9 +4,9 @@
 ######################################################################
 # SYSTEM processes
 #
-Janitor           logs     start_Janitor.logs        snuff_inst
-Scout             primary  start_Scout               kill_Scout
-DataMapper        primary  start_DataMapper          kill_DataMapper
+Janitor           logs       start_Janitor.logs        snuff_inst
+Scout             relampago  start_Scout.relampago     snuff_inst
+DataMapper        primary    start_DataMapper          kill_DataMapper
 #
 ######################################################################
 # SERVER processes
@@ -24,9 +24,10 @@ SunCal2Symprod    manager  start_inst(no-params)     snuff_inst
 Tstorms2Symprod   manager  start_inst(no-params)     snuff_inst
 #
 ######################################################################
-# Interpolate surface data
+# Base observations ingest - from LDM
 #
-SurfInterp         ops                start_inst(alg)     snuff_inst
+LdmDynamic2Static   metar              start_inst(ingest)  snuff_inst
+LdmDynamic2Static   sounding           start_inst(ingest)  snuff_inst
 ######################################################################
 #
 # RELAMPAGO

@@ -265,7 +265,7 @@ compress = FALSE;
 // Type: boolean
 //
 
-CompressBasedOnAccessTime = TRUE;
+CompressBasedOnAccessTime = FALSE;
 
 ///////////// MaxNoAccessDays /////////////////////////
 //

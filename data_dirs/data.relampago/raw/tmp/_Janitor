@@ -143,7 +143,7 @@ MaxNoModDays = 30;
 // Type: int
 //
 
-MaxModificationAgeBeforeDelete = 1728000;
+MaxModificationAgeBeforeDelete = 3600;
 
 ///////////// disk_use_threshold //////////////////////
 //
@@ -265,7 +265,7 @@ compress = FALSE;
 // Type: boolean
 //
 
-CompressBasedOnAccessTime = TRUE;
+CompressBasedOnAccessTime = FALSE;
 
 ///////////// MaxNoAccessDays /////////////////////////
 //
@@ -364,7 +364,7 @@ sleep_factor = 0.25;
 // Type: boolean
 //
 
-ProcessIfNoMaster = TRUE;
+ProcessIfNoMaster = FALSE;
 
 ///////////// ignoreEventlists ////////////////////////
 //

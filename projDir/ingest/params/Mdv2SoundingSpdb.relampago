@@ -246,7 +246,7 @@ station_locations = {
 // Type: string
 //
 
-output_url = "spdbp:://localhost:0:relampago/spdb/sounding/gfs";
+output_url = "spdbp:://localhost::relampago/spdb/sounding/gfs";
 
 ///////////// valid_period_secs ///////////////////////
 //

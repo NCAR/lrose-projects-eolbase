@@ -1,0 +1,10 @@
+#! /bin/csh
+
+cd $PROJ_DIR/system/params
+
+running "Scout -params Scout.relampago"
+if ($status == 1) then
+  Scout -params Scout.relampago |& \
+	LogFilter -d $ERRORS_LOG_DIR -p Scout -i relampago >& /dev/null &
+endif
+
