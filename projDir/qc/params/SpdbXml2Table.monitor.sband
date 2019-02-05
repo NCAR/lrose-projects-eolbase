@@ -201,65 +201,65 @@ xml_entries = {
   }
   ,
   {
-    xml_tag_list = "<SpolTemperatures><>",
+    xml_tag_list = "<SpolTemperatures><Rear_Wall>",
     specify_label = TRUE,
-    label = "Temp_",
+    label = "Temp_Rear_Wall",
     required = FALSE
   }
   ,
   {
-    xml_tag_list = "<SpolTemperatures><>",
+    xml_tag_list = "<SpolTemperatures><CIRC-V>",
     specify_label = TRUE,
-    label = "Temp_",
+    label = "Temp_CIRC-V",
     required = FALSE
   }
   ,
   {
-    xml_tag_list = "<SpolTemperatures><>",
+    xml_tag_list = "<SpolTemperatures><CIRC-H>",
     specify_label = TRUE,
-    label = "Temp_",
+    label = "Temp_CIRC-H",
     required = FALSE
   }
   ,
   {
-    xml_tag_list = "<SpolTemperatures><>",
+    xml_tag_list = "<SpolTemperatures><LNA-V>",
     specify_label = TRUE,
-    label = "Temp_",
+    label = "Temp_LNA-V",
     required = FALSE
   }
   ,
   {
-    xml_tag_list = "<SpolTemperatures><>",
+    xml_tag_list = "<SpolTemperatures><LNA-H>",
     specify_label = TRUE,
-    label = "Temp_",
+    label = "Temp_LNA-H",
     required = FALSE
   }
   ,
   {
-    xml_tag_list = "<SpolTemperatures><>",
+    xml_tag_list = "<SpolTemperatures><RX-enclosure>",
     specify_label = TRUE,
-    label = "Temp_",
+    label = "Temp_RX-enclosure",
     required = FALSE
   }
   ,
   {
-    xml_tag_list = "<SpolTemperatures><>",
+    xml_tag_list = "<SpolTemperatures><TP-enclosure>",
     specify_label = TRUE,
-    label = "Temp_",
+    label = "Temp_TP-enclosure",
     required = FALSE
   }
   ,
   {
-    xml_tag_list = "<SpolTemperatures><>,
+    xml_tag_list = "<SpolTemperatures><RX-plate>",
     specify_label = TRUE,
-    label = "",
+    label = "Temp_RX-plate",
     required = FALSE
   }
   ,
   {
-    xml_tag_list = "<SpolTemperatures><>",
+    xml_tag_list = "<SpolTemperatures><TX-coupler-H>",
     specify_label = TRUE,
-    label = "Temp_",
+    label = "Temp_TX-coupler-H",
     required = FALSE
   }
 };
