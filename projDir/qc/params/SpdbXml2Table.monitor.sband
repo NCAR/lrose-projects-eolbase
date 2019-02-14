@@ -262,6 +262,34 @@ xml_entries = {
     label = "Temp_TX-coupler-H",
     required = FALSE
   }
+  ,
+  {
+    xml_tag_list = "<AntennaFaults><Oil_Pressure_Fault>",
+    specify_label = TRUE,
+    label = "Oil_Pressure_Fault",
+    required = FALSE
+  }
+  ,
+  {
+    xml_tag_list = "<AntennaFaults><Azimuth_Brakes_Fault>",
+    specify_label = TRUE,
+    label = "Azimuth_Brakes_Fault",
+    required = FALSE
+  }
+  ,
+  {
+    xml_tag_list = "<SpolTransmitStatus><HighVoltsOn>",
+    specify_label = TRUE,
+    label = "HighVoltsOn",
+    required = FALSE
+  }
+  ,
+  {
+    xml_tag_list = "<SBandXmitPower><XmitPowerDbmTxTop>",
+    specify_label = TRUE,
+    label = "XmitPowerDbmTxTop",
+    required = FALSE
+  }
 };
 
 //======================================================================
