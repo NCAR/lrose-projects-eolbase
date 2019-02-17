@@ -188,7 +188,7 @@ radar_name = "PHKI";
 radar_location = {
     latitudeDeg = 21.8939,
     longitudeDeg = -159.553,
-    altitudeKm = 0.013
+    altitudeKm = 0.103
 };
 
 ///////////// do_lookup_radar_altitude ////////////////
