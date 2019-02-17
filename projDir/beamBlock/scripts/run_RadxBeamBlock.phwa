@@ -1,0 +1,5 @@
+#! /bin/csh
+
+cd $PROJ_DIR/beamBlock/params
+
+RadxBeamBlock -params RadxBeamBlock.phwa
