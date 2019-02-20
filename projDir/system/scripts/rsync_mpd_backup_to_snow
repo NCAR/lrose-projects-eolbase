@@ -1,0 +1,10 @@
+#! /bin/csh
+#
+
+cd /scr/eldora1
+
+snuff "rsync -av TempFigures"
+
+rsync -av TempFigures wvdial_* snow:/scr/snow2/rsfdata/projects/mpd |& \
+	LogFilter -d $ERRORS_LOG_DIR -p rsync_mpd_backup_to_snow -i cron >& /dev/null &
+
