@@ -1,0 +1,4 @@
+#! /bin/csh
+
+WgetRelampagoSurfaceObs.py --debug |& \
+        LogFilter -d $ERRORS_LOG_DIR -p WgetRelampagoSurfaceObs >& /dev/null &

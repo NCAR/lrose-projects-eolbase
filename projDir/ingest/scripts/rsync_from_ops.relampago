@@ -1,0 +1,36 @@
+#! /bin/sh
+
+# rsync cfradial data from replampago ops center
+
+cd $DATA_DIR/relampago/raw/radar
+
+rsync -av --rsh='ssh -p 20022' relamp@181.30.169.202:/data/relamp/data.server/relampago/raw/radar/catchup .
+
+cd $DATA_DIR/relampago/cfradial
+
+rsync -av --rsh='ssh -p 20022' relamp@181.30.169.202:/data/relamp/data.server/relampago/cfradial/quicklook .
+rsync -av --rsh='ssh -p 20022' relamp@181.30.169.202:/data/relamp/data.server/relampago/cfradial/csu_raw .
+rsync -av --rsh='ssh -p 20022' relamp@181.30.169.202:/data/relamp/data.server/relampago/cfradial/RMA1 .
+
+#rsync -av --rsh='ssh -p 20022' relamp@181.30.169.202:/data/relamp/data.server/relampago/cfradial/csu_chivo .
+#rsync -av --rsh='ssh -p 20022' relamp@181.30.169.202:/data/relamp/data.server/relampago/cfradial/csu_pid .
+#rsync -av --rsh='ssh -p 20022' relamp@181.30.169.202:/data/relamp/data.server/relampago/cfradial/CSU_CHIVO .
+#rsync -av --rsh='ssh -p 20022' relamp@181.30.169.202:/data/relamp/data.server/relampago/cfradial/RMA1_pid .
+
+cd $DATA_DIR/relampago/mdv
+rsync -av --rsh='ssh -p 20022' relamp@181.30.169.202:/data/relamp/data.server/relampago/mdv/ConvStrat .
+rsync -av --rsh='ssh -p 20022' relamp@181.30.169.202:/data/relamp/data.server/relampago/mdv/ltg/glm .
+#rsync -av --rsh='ssh -p 20022' relamp@181.30.169.202:/data/relamp/data.server/relampago/mdv/radarCart .
+
+cd $DATA_DIR/relampago/spdb
+rsync -av --rsh='ssh -p 20022' relamp@181.30.169.202:/data/relamp/data.server/relampago/spdb/hail_drone .
+rsync -av --rsh='ssh -p 20022' relamp@181.30.169.202:/data/relamp/data.server/relampago/spdb/rhi .
+
+cd $DATA_DIR/relampago
+rsync -av --rsh='ssh -p 20022' relamp@181.30.169.202:/data/relamp/data.server/relampago/images .
+
+
+
+
+
+

@@ -1,0 +1,6 @@
+#! /bin/csh
+
+# make a 0.01 deg latlon terrain grid for PECAN area
+
+WorldTerrain /scr/sci/rsfdata/terrain/DEM/uncompressed -45 -80 3000 2500 0.01 0.01 /tmp/relampago/mdv/terrain/relampago_terrain.mdv
+

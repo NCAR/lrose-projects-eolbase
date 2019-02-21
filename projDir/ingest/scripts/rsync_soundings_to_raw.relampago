@@ -1,0 +1,10 @@
+#! /bin/csh
+
+# rsync relampago soundings from ftp site to raw dir
+
+cd /net/ftp/pub/data/incoming/relampago
+
+rsync -av sounding ~/projDir/data/relampago/raw |& LogFilter -d $ERRORS_LOG_DIR -p rsync_soundings_to_raw -i relampago &
+
+
+

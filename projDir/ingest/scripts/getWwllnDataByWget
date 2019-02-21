@@ -1,0 +1,12 @@
+#!/bin/csh
+
+# get LTG data from UW using wget
+
+mkdir -p $DATA_DIR/relampago/raw/wwlln0
+cd $DATA_DIR/relampago/raw/wwlln0
+
+wget -nd -nc -c -r \
+    --user=relampago --password=BrodzikWWLLN \
+    http://wwlln.net/relampago/
+
+

@@ -1,0 +1,8 @@
+#! /bin/csh
+
+snuff rsync_backup_to_rain.relampago
+
+rsync_backup_to_rain.relampago \
+    |& LogFilter -d $ERRORS_LOG_DIR -p rsync_backup_to_rain \
+    -i relampago >& /dev/null &
+

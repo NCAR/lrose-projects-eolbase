@@ -1,0 +1,14 @@
+#! /bin/csh
+
+# rsync to rain as a backup for relampago
+
+cd /scr/hail1/rsfdata/relampago
+
+rsync -av spdb     rain:/scr/rain1/rsfdata/projects/relampago
+rsync -av mdv      rain:/scr/rain1/rsfdata/projects/relampago
+rsync -av images   rain:/scr/rain1/rsfdata/projects/relampago
+rsync -av cfradial rain:/scr/rain1/rsfdata/projects/relampago
+
+
+
+

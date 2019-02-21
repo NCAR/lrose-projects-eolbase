@@ -166,6 +166,17 @@ WIDE_QPE_PID         QPE_PID     mdvp:://front.eol.ucar.edu:8080:pecan/mdv/qpe_m
 WIDE_QPE_HEIGHT      QPE_HEIGHT  mdvp:://front.eol.ucar.edu:8080:pecan/mdv/qpe_mosaic?use_http=true&HEIGHT       qpe_height.colors   km     -5 80 5 radial 1 0
 WIDE_QPE_RANGE       QPE_RANGE   mdvp:://front.eol.ucar.edu:8080:pecan/mdv/qpe_mosaic?use_http=true&RANGE        range_250.colors    km     -5 80 5 radial 1 0
 
+# QPE max
+
+WIDE_QPEM_RATE_PID    QPEM_RATE_PID    mdvp:://front.eol.ucar.edu:8080:pecan/mdv/qpe_max?use_http=true&RATE_PID     precip_rate.colors  mm/hr  -5 80 5 radial 1 0
+WIDE_QPEM_RATE_HYBRID QPEM_RATE_HYBRID mdvp:://front.eol.ucar.edu:8080:pecan/mdv/qpe_max?use_http=true&RATE_HYBRID  precip_rate.colors  mm/hr  -5 80 5 radial 1 0
+WIDE_QPEM_RATE_ZH     QPEM_RATE_ZH     mdvp:://front.eol.ucar.edu:8080:pecan/mdv/qpe_max?use_http=true&RATE_ZH      precip_rate.colors  mm/hr  -5 80 5 radial 1 0
+WIDE_QPEM_RATE_Z_ZDR  QPEM_RATE_Z_ZDR  mdvp:://front.eol.ucar.edu:8080:pecan/mdv/qpe_max?use_http=true&RATE_Z_ZDR   precip_rate.colors  mm/hr  -5 80 5 radial 1 0
+WIDE_QPEM_RATE_KDP    QPEM_RATE_KDP    mdvp:://front.eol.ucar.edu:8080:pecan/mdv/qpe_max?use_http=true&RATE_KDP     precip_rate.colors  mm/hr  -5 80 5 radial 1 0
+WIDE_QPEM_PID         QPEM_PID     mdvp:://front.eol.ucar.edu:8080:pecan/mdv/qpe_max?use_http=true&PID          pid.colors          -      -5 80 5 radial 1 0
+WIDE_QPEM_HEIGHT      QPEM_HEIGHT  mdvp:://front.eol.ucar.edu:8080:pecan/mdv/qpe_max?use_http=true&HEIGHT       qpe_height.colors   km     -5 80 5 radial 1 0
+WIDE_QPEM_RANGE       QPEM_RANGE   mdvp:://front.eol.ucar.edu:8080:pecan/mdv/qpe_max?use_http=true&RANGE        range_250.colors    km     -5 80 5 radial 1 0
+
 WIDE_1HR_ACCUM_PID    1HR_ACCUM_PID    mdvp:://front.eol.ucar.edu:8080:pecan/mdv/qpe_accum_1hr?use_http=true&ACCUM_PID     precip_accum.colors  mm  -5 80 5 radial 1 0
 WIDE_1HR_ACCUM_HYBRID 1HR_ACCUM_HYBRID mdvp:://front.eol.ucar.edu:8080:pecan/mdv/qpe_accum_1hr?use_http=true&ACCUM_HYBRID  precip_accum.colors  mm  -5 80 5 radial 1 0
 WIDE_1HR_ACCUM_Z_ZDR  1HR_ACCUM_Z_ZDR  mdvp:://front.eol.ucar.edu:8080:pecan/mdv/qpe_accum_1hr?use_http=true&ACCUM_Z_ZDR   precip_accum.colors  mm  -5 80 5 radial 1 0
@@ -174,6 +185,15 @@ WIDE_2HR_ACCUM_PID    2HR_ACCUM_PID    mdvp:://front.eol.ucar.edu:8080:pecan/mdv
 WIDE_2HR_ACCUM_HYBRID 2HR_ACCUM_HYBRID mdvp:://front.eol.ucar.edu:8080:pecan/mdv/qpe_accum_2hr?use_http=true&ACCUM_HYBRID  precip_accum.colors  mm  -5 80 5 radial 1 0
 WIDE_2HR_ACCUM_Z_ZDR  2HR_ACCUM_Z_ZDR  mdvp:://front.eol.ucar.edu:8080:pecan/mdv/qpe_accum_2hr?use_http=true&ACCUM_Z_ZDR   precip_accum.colors  mm  -5 80 5 radial 1 0
 WIDE_2HR_ACCUM_ZH     2HR_ACCUM_ZH     mdvp:://front.eol.ucar.edu:8080:pecan/mdv/qpe_accum_2hr?use_http=true&ACCUM_ZH      precip_accum.colors  mm  -5 80 5 radial 1 0
+
+WIDE_1HR_ACCUM_PID    1HRM_ACCUM_PID    mdvp:://front.eol.ucar.edu:8080:pecan/mdv/qpe_max_accum_1hr?use_http=true&ACCUM_PID     precip_accum.colors  mm  -5 80 5 radial 1 0
+WIDE_1HR_ACCUM_HYBRID 1HRM_ACCUM_HYBRID mdvp:://front.eol.ucar.edu:8080:pecan/mdv/qpe_max_accum_1hr?use_http=true&ACCUM_HYBRID  precip_accum.colors  mm  -5 80 5 radial 1 0
+WIDE_1HR_ACCUM_Z_ZDR  1HRM_ACCUM_Z_ZDR  mdvp:://front.eol.ucar.edu:8080:pecan/mdv/qpe_max_accum_1hr?use_http=true&ACCUM_Z_ZDR   precip_accum.colors  mm  -5 80 5 radial 1 0
+WIDE_1HR_ACCUM_ZH     1HRM_ACCUM_ZH     mdvp:://front.eol.ucar.edu:8080:pecan/mdv/qpe_max_accum_1hr?use_http=true&ACCUM_ZH      precip_accum.colors  mm  -5 80 5 radial 1 0
+WIDE_2HR_ACCUM_PID    2HRM_ACCUM_PID    mdvp:://front.eol.ucar.edu:8080:pecan/mdv/qpe_max_accum_2hr?use_http=true&ACCUM_PID     precip_accum.colors  mm  -5 80 5 radial 1 0
+WIDE_2HR_ACCUM_HYBRID 2HRM_ACCUM_HYBRID mdvp:://front.eol.ucar.edu:8080:pecan/mdv/qpe_max_accum_2hr?use_http=true&ACCUM_HYBRID  precip_accum.colors  mm  -5 80 5 radial 1 0
+WIDE_2HR_ACCUM_Z_ZDR  2HRM_ACCUM_Z_ZDR  mdvp:://front.eol.ucar.edu:8080:pecan/mdv/qpe_max_accum_2hr?use_http=true&ACCUM_Z_ZDR   precip_accum.colors  mm  -5 80 5 radial 1 0
+WIDE_2HR_ACCUM_ZH     2HRM_ACCUM_ZH     mdvp:://front.eol.ucar.edu:8080:pecan/mdv/qpe_max_accum_2hr?use_http=true&ACCUM_ZH      precip_accum.colors  mm  -5 80 5 radial 1 0
 
 WIDE_3HR_ACCUM_PID      3HR_ACCUM_PID      mdvp:://front.eol.ucar.edu:8080:pecan/mdv/qpe_accum_3hr?use_http=true&ACCUM_PID     precip_accum.colors  mm  -5 80 5 radial 1 0
 WIDE_3HR_ACCUM_HYBRID   3HR_ACCUM_HYBRID   mdvp:://front.eol.ucar.edu:8080:pecan/mdv/qpe_accum_3hr?use_http=true&ACCUM_HYBRID  precip_accum.colors  mm  -5 80 5 radial 1 0
@@ -184,14 +204,33 @@ WIDE_24HR_ACCUM_HYBRID   24HR_ACCUM_HYBRID   mdvp:://front.eol.ucar.edu:8080:pec
 WIDE_24HR_ACCUM_Z_ZDR    24HR_ACCUM_Z_ZDR    mdvp:://front.eol.ucar.edu:8080:pecan/mdv/qpe_accum_24hr?use_http=true&ACCUM_Z_ZDR   precip_accum.colors  mm  -5 80 5 radial 1 0
 WIDE_24HR_ACCUM_ZH       24HR_ACCUM_ZH       mdvp:://front.eol.ucar.edu:8080:pecan/mdv/qpe_accum_24hr?use_http=true&ACCUM_ZH      precip_accum.colors  mm  -5 80 5 radial 1 0
 
+WIDE_1HR_MAX_ACCUM_PID    1HR_MAX_ACCUM_PID    mdvp:://front.eol.ucar.edu:8080:pecan/mdv/qpe_max_accum_1hr?use_http=true&ACCUM_PID     precip_accum.colors  mm  -5 80 5 radial 1 0
+WIDE_1HR_MAX_ACCUM_HYBRID 1HR_MAX_ACCUM_HYBRID mdvp:://front.eol.ucar.edu:8080:pecan/mdv/qpe_max_accum_1hr?use_http=true&ACCUM_HYBRID  precip_accum.colors  mm  -5 80 5 radial 1 0
+WIDE_1HR_MAX_ACCUM_Z_ZDR  1HR_MAX_ACCUM_Z_ZDR  mdvp:://front.eol.ucar.edu:8080:pecan/mdv/qpe_max_accum_1hr?use_http=true&ACCUM_Z_ZDR   precip_accum.colors  mm  -5 80 5 radial 1 0
+WIDE_1HR_MAX_ACCUM_ZH     1HR_MAX_ACCUM_ZH     mdvp:://front.eol.ucar.edu:8080:pecan/mdv/qpe_max_accum_1hr?use_http=true&ACCUM_ZH      precip_accum.colors  mm  -5 80 5 radial 1 0
+WIDE_2HR_MAX_ACCUM_PID    2HR_MAX_ACCUM_PID    mdvp:://front.eol.ucar.edu:8080:pecan/mdv/qpe_max_accum_2hr?use_http=true&ACCUM_PID     precip_accum.colors  mm  -5 80 5 radial 1 0
+WIDE_2HR_MAX_ACCUM_HYBRID 2HR_MAX_ACCUM_HYBRID mdvp:://front.eol.ucar.edu:8080:pecan/mdv/qpe_max_accum_2hr?use_http=true&ACCUM_HYBRID  precip_accum.colors  mm  -5 80 5 radial 1 0
+WIDE_2HR_MAX_ACCUM_Z_ZDR  2HR_MAX_ACCUM_Z_ZDR  mdvp:://front.eol.ucar.edu:8080:pecan/mdv/qpe_max_accum_2hr?use_http=true&ACCUM_Z_ZDR   precip_accum.colors  mm  -5 80 5 radial 1 0
+WIDE_2HR_MAX_ACCUM_ZH     2HR_MAX_ACCUM_ZH     mdvp:://front.eol.ucar.edu:8080:pecan/mdv/qpe_max_accum_2hr?use_http=true&ACCUM_ZH      precip_accum.colors  mm  -5 80 5 radial 1 0
+
+WIDE_3HR_MAX_ACCUM_PID      3HR_MAX_ACCUM_PID      mdvp:://front.eol.ucar.edu:8080:pecan/mdv/qpe_max_accum_3hr?use_http=true&ACCUM_PID     precip_accum.colors  mm  -5 80 5 radial 1 0
+WIDE_3HR_MAX_ACCUM_HYBRID   3HR_MAX_ACCUM_HYBRID   mdvp:://front.eol.ucar.edu:8080:pecan/mdv/qpe_max_accum_3hr?use_http=true&ACCUM_HYBRID  precip_accum.colors  mm  -5 80 5 radial 1 0
+WIDE_3HR_MAX_ACCUM_Z_ZDR    3HR_MAX_ACCUM_Z_ZDR    mdvp:://front.eol.ucar.edu:8080:pecan/mdv/qpe_max_accum_3hr?use_http=true&ACCUM_Z_ZDR   precip_accum.colors  mm  -5 80 5 radial 1 0
+WIDE_3HR_MAX_ACCUM_ZH       3HR_MAX_ACCUM_ZH       mdvp:://front.eol.ucar.edu:8080:pecan/mdv/qpe_max_accum_3hr?use_http=true&ACCUM_ZH      precip_accum.colors  mm  -5 80 5 radial 1 0
+WIDE_24HR_MAX_ACCUM_PID      24HR_MAX_ACCUM_PID      mdvp:://front.eol.ucar.edu:8080:pecan/mdv/qpe_max_accum_24hr?use_http=true&ACCUM_PID     precip_accum.colors  mm  -5 80 5 radial 1 0
+WIDE_24HR_MAX_ACCUM_HYBRID   24HR_MAX_ACCUM_HYBRID   mdvp:://front.eol.ucar.edu:8080:pecan/mdv/qpe_max_accum_24hr?use_http=true&ACCUM_HYBRID  precip_accum.colors  mm  -5 80 5 radial 1 0
+WIDE_24HR_MAX_ACCUM_Z_ZDR    24HR_MAX_ACCUM_Z_ZDR    mdvp:://front.eol.ucar.edu:8080:pecan/mdv/qpe_max_accum_24hr?use_http=true&ACCUM_Z_ZDR   precip_accum.colors  mm  -5 80 5 radial 1 0
+WIDE_24HR_MAX_ACCUM_ZH       24HR_MAX_ACCUM_ZH       mdvp:://front.eol.ucar.edu:8080:pecan/mdv/qpe_max_accum_24hr?use_http=true&ACCUM_ZH      precip_accum.colors  mm  -5 80 5 radial 1 0
+
 WIDE_DAILY_ACCUM_PID    DAILY_ACCUM_PID    mdvp:://front.eol.ucar.edu:8080:pecan/mdv/qpe_accum_daily?use_http=true&ACCUM_PID     precip_accum.colors  mm  -5 80 5 radial 1 0
 WIDE_DAILY_ACCUM_HYBRID DAILY_ACCUM_HYBRID mdvp:://front.eol.ucar.edu:8080:pecan/mdv/qpe_accum_daily?use_http=true&ACCUM_HYBRID  precip_accum.colors  mm  -5 80 5 radial 1 0
 WIDE_DAILY_ACCUM_Z_ZDR  DAILY_ACCUM_Z_ZDR  mdvp:://front.eol.ucar.edu:8080:pecan/mdv/qpe_accum_daily?use_http=true&ACCUM_Z_ZDR   precip_accum.colors  mm  -5 80 5 radial 1 0
 WIDE_DAILY_ACCUM_ZH     DAILY_ACCUM_ZH     mdvp:://front.eol.ucar.edu:8080:pecan/mdv/qpe_accum_daily?use_http=true&ACCUM_ZH      precip_accum.colors  mm  -5 80 5 radial 1 0
-WIDE_===== ========   mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
-WIDE_===== ========   mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
-WIDE_===== ========   mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
-WIDE_===== ========   mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
+
+WIDE_DAILYMAX_ACCUM_PID    DAILYMAX_ACCUM_PID    mdvp:://front.eol.ucar.edu:8080:pecan/mdv/qpe_accum_daily.max?use_http=true&ACCUM_PID     precip_accum.colors  mm  -5 80 5 radial 1 0
+WIDE_DAILYMAX_ACCUM_HYBRID DAILYMAX_ACCUM_HYBRID mdvp:://front.eol.ucar.edu:8080:pecan/mdv/qpe_accum_daily.max?use_http=true&ACCUM_HYBRID  precip_accum.colors  mm  -5 80 5 radial 1 0
+WIDE_DAILYMAX_ACCUM_Z_ZDR  DAILYMAX_ACCUM_Z_ZDR  mdvp:://front.eol.ucar.edu:8080:pecan/mdv/qpe_accum_daily.max?use_http=true&ACCUM_Z_ZDR   precip_accum.colors  mm  -5 80 5 radial 1 0
+WIDE_DAILYMAX_ACCUM_ZH     DAILYMAX_ACCUM_ZH     mdvp:://front.eol.ucar.edu:8080:pecan/mdv/qpe_accum_daily.max?use_http=true&ACCUM_ZH      precip_accum.colors  mm  -5 80 5 radial 1 0
 
 # SURFACE data, LTG rate
 
@@ -1257,11 +1296,12 @@ SPOLQC_CENSOR_FLAG SPOLQC_CENSOR_FLAG  mdvp:://front.eol.ucar.edu:8080:pecan/cfr
 SPOLQC_RATE_ZH      SPOLQC_RATE_ZH       mdvp:://front.eol.ucar.edu:8080:pecan/cfradial/spol/qc_moments/sband/sur?use_http=true&RATE_ZH       precip_rate.colors mm/hr -5 80 5 radial 1 0
 SPOLQC_RATE_ZH_SNOW SPOLQC_RATE_ZH_SNOW  mdvp:://front.eol.ucar.edu:8080:pecan/cfradial/spol/qc_moments/sband/sur?use_http=true&RATE_ZH_SNOW  precip_rate.colors mm/hr -5 80 5 radial 1 0
 SPOLQC_RATE_KDP     SPOLQC_RATE_KDP      mdvp:://front.eol.ucar.edu:8080:pecan/cfradial/spol/qc_moments/sband/sur?use_http=true&RATE_KDP      precip_rate.colors mm/hr -5 80 5 radial 1 0
-SPOLQC_RATE_KZDR    SPOLQC_RATE_KZDR     mdvp:://front.eol.ucar.edu:8080:pecan/cfradial/spol/qc_moments/sband/sur?use_http=true&RATE_KDP_ZDR  precip_rate.colors mm/hr -5 80 5 radial 1 0
+SPOLQC_RATE_Z_ZDR    SPOLQC_RATE_Z_ZDR     mdvp:://front.eol.ucar.edu:8080:pecan/cfradial/spol/qc_moments/sband/sur?use_http=true&RATE_Z_ZDR  precip_rate.colors mm/hr -5 80 5 radial 1 0
+SPOLQC_RATE_KDP_ZDR    SPOLQC_RATE_KDP_ZDR     mdvp:://front.eol.ucar.edu:8080:pecan/cfradial/spol/qc_moments/sband/sur?use_http=true&RATE_KDP_ZDR  precip_rate.colors mm/hr -5 80 5 radial 1 0
 SPOLQC_RATE_HYBRID  SPOLQC_RATE_HYBRID   mdvp:://front.eol.ucar.edu:8080:pecan/cfradial/spol/qc_moments/sband/sur?use_http=true&RATE_HYBRID   precip_rate.colors mm/hr -5 80 5 radial 1 0
 SPOLQC_RATE_PID     SPOLQC_RATE_PID      mdvp:://front.eol.ucar.edu:8080:pecan/cfradial/spol/qc_moments/sband/sur?use_http=true&RATE_PID      precip_rate.colors mm/hr -5 80 5 radial 1 0
 SPOLQC_RATE_HIDRO   SPOLQC_RATE_HIDRO    mdvp:://front.eol.ucar.edu:8080:pecan/cfradial/spol/qc_moments/sband/sur?use_http=true&RATE_HIDRO    precip_rate.colors mm/hr -5 80 5 radial 1 0
-SPOLQC_RATE_BRINGI  SPOLQC_RATE_BRINGI   mdvp:://front.eol.ucar.edu:8080:pecan/cfradial/spol/qc_moments/sband/sur?use_http=true&RATE_BRINGI   precip_rate.colors mm/hr -5 80 5 radial 1 0
+#SPOLQC_RATE_BRINGI  SPOLQC_RATE_BRINGI   mdvp:://front.eol.ucar.edu:8080:pecan/cfradial/spol/qc_moments/sband/sur?use_http=true&RATE_BRINGI   precip_rate.colors mm/hr -5 80 5 radial 1 0
 
 SPOLQC_PID           SPOLQC_PID           mdvp:://front.eol.ucar.edu:8080:pecan/qc/cfradial/spol/paper_moments/sband/sur?use_http=true&PID           pid.colors  none -5 80 5 radial 1 0
 SPOLQC_PID_TEMP      SPOLQC_PID_TEMP      mdvp:://front.eol.ucar.edu:8080:pecan/qc/cfradial/spol/paper_moments/sband/sur?use_http=true&TEMP_FOR_PID  temp.colors  C -5 80 5 radial 1 0

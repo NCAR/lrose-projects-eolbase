@@ -1,0 +1,10 @@
+#! /bin/csh
+
+# this is an example
+# put in your own times
+
+cd $PROJ_DIR/cal/params
+
+SpdbXml2Table -params SpdbXml2Table.suncal -start "2019 01 18 00 00 00" -end "2019 01 19 00 00 00"
+
+

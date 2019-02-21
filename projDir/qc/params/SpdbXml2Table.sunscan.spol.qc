@@ -1,5 +1,5 @@
 /**********************************************************************
- * TDRP params for SpdbXml2Table
+ * Tdrp params for SpdbXml2Table
  **********************************************************************/
 
 //======================================================================
@@ -397,7 +397,7 @@ xml_entries = {
   }
   ,
   {
-    xml_tag_list = "<RadarSunCal><siteTempFromSpdb>",
+    xml_tag_list = "<RadarSunCal><siteTempC>",
     specify_label = TRUE,
     label = "siteTemp",
     required = TRUE

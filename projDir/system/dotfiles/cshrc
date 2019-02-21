@@ -99,6 +99,12 @@ setenv MDV_WRITE_FORMAT FORMAT_NCF
 setenv MDV_WRITE_USING_EXTENDED_PATHS TRUE
 setenv MDV2NETCDF_WRITE_LATLON_ARRAYS FALSE
 
+# relampago server host               
+
+setenv RELAMP_SERVER_IPADDR 181.30.169.202
+
+setenv PROCMAP_HOST localhost
+
 # --- project info --- 
 
 if (-f $PROJ_DIR/system/params/project_info) then
@@ -108,6 +114,8 @@ endif
 # python
 
 setenv PYTHONPATH ~/anaconda2/pkgs:$HOME/projDir/dial/Python/ptvv1_python/python:$HOME/projDir/dial/Python/NCAR-LidarProcessing/libraries
+
+#setenv PYTHONPATH ~/anaconda3/pkgs
 
 # HSRL
 
@@ -130,11 +138,12 @@ if ( -d $PROJ_DIR ) then
 endif
 
 set path = ($path $LROSE_INSTALL_DIR/bin)
-
 set path = ($path $PROJ_DIR/dial/Matlab)
+set path = ($path $HOME/cidd/bin)
 
 set path = ($path ~/bin $QTDIR/bin \
-        ~/anaconda2/bin \
+#       ~/anaconda2/bin \
+        ~/anaconda3/bin \
 	$JAVA_HOME/bin $ANT_HOME/bin \
 	$NCARG_ROOT/bin \
 	/usr/local/bin /usr/local/sbin /usr/bin/X11 \
@@ -240,6 +249,11 @@ if ($?prompt) then
   alias pgen2_data 'cd /scr/pgen2'
 
   alias maps 'cd /scr/hail1/rsfdata/mapserv/maps'
+
+  alias relamp 'ssh -XY relamp@relampago'
+  alias ops1 'ssh -XY sci@ops1'
+  alias ops2 'ssh -XY sci@ops2'
+  alias ops3 'ssh -XY sci@ops3'
 
 #  alias spol 'ssh -p 20022 -a -C -XY spol@spol.dyndns.org'
 #  alias control1 'ssh -a -x -C -Y -R 2401:localhost:2401 control1'
