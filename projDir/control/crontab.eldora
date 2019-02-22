@@ -1,3 +1,4 @@
+####################################################################
 #
 # Master copy in $PROJ_DIR/control/crontab
 # install by running $PROJ_DIR/system/scripts/install_crontab
@@ -28,39 +29,27 @@
 ####################################################################
 # RUN DIAL scripts
 #
-# WVDIAL scheduler cron entries
-# DIAL PROCESS(save_figure, save_data, save_netCDF, save_catalog, channel)
+# DIAL scheduler cron entries
+# call DIAL_process(save_figure, save_data, save_netCDF, save_catalog, channel)
 # save (on=1, off=0), and channel (FF=standard channel, NF= wide field-of-view channel)
-# process and save only images every 15 min 
-#*/15 * * * * cd $HOME/projDir/dial/Matlab && ./DIAL_process 1 0 0 1 FF NCAR >/dev/null 2>&1
-#*/16 * * * * cd $HOME/projDir/dial/Matlab && ./DIAL_process 1 0 0 0 NF NCAR >/dev/null 2>&1
-#*/15 * * * * cd $HOME/projDir/dial/Matlab && ./DIAL_process 1 0 0 1 FF MSU  >/dev/null 2>&1
-#*/18 * * * * cd $HOME/projDir/dial/Matlab && ./DIAL_process 1 0 0 1 NF MSU  >/dev/null 2>&1
-#  process and save data at 18:10 (6:10PM) MDT for full day
-#10 18 * * * cd $HOME/projDir/dial/Matlab && ./DIAL_process 1 1 1 1 FF NCAR >/dev/null 2>&1
-#11 18 * * * cd $HOME/projDir/dial/Matlab && ./DIAL_process 0 1 1 0 NF NCAR >/dev/null 2>&1
-#5 18 * * * cd $HOME/projDir/dial/Matlab && ./DIAL_process 1 1 1 1 FF MSU  >/dev/null 2>&1
-#13 18 * * * cd $HOME/projDir/dial/Matlab && ./DIAL_process 0 1 1 0 NF MSU  >/dev/null 2>&1
 
-*/15 * * * * cd $HOME/projDir/dial/Matlab && ./DIAL_process 1 0 0 1 DIAL01 >/dev/null 2>&1
-*/16 * * * * cd $HOME/projDir/dial/Matlab && ./DIAL_process 1 0 0 1 DIAL02 >/dev/null 2>&1
-*/17 * * * * cd $HOME/projDir/dial/Matlab && ./DIAL_process 1 0 0 1 DIAL03 >/dev/null 2>&1
+# rsync all DIAL data every 15 min starting at 10 min after the hour (need to time sync all computers) 
+10-59/15 * * * * /home/rsfdata/projDir/system/scripts/run_rsync_dial_data_all 1>> /tmp/run_rsync_dial_data.log 2&>1
 
-*/10 * * * * csh -c "run_rsync_dial_data" 1> /dev/null 2> /dev/null
-#*/5  * * * * csh -c "run_rsync_hsrl_data" 1> /dev/null 2> /dev/null
-#
-# Check Water Vapor DIAL transfer.  Notify users if unsuccessful
-# This version is designed to run every 10 min starting at 15 min after the hour
-15-59/10 * * * *  /home/rsfdata/projDir/system/scripts/run_check_dial_rsync 1>> /tmp/run_check_dial_rsync.log 2&>1
-#
-#15-59/10 * * * *  /home/rsfdata/projDir/system/scripts/check_h2o_transfer.py 1>> /tmp/check_h2o_transfer.log 2&>1
+# check all DIAL transfer (notify if unsuccessful) every 15  min (4 min after the rsync)
+12-59/15 * * * *  /home/rsfdata/projDir/system/scripts/run_check_dial_rsync 1>> /tmp/run_check_dial_rsync.log 2&>1
+
+# process and save data every 15 min starting at 2-4 min after the hour (2 min to process each instrument) 
+2-59/15 * * * * cd /home/rsfdata/dial/EOL_Lidar_Matlab_Processing && ./DIAL_process 1 0 0 1 DIAL01 >/dev/null 2>&1 
+4-59/15 * * * * cd /home/rsfdata/dial/EOL_Lidar_Matlab_Processing && ./DIAL_process 1 0 0 1 DIAL02 >/dev/null 2>&1
+6-59/15 * * * * cd /home/rsfdata/dial/EOL_Lidar_Matlab_Processing && ./DIAL_process 1 0 0 1 DIAL03 >/dev/null 2>&1
+8-59/15 * * * * cd /home/rsfdata/dial/EOL_Lidar_Matlab_Processing && ./DIAL_process 1 0 0 1 DIAL04 >/dev/null 2>&1
+10-59/15 * * * * cd /home/rsfdata/dial/EOL_Lidar_Matlab_Processing && ./DIAL_process 1 0 0 1 DIAL05 >/dev/null 2>&1
+
 # This version is for Portugal, using BTSync instead of rsync
 #5 * * * * /home/rsfdata/projDir/system/scripts/check_h2o_transfer.prev_hour.py 1>> /tmp/check_h2o_transfer.prev_hour.log 2&>1
 ####################################################################
-# TRANSFER IMAGES FROM RAL WEATHER PAGE TO CATALOG
+# Make backup of MPD data to snow
 #
-#*/10 * * * *   csh -c "retrieve_ral_products" 1> /dev/null 2> /dev/null
+*/5 * * * *  csh -c "rsync_mpd_backup_to_snow" 1> /dev/null 2> /dev/null
 ####################################################################
-# TRANSFER HCR data into correct location
-#
-#*/10 * * * *  csh -c "rsync_cset_hcr_moments" 1> /dev/null 2> /dev/null
