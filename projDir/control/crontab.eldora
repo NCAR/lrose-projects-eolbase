@@ -40,11 +40,11 @@
 12-59/15 * * * *  /home/rsfdata/projDir/system/scripts/run_check_dial_rsync 1>> /tmp/run_check_dial_rsync.log 2&>1
 
 # process and save data every 15 min starting at 2-4 min after the hour (2 min to process each instrument) 
-2-59/15 * * * * cd /home/rsfdata/dial/EOL_Lidar_Matlab_Processing && ./DIAL_process 1 0 0 1 DIAL01 >/dev/null 2>&1 
-4-59/15 * * * * cd /home/rsfdata/dial/EOL_Lidar_Matlab_Processing && ./DIAL_process 1 0 0 1 DIAL02 >/dev/null 2>&1
-6-59/15 * * * * cd /home/rsfdata/dial/EOL_Lidar_Matlab_Processing && ./DIAL_process 1 0 0 1 DIAL03 >/dev/null 2>&1
-8-59/15 * * * * cd /home/rsfdata/dial/EOL_Lidar_Matlab_Processing && ./DIAL_process 1 0 0 1 DIAL04 >/dev/null 2>&1
-10-59/15 * * * * cd /home/rsfdata/dial/EOL_Lidar_Matlab_Processing && ./DIAL_process 1 0 0 1 DIAL05 >/dev/null 2>&1
+2-59/15 * * * * cd /home/rsfdata/dial/MatlabV2 && ./DIAL_process 1 0 0 1 DIAL01 >/dev/null 2>&1 
+4-59/15 * * * * cd /home/rsfdata/dial/MatlabV2 && ./DIAL_process 1 0 0 1 DIAL02 >/dev/null 2>&1
+6-59/15 * * * * cd /home/rsfdata/dial/MatlabV2 && ./DIAL_process 1 0 0 1 DIAL03 >/dev/null 2>&1
+8-59/15 * * * * cd /home/rsfdata/dial/MatlabV2 && ./DIAL_process 1 0 0 1 DIAL04 >/dev/null 2>&1
+10-59/15 * * * * cd /home/rsfdata/dial/MatlabV2 && ./DIAL_process 1 0 0 1 DIAL05 >/dev/null 2>&1
 
 # This version is for Portugal, using BTSync instead of rsync
 #5 * * * * /home/rsfdata/projDir/system/scripts/check_h2o_transfer.prev_hour.py 1>> /tmp/check_h2o_transfer.prev_hour.log 2&>1
