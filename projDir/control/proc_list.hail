@@ -42,7 +42,7 @@ InputWatcher        mesonet1           start_inst(ingest)  snuff_inst
 #MdvConvert         mrms_comp          start_inst(ingest)  snuff_inst
 InputWatcher        ruc                start_inst(ingest)  snuff_inst 
 Grib2toMdv          ruc                start_inst(ingest)  snuff_inst 
-#Grib2toMdv          ruc_fcasts         start_inst(ingest)  snuff_inst 
+#Grib2toMdv         ruc_fcasts         start_inst(ingest)  snuff_inst 
 Mdv2SoundingSpdb    ruc                start_inst(ingest)  snuff_inst
 #NcGeneric2Mdv      sat_1km            start_inst(ingest)  snuff_inst 
 #NcGeneric2Mdv      sat_4km            start_inst(ingest)  snuff_inst 
@@ -206,92 +206,92 @@ madis2Spdb        hawaii  start_inst(ingest)   snuff_inst
 ######################################################################
 ######################################################################
 #
-# RELAMPAGO
+# RELAMPAGO - moved to snow
 #
 ######################################################################
 # WRF ILLINOIS MODEL
 #
-InputWatcher      wrf_illinois     start_inst(ingest)   snuff_inst
-Wrf2Mdv           illinois         start_inst(ingest)   snuff_inst
-Wrf2Mdv           illinois_f       start_inst(ingest)   snuff_inst
+#InputWatcher      wrf_illinois     start_inst(ingest)   snuff_inst
+#Wrf2Mdv           illinois         start_inst(ingest)   snuff_inst
+#Wrf2Mdv           illinois_f       start_inst(ingest)   snuff_inst
 ######################################################################
 # GFS MODEL
 #
-InputWatcher  gfs.relampago  start_inst(ingest)   snuff_inst
-Grib2toMdv    gfs.relampago  start_inst(ingest)   snuff_inst
+#InputWatcher  gfs.relampago  start_inst(ingest)   snuff_inst
+#Grib2toMdv    gfs.relampago  start_inst(ingest)   snuff_inst
 ######################################################################
 # model soundings at each radar
 #
-Mdv2SoundingSpdb  relampago  start_inst(ingest)  snuff_inst
+#Mdv2SoundingSpdb  relampago  start_inst(ingest)  snuff_inst
 ######################################################################
 # SURFACE OBS
 #
-Metar2Spdb          relampago      start_inst(ingest)    snuff_inst 
-InputWatcher        relampago_aws  start_inst(ingest)    snuff_inst
-ArgentineAwsIngest  relampago      start_inst(ingest)    snuff_inst
+#Metar2Spdb          relampago      start_inst(ingest)    snuff_inst 
+#InputWatcher        relampago_aws  start_inst(ingest)    snuff_inst
+#ArgentineAwsIngest  relampago      start_inst(ingest)    snuff_inst
 ######################################################################
 # Interpolate surface data
 #
-SurfInterp        relampago       start_inst(alg)     snuff_inst
+#SurfInterp        relampago       start_inst(alg)     snuff_inst
 ######################################################################
 # GOES16 sat data
+##
+#InputWatcher       goes16_ch01      start_inst(ingest)    snuff_inst
+#InputWatcher       goes16_ch02      start_inst(ingest)    snuff_inst
+#InputWatcher       goes16_ch03      start_inst(ingest)    snuff_inst
+#InputWatcher       goes16_ch06      start_inst(ingest)    snuff_inst
+#InputWatcher       goes16_ch10      start_inst(ingest)    snuff_inst
+#InputWatcher       goes16_ch13      start_inst(ingest)    snuff_inst
+#InputWatcher       goes16_ch15      start_inst(ingest)    snuff_inst
 #
-InputWatcher       goes16_ch01      start_inst(ingest)    snuff_inst
-InputWatcher       goes16_ch02      start_inst(ingest)    snuff_inst
-InputWatcher       goes16_ch03      start_inst(ingest)    snuff_inst
-InputWatcher       goes16_ch06      start_inst(ingest)    snuff_inst
-InputWatcher       goes16_ch10      start_inst(ingest)    snuff_inst
-InputWatcher       goes16_ch13      start_inst(ingest)    snuff_inst
-InputWatcher       goes16_ch15      start_inst(ingest)    snuff_inst
-#
-GoesRnetCDF2Mdv    relampago_ch01   start_inst(ingest)    snuff_inst
-GoesRnetCDF2Mdv    relampago_ch02   start_inst(ingest)    snuff_inst
-GoesRnetCDF2Mdv    relampago_ch03   start_inst(ingest)    snuff_inst
-GoesRnetCDF2Mdv    relampago_ch06   start_inst(ingest)    snuff_inst
-GoesRnetCDF2Mdv    relampago_ch10   start_inst(ingest)    snuff_inst
-GoesRnetCDF2Mdv    relampago_ch13   start_inst(ingest)    snuff_inst
-GoesRnetCDF2Mdv    relampago_ch15   start_inst(ingest)    snuff_inst
+#GoesRnetCDF2Mdv    relampago_ch01   start_inst(ingest)    snuff_inst
+#GoesRnetCDF2Mdv    relampago_ch02   start_inst(ingest)    snuff_inst
+#GoesRnetCDF2Mdv    relampago_ch03   start_inst(ingest)    snuff_inst
+#GoesRnetCDF2Mdv    relampago_ch06   start_inst(ingest)    snuff_inst
+#GoesRnetCDF2Mdv    relampago_ch10   start_inst(ingest)    snuff_inst
+#GoesRnetCDF2Mdv    relampago_ch13   start_inst(ingest)    snuff_inst
+#GoesRnetCDF2Mdv    relampago_ch15   start_inst(ingest)    snuff_inst
 ######################################################################
 # Lightning
 #
-InputWatcher       goes16_glm        start_inst(ingest)    snuff_inst
-GoesRGLM2Spdb      relampago         start_inst(ingest)    snuff_inst 
-Ltg2Spdb           wwlln_relampago   start_inst(ingest)    snuff_inst 
-InputWatcher       starnet           start_inst(ingest)    snuff_inst
-Ltg2Spdb           starnet_relampago start_inst(ingest)    snuff_inst 
-LtgSpdb2Mdv        glm               start_inst(alg)       snuff_inst
+#InputWatcher       goes16_glm        start_inst(ingest)    snuff_inst
+#GoesRGLM2Spdb      relampago         start_inst(ingest)    snuff_inst 
+#Ltg2Spdb           wwlln_relampago   start_inst(ingest)    snuff_inst 
+#InputWatcher       starnet           start_inst(ingest)    snuff_inst
+#Ltg2Spdb           starnet_relampago start_inst(ingest)    snuff_inst 
+#LtgSpdb2Mdv        glm               start_inst(alg)       snuff_inst
 ######################################################################
 # Radars
 #
-InputWatcher       radar_RMA1      start_inst(ingest)    snuff_inst
-InputWatcher       radar_RMA2      start_inst(ingest)    snuff_inst
-InputWatcher       radar_ANG       start_inst(ingest)    snuff_inst
-InputWatcher       radar_PAR       start_inst(ingest)    snuff_inst
-InputWatcher       radar_PER       start_inst(ingest)    snuff_inst
+#InputWatcher       radar_RMA1      start_inst(ingest)    snuff_inst
+#InputWatcher       radar_RMA2      start_inst(ingest)    snuff_inst
+#InputWatcher       radar_ANG       start_inst(ingest)    snuff_inst
+#InputWatcher       radar_PAR       start_inst(ingest)    snuff_inst
+#InputWatcher       radar_PER       start_inst(ingest)    snuff_inst
 #
-RadxBufr           RMA1            start_inst(ingest)    snuff_inst
-RadxBufr           RMA2            start_inst(ingest)    snuff_inst
-RadxConvert        ANG             start_inst(ingest)    snuff_inst
-RadxConvert        PAR             start_inst(ingest)    snuff_inst
-RadxConvert        PER             start_inst(ingest)    snuff_inst
+#RadxBufr           RMA1            start_inst(ingest)    snuff_inst
+#RadxBufr           RMA2            start_inst(ingest)    snuff_inst
+#RadxConvert        ANG             start_inst(ingest)    snuff_inst
+#RadxConvert        PAR             start_inst(ingest)    snuff_inst
+#RadxConvert        PER             start_inst(ingest)    snuff_inst
 ######################################################################
 # Cartesian transforms, conv/strat
-Radx2Grid         RMA1.long_range   start_inst(alg)    snuff_inst
-stratiform_filter RMA1              start_inst(alg)    snuff_inst
+#Radx2Grid         RMA1.long_range   start_inst(alg)    snuff_inst
+#stratiform_filter RMA1              start_inst(alg)    snuff_inst
 ######################################################################
 # Aircraft track data
 #
-NcarAcPosn2Spdb  relampago          start_inst(ingest)  snuff_inst
+#NcarAcPosn2Spdb  relampago          start_inst(ingest)  snuff_inst
 ######################################################################
 #
 # Mobile ground assets
 #
-InputWatcher       mobile_assets    start_inst(ingest)  snuff_inst 
-EolMobileKml2Spdb  relampago        start_inst(ingest)  snuff_inst
+#InputWatcher       mobile_assets    start_inst(ingest)  snuff_inst 
+#EolMobileKml2Spdb  relampago        start_inst(ingest)  snuff_inst
 ######################################################################
 # Soundings
 #
-InputWatcher       soundings        start_inst(ingest)  snuff_inst 
+#InputWatcher       soundings        start_inst(ingest)  snuff_inst 
 ######################################################################
 # Send data to Relampago ops center
 #
