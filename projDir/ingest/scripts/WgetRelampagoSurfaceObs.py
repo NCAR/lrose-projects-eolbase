@@ -47,7 +47,7 @@ def main():
                       help='URL of data download location')
     parser.add_option('--outDir',
                       dest='outDir',
-                      default='/scr/hail1/rsfdata/relampago/raw/aws',
+                      default='/scr/snow1/rsfdata/relampago/raw/aws',
                       help='Output directory. Day dirs are below this.')
     
     (options, args) = parser.parse_args()
