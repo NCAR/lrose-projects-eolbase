@@ -1,0 +1,28 @@
+#! /bin/csh -f
+
+#Create spol monitoring plots
+# script needs to be called with start and end date
+#"2019 01 01 00 00 00" "2019 01 31 23 59 59"
+
+set PLOT_DIR="/scr/sci/romatsch/spolPlots/timeSeriesPy/"
+
+set START_TIME="$1"
+set END_TIME="$2"
+
+ssh rsfdata@hail SpdbXml2Table -params projDir/qc/params/SpdbXml2Table.monitor.sband -start \"$START_TIME\" -end \"$END_TIME\" > /scr/sci/rsfdata/spol_mon/spolMon_results.txt
+
+mv /scr/sci/rsfdata/spol_mon/spolMon_results.txt /scr/sci/romatsch/data/spol/spolMon
+
+set START_NOSPACE=`echo $START_TIME | sed 's/ //g'`
+set START1=`echo $START_NOSPACE | awk '{print substr($0,0,8)}'`
+set START2=`echo $START_NOSPACE | awk '{print substr($0,9,6)}'`
+
+set END_NOSPACE=`echo $END_TIME | sed 's/ //g'`
+set END1=`echo $END_NOSPACE | awk '{print substr($0,0,8)}'`
+set END2=`echo $END_NOSPACE | awk '{print substr($0,9,6)}'`
+
+mv /scr/sci/romatsch/data/spol/spolMon/spolMon_results.txt "/scr/sci/romatsch/data/spol/spolMon/SpolMon_"$START1"_"$START2"_to_"$END1"_"$END2".txt"
+
+# Run python code to create plots
+~/git/spol-configuration/projDir/mon_ctrl/scripts/monitorSpol.py --start "$START_TIME" --end "$END_TIME" --figDir $PLOT_DIR --monFile /scr/sci/romatsch/data/spol/spolMon/SpolMon_"$START1"_"$START2"_to_"$END1"_"$END2".txt --plotHours 6
+cd
