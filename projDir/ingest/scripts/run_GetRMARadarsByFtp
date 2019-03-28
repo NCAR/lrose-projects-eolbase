@@ -4,15 +4,23 @@
 
 cd $PROJ_DIR/ingest/scripts
 
-running GetRMARadarsByFtp.py
+snuff GetRMARadarsByFtp.py
 
-if ($status == 1) then
-  GetRMARadarsByFtp.py --debug  \
-      --start "2019 02 06 00 00 00" \
-      --end "2019 02 15 23 59 59" \
-      --sourceDir /L2/RMA1 \
-      --targetDir ${DATA_DIR}/relampago/raw/radar/catchup/RMA1 \
-      |& LogFilter -d $ERRORS_LOG_DIR -p GetRMARadarsByFtp -i RMA1 \
-      >& /dev/null &
-endif
+GetRMARadarsByFtp.py --debug  \
+    --sourceDir /L2/RMA1 \
+    --targetDir ${DATA_DIR}/relampago/raw/radar/catchup/RMA1 \
+    |& LogFilter -d $ERRORS_LOG_DIR -p GetRMARadarsByFtp -i RMA1 \
+    >& /dev/null &
+
+#running GetRMARadarsByFtp.py
+
+#if ($status == 1) then
+#  GetRMARadarsByFtp.py --debug  \
+#      --start "2019 03 20 00 00 00" \
+#      --end "2019 03 25 23 59 59" \
+#      --sourceDir /L2/RMA1 \
+#      --targetDir ${DATA_DIR}/relampago/raw/radar/catchup/RMA1 \
+#      |& LogFilter -d $ERRORS_LOG_DIR -p GetRMARadarsByFtp -i RMA1 \
+#      >& /dev/null &
+#endif
 

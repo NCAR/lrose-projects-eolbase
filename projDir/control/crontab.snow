@@ -34,3 +34,5 @@
 # Sync soundings to raw
 */10 * * * *  csh -c "rsync_soundings_to_raw.relampago"    1> /dev/null 2> /dev/null
 #
+# get RMA1 radar
+0 0 * * * csh -c "run_GetRMARadarsByFtp"    1> /dev/null 2> /dev/null

@@ -276,11 +276,11 @@ def parseArgs():
                       help='Path of tmp directory')
     parser.add_option('--start',
                       dest='startTime',
-                      default='2018 11 01 00 00 00',
+                      default='1970 01 01 00 00 00',
                       help='Start time for retrieval')
     parser.add_option('--end',
                       dest='endTime',
-                      default='2018 11 10 00 00 00',
+                      default='1970 01 01 00 00 00',
                       help='End time for retrieval')
 
     (options, args) = parser.parse_args()
@@ -288,13 +288,29 @@ def parseArgs():
     if (options.verbose):
         options.debug = True
 
-    year, month, day, hour, minute, sec = options.startTime.split()
-    startTime = datetime.datetime(int(year), int(month), int(day),
-                                  int(hour), int(minute), int(sec))
+    syear, smonth, sday, shour, sminute, ssec = options.startTime.split()
+    startTime = datetime.datetime(int(syear), int(smonth), int(sday),
+                                  int(shour), int(sminute), int(ssec))
 
-    year, month, day, hour, minute, sec = options.endTime.split()
-    endTime = datetime.datetime(int(year), int(month), int(day),
-                                int(hour), int(minute), int(sec))
+    eyear, emonth, eday, ehour, eminute, esec = options.endTime.split()
+    endTime = datetime.datetime(int(eyear), int(emonth), int(eday),
+                                int(ehour), int(eminute), int(esec))
+
+    # check if start/end time is set?
+
+    if (syear == '1970' and eyear == '1970'):
+
+        # get current date and time
+        
+        now = time.gmtime()
+        nowTime = datetime.datetime(now.tm_year, now.tm_mon, now.tm_mday,
+                                    now.tm_hour, now.tm_min, now.tm_sec)
+        
+        # start time is 2 days before now
+        # end time is 2 days before now
+        
+        startTime = nowTime - timedelta(2, 0, 0)
+        endTime = nowTime + timedelta(2, 0, 0)
 
     if (options.debug):
         print >>sys.stderr, "Options:"
@@ -305,6 +321,8 @@ def parseArgs():
         print >>sys.stderr, "  sourceDir: ", options.sourceDir
         print >>sys.stderr, "  targetDir: ", options.targetDir
         print >>sys.stderr, "  tmpDir: ", options.tmpDir
+        print >>sys.stderr, "  startTime: ", startTime
+        print >>sys.stderr, "  endTime: ", endTime
 
 ########################################################################
 # Run a command in a shell, wait for it to complete
