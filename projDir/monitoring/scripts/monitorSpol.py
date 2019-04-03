@@ -58,13 +58,13 @@ def main():
                       help='Height of main figure in mm')
     parser.add_option('--start',
                       dest='startTime',
-                      default='1970 01 01 00 00 00',
-                      #default='2019 03 20 02 15 00',
+                      #default='1970 01 01 00 00 00',
+                      default='2019 01 01 01 00 00',
                       help='Start time for XY plot')
     parser.add_option('--end',
                       dest='endTime',
-                      default='1970 01 01 00 00 00',
-                      #default='2019 03 20 14 25 00',
+                      #default='1970 01 01 00 00 00',
+                      default='2019 01 31 23 59 59',
                       help='End time for XY plot')
     parser.add_option('--figDir',
                       dest='figureDir',
@@ -193,10 +193,8 @@ def main():
     outTable.loc['Total hours'] = outTable.sum()
     
     #Save data
-    firstTime=monShort.datetime.iloc[0]
-#    lastTime=monShort.datetime.iloc[-1]
+    firstTime=grouperInds[0]
     startString=firstTime.strftime("%Y%m%d%H%M")
-#    endString=lastTime.strftime("%Y%m%d")
     outTable.to_csv(options.figureDir + 'radar.SPOL.' + startString + '.Operation_Hours_Table.txt',
                     sep='\t',float_format='%12.1f',doublequote=False)
     exit
