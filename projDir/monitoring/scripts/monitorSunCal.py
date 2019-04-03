@@ -77,14 +77,7 @@ def main():
                       dest='figureDir',
                       default='/scr/sci/romatsch/spolPlots/suncalPy/',
                       help='Directory for output figures')
-#    parser.add_option('--testpulseIndH',
-#                      dest='testPulseIndH',
-#                      default=992,
-#                      help='Index where H test pulse can be found')
-#    parser.add_option('--testpulseIndV',
-#                      dest='testPulseIndV',
-#                      default=994,
-#                      help='Index where V test pulse can be found')
+
     
     
     (options, args) = parser.parse_args()
@@ -206,7 +199,7 @@ def main():
             
     # If you want to show the plots, uncomment the following line
     # Showing the plots will stop the script so it does not work when run as script
-    plt.show()
+    #plt.show()
    
     exit
        
