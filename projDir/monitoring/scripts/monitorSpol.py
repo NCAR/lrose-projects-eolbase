@@ -74,6 +74,10 @@ def main():
                       dest='plotHours',
                       default='6',
                       help='Plot time frame in hours starting at the full hour')
+    parser.add_option('--printTable',
+                      dest='printTable',
+                      default='0',
+                      help='Print table with operation hours: yes=1, no=0')
     
     
     (options, args) = parser.parse_args()
@@ -167,36 +171,37 @@ def main():
     # Showing the plots will stop the script so it does not work when run as script
     #plt.show()
     
-    # Count time of operation
-    # Split data into daily episodes
-    monDaily={}
-    g2=monShort.groupby(pd.Grouper(key='datetime',freq='24H'))
-    for n,g3 in g2:
-        monDaily[n] = g3
+    if int(options.printTable)==1:
+        # Count time of operation
+        # Split data into daily episodes
+        monDaily={}
+        g2=monShort.groupby(pd.Grouper(key='datetime',freq='24H'))
+        for n,g3 in g2:
+            monDaily[n] = g3
     
     
-    allDays=np.zeros((len(monDaily),4))
-    allTimes=monShort['datetime'].dt.normalize().dt.strftime('%Y-%m-%d').unique()
+        allDays=np.zeros((len(monDaily),4))
+        allTimes=monShort['datetime'].dt.normalize().dt.strftime('%Y-%m-%d').unique()
 
-    # Count time per day
-    for ii,key in enumerate(monDaily):
-        subDay=monDaily[key].copy()        
-        allDays[ii,:]=doCountTime(subDay)
+        # Count time per day
+        for ii,key in enumerate(monDaily):
+            subDay=monDaily[key].copy()        
+            allDays[ii,:]=doCountTime(subDay)
     
-    outTable=pd.DataFrame(allDays,columns=['Oil_Press_Good','Az_Brakes_Off',
+        outTable=pd.DataFrame(allDays,columns=['Oil_Press_Good','Az_Brakes_Off',
                                            'High_Volts_On','Xmit_Power_On'], index=allTimes)
-    outTable.index.name = 'Date               '
+        outTable.index.name = 'Date               '
     
-    # Add extra row before total
-    outTable.loc[''] = np.nan
-    #Calculate sum
-    outTable.loc['Total hours'] = outTable.sum()
+        # Add extra row before total
+        outTable.loc[''] = np.nan
+        # Calculate sum
+        outTable.loc['Total hours'] = outTable.sum()
     
-    #Save data
-    firstTime=grouperInds[0]
-    startString=firstTime.strftime("%Y%m%d%H%M")
-    outTable.to_csv(options.figureDir + 'radar.SPOL.' + startString + '.Operation_Hours_Table.txt',
-                    sep='\t',float_format='%12.1f',doublequote=False)
+        #Save data
+        firstTime=grouperInds[0]
+        startString=firstTime.strftime("%Y%m%d%H%M")
+        outTable.to_csv(options.figureDir + 'radar.SPOL.' + startString + '.Operation_Hours_Table.txt',
+                        sep='\t',float_format='%12.1f',doublequote=False)
     exit
        
 ########################################################################

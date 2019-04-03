@@ -20,4 +20,4 @@ set END2=`echo $END_NOSPACE | awk '{print substr($0,9,6)}'`
 SpdbXml2Table -params ~/git/lrose-projects-eolbase/projDir/qc/params/SpdbXml2Table.monitor.sband -start "$START_TIME" -end "$END_TIME" > "$DATA_DIR/projects/eolbase/tables/spolMon/spolMon_"$START1"_"$START2"_to_"$END1"_"$END2".txt"
 
 # Run python code to create plots
-~/git/lrose-projects-eolbase/projDir/monitoring/scripts/monitorSpol.py --start "$START_TIME" --end "$END_TIME" --figDir $PLOT_DIR --monFile $DATA_DIR/projects/eolbase/tables/spolMon/spolMon_"$START1"_"$START2"_to_"$END1"_"$END2".txt --plotHours 6
+~/git/lrose-projects-eolbase/projDir/monitoring/scripts/monitorSpol.py --start "$START_TIME" --end "$END_TIME" --figDir $PLOT_DIR --monFile $DATA_DIR/projects/eolbase/tables/spolMon/spolMon_"$START1"_"$START2"_to_"$END1"_"$END2".txt --plotHours 6 --printTable 0
