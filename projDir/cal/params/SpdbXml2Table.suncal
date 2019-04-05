@@ -425,6 +425,34 @@ xml_entries = {
   }
   ,
   {
+    xml_tag_list = "<RadarSunCal><testPulseDbmHx>",
+    specify_label = TRUE,
+    label = "testPulseDbmHx",
+    required = FALSE
+  }
+  ,
+  {
+    xml_tag_list = "<RadarSunCal><testPulseDbmVc>",
+    specify_label = TRUE,
+    label = "testPulseDbmVc",
+    required = FALSE
+  }
+  ,
+  {
+    xml_tag_list = "<RadarSunCal><testPulseDbmVx>",
+    specify_label = TRUE,
+    label = "testPulseDbmVx",
+    required = FALSE
+  }
+  ,
+  {
+    xml_tag_list = "<RadarSunCal><testPulseDbmHc>",
+    specify_label = TRUE,
+    label = "testPulseDbmHc",
+    required = FALSE
+  }
+  ,
+  {
     xml_tag_list = "<RadarSunCal><siteTempC>",
     specify_label = TRUE,
     label = "siteTempC",
