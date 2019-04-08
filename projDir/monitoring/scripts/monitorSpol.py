@@ -338,8 +338,11 @@ def doPlotTestTempFaults(outFilePath,data,firstTime,timeSpan):
     
     medians=[data.TestPulseRatioVcHc2.median(),data.TestPulseRatioVxHx2.median(),
              data.TestPulseRatioVcHx2.median(),data.TestPulseRatioVxHc2.median()]
-    new_medians = [x if x>-100 else np.nan for x in medians]     
-    meanMed=np.nanmean(new_medians)
+    new_medians = [x if x>-100 else np.nan for x in medians]   
+    if np.count_nonzero(~np.isnan(new_medians))==0:
+        meanMed=-1000
+    else:
+        meanMed=np.nanmean(new_medians)
     data.plot(x='datetime',y=['TestPulseRatioVcHc2','TestPulseRatioVxHx2','TestPulseRatioVcHx2','TestPulseRatioVxHc2'],
               ax=ax2,color=colorsT[5:10],fontsize=fontSize, linewidth=1,x_compat=True)
     configTimeAxisMedSpread(ax2, meanMed, 0.3, 'Test pulse ratio (db)', 'lower left',firstTime,lastTime,fontSize)
