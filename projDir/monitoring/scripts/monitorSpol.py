@@ -46,7 +46,7 @@ def main():
                       help='Set verbose debugging on')
     parser.add_option('--monFile',
                       dest='monFile',
-                      default='/scr/sci/romatsch/data/spol/spolMon/SpolMon_20190101_000000_to_20190131_235959.txt',
+                      default='/scr/hail1/rsfdata/projects/eolbase/tables/spolMon/spolMon_20190401_000000_to_20190430_235959.txt',
                       help='File with monitoring data')
     parser.add_option('--widthMain',
                       dest='mainWidthMm',
@@ -59,12 +59,12 @@ def main():
     parser.add_option('--start',
                       dest='startTime',
                       #default='1970 01 01 00 00 00',
-                      default='2019 01 01 01 00 00',
+                      default='2019 04 06 00 00 00',
                       help='Start time for XY plot')
     parser.add_option('--end',
                       dest='endTime',
                       #default='1970 01 01 00 00 00',
-                      default='2019 01 31 23 59 59',
+                      default='2019 04 06 05 59 59',
                       help='End time for XY plot')
     parser.add_option('--figDir',
                       dest='figureDir',
@@ -124,10 +124,42 @@ def main():
     
     # filter out correct times
     if (timeLimitsSet):
-        monShort=monData.loc[(monData['datetime'] >= startTime) & (monData['datetime'] <= endTime)]
+        monShortTest=monData.loc[(monData['datetime'] >= startTime) & (monData['datetime'] <= endTime)]
+        monShort=monShortTest.copy()
     else:
         monShort=monData.copy()
                     
+    # Calculate test pulse ratios
+    monShort['TestPulseRatioVcHc2']=(monShort['TestPulsePowerDbVc']-monShort['TestPulsePowerDbHc'])*2
+    monShort['TestPulseRatioVxHx2']=(monShort['TestPulsePowerDbVx']-monShort['TestPulsePowerDbHx'])*2
+    monShort['TestPulseRatioVcHx2']=(monShort['TestPulsePowerDbVc']-monShort['TestPulsePowerDbHx'])*2
+    monShort['TestPulseRatioVxHc2']=(monShort['TestPulsePowerDbVx']-monShort['TestPulsePowerDbHc'])*2
+    
+    # Remove test pulse data when test pulse was off
+    tpVxMovMean=monShort.TestPulsePowerDbVx.rolling(window=3).mean()
+    tpVxMovMean=tpVxMovMean.replace({np.nan:-99})
+    monShort['TestPulsePowerDbVx'].values[tpVxMovMean < -60] = -9999
+    monShort['TestPulseRatioVxHx2'].values[tpVxMovMean < -60] = -9999
+    monShort['TestPulseRatioVxHc2'].values[tpVxMovMean < -60] = -9999
+    
+    tpVcMovMean=monShort.TestPulsePowerDbVc.rolling(window=3).mean()
+    tpVcMovMean=tpVcMovMean.replace({np.nan:-99})
+    monShort['TestPulsePowerDbVc'].values[tpVcMovMean < -60] = -9999
+    monShort['TestPulseRatioVcHc2'].values[tpVcMovMean < -60] = -9999
+    monShort['TestPulseRatioVcHx2'].values[tpVcMovMean < -60] = -9999
+    
+    tpHcMovMean=monShort.TestPulsePowerDbHc.rolling(window=3).mean()
+    tpHcMovMean=tpHcMovMean.replace({np.nan:-99})
+    monShort['TestPulsePowerDbHc'].values[tpHcMovMean < -60] = -9999
+    monShort['TestPulseRatioVcHc2'].values[tpHcMovMean < -60] = -9999
+    monShort['TestPulseRatioVxHc2'].values[tpHcMovMean < -60] = -9999
+    
+    tpHxMovMean=monShort.TestPulsePowerDbHx.rolling(window=3).mean()
+    tpHxMovMean=tpHxMovMean.replace({np.nan:-99})
+    monShort['TestPulsePowerDbHx'].values[tpHxMovMean < -60] = -9999
+    monShort['TestPulseRatioVxHx2'].values[tpHxMovMean < -60] = -9999
+    monShort['TestPulseRatioVcHx2'].values[tpHxMovMean < -60] = -9999
+    
     # Split datat into episodes
     hourLengthStr=options.plotHours+'H'
     
@@ -277,8 +309,8 @@ def doPlotTestTempFaults(outFilePath,data,firstTime,timeSpan):
     #lastTime=data.datetime.iloc[-1]
     lastTime=firstTime+pd.DateOffset(hours=timeSpan)
        
-# Plot test pulses and temperatures
-    ax1 = fig.add_subplot(2,1,1,xmargin=0.0)
+# Plot test pulses and test pulse ratios
+    ax1 = fig.add_subplot(3,1,1,xmargin=0.0)
     ax2 = ax1.twinx()
     
     data.plot(x='datetime',y=['TestPulsePowerDbHc','TestPulsePowerDbVc',
@@ -297,16 +329,34 @@ def doPlotTestTempFaults(outFilePath,data,firstTime,timeSpan):
     
     allMeds=[medTHc, medTHx, medTVc, medTVx]
     allMeds[:] = [np.nan if x<-8888 else x for x in allMeds]
-    bottomVal=np.floor(np.nanmean(allMeds)/10)*10
-    if bottomVal==-70:
-        bottomVal=-80
-    topVal=bottomVal+10
-    
+    if np.count_nonzero(~np.isnan(allMeds))==0:
+        bottomVal=-1000
+    else:
+        bottomVal=np.floor(np.nanmean(allMeds)/10)*10
+    topVal=bottomVal+10    
     configTimeAxis(ax1, bottomVal, topVal, 'Power (dB)', 'upper left',firstTime,lastTime,fontSize)
+    
+    medians=[data.TestPulseRatioVcHc2.median(),data.TestPulseRatioVxHx2.median(),
+             data.TestPulseRatioVcHx2.median(),data.TestPulseRatioVxHc2.median()]
+    new_medians = [x if x>-100 else np.nan for x in medians]     
+    meanMed=np.nanmean(new_medians)
+    data.plot(x='datetime',y=['TestPulseRatioVcHc2','TestPulseRatioVxHx2','TestPulseRatioVcHx2','TestPulseRatioVxHc2'],
+              ax=ax2,color=colorsT[5:10],fontsize=fontSize, linewidth=1,x_compat=True)
+    configTimeAxisMedSpread(ax2, meanMed, 0.3, 'Test pulse ratio (db)', 'lower left',firstTime,lastTime,fontSize)
+        
+    hfmt = dates.DateFormatter('%H:%M')
+    ax1.xaxis.set_major_locator(dates.AutoDateLocator())
+    ax1.xaxis.set_major_formatter(hfmt)
+
+    fig.tight_layout()
+    
+# Plot temperatures
+    ax1 = fig.add_subplot(3,1,2,xmargin=0.0)
+       
     data.plot(x='datetime',y=['Temp_Klystron','Temp_Rear_Wall','Temp_CIRC-V','Temp_CIRC-H',
                               'Temp_LNA-V','Temp_LNA-H','Temp_RX-enclosure','Temp_TP-enclosure',
-                              'Temp_RX-plate','Temp_TX-coupler-H'],ax=ax2,color=colorsT[0:10],fontsize=fontSize, linewidth=0.7,x_compat=True)
-    configTimeAxis(ax2, 0, 50, 'Temperature (C)', 'lower left',firstTime,lastTime,fontSize)
+                              'Temp_RX-plate','Temp_TX-coupler-H'],ax=ax1,color=colorsT[0:10],fontsize=fontSize, linewidth=1,x_compat=True)
+    configTimeAxis(ax1, 0, 50, 'Temperature (C)', 'lower left',firstTime,lastTime,fontSize)
         
     hfmt = dates.DateFormatter('%H:%M')
     ax1.xaxis.set_major_locator(dates.AutoDateLocator())
@@ -315,7 +365,7 @@ def doPlotTestTempFaults(outFilePath,data,firstTime,timeSpan):
     fig.tight_layout()
     
 # Plot faults
-    ax1 = fig.add_subplot(2,1,2,xmargin=0.0)
+    ax1 = fig.add_subplot(3,1,3,xmargin=0.0)
     ax2 = ax1.twinx()
       
     data['Oil_Pressure']=data['Oil_Pressure_Fault']
@@ -329,7 +379,7 @@ def doPlotTestTempFaults(outFilePath,data,firstTime,timeSpan):
     ax1.set_yticks(np.arange(-3, 9, step=1), minor=False)
     ax1.set_yticklabels(['','','','False','True','False','True','False','True','','',''])
     data.plot(x='datetime',y='XmitPowerDbmTxTop',ax=ax2,color='black',fontsize=fontSize, linewidth=1,x_compat=True)
-    configTimeAxis(ax2, 35, 95, 'Power (dBm)', 'upper right',firstTime,lastTime,fontSize)
+    configTimeAxis(ax2, 35, 100, 'Power (dBm)', 'upper right',firstTime,lastTime,fontSize)
         
     hfmt = dates.DateFormatter('%H:%M')
     ax1.xaxis.set_major_locator(dates.AutoDateLocator())
@@ -364,6 +414,21 @@ def configTimeAxis(ax, miny, maxy, ylabel, legendLoc, firstTime, lastTime,fontSi
     ax.grid(False)
     if (miny > -9990 and maxy > -9990):
         ax.set_ylim([miny, maxy])
+        
+def configTimeAxisMedSpread(ax, ymedian, yhalfSpread, ylabel, legendLoc, firstTime, lastTime,fontSize):
+        
+    legend = ax.legend(loc=legendLoc, ncol=6)
+    for label in legend.get_texts():
+        label.set_fontsize(fontSize)
+    ax.set_xlim([firstTime, lastTime])
+    ax.set_xlabel("Time (UTC)",fontsize=fontSize)
+    ax.set_ylabel(ylabel,fontsize=fontSize)
+    ax.grid(False)
+    if (ymedian > -9990 and yhalfSpread > -9990):
+        ax.set_ylim([ymedian-yhalfSpread,ymedian+yhalfSpread])
+    hfmt = dates.DateFormatter('%H:%M')
+    ax.xaxis.set_major_locator(dates.AutoDateLocator())
+    ax.xaxis.set_major_formatter(hfmt)
         
 ########################################################################
 # Count operation time

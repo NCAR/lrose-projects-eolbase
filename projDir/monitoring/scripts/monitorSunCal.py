@@ -49,7 +49,7 @@ def main():
                       help='Set verbose debugging on')
     parser.add_option('--suncalFile',
                       dest='suncalFile',
-                      default='/scr/hail1/rsfdata/projects/eolbase/tables/spolSunCal/spolSunCal_20190401_000000_to_20190430_235959.txt',
+                      default='/scr/hail1/rsfdata/projects/eolbase/tables/spolSunCal/spolSunCal_20190301_000000_to_20190331_235959.txt',
                       help='File with suncal data')
     parser.add_option('--widthMain',
                       dest='mainWidthMm',
@@ -126,9 +126,41 @@ def main():
     
     # filter out correct times
     if (timeLimitsSet):
-        suncalShort=suncalData.loc[(suncalData['datetime'] >= startTime) & (suncalData['datetime'] <= endTime)]
+        suncalShortTest=suncalData.loc[(suncalData['datetime'] >= startTime) & (suncalData['datetime'] <= endTime)]
+        suncalShort=suncalShortTest.copy()
     else:
         suncalShort=suncalData
+    
+    # Calculate test pulse ratios
+    suncalShort['testPulseRatioVcHc2']=(suncalShort['testPulseDbmVc']-suncalShort['testPulseDbmHc'])*2
+    suncalShort['testPulseRatioVxHx2']=(suncalShort['testPulseDbmVx']-suncalShort['testPulseDbmHx'])*2
+    suncalShort['testPulseRatioVcHx2']=(suncalShort['testPulseDbmVc']-suncalShort['testPulseDbmHx'])*2
+    suncalShort['testPulseRatioVxHc2']=(suncalShort['testPulseDbmVx']-suncalShort['testPulseDbmHc'])*2
+    
+    # Remove test pulse data when test pulse was off
+    tpVxMovMean=suncalShort.testPulseDbmVx.rolling(window=3).mean()
+    tpVxMovMean=tpVxMovMean.replace({np.nan:-99})
+    suncalShort['testPulseDbmVx'].values[tpVxMovMean < -60] = -9999
+    suncalShort['testPulseRatioVxHx2'].values[tpVxMovMean < -60] = -9999
+    suncalShort['testPulseRatioVxHc2'].values[tpVxMovMean < -60] = -9999
+    
+    tpVcMovMean=suncalShort.testPulseDbmVc.rolling(window=3).mean()
+    tpVcMovMean=tpVcMovMean.replace({np.nan:-99})
+    suncalShort['testPulseDbmVc'].values[tpVcMovMean < -60] = -9999
+    suncalShort['testPulseRatioVcHc2'].values[tpVcMovMean < -60] = -9999
+    suncalShort['testPulseRatioVcHx2'].values[tpVcMovMean < -60] = -9999
+    
+    tpHcMovMean=suncalShort.testPulseDbmHc.rolling(window=3).mean()
+    tpHcMovMean=tpHcMovMean.replace({np.nan:-99})
+    suncalShort['testPulseDbmHc'].values[tpHcMovMean < -60] = -9999
+    suncalShort['testPulseRatioVcHc2'].values[tpHcMovMean < -60] = -9999
+    suncalShort['testPulseRatioVxHc2'].values[tpHcMovMean < -60] = -9999
+    
+    tpHxMovMean=suncalShort.testPulseDbmHx.rolling(window=3).mean()
+    tpHxMovMean=tpHxMovMean.replace({np.nan:-99})
+    suncalShort['testPulseDbmHx'].values[tpHxMovMean < -60] = -9999
+    suncalShort['testPulseRatioVxHx2'].values[tpHxMovMean < -60] = -9999
+    suncalShort['testPulseRatioVcHx2'].values[tpHxMovMean < -60] = -9999
                     
     # Split datat into sub times based on gaps larger than 3 hours
 
@@ -155,7 +187,7 @@ def main():
     for key in suncalSplit:
         subData=suncalSplit[key]
                 
-        if subData.shape[0]>3: # For some reason pandas.dataframe.plot thorws an error when plotting less than 4 data points
+        if subData.shape[0]>3: # For some reason pandas.dataframe.plot throws an error when plotting less than 4 data points
             
             # Replace -9999 and nans
             for column in subData:
@@ -417,10 +449,7 @@ def doPlotSunVars(outFilePath,data):
 # Plot coco xx testpulses, S1S2, and site temperature
     ax1 = fig.add_subplot(4,1,2,xmargin=0.0)
     ax2 = ax1.twinx()
-    
-    data['testPulseRatioVcHc2']=(data['testPulseDbmVc']-data['testPulseDbmHc'])*2
-    data['testPulseRatioVxHx2']=(data['testPulseDbmVx']-data['testPulseDbmHx'])*2
-          
+              
     data.plot(x='datetime',y=['S1S2','zdrCorr'],ax=ax1,color=colorsA[0:2],fontsize=fontSize)
     ax1.set_title('S1S2, zdrCorr, test pulse ratios, '+str(firstTime)+' to '+str(lastTime), fontsize=fontSize, fontweight='bold')
     med1=data.S1S2.median()
@@ -428,9 +457,13 @@ def doPlotSunVars(outFilePath,data):
     configTimeAxisMedSpread(ax1, np.mean([med1,med2]), 0.25, 'S1S2, zdrCorr (dB)', 'upper left',firstTime,lastTime,fontSize)
     
     data.plot(x='datetime',y=['testPulseRatioVcHc2','testPulseRatioVxHx2'],ax=ax2,color=colorsA[3:5],fontsize=fontSize)
-    med1=data.testPulseRatioVcHc2.median()
-    med2=data.testPulseRatioVxHx2.median()
-    configTimeAxisMedSpread(ax2, np.mean([med1,med2]), 0.25, 'TestPulseRatio*2 (dB)', 'upper right',firstTime,lastTime,fontSize)
+    medians=[data.testPulseRatioVcHc2.median(),data.testPulseRatioVxHx2.median()]
+    new_medians = [x if x>-100 else np.nan for x in medians]
+    if np.count_nonzero(~np.isnan(new_medians))==0:
+        meanMed=-1000
+    else:
+        meanMed=np.nanmean(new_medians)
+    configTimeAxisMedSpread(ax2, meanMed, 0.25, 'TestPulseRatio*2 (dB)', 'upper right',firstTime,lastTime,fontSize)
            
 # Plot widths
     ax1 = fig.add_subplot(4,1,3,xmargin=0.0)
@@ -447,13 +480,15 @@ def doPlotSunVars(outFilePath,data):
     ax1 = fig.add_subplot(4,1,4,xmargin=0.0)
     ax2 = ax1.twinx()
     
-    data['testPulseRatioVcHx2']=(data['testPulseDbmVc']-data['testPulseDbmHx'])*2
-    data['testPulseRatioVxHc2']=(data['testPulseDbmVx']-data['testPulseDbmHc'])*2
-    med1=data.testPulseRatioVcHx2.median()
-    med2=data.testPulseRatioVxHc2.median()
     data.plot(x='datetime',y=['testPulseRatioVcHx2','testPulseRatioVxHc2'],ax=ax1,fontsize=fontSize,color=colorsA[0:3])
     ax1.set_title('Test pulse ratios, number of Xpol points '+str(firstTime)+' to '+str(lastTime), fontsize=fontSize, fontweight='bold')    
-    configTimeAxisMedSpread(ax1, np.mean([med1,med2]), 0.25, 'TestPulseRatio*2 (dB)', 'upper left',firstTime,lastTime,fontSize)
+    medians=[data.testPulseRatioVcHx2.median(),data.testPulseRatioVxHc2.median()]
+    new_medians = [x if x>-100 else np.nan for x in medians]   
+    if np.count_nonzero(~np.isnan(new_medians))==0:
+        meanMed=-1000
+    else:
+        meanMed=np.nanmean(new_medians)
+    configTimeAxisMedSpread(ax1, meanMed, 0.25, 'TestPulseRatio*2 (dB)', 'upper left',firstTime,lastTime,fontSize)
     
     data.plot(x='datetime',y='nXpolPoints',ax=ax2,color=colorsA[4],fontsize=fontSize)
     configTimeAxisMinMax(ax2, 0, 150000, 'Number', 'upper right',firstTime,lastTime,fontSize)
