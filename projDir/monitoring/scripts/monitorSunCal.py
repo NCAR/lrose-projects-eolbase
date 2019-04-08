@@ -171,8 +171,8 @@ def main():
                         
             mpl.pyplot.close("all")
             
-            #doPlotSunAngles(options.figureDir,subData)
-            #doPlotPowersNoise(options.figureDir,subData)
+            doPlotSunAngles(options.figureDir,subData)
+            doPlotPowersNoise(options.figureDir,subData)
             doPlotSunVars(options.figureDir,subData)
             
     #Plot S1S2 vs temperature for whole data set
@@ -194,8 +194,8 @@ def main():
     suncalShort=suncalShort[(suncalShort.meanSunEl > 10)]
     
     lengthMissing3=suncalShort['siteTempC'].isna().sum()
-    #if lengthMissing3!=suncalShort.shape[0]:
-        #doPlotS1S2temp(options.figureDir,suncalShort)
+    if lengthMissing3!=suncalShort.shape[0]:
+        doPlotS1S2temp(options.figureDir,suncalShort)
             
     # If you want to show the plots, uncomment the following line
     # Showing the plots will stop the script so it does not work when run as script
@@ -409,7 +409,7 @@ def doPlotSunVars(outFilePath,data):
     med1=data.S1S2.median()
     med2=data.meanXpolRatioDb.median()
     med3=data.meanXmitPowerRatio.median()
-    configTimeAxisMedSpread(ax1, np.mean([med1,med2,med3]), 0.3, '(dB)', 'upper left',firstTime,lastTime,fontSize)
+    configTimeAxisMedSpread(ax1, np.mean([med1,med2,med3]), 0.25, '(dB)', 'upper left',firstTime,lastTime,fontSize)
     
     data.plot(x='timeForSiteTemp',y='siteTempC',ax=ax2,fontsize=fontSize,color=colorsA[4])    
     configTimeAxisMedSpread(ax2, data.siteTempC.median(), 15, 'Temperature (C)', 'upper right',firstTime,lastTime,fontSize)
@@ -425,12 +425,12 @@ def doPlotSunVars(outFilePath,data):
     ax1.set_title('S1S2, zdrCorr, test pulse ratios, '+str(firstTime)+' to '+str(lastTime), fontsize=fontSize, fontweight='bold')
     med1=data.S1S2.median()
     med2=data.zdrCorr.median()
-    configTimeAxisMedSpread(ax1, np.mean([med1,med2]), 0.3, 'S1S2, zdrCorr (dB)', 'upper left',firstTime,lastTime,fontSize)
+    configTimeAxisMedSpread(ax1, np.mean([med1,med2]), 0.25, 'S1S2, zdrCorr (dB)', 'upper left',firstTime,lastTime,fontSize)
     
     data.plot(x='datetime',y=['testPulseRatioVcHc2','testPulseRatioVxHx2'],ax=ax2,color=colorsA[3:5],fontsize=fontSize)
     med1=data.testPulseRatioVcHc2.median()
     med2=data.testPulseRatioVxHx2.median()
-    configTimeAxisMedSpread(ax2, np.mean([med1,med2]), 0.3, 'TestPulseRatio*2 (dB)', 'upper right',firstTime,lastTime,fontSize)
+    configTimeAxisMedSpread(ax2, np.mean([med1,med2]), 0.25, 'TestPulseRatio*2 (dB)', 'upper right',firstTime,lastTime,fontSize)
            
 # Plot widths
     ax1 = fig.add_subplot(4,1,3,xmargin=0.0)
@@ -453,7 +453,7 @@ def doPlotSunVars(outFilePath,data):
     med2=data.testPulseRatioVxHc2.median()
     data.plot(x='datetime',y=['testPulseRatioVcHx2','testPulseRatioVxHc2'],ax=ax1,fontsize=fontSize,color=colorsA[0:3])
     ax1.set_title('Test pulse ratios, number of Xpol points '+str(firstTime)+' to '+str(lastTime), fontsize=fontSize, fontweight='bold')    
-    configTimeAxisMedSpread(ax1, np.mean([med1,med2]), 0.3, 'TestPulseRatio*2 (dB)', 'upper left',firstTime,lastTime,fontSize)
+    configTimeAxisMedSpread(ax1, np.mean([med1,med2]), 0.25, 'TestPulseRatio*2 (dB)', 'upper left',firstTime,lastTime,fontSize)
     
     data.plot(x='datetime',y='nXpolPoints',ax=ax2,color=colorsA[4],fontsize=fontSize)
     configTimeAxisMinMax(ax2, 0, 150000, 'Number', 'upper right',firstTime,lastTime,fontSize)
@@ -478,7 +478,7 @@ def doPlotS1S2temp(outFilePath,data):
     # Don't remove outliers
     #rmOut,indsOut=reject_outliers(data['S1S2'],float('inf'))
     # Remove outliers
-    rmOut,indsOut=reject_outliers(data['S1S2'],100)
+    rmOut,indsOut=reject_outliers(data['S1S2'],70)
     dataRMout=pd.DataFrame([data['S1S2'].loc[indsOut],data['siteTempC'].loc[indsOut]])
     dataRMout=dataRMout.T
     # set up plots
@@ -538,7 +538,7 @@ def configTimeAxisMedSpread(ax, ymedian, yhalfSpread, ylabel, legendLoc, firstTi
     ax.set_ylabel(ylabel,fontsize=fontSize)
     ax.grid(False)
     if (ymedian > -9990 and yhalfSpread > -9990):
-        ax.set_ylim([ymedian-yhalfSpread,ymedian+yhalfSpread])
+        ax.set_ylim([ymedian-yhalfSpread,ymedian+yhalfSpread+yhalfSpread/4])
     hfmt = dates.DateFormatter('%H:%M')
     ax.xaxis.set_major_locator(dates.AutoDateLocator())
     ax.xaxis.set_major_formatter(hfmt)
