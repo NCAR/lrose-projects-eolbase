@@ -52,6 +52,35 @@ NcarAcPosn2Spdb     ops                start_inst(ingest)  snuff_inst
 #NcarAcPosn2Spdb    mobile             start_inst(ingest)  snuff_inst
 #
 ######################################################################
+# GFS MODEL
+#
+InputWatcher  gfs.eolbase  start_inst(ingest)   snuff_inst
+Grib2toMdv    gfs.conus    start_inst(ingest)   snuff_inst
+######################################################################
+# GOES16 sat data
+#
+InputWatcher       goes16_ch01      start_inst(ingest)    snuff_inst
+InputWatcher       goes16_ch02      start_inst(ingest)    snuff_inst
+InputWatcher       goes16_ch03      start_inst(ingest)    snuff_inst
+InputWatcher       goes16_ch06      start_inst(ingest)    snuff_inst
+InputWatcher       goes16_ch10      start_inst(ingest)    snuff_inst
+InputWatcher       goes16_ch13      start_inst(ingest)    snuff_inst
+InputWatcher       goes16_ch15      start_inst(ingest)    snuff_inst
+#
+GoesRnetCDF2Mdv    eolbase_ch01   start_inst(ingest)    snuff_inst
+GoesRnetCDF2Mdv    eolbase_ch02   start_inst(ingest)    snuff_inst
+GoesRnetCDF2Mdv    eolbase_ch03   start_inst(ingest)    snuff_inst
+GoesRnetCDF2Mdv    eolbase_ch06   start_inst(ingest)    snuff_inst
+GoesRnetCDF2Mdv    eolbase_ch10   start_inst(ingest)    snuff_inst
+GoesRnetCDF2Mdv    eolbase_ch13   start_inst(ingest)    snuff_inst
+GoesRnetCDF2Mdv    eolbase_ch15   start_inst(ingest)    snuff_inst
+######################################################################
+# Lightning
+#
+InputWatcher       goes16_glm        start_inst(ingest)    snuff_inst
+GoesRGLM2Spdb      glm16             start_inst(ingest)    snuff_inst 
+LtgSpdb2Mdv        glm16.eolbase     start_inst(ingest)    snuff_inst
+######################################################################
 # SNOWIE ingest
 #
 #MrmsGribIngest      snowie             start_inst(ingest)  snuff_inst 

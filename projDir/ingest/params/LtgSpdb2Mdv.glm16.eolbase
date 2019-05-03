@@ -43,7 +43,7 @@ debug = DEBUG_OFF;
 // Type: string
 //
 
-instance = "glm";
+instance = "glm16.eolbase";
 
 ///////////// mode ////////////////////////////////////
 //
@@ -485,8 +485,8 @@ output_projection = PROJ_LATLON;
 output_grid = {
     nx = 1500,
     ny = 1250,
-    minx = -80,
-    miny = -45,
+    minx = -120,
+    miny = 27.5,
     dx = 0.02,
     dy = 0.02
 };
