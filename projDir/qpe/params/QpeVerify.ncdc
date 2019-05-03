@@ -156,7 +156,8 @@ max_valid_accum_mm = 100;
 // Type: string
 //
 
-qpe_url = "mdvp:://hail:0:pecan/mdv/qpe_running_24hr";
+// qpe_url = "mdvp:://hail:0:pecan/mdv/qpe_running_24hr";
+qpe_url = "$(DATA_DIR)/pecan/mdv/qpe_accum_daily.max";
 
 ///////////// qpe_field_name //////////////////////////
 //
@@ -166,10 +167,10 @@ qpe_url = "mdvp:://hail:0:pecan/mdv/qpe_running_24hr";
 // Type: string
 //
 
-// qpe_field_name = "ACCUM_HYBRID";
+qpe_field_name = "ACCUM_HYBRID";
 // qpe_field_name = "ACCUM_PID";
 // qpe_field_name = "ACCUM_ZH";
-qpe_field_name = "ACCUM_Z_ZDR";
+// qpe_field_name = "ACCUM_Z_ZDR";
 
 ///////////// qpe_read_time_offset_secs ///////////////
 //
@@ -197,7 +198,8 @@ qpe_read_time_offset_secs = -120;
 // Type: int
 //
 
-qpe_read_time_margin_secs = 3600;
+// qpe_read_time_margin_secs = 3600;
+qpe_read_time_margin_secs = 86400;
 
 ///////////// qpe_grid_margin /////////////////////////
 //
