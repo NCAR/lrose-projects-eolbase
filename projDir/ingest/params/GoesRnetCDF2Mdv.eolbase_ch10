@@ -90,7 +90,7 @@ trigger_mode = LATEST_DATA;
 // Type: string
 //
 
-input_dir = "$(DATA_DIR)/eolbase/raw/goes16/ch10";
+input_dir = "$(DATA_DIR)/$(project)/raw/goes16/ch10";
 
 ///////////// max_valid_secs //////////////////////////
 //
@@ -198,7 +198,7 @@ output_vlevel_type = VERT_SATELLITE_IMAGE;
 // Type: string
 //
 
-output_url = "$(DATA_DIR)/eolbase/mdv/goes16_ch10";
+output_url = "$(DATA_DIR)/$(project)/mdv/goes16_ch10";
 
 ///////////// init_zero ///////////////////////////////
 //

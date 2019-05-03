@@ -114,7 +114,7 @@ mode = REALTIME;
 // Type: string
 //
 
-input_dir = "$(DATA_DIR)/eolbase/raw/goes16/glm";
+input_dir = "$(DATA_DIR)/$(project)/raw/goes16/glm";
 
 ///////////// max_valid_realtime_age_min //////////////
 //
@@ -273,7 +273,7 @@ bounding_box = {
 // Type: string
 //
 
-output_url = "spdbp:://localhost::eolbase/spdb/ltg/glm";
+output_url = "spdbp:://localhost::$(project)/spdb/ltg/glm";
 
 ///////////// expire_seconds //////////////////////////
 //

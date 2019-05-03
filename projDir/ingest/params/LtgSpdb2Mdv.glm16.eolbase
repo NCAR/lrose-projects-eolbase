@@ -78,7 +78,7 @@ mode = REALTIME;
 // Type: string
 //
 
-trigger_url = "eolbase/spdb/ltg/glm";
+trigger_url = "$(project)/spdb/ltg/glm";
 
 ///////////// realtime_trigger_url ////////////////////
 //
@@ -108,7 +108,7 @@ realtime_trigger_url = "";
 // Type: string
 //
 
-input_url = "eolbase/spdb/ltg/glm";
+input_url = "$(project)/spdb/ltg/glm";
 
 ///////////// spdb_ltg_id /////////////////////////////
 //
@@ -307,7 +307,7 @@ max_amplitude = -1;
 // Type: string
 //
 
-output_url = "eolbase/mdv/ltg/glm";
+output_url = "$(project)/mdv/ltg/glm";
 
 ///////////// time_stamp_flag /////////////////////////
 //
