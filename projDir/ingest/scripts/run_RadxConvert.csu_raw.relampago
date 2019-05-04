@@ -1,0 +1,7 @@
+#! /bin/csh
+
+cd $PROJ_DIR/ingest/params
+
+RadxConvert -params RadxConvert.csu_raw -debug -f $DATA_DIR/relampago/raw/radar/csu/COL201* > & /tmp/RadxConvert.csu_raw.log &
+
+tail -f /tmp/RadxConvert.csu_raw.log

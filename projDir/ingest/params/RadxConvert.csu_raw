@@ -1,10 +1,10 @@
 /**********************************************************************
- * TDRP params for RadxBufr
+ * TDRP params for RadxConvert
  **********************************************************************/
 
 //======================================================================
 //
-// Converts files from BUFR to Cfradial formats.
+// Converts files between CfRadial and other radial formats.
 //
 //======================================================================
  
@@ -42,7 +42,7 @@ debug = DEBUG_NORM;
 // Type: string
 //
 
-instance = "RMA1_catchup";
+instance = "csu_raw";
 
 //======================================================================
 //
@@ -60,25 +60,7 @@ instance = "RMA1_catchup";
 // Type: string
 //
 
-input_dir = "$(DATA_DIR)/relampago/raw/radar/catchup/RMA1";
-
-//======================================================================
-//
-// TABLE PATH.
-//
-//======================================================================
- 
-///////////// tables //////////////////////////////////
-//
-// Directory containing BUFR tables.
-//
-// Files with .csv extension.
-//
-//
-// Type: string
-//
-
-tables = "";
+input_dir = "$(DATA_DIR)/relampago/raw/radar/csu";
 
 ///////////// mode ////////////////////////////////////
 //
@@ -100,7 +82,7 @@ tables = "";
 //     FILELIST
 //
 
-mode = ARCHIVE;
+mode = REALTIME;
 
 ///////////// max_realtime_data_age_secs //////////////
 //
@@ -112,7 +94,7 @@ mode = ARCHIVE;
 // Type: int
 //
 
-max_realtime_data_age_secs = 900;
+max_realtime_data_age_secs = 3600;
 
 ///////////// latest_data_info_avail //////////////////
 //
@@ -195,34 +177,37 @@ file_quiescence = 5;
 // Type: string
 //
 
-search_ext = "BUFR";
+search_ext = "nc";
 
-///////////// incremental_realtime_mode ///////////////
+///////////// gematronik_realtime_mode ////////////////
 //
-// Set to TRUE if fields come in incrementally.
+// Set to TRUE if we are watching for Gematronik XML volumes.
 //
-// Some systems write fields from the same volume to separate files, so 
-//   they come in incrementally. In this case, we need to wait some time 
-//   for all of the fields to arrive before processing.
+// Gematronik volumes (for a given time) are stored in multiple files, 
+//   one for each field. Therefore, after the time on a volume changes and 
+//   a new field file is detected, we need to wait a while to ensure that 
+//   all of the files have had a chance to be writted to disk. You need to 
+//   set gematronik_realtime_wait_secs to a value in excess of the time it 
+//   takes for all of the files to be written.
 //
 //
 // Type: boolean
 //
 
-incremental_realtime_mode = TRUE;
+gematronik_realtime_mode = FALSE;
 
-///////////// incremental_realtime_wait_secs //////////
+///////////// gematronik_realtime_wait_secs ///////////
 //
 // Number of seconds to wait, so that all field files can be written to 
 //   disk before we start to read.
 //
-// See 'incremental_realtime_mode'.
+// See 'gematronik_realtime_mode'.
 //
 //
 // Type: int
 //
 
-incremental_realtime_wait_secs = 60;
+gematronik_realtime_wait_secs = 5;
 
 //======================================================================
 //
@@ -640,7 +625,7 @@ gate_spacing_km = 0.0075;
 // Type: boolean
 //
 
-override_instrument_name = FALSE;
+override_instrument_name = TRUE;
 
 ///////////// instrument_name /////////////////////////
 //
@@ -652,7 +637,7 @@ override_instrument_name = FALSE;
 // Type: string
 //
 
-instrument_name = "RMA1";
+instrument_name = "CHIVO";
 
 ///////////// override_site_name //////////////////////
 //
@@ -664,7 +649,7 @@ instrument_name = "RMA1";
 // Type: boolean
 //
 
-override_site_name = FALSE;
+override_site_name = TRUE;
 
 ///////////// site_name ///////////////////////////////
 //
@@ -676,7 +661,7 @@ override_site_name = FALSE;
 // Type: string
 //
 
-site_name = "Corboba";
+site_name = "RELAMPAGO";
 
 //======================================================================
 //
@@ -718,7 +703,7 @@ starting_volume_number = 1;
 // Type: boolean
 //
 
-autoincrement_volume_number = FALSE;
+autoincrement_volume_number = TRUE;
 
 //======================================================================
 //
@@ -903,6 +888,126 @@ elevation_offset = 0;
 
 //======================================================================
 //
+// OPTION TO OVERRIDE INSTRUMENT TYPE, PLATFORM TYPE AND PRIMARY AXIS.
+//
+// This applies to read operations.
+//
+//======================================================================
+ 
+///////////// override_instrument_type ////////////////
+//
+// Option to override instrument type on read.
+//
+// If true, the file will be read in, the instrument type will be 
+//   changed, and then any post-read processing will be performed.
+//
+//
+// Type: boolean
+//
+
+override_instrument_type = FALSE;
+
+///////////// instrument_type /////////////////////////
+//
+// Specify the instrument type. See override_instrument_type.
+//
+//
+// Type: enum
+// Options:
+//     INSTRUMENT_RADAR
+//     INSTRUMENT_LIDAR
+//
+
+instrument_type = INSTRUMENT_RADAR;
+
+///////////// override_platform_type //////////////////
+//
+// Option to override platform type on read. If true, the file will be 
+//   read in, the platform type will be changed, and then any post-read 
+//   processing will be performed.
+//
+// 	PLATFORM_FIXED  - radar is in a fixed location
+// 	PLATFORM_VEHICLE -  radar is mounted on a land vehicle
+// 	PLATFORM_SHIP - radar is mounted on a ship
+// 	PLATFORM_AIRCRAFT_FORE - forward-looking on aircraft
+// 	PLATFORM_AIRCRAFT_AFT - backward-looking on aircraft
+// 	PLATFORM_AIRCRAFT_TAIL - tail - e.g. ELDORA
+// 	PLATFORM_AIRCRAFT_BELLY -  belly radar on aircraft
+// 	PLATFORM_AIRCRAFT_ROOF - roof radar on aircraft
+// 	PLATFORM_AIRCRAFT_NOSE - radar in nose radome on aircraft
+// 	PLATFORM_SATELLITE_ORBIT - orbiting satellite
+// 	PLATFORM_SATELLITE_GEOSTAT - geostationary satellite.
+//
+//
+// Type: boolean
+//
+
+override_platform_type = FALSE;
+
+///////////// platform_type ///////////////////////////
+//
+// Platform type.
+//
+// See override_platform_type.
+//
+//
+// Type: enum
+// Options:
+//     PLATFORM_FIXED
+//     PLATFORM_VEHICLE
+//     PLATFORM_SHIP
+//     PLATFORM_AIRCRAFT_FORE
+//     PLATFORM_AIRCRAFT_AFT
+//     PLATFORM_AIRCRAFT_TAIL
+//     PLATFORM_AIRCRAFT_BELLY
+//     PLATFORM_AIRCRAFT_ROOF
+//     PLATFORM_AIRCRAFT_NOSE
+//     PLATFORM_SATELLITE_ORBIT
+//     PLATFORM_SATELLITE_GEOSTAT
+//
+
+platform_type = PLATFORM_FIXED;
+
+///////////// override_primary_axis ///////////////////
+//
+// Option to override primary axis on read. If true, the file will be 
+//   read in, the primary axis will be changed, and then any post-read 
+//   processing will be performed.
+//
+// 	PRIMARY_AXIS_Z - vertical
+// 	PRIMARY_AXIS_Y - longitudinal axis of platform
+// 	PRIMARY_AXIS_X - lateral axis of platform
+// 	PRIMARY_AXIS_Z_PRIME - inverted vertical
+// 	PRIMARY_AXIS_Y_PRIME - ELDORA, HRD tail
+// 	PRIMARY_AXIS_X_PRIME - translated lateral.
+//
+//
+// Type: boolean
+//
+
+override_primary_axis = FALSE;
+
+///////////// primary_axis ////////////////////////////
+//
+// Platform type.
+//
+// See override_primary_axis.
+//
+//
+// Type: enum
+// Options:
+//     PRIMARY_AXIS_Z
+//     PRIMARY_AXIS_Y
+//     PRIMARY_AXIS_X
+//     PRIMARY_AXIS_Z_PRIME
+//     PRIMARY_AXIS_Y_PRIME
+//     PRIMARY_AXIS_X_PRIME
+//
+
+primary_axis = PRIMARY_AXIS_Z;
+
+//======================================================================
+//
 // OPTION TO FORCE RELOAD OF SWEEP AND/OR VOLUME INFO, or RECOMPUTE 
 //   SWEEP FIXED ANGLE.
 //
@@ -1004,6 +1109,26 @@ optimized_transitions_max_elev_error = 0.25;
 //
 
 adjust_sweep_limits_using_angles = FALSE;
+
+//======================================================================
+//
+// OPTION TO SORT SWEEPS BY FIXED ANGLE.
+//
+//======================================================================
+ 
+///////////// sort_sweeps_by_fixed_angle //////////////
+//
+// Sort the sweeps by fixed angle.
+//
+// For some volumes, the sweep fixed angles may not be in increasing 
+//   order. This option allows you to reorder the sweeps, and rays, into 
+//   the correct order.
+//
+//
+// Type: boolean
+//
+
+sort_sweeps_by_fixed_angle = FALSE;
 
 //======================================================================
 //
@@ -1207,7 +1332,7 @@ user_defined_global_attributes = {
 // Type: boolean
 //
 
-set_output_fields = TRUE;
+set_output_fields = FALSE;
 
 ///////////// output_fields ///////////////////////////
 //
@@ -1247,120 +1372,24 @@ set_output_fields = TRUE;
 
 output_fields = {
   {
-    input_field_name = "TH",
-    output_field_name = "DBZT",
-    long_name = "unfiltered_reflectivity_horizontal_channel",
+    input_field_name = "DBZ",
+    output_field_name = "DBZ",
+    long_name = "reflectivity",
     standard_name = "equivalent_reflectivity_factor",
     output_units = "dBZ",
-    encoding = OUTPUT_ENCODING_INT16,
+    encoding = OUTPUT_ENCODING_ASIS,
     output_scaling = SCALING_DYNAMIC,
     output_scale = 0.01,
     output_offset = 0
   }
   ,
   {
-    input_field_name = "DBZH",
-    output_field_name = "DBZH",
-    long_name = "reflectivity_horizontal_channel",
-    standard_name = "equivalent_reflectivity_factor",
-    output_units = "dBZ",
-    encoding = OUTPUT_ENCODING_INT16,
-    output_scaling = SCALING_DYNAMIC,
-    output_scale = 0.01,
-    output_offset = 0
-  }
-  ,
-  {
-    input_field_name = "DBZV",
-    output_field_name = "DBZV",
-    long_name = "vertical_reflectivity",
-    standard_name = "equivalent_reflectivity_factor",
-    output_units = "dBZ",
-    encoding = OUTPUT_ENCODING_INT16,
-    output_scaling = SCALING_DYNAMIC,
-    output_scale = 0.01,
-    output_offset = 0
-  }
-  ,
-  {
-    input_field_name = "VRAD",
+    input_field_name = "VEL",
     output_field_name = "VEL",
     long_name = "radial_velocity",
     standard_name = "radial_velocity_of_scatterers_away_from_instrument",
     output_units = "m/s",
-    encoding = OUTPUT_ENCODING_INT16,
-    output_scaling = SCALING_DYNAMIC,
-    output_scale = 0.01,
-    output_offset = 0
-  }
-  ,
-  {
-    input_field_name = "WRAD",
-    output_field_name = "WIDTH",
-    long_name = "spectrum_width",
-    standard_name = "doppler_spectrum_width",
-    output_units = "m/s",
-    encoding = OUTPUT_ENCODING_INT16,
-    output_scaling = SCALING_DYNAMIC,
-    output_scale = 0.01,
-    output_offset = 0
-  }
-  ,
-  {
-    input_field_name = "ZDR",
-    output_field_name = "ZDR",
-    long_name = "differential_reflectivity",
-    standard_name = "differential_reflectivity_hv",
-    output_units = "dB",
     encoding = OUTPUT_ENCODING_ASIS,
-    output_scaling = SCALING_DYNAMIC,
-    output_scale = 0.01,
-    output_offset = 0
-  }
-  ,
-  {
-    input_field_name = "TDR",
-    output_field_name = "SNR",
-    long_name = "signal_to_noise_ratio",
-    standard_name = "signal_to_noise_ratio",
-    output_units = "dB",
-    encoding = OUTPUT_ENCODING_ASIS,
-    output_scaling = SCALING_DYNAMIC,
-    output_scale = 0.01,
-    output_offset = 0
-  }
-  ,
-  {
-    input_field_name = "PHIDP",
-    output_field_name = "PHIDP",
-    long_name = "differential_phase",
-    standard_name = "differential_phase_hv",
-    output_units = "deg",
-    encoding = OUTPUT_ENCODING_INT16,
-    output_scaling = SCALING_DYNAMIC,
-    output_scale = 0.01,
-    output_offset = 0
-  }
-  ,
-  {
-    input_field_name = "RHOHV",
-    output_field_name = "RHOHV",
-    long_name = "correlation_coefficient",
-    standard_name = "correlation_coefficient_hv",
-    output_units = "",
-    encoding = OUTPUT_ENCODING_INT16,
-    output_scaling = SCALING_DYNAMIC,
-    output_scale = 0.01,
-    output_offset = 0
-  }
-  ,
-  {
-    input_field_name = "KDP",
-    output_field_name = "KDP",
-    long_name = "specific_differential_phase",
-    standard_name = "specific_differential_phase_hv",
-    output_units = "deg/km",
-    encoding = OUTPUT_ENCODING_INT16,
     output_scaling = SCALING_DYNAMIC,
     output_scale = 0.01,
     output_offset = 0
@@ -1503,14 +1532,14 @@ apply_censoring = FALSE;
 
 censoring_fields = {
   {
-    name = "SNR",
-    min_valid_value = 0,
+    name = "DBZ",
+    min_valid_value = -20,
     max_valid_value = 1000,
     combination_method = LOGICAL_OR
   }
   ,
   {
-    name = "NCP",
+    name = "SQI",
     min_valid_value = 0.15,
     max_valid_value = 1000,
     combination_method = LOGICAL_OR
@@ -1788,7 +1817,7 @@ compression_level = 4;
 // Type: string
 //
 
-output_dir = "$(DATA_DIR)/relampago/cfradial/RMA1/catchup";
+output_dir = "$(DATA_DIR)/relampago/cfradial/csu_raw";
 
 ///////////// output_filename_mode ////////////////////
 //
@@ -1875,7 +1904,7 @@ include_site_name_in_file_name = FALSE;
 // Type: boolean
 //
 
-include_subsecs_in_file_name = TRUE;
+include_subsecs_in_file_name = FALSE;
 
 ///////////// include_scan_type_in_file_name //////////
 //
@@ -1978,7 +2007,7 @@ write_individual_sweeps = FALSE;
 // Type: boolean
 //
 
-write_latest_data_info = FALSE;
+write_latest_data_info = TRUE;
 
 ///////////// write_using_proposed_standard_name_attr /
 //
@@ -2015,7 +2044,7 @@ write_using_proposed_standard_name_attr = FALSE;
 // Type: boolean
 //
 
-separate_output_dirs_by_scan_type = FALSE;
+separate_output_dirs_by_scan_type = TRUE;
 
 ///////////// surveillance_subdir /////////////////////
 //
@@ -2041,7 +2070,7 @@ surveillance_subdir = "sur";
 // Type: string
 //
 
-sector_subdir = "sec";
+sector_subdir = "sur";
 
 ///////////// rhi_subdir //////////////////////////////
 //
@@ -2081,63 +2110,6 @@ vert_subdir = "vert";
 //
 
 sun_subdir = "sun";
-
-//======================================================================
-//
-// SEPARATING OUTPUT VOLUMES BASED ON RANGE GEOMETRY.
-//
-//======================================================================
- 
-///////////// separate_output_dirs_by_range_geometry //
-//
-// Option to separate the files based on range geometry.
-//
-// In some scan strategies, the operational mode alternates between long 
-//   and short range scans. For example there may be a long range scan 
-//   without doppler moments, followed by a short range scan. The range 
-//   gate length varies for each of these scans. This option allows you to 
-//   write the volumes into separate directories based on the range 
-//   geometry.
-//
-//
-// Type: boolean
-//
-
-separate_output_dirs_by_range_geometry = TRUE;
-
-///////////// dir_from_range_geometry /////////////////
-//
-// Sub-directories to be used for different range geometry.
-//
-// If the gate spacing is within the specified limits, the specified 
-//   sub-directory is used (appended to 'output_dir'). If the gate spacing 
-//   is not within any of the specified limits, then 'output_dir' is used 
-//   as-is.
-//
-//
-// Type: struct
-//   typedef struct {
-//      double min_range_gate_spacing_km;
-//      double max_range_gate_spacing_km;
-//      string output_subdir;
-//   }
-//
-// 1D array - variable length.
-//
-
-dir_from_range_geometry = {
-  {
-    min_range_gate_spacing_km = 0,
-    max_range_gate_spacing_km = 0.2,
-    output_subdir = "short_range"
-  }
-  ,
-  {
-    min_range_gate_spacing_km = 0.2,
-    max_range_gate_spacing_km = 0.5,
-    output_subdir = "long_range"
-  }
-};
 
 //======================================================================
 //
