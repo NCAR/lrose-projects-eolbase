@@ -27,7 +27,7 @@ Tstorms2Symprod   manager  start_inst(no-params)     snuff_inst
 ######################################################################
 # moments FMQ relay from SPOL
 #
-Fmq2Fmq relay.spol.marshall  start_inst(ingest)      snuff_inst
+#Fmq2Fmq relay.spol.marshall  start_inst(ingest)      snuff_inst
 ######################################################################
 # Base observations ingest - from LDM
 #
@@ -48,7 +48,7 @@ Mdv2SoundingSpdb    ruc                start_inst(ingest)  snuff_inst
 #NcGeneric2Mdv      sat_4km            start_inst(ingest)  snuff_inst 
 Ltg2Spdb            nldn               start_inst(ingest)  snuff_inst
 LtgSpdb2Mdv         nldn               start_inst(ingest)  snuff_inst
-NcarAcPosn2Spdb     ops                start_inst(ingest)  snuff_inst
+#NcarAcPosn2Spdb     ops                start_inst(ingest)  snuff_inst
 #NcarAcPosn2Spdb    mobile             start_inst(ingest)  snuff_inst
 #
 ######################################################################
