@@ -6,7 +6,7 @@
 # output directory (PLOT_DIR) and the current time and plots it in the
 # latest plot until yy hours have been filled. Then it starts a new plot.
 
-set PLOT_DIR="$DATA_DIR/projects/eolbase/catalog/images/spol_mon/"
+set PLOT_DIR="$DATA_DIR/eolbase/catalog/images/spol_mon/"
 
 # Get start time for last file in PLOT_DIR and set it as START_TIME
 set LAST_FILE_FULL="`ls $PLOT_DIR"radar.SPOL.*.Monitoring.png" | tail -1`"
@@ -42,8 +42,8 @@ set END1=`echo $END_NOSPACE | awk '{print substr($0,0,8)}'`
 set END2=`echo $END_NOSPACE | awk '{print substr($0,9,6)}'`
 
 # Make table from SPDB files
-SpdbXml2Table -params ~/git/lrose-projects-eolbase/projDir/qc/params/SpdbXml2Table.monitor.sband -start "$START_TIME" -end "$END_TIME" > $DATA_DIR/projects/eolbase/tables/spolMon/spolMon_"$START1"_"$START2"_to_"$END1"_"$END2".txt
+SpdbXml2Table -params ~/git/lrose-projects-eolbase/projDir/qc/params/SpdbXml2Table.monitor.sband -start "$START_TIME" -end "$END_TIME" > $DATA_DIR/eolbase/tables/spolMon/spolMon_"$START1"_"$START2"_to_"$END1"_"$END2".txt
 
 # Run python code to create plots
-~/git/lrose-projects-eolbase/projDir/monitoring/scripts/monitorSpol.py --start "$START_TIME" --end "$END_TIME" --figDir $PLOT_DIR --monFile $DATA_DIR/projects/eolbase/tables/spolMon/spolMon_"$START1"_"$START2"_to_"$END1"_"$END2".txt --plotHours 6 --printTable 0
+~/git/lrose-projects-eolbase/projDir/monitoring/scripts/monitorSpol.py --start "$START_TIME" --end "$END_TIME" --figDir $PLOT_DIR --monFile $DATA_DIR/eolbase/tables/spolMon/spolMon_"$START1"_"$START2"_to_"$END1"_"$END2".txt --plotHours 6 --printTable 0
 

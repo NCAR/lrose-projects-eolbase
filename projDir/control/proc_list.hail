@@ -207,3 +207,9 @@ RadxPartRain   phwa    start_RadxPartRain.phwa   snuff_inst
 #
 Metar2Spdb        hawaii  start_inst(ingest)   snuff_inst 
 madis2Spdb        hawaii  start_inst(ingest)   snuff_inst 
+######################################################################
+# MRMS for TORUS
+#
+InputWatcher        mrms_ReflQcComp    start_inst(ingest)  snuff_inst 
+Grib2toMdv          mrms_ReflQcComp    start_inst(ingest)  snuff_inst 
+######################################################################
