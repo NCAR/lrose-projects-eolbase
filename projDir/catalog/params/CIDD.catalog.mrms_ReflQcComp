@@ -97,7 +97,7 @@ field_list = {
 # Front Range
 #
 
-DBZ_max_column DBZ_max_column$(IS_TRANS) mdvp:://front.eol.ucar.edu:8080:$(project)/mdv/mrms/ReflQcComp?use_http=true&CREF_GPML  dbz.colors   dBZ -5 80 5 dcont,comp 1 0
+MergedReflectivityQCComposite MergedReflectivityQCComposite$(IS_TRANS) mdvp:://front.eol.ucar.edu:8080:$(project)/mdv/mrms/ReflQcComp?use_http=true&CREF_GPML  dbz.colors   dBZ -5 80 5 dcont,comp 1 0
 
 </GRIDS>
 

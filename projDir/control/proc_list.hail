@@ -210,6 +210,8 @@ madis2Spdb        hawaii  start_inst(ingest)   snuff_inst
 ######################################################################
 # MRMS for TORUS
 #
-InputWatcher        mrms_ReflQcComp    start_inst(ingest)  snuff_inst 
-Grib2toMdv          mrms_ReflQcComp    start_inst(ingest)  snuff_inst 
+InputWatcher      mrms_ReflQcComp       start_inst(ingest)  snuff_inst 
+Grib2toMdv        mrms_ReflQcComp       start_inst(ingest)  snuff_inst 
+LdataMultWatcher  catalog.torus         start_inst(catalog) snuff_inst
+LdataWatcher      catalog.images_torus  start_inst(catalog) snuff_inst
 ######################################################################

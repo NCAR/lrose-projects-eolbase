@@ -6,6 +6,7 @@
 #
 #===========================================================================
 
+from __future__ import print_function
 import os
 import sys
 from stat import *
@@ -19,7 +20,7 @@ from optparse import OptionParser
 
 def main():
 
-    appName = "put_images_to_catalog.py"
+    appName = os.path.basename(__file__)
     
     global options
     global ftpUser
@@ -35,9 +36,9 @@ def main():
     # initialize
     
     if (options.debug == True):
-        print >>sys.stderr, "======================================================="
-        print >>sys.stderr, "BEGIN: " + appName + " " + str(datetime.datetime.now())
-        print >>sys.stderr, "======================================================="
+        print("=======================================================", file=sys.stderr)
+        print("BEGIN: " + appName + " " + str(datetime.datetime.now()), file=sys.stderr)
+        print("=======================================================", file=sys.stderr)
 
     #   compute valid time string
 
@@ -63,11 +64,11 @@ def main():
     
     file_tokens = options.fileName.split(".")
     if (options.debug == True):
-        print >>sys.stderr, "filename toks: "
-        print >>sys.stderr, file_tokens
+        print("filename toks: ", file=sys.stderr)
+        print(file_tokens, file=sys.stderr)
 
     if len(file_tokens) != 6:
-        print >>sys.stderr, "*** Invalid file name: ", options.fileName
+        print("*** Invalid file name: ", options.fileName, file=sys.stderr)
         sys.exit(0)
 
     # category
@@ -97,7 +98,7 @@ def main():
                    field_name + "." + "png")
 
     if (options.debug == True):
-        print >>sys.stderr, "catalogName: ", catalogName
+        print("catalogName: ", catalogName, file=sys.stderr)
 
     # put the image file
 
@@ -117,8 +118,8 @@ def main():
         targetPath = os.path.join(targetDir, options.fileName);
 
         if (options.debug):
-            print >>sys.stderr, "Moving file: ", fullFilePath
-            print >>sys.stderr, "        to: ", targetPath
+            print("Moving file: ", fullFilePath, file=sys.stderr)
+            print("        to: ", targetPath, file=sys.stderr)
         if not os.path.exists(targetDir):
             os.makedirs(targetDir)
             
@@ -129,15 +130,15 @@ def main():
 
     if (options.removeAfterCopy == True):
         if (options.debug):
-            print >>sys.stderr, "Removing file: ", fullFilePath
+            print("Removing file: ", fullFilePath, file=sys.stderr)
         os.remove(fullFilePath)
 
     # let the user know we are done
 
     if (options.debug == True):
-        print >>sys.stderr, "======================================================="
-        print >>sys.stderr, "END: " + appName + " " + str(datetime.datetime.now())
-        print >>sys.stderr, "======================================================="
+        print("=======================================================", file=sys.stderr)
+        print("END: " + appName + " " + str(datetime.datetime.now()), file=sys.stderr)
+        print("=======================================================", file=sys.stderr)
 
     sys.exit(0)
 
@@ -147,8 +148,8 @@ def main():
 def putFile(filePath, catalogName):
 
     if (options.debug == True):
-        print >>sys.stderr, "Handling file: ", filePath
-        print >>sys.stderr, "  catalogName: ", catalogName
+        print("Handling file: ", filePath, file=sys.stderr)
+        print("  catalogName: ", catalogName, file=sys.stderr)
 
     # create tmp dir if necessary
 
@@ -157,7 +158,7 @@ def putFile(filePath, catalogName):
     dataDir = os.environ['DATA_DIR']
     tmpDir = os.path.join(dataDir, imageDir)
     if (options.debug == True):
-        print >>sys.stderr, "  tmpDir: ", tmpDir
+        print("  tmpDir: ", tmpDir, file=sys.stderr)
     if not os.path.exists(tmpDir):
         os.makedirs(tmpDir)
 
@@ -200,14 +201,14 @@ def ftpFile(fileName, filePath):
     # go to target dir
 
     if (options.debug == True):
-        print >>sys.stderr, "ftp cwd to: " + targetDir
+        print("ftp cwd to: " + targetDir, file=sys.stderr)
     
     ftp.cwd(targetDir)
 
     # put the file
 
     if (options.debug == True):
-        print >>sys.stderr, "putting file: ", filePath
+        print("putting file: ", filePath, file=sys.stderr)
 
     fp = open(filePath, 'rb')
     ftp.storbinary('STOR ' + fileName, fp)
@@ -285,18 +286,18 @@ def parseArgs():
     (options, args) = parser.parse_args()
 
     if (options.debug == True):
-        print >>sys.stderr, "Options:"
-        print >>sys.stderr, "  debug? ", options.debug
-        print >>sys.stderr, "  validTime: ", options.validTime
-        print >>sys.stderr, "  imageDir: ", options.imageDir
-        print >>sys.stderr, "  relFilePath: ", options.relFilePath
-        print >>sys.stderr, "  fileName: ", options.fileName
-        print >>sys.stderr, "  ftpServer: ", options.ftpServer
-        print >>sys.stderr, "  targetDir: ", options.targetDir
-        print >>sys.stderr, "  category: ", options.category
-        print >>sys.stderr, "  platform: ", options.platform
-        print >>sys.stderr, "  moveAfterCopy: ", options.moveAfterCopy
-        print >>sys.stderr, "  removeAfterCopy: ", options.removeAfterCopy
+        print("Options:", file=sys.stderr)
+        print("  debug? ", options.debug, file=sys.stderr)
+        print("  validTime: ", options.validTime, file=sys.stderr)
+        print("  imageDir: ", options.imageDir, file=sys.stderr)
+        print("  relFilePath: ", options.relFilePath, file=sys.stderr)
+        print("  fileName: ", options.fileName, file=sys.stderr)
+        print("  ftpServer: ", options.ftpServer, file=sys.stderr)
+        print("  targetDir: ", options.targetDir, file=sys.stderr)
+        print("  category: ", options.category, file=sys.stderr)
+        print("  platform: ", options.platform, file=sys.stderr)
+        print("  moveAfterCopy: ", options.moveAfterCopy, file=sys.stderr)
+        print("  removeAfterCopy: ", options.removeAfterCopy, file=sys.stderr)
 
 ########################################################################
 # Run a command in a shell, wait for it to complete
@@ -304,17 +305,17 @@ def parseArgs():
 def runCommand(cmd):
 
     if (options.debug == True):
-        print >>sys.stderr, "running cmd:",cmd
+        print("running cmd:",cmd, file=sys.stderr)
     
     try:
         retcode = subprocess.call(cmd, shell=True)
         if retcode < 0:
-            print >>sys.stderr, "Child was terminated by signal: ", -retcode
+            print("Child was terminated by signal: ", -retcode, file=sys.stderr)
         else:
             if (options.debug == True):
-                print >>sys.stderr, "Child returned code: ", retcode
-    except OSError, e:
-        print >>sys.stderr, "Execution failed:", e
+                print("Child returned code: ", retcode, file=sys.stderr)
+    except OSError as e:
+        print("Execution failed:", e, file=sys.stderr)
 
 ########################################################################
 # kick off main method
