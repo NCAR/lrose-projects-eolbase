@@ -97,7 +97,7 @@ field_list = {
 # Front Range
 #
 
-MESH MESH$(IS_TRANS) mdvp:://front.eol.ucar.edu:8080:$(project)/mdv/mrms/MESH?use_http=true&MESH_GPML mesh.colors mm -5 80 5 dcont,comp 1 0
+MESH MESH$(IS_TRANS) mdvp:://front.eol.ucar.edu:8080:$(project)/mdv/mrms/MESH?use_http=true&MESH_GPML mesh.colors mm -5 80 5 dcont 1 0
 
 </GRIDS>
 

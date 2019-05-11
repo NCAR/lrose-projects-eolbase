@@ -97,7 +97,7 @@ field_list = {
 # Front Range
 #
 
-MergedBaseReflectivity MergedBaseReflectivity$(IS_TRANS) mdvp:://front.eol.ucar.edu:8080:$(project)/mdv/mrms/ReflBase?use_http=true&BASE_REFL_GPML  dbz.colors   dBZ -5 80 5 dcont,comp 1 0
+MergedBaseReflectivity MergedBaseReflectivity$(IS_TRANS) mdvp:://front.eol.ucar.edu:8080:$(project)/mdv/mrms/ReflBase?use_http=true&BASE_REFL_GPML  dbz.colors   dBZ -5 80 5 dcont 1 0
 
 </GRIDS>
 
