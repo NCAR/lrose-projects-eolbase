@@ -64,7 +64,7 @@ setenv RANGE_RING_FLAG 0
 setenv SHOW_HEIGHT_SEL 0
 setenv TIME_INTERVAL 10.0
 setenv IMAGE_DIR $DATA_DIR/${project}/raw/images
-setenv OUTPUT_GEO_XML 1
+setenv OUTPUT_GEO_XML 0
 setenv MARGIN_WIDTH 0
 setenv HORIZ_DEFAULT_HEIGHT 1500
 
