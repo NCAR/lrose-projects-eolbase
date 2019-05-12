@@ -4,36 +4,36 @@
 check_dial_rsync_netcdf.py --debug \
     --dataDir /export/eldora1/wvdial_1_data \
     --maxDelayMins 15 \
-    --emails "dummy@ucar.edu" \
-    --fileTypes "MCS,LL" |& \
+    --emails "7207712435@mms.att.net, spuler@ucar.edu" \
+    --fileTypes "MCS,LL,WS" |& \
     LogFilter -d $ERRORS_LOG_DIR -p check_dial_rsync_netcdf.py -i wvdial_01 >& /dev/null &
 
 check_dial_rsync_netcdf.py --debug \
     --dataDir /export/eldora1/wvdial_2_data \
     --maxDelayMins 15 \
-    --emails "dummy@ucar.edu" \
-    --fileTypes "MCS,LL" |& \
+    --emails "7207712435@mms.att.net, spuler@ucar.edu" \
+    --fileTypes "MCS,LL,WS" |& \
     LogFilter -d $ERRORS_LOG_DIR -p check_dial_rsync_netcdf.py -i wvdial_02 >& /dev/null &
 
 check_dial_rsync_netcdf.py --debug \
     --dataDir /export/eldora1/wvdial_3_data \
     --maxDelayMins 15 \
-    --emails "dummy@ucar.edu" \
-    --fileTypes "MCS,LL" |& \
+    --emails "7207712435@mms.att.net, spuler@ucar.edu" \
+    --fileTypes "MCS,LL,WS" |& \
     LogFilter -d $ERRORS_LOG_DIR -p check_dial_rsync_netcdf.py -i wvdial_03 >& /dev/null &
 
 check_dial_rsync_netcdf.py --debug \
     --dataDir /export/eldora1/wvdial_4_data \
     --maxDelayMins 15 \
-    --emails "dummy@ucar.edu" \
-    --fileTypes "MCS,LL" |& \
+    --emails "7207712435@mms.att.net, spuler@ucar.edu" \
+    --fileTypes "MCS,LL,WS" |& \
     LogFilter -d $ERRORS_LOG_DIR -p check_dial_rsync_netcdf.py -i wvdial_04 >& /dev/null &
 
 check_dial_rsync_netcdf.py --debug \
    --dataDir /export/eldora1/wvdial_5_data \
-   --maxDelayMins 15 \
-   --emails "dummy@ucar.edu" \
-   --fileTypes "MCS,LL" |& \
+   --maxDelayMins 30 \
+   --emails "7207712435@mms.att.net, spuler@ucar.edu" \
+   --fileTypes "MCS,LL,WS" |& \
    LogFilter -d $ERRORS_LOG_DIR -p check_dial_rsync_netcdf.py -i wvdial_05 >& /dev/null &
 
 
