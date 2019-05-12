@@ -113,7 +113,7 @@ endif
 
 # python
 
-setenv PYTHONPATH ~/anaconda2/pkgs:$HOME/projDir/dial/Python/ptvv1_python/python:$HOME/projDir/dial/Python/NCAR-LidarProcessing/libraries
+setenv PYTHONPATH ~/anaconda2/pkgs:$HOME/dial/Python/ptvv1_python/python:$HOME/dial/Python/NCAR-LidarProcessing/libraries
 
 #setenv PYTHONPATH ~/anaconda3/pkgs
 

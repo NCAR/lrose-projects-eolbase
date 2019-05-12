@@ -3,14 +3,14 @@
 
 # DIAL1
 rsync_dial_data_from_field.py --debug \
-	--rsyncSource rsync://166.211.23.221/wvdial1/NetCDFOutput/ \
+	--rsyncSource rsync://166.253.219.16/wvdial1/NetCDFOutput/ \
 	--targetDir /export/eldora1/wvdial_1_data |& \
 	LogFilter -d $ERRORS_LOG_DIR -p rsync_dial_data_from_field.dial1 -i cron >& /dev/null &
 sleep 20
 
 # DIAL2
 rsync_dial_data_from_field.py --debug \
-	--rsyncSource rsync://128.117.47.98/wvdial2/NetCDFOutput/ \
+	--rsyncSource rsync://166.211.23.221/wvdial2/NetCDFOutput/ \
 	--targetDir /export/eldora1/wvdial_2_data/ |& \
 	LogFilter -d $ERRORS_LOG_DIR -p rsync_dial_data_from_field_Data.dial2 -i cron >& /dev/null &
 sleep 20
@@ -24,13 +24,13 @@ sleep 20
 
 # DIAL4
 rsync_dial_data_from_field.py --debug \
-	--rsyncSource rsync://166.164.215.174/wvdial4/NetCDFOutput/ \
+	--rsyncSource rsync://166.253.219.15/wvdial4/NetCDFOutput/ \
 	--targetDir /export/eldora1/wvdial_4_data/ |& \
 	LogFilter -d $ERRORS_LOG_DIR -p rsync_dial_data_from_field_Data.dial4 -i cron >& /dev/null &
 sleep 20
 
 # DIAL5
 rsync_dial_data_from_field.py --debug \
-	--rsyncSource rsync://128.117.47.177/wvdial5/NetCDFOutput/ \
+	--rsyncSource rsync://166.164.215.174/wvdial5/NetCDFOutput/ \
 	--targetDir /export/eldora1/wvdial_5_data/ |& \
 	LogFilter -d $ERRORS_LOG_DIR -p rsync_dial_data_from_field_Data.dial5 -i cron >& /dev/null &
