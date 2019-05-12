@@ -1,0 +1,18 @@
+#! /bin/csh
+
+# convert CSAPR data into NCAR CfRadial
+
+cd /scr/snow1/rsfdata/projects/relampago/raw/radar/doe/csapr2/ppi
+
+RadxConvert -debug -indir . -start "2019 01 21 00 00 00" -end "2019 02 08 00 00 00" -outdir /scr/snow1/rsfdata/projects/relampago/cfradial/doe/csapr/ppi >& /tmp/RadxConvert.csapr.ppi &
+
+cd /scr/snow1/rsfdata/projects/relampago/raw/radar/doe/csapr2/rhi
+
+RadxConvert -debug -indir . -start "2018 11 02 00 00 00" -end "2018 12 05 00 00 00" -outdir /scr/snow1/rsfdata/projects/relampago/cfradial/doe/csapr/rhi >& /tmp/RadxConvert.csapr.rhi &
+
+cd /scr/snow1/rsfdata/projects/relampago/raw/radar/doe/csapr2/rhi_ott
+
+RadxConvert -debug -indir . -start "2018 10 01 00 00 00" -end "2019 02 08 00 00 00" -outdir /scr/snow1/rsfdata/projects/relampago/cfradial/doe/csapr/rhi_ott >& /tmp/RadxConvert.csapr.rhi_ott &
+
+
+
