@@ -290,6 +290,20 @@ xml_entries = {
     label = "XmitPowerDbmTxTop",
     required = FALSE
   }
+  ,
+  {
+    xml_tag_list = "<SBandXmitPower><XmitPowerDbmH>",
+    specify_label = TRUE,
+    label = "XmitPowerDbmH",
+    required = FALSE
+  }
+  ,
+  {
+    xml_tag_list = "<SBandXmitPower><XmitPowerDbmV>",
+    specify_label = TRUE,
+    label = "XmitPowerDbmV",
+    required = FALSE
+  }
 };
 
 //======================================================================
