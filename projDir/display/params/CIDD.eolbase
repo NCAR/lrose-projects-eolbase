@@ -254,12 +254,12 @@ REFR_MEAN_Q        REFR_MEAN_Q        mdvp:://front.eol.ucar.edu:8080:eolbase/md
 REFR_SNR           REFR_SNR           mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/spol/refract/Refract?use_http=true&SNRHC   cpa.colors  dB -5 80 5 radial 1 0
 REFR_WIDTH         REFR_WIDTH         mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/spol/refract/Refract?use_http=true&WIDTH   width.colors  m/s -5 80 5 radial 1 0
 
-Refract_Delta_N   Refract_Delta_N   mdvp:://$(DATA_HOST)::mdv/refract/Refract&DELTA_N   deltaN_colors       dBZ -5 80 5 radial 1 0
-Refract_N         Refract_N         mdvp:://$(DATA_HOST)::mdv/refract/Refract&N         refrac_N_color2.colors  dBZ -5 80 5 radial 1 0
-Refract_SIGMA_N   Refract_SIGMA_N   mdvp:://$(DATA_HOST)::mdv/refract/Refract&SIGMA_N   refrac_sigmaN.colors   dBZ -5 80 5 radial 1 0
-Refract_SIGMA_DN  Refract_SIGMA_DN  mdvp:://$(DATA_HOST)::mdv/refract/Refract&SIGMA_DN  refrac_sigmaN.colors   dBZ -5 80 5 radial 1 0
-======== ========  mdvp::static//$(DATA_HOST):0:/spacer&Elevation  none.colors   m   -5   80  5  dcont   1 0
-======== ========  mdvp::static//$(DATA_HOST):0:/spacer&Elevation  none.colors   m   -5   80  5  dcont   1 0
+Refract_Delta_N   Refract_Delta_N   mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/refract/Refract&DELTA_N   deltaN_colors       dBZ -5 80 5 radial 1 0
+Refract_N         Refract_N         mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/refract/Refract&N         refrac_N_color2.colors  dBZ -5 80 5 radial 1 0
+Refract_SIGMA_N   Refract_SIGMA_N   mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/refract/Refract&SIGMA_N   refrac_sigmaN.colors   dBZ -5 80 5 radial 1 0
+Refract_SIGMA_DN  Refract_SIGMA_DN  mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/refract/Refract&SIGMA_DN  refrac_sigmaN.colors   dBZ -5 80 5 radial 1 0
+======== ========  mdvp::static//localhost:0:/spacer&Elevation  none.colors   m   -5   80  5  dcont   1 0
+======== ========  mdvp::static//localhost:0:/spacer&Elevation  none.colors   m   -5   80  5  dcont   1 0
 
 ##############################
 # K-BAND MOMENTS
@@ -1156,9 +1156,6 @@ cidd.max_adeg:               360.0
 
 cidd.color_file_subdir:   http://front.eol.ucar.edu/color_scales
 cidd.map_file_subdir:     http://front.eol.ucar.edu/maps
-
-#cidd.color_file_subdir:   $(PROJ_DIR)/display/color_scales,http://front.eol.ucar.edu/content/projects/hawk/eolbase/projDir/display/color_scales
-#cidd.map_file_subdir:     $(PROJ_DIR)/display/maps,http://front.eol.ucar.edu/content/projects/hawk/eolbase/projDir/display/maps
 
 #
 # Station locator features
