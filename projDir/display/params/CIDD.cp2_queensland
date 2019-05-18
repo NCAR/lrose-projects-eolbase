@@ -228,14 +228,14 @@ Terrain2  Terrain2  mdvp::static//front.eol.ucar.edu:8080:cp2_queensland/mdv/ter
 Terrain3  Terrain3  mdvp::static//front.eol.ucar.edu:8080:cp2_queensland/mdv/terrain?use_http=true&Elevation  terrain_low_tonedDown.colors   m   -5   80  5  dcont   1 0
 ======== ========  mdvp::static//front.eol.ucar.edu:8080:cp2_queensland/mdv/terrain?use_http=true&Elevation  none.colors   m   -5   80  5  dcont   1 0
 
-SatVis SatVis  mdvp:://$(DATA_HOST)::mdv/sat/vis?use_http=true&VIS  sat_albedo.colors  percent     -5   80  5  dcont   1 0
-SatIr SatIr  mdvp:://$(DATA_HOST)::mdv/sat/ir?use_http=true&IR  sat_temp.colors  C     -5   80  5  dcont   1 0
-SatWv SatWv  mdvp:://$(DATA_HOST)::mdv/sat/wv?use_http=true&WV  ch3.colors  C     -5   80  5  dcont   1 0
+SatVis SatVis  mdvp:://front.eol.ucar.edu:8080:mdv/sat/vis?use_http=true&VIS  sat_albedo.colors  percent     -5   80  5  dcont   1 0
+SatIr SatIr  mdvp:://front.eol.ucar.edu:8080:mdv/sat/ir?use_http=true&IR  sat_temp.colors  C     -5   80  5  dcont   1 0
+SatWv SatWv  mdvp:://front.eol.ucar.edu:8080:mdv/sat/wv?use_http=true&WV  ch3.colors  C     -5   80  5  dcont   1 0
 ======== ========  mdvp::static//front.eol.ucar.edu:8080:cp2_queensland/mdv/terrain?use_http=true&Elevation  none.colors   m   -5   80  5  dcont   1 0
 
-SatVis_sharp SatVis_sharp  mdvp:://$(DATA_HOST)::mdv/sat/vis?use_http=true&VIS  sat_albedo.colors  percent     -5   80  5 cart   1 0
-SatIr_sharp SatIr_sharp  mdvp:://$(DATA_HOST)::mdv/sat/ir?use_http=true&IR  sat_temp.colors  C     -5   80  5 cart   1 0
-SatWv_sharp SatWv_sharp  mdvp:://$(DATA_HOST)::mdv/sat/wv?use_http=true&WV  wv.colors  C     -5   80  5  cart   1 0
+SatVis_sharp SatVis_sharp  mdvp:://front.eol.ucar.edu:8080:mdv/sat/vis?use_http=true&VIS  sat_albedo.colors  percent     -5   80  5 cart   1 0
+SatIr_sharp SatIr_sharp  mdvp:://front.eol.ucar.edu:8080:mdv/sat/ir?use_http=true&IR  sat_temp.colors  C     -5   80  5 cart   1 0
+SatWv_sharp SatWv_sharp  mdvp:://front.eol.ucar.edu:8080:mdv/sat/wv?use_http=true&WV  wv.colors  C     -5   80  5  cart   1 0
 ======== ========  mdvp::static//front.eol.ucar.edu:8080:cp2_queensland/mdv/terrain?use_http=true&Elevation  none.colors   m   -5   80  5  dcont   1 0
 
 ======== ========  mdvp::static//front.eol.ucar.edu:8080:cp2_queensland/mdv/terrain?use_http=true&Elevation  none.colors   m   -5   80  5  dcont   1 0
@@ -264,10 +264,10 @@ CMD_SEC    CMD_SEC          mdvp:://front.eol.ucar.edu:8080:cp2_queensland/mdv/r
 CMD_FLAG_SUR  CMD_FLAG_SUR  mdvp:://front.eol.ucar.edu:8080:cp2_queensland/mdv/radarPolar/cp2_s/sur?use_http=true&CMD_FLAG cmd_flag.colors  none     -5   80  5  radial   1 0
 CMD_FLAG_SEC  CMD_FLAG_SEC  mdvp:://front.eol.ucar.edu:8080:cp2_queensland/mdv/radarPolar/cp2_s/sec?use_http=true&CMD_FLAG cmd_flag.colors  none     -5   80  5  radial   1 0
 
-#TDBZ   TDBZ       mdvp:://$(DATA_HOST)::mdv/radarPolar/cp2_s/sur?use_http=true&TDBZ    tdbz.colors  dBZSq -5 80 5 radial 1 0
-#SPIN   SPIN       mdvp:://$(DATA_HOST)::mdv/radarPolar/cp2_s/sur?use_http=true&SPIN    percent.colors  % -5 80 5 radial 1 0
-#ZDR_SDEV  ZDR_SDEV  mdvp:://$(DATA_HOST)::mdv/radarPolar/cp2_s/sur?use_http=true&ZDR_SDEV   sdzdr2.colors    dB -5 80 5 radial 1 0
-#PHIDP_SDEV  PHIDP_SDEV mdvp:://$(DATA_HOST)::mdv/radarPolar/cp2_s/sur?use_http=true&PHIDP_SDEV  sdphidp.colors  - -5 80 5 radial 1 0
+#TDBZ   TDBZ       mdvp:://front.eol.ucar.edu:8080:mdv/radarPolar/cp2_s/sur?use_http=true&TDBZ    tdbz.colors  dBZSq -5 80 5 radial 1 0
+#SPIN   SPIN       mdvp:://front.eol.ucar.edu:8080:mdv/radarPolar/cp2_s/sur?use_http=true&SPIN    percent.colors  % -5 80 5 radial 1 0
+#ZDR_SDEV  ZDR_SDEV  mdvp:://front.eol.ucar.edu:8080:mdv/radarPolar/cp2_s/sur?use_http=true&ZDR_SDEV   sdzdr2.colors    dB -5 80 5 radial 1 0
+#PHIDP_SDEV  PHIDP_SDEV mdvp:://front.eol.ucar.edu:8080:mdv/radarPolar/cp2_s/sur?use_http=true&PHIDP_SDEV  sdphidp.colors  - -5 80 5 radial 1 0
 
 ======== ========  mdvp::static//front.eol.ucar.edu:8080:cp2_queensland/mdv/terrain?use_http=true&Elevation  none.colors   m   -5   80  5  dcont   1 0
 ======== ========  mdvp::static//front.eol.ucar.edu:8080:cp2_queensland/mdv/terrain?use_http=true&Elevation  none.colors   m   -5   80  5  dcont   1 0
@@ -359,7 +359,7 @@ Ltg_monthly Ltg_monthly  mdvp:://front.eol.ucar.edu:8080:cp2_queensland/mdv/ltg?
 #
 # Legend_label  URL U V W_fieldnames units  Style [Color]
 #----------------------------------------------------------------------------
-#TREC    mdvp:://$(DATA_HOST)::dia/mdv/ctrec/ftg&  #1 #2 None  m/s  2      yellow
+#TREC    mdvp:://front.eol.ucar.edu:8080:dia/mdv/ctrec/ftg&  #1 #2 None  m/s  2      yellow
 
 </WINDS>
 
@@ -531,7 +531,7 @@ cidd.html_mode: 0
 
 # Image Generation related resources
 # Set this to a value to get cidd to output imagery in this directory
-#cidd.image_dir: /tmp
+cidd.image_dir: $(HOME)/images
 
 # Image extension - Sets the output image types
 # Legal image types are png,jpg,xpm,pgm,ppm,eim

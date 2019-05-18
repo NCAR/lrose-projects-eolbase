@@ -700,9 +700,6 @@ cidd.max_adeg:               360.0
 cidd.color_file_subdir:   http://front.eol.ucar.edu/color_scales
 cidd.map_file_subdir:     http://front.eol.ucar.edu/maps
 
-#cidd.color_file_subdir:   $(PROJ_DIR)/display/color_scales,http://front.eol.ucar.edu/content/projects/hawk/hawaii/projDir/display/color_scales
-#cidd.map_file_subdir:     $(PROJ_DIR)/display/maps,http://front.eol.ucar.edu/content/projects/hawk/hawaii/projDir/display/maps
-
 #
 # Station locator features
 #
@@ -1231,7 +1228,7 @@ cidd.menu_bar_funct19: EXIT_BUTTON
 
 ##########################################
 
-cidd.horiz_frame_label: FRONT - COLORADO
+cidd.horiz_frame_label: HAWAII NEXRAD MOSAIC
 
 # Set the message to display when no data is availible
 cidd.no_data_message:     NO DATA FOUND (in this area at the selected time)
