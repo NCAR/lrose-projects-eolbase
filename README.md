@@ -75,6 +75,8 @@ The system-level scripts reside in:
 
 These are the main controlling scripts for the project.
 
+All of these ```scripts``` directories are included in the PATH. Therefore if you add a script, and run ```rehash```, that script will be available for use.
+
 Executables and other high level scripts will reside in:
 
 ```
@@ -159,7 +161,54 @@ The cron table for each host is found in:
 
 This is a link which points to the cron table for the host.
 
-These are standard cron tables. See [geeksforgeeks](https://www.geeksforgeeks.org/crontab-in-linux-with-examples/) for examples. There are many web pages on writing cron tables.
+These are standard cron tables.
+
+See [geeksforgeeks](https://www.geeksforgeeks.org/crontab-in-linux-with-examples/) for examples.
+
+There are many web pages on writing cron tables.
+
+## Starting and stopping the system
+
+To start the system, run ```start_all```.
+
+This will run ```~/projDir/system/scripts/start_all```.
+
+```start_all``` will in turn do the following:
+
+* start the process mapper: ```procmap```.
+* start all of the processes in ```proc_list``` by running ```procmap_list_start```.
+* start the auto-restarter: ```procmap_auto_restart```.
+* install the cron table by running ```install_crontab```.
+
+```procmap_list_start``` goes through all of the processes in ```proc_list``` and runs their start scipts.
+
+The process_mapper ```procmap``` keeps a registry of all running processes.
+
+All processes listed in the ```proc_list``` register with ```procmap```, generally once every 60 secons.
+
+```procmap_auto_restart``` periodically checks with ```procmap``` to see which processes are running. It checks this against ```proc_list```, and if necessary restarts any missing processes.
+
+To see what is running, type ```ppm```. This is an alias for ```print_procmap -hb -up -status```.
+
+To see what processes are missing, run ```pcheck```. This is an alias for ```procmap_list_check -proc_list $PROJ_DIR/control/proc_list```.
+
+## Keeping track of the data
+
+The main environment variable for the data tree is $DATA_DIR. All data is stored relative to this location.
+
+The ```DataMapper``` process keeps a registry of all data sets stored on the host.
+
+Processes which write data generally register with the ```DataMapper``` after each write.
+
+In addition the ```Scout``` process crawls the tree below $DATA_DIR, accumulating stats on the files and bytes used.
+
+To see the data list type ```pdm```. This is an alias for ```PrintDataMap -all -relt -lreg```.
+
+## Adding a process to the proc_list
+
+
+
+As an example, we will use the script that rsync's GPS data results from Potsdam to mpd backups on our servers.
 
 ## Adding a script, running under cron, to the EOLBASE project
 
