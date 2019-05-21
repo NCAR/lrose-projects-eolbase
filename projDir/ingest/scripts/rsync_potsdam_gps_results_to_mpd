@@ -1,6 +1,6 @@
 #! /bin/csh
 
-# rsync GPS results data from ftp site to snow
+# rsync GPS results data from ftp site to mpd dirs on snow and fog
 
 cd /net/ftp/pub/data/incoming/potsdam
 
