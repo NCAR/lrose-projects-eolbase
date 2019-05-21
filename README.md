@@ -240,3 +240,58 @@ To add a script running under cron:
 * run ```crontab -l``` to check for your cron entry.
 * monitor the logs to make sure your script is running.
 
+## Logging and the LogFilter
+
+LogFilter is an application that will read from ```stdin``` and copy what it reads to a log file.
+
+```
+Usage: LogFilter -d logdir -p procname [options as below]
+options:
+       [ -h ] produce this list.
+       [ -debug ] print debug messages
+       [ -p ] set process name 
+       [ -i ] set process instance
+       [ -hourly ] set the logs to be placed in hourly files
+       [ -single ] create a single log file, not one per day
+       [ -t ] interval between time stamp prints (sec)
+              defaults to 3600, -1 disables printing
+       [ -keepRunningOnError ] keep running if an error occurs
+       [ -noLineStamp ] do not time-stamp every line
+```
+
+We use LogFilter to read the output from apps running on the system, and write this output neatly to dated subdirectories on the disk.
+
+The two main logging directories are:
+
+```
+  ERRORS_LOG_DIR = ~/projDir/logs/errors
+  RESTART_LOG_DIR = ~/projDir/logs/restart
+```
+
+The ```errors``` directory contains the output from the applications.
+
+The ```restart``` directory contains the output from any restarts performed by ```procmap_auto_restart```.
+
+In the ```crontab``` for each host you will see the following entry:
+
+```
+# Build links to log date subdirs
+*/5 * * * *   csh -c "start_build_logdir_links" 1> /dev/null 2> /dev/null
+```
+
+This runs every 5 minutes, and it create 2 links in the log directories.
+
+```
+  yesterday -> points to yesterday's day directory
+  today -> points to today's day directory
+```
+
+You can use these as shorthand when watching a log file grow.
+
+For example:
+
+```
+  tail -f ~/projDir/logs/errors/today/rsync.potsdam_gps_results_to_snow.log
+```
+
+
