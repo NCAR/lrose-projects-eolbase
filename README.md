@@ -135,7 +135,7 @@ The start and kill scripts can be actuall script names.
 Alternatively they may be macros as follows:
 
 * start_inst(dir): starts the specified application, using the parameter file ```appname.instance`` in the directory ```dir```.
-# snuff_inst: kills ```appname.instance```.
+* snuff_inst: kills ```appname.instance```.
 
 ## Adding a script, running under cron, to the EOLBASE project
 
