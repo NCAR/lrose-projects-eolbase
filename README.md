@@ -206,11 +206,37 @@ To see the data list type ```pdm```. This is an alias for ```PrintDataMap -all -
 
 ## Adding a process to the proc_list
 
+When adding a process to run, decide which directory to use.
 
+For example, a process reading in or converting data would go in ```~/projDir/ingest```. Or an algorithm such as ```Titan``` would go in ```~/projDir/alg```.
 
-As an example, we will use the script that rsync's GPS data results from Potsdam to mpd backups on our servers.
+In the ```params``` subdirectory, add the parameter file. Generally this should be named ```appname.instance```. For example, ```RadxConvert.kftg``` for converting NEXRAD data from the KFTG radar.
 
-## Adding a script, running under cron, to the EOLBASE project
+If the parameter file is named in this way, you can use ```start_inst``` to start it via ```procmap_list_start``` or ```procmap_auto_restart```.
 
-As an example, we will use the script that rsync's GPS data results from Potsdam to mpd backups on our servers.
+Such an app would have something like the following in the ```proc_list```:
+
+```
+RadxConvert   kftg  start_inst(ingest)     snuff_inst
+```
+
+If the app needs its own start script, write that and save it in the ```scripts``` subdirectory.
+
+Then the entry in ```proc_list``` would look like the following:
+
+```
+Scout               primary  start_Scout               kill_Scout
+```
+
+After adding the entry to ```proc_list```, you can either wait for the app to be started by ```procmap_auto_restart```, or you can use ```start_all``` to go through the proc_list starting all apps that are not already running.
+
+## Adding a script running under cron
+
+To add a script running under cron:
+
+* write the script, add it to the relevant ```scripts``` subdirectory.
+* add a cron entry to ```~/projDir/control/crontab```.
+* run ```install_crontab```.
+* run ```crontab -l``` to check for your cron entry.
+* monitor the logs to make sure your script is running.
 
