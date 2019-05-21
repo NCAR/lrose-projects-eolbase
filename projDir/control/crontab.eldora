@@ -58,3 +58,6 @@
 */5 * * * *  csh -c "rsync_mpd_backup_to_snow" 1> /dev/null 2> /dev/null
 */6 * * * *  csh -c "rsync_mpd_backup_to_fog" 1> /dev/null 2> /dev/null
 ####################################################################
+# rsync POTSDAM GPS data to snow and fog
+*/15 * * * *   csh -c "rsync_potsdam_gps_results_to_mpd" 1> /dev/null 2> /dev/null
+####################################################################
