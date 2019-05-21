@@ -97,6 +97,8 @@ which points to the relevation project info for that host.
 
 ## Controlling the processes running on a host
 
+### Processes that run all the time
+
 The process list for each host is found in:
 
 ```
@@ -146,6 +148,18 @@ Alternatively they may be macros as follows:
 * start_inst(dir): starts the specified application, using the parameter file ```appname.instance``` in the directory ```dir```.
 * start_inst(no-params): starts the specified application, without specifying a parameter file
 * snuff_inst: kills ```appname.instance```.
+
+### Processes that run at given times - controlled by ```cron```
+
+The cron table for each host is found in:
+
+```
+  ~/projDir/control/crontab
+```
+
+This is a link which points to the cron table for the host.
+
+These are standard cron tables. See [geeksforgeeks](https://www.geeksforgeeks.org/crontab-in-linux-with-examples/) for examples. There are many web pages on writing cron tables.
 
 ## Adding a script, running under cron, to the EOLBASE project
 
