@@ -112,15 +112,24 @@ The process list looks something like this:
 # EOLBASE - on hail
 ######################################################################
 # SYSTEM processes
-Janitor           logs     start_Janitor.logs        snuff_inst
-Scout             primary  start_Scout               kill_Scout
-DataMapper        primary  start_DataMapper          kill_DataMapper
+Janitor             logs     start_Janitor.logs        snuff_inst
+Scout               primary  start_Scout               kill_Scout
+DataMapper          primary  start_DataMapper          kill_DataMapper
 ######################################################################
 # SERVER processes
-DsServerMgr       primary  start_inst(no-params)     snuff_inst
-DsProxyServer     primary  start_inst(no-params)     snuff_inst
-DsMdvServer       manager  start_inst(no-params)     snuff_inst
+DsServerMgr         primary  start_inst(no-params)     snuff_inst
+DsProxyServer       primary  start_inst(no-params)     snuff_inst
+DsMdvServer         manager  start_inst(no-params)     snuff_inst
+######################################################################
+# Base observations ingest - from LDM
+InputWatcher        mrms_conus_plus    start_inst(ingest)  snuff_inst 
+Metar2Spdb          ops                start_inst(ingest)  snuff_inst 
+LdmDynamic2Static   metar              start_inst(ingest)  snuff_inst
+######################################################################
+# Interpolate surface data
+SurfInterp          ops                start_inst(alg)     snuff_inst
 # etc. etc.
+######################################################################
 ```
 
 The 4 columns are as follows:
@@ -135,6 +144,7 @@ The start and kill scripts can be actuall script names.
 Alternatively they may be macros as follows:
 
 * start_inst(dir): starts the specified application, using the parameter file ```appname.instance``` in the directory ```dir```.
+* start_inst(no-params): starts the specified application, without specifying a parameter file
 * snuff_inst: kills ```appname.instance```.
 
 ## Adding a script, running under cron, to the EOLBASE project
