@@ -46,7 +46,7 @@ def main():
                       help='Set verbose debugging on')
     parser.add_option('--monFile',
                       dest='monFile',
-                      default='/scr/hail1/rsfdata/projects/eolbase/tables/spolMon/spolMon_20190401_000000_to_20190430_235959.txt',
+                      default='/scr/hail1/rsfdata/eolbase/tables/spolMon/spolMon_20190501_000000_to_20190531_235959.txt',
                       help='File with monitoring data')
     parser.add_option('--widthMain',
                       dest='mainWidthMm',
@@ -59,12 +59,12 @@ def main():
     parser.add_option('--start',
                       dest='startTime',
                       #default='1970 01 01 00 00 00',
-                      default='2019 04 06 00 00 00',
+                      default='2019 05 01 00 00 00',
                       help='Start time for XY plot')
     parser.add_option('--end',
                       dest='endTime',
                       #default='1970 01 01 00 00 00',
-                      default='2019 04 06 05 59 59',
+                      default='2019 05 31 23 59 59',
                       help='End time for XY plot')
     parser.add_option('--figDir',
                       dest='figureDir',
@@ -197,7 +197,7 @@ def main():
             
             mpl.pyplot.close("all")
             print(grouperInds[idx])
-            doPlotTestTempFaults(options.figureDir,subData,grouperInds[idx],float(options.plotHours))
+            #doPlotTestTempFaults(options.figureDir,subData,grouperInds[idx],float(options.plotHours))
             
     # If you want to show the plots, uncomment the following line
     # Showing the plots will stop the script so it does not work when run as script
@@ -211,14 +211,17 @@ def main():
         for n,g3 in g2:
             monDaily[n] = g3
     
-    
-        allDays=np.zeros((len(monDaily),4))
         allTimes=monShort['datetime'].dt.normalize().dt.strftime('%Y-%m-%d').unique()
+        allDays=np.zeros((len(allTimes),4))
+        
+        jj=0
 
         # Count time per day
         for ii,key in enumerate(monDaily):
-            subDay=monDaily[key].copy()        
-            allDays[ii,:]=doCountTime(subDay)
+            subDay=monDaily[key].copy()      
+            if subDay.shape[0]!=0:
+                allDays[jj,:]=doCountTime(subDay)
+                jj=jj+1
     
         outTable=pd.DataFrame(allDays,columns=['Oil_Press_Good','Az_Brakes_Off',
                                            'High_Volts_On','Xmit_Power_On'], index=allTimes)
@@ -447,7 +450,7 @@ def doCountTime(data):
     abFmin=0
     hvoTmin=0
     powTmin=0    
-        
+    
     for key in monMin:
         subHour=monMin[key].copy()
         if subHour.shape[0]>0:
@@ -455,9 +458,9 @@ def doCountTime(data):
             abF=(subHour['Azimuth_Brakes_Fault'] == 0).sum()
             hvoT=(subHour['HighVoltsOn'] == 1).sum()
             powT=(subHour['XmitPowerDbmTxTop'] > 75).sum()
-        
+    
             totLen=subHour.shape[0]
-        
+    
             oilFmin=oilFmin+oilF/totLen*10
             abFmin=abFmin+abF/totLen*10
             hvoTmin=hvoTmin+hvoT/totLen*10
