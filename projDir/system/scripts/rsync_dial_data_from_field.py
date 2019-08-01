@@ -122,9 +122,9 @@ def doRsyncForDay(dayTime, iday):
     # create rsync command
 
     if (iday == 0):
-        cmd = 'rsync -avz --compress-level=9 "' + options.rsyncSource + sourceDirRoot + '*" .'
+        cmd = 'rsync -avz --timeout=60 --compress-level=9 "' + options.rsyncSource + sourceDirRoot + '*" .'
     else:
-        cmd = 'rsync -avz --compress-level=9 "' + options.rsyncSource + sourceDirRoot + '*" .'
+        cmd = 'rsync -avz --timeout=60 --compress-level=9 "' + options.rsyncSource + sourceDirRoot + '*" .'
 
     # run the command
     
