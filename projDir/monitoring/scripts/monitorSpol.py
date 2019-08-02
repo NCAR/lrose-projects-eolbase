@@ -197,7 +197,7 @@ def main():
             
             mpl.pyplot.close("all")
             print(grouperInds[idx])
-            #doPlotTestTempFaults(options.figureDir,subData,grouperInds[idx],float(options.plotHours))
+            doPlotTestTempFaults(options.figureDir,subData,grouperInds[idx],float(options.plotHours))
             
     # If you want to show the plots, uncomment the following line
     # Showing the plots will stop the script so it does not work when run as script

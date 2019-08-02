@@ -210,18 +210,44 @@ madis2Spdb        hawaii  start_inst(ingest)   snuff_inst
 ######################################################################
 # MRMS for TORUS
 #
-InputWatcher      mrms_ReflQcComp       start_inst(ingest)  snuff_inst 
-InputWatcher      mrms_ReflComp         start_inst(ingest)  snuff_inst 
-InputWatcher      mrms_ReflQcBase       start_inst(ingest)  snuff_inst 
-InputWatcher      mrms_ReflBase         start_inst(ingest)  snuff_inst 
-InputWatcher      mrms_MESH             start_inst(ingest)  snuff_inst 
+#InputWatcher      mrms_ReflQcComp       start_inst(ingest)  snuff_inst 
+#InputWatcher      mrms_ReflComp         start_inst(ingest)  snuff_inst 
+#InputWatcher      mrms_ReflQcBase       start_inst(ingest)  snuff_inst 
+#InputWatcher      mrms_ReflBase         start_inst(ingest)  snuff_inst 
+#InputWatcher      mrms_MESH             start_inst(ingest)  snuff_inst 
 #
-Grib2toMdv        mrms_ReflQcComp       start_inst(ingest)  snuff_inst 
-Grib2toMdv        mrms_ReflComp         start_inst(ingest)  snuff_inst 
-Grib2toMdv        mrms_ReflQcBase       start_inst(ingest)  snuff_inst 
-Grib2toMdv        mrms_ReflBase         start_inst(ingest)  snuff_inst 
-Grib2toMdv        mrms_MESH             start_inst(ingest)  snuff_inst 
+#Grib2toMdv        mrms_ReflQcComp       start_inst(ingest)  snuff_inst 
+#Grib2toMdv        mrms_ReflComp         start_inst(ingest)  snuff_inst 
+#Grib2toMdv        mrms_ReflQcBase       start_inst(ingest)  snuff_inst 
+#Grib2toMdv        mrms_ReflBase         start_inst(ingest)  snuff_inst 
+#Grib2toMdv        mrms_MESH             start_inst(ingest)  snuff_inst 
 #
-LdataMultWatcher  catalog.torus         start_inst(catalog) snuff_inst
-LdataWatcher      catalog.images_torus  start_inst(catalog) snuff_inst
+#LdataMultWatcher  catalog.torus         start_inst(catalog) snuff_inst
+#LdataWatcher      catalog.images_torus  start_inst(catalog) snuff_inst
 ######################################################################
+######################################################################
+#
+# OTREC
+#
+######################################################################
+# GFS MODEL
+#
+Grib2toMdv    gfs.otrec  start_inst(ingest)   snuff_inst
+######################################################################
+# model soundings at each radar
+#
+#Mdv2SoundingSpdb  otrec  start_inst(ingest)  snuff_inst
+######################################################################
+# SURFACE OBS
+#
+Metar2Spdb          otrec      start_inst(ingest)    snuff_inst 
+######################################################################
+# GOES16 sat data
+#
+GoesRnetCDF2Mdv    otrec_ch01   start_inst(ingest)    snuff_inst
+GoesRnetCDF2Mdv    otrec_ch02   start_inst(ingest)    snuff_inst
+GoesRnetCDF2Mdv    otrec_ch03   start_inst(ingest)    snuff_inst
+GoesRnetCDF2Mdv    otrec_ch06   start_inst(ingest)    snuff_inst
+GoesRnetCDF2Mdv    otrec_ch10   start_inst(ingest)    snuff_inst
+GoesRnetCDF2Mdv    otrec_ch13   start_inst(ingest)    snuff_inst
+GoesRnetCDF2Mdv    otrec_ch15   start_inst(ingest)    snuff_inst
