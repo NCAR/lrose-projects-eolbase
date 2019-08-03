@@ -116,7 +116,7 @@ GOES16_CH06  GOES16_CH06  mdvp:://front.eol.ucar.edu:8080:otrec/mdv/goes16_ch06/
 GFS-TMP   GFS-TMP  mdvp:://front.eol.ucar.edu:8080:otrec/mdv/gfs/otrec?use_http=true&TMP  temp.colors   C   -5   80  5  dcont   1 0
 GFS-RH    GFS-RH   mdvp:://front.eol.ucar.edu:8080:otrec/mdv/gfs/otrec?use_http=true&RH   rh.colors   %   -5   80  5  dcont   1 0
 GFS-PRES  GFS-PRES mdvp:://front.eol.ucar.edu:8080:otrec/mdv/gfs/otrec?use_http=true&Pressure pressure_mb.colors   m/s   -5   80  5  dcont   1 0
-SURF_Terrain Terrain  mdvp::terrain//front.eol.ucar.edu:8080:otrec/mdv/terrain?use_http=true&Elevation terrain_otrec.colors m -5 80 5 dcont 1 0
+SURF_Terrain Terrain  mdvp::terrain//front.eol.ucar.edu:8080:eolbase/mdv/terrain?use_http=true&Elevation terrain.colors m -5 80 5 dcont 1 0
 
 ========   ========    mdvp::static//front.eol.ucar.edu:8080:/spacer/moments&Elevation       none.colors  m   -5 80 5 cont  1 0
 ========   ========    mdvp::static//front.eol.ucar.edu:8080:/spacer/moments&Elevation       none.colors  m   -5 80 5 cont  1 0
@@ -1235,7 +1235,7 @@ prod_info = {
     data_type = 0,
     render_type = RENDER_ALL_VALID,
     // render_type = RENDER_ALL_BEFORE_DATA_TIME,
-    on_by_default = FALSE,
+    on_by_default = TRUE,
     minutes_allow_before = 20.0,
     minutes_allow_after = 0.0,
     text_off_threshold = 0.0,
@@ -1307,7 +1307,7 @@ id_label = "Terrain";
 // Type: string
 //
 
-terrain_url = "mdvp::terrain//front.eol.ucar.edu:8080:otrec/mdv/terrain?use_http=true&Elevation";
+terrain_url = "mdvp::terrain//front.eol.ucar.edu:8080:eolbase/mdv/terrain?use_http=true&Elevation";
 // terrain_url = "";
 
 ///////////// height_scaler ///////////////////////////
