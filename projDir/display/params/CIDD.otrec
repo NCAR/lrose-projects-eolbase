@@ -137,6 +137,7 @@ SURF_Terrain Terrain  mdvp::terrain//front.eol.ucar.edu:8080:eolbase/mdv/terrain
 #------------------------------------------------------------------------------------------
 
 Countries      Countries      world_states.map            1  0.0 1000000.0  white
+FlightPath     FlightPath     otrec_flight_path.map       2  0.0 1000000.0  orange
 
 </MAPS>
 
