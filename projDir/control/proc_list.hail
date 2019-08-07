@@ -251,3 +251,8 @@ GoesRnetCDF2Mdv    otrec_ch06   start_inst(ingest)    snuff_inst
 GoesRnetCDF2Mdv    otrec_ch10   start_inst(ingest)    snuff_inst
 GoesRnetCDF2Mdv    otrec_ch13   start_inst(ingest)    snuff_inst
 GoesRnetCDF2Mdv    otrec_ch15   start_inst(ingest)    snuff_inst
+
+######################################################################
+# GV
+#
+NcarAcPosn2Spdb    otrec          start_inst(ingest)  snuff_inst
