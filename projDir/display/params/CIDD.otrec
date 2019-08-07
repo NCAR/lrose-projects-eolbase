@@ -137,7 +137,7 @@ SURF_Terrain Terrain  mdvp::terrain//front.eol.ucar.edu:8080:eolbase/mdv/terrain
 #------------------------------------------------------------------------------------------
 
 Countries      Countries      world_states.map            1  0.0 1000000.0  white
-FlightPath     FlightPath     otrec_flight_path.map       2  0.0 1000000.0  orange
+FlightPath     FlightPath     otrec_flight_paths.map       2  0.0 1000000.0  orange
 
 </MAPS>
 
@@ -218,7 +218,7 @@ cidd.debug2_flag:           0
 #  System will startup using field 0, requesting data closest to the
 # demo time. The movie frame will be centered on the time after applying
 # temporal rounding. 
-cidd.demo_time:  00:00 08/03/2019
+cidd.demo_time:  15:30 08/07/2019
 
 # Set times to the nearest value divisible by the number of seconds
 cidd.temporal_rounding:    1
