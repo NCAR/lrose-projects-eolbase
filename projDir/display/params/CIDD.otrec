@@ -136,8 +136,8 @@ SURF_Terrain Terrain  mdvp::terrain//front.eol.ucar.edu:8080:eolbase/mdv/terrain
 # MAP_CODE Control_Label   Map_File_Name   On/OFF Detail__min Detail_max Color     
 #------------------------------------------------------------------------------------------
 
-Countries      Countries      world_states.map            1  0.0 1000000.0  white
-FlightPath     FlightPath     otrec_flight_paths.map       2  0.0 1000000.0  orange
+Countries      Countries      world_states.map             1  0.0 1000000.0  white
+FlightPath     FlightPath     otrec_flight_paths.map       2  0.0 1000000.0  blue
 
 </MAPS>
 
@@ -1244,8 +1244,8 @@ prod_info = {
   }
   ,                        
   {
-    menu_label = "GV-5min",
-    url = "spdbp:AcTrack2Symprod:05_min//front.eol.ucar.edu:8080:otrec/spdb/ac_posn?use_http=true",
+    menu_label = "GV-10min",
+    url = "spdbp:AcTrack2Symprod:10_min//front.eol.ucar.edu:8080:otrec/spdb/ac_posn?use_http=true",
     data_type = 0,
     render_type = RENDER_FIRST_BEFORE_FRAME_TIME,
     on_by_default = FALSE,
@@ -1257,8 +1257,8 @@ prod_info = {
   }
   ,                        
   {
-    menu_label = "GV-10min",
-    url = "spdbp:AcTrack2Symprod:10_min//front.eol.ucar.edu:8080:otrec/spdb/ac_posn?use_http=true",
+    menu_label = "GV-20min",
+    url = "spdbp:AcTrack2Symprod:20_min//front.eol.ucar.edu:8080:otrec/spdb/ac_posn?use_http=true",
     data_type = 0,
     render_type = RENDER_FIRST_BEFORE_FRAME_TIME,
     on_by_default = TRUE,
@@ -1270,8 +1270,8 @@ prod_info = {
   }
   ,                        
   {
-    menu_label = "GV-20min",
-    url = "spdbp:AcTrack2Symprod:20_min//front.eol.ucar.edu:8080:otrec/spdb/ac_posn?use_http=true",
+    menu_label = "GV-60min",
+    url = "spdbp:AcTrack2Symprod:60_min//front.eol.ucar.edu:8080:otrec/spdb/ac_posn?use_http=true",
     data_type = 0,
     render_type = RENDER_FIRST_BEFORE_FRAME_TIME,
     on_by_default = FALSE,
