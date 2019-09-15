@@ -142,10 +142,10 @@ SURF_Terrain Terrain  mdvp::terrain//front.eol.ucar.edu:8080:eolbase/mdv/terrain
 Countries      Countries      world_states.map             1  0.0 1000000.0  white
 FlightPath     FlightPath     otrec_flight_paths.map       2  0.0 1000000.0  blue
 
-Countries      Countries      world_states.map             1  0.0 1000000.0  white
-Countries      Countries      world_states.map             1  0.0 1000000.0  white
-Countries      Countries      world_states.map             1  0.0 1000000.0  white
-Countries      Countries      world_states.map             1  0.0 1000000.0  white
+Mangroove      Mangroove      mangroove.map                1  0.0 1000000.0  magenta
+Countries      Countries      world_states.map             0  0.0 1000000.0  white
+Countries      Countries      world_states.map             0  0.0 1000000.0  white
+Countries      Countries      world_states.map             0  0.0 1000000.0  white
 
 </MAPS>
 
@@ -280,7 +280,7 @@ cidd.gather_data_mode:  1
 # Number of milliseconds between checks for images needing redrawn
 # Set this lower on faster hardware - Recommended 50-250
 # This sets the ultimate speed of the movie looping
-cidd.redraw_interval:     100
+cidd.redraw_interval: 120
 
 # Number of seconds between data update requests - The display will
 # check the Data Mapper for new data every interval in real-time mode.
@@ -290,7 +290,7 @@ cidd.redraw_interval:     100
 # Setting this below 3 seconds is not advised.  interacts with the Data
 # Mapper Host parameter: cidd.datamap_host:
 
-cidd.update_interval:      30
+cidd.update_interval:  150
 
 # Data Mapper Host
 #cidd.datamap_host:  venus
@@ -492,7 +492,7 @@ cidd.max_adeg:               360.0
 # Searchs . then each directory/URL in order 
 
 cidd.color_file_subdir:   http://front.eol.ucar.edu/color_scales
-cidd.map_file_subdir:     http://front.eol.ucar.edu/maps,
+cidd.map_file_subdir:     ../maps,http://front.eol.ucar.edu/maps,
 #
 # Station locator features
 #
