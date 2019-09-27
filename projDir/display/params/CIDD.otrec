@@ -123,6 +123,9 @@ SURF_Terrain Terrain  mdvp::terrain//front.eol.ucar.edu:8080:eolbase/mdv/terrain
 ========   ========    mdvp::static//front.eol.ucar.edu:8080:/spacer/moments&Elevation       none.colors  m   -5 80 5 cont  1 0
 ========   ========    mdvp::static//front.eol.ucar.edu:8080:/spacer/moments&Elevation       none.colors  m   -5 80 5 cont  1 0
 
+========   ========    mdvp::static//front.eol.ucar.edu:8080:/spacer/moments&Elevation       none.colors  m   -5 80 5 cont  1 0
+========   ========    mdvp::static//front.eol.ucar.edu:8080:/spacer/moments&Elevation       none.colors  m   -5 80 5 cont  1 0
+
 </GRIDS>
 
 <MAPS>
@@ -136,8 +139,13 @@ SURF_Terrain Terrain  mdvp::terrain//front.eol.ucar.edu:8080:eolbase/mdv/terrain
 # MAP_CODE Control_Label   Map_File_Name   On/OFF Detail__min Detail_max Color     
 #------------------------------------------------------------------------------------------
 
-Countries      Countries      world_states.map            1  0.0 1000000.0  white
-FlightPath     FlightPath     otrec_flight_path.map       2  0.0 1000000.0  orange
+Countries      Countries      world_states.map             1  0.0 1000000.0  white
+FlightPath     FlightPath     otrec_flight_paths.map       2  0.0 1000000.0  blue
+
+Mangroove      Mangroove      mangroove.map                1  0.0 1000000.0  magenta
+Countries      Countries      world_states.map             0  0.0 1000000.0  white
+Countries      Countries      world_states.map             0  0.0 1000000.0  white
+Countries      Countries      world_states.map             0  0.0 1000000.0  white
 
 </MAPS>
 
@@ -218,7 +226,7 @@ cidd.debug2_flag:           0
 #  System will startup using field 0, requesting data closest to the
 # demo time. The movie frame will be centered on the time after applying
 # temporal rounding. 
-cidd.demo_time:  00:00 08/03/2019
+cidd.demo_time:  15:30 08/07/2019
 
 # Set times to the nearest value divisible by the number of seconds
 cidd.temporal_rounding:    1
@@ -272,7 +280,7 @@ cidd.gather_data_mode:  1
 # Number of milliseconds between checks for images needing redrawn
 # Set this lower on faster hardware - Recommended 50-250
 # This sets the ultimate speed of the movie looping
-cidd.redraw_interval:     100
+cidd.redraw_interval: 120
 
 # Number of seconds between data update requests - The display will
 # check the Data Mapper for new data every interval in real-time mode.
@@ -282,7 +290,7 @@ cidd.redraw_interval:     100
 # Setting this below 3 seconds is not advised.  interacts with the Data
 # Mapper Host parameter: cidd.datamap_host:
 
-cidd.update_interval:      30
+cidd.update_interval:  150
 
 # Data Mapper Host
 #cidd.datamap_host:  venus
@@ -484,7 +492,7 @@ cidd.max_adeg:               360.0
 # Searchs . then each directory/URL in order 
 
 cidd.color_file_subdir:   http://front.eol.ucar.edu/color_scales
-cidd.map_file_subdir:     http://front.eol.ucar.edu/maps,
+cidd.map_file_subdir:     ../maps,http://front.eol.ucar.edu/maps,
 #
 # Station locator features
 #
@@ -1244,8 +1252,8 @@ prod_info = {
   }
   ,                        
   {
-    menu_label = "GV-5min",
-    url = "spdbp:AcTrack2Symprod:05_min//front.eol.ucar.edu:8080:otrec/spdb/ac_posn?use_http=true",
+    menu_label = "GV-10min",
+    url = "spdbp:AcTrack2Symprod:10_min//front.eol.ucar.edu:8080:otrec/spdb/ac_posn?use_http=true",
     data_type = 0,
     render_type = RENDER_FIRST_BEFORE_FRAME_TIME,
     on_by_default = FALSE,
@@ -1257,8 +1265,8 @@ prod_info = {
   }
   ,                        
   {
-    menu_label = "GV-10min",
-    url = "spdbp:AcTrack2Symprod:10_min//front.eol.ucar.edu:8080:otrec/spdb/ac_posn?use_http=true",
+    menu_label = "GV-20min",
+    url = "spdbp:AcTrack2Symprod:20_min//front.eol.ucar.edu:8080:otrec/spdb/ac_posn?use_http=true",
     data_type = 0,
     render_type = RENDER_FIRST_BEFORE_FRAME_TIME,
     on_by_default = TRUE,
@@ -1270,8 +1278,8 @@ prod_info = {
   }
   ,                        
   {
-    menu_label = "GV-20min",
-    url = "spdbp:AcTrack2Symprod:20_min//front.eol.ucar.edu:8080:otrec/spdb/ac_posn?use_http=true",
+    menu_label = "GV-60min",
+    url = "spdbp:AcTrack2Symprod:60_min//front.eol.ucar.edu:8080:otrec/spdb/ac_posn?use_http=true",
     data_type = 0,
     render_type = RENDER_FIRST_BEFORE_FRAME_TIME,
     on_by_default = FALSE,
