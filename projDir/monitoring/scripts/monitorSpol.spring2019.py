@@ -307,8 +307,6 @@ def doPlotTestTempFaults(outFilePath,data,firstTime,timeSpan):
     
     colorsP = pl.cm.Dark2(np.linspace(0,1,8))
     colorsT = pl.cm.tab10(np.linspace(0,1,10))
-    #colorsT2 = pl.cm.gist_rainbow(np.linspace(0,1,16))
-    colorsT2 = np.vstack((pl.cm.tab10(np.linspace(0,1,10)), pl.cm.gist_rainbow(np.linspace(0,1,6))))
         
     #firstTime=data.datetime.iloc[0]
     #lastTime=data.datetime.iloc[-1]
@@ -361,12 +359,10 @@ def doPlotTestTempFaults(outFilePath,data,firstTime,timeSpan):
 # Plot temperatures
     ax1 = fig.add_subplot(3,1,2,xmargin=0.0)
        
-    data.plot(x='datetime',y=['Temp_Klystron','Temp_Rear_Wall','Temp_CIRC_V','Temp_CIRC_H',
-                              'Temp_LNA_V','Temp_LNA_H','Temp_RX_enclosure','Temp_TP_enclosure',
-                              'Temp_RX_plate','Temp_TX_coupler_H','Temp_DUMMY_H','Temp_DUMMY_V',
-                              'Temp_MITCH_SWITCH','Temp_SCC','Temp_Annex','Temp_UPS_Container'],
-                              ax=ax1,color=colorsT2[0:16],fontsize=fontSize, linewidth=1,x_compat=True)
-    configTimeAxis(ax1, -10, 50, 'Temperature (C)', 'lower left',firstTime,lastTime,fontSize)
+    data.plot(x='datetime',y=['Temp_Klystron','Temp_Rear_Wall','Temp_CIRC-V','Temp_CIRC-H',
+                              'Temp_LNA-V','Temp_LNA-H','Temp_RX-enclosure','Temp_TP-enclosure',
+                              'Temp_RX-plate','Temp_TX-coupler-H'],ax=ax1,color=colorsT[0:10],fontsize=fontSize, linewidth=1,x_compat=True)
+    configTimeAxis(ax1, 0, 50, 'Temperature (C)', 'lower left',firstTime,lastTime,fontSize)
         
     hfmt = dates.DateFormatter('%H:%M')
     ax1.xaxis.set_major_locator(dates.AutoDateLocator())
@@ -415,7 +411,7 @@ def doPlotTestTempFaults(outFilePath,data,firstTime,timeSpan):
 
 def configTimeAxis(ax, miny, maxy, ylabel, legendLoc, firstTime, lastTime,fontSize):
         
-    legend = ax.legend(loc=legendLoc, ncol=4)
+    legend = ax.legend(loc=legendLoc, ncol=5)
     for label in legend.get_texts():
         label.set_fontsize(fontSize)
     ax.set_xlim([firstTime, lastTime])
