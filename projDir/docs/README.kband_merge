@@ -1,0 +1,31 @@
+Procedure for creating merged Cfradial files for KaBand
+=======================================================
+
+These files need to contain:
+
+  S-band fields
+  PID
+  K-band fields
+
+This processing is carried out on 'hail', which is the 'eolbase' server.
+
+Step 1 - create local GFS grid in MDV
+-------------------------------------
+
+cd ~/projDir/ingest/params
+
+
+Step 2 - sample GFS grid to get pseudo-soundings at radar sites
+---------------------------------------------------------------
+
+cd ~/projDir/ingest/params
+
+Mdv2SoundingSpdb -params Mdv2SoundingSpdb.eolbase -debug -start 2019 08 01 00 00 00 -end 2019 11 30 00 00 00
+
+Step 3 - compute S-band PID and precip rate
+-------------------------------------------
+
+cd ~/projDir/alg/params
+
+Mdv2SoundingSpdb -params Mdv2SoundingSpdb.eolbase -debug -start 2019 08 01 00 00 00 -end 2019 11 30 00 00 00
+
