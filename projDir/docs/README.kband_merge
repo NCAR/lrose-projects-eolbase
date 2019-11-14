@@ -21,25 +21,25 @@ Step 2 - sample GFS grid to get pseudo-soundings at radar sites
 
 cd ~/projDir/ingest/params
 
-Mdv2SoundingSpdb -params Mdv2SoundingSpdb.eolbase -debug -start 2019 08 01 00 00 00 -end 2019 11 30 00 00 00
+Mdv2SoundingSpdb -params Mdv2SoundingSpdb.eolbase -debug -start "2019 08 01 00 00 00" -end "2019 11 30 00 00 00"
 
 Step 3 - compute S-band PID (and precip rate)
 ---------------------------------------------
 
 cd ~/projDir/alg/params
 
-RadxRate -params RadxRate.spol.sur -debug -start 2019 08 01 00 00 00 -end 2019 11 30 00 00 00
+RadxRate -params RadxRate.spol.sur -debug -start "2019 08 01 00 00 00" -end "2019 11 30 00 00 00"
 
-RadxRate -params RadxRate.spol.rhi -debug -start 2019 08 01 00 00 00 -end 2019 11 30 00 00 00
+RadxRate -params RadxRate.spol.rhi -debug -start "2019 08 01 00 00 00" -end "2019 11 30 00 00 00"
 
 Step 4 - merge S-band, PID and Ka-band
 --------------------------------------
 
 cd ~/projDir/alg/params
 
-RadxMergeFields -params RadxMergeFields.sband+pid+kaband.sur -debug -start 2019 08 01 00 00 00 -end 2019 11 30 00 00 00
+RadxMergeFields -params RadxMergeFields.sband+pid+kaband.sur -debug -start "2019 08 01 00 00 00" -end "2019 11 30 00 00 00"
 
-RadxMergeFields -params RadxMergeFields.sband+pid+kaband.rhi -debug -start 2019 08 01 00 00 00 -end 2019 11 30 00 00 00
+RadxMergeFields -params RadxMergeFields.sband+pid+kaband.rhi -debug -start "2019 08 01 00 00 00" -end "2019 11 30 00 00 00"
 
 
 

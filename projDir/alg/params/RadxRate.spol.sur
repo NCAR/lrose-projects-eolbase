@@ -186,7 +186,7 @@ SNR_available = TRUE;
 // Type: string
 //
 
-SNR_field_name = "SNR";
+SNR_field_name = "SNRHC_F";
 
 ///////////// noise_dbz_at_100km //////////////////////
 //
@@ -262,7 +262,7 @@ LDR_available = TRUE;
 // Type: string
 //
 
-LDR_field_name = "LDR_F";
+LDR_field_name = "LDRH_F";
 
 //======================================================================
 //
@@ -603,55 +603,55 @@ copy_fields = {
   {
     input_name = "DBZ_F",
     output_name = "DBZ",
-    censor_non_precip = FALSE
+    censor_non_weather = FALSE
   }
   ,
   {
     input_name = "VEL_F",
     output_name = "VEL",
-    censor_non_precip = FALSE
+    censor_non_weather = FALSE
   }
   ,
   {
     input_name = "WIDTH_F",
     output_name = "WIDTH",
-    censor_non_precip = FALSE
+    censor_non_weather = FALSE
   }
   ,
   {
     input_name = "ZDR_F",
     output_name = "ZDR",
-    censor_non_precip = FALSE
+    censor_non_weather = FALSE
   }
   ,
   {
-    input_name = "LDR_F",
+    input_name = "LDRH_F",
     output_name = "LDR",
-    censor_non_precip = FALSE
+    censor_non_weather = FALSE
   }
   ,
   {
     input_name = "PHIDP_F",
     output_name = "PHIDP",
-    censor_non_precip = FALSE
+    censor_non_weather = FALSE
   }
   ,
   {
     input_name = "RHOHV_F",
     output_name = "RHOHV",
-    censor_non_precip = FALSE
+    censor_non_weather = FALSE
   }
   ,
   {
     input_name = "SNRHC_F",
     output_name = "SNR",
-    censor_non_precip = FALSE
+    censor_non_weather = FALSE
   }
   ,
   {
     input_name = "NCP_F",
     output_name = "NCP",
-    censor_non_precip = FALSE
+    censor_non_weather = FALSE
   }
 };
 
