@@ -586,7 +586,7 @@ compression_level = 4;
 // Type: string
 //
 
-output_dir = "$(DATA_DIR)/eolbase/cfradial/spol/merged/sur",
+output_dir = "$(DATA_DIR)/eolbase/cfradial/spol/merged/sur";
 
 ///////////// output_filename_mode ////////////////////
 //
