@@ -43,7 +43,7 @@ def main():
                       help='Path of source directory')
     parser.add_option('--rsyncSource',
                       dest='rsyncSource',
-                      default='rsync://166.164.215.174/wvdial/',
+                      default='rsync://166.253.219.16/wvdial/',
                       #default='rsync://128.117.47.87/wvdial/',
                       help='Source address for dial, from which to grab data')
     parser.add_option('--ndaysLookback',
@@ -122,9 +122,9 @@ def doRsyncForDay(dayTime, iday):
     # create rsync command
 
     if (iday == 0):
-        cmd = 'rsync -avz --compress-level=9 "' + options.rsyncSource + sourceDirRoot + '*" .'
+        cmd = 'rsync -avz --timeout=60 --compress-level=9 "' + options.rsyncSource + sourceDirRoot + '*" .'
     else:
-        cmd = 'rsync -avz --compress-level=9 "' + options.rsyncSource + sourceDirRoot + '*" .'
+        cmd = 'rsync -avz --timeout=60 --compress-level=9 "' + options.rsyncSource + sourceDirRoot + '*" .'
 
     # run the command
     

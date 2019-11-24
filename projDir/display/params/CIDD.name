@@ -338,7 +338,7 @@ cidd.html_mode: 0
 
 # Image Generation related resources
 # Set this to a value to get cidd to output imagery as XWD in this directory
-cidd.image_dir: /tmp
+cidd.image_dir: $(HOME)/images
 
 # Set to 1 if one wants CIDD to run once through it's HTML output
 # plot list and then exit - Currently all fields at each zoom level
@@ -535,9 +535,6 @@ cidd.max_adeg:               360.0
 
 cidd.color_file_subdir:   http://front.eol.ucar.edu/color_scales
 cidd.map_file_subdir:     http://front.eol.ucar.edu/maps
-
-#cidd.color_file_subdir:   $(PROJ_DIR)/display/color_scales,http://front.eol.ucar.edu/color_scales
-#cidd.map_file_subdir:     $(PROJ_DIR)/display/maps,http://front.eol.ucar.edu/maps
 
 #
 # Station locator features

@@ -73,7 +73,7 @@ mode = REALTIME;
 // Type: string
 //
 
-InDir = "$(DATA_DIR)/eolbase/raw/madis/mesonet1";
+InDir = "$(DATA_DIR)/$(project)/raw/madis/mesonet1";
 
 ///////////// latest_data_info_avail //////////////////
 //

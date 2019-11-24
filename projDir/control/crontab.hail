@@ -30,6 +30,10 @@
 #*/2 * * * * csh -c "sync_pecan_weather_cams" >/dev/null 2>&1
 # backup weather station data from S-Pol
 #*/10 * * * *   csh -c "rsync_nidas.spol" 1> /dev/null 2> /dev/null
+#
+####################################################################
+# rsync POTSDAM GPS data to snow and fog (this is now done on eldora)
+#*/5 * * * *   csh -c "rsync_potsdam_gps_results_to_mpd" 1> /dev/null 2> /dev/null
 ####################################################################
 # RELAMPAGO
 #

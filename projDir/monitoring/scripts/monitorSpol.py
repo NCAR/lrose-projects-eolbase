@@ -46,7 +46,7 @@ def main():
                       help='Set verbose debugging on')
     parser.add_option('--monFile',
                       dest='monFile',
-                      default='/scr/hail1/rsfdata/projects/eolbase/tables/spolMon/spolMon_20190401_000000_to_20190430_235959.txt',
+                      default='/scr/hail1/rsfdata/eolbase/tables/spolMon/spolMon_20190501_000000_to_20190531_235959.txt',
                       help='File with monitoring data')
     parser.add_option('--widthMain',
                       dest='mainWidthMm',
@@ -59,12 +59,12 @@ def main():
     parser.add_option('--start',
                       dest='startTime',
                       #default='1970 01 01 00 00 00',
-                      default='2019 04 06 00 00 00',
+                      default='2019 05 01 00 00 00',
                       help='Start time for XY plot')
     parser.add_option('--end',
                       dest='endTime',
                       #default='1970 01 01 00 00 00',
-                      default='2019 04 06 05 59 59',
+                      default='2019 05 31 23 59 59',
                       help='End time for XY plot')
     parser.add_option('--figDir',
                       dest='figureDir',
@@ -211,14 +211,17 @@ def main():
         for n,g3 in g2:
             monDaily[n] = g3
     
-    
-        allDays=np.zeros((len(monDaily),4))
         allTimes=monShort['datetime'].dt.normalize().dt.strftime('%Y-%m-%d').unique()
+        allDays=np.zeros((len(allTimes),4))
+        
+        jj=0
 
         # Count time per day
         for ii,key in enumerate(monDaily):
-            subDay=monDaily[key].copy()        
-            allDays[ii,:]=doCountTime(subDay)
+            subDay=monDaily[key].copy()      
+            if subDay.shape[0]!=0:
+                allDays[jj,:]=doCountTime(subDay)
+                jj=jj+1
     
         outTable=pd.DataFrame(allDays,columns=['Oil_Press_Good','Az_Brakes_Off',
                                            'High_Volts_On','Xmit_Power_On'], index=allTimes)
@@ -304,6 +307,8 @@ def doPlotTestTempFaults(outFilePath,data,firstTime,timeSpan):
     
     colorsP = pl.cm.Dark2(np.linspace(0,1,8))
     colorsT = pl.cm.tab10(np.linspace(0,1,10))
+    #colorsT2 = pl.cm.gist_rainbow(np.linspace(0,1,16))
+    colorsT2 = np.vstack((pl.cm.tab10(np.linspace(0,1,10)), pl.cm.gist_rainbow(np.linspace(0,1,6))))
         
     #firstTime=data.datetime.iloc[0]
     #lastTime=data.datetime.iloc[-1]
@@ -356,10 +361,12 @@ def doPlotTestTempFaults(outFilePath,data,firstTime,timeSpan):
 # Plot temperatures
     ax1 = fig.add_subplot(3,1,2,xmargin=0.0)
        
-    data.plot(x='datetime',y=['Temp_Klystron','Temp_Rear_Wall','Temp_CIRC-V','Temp_CIRC-H',
-                              'Temp_LNA-V','Temp_LNA-H','Temp_RX-enclosure','Temp_TP-enclosure',
-                              'Temp_RX-plate','Temp_TX-coupler-H'],ax=ax1,color=colorsT[0:10],fontsize=fontSize, linewidth=1,x_compat=True)
-    configTimeAxis(ax1, 0, 50, 'Temperature (C)', 'lower left',firstTime,lastTime,fontSize)
+    data.plot(x='datetime',y=['Temp_Klystron','Temp_Rear_Wall','Temp_CIRC_V','Temp_CIRC_H',
+                              'Temp_LNA_V','Temp_LNA_H','Temp_RX_enclosure','Temp_TP_enclosure',
+                              'Temp_RX_plate','Temp_TX_coupler_H','Temp_DUMMY_H','Temp_DUMMY_V',
+                              'Temp_MITCH_SWITCH','Temp_SCC','Temp_Annex','Temp_UPS_Container'],
+                              ax=ax1,color=colorsT2[0:16],fontsize=fontSize, linewidth=1,x_compat=True)
+    configTimeAxis(ax1, -10, 50, 'Temperature (C)', 'lower left',firstTime,lastTime,fontSize)
         
     hfmt = dates.DateFormatter('%H:%M')
     ax1.xaxis.set_major_locator(dates.AutoDateLocator())
@@ -408,7 +415,7 @@ def doPlotTestTempFaults(outFilePath,data,firstTime,timeSpan):
 
 def configTimeAxis(ax, miny, maxy, ylabel, legendLoc, firstTime, lastTime,fontSize):
         
-    legend = ax.legend(loc=legendLoc, ncol=5)
+    legend = ax.legend(loc=legendLoc, ncol=4)
     for label in legend.get_texts():
         label.set_fontsize(fontSize)
     ax.set_xlim([firstTime, lastTime])
@@ -447,7 +454,7 @@ def doCountTime(data):
     abFmin=0
     hvoTmin=0
     powTmin=0    
-        
+    
     for key in monMin:
         subHour=monMin[key].copy()
         if subHour.shape[0]>0:
@@ -455,9 +462,9 @@ def doCountTime(data):
             abF=(subHour['Azimuth_Brakes_Fault'] == 0).sum()
             hvoT=(subHour['HighVoltsOn'] == 1).sum()
             powT=(subHour['XmitPowerDbmTxTop'] > 75).sum()
-        
+    
             totLen=subHour.shape[0]
-        
+    
             oilFmin=oilFmin+oilF/totLen*10
             abFmin=abFmin+abF/totLen*10
             hvoTmin=hvoTmin+hvoT/totLen*10

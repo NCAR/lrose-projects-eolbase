@@ -1,0 +1,12 @@
+#! /bin/csh
+
+# rsync GPS results data from ftp site to mpd dirs on snow and fog
+
+cd /net/ftp/pub/data/incoming/potsdam
+
+rsync -av * snow:/export/snow2/rsfdata/projects/mpd/potsdam |& \
+    LogFilter -d $ERRORS_LOG_DIR -p rsync -i potsdam_gps_results_to_snow &
+
+rsync -av * fog:/export/fog1/rsfdata/projects/mpd/potsdam |& \
+    LogFilter -d $ERRORS_LOG_DIR -p rsync -i potsdam_gps_results_to_fog &
+

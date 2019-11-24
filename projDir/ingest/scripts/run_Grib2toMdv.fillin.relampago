@@ -1,0 +1,11 @@
+#! /bin/csh
+
+cd $PROJ_DIR/ingest/params
+
+Grib2toMdv -params Grib2toMdv.gfs.relampago -debug -f $DATA_DIR/relampago/raw/gfs/2019021[7,8,9]/* >& /tmp/Grib2toMdv.gfs.2019021.log &
+
+Grib2toMdv -params Grib2toMdv.gfs.relampago -debug -f $DATA_DIR/relampago/raw/gfs/2019022*/* >& /tmp/Grib2toMdv.gfs.2019022.log &
+
+Grib2toMdv -params Grib2toMdv.gfs.relampago -debug -f $DATA_DIR/relampago/raw/gfs/201903*/* >& /tmp/Grib2toMdv.gfs.201903.log &
+
+Grib2toMdv -params Grib2toMdv.gfs.relampago -debug -f $DATA_DIR/relampago/raw/gfs/2019040[1,2]/* >& /tmp/Grib2toMdv.gfs.201904.log & 

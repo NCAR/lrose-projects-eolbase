@@ -1,0 +1,10 @@
+#! /bin/csh
+#
+
+cd /scr/eldora1
+
+snuff "rsync -va TempFigures"
+
+rsync -va TempFigures wvdial_* fog:/scr/fog1/rsfdata/projects/mpd |& \
+	LogFilter -d $ERRORS_LOG_DIR -p rsync_mpd_backup_to_fog -i cron >& /dev/null &
+

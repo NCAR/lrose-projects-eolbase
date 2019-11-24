@@ -87,9 +87,9 @@ RHOHV   RHOHV   mdvp:://front.eol.ucar.edu:8080:improve/cfradial?use_http=true&R
 LDR     LDR     mdvp:://front.eol.ucar.edu:8080:improve/cfradial?use_http=true&LDR   ldr.colors   dB  -5 80 5 radial 1 0
 
 KDP     KDP     mdvp:://front.eol.ucar.edu:8080:improve/cfradial?use_http=true&KDP   kdp.colors   dB  -5 80 5 radial 1 0
-======== ========  mdvp::static//$(DATA_HOST):0:/spacer&Elevation  none.colors   m   -5   80  5  dcont   1 0
-======== ========  mdvp::static//$(DATA_HOST):0:/spacer&Elevation  none.colors   m   -5   80  5  dcont   1 0
-======== ========  mdvp::static//$(DATA_HOST):0:/spacer&Elevation  none.colors   m   -5   80  5  dcont   1 0
+======== ========  mdvp::static//localhost:0:/spacer&Elevation  none.colors   m   -5   80  5  dcont   1 0
+======== ========  mdvp::static//localhost:0:/spacer&Elevation  none.colors   m   -5   80  5  dcont   1 0
+======== ========  mdvp::static//localhost:0:/spacer&Elevation  none.colors   m   -5   80  5  dcont   1 0
 
 </GRIDS>
 
@@ -299,7 +299,7 @@ cidd.html_mode: 0
 
 # Image Generation related resources
 # Set this to a value to get cidd to output imagery as XWD in this directory
-cidd.image_dir: /tmp
+cidd.image_dir: $(HOME)/images
 
 # Set to 1 if one wants CIDD to run once through it's HTML output
 # plot list and then exit - Currently all fields at each zoom level
@@ -1016,7 +1016,7 @@ cidd.menu_bar_funct15: SHOW_STATUS_PANEL
 
 ##########################################
 
-cidd.horiz_frame_label: SPOL $(SITE_NAME)
+cidd.horiz_frame_label: SPOL IMPROVE
 
 # Set the message to display when no data is availible
 cidd.no_data_message:     NO DATA FOUND (in this area at the selected time)
@@ -1204,7 +1204,7 @@ short_requests = TRUE;
 prod_info = {
    {
     menu_label = "RHI-ticks",
-    url = "spdbp:Rhi2Symprod:ticks//$(DATA_HOST):0:name/spdb/rhi/sband",
+    url = "spdbp:Rhi2Symprod:ticks//front.eol.ucar.edu:8080:name/spdb/rhi/sband",
     data_type = 0,
     render_type = RENDER_ALL_VALID,
     on_by_default = TRUE,
@@ -1217,7 +1217,7 @@ prod_info = {
   , 
   {
     menu_label = "RHI-label",
-    url = "spdbp:Rhi2Symprod:label//$(DATA_HOST):0:name/spdb/rhi/sband",
+    url = "spdbp:Rhi2Symprod:label//front.eol.ucar.edu:8080:name/spdb/rhi/sband",
     data_type = 0,
     render_type = RENDER_ALL_VALID,
     on_by_default = FALSE,
@@ -1230,7 +1230,7 @@ prod_info = {
   // ,
   // {
   //   menu_label = "METARS-simple",
-  //   url = "spdbp:Metar2Symprod:simple//$(DATA_HOST):0:name/spdb/metar",
+  //   url = "spdbp:Metar2Symprod:simple//front.eol.ucar.edu:8080:name/spdb/metar",
   //   data_type = 0,
   //   render_type = RENDER_LATEST_IN_FRAME,
   //   on_by_default = FALSE,
@@ -1243,7 +1243,7 @@ prod_info = {
   // ,
   // {
   //   menu_label = "METARS-full",
-  //   url = "spdbp:Metar2Symprod:labels//$(DATA_HOST):0:name/spdb/metar",
+  //   url = "spdbp:Metar2Symprod:labels//front.eol.ucar.edu:8080:name/spdb/metar",
   //   data_type = 0,
   //   render_type = RENDER_LATEST_IN_FRAME,
   //   on_by_default = FALSE,
@@ -1256,7 +1256,7 @@ prod_info = {
   // ,
   // {
   //   menu_label = "SYN-OBS",
-  //   url = "spdbp:Metar2Symprod:simple//$(DATA_HOST):0:name/spdb/synop_obs",
+  //   url = "spdbp:Metar2Symprod:simple//front.eol.ucar.edu:8080:name/spdb/synop_obs",
   //   data_type = 0,
   //   render_type = RENDER_LATEST_IN_FRAME,
   //   on_by_default = FALSE,
@@ -1269,7 +1269,7 @@ prod_info = {
   // ,
   // {
   //   menu_label = "WWLLN-1hour" ,
-  //   url = "spdbp:Ltg2Symprod:wwlln//$(DATA_HOST):0:name/spdb/wwlln",
+  //   url = "spdbp:Ltg2Symprod:wwlln//front.eol.ucar.edu:8080:name/spdb/wwlln",
   //   data_type = 0,
   //   render_type = RENDER_ALL_BEFORE_DATA_TIME,
   //   on_by_default = FALSE,
@@ -1282,7 +1282,7 @@ prod_info = {
   // ,                        
   // {
   //   menu_label = "Falcon Track 10-min",
-  //   url = "spdbp:AcTrack2Symprod:10_min//$(DATA_HOST):0:name/spdb/ac_posn/falcon",
+  //   url = "spdbp:AcTrack2Symprod:10_min//front.eol.ucar.edu:8080:name/spdb/ac_posn/falcon",
   //   data_type = 0,
   //   render_type = RENDER_FIRST_BEFORE_FRAME_TIME,
   //   on_by_default = FALSE,

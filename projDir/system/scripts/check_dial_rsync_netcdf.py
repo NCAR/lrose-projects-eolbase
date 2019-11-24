@@ -95,6 +95,16 @@ Subject: stale DIAL data
 {2} has not been updated for {3}
 """
 
+    error_msg = """From: {0}
+To: {1}
+Subject: MPD data error
+
+The following data transfer
+faults have occurred:
+{2}
+"""
+    error_message = ''
+
     for exists,file,delta in zip(file_exists,files,deltas):
     	if exists:
 	    if delta < max_delta:
@@ -104,14 +114,18 @@ Subject: stale DIAL data
 	    	hours, remainder = divmod(delta.total_seconds(), 3600)
 	    	minutes, seconds = divmod(remainder, 60)
 	    	dstr = "%02d:%02d:%02d" % (hours, minutes, seconds)
-	    	mail_warning(sender, emailList, 
-		    stale_msg.format(sender,",".join(emailList), file, dstr))
+		error_message += '\n{0} is stale for {1}'.format(file,dstr)
+	    	#mail_warning(sender, emailList, 
+		#    stale_msg.format(sender,",".join(emailList), file, dstr))
 	
     	else:
 	    print('file {0} is missing '.format(file))
-	    mail_warning(sender, emailList, 
-		missing_msg.format(sender, ",".join(emailList), file) )
-	
+	    error_message += '\n{0} is missing'.format(file)
+	    #mail_warning(sender, emailList, 
+	    #	missing_msg.format(sender, ",".join(emailList), file) )
+    if len(error_message) > 0:
+	mail_warning(sender,emailList,error_msg.format(sender,",".join(emailList),error_message))
+    
     sys.exit(0)
 
 ########################################################################

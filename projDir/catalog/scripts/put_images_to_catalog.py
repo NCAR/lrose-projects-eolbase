@@ -67,7 +67,7 @@ def main():
         print >>sys.stderr, file_tokens
 
     if len(file_tokens) != 6:
-        print "*** Invalid file name: ", options.fileName
+        print >>sys.stderr, "*** Invalid file name: ", options.fileName
         sys.exit(0)
 
     # category
@@ -120,7 +120,7 @@ def main():
             print >>sys.stderr, "Moving file: ", fullFilePath
             print >>sys.stderr, "        to: ", targetPath
         if not os.path.exists(targetDir):
-            os.makedirs(targetDir, 0775)
+            os.makedirs(targetDir)
             
         cmd = "/bin/mv -f " + fullFilePath + " " + targetDir
         runCommand(cmd)
@@ -159,7 +159,7 @@ def putFile(filePath, catalogName):
     if (options.debug == True):
         print >>sys.stderr, "  tmpDir: ", tmpDir
     if not os.path.exists(tmpDir):
-        os.makedirs(tmpDir, 0775)
+        os.makedirs(tmpDir)
 
     # copy the file to the tmp directory
 

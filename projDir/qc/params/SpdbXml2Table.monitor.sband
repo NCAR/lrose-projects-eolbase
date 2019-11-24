@@ -208,58 +208,100 @@ xml_entries = {
   }
   ,
   {
-    xml_tag_list = "<SpolTemperatures><CIRC-V>",
+    xml_tag_list = "<SpolTemperatures><CIRC_V>",
     specify_label = TRUE,
-    label = "Temp_CIRC-V",
+    label = "Temp_CIRC_V",
     required = FALSE
   }
   ,
   {
-    xml_tag_list = "<SpolTemperatures><CIRC-H>",
+    xml_tag_list = "<SpolTemperatures><CIRC_H>",
     specify_label = TRUE,
-    label = "Temp_CIRC-H",
+    label = "Temp_CIRC_H",
     required = FALSE
   }
   ,
   {
-    xml_tag_list = "<SpolTemperatures><LNA-V>",
+    xml_tag_list = "<SpolTemperatures><LNA_V>",
     specify_label = TRUE,
-    label = "Temp_LNA-V",
+    label = "Temp_LNA_V",
     required = FALSE
   }
   ,
   {
-    xml_tag_list = "<SpolTemperatures><LNA-H>",
+    xml_tag_list = "<SpolTemperatures><LNA_H>",
     specify_label = TRUE,
-    label = "Temp_LNA-H",
+    label = "Temp_LNA_H",
     required = FALSE
   }
   ,
   {
-    xml_tag_list = "<SpolTemperatures><RX-enclosure>",
+    xml_tag_list = "<SpolTemperatures><RX_enclosure>",
     specify_label = TRUE,
-    label = "Temp_RX-enclosure",
+    label = "Temp_RX_enclosure",
     required = FALSE
   }
   ,
   {
-    xml_tag_list = "<SpolTemperatures><TP-enclosure>",
+    xml_tag_list = "<SpolTemperatures><TP_enclosure>",
     specify_label = TRUE,
-    label = "Temp_TP-enclosure",
+    label = "Temp_TP_enclosure",
     required = FALSE
   }
   ,
   {
-    xml_tag_list = "<SpolTemperatures><RX-plate>",
+    xml_tag_list = "<SpolTemperatures><RX_plate>",
     specify_label = TRUE,
-    label = "Temp_RX-plate",
+    label = "Temp_RX_plate",
     required = FALSE
   }
   ,
   {
-    xml_tag_list = "<SpolTemperatures><TX-coupler-H>",
+    xml_tag_list = "<SpolTemperatures><TX_coupler_H>",
     specify_label = TRUE,
-    label = "Temp_TX-coupler-H",
+    label = "Temp_TX_coupler_H",
+    required = FALSE
+  }
+  ,
+  {
+    xml_tag_list = "<SpolTemperatures><DUMMY_H>",
+    specify_label = TRUE,
+    label = "Temp_DUMMY_H",
+    required = FALSE
+  }
+  ,
+  {
+    xml_tag_list = "<SpolTemperatures><DUMMY_V>",
+    specify_label = TRUE,
+    label = "Temp_DUMMY_V",
+    required = FALSE
+  }
+  ,
+  {
+    xml_tag_list = "<SpolTemperatures><MITCH_SWITCH>",
+    specify_label = TRUE,
+    label = "Temp_MITCH_SWITCH",
+    required = FALSE
+  }
+  ,
+  {
+    xml_tag_list = "<SpolTemperatures><SCC>",
+    specify_label = TRUE,
+    label = "Temp_SCC",
+    required = FALSE
+  }
+  ,
+  {
+    xml_tag_list = "<SpolTemperatures><Annex>",
+    specify_label = TRUE,
+    label = "Temp_Annex",
+    required = FALSE
+  }
+  ,
+  {
+    xml_tag_list = "<SpolTemperatures><UPS_Container>",
+    specify_label = TRUE,
+    label = "Temp_UPS_Container",
     required = FALSE
   }
   ,
@@ -288,6 +330,20 @@ xml_entries = {
     xml_tag_list = "<SBandXmitPower><XmitPowerDbmTxTop>",
     specify_label = TRUE,
     label = "XmitPowerDbmTxTop",
+    required = FALSE
+  }
+  ,
+  {
+    xml_tag_list = "<SBandXmitPower><XmitPowerDbmH>",
+    specify_label = TRUE,
+    label = "XmitPowerDbmH",
+    required = FALSE
+  }
+  ,
+  {
+    xml_tag_list = "<SBandXmitPower><XmitPowerDbmV>",
+    specify_label = TRUE,
+    label = "XmitPowerDbmV",
     required = FALSE
   }
 };

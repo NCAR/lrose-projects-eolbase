@@ -100,7 +100,7 @@ tables = "";
 //     FILELIST
 //
 
-mode = REALTIME;
+mode = ARCHIVE;
 
 ///////////// max_realtime_data_age_secs //////////////
 //

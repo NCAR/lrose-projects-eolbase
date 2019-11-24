@@ -67,7 +67,7 @@ instance = "soundings";
 //
 
 // input_dir = "/net/ftp/pub/data/incoming/relampago/sounding";
-input_dir = "$(DATA_DIR)/relampago/raw/sounding";
+input_dir = "$(DATA_DIR)/$(project)/raw/sounding";
 
 ///////////// wait_between_checks /////////////////////
 //
@@ -560,7 +560,7 @@ without_date_directory = FALSE;
 // Type: string
 //
 
-copy_dir = "$(DATA_DIR)/relampago/raw/soundings/flat";
+copy_dir = "$(DATA_DIR)/$(project)/raw/soundings/flat";
 
 ///////////// copy_prefix /////////////////////////////
 //
