@@ -77,12 +77,19 @@
 
 # LWC analysis
 
-LWC  LWC  mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data/sur&LWC    lwc.colors  none -5 80 5 radial 1 0
-RES  RES  mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data/sur&RES    res.colors  none -5 80 5 radial 1 0
+LWC_DWR  LWC_DWR  mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data/sur&LWC_DWR    lwc.colors  none -5 80 5 radial 1 0
+LWC_ZPHI  LWC_ZPHI  mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data/sur&LWC_ZPHI    lwc.colors  none -5 80 5 radial 1 0
+RES_DWR  RES_DWR  mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data/sur&RES_DWR    res.colors  none -5 80 5 radial 1 0
+RES_ZPHI  RES_ZPHI  mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data/sur&RES_ZPHI    res.colors  none -5 80 5 radial 1 0
+======== ========  mdvp::static//hail.eol.ucar.edu:0:/spacer&Elevation  none.colors   m   -5   80  5  dcont   1 0
+======== ========  mdvp::static//hail.eol.ucar.edu:0:/spacer&Elevation  none.colors   m   -5   80  5  dcont   1 0
+
 DBZ_S   DBZ_S   mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data/sur&DBZ_S   dbz.colors   dBZ -5 80 5 radial 1 0
 DBZ_K  DBZ_K   mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data/sur&DBZ_K     dbz.colors   dBZ -5 80 5 radial 1 0
 PID  PID  mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data/sur&PID    pid.colors  none -5 80 5 radial 1 0
 TEMP_PID TEMP_PID  mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data/sur&TEMP_FOR_PID  temp.colors    C -5 80 5 redial 1 0
+======== ========  mdvp::static//hail.eol.ucar.edu:0:/spacer&Elevation  none.colors   m   -5   80  5  dcont   1 0
+======== ========  mdvp::static//hail.eol.ucar.edu:0:/spacer&Elevation  none.colors   m   -5   80  5  dcont   1 0
 
 DBZ_S   DBZ_S   mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data/sur&DBZ_S   dbz.colors   dBZ -5 80 5 radial 1 0
 DBZ_NAA_S DBZ_NAA_S mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data/sur&DBZ_NAA_S dbz.colors dBZ -5 80 5 radial 1 0
