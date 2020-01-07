@@ -77,69 +77,69 @@
 
 # LWC analysis
 
-LWC  LWC  mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data/sur&LWC    lwc.colors  none -5 80 5 radial 1 0
-RES  RES  mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data/sur&RES    res.colors  none -5 80 5 radial 1 0
+LWC  LWC  mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data_dynamo/sur&LWC    lwc.colors  none -5 80 5 radial 1 0
+RES  RES  mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data_dynamo/sur&RES    res.colors  none -5 80 5 radial 1 0
 ======== ========  mdvp::static//hail.eol.ucar.edu:0:/spacer&Elevation  none.colors   m   -5   80  5  dcont   1 0
 ======== ========  mdvp::static//hail.eol.ucar.edu:0:/spacer&Elevation  none.colors   m   -5   80  5  dcont   1 0
 ======== ========  mdvp::static//hail.eol.ucar.edu:0:/spacer&Elevation  none.colors   m   -5   80  5  dcont   1 0
 ======== ========  mdvp::static//hail.eol.ucar.edu:0:/spacer&Elevation  none.colors   m   -5   80  5  dcont   1 0
 
-DBZ_S   DBZ_S   mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data/sur&DBZ_S   dbz.colors   dBZ -5 80 5 radial 1 0
-DBZ_K  DBZ_K   mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data/sur&DBZ_K     dbz.colors   dBZ -5 80 5 radial 1 0
-PID  PID  mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data/sur&PID    pid.colors  none -5 80 5 radial 1 0
-TEMP_PID TEMP_PID  mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data/sur&TEMP_FOR_PID  temp.colors    C -5 80 5 redial 1 0
+DBZ_S   DBZ_S   mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data_dynamo/sur&DBZ_S   dbz.colors   dBZ -5 80 5 radial 1 0
+DBZ_K  DBZ_K   mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data_dynamo/sur&DBZ_K     dbz.colors   dBZ -5 80 5 radial 1 0
+PID  PID  mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data_dynamo/sur&PID    pid.colors  none -5 80 5 radial 1 0
+TEMP_PID TEMP_PID  mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data_dynamo/sur&TEMP_FOR_PID  temp.colors    C -5 80 5 redial 1 0
 ======== ========  mdvp::static//hail.eol.ucar.edu:0:/spacer&Elevation  none.colors   m   -5   80  5  dcont   1 0
 ======== ========  mdvp::static//hail.eol.ucar.edu:0:/spacer&Elevation  none.colors   m   -5   80  5  dcont   1 0
 
-DBZ_S   DBZ_S   mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data/sur&DBZ_S   dbz.colors   dBZ -5 80 5 radial 1 0
-DBZ_NAA_S DBZ_NAA_S mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data/sur&DBZ_NAA_S dbz.colors dBZ -5 80 5 radial 1 0
-VEL_S   VEL_S   mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data/sur&VEL_S   vel.colors   m/s -5 80 5 radial 1 0
-VEL_HV  VEL_HV  mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data/sur&VEL_HV_S vel.colors   m/s -5 80 5 radial 1 0
-VEL_ALT    VEL_ALT    mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data/sur&VEL_ALT_S   vel.colors   m/s -5 80 5 radial 1 0
-WIDTH_S WIDTH_S mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data/sur&WIDTH_S  width.colors m/s -5 80 5 radial 1 0
+DBZ_S   DBZ_S   mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data_dynamo/sur&DBZ_S   dbz.colors   dBZ -5 80 5 radial 1 0
+DBZ_NAA_S DBZ_NAA_S mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data_dynamo/sur&DBZ_NAA_S dbz.colors dBZ -5 80 5 radial 1 0
+VEL_S   VEL_S   mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data_dynamo/sur&VEL_S   vel.colors   m/s -5 80 5 radial 1 0
+VEL_HV  VEL_HV  mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data_dynamo/sur&VEL_HV_S vel.colors   m/s -5 80 5 radial 1 0
+VEL_ALT    VEL_ALT    mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data_dynamo/sur&VEL_ALT_S   vel.colors   m/s -5 80 5 radial 1 0
+WIDTH_S WIDTH_S mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data_dynamo/sur&WIDTH_S  width.colors m/s -5 80 5 radial 1 0
 
-ZDR_S   ZDR_S   mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data/sur&ZDR_S zdr.colors   dB  -5 80 5 radial 1 0
-PHIDP_S PHIDP_S mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data/sur&PHIDP_S   phidp_alt.colors deg -5 80 5 radial 1 0
-KDP_S   KDP_S   mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data/sur&KDP_S  kdp_sband.colors   deg/km -5 80 5 radial 1 0     
-PSOB_S  PSOB_S   mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data/sur&PSOB_S   psob.colors   deg -5 80 5 radial 1 0     
-NCP_S  NCP_S       mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data/sur&NCP_S  ncp.colors  dB   -5   80  5  radial   1 0
-CPA_S  CPA_S   mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data/sur&CPA_S  cpa.colors  - -5 80 5 radial 1 0
+ZDR_S   ZDR_S   mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data_dynamo/sur&ZDR_S zdr.colors   dB  -5 80 5 radial 1 0
+PHIDP_S PHIDP_S mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data_dynamo/sur&PHIDP_S   phidp_alt.colors deg -5 80 5 radial 1 0
+KDP_S   KDP_S   mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data_dynamo/sur&KDP_S  kdp_sband.colors   deg/km -5 80 5 radial 1 0     
+PSOB_S  PSOB_S   mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data_dynamo/sur&PSOB_S   psob.colors   deg -5 80 5 radial 1 0     
+NCP_S  NCP_S       mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data_dynamo/sur&NCP_S  ncp.colors  dB   -5   80  5  radial   1 0
+CPA_S  CPA_S   mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data_dynamo/sur&CPA_S  cpa.colors  - -5 80 5 radial 1 0
 
-LDRH_S  LDRH_S  mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data/sur&LDRH_S ldr.colors   dB  -5 80 5 radial 1 0
-LDRV_S  LDRV_S  mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data/sur&LDRV_S ldr.colors   dB  -5 80 5 radial 1 0
-RHOHV_S RHOHV_S mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data/sur&RHOHV_S rhohv.colors _   -5 80 5 radial 1 0
-RHOHV_NNC_S RHOHV_NNC_S mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data/sur&RHOHV_NNC_S rhohv.colors _   -5 80 5 radial 1 0
-SNRHC_S   SNRHC_S   mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data/sur&SNRHC_S  snr.colors   dB     -5 80 5 radial 1 0
-SNRVC_S   SNRVC_S   mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data/sur&SNRVC_S  snr.colors   dB     -5 80 5 radial 1 0
+LDRH_S  LDRH_S  mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data_dynamo/sur&LDRH_S ldr.colors   dB  -5 80 5 radial 1 0
+LDRV_S  LDRV_S  mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data_dynamo/sur&LDRV_S ldr.colors   dB  -5 80 5 radial 1 0
+RHOHV_S RHOHV_S mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data_dynamo/sur&RHOHV_S rhohv.colors _   -5 80 5 radial 1 0
+RHOHV_NNC_S RHOHV_NNC_S mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data_dynamo/sur&RHOHV_NNC_S rhohv.colors _   -5 80 5 radial 1 0
+SNRHC_S   SNRHC_S   mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data_dynamo/sur&SNRHC_S  snr.colors   dB     -5 80 5 radial 1 0
+SNRVC_S   SNRVC_S   mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data_dynamo/sur&SNRVC_S  snr.colors   dB     -5 80 5 radial 1 0
 
-SNRHX_S   SNRHX_S   mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data/sur&SNRHX_S  snr.colors   dB     -5 80 5 radial 1 0
-SNRVX_S   SNRVX_S   mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data/sur&SNRVX_S  snr.colors   dB     -5 80 5 radial 1 0
-DBMHC_S  DBMHC_S  mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data/sur&DBMHC_S  dbmlow.colors dBm -5 80 5 radial 1 0
-DBMVC_S  DBMVC_S  mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data/sur&DBMVC_S  dbmlow.colors dBm -5 80 5 radial 1 0
-DBMHX_S  DBMHX_S  mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data/sur&DBMHX_S  dbmlow.colors dBm -5 80 5 radial 1 0
-DBMVX_S  DBMVX_S  mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data/sur&DBMVX_S  dbmlow.colors dBm -5 80 5 radial 1 0
+SNRHX_S   SNRHX_S   mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data_dynamo/sur&SNRHX_S  snr.colors   dB     -5 80 5 radial 1 0
+SNRVX_S   SNRVX_S   mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data_dynamo/sur&SNRVX_S  snr.colors   dB     -5 80 5 radial 1 0
+DBMHC_S  DBMHC_S  mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data_dynamo/sur&DBMHC_S  dbmlow.colors dBm -5 80 5 radial 1 0
+DBMVC_S  DBMVC_S  mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data_dynamo/sur&DBMVC_S  dbmlow.colors dBm -5 80 5 radial 1 0
+DBMHX_S  DBMHX_S  mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data_dynamo/sur&DBMHX_S  dbmlow.colors dBm -5 80 5 radial 1 0
+DBMVX_S  DBMVX_S  mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data_dynamo/sur&DBMVX_S  dbmlow.colors dBm -5 80 5 radial 1 0
 
-CLUT_S CLUT_S  mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data/sur&CLUT_S  dbz.colors dB -5 80 5 radial 1 0
-CMD_S  CMD_S   mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data/sur&CMD_S      cmd.colors  none -5 80 5 radial 1 0
-CMD_FLAG_S CMD_FLAG_S  mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data/sur&CMD_FLAG_S cmd_flag.colors  none -5 80 5 radial 1 0
+CLUT_S CLUT_S  mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data_dynamo/sur&CLUT_S  dbz.colors dB -5 80 5 radial 1 0
+CMD_S  CMD_S   mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data_dynamo/sur&CMD_S      cmd.colors  none -5 80 5 radial 1 0
+CMD_FLAG_S CMD_FLAG_S  mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data_dynamo/sur&CMD_FLAG_S cmd_flag.colors  none -5 80 5 radial 1 0
 ======== ========  mdvp::static//hail.eol.ucar.edu:0:/spacer&Elevation  none.colors   m   -5   80  5  dcont   1 0
 ======== ========  mdvp::static//hail.eol.ucar.edu:0:/spacer&Elevation  none.colors   m   -5   80  5  dcont   1 0
 ======== ========  mdvp::static//hail.eol.ucar.edu:0:/spacer&Elevation  none.colors   m   -5   80  5  dcont   1 0
 
 # MERGED Kband moments
 
-DBZ_K  DBZ_K   mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data/sur&DBZ_K     dbz.colors   dBZ -5 80 5 radial 1 0
-DBZ_NAA_K DBZ_NAA_K   mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data/sur&DBZ_NAA_K     dbz.colors   dBZ -5 80 5 radial 1 0
-SNRHC_K  SNRHC_K  mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data/sur&SNRHC_K  snr.colors   dB  -5 80 5 radial 1 0
-SNRVX_K   SNRVX_K   mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data/sur&SNRVX_K  snr.colors dB -5 80 5 radial 1 0
-DBMHC_K  DBMHC_K  mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data/sur&DBMHC_K  dbmlow.colors dBm -5 80 5 radial 1 0
-DBMVX_K  DBMVX_K  mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data/sur&DBMVX_K  dbmlow.colors dBm -5 80 5 radial 1 0
+DBZ_K  DBZ_K   mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data_dynamo/sur&DBZ_K     dbz.colors   dBZ -5 80 5 radial 1 0
+DBZ_NAA_K DBZ_NAA_K   mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data_dynamo/sur&DBZ_NAA_K     dbz.colors   dBZ -5 80 5 radial 1 0
+SNRHC_K  SNRHC_K  mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data_dynamo/sur&SNRHC_K  snr.colors   dB  -5 80 5 radial 1 0
+SNRVX_K   SNRVX_K   mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data_dynamo/sur&SNRVX_K  snr.colors dB -5 80 5 radial 1 0
+DBMHC_K  DBMHC_K  mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data_dynamo/sur&DBMHC_K  dbmlow.colors dBm -5 80 5 radial 1 0
+DBMVX_K  DBMVX_K  mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data_dynamo/sur&DBMVX_K  dbmlow.colors dBm -5 80 5 radial 1 0
 
-RATE_ZH  RATE_ZH    mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data/sur&RATE_ZH precip_color none -5 80 5 radial 1 0
-RATE_Z_ZDR RATE_Z_ZDR  mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data/sur&RATE_Z_ZDR precip_color none -5 80 5 radial 1 0
-RATE_KDP RATE_KDP mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data/sur&RATE_KDP precip_color none -5 80 5 radial 1 0
-RATE_KDP_ZDR RATE_KDP_ZDR mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data/sur&RATE_KDP_ZDR precip_color none -5 80 5 radial 1 0
-RATE_HYBRID RATE_HYBRID    mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data/sur&RATE_HYBRID precip_color none -5 80 5 radial 1 0
+RATE_ZH  RATE_ZH    mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data_dynamo/sur&RATE_ZH precip_color none -5 80 5 radial 1 0
+RATE_Z_ZDR RATE_Z_ZDR  mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data_dynamo/sur&RATE_Z_ZDR precip_color none -5 80 5 radial 1 0
+RATE_KDP RATE_KDP mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data_dynamo/sur&RATE_KDP precip_color none -5 80 5 radial 1 0
+RATE_KDP_ZDR RATE_KDP_ZDR mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data_dynamo/sur&RATE_KDP_ZDR precip_color none -5 80 5 radial 1 0
+RATE_HYBRID RATE_HYBRID    mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data_dynamo/sur&RATE_HYBRID precip_color none -5 80 5 radial 1 0
 ======== ========  mdvp::static//hail.eol.ucar.edu:0:/spacer&Elevation  none.colors   m   -5   80  5  dcont   1 0
 
 ======== ========  mdvp::static//hail.eol.ucar.edu:0:/spacer&Elevation  none.colors   m   -5   80  5  dcont   1 0
