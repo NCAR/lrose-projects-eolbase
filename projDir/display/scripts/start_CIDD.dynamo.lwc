@@ -23,8 +23,8 @@ xset fp= /usr/share/fonts/X11/misc/,/usr/share/fonts/X11/75dpi/,/usr/share/fonts
 xset fp= /usr/share/fonts/misc/,/usr/share/fonts/75dpi/,/usr/share/fonts/100dpi/ >& /dev/null
 xset fp= /usr/X11R6/lib/X11/fonts/misc/,/usr/X11R6/lib/X11/fonts/75dpi/,/usr/X11R6/lib/X11/fonts/100dpi/ >& /dev/null
 
-setenv PROJ_DIR /home/rsfdata/projDir
+setenv PROJ_DIR /opt/local/git/lrose-projects-eolbase/projDir
 cd $PROJ_DIR/display/params
-CIDD -font fixed -p CIDD.dynamo.lwc
+/opt/local/lrose/bin/CIDD -font fixed -p CIDD.dynamo.lwc
 
 

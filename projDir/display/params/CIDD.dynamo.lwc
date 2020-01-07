@@ -165,8 +165,6 @@ RATE_HYBRID RATE_HYBRID    mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidW
 
 World         World          world_states.map        1  0.0 1000000.0  white
 Maldives      Maldives       maldives.map            1  0.0 10000.0    white
-#Towers        Towers         dynamo_towers.map       0  0.0 10000.0    cyan
-Points        Points         dynamo_points.map       0  0.0 1000000.0  cyan
 
 </MAPS>
 
@@ -246,7 +244,7 @@ cidd.debug2_flag:           0
 #  System will startup using field 0, requesting data closest to the
 # demo time. The movie frame will be centered on the time after applying
 # temporal rounding. 
-cidd.demo_time:  10:15 10/20/2011
+cidd.demo_time:  02:00 10/21/2011
 
 # Set times to the nearest value divisible by the number of seconds
 cidd.temporal_rounding:    1
