@@ -30,8 +30,13 @@ setenv LANG C
 
 setenv HOST_OS LINUX_LROSE
 
-setenv LROSE_CORE_DIR $HOME/git/lrose-core
-setenv LROSE_INSTALL_DIR $HOME/lrose
+#setenv LROSE_CORE_DIR $HOME/git/lrose-core
+#setenv LROSE_INSTALL_DIR $HOME/lrose
+
+setenv LROSE_CORE_DIR $HOME/git/mdv64/lrose-core
+setenv LROSE_INSTALL_DIR $HOME/lrose-mdv64
+
+setenv CODEBASE $LROSE_CORE_DIR/codebase
 
 setenv RAP_MAKE_INC_DIR $LROSE_CORE_DIR/codebase/make_include
 setenv RAP_MAKE_BIN_DIR $LROSE_CORE_DIR/codebase/make_bin
@@ -56,7 +61,8 @@ setenv CVSROOT :pserver:${CVSUSER}@localhost:/cvs
 setenv QTDIR /usr/lib/qt4
 
 setenv FC gfortran
-setenv GCC_WARNINGS -Wall
+#setenv GCC_WARNINGS " -Wall -pedantic-errors "
+setenv GCC_WARNINGS " -Wall "
 
 # --- LD library path --
 
