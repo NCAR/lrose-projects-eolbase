@@ -33,6 +33,9 @@ setenv HOST_OS LINUX_LROSE
 setenv LROSE_CORE_DIR $HOME/git/lrose-core
 setenv LROSE_INSTALL_DIR $HOME/lrose
 
+#setenv LROSE_CORE_DIR $HOME/git/mdv64/lrose-core
+#setenv LROSE_INSTALL_DIR $HOME/lrose-mdv64
+
 setenv RAP_MAKE_INC_DIR $LROSE_CORE_DIR/codebase/make_include
 setenv RAP_MAKE_BIN_DIR $LROSE_CORE_DIR/codebase/make_bin
 
@@ -104,6 +107,17 @@ setenv MDV2NETCDF_WRITE_LATLON_ARRAYS FALSE
 setenv RELAMP_SERVER_IPADDR 181.30.169.202
 
 setenv PROCMAP_HOST localhost
+
+# --- MPD ---
+setenv MPD_BASE_DIR $HOME/MPD/MPD_base
+setenv MPD_PROCESS_DIR $HOME/MPD/Processing
+setenv MPD_PROJ_DIR $MPD_BASE_DIR/projDir
+setenv MPD_DATA_DIR $MPD_PROJ_DIR/data
+setenv MPD_TMP_DIR $MPD_DATA_DIR/tmp
+setenv MPD_LOG_DIR $MPD_DATA_DIR/logs
+setenv MPD_DATA_DISTRIB_LOG_DIR $MPD_LOG_DIR/distrib
+setenv MPD_ERRORS_LOG_DIR $MPD_LOG_DIR/errors
+setenv MPD_RESTART_LOG_DIR $MPD_LOG_DIR/restart
 
 # --- project info --- 
 
