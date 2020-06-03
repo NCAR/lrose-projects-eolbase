@@ -107,15 +107,18 @@ DBZ_3D      DBZ_3D      mdvp:://front.eol.ucar.edu:8080:pecan/mdv/radarCart/mrms
 DbzColMax       DbzColMax        mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/mrms_qc?use_http=true&DbzColMax       dbz.colors        - -5 80 5 cart 1 0
 ======== ========  mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 cart 0 0
 
+FractionActive       FractionActive        mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/mrms_qc?use_http=true&FractionActive   fraction.colors        - -5 80 5 cart 1 0
+DbzTextureMean       DbzTextureMean        mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/mrms_qc?use_http=true&DbzTextureMean   dbz.colors        - -5 80 5 cart 1 0
+======== ========  mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 cart 0 0
+======== ========  mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 cart 0 0
+
 ConvFromColMax  ConvFromColMax   mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/mrms_qc?use_http=true&ConvFromColMax  conv_strat.colors - -5 80 5 cart 1 0
 ConvFromTexture ConvFromTexture  mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/mrms_qc?use_http=true&ConvFromTexture conv_strat.colors - -5 80 5 cart 1 0
 ConvStrat       ConvStrat        mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/mrms_qc?use_http=true&ConvStrat       conv_strat.colors - -5 80 5 cart 1 0
 ======== ========  mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 cart 0 0
 
-FractionActive       FractionActive        mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/mrms_qc?use_http=true&FractionActive   fraction.colors        - -5 80 5 cart 1 0
-DbzTextureMean       DbzTextureMean        mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/mrms_qc?use_http=true&DbzTextureMean   dbz.colors        - -5 80 5 cart 1 0
-DbzConv        DbzConv         mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/mrms_qc?use_http=true&DbzConv        dbz.colors        - -5 80 5 cart 1 0
-DbzStrat       DbzStrat        mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/mrms_qc?use_http=true&DbzStrat       dbz.colors        - -5 80 5 cart 1 0
+#DbzConv        DbzConv         mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/mrms_qc?use_http=true&DbzConv        dbz.colors        - -5 80 5 cart 1 0
+#DbzStrat       DbzStrat        mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/mrms_qc?use_http=true&DbzStrat       dbz.colors        - -5 80 5 cart 1 0
 
 ======== ========  mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 cart 0 0
 ======== ========  mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 cart 0 0
