@@ -78,10 +78,10 @@
 # LWC analysis
 
 LWC  LWC  mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data_dynamo/sur&LWC    lwc.colors  none -5 80 5 radial 1 0
+LWC_ITER  LWC_ITER  mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data_dynamo/sur&LWC_ITER    lwc.colors  none -5 80 5 radial 1 0
+LWC_RR  LWC_RR  mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data_dynamo/sur&LWC_RR    lwc.colors  none -5 80 5 radial 1 0
+LWC_DIFF  LWC_DIFF  mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data_dynamo/sur&LWC_DIFF    lwc_diff.colors  none -5 80 5 radial 1 0
 RES  RES  mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data_dynamo/sur&RES    res.colors  none -5 80 5 radial 1 0
-======== ========  mdvp::static//hail.eol.ucar.edu:0:/spacer&Elevation  none.colors   m   -5   80  5  dcont   1 0
-======== ========  mdvp::static//hail.eol.ucar.edu:0:/spacer&Elevation  none.colors   m   -5   80  5  dcont   1 0
-======== ========  mdvp::static//hail.eol.ucar.edu:0:/spacer&Elevation  none.colors   m   -5   80  5  dcont   1 0
 ======== ========  mdvp::static//hail.eol.ucar.edu:0:/spacer&Elevation  none.colors   m   -5   80  5  dcont   1 0
 
 DBZ_S   DBZ_S   mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data_dynamo/sur&DBZ_S   dbz.colors   dBZ -5 80 5 radial 1 0
