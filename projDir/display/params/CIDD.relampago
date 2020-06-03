@@ -394,6 +394,16 @@ S-MARTIN_DBZ  S-MARTIN_DBZ   mdvp:://front.eol.ucar.edu:8080:relampago/mdv/radar
 S-RAFAEL_DBZ  S-RAFAEL_DBZ   mdvp:://front.eol.ucar.edu:8080:relampago/mdv/radar/SanRafael?use_http=true&DBZ      dbz.colors   dBZ -5 80 5 cont 1 0
 S-MARTIN_Comp S-MARTIN_Comp  mdvp:://front.eol.ucar.edu:8080:relampago/mdv/radar/SanMartin?use_http=true&DBZ      dbz.colors   dBZ -5 80 5 cont,comp 1 0
 S-RAFAEL_Comp S-RAFAEL_Comp  mdvp:://front.eol.ucar.edu:8080:relampago/mdv/radar/SanRafael?use_http=true&DBZ      dbz.colors   dBZ -5 80 5 cont,comp 1 0
+S-MARTIN_DBZ-CF  S-MARTIN_DBZ-CF   mdvp:://front.eol.ucar.edu:8080:relampago/mdv/radar/SanMartin_netcdf?use_http=true&DBZ      dbz.colors   dBZ -5 80 5 cont 1 0
+S-RAFAEL_DBZ-CF  S-RAFAEL_DBZ-CF   mdvp:://front.eol.ucar.edu:8080:relampago/mdv/radar/SanRafael_netcdf?use_http=true&DBZ      dbz.colors   dBZ -5 80 5 cont 1 0
+S-MARTIN_Comp-CF S-MARTIN_Comp-CF  mdvp:://front.eol.ucar.edu:8080:relampago/mdv/radar/SanMartin_netcdf?use_http=true&DBZ      dbz.colors   dBZ -5 80 5 cont,comp 1 0
+S-RAFAEL_Comp-CF S-RAFAEL_Comp-CF  mdvp:://front.eol.ucar.edu:8080:relampago/mdv/radar/SanRafael_netcdf?use_http=true&DBZ      dbz.colors   dBZ -5 80 5 cont,comp 1 0
+
+========   ========    mdvp::static//front.eol.ucar.edu:8080:/spacer/moments?use_http=true&Elevation       none.colors  m   -5 80 5 cont  1 0
+========   ========    mdvp::static//front.eol.ucar.edu:8080:/spacer/moments?use_http=true&Elevation       none.colors  m   -5 80 5 cont  1 0
+========   ========    mdvp::static//front.eol.ucar.edu:8080:/spacer/moments?use_http=true&Elevation       none.colors  m   -5 80 5 cont  1 0
+========   ========    mdvp::static//front.eol.ucar.edu:8080:/spacer/moments?use_http=true&Elevation       none.colors  m   -5 80 5 cont  1 0
+
 ========   ========    mdvp::static//front.eol.ucar.edu:8080:/spacer/moments?use_http=true&Elevation       none.colors  m   -5 80 5 cont  1 0
 ========   ========    mdvp::static//front.eol.ucar.edu:8080:/spacer/moments?use_http=true&Elevation       none.colors  m   -5 80 5 cont  1 0
 ========   ========    mdvp::static//front.eol.ucar.edu:8080:/spacer/moments?use_http=true&Elevation       none.colors  m   -5 80 5 cont  1 0
