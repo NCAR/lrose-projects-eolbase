@@ -1,4 +1,4 @@
-####################################################################################
+#####################################################################################
 #  CIDD.master
 #  Configurable Interactive Data Display Master Params
 #
@@ -24,8 +24,30 @@
 #####################################################################################
 
 <GUI_CONFIG>
+
+///////////// field_list //////////////////////////////
+//
+//  Groups Grids into Sets.
+//  Each Entry needs:
+// ID_Label  List
+// 	List - Space Delimited list of grid legend names match strings.
+// 	If a group is "ON", then any grid whose legend label contains any  
+//   of the match strings in the group list becomes active.
+//
+// Type: struct
+//   typedef struct {
+//      char* id_label;
+//      char* grid_list;
+//   }
+//
+// 1D array - variable length.
+//
+
+field_list = {
+};
+
 </GUI_CONFIG>
-  
+
 <GRIDS>
 # Legend Label: used for all on-screen labels and for movie/html file naming.
 #           An Empty grid field can be obtained by using the keyword "None"
@@ -72,83 +94,36 @@
 #Legend   Button                                                             Rendering
 #Label    Label       URL           Colorscale Units Cont-lo-hi-interv Format Display_in_menu Bkgnd_Render
 #----------------------------------------------------------------------------------------------------------
-# Front Range
+# PECAN
 #
 
-# LWC analysis
+#############################
+# WIDE AREA PRODUCTS
 
-LWC  LWC  mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data_dynamo/sur&LWC    lwc.colors  none -5 80 5 radial 1 0
-LWC_ITER  LWC_ITER  mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data_dynamo/sur&LWC_ITER    lwc.colors  none -5 80 5 radial 1 0
-LWC_RR  LWC_RR  mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data_dynamo/sur&LWC_RR    lwc.colors  none -5 80 5 radial 1 0
-LWC_DIFF  LWC_DIFF  mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data_dynamo/sur&LWC_DIFF    lwc_diff.colors  none -5 80 5 radial 1 0
-RES  RES  mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data_dynamo/sur&RES    res.colors  none -5 80 5 radial 1 0
-======== ========  mdvp::static//hail.eol.ucar.edu:0:/spacer&Elevation  none.colors   m   -5   80  5  dcont   1 0
+# MRMS mosaic
 
-DBZ_S   DBZ_S   mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data_dynamo/sur&DBZ_S   dbz.colors   dBZ -5 80 5 radial 1 0
-DBZ_K  DBZ_K   mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data_dynamo/sur&DBZ_K     dbz.colors   dBZ -5 80 5 radial 1 0
-PID  PID  mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data_dynamo/sur&PID    pid.colors  none -5 80 5 radial 1 0
-TEMP_PID TEMP_PID  mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data_dynamo/sur&TEMP_FOR_PID  temp.colors    C -5 80 5 redial 1 0
-======== ========  mdvp::static//hail.eol.ucar.edu:0:/spacer&Elevation  none.colors   m   -5   80  5  dcont   1 0
-======== ========  mdvp::static//hail.eol.ucar.edu:0:/spacer&Elevation  none.colors   m   -5   80  5  dcont   1 0
+DBZ_COMP_3D DBZ_COMP_3D mdvp::composite//front.eol.ucar.edu:8080:pecan/mdv/radarCart/mrms_mosaic?use_http=true&DBZ  dbz.colors   dBZ -5 80 5 cart 1 0
+DBZ_3D      DBZ_3D      mdvp:://front.eol.ucar.edu:8080:pecan/mdv/radarCart/mrms_mosaic?use_http=true&DBZ           dbz.colors   dBZ -5 80 5 cart 1 0
+DbzColMax       DbzColMax        mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/mrms_qc?use_http=true&DbzColMax       dbz.colors        - -5 80 5 cart 1 0
+======== ========  mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 cart 0 0
 
-DBZ_S   DBZ_S   mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data_dynamo/sur&DBZ_S   dbz.colors   dBZ -5 80 5 radial 1 0
-DBZ_NAA_S DBZ_NAA_S mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data_dynamo/sur&DBZ_NAA_S dbz.colors dBZ -5 80 5 radial 1 0
-VEL_S   VEL_S   mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data_dynamo/sur&VEL_S   vel.colors   m/s -5 80 5 radial 1 0
-VEL_HV  VEL_HV  mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data_dynamo/sur&VEL_HV_S vel.colors   m/s -5 80 5 radial 1 0
-VEL_ALT    VEL_ALT    mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data_dynamo/sur&VEL_ALT_S   vel.colors   m/s -5 80 5 radial 1 0
-WIDTH_S WIDTH_S mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data_dynamo/sur&WIDTH_S  width.colors m/s -5 80 5 radial 1 0
+FractionActive       FractionActive        mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/mrms_qc?use_http=true&FractionActive   fraction.colors        - -5 80 5 cart 1 0
+DbzTextureMean       DbzTextureMean        mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/mrms_qc?use_http=true&DbzTextureMean   dbz.colors        - -5 80 5 cart 1 0
+======== ========  mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 cart 0 0
+======== ========  mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 cart 0 0
 
-ZDR_S   ZDR_S   mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data_dynamo/sur&ZDR_S zdr.colors   dB  -5 80 5 radial 1 0
-PHIDP_S PHIDP_S mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data_dynamo/sur&PHIDP_S   phidp_alt.colors deg -5 80 5 radial 1 0
-KDP_S   KDP_S   mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data_dynamo/sur&KDP_S  kdp_sband.colors   deg/km -5 80 5 radial 1 0     
-PSOB_S  PSOB_S   mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data_dynamo/sur&PSOB_S   psob.colors   deg -5 80 5 radial 1 0     
-NCP_S  NCP_S       mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data_dynamo/sur&NCP_S  ncp.colors  dB   -5   80  5  radial   1 0
-CPA_S  CPA_S   mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data_dynamo/sur&CPA_S  cpa.colors  - -5 80 5 radial 1 0
+ConvFromColMax  ConvFromColMax   mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/mrms_qc?use_http=true&ConvFromColMax  conv_strat.colors - -5 80 5 cart 1 0
+ConvFromTexture ConvFromTexture  mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/mrms_qc?use_http=true&ConvFromTexture conv_strat.colors - -5 80 5 cart 1 0
+ConvStrat       ConvStrat        mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/mrms_qc?use_http=true&ConvStrat       conv_strat.colors - -5 80 5 cart 1 0
+======== ========  mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 cart 0 0
 
-LDRH_S  LDRH_S  mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data_dynamo/sur&LDRH_S ldr.colors   dB  -5 80 5 radial 1 0
-LDRV_S  LDRV_S  mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data_dynamo/sur&LDRV_S ldr.colors   dB  -5 80 5 radial 1 0
-RHOHV_S RHOHV_S mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data_dynamo/sur&RHOHV_S rhohv.colors _   -5 80 5 radial 1 0
-RHOHV_NNC_S RHOHV_NNC_S mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data_dynamo/sur&RHOHV_NNC_S rhohv.colors _   -5 80 5 radial 1 0
-SNRHC_S   SNRHC_S   mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data_dynamo/sur&SNRHC_S  snr.colors   dB     -5 80 5 radial 1 0
-SNRVC_S   SNRVC_S   mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data_dynamo/sur&SNRVC_S  snr.colors   dB     -5 80 5 radial 1 0
+#DbzConv        DbzConv         mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/mrms_qc?use_http=true&DbzConv        dbz.colors        - -5 80 5 cart 1 0
+#DbzStrat       DbzStrat        mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/mrms_qc?use_http=true&DbzStrat       dbz.colors        - -5 80 5 cart 1 0
 
-SNRHX_S   SNRHX_S   mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data_dynamo/sur&SNRHX_S  snr.colors   dB     -5 80 5 radial 1 0
-SNRVX_S   SNRVX_S   mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data_dynamo/sur&SNRVX_S  snr.colors   dB     -5 80 5 radial 1 0
-DBMHC_S  DBMHC_S  mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data_dynamo/sur&DBMHC_S  dbmlow.colors dBm -5 80 5 radial 1 0
-DBMVC_S  DBMVC_S  mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data_dynamo/sur&DBMVC_S  dbmlow.colors dBm -5 80 5 radial 1 0
-DBMHX_S  DBMHX_S  mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data_dynamo/sur&DBMHX_S  dbmlow.colors dBm -5 80 5 radial 1 0
-DBMVX_S  DBMVX_S  mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data_dynamo/sur&DBMVX_S  dbmlow.colors dBm -5 80 5 radial 1 0
-
-CLUT_S CLUT_S  mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data_dynamo/sur&CLUT_S  dbz.colors dB -5 80 5 radial 1 0
-CMD_S  CMD_S   mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data_dynamo/sur&CMD_S      cmd.colors  none -5 80 5 radial 1 0
-CMD_FLAG_S CMD_FLAG_S  mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data_dynamo/sur&CMD_FLAG_S cmd_flag.colors  none -5 80 5 radial 1 0
-======== ========  mdvp::static//hail.eol.ucar.edu:0:/spacer&Elevation  none.colors   m   -5   80  5  dcont   1 0
-======== ========  mdvp::static//hail.eol.ucar.edu:0:/spacer&Elevation  none.colors   m   -5   80  5  dcont   1 0
-======== ========  mdvp::static//hail.eol.ucar.edu:0:/spacer&Elevation  none.colors   m   -5   80  5  dcont   1 0
-
-# MERGED Kband moments
-
-DBZ_K  DBZ_K   mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data_dynamo/sur&DBZ_K     dbz.colors   dBZ -5 80 5 radial 1 0
-DBZ_NAA_K DBZ_NAA_K   mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data_dynamo/sur&DBZ_NAA_K     dbz.colors   dBZ -5 80 5 radial 1 0
-SNRHC_K  SNRHC_K  mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data_dynamo/sur&SNRHC_K  snr.colors   dB  -5 80 5 radial 1 0
-SNRVX_K   SNRVX_K   mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data_dynamo/sur&SNRVX_K  snr.colors dB -5 80 5 radial 1 0
-DBMHC_K  DBMHC_K  mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data_dynamo/sur&DBMHC_K  dbmlow.colors dBm -5 80 5 radial 1 0
-DBMVX_K  DBMVX_K  mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data_dynamo/sur&DBMVX_K  dbmlow.colors dBm -5 80 5 radial 1 0
-
-RATE_ZH  RATE_ZH    mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data_dynamo/sur&RATE_ZH precip_color none -5 80 5 radial 1 0
-RATE_Z_ZDR RATE_Z_ZDR  mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data_dynamo/sur&RATE_Z_ZDR precip_color none -5 80 5 radial 1 0
-RATE_KDP RATE_KDP mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data_dynamo/sur&RATE_KDP precip_color none -5 80 5 radial 1 0
-RATE_KDP_ZDR RATE_KDP_ZDR mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data_dynamo/sur&RATE_KDP_ZDR precip_color none -5 80 5 radial 1 0
-RATE_HYBRID RATE_HYBRID    mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidWater/data_dynamo/sur&RATE_HYBRID precip_color none -5 80 5 radial 1 0
-======== ========  mdvp::static//hail.eol.ucar.edu:0:/spacer&Elevation  none.colors   m   -5   80  5  dcont   1 0
-
-======== ========  mdvp::static//hail.eol.ucar.edu:0:/spacer&Elevation  none.colors   m   -5   80  5  dcont   1 0
-======== ========  mdvp::static//hail.eol.ucar.edu:0:/spacer&Elevation  none.colors   m   -5   80  5  dcont   1 0
-======== ========  mdvp::static//hail.eol.ucar.edu:0:/spacer&Elevation  none.colors   m   -5   80  5  dcont   1 0
-======== ========  mdvp::static//hail.eol.ucar.edu:0:/spacer&Elevation  none.colors   m   -5   80  5  dcont   1 0
-======== ========  mdvp::static//hail.eol.ucar.edu:0:/spacer&Elevation  none.colors   m   -5   80  5  dcont   1 0
-======== ========  mdvp::static//hail.eol.ucar.edu:0:/spacer&Elevation  none.colors   m   -5   80  5  dcont   1 0
-
+======== ========  mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 cart 0 0
+======== ========  mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 cart 0 0
+======== ========  mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 cart 0 0
+======== ========  mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 cart 0 0
 
 </GRIDS>
 
@@ -163,8 +138,10 @@ RATE_HYBRID RATE_HYBRID    mdvp:://hail.eol.ucar.edu:0:/scr/sci/romatsch/liquidW
 # MAP_CODE Control_Label   Map_File_Name   On/OFF Detail__min Detail_max Color     
 #------------------------------------------------------------------------------------------
 
-World         World          world_states.map        1  0.0 1000000.0  white
-Maldives      Maldives       maldives.map            1  0.0 10000.0    white
+PECAN        PECAN        pecan_domain.map  1  0.0 1000000.0  orange
+Counties     Counties     us_counties.map   0      0.0      10000.0     brown4
+States       States       usa.map           1      0.0      10000.0     blue
+NEXRADS      NEXRADS      nexrads.map       1      0.0      10000.0     white
 
 </MAPS>
 
@@ -213,7 +190,14 @@ Maldives      Maldives       maldives.map            1  0.0 10000.0    white
 #
 # Legend_label  URL U V W_fieldnames units  Style [Color]
 #----------------------------------------------------------------------------
-#TREC_mdvp    mdvp:://oberon::dia/mdv/trec/ftg&  #1 #2 None  m/s  2      yellow
+#Surface  mdvp:://front.eol.ucar.edu:8080:pecan/mdv/surf_interp?use_http=true& Uwind Vwind None m/s 1 yellow
+#RUCRAP   mdvp:://front.eol.ucar.edu:8080:pecan/mdv/ruc?use_http=true& UGRD  VGRD  None m/s 1 cyan
+OpticalFlow mdvp:://front.eol.ucar.edu:8080:pecan/mdv/optflow/mrms?use_http=true& U  V  None m/s -1,barb seagreen
+#DDOP  mdvp:://front.eol.ucar.edu:8080:pecan/mdv/ddoppler/chill_spol?use_http=true& U V None m/s 1 yellow
+
+#VDRASr_Vector  mdvp:://front.eol.ucar.edu:8080:/data/zhuming/pecan/mdv/anal?use_http=true& uwind  vwind  wwind m/s 0 red
+#VDRASr_Shear   mdvp:://front.eol.ucar.edu:8080:/data/zhuming/pecan/mdv/post?use_http=true& us     vs     None  m/s 0 orange
+#VDRASr_MSL     mdvp:://front.eol.ucar.edu:8080:/data/zhuming/pecan/mdv/post?use_http=true& umsl   vmsl   wmsl  m/s 0 green
 
 </WINDS>
 
@@ -244,7 +228,7 @@ cidd.debug2_flag:           0
 #  System will startup using field 0, requesting data closest to the
 # demo time. The movie frame will be centered on the time after applying
 # temporal rounding. 
-cidd.demo_time:  02:00 10/21/2011
+cidd.demo_time:  00:00 06/26/2015
 
 # Set times to the nearest value divisible by the number of seconds
 cidd.temporal_rounding:    1
@@ -255,12 +239,12 @@ cidd.movie_frame_dir: /tmp
 
 #  This determines how many movie frames are in the loop to start with
 #  Setting this high will cause the X server to hog memory.
-cidd.starting_movie_frames:  12
+cidd.starting_movie_frames:  24
 
 # minutes per movie frame on startup
 # The display will atomatically update every this interval, throwing away its
 # oldest movie frame and creating and drawing a new one.
-cidd.time_interval:  15
+cidd.time_interval:  5
 
 # This parameter sets the maximum number of hours in the future a user can select
 # from the quick forecast menu. See SHOW_FORECAST_MENU menu bar button
@@ -293,7 +277,7 @@ cidd.stretch_factor:     20.0
 # Typically, real-time operation should operate as 1 (End point requests)
 # Choose mode 0 if you want to enter a time and have data the data
 # at that time appear, regardless of how wide the movie frame interval is.
-cidd.gather_data_mode:  0
+cidd.gather_data_mode:  1
 
 # Number of milliseconds between checks for images needing redrawn
 # Set this lower on faster hardware - Recommended 50-250
@@ -308,14 +292,14 @@ cidd.redraw_interval:     100
 # Setting this below 3 seconds is not advised.  interacts with the Data
 # Mapper Host parameter: cidd.datamap_host:
 
-cidd.update_interval:      30
+cidd.update_interval:      60
 
 # Data Mapper Host
 #cidd.datamap_host:  venus
 
 #  Number of seconds to wait for data to come in before giving up
 #  On very slow networks this may need to go as high as 180 seconds!
-cidd.data_timeout_secs: 40
+cidd.data_timeout_secs: 30
 
 # Length of time to wait before killing simple external commands
 # Used When running single image convert scripts and driving
@@ -392,7 +376,7 @@ cidd.print_script: convert_image_print.csh
 # Button, after the last image has output. The arguments will be a list
 # of each output file in the series. CIDD will prepends the cidd.image_dir to each
 # files name which takes the form: cidd_field_name_zoom_name.xwd 
-cidd.series_convert_script: make_anim.csh
+cidd.series_convert_script: /opt/local/lrose/bin/make_anim.csh
 
 # Set to 1 to ask that data be compressed during the MDV Protocol
 # data requests. Default is = 0
@@ -403,7 +387,7 @@ cidd.request_compressed_data: 1
 #
 # Sets the projection for cidd's plan view - Current valid choices are:
 # CARTESIAN, LAT_LON, LAMBERT,  STEREOGRAPHIC
-cidd.projection_type:    CARTESIAN
+cidd.projection_type: LAT_LON
 
 # These must be set if using a Lambert conformal projection - Ignored otherwise
 cidd.lambert_lat1: 20.0
@@ -432,7 +416,6 @@ cidd.always_get_full_domain:  0
 # If set <= 0.0, CIDD will compute the aspect ratio based on the extent of the
 # first domain.
 cidd.aspect_ratio:   1.0
-#cidd.aspect_ratio:   1.3
 
 # Switch to enable the status window. 0 = off
 cidd.enable_status_window: 0
@@ -443,8 +426,8 @@ cidd.enable_save_image_panel: 1
  
 # On startup and each time the reset button is pressed, the display
 # will indicate a click at this point, as if the user had clicked..
-cidd.reset_click_longitude:  73.102766
-cidd.reset_click_latitude:   -0.630447
+cidd.reset_click_longitude:  -99.535739
+cidd.reset_click_latitude:   38.553164
 #
 # The Outer most domain: Overlays are clipped to this domain and 
 # pan/moves cannot exceed these edge limits.
@@ -455,8 +438,9 @@ cidd.domain_limit_max_y:         5000
  
 # The Lat, Long of the center of the display. Internal range rings
 # are relative to this point.
-cidd.origin_longitude:       73.102766
-cidd.origin_latitude:        -0.630447
+cidd.origin_longitude:       -99.535739
+cidd.origin_latitude:        38.553164
+
 #
 #
 # Select the data fields/page to start on.
@@ -466,8 +450,8 @@ cidd.xsect_start_page:      1
 
 #
 # The Outer most domain:
-cidd.num_zoom_levels:       8
-cidd.start_zoom_level:      2
+cidd.num_zoom_levels:       6
+cidd.start_zoom_level:      4
 
 # The number of Cached images for zooms.
 cidd.num_cache_zooms:       0
@@ -476,49 +460,45 @@ cidd.num_cache_zooms:       0
 # It's suggested that names without spaces be used when running
 # in.
 #
-cidd.level1_label:                  40km
-cidd.level1_min_xkm:                -40.0
-cidd.level1_min_ykm:                -40.0
-cidd.level1_max_xkm:                40.0
-cidd.level1_max_ykm:                40.0
+cidd.level1_label:                  SPOL-150km
+cidd.level1_min_xkm:                -101.27
+cidd.level1_min_ykm:                37.18
+cidd.level1_max_xkm:                -97.80
+cidd.level1_max_ykm:                39.90
 #
-cidd.level2_label:                  75km
-cidd.level2_min_xkm:                -75.0
-cidd.level2_min_ykm:                -75.0
-cidd.level2_max_xkm:                75.0
-cidd.level2_max_ykm:                75.0
-#
-#
-cidd.level3_label:                  150km
-cidd.level3_min_xkm:                -150.0
-cidd.level3_min_ykm:                -150.0
-cidd.level3_max_xkm:                150.0
-cidd.level3_max_ykm:                150.0
+cidd.level2_label:                  PECAN-DOMAIN
+cidd.level2_min_xkm:                -103.7
+cidd.level2_min_ykm:                35.45
+cidd.level2_max_xkm:                -95.2
+cidd.level2_max_ykm:                41.6
 #
 #
-cidd.level4_label:                  500km
-cidd.level4_min_xkm:                -500.0
-cidd.level4_min_ykm:                -500.0
-cidd.level4_max_xkm:                500.0
-cidd.level4_max_ykm:                500.0
+cidd.level3_label:                  WIDE
+cidd.level3_min_xkm:                -107.0
+cidd.level3_min_ykm:                33.5
+cidd.level3_max_xkm:                -92.0
+cidd.level3_max_ykm:                43.5
 #
-cidd.level5_label:                  1000km
-cidd.level5_min_xkm:                -1000.0
-cidd.level5_min_ykm:                -1000.0
-cidd.level5_max_xkm:                1000.0
-cidd.level5_max_ykm:                1000.0
 #
-cidd.level6_label:                  3000km
-cidd.level6_min_xkm:                -3000.0
-cidd.level6_min_ykm:                -3000.0
-cidd.level6_max_xkm:                3000.0
-cidd.level6_max_ykm:                3000.0
+cidd.level4_label:                  REGIONAL
+cidd.level4_min_xkm:                -110
+cidd.level4_min_ykm:                29
+cidd.level4_max_xkm:                -90
+cidd.level4_max_ykm:                46
 #
-cidd.level7_label:                  5000km
-cidd.level7_min_xkm:                -5000.0
-cidd.level7_min_ykm:                -5000.0
-cidd.level7_max_xkm:                5000.0
-cidd.level7_max_ykm:                5000.0
+#
+cidd.level5_label:                  CONUS
+cidd.level5_min_xkm:                -125
+cidd.level5_min_ykm:                25
+cidd.level5_max_xkm:                -70
+cidd.level5_max_ykm:                50
+#
+cidd.level6_label:                  WORLD
+cidd.level6_min_xkm:                -180
+cidd.level6_min_ykm:                -90
+cidd.level6_max_xkm:                180
+cidd.level6_max_ykm:                90
+#
 #
 
 # Vertical Range and Resolution - Establishes a vertical coordinate system
@@ -536,7 +516,7 @@ cidd.level7_max_ykm:                5000.0
 #  
 cidd.min_ht:               0.0
 cidd.max_ht:               20.0
-cidd.start_ht:             0.5
+cidd.start_ht:             1.7
 
 # Radial data Limits
 cidd.min_rkm:                0.0
@@ -546,8 +526,13 @@ cidd.max_adeg:               360.0
 
 # List of comma delimited local directories or HTTP URLs to search
 # Searchs . then each directory/URL in order 
-cidd.color_file_subdir:   $(PROJ_DIR)/display/color_scales
-cidd.map_file_subdir:     $(PROJ_DIR)/display/maps
+
+cidd.color_file_subdir:   http://front.eol.ucar.edu/color_scales
+#cidd.color_file_subdir:   $(PROJ_DIR)/display/color_scales
+cidd.map_file_subdir:     http://front.eol.ucar.edu/maps
+
+#cidd.color_file_subdir:   $(PROJ_DIR)/display/color_scales,http://front.eol.ucar.edu/color_scales
+#cidd.map_file_subdir:     $(PROJ_DIR)/display/maps,http://front.eol.ucar.edu/maps
 
 #
 # Station locator features
@@ -556,8 +541,7 @@ cidd.map_file_subdir:     $(PROJ_DIR)/display/maps
 cidd.locator_margin_km:   50
 # Full Path File name or http URL to a station data file.
 # The format of each line is:  ID, LAT, LON, ALT(m), TYPE
-#cidd.station_loc_url: http://hail.eol.ucar.edu/maps/world_stations.dat
-
+#cidd.station_loc_url: http://front.eol.ucar.edu/maps/world_stations.dat
 
 #
 # FMQ Type URL for Receiving Remote commands
@@ -755,6 +739,16 @@ cidd.vert_right_margin:      30
 # Set range_ring_spacing to a negative value to dynamically determing spacing.
 cidd.range_ring_spacing:     25.0
 cidd.max_ring_range:     150.0
+
+#  Render Range rings at the origin of the data, instead of the origin of the display.
+cidd.range_ring_follows_data: 1
+
+#  Render Range rings only for radar type data.
+cidd.range_ring_for_radar_only: 1
+
+#  Shift the Domain if the data shifts.
+cidd.domain_follows_data: 0
+
 # x_space, y_space in pixels determine allowable space for range ring labels
 cidd.range_ring_x_space:    40
 cidd.range_ring_y_space:    13
@@ -766,7 +760,7 @@ cidd.range_rings:             1
 cidd.azmith_lines:            1
 
 # Starting state of the All Winds ON/OFF feature
-cidd.all_winds_on: 1
+cidd.all_winds_on: 0
 
 # Wind vector parameters 
 cidd.barb_shaft_len:         30
@@ -796,7 +790,7 @@ cidd.wind_time_scale_interval: 10.0
 # m/sec for the scaling to work correctly. For the others (Barbs),
 # the units are arbitrary, but the flag units on the barbs will reflect
 # the data's native units.
-cidd.wind_marker_type:      vector
+cidd.wind_marker_type:      metbarb
 cidd.wind_w_scale_factor:    10.0
 #
 # Set this value to convert from the your reference speed units 
@@ -805,7 +799,7 @@ cidd.wind_w_scale_factor:    10.0
 cidd.wind_units_scale_factor:     0.2778
 
 # Sets the length of the wind vector reference speed legend.
-cidd.wind_reference_speed: 30.0
+cidd.wind_reference_speed: 10.0
 
 # Select the label to be printed next to the reference bar
 # Default = m/sec
@@ -924,7 +918,7 @@ cidd.click_posn_rel_to_origin: 1
 # Set this parameter to force the field menu popup to this many columns
 # If set <= 0, then cidd sets this dynamically, allowing at most 30 in each
 # column.
-cidd.num_field_menu_cols: 6
+cidd.num_field_menu_cols: 4
 
 # This parameter sets WSDDM specific behavior On -
 # - Go to end of loop when movie stops.
@@ -977,61 +971,64 @@ not be availible.  For research/ post analysis most of them should be enabled.
 # 
 #
 #####################################################################################
-cidd.num_menu_bar_cells: 16
+cidd.num_menu_bar_cells: 19
 #
-cidd.menu_bar_label1: Fields...
+cidd.menu_bar_label1: Fields
 cidd.menu_bar_funct1: SHOW_DPD_MENU
 # 
-cidd.menu_bar_label2: View...
+cidd.menu_bar_label2: Zoom
 cidd.menu_bar_funct2: SHOW_VIEW_MENU
 #
-cidd.menu_bar_label3: Maps...
-cidd.menu_bar_funct3: SHOW_MAP_MENU
+cidd.menu_bar_label3: Back
+cidd.menu_bar_funct3: ZOOM_BACK
 #
-cidd.menu_bar_label4: Movie...
-cidd.menu_bar_funct4: SHOW_TIME_PANEL
+cidd.menu_bar_label4: Maps
+cidd.menu_bar_funct4: SHOW_MAP_MENU
 #
-cidd.menu_bar_label5: Loop
-cidd.menu_bar_funct5: LOOP_ONOFF
+cidd.menu_bar_label5: Movie
+cidd.menu_bar_funct5: SHOW_TIME_PANEL
+#
+cidd.menu_bar_label6: Loop
+cidd.menu_bar_funct6: LOOP_ONOFF
 #  
-cidd.menu_bar_label6: Now
-cidd.menu_bar_funct6: SET_TO_NOW
+cidd.menu_bar_label7: Now
+cidd.menu_bar_funct7: SET_TO_NOW
 #
-cidd.menu_bar_label7: Overlays...
-cidd.menu_bar_funct7: SHOW_DPD_PANEL
-#
-cidd.menu_bar_label8: Products...
+cidd.menu_bar_label8: Products
 cidd.menu_bar_funct8: SHOW_PRODUCT_MENU
 #
-cidd.menu_bar_label9: Vsection
-cidd.menu_bar_funct9: SHOW_XSECT_PANEL
+cidd.menu_bar_label9: All-Prods
+cidd.menu_bar_funct9: SYMPRODS_ONOFF
 #
-cidd.menu_bar_label10: Reset
-cidd.menu_bar_funct10: RESET
+cidd.menu_bar_label10: Vsection
+cidd.menu_bar_funct10: SHOW_XSECT_PANEL
 #
-cidd.menu_bar_label11: Reload
-cidd.menu_bar_funct11: RELOAD
+cidd.menu_bar_label11: Reset
+cidd.menu_bar_funct11: RESET
 #
-cidd.menu_bar_label12: Value
-cidd.menu_bar_funct12: REPORT_MODE_ONOFF
+cidd.menu_bar_label12: Reload
+cidd.menu_bar_funct12: RELOAD
 #
-cidd.menu_bar_label13: Config...
-cidd.menu_bar_funct13: SHOW_GRID_PANEL
+cidd.menu_bar_label13: Value
+cidd.menu_bar_funct13: REPORT_MODE_ONOFF
 #
-cidd.menu_bar_label14: Back
-cidd.menu_bar_funct14: ZOOM_BACK
-
-cidd.menu_bar_label16: Exit
-cidd.menu_bar_funct16: EXIT_BUTTON
+cidd.menu_bar_label14: Overlays
+cidd.menu_bar_funct14: SHOW_DPD_PANEL
 #
-cidd.menu_bar_label15: Status...
-cidd.menu_bar_funct15: SHOW_STATUS_PANEL
+cidd.menu_bar_label15: Config
+cidd.menu_bar_funct15: SHOW_GRID_PANEL
 #
-#cidd.menu_bar_label10: Symprods on/off
-#cidd.menu_bar_funct10: SYMPRODS_ONOFF
+cidd.menu_bar_label16: Status
+cidd.menu_bar_funct16: SHOW_STATUS_PANEL
 #
-#cidd.menu_bar_label17: Help...
-#cidd.menu_bar_funct17: HELP_BUTTON
+cidd.menu_bar_label17: Help
+cidd.menu_bar_funct17: HELP_BUTTON
+#
+cidd.menu_bar_label18: Winds
+cidd.menu_bar_funct18: WINDS_ONOFF
+#
+cidd.menu_bar_label19: Exit
+cidd.menu_bar_funct19: EXIT_BUTTON
 #
 #cidd.menu_bar_label7: URL...
 #cidd.menu_bar_funct7: SHOW_BOOKMARK_MENU
@@ -1052,9 +1049,6 @@ cidd.menu_bar_funct15: SHOW_STATUS_PANEL
 #cidd.menu_bar_label17: Close Popups
 #cidd.menu_bar_funct17: CLOSE_POPUPS
 #
-#cidd.menu_bar_label19: Winds
-#cidd.menu_bar_funct19: WINDS_ONOFF
-#
 #cidd.menu_bar_label24: Draw Mode
 #cidd.menu_bar_funct24: SET_DRAW_MODE
 #
@@ -1068,7 +1062,10 @@ cidd.menu_bar_funct15: SHOW_STATUS_PANEL
 #cidd.menu_bar_funct29: LANDUSE_ONOFF
 #
 
-cidd.horiz_frame_label: SPOL WHARF SITE GAN
+
+##########################################
+
+cidd.horiz_frame_label: PECAN 2015
 
 # Set the message to display when no data is availible
 cidd.no_data_message:     NO DATA FOUND (in this area at the selected time)
@@ -1254,35 +1251,9 @@ short_requests = TRUE;
 //         Note: scale_constant set in MAIN_PARAM section.      
 
 prod_info = {
-   {
-    menu_label = "RHI-ticks",
-    url = "spdbp:Rhi2Symprod:ticks//hail.eol.ucar.edu:0:dynamo/spdb/rhi/sband",
-    data_type = 0,
-    render_type = RENDER_ALL_VALID,
-    on_by_default = FALSE,
-    minutes_allow_before = 20,
-    minutes_allow_after = 10,
-    text_off_threshold = 0.4,
-    request_data_on_zoom = FALSE,
-    request_data_on_vert_change = FALSE
-  }
-  , 
-  {
-    menu_label = "RHI-label",
-    url = "spdbp:Rhi2Symprod:label//hail.eol.ucar.edu:0:dynamo/spdb/rhi/sband",
-    data_type = 0,
-    render_type = RENDER_ALL_VALID,
-    on_by_default = FALSE,
-    minutes_allow_before = 20,
-    minutes_allow_after = 10,
-    text_off_threshold = 0.4,
-    request_data_on_zoom = FALSE,
-    request_data_on_vert_change = FALSE
-  }
-  ,
   {
     menu_label = "METARS-simple",
-    url = "spdbp:Metar2Symprod:simple//hail.eol.ucar.edu:0:dynamo/spdb/metar",
+    url = "spdbp:Metar2Symprod:simple//front.eol.ucar.edu:8080:pecan/spdb/metar?use_http=true",
     data_type = 0,
     render_type = RENDER_LATEST_IN_FRAME,
     on_by_default = FALSE,
@@ -1295,7 +1266,7 @@ prod_info = {
   ,
   {
     menu_label = "METARS-full",
-    url = "spdbp:Metar2Symprod:labels//hail.eol.ucar.edu:0:dynamo/spdb/metar",
+    url = "spdbp:Metar2Symprod:labels//front.eol.ucar.edu:8080:pecan/spdb/metar?use_http=true",
     data_type = 0,
     render_type = RENDER_LATEST_IN_FRAME,
     on_by_default = FALSE,
@@ -1307,38 +1278,64 @@ prod_info = {
   }
   ,
   {
-    menu_label = "SHIP-OBS",
-    url = "spdbp:Metar2Symprod:simple//hail.eol.ucar.edu:0:dynamo/spdb/ship_obs",
+    menu_label = "MADIS-simple",
+    url = "spdbp:Metar2Symprod:simple//front.eol.ucar.edu:8080:pecan/spdb/madis?use_http=true",
     data_type = 0,
     render_type = RENDER_LATEST_IN_FRAME,
     on_by_default = FALSE,
-    minutes_allow_before = 120.0,
-    minutes_allow_after = 30.0,
-    text_off_threshold = 0.0001,
-    request_data_on_zoom = FALSE,
-    request_data_on_vert_change = FALSE
-  }
-  ,
-  {
-    menu_label = "SYN-OBS",
-    url = "spdbp:Metar2Symprod:simple//hail.eol.ucar.edu:0:dynamo/spdb/synop_obs",
-    data_type = 0,
-    render_type = RENDER_LATEST_IN_FRAME,
-    on_by_default = FALSE,
-    minutes_allow_before = 240.0,
-    minutes_allow_after = 6.0,
+    minutes_allow_before = 90.0,
+    minutes_allow_after = 0.0,
     text_off_threshold = 0.0,
     request_data_on_zoom = FALSE,
     request_data_on_vert_change = FALSE
   }
   ,
   {
-    menu_label = "WWLLN-1hour" ,
-    url = "spdbp:Ltg2Symprod:wwlln//hail.eol.ucar.edu:0:dynamo/spdb/wwlln",
+    menu_label = "MADIS-full",
+    url = "spdbp:Metar2Symprod:labels//front.eol.ucar.edu:8080:pecan/spdb/madis?use_http=true",
+    data_type = 0,
+    render_type = RENDER_LATEST_IN_FRAME,
+    on_by_default = FALSE,
+    minutes_allow_before = 90.0,
+    minutes_allow_after = 0.0,
+    text_off_threshold = 0.0,
+    request_data_on_zoom = FALSE,
+    request_data_on_vert_change = FALSE
+  }
+  ,
+  {
+    menu_label = "KSMeso-simple",
+    url = "spdbp:Metar2Symprod:simple//front.eol.ucar.edu:8080:pecan/spdb/KSMeso?use_http=true",
+    data_type = 0,
+    render_type = RENDER_LATEST_IN_FRAME,
+    on_by_default = FALSE,
+    minutes_allow_before = 90.0,
+    minutes_allow_after = 0.0,
+    text_off_threshold = 0.0,
+    request_data_on_zoom = FALSE,
+    request_data_on_vert_change = FALSE
+  }
+  ,
+  {
+    menu_label = "KSMeso-full",
+    url = "spdbp:Metar2Symprod:labels//front.eol.ucar.edu:8080:pecan/spdb/KSMeso?use_http=true",
+    data_type = 0,
+    render_type = RENDER_LATEST_IN_FRAME,
+    on_by_default = FALSE,
+    minutes_allow_before = 90.0,
+    minutes_allow_after = 0.0,
+    text_off_threshold = 0.0,
+    request_data_on_zoom = FALSE,
+    request_data_on_vert_change = FALSE
+  }
+  ,
+  {
+    menu_label = "NLDN-15" ,
+    url = "spdbp:Ltg2Symprod://front.eol.ucar.edu:8080:pecan/spdb/ltg/nldn?use_http=true",
     data_type = 0,
     render_type = RENDER_ALL_BEFORE_DATA_TIME,
     on_by_default = FALSE,
-    minutes_allow_before = 60.0,
+    minutes_allow_before = 15.0,
     minutes_allow_after = 0.0,
     text_off_threshold = 0.0,
     FALSE,
@@ -1346,118 +1343,27 @@ prod_info = {
   }
   ,
   {
-    menu_label = "WWLLN-3hour" ,
-    url = "spdbp:Ltg2Symprod:wwlln//hail.eol.ucar.edu:0:dynamo/spdb/wwlln",
+    menu_label = "titan-forecast 60-min",
+    url = "spdbp:Tstorms2Symprod:60min//front.eol.ucar.edu:8080:pecan/spdb/tstorms/mrms_conv?use_http=true",
     data_type = 0,
-    render_type = RENDER_ALL_BEFORE_DATA_TIME,
+    render_type = RENDER_LATEST_IN_FRAME,
     on_by_default = FALSE,
-    minutes_allow_before = 180.0,
+    minutes_allow_before = 20.0,
     minutes_allow_after = 0.0,
-    text_off_threshold = 0.0,
+    text_off_threshold = 0,
     FALSE,
     FALSE
   }
   ,
   {
-    menu_label = "WWLLN-6hour" ,
-    url = "spdbp:Ltg2Symprod:wwlln//hail.eol.ucar.edu:0:dynamo/spdb/wwlln",
+    menu_label = "titan-forecast 120-min",
+    url = "spdbp:Tstorms2Symprod:120min//front.eol.ucar.edu:8080:pecan/spdb/tstorms/mrms_conv?use_http=true",
     data_type = 0,
-    render_type = RENDER_ALL_BEFORE_DATA_TIME,
+    render_type = RENDER_LATEST_IN_FRAME,
     on_by_default = FALSE,
-    minutes_allow_before = 360.0,
+    minutes_allow_before = 20.0,
     minutes_allow_after = 0.0,
-    text_off_threshold = 0.0,
-    FALSE,
-    FALSE
-  }
-  ,                        
-  {
-    menu_label = "Falcon Track 05-min",
-    url = "spdbp:AcTrack2Symprod:05_min//hail.eol.ucar.edu:0:dynamo/spdb/ac_posn/falcon",
-    data_type = 0,
-    render_type = RENDER_FIRST_BEFORE_FRAME_TIME,
-    on_by_default = FALSE,
-    minutes_allow_before = 15.0,
-    minutes_allow_after = 15.0,
-    text_off_threshold = 0.4,
-    FALSE,
-    FALSE
-  }
-  ,                        
-  {
-    menu_label = "Falcon Track 10-min",
-    url = "spdbp:AcTrack2Symprod:10_min//hail.eol.ucar.edu:0:dynamo/spdb/ac_posn/falcon",
-    data_type = 0,
-    render_type = RENDER_FIRST_BEFORE_FRAME_TIME,
-    on_by_default = FALSE,
-    minutes_allow_before = 15.0,
-    minutes_allow_after = 15.0,
-    text_off_threshold = 0.4,
-    FALSE,
-    FALSE
-  }
-  ,                        
-  {
-    menu_label = "Falcon Track 20-min",
-    url = "spdbp:AcTrack2Symprod:20_min//hail.eol.ucar.edu:0:dynamo/spdb/ac_posn/falcon",
-    data_type = 0,
-    render_type = RENDER_FIRST_BEFORE_FRAME_TIME,
-    on_by_default = FALSE,
-    minutes_allow_before = 15.0,
-    minutes_allow_after = 15.0,
-    text_off_threshold = 0.4,
-    FALSE,
-    FALSE
-  }
-  ,                        
-  {
-    menu_label = "P3 Track 20-min",
-    url = "spdbp:AcTrack2Symprod:20_min//hail.eol.ucar.edu:0:dynamo/spdb/ac_posn/p3",
-    data_type = 0,
-    render_type = RENDER_FIRST_BEFORE_FRAME_TIME,
-    on_by_default = FALSE,
-    minutes_allow_before = 15.0,
-    minutes_allow_after = 15.0,
-    text_off_threshold = 0.4,
-    FALSE,
-    FALSE
-  }
-  ,                        
-  {
-    menu_label = "P3 Track 40-min",
-    url = "spdbp:AcTrack2Symprod:40_min//hail.eol.ucar.edu:0:dynamo/spdb/ac_posn/p3",
-    data_type = 0,
-    render_type = RENDER_FIRST_BEFORE_FRAME_TIME,
-    on_by_default = FALSE,
-    minutes_allow_before = 15.0,
-    minutes_allow_after = 15.0,
-    text_off_threshold = 0.4,
-    FALSE,
-    FALSE
-  }
-  ,                        
-  {
-    menu_label = "P3 Track 60-min",
-    url = "spdbp:AcTrack2Symprod:60_min//hail.eol.ucar.edu:0:dynamo/spdb/ac_posn/p3",
-    data_type = 0,
-    render_type = RENDER_FIRST_BEFORE_FRAME_TIME,
-    on_by_default = FALSE,
-    minutes_allow_before = 15.0,
-    minutes_allow_after = 15.0,
-    text_off_threshold = 0.4,
-    FALSE,
-    FALSE
-  }
-  ,                        
-  {
-    menu_label = "Revelle posn",
-    url = "spdbp:AcTrack2Symprod:ship//hail.eol.ucar.edu:0:dynamo/spdb/revelle_posn",
-    data_type = 0,
-    render_type = RENDER_FIRST_BEFORE_FRAME_TIME,
-    on_by_default = FALSE,
-    minutes_allow_before = 60.0,
-    minutes_allow_after = 60.0,
-    text_off_threshold = 0.4,
+    text_off_threshold = 0,
     FALSE,
     FALSE
   }
@@ -1487,6 +1393,7 @@ id_label = "Terrain";
 // Type: string
 //
 
+// terrain_url = "mdvp::terrain//front.eol.ucar.edu:8080:pecan/mdv/terrain?use_http=true&Elevation";
 terrain_url = "";
 
 ///////////// height_scaler ///////////////////////////
@@ -1495,8 +1402,7 @@ terrain_url = "";
 // Choose a scaler which converts plane height values.
 // Type: double
 //
-//  Hecto-feet (FL) per meter
-height_scaler = 0.03280834;
+height_scaler = 0.001;
 
 ///////////// landuse_url /////////////////////////////
 //
@@ -1518,7 +1424,7 @@ landuse_url = "";
 // Type: string
 //
 
-landuse_colorscale = "land_sea.colors";
+landuse_colorscale = "terrain_front.colors";
 
 ///////////// land_use_render_method //////////////////
 //
@@ -1530,7 +1436,7 @@ landuse_colorscale = "land_sea.colors";
 //   RENDER_FILLED_CONT, RENDER_RECTANGLES
 //
 //
-land_use_render_method = RENDER_RECTANGLES;
+land_use_render_method = RENDER_FILLED_CONT;
 
 ///////////// earth_color1 ////////////////////////////
 //

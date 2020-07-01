@@ -2606,8 +2606,8 @@ Jazz config file for PECAN
 ####################################################################################################################################
 -->
 
-<Time mode="realtime" start="-1hrs" end="+10mins" interval="5mins" update="60secs"/>
-<!-- Time mode="archive" start="2014-05-21T20:30" end="2014-05-21T23:30" interval="5mins" update="30secs"/-->
+<!-- Time mode="realtime" start="-1hrs" end="+10mins" interval="5mins" update="60secs"/-->
+<Time mode="archive" start="2015-06-26T00:00" end="2015-06-26T01:00" interval="10mins" update="300secs"/>
 
 <!--
 ####################################################################################################################################
