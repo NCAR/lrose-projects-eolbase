@@ -32,13 +32,13 @@ def main():
     # go to the directory
 
     if (os.path.exists(options.dirPath) == False):
-        print "ERROR - ", appName
-        print "  dir does not exist: ", options.dirPath
+        print("ERROR - ", appName)
+        print("  dir does not exist: ", options.dirPath)
         sys.exit(1)
 
     os.chdir(options.dirPath)
     if (options.debug == True):
-        print "working on dir: ", options.dirPath
+        print("working on dir: ", options.dirPath)
 
     # get listing of dated dirs
     
@@ -47,7 +47,7 @@ def main():
     for dir in dirList:
 
         if (options.debug):
-            print "  checking dir: ", dir
+            print("  checking dir: ", dir)
 
         try:
 
@@ -60,34 +60,34 @@ def main():
             dirStartTime = datetime.datetime(int(yearStr), int(monthStr), int(dayStr),
                                              0, 0, 0)
             if (options.debug):
-                print >>sys.stderr, "  dirStartTime: ", dirStartTime
+                print("  dirStartTime: ", dirStartTime, file=sys.stderr)
             if (dirStartTime < startTime):
                 if (options.verbose):
-                    print >>sys.stderr, "  dir time before start time: ", dir
+                    print("  dir time before start time: ", dir, file=sys.stderr)
                 continue
 
             # compute dir end time
             dirEndTime = datetime.datetime(int(yearStr), int(monthStr), int(dayStr),
                                            23, 59, 59)
             if (options.debug):
-                print >>sys.stderr, "  dirEndTime: ", dirEndTime
+                print("  dirEndTime: ", dirEndTime, file=sys.stderr)
             if (dirEndTime > endTime):
                 if (options.verbose):
-                    print >>sys.stderr, "  dir time after end time: ", dir
+                    print("  dir time after end time: ", dir, file=sys.stderr)
                 continue
 
-        except Exception, e:
+        except Exception as e:
             if (options.debug):
-                print >>sys.stderr, "  Ignoring dir: ", dir
-                print >>sys.stderr, "  exception: ", e
+                print("  Ignoring dir: ", dir, file=sys.stderr)
+                print("  exception: ", e, file=sys.stderr)
 
         if (options.debug):
-            print >>sys.stderr, "  accepting dir: ", dir
+            print("  accepting dir: ", dir, file=sys.stderr)
         subDirPath = os.path.join(options.dirPath, dir)
         if (os.path.isdir(subDirPath)):
             processDir(subDirPath)
 
-    print >>sys.stderr, "====>>>> sumfileDuration: ", sumFileDuration
+    print("====>>>> sumfileDuration: ", sumFileDuration, file=sys.stderr)
 
     sys.exit(0)
 
@@ -99,7 +99,7 @@ def processDir(subDirPath):
     # go to the subdir
 
     if (options.debug):
-        print "working on subdir: ", subDirPath
+        print("working on subdir: ", subDirPath)
 
     # get a listing
 
@@ -111,10 +111,10 @@ def processDir(subDirPath):
     for fileName in fileList:
         try:
             processFileName(fileName)
-        except Exception, e:
-            print >>sys.stderr, "  bad file name: ", fileName
-            print >>sys.stderr, "  dir: ", subDirPath
-            print >>sys.stderr, "  exception: ", e
+        except Exception as e:
+            print("  bad file name: ", fileName, file=sys.stderr)
+            print("  dir: ", subDirPath, file=sys.stderr)
+            print("  exception: ", e, file=sys.stderr)
 
     return
 
@@ -142,24 +142,24 @@ def processFileName(fileName):
     fileStartTime = datetime.datetime(int(startYear), int(startMonth), int(startDay),
                                       int(startHour), int(startMin), int(startSec))
     if (options.verbose):
-        print >>sys.stderr, "  fileStartTime: ", fileStartTime
+        print("  fileStartTime: ", fileStartTime, file=sys.stderr)
     if (fileStartTime < startTime):
         if (options.verbose):
-            print >>sys.stderr, "  file time before start time: ", fileName
+            print("  file time before start time: ", fileName, file=sys.stderr)
         return
         
     fileEndTime = datetime.datetime(int(endYear), int(endMonth), int(endDay),
                                     int(endHour), int(endMin), int(endSec))
     if (options.verbose):
-        print >>sys.stderr, "  fileEndTime: ", fileEndTime
+        print("  fileEndTime: ", fileEndTime, file=sys.stderr)
     if (fileEndTime > endTime):
         if (options.verbose):
-            print >>sys.stderr, "  file time after end time: ", fileName
+            print("  file time after end time: ", fileName, file=sys.stderr)
         return
 
     fileDuration = fileEndTime - fileStartTime
     if (options.debug):
-        print >>sys.stderr, "  file name, duration: ", fileName, fileDuration
+        print("  file name, duration: ", fileName, fileDuration, file=sys.stderr)
         
     global sumFileDuration
     sumFileDuration = sumFileDuration + fileDuration
@@ -214,13 +214,13 @@ def parseArgs():
                                 int(hour), int(minute), int(sec))
 
     if (options.debug):
-        print >>sys.stderr, "Running app: ", appName
-        print >>sys.stderr, "Options:"
-        print >>sys.stderr, "  debug: ", options.debug
-        print >>sys.stderr, "  verbose: ", options.verbose
-        print >>sys.stderr, "  dirPath: ", options.dirPath
-        print >>sys.stderr, "  startTime: ", startTime
-        print >>sys.stderr, "  endTime: ", endTime
+        print("Running app: ", appName, file=sys.stderr)
+        print("Options:", file=sys.stderr)
+        print("  debug: ", options.debug, file=sys.stderr)
+        print("  verbose: ", options.verbose, file=sys.stderr)
+        print("  dirPath: ", options.dirPath, file=sys.stderr)
+        print("  startTime: ", startTime, file=sys.stderr)
+        print("  endTime: ", endTime, file=sys.stderr)
 
 ################################################################
 # Run a command in a shell, wait for it to complete
@@ -228,17 +228,17 @@ def parseArgs():
 def runCommand(cmd):
 
     if (options.debug == True):
-        print >>sys.stderr, "running cmd:",cmd
+        print("running cmd:",cmd, file=sys.stderr)
     
     try:
         retcode = subprocess.call(cmd, shell=True)
         if retcode < 0:
-            print >>sys.stderr, "Child was terminated by signal: ", -retcode
+            print("Child was terminated by signal: ", -retcode, file=sys.stderr)
         else:
             if (options.debug == True):
-                print >>sys.stderr, "Child returned code: ", retcode
-    except OSError, e:
-        print >>sys.stderr, "Execution failed:", e
+                print("Child returned code: ", retcode, file=sys.stderr)
+    except OSError as e:
+        print("Execution failed:", e, file=sys.stderr)
 
 ###########################################################
 # kick off main method

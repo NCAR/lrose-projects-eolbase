@@ -68,10 +68,10 @@ def main():
         options.debug = True
 
     if (options.debug == True):
-        print >>sys.stderr, "Running %prog"
-        print >>sys.stderr, "  ssFilePath: ", options.ssFilePath
-        print >>sys.stderr, "  cpFilePath: ", options.cpFilePath
-        print >>sys.stderr, "  fluxFilePath: ", options.fluxFilePath
+        print("Running %prog", file=sys.stderr)
+        print("  ssFilePath: ", options.ssFilePath, file=sys.stderr)
+        print("  cpFilePath: ", options.cpFilePath, file=sys.stderr)
+        print("  fluxFilePath: ", options.fluxFilePath, file=sys.stderr)
 
     # read in column headers for sunscan results
 
@@ -121,10 +121,10 @@ def readColumnHeaders(filePath):
         # header
         colHeaders = line.lstrip("# ").rstrip("\n").split()
         if (options.debug == True):
-            print >>sys.stderr, "colHeaders: ", colHeaders
+            print("colHeaders: ", colHeaders, file=sys.stderr)
     else:
-        print >>sys.stderr, "ERROR - readColumnHeaders"
-        print >>sys.stderr, "  First line does not start with #"
+        print("ERROR - readColumnHeaders", file=sys.stderr)
+        print("  First line does not start with #", file=sys.stderr)
         return -1, colHeaders, colData
     
     for index, var in enumerate(colHeaders, start=0):
@@ -199,7 +199,7 @@ def readFluxData(filePath):
     colHeaders = []
     colHeaders = lines[0].lstrip(" ").rstrip("\n").split()
     if (options.debug == True):
-        print >>sys.stderr, "colHeaders: ", colHeaders
+        print("colHeaders: ", colHeaders, file=sys.stderr)
 
     # read in a line at a time, set colData
 
@@ -354,10 +354,10 @@ def doPlot(ssTimes, ssData, cpTimes, cpData, fluxTimes, fluxData):
     timeStart1us = datetime.datetime(2015, 6, 8, 0, 0, 0)
 
     if (options.debug):
-        print >>sys.stderr, " kk: ", kk
-        print >>sys.stderr, " antennaGainH: ", antennaGainH
-        print >>sys.stderr, " antennaGainV: ", antennaGainV
-        print >>sys.stderr, " radarWavelengthM: ", radarWavelengthM
+        print(" kk: ", kk, file=sys.stderr)
+        print(" antennaGainH: ", antennaGainH, file=sys.stderr)
+        print(" antennaGainV: ", antennaGainV, file=sys.stderr)
+        print(" radarWavelengthM: ", radarWavelengthM, file=sys.stderr)
 
     sunPwrsH = []
     rxGainsHc = []
@@ -378,11 +378,11 @@ def doPlot(ssTimes, ssData, cpTimes, cpData, fluxTimes, fluxData):
         PrHdBm = 10.0 * math.log10(PrHW) + 30.0
         rxGainHcdB = hcPower - PrHdBm
         if (options.debug):
-            print >>sys.stderr, "================================"
-            print >>sys.stderr, "  hcTime, fltime, flux2800, flux2809: ", \
-                hcTime, fltimesH[ii], flux2800, flux2809
-            print >>sys.stderr, "  PrHW, PrHdBm, hcPower, rxGainHcDb: ", \
-                PrHW, PrHdBm, hcPower, rxGainHcdB
+            print("================================", file=sys.stderr)
+            print("  hcTime, fltime, flux2800, flux2809: ", \
+                hcTime, fltimesH[ii], flux2800, flux2809, file=sys.stderr)
+            print("  PrHW, PrHdBm, hcPower, rxGainHcDb: ", \
+                PrHW, PrHdBm, hcPower, rxGainHcdB, file=sys.stderr)
         sunPwrsH.append(PrHdBm)
         rxGainsHc.append(rxGainHcdB)
 
@@ -400,11 +400,11 @@ def doPlot(ssTimes, ssData, cpTimes, cpData, fluxTimes, fluxData):
         PrVdBm = 10.0 * math.log10(PrVW) + 30.0
         rxGainVcdB = vcPower - PrVdBm
         if (options.debug):
-            print >>sys.stderr, "================================"
-            print >>sys.stderr, "  vcTime, fltime, flux2800, flux2809: ", \
-                vcTime, fltimesV[ii], flux2800, flux2809
-            print >>sys.stderr, "  PrVW, PrVdBm, vcPower, rxGainVcDb: ", \
-                PrVW, PrVdBm, vcPower, rxGainVcdB
+            print("================================", file=sys.stderr)
+            print("  vcTime, fltime, flux2800, flux2809: ", \
+                vcTime, fltimesV[ii], flux2800, flux2809, file=sys.stderr)
+            print("  PrVW, PrVdBm, vcPower, rxGainVcDb: ", \
+                PrVW, PrVdBm, vcPower, rxGainVcdB, file=sys.stderr)
         sunPwrsV.append(PrVdBm)
         rxGainsVc.append(rxGainVcdB)
 
@@ -583,17 +583,17 @@ def computeDailyStats(times, vals):
 def runCommand(cmd):
 
     if (options.debug == True):
-        print >>sys.stderr, "running cmd:",cmd
+        print("running cmd:",cmd, file=sys.stderr)
     
     try:
         retcode = subprocess.call(cmd, shell=True)
         if retcode < 0:
-            print >>sys.stderr, "Child was terminated by signal: ", -retcode
+            print("Child was terminated by signal: ", -retcode, file=sys.stderr)
         else:
             if (options.debug == True):
-                print >>sys.stderr, "Child returned code: ", retcode
-    except OSError, e:
-        print >>sys.stderr, "Execution failed:", e
+                print("Child returned code: ", retcode, file=sys.stderr)
+    except OSError as e:
+        print("Execution failed:", e, file=sys.stderr)
 
 ########################################################################
 # Run - entry point

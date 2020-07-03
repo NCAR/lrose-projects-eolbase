@@ -89,11 +89,11 @@ def main():
     timeStr = baseNameParts[nParts-1]
 
     if (options.debug == True):
-        print >>sys.stderr, "Running " + __file__
-        print >>sys.stderr, "  vertFile: ", options.vertFile
-        print >>sys.stderr, "  fileName: ", fileName
-        print >>sys.stderr, "  dateStr: ", dateStr
-        print >>sys.stderr, "  timeStr: ", timeStr
+        print("Running " + __file__, file=sys.stderr)
+        print("  vertFile: ", options.vertFile, file=sys.stderr)
+        print("  fileName: ", fileName, file=sys.stderr)
+        print("  dateStr: ", dateStr, file=sys.stderr)
+        print("  timeStr: ", timeStr, file=sys.stderr)
     
     # read in headers
 
@@ -130,11 +130,11 @@ def readColumnHeaders(filePath):
         # header
         colHeaders = line.lstrip("# ").rstrip("\n").split()
         if (options.debug == True):
-            print >>sys.stderr, "colHeaders: ", colHeaders
+            print("colHeaders: ", colHeaders, file=sys.stderr)
     else:
-        print >>sys.stderr, "ERROR - readColumnHeaders"
-        print >>sys.stderr, "  File: ", filePath
-        print >>sys.stderr, "  First line does not start with #"
+        print("ERROR - readColumnHeaders", file=sys.stderr)
+        print("  File: ", filePath, file=sys.stderr)
+        print("  First line does not start with #", file=sys.stderr)
         return -1, colHeaders
     
     return 0, colHeaders
@@ -165,7 +165,7 @@ def readInputData(filePath, colHeaders):
         data = line.strip().split()
         if (len(data) != len(colHeaders)):
             if (options.debug == True):
-                print >>sys.stderr, "skipping line: ", line
+                print("skipping line: ", line, file=sys.stderr)
             continue;
 
         for index, var in enumerate(colHeaders, start=0):
@@ -186,9 +186,9 @@ def doPlot(filePath, colHeaders, colData):
     minHt = float(options.minHt)
     maxHt = float(options.maxHt)
 
-    print >>sys.stderr, "  ==>> zdrm: ", zdrm
-    print >>sys.stderr, "  ==>> minHt: ", minHt
-    print >>sys.stderr, "  ==>> maxHt: ", maxHt
+    print("  ==>> zdrm: ", zdrm, file=sys.stderr)
+    print("  ==>> minHt: ", minHt, file=sys.stderr)
+    print("  ==>> maxHt: ", maxHt, file=sys.stderr)
 
     zdrValid = zdrm[(height >= minHt) & (height <= maxHt)]
     minZdr = -2.0
@@ -201,9 +201,9 @@ def doPlot(filePath, colHeaders, colData):
                         (zdrm >= minZdr) & \
                         (zdrm <= maxZdr)]
 
-    print >>sys.stderr, "  ==>> size of zdrm: ", len(zdrm)
-    print >>sys.stderr, "  ==>> size of height: ", len(height)
-    print >>sys.stderr, "  ==>> size of zdrValid: ", len(zdrValid)
+    print("  ==>> size of zdrm: ", len(zdrm), file=sys.stderr)
+    print("  ==>> size of height: ", len(height), file=sys.stderr)
+    print("  ==>> size of zdrValid: ", len(zdrValid), file=sys.stderr)
 
     mean = np.mean(zdrValid)
     sdev = np.std(zdrValid)
@@ -214,10 +214,10 @@ def doPlot(filePath, colHeaders, colData):
     zdrSorted = np.sort(zdrValid)
     percs = np.percentile(zdrSorted, percPoints)
 
-    print >>sys.stderr, "  ==>> mean: ", mean
-    print >>sys.stderr, "  ==>> sdev: ", sdev
-    print >>sys.stderr, "  ==>> skew: ", skew
-    print >>sys.stderr, "  ==>> kurtosis: ", kurtosis
+    print("  ==>> mean: ", mean, file=sys.stderr)
+    print("  ==>> sdev: ", sdev, file=sys.stderr)
+    print("  ==>> skew: ", skew, file=sys.stderr)
+    print("  ==>> kurtosis: ", kurtosis, file=sys.stderr)
     # print >>sys.stderr, "  ==>> percs: ", percs
 
     widthIn = float(options.figWidthMm) / 25.4
@@ -376,17 +376,17 @@ def annotVal(ax, val, distrib, label, tickLen, toffx,
 def runCommand(cmd):
 
     if (options.debug == True):
-        print >>sys.stderr, "running cmd:",cmd
+        print("running cmd:",cmd, file=sys.stderr)
     
     try:
         retcode = subprocess.call(cmd, shell=True)
         if retcode < 0:
-            print >>sys.stderr, "Child was terminated by signal: ", -retcode
+            print("Child was terminated by signal: ", -retcode, file=sys.stderr)
         else:
             if (options.debug == True):
-                print >>sys.stderr, "Child returned code: ", retcode
-    except OSError, e:
-        print >>sys.stderr, "Execution failed:", e
+                print("Child returned code: ", retcode, file=sys.stderr)
+    except OSError as e:
+        print("Execution failed:", e, file=sys.stderr)
 
 ########################################################################
 # Run - entry point

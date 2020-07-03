@@ -87,11 +87,11 @@ def main():
                                 int(hour), int(minute), int(sec))
 
     if (options.debug == True):
-        print >>sys.stderr, "Running %prog"
-        print >>sys.stderr, "  cpFilePath: ", options.cpFilePath
-        print >>sys.stderr, "  biasFilePath: ", options.biasFilePath
-        print >>sys.stderr, "  startTime: ", startTime
-        print >>sys.stderr, "  endTime: ", endTime
+        print("Running %prog", file=sys.stderr)
+        print("  cpFilePath: ", options.cpFilePath, file=sys.stderr)
+        print("  biasFilePath: ", options.biasFilePath, file=sys.stderr)
+        print("  startTime: ", startTime, file=sys.stderr)
+        print("  endTime: ", endTime, file=sys.stderr)
 
     # read in column headers for bias results
 
@@ -137,10 +137,10 @@ def readColumnHeaders(filePath):
         # header
         colHeaders = line.lstrip("# ").rstrip("\n").split()
         if (options.debug == True):
-            print >>sys.stderr, "colHeaders: ", colHeaders
+            print("colHeaders: ", colHeaders, file=sys.stderr)
     else:
-        print >>sys.stderr, "ERROR - readColumnHeaders"
-        print >>sys.stderr, "  First line does not start with #"
+        print("ERROR - readColumnHeaders", file=sys.stderr)
+        print("  First line does not start with #", file=sys.stderr)
         return -1, colHeaders, colData
     
     for index, var in enumerate(colHeaders, start=0):
@@ -268,8 +268,8 @@ def doPlot(biasData, biasTimes, cpData, cpTimes):
                 tempVals.append(tempVal)
                 biasVals.append(biasVal)
                 if (options.verbose):
-                    print >>sys.stderr, "==>> biasTime, biasVal, tempTime, tempVal:", \
-                        btime, biasVal, tempTime, tempVal
+                    print("==>> biasTime, biasVal, tempTime, tempVal:", \
+                        btime, biasVal, tempTime, tempVal, file=sys.stderr)
 
     # linear regression bias vs temp
 
@@ -401,17 +401,17 @@ def getClosestTemp(biasTime, tempTimes, obsTemps):
 def runCommand(cmd):
 
     if (options.debug == True):
-        print >>sys.stderr, "running cmd:",cmd
+        print("running cmd:",cmd, file=sys.stderr)
     
     try:
         retcode = subprocess.call(cmd, shell=True)
         if retcode < 0:
-            print >>sys.stderr, "Child was terminated by signal: ", -retcode
+            print("Child was terminated by signal: ", -retcode, file=sys.stderr)
         else:
             if (options.debug == True):
-                print >>sys.stderr, "Child returned code: ", retcode
-    except OSError, e:
-        print >>sys.stderr, "Execution failed:", e
+                print("Child returned code: ", retcode, file=sys.stderr)
+    except OSError as e:
+        print("Execution failed:", e, file=sys.stderr)
 
 ########################################################################
 # Run - entry point

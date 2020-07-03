@@ -113,18 +113,18 @@ def main():
                                 int(hour), int(minute), int(sec))
 
     if (options.debug):
-        print >>sys.stderr, "Running ", __file__
-        print >>sys.stderr, "  cpFilePath: ", options.cpFilePath
-        print >>sys.stderr, "  statsFilePath: ", options.statsFilePath
-        print >>sys.stderr, "  startTime: ", startTime
-        print >>sys.stderr, "  endTime: ", endTime
-        print >>sys.stderr, "  scanMode: ", options.scanMode
+        print("Running ", __file__, file=sys.stderr)
+        print("  cpFilePath: ", options.cpFilePath, file=sys.stderr)
+        print("  statsFilePath: ", options.statsFilePath, file=sys.stderr)
+        print("  startTime: ", startTime, file=sys.stderr)
+        print("  endTime: ", endTime, file=sys.stderr)
+        print("  scanMode: ", options.scanMode, file=sys.stderr)
         
     if (options.scanMode != 'both' and \
         options.scanMode != 'sur' and \
         options.scanMode != 'rhi'):
-        print >>sys.stderr, "ERROR - scan mode: ", options.scanMode
-        print >>sys.stderr, "  Must be: sur, rhi or both"
+        print("ERROR - scan mode: ", options.scanMode, file=sys.stderr)
+        print("  Must be: sur, rhi or both", file=sys.stderr)
         sys.exit(-1)
 
     # read in column headers for stats results
@@ -171,10 +171,10 @@ def readColumnHeaders(filePath):
         # header
         colHeaders = line.lstrip("# ").rstrip("\n").split()
         if (options.debug == True):
-            print >>sys.stderr, "colHeaders: ", colHeaders
+            print("colHeaders: ", colHeaders, file=sys.stderr)
     else:
-        print >>sys.stderr, "ERROR - readColumnHeaders"
-        print >>sys.stderr, "  First line does not start with #"
+        print("ERROR - readColumnHeaders", file=sys.stderr)
+        print("  First line does not start with #", file=sys.stderr)
         return -1, colHeaders, colData
     
     for index, var in enumerate(colHeaders, start=0):
@@ -506,17 +506,17 @@ def computePercentile(statsData, perc):
 def runCommand(cmd):
 
     if (options.debug == True):
-        print >>sys.stderr, "running cmd:",cmd
+        print("running cmd:",cmd, file=sys.stderr)
     
     try:
         retcode = subprocess.call(cmd, shell=True)
         if retcode < 0:
-            print >>sys.stderr, "Child was terminated by signal: ", -retcode
+            print("Child was terminated by signal: ", -retcode, file=sys.stderr)
         else:
             if (options.debug == True):
-                print >>sys.stderr, "Child returned code: ", retcode
-    except OSError, e:
-        print >>sys.stderr, "Execution failed:", e
+                print("Child returned code: ", retcode, file=sys.stderr)
+    except OSError as e:
+        print("Execution failed:", e, file=sys.stderr)
 
 ########################################################################
 # Run - entry point

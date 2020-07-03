@@ -47,9 +47,9 @@ def main():
         options.debug = True
 
     if (options.debug == True):
-        print >>sys.stderr, "Running %prog"
-        print >>sys.stderr, "  inputDir: ", options.inputDir
-        print >>sys.stderr, "  outputDir: ", options.outputDir
+        print("Running %prog", file=sys.stderr)
+        print("  inputDir: ", options.inputDir, file=sys.stderr)
+        print("  outputDir: ", options.outputDir, file=sys.stderr)
 
     # read in file list
 
@@ -71,13 +71,13 @@ def readFileList(inputDir):
     fileList.sort()
 
     if (options.debug == True):
-        print >>sys.stderr, "Dir path: ", inputDir
-        print >>sys.stderr, "n files : ", len(fileList)
+        print("Dir path: ", inputDir, file=sys.stderr)
+        print("n files : ", len(fileList), file=sys.stderr)
 
     if (options.verbose == True):
-        print >>sys.stderr, "Files:    "
+        print("Files:    ", file=sys.stderr)
         for index, file in enumerate(fileList):
-            print >>sys.stderr, "   ", index, ": ", file
+            print("   ", index, ": ", file, file=sys.stderr)
 
 ########################################################################
 # Find the vols
@@ -92,13 +92,13 @@ def findVols():
             continue
         mainParts = fileName.split('.')
         if (options.debug):
-            print >>sys.stderr, " fileName: ", fileName
+            print(" fileName: ", fileName, file=sys.stderr)
         elevDeg = getElevDeg(fileName)
         if (options.debug):
-            print >>sys.stderr, "   ==>> elevDeg: ", elevDeg
+            print("   ==>> elevDeg: ", elevDeg, file=sys.stderr)
         if (elevDeg < prevElevDeg):
-            print >>sys.stderr, "   ================>> end of vol"
-            print >>sys.stderr, "   ================>> fileList: ", volFileList
+            print("   ================>> end of vol", file=sys.stderr)
+            print("   ================>> fileList: ", volFileList, file=sys.stderr)
             concatenateVols(volFileList)
             volFileList = []
         if (elevDeg > -9990):
@@ -126,7 +126,7 @@ def concatenateVols(volFileList):
     cmd = cmd + ' > ' + outputName
 
     if (options.debug):
-        print >>sys.stderr, "   ==>> cmd: ", cmd
+        print("   ==>> cmd: ", cmd, file=sys.stderr)
 
     # ensure output dir exists
 
@@ -144,12 +144,12 @@ def getElevDeg(fileName):
     elevDeg = -9999.0
     mainParts = fileName.split('.')
     if (options.verbose):
-        print >>sys.stderr, "2222222 mainParts: ", mainParts
+        print("2222222 mainParts: ", mainParts, file=sys.stderr)
     if (len(mainParts) < 2):
         return elevDeg
     subParts = mainParts[1].split('_')
     if (options.verbose):
-        print >>sys.stderr, "333333333 subParts: ", subParts
+        print("333333333 subParts: ", subParts, file=sys.stderr)
     if (len(subParts) < 2):
         return elevDeg
     elevDeg = float(subParts[1]) / 10.0
@@ -169,17 +169,17 @@ def getFilePath():
 def runCommand(cmd):
 
     if (options.debug == True):
-        print >>sys.stderr, "running cmd:",cmd
+        print("running cmd:",cmd, file=sys.stderr)
     
     try:
         retcode = subprocess.call(cmd, shell=True)
         if retcode < 0:
-            print >>sys.stderr, "Child was terminated by signal: ", -retcode
+            print("Child was terminated by signal: ", -retcode, file=sys.stderr)
         else:
             if (options.debug == True):
-                print >>sys.stderr, "Child returned code: ", retcode
-    except OSError, e:
-        print >>sys.stderr, "Execution failed:", e
+                print("Child returned code: ", retcode, file=sys.stderr)
+    except OSError as e:
+        print("Execution failed:", e, file=sys.stderr)
 
 ########################################################################
 # Run - entry point

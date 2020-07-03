@@ -95,11 +95,11 @@ def main():
                                 int(hour), int(minute), int(sec))
 
     if (options.debug == True):
-        print >>sys.stderr, "Running %prog"
-        print >>sys.stderr, "  cpFilePath: ", options.cpFilePath
-        print >>sys.stderr, "  biasFilePath: ", options.biasFilePath
-        print >>sys.stderr, "  startTime: ", startTime
-        print >>sys.stderr, "  endTime: ", endTime
+        print("Running %prog", file=sys.stderr)
+        print("  cpFilePath: ", options.cpFilePath, file=sys.stderr)
+        print("  biasFilePath: ", options.biasFilePath, file=sys.stderr)
+        print("  startTime: ", startTime, file=sys.stderr)
+        print("  endTime: ", endTime, file=sys.stderr)
 
     # read in column headers for bias results
 
@@ -151,12 +151,12 @@ def readColumnHeaders(filePath):
         # header
         colHeaders = line.lstrip("# ").rstrip("\n").split()
         if (options.debug == True):
-            print >>sys.stderr, "Reading file: ", filePath
+            print("Reading file: ", filePath, file=sys.stderr)
             for icol, var in enumerate(colHeaders, start=0):
-                print >>sys.stderr, "colHeader[", icol, "] = ", colHeaders[icol]
+                print("colHeader[", icol, "] = ", colHeaders[icol], file=sys.stderr)
     else:
-        print >>sys.stderr, "ERROR - readColumnHeaders"
-        print >>sys.stderr, "  First line does not start with #"
+        print("ERROR - readColumnHeaders", file=sys.stderr)
+        print("  First line does not start with #", file=sys.stderr)
         return -1, colHeaders, colData
     
     for icol, var in enumerate(colHeaders, start=0):
@@ -186,7 +186,7 @@ def readInputData(filePath, colHeaders, colData):
         data = line.strip().split()
         if (len(data) != len(colHeaders)):
             if (options.debug == True):
-                print >>sys.stderr, "skipping line: ", line
+                print("skipping line: ", line, file=sys.stderr)
             continue;
 
         for index, var in enumerate(colHeaders, start=0):
@@ -216,7 +216,7 @@ def readInputData(filePath, colHeaders, colData):
         obsTimes.append(thisTime)
 
     if (options.verbose == True):
-        print >>sys.stderr, "Read in file: ", filePath
+        print("Read in file: ", filePath, file=sys.stderr)
         for itime, obsTime in enumerate(obsTimes, start=0):
             sys.stdout.write('===>> ')
             sys.stdout.write(str(obsTime))
@@ -342,9 +342,8 @@ def prepareData(biasData, biasTimes, cpData, cpTimes):
         ratioIceVals.append(ratioVal)
         ratioIceBias.append(biasVal)
         if (options.verbose):
-            print >>sys.stderr, \
-                "==>> btime, rtime, bias, txPwrH, txPwrV, ratioVal, txCorrBias:", \
-                btime, ratioTime, biasVal, txPwrH[ii], txPwrV[ii], ratioVal, txCorrBias
+            print("==>> btime, rtime, bias, txPwrH, txPwrV, ratioVal, txCorrBias:", \
+                btime, ratioTime, biasVal, txPwrH[ii], txPwrV[ii], ratioVal, txCorrBias, file=sys.stderr)
 
     meanRatio = np.mean(ratioIceVals)
     normRatios = ratioIceVals - meanRatio
@@ -364,8 +363,8 @@ def prepareData(biasData, biasTimes, cpData, cpTimes):
         tempIceMVals.append(tempVal)
         tempIceMBias.append(biasVal)
         if (options.verbose):
-            print >>sys.stderr, "==>> biasTime, biasVal, tempTime, tempVal:", \
-                btime, biasVal, tempTime, tempVal
+            print("==>> biasTime, biasVal, tempTime, tempVal:", \
+                btime, biasVal, tempTime, tempVal, file=sys.stderr)
 
     global tempMean, tempSdev, tempNorm
     #tempMean = np.mean(tempIceMVals)
@@ -375,7 +374,7 @@ def prepareData(biasData, biasTimes, cpData, cpTimes):
     tempSdev = np.std(tempSite)
     tempNorm = (tempSite - tempMean) / (tempSdev * 10.0)
     if (options.debug):
-        print >>sys.stderr, "==>> tempMean, tempSdev: ", tempMean, tempSdev
+        print("==>> tempMean, tempSdev: ", tempMean, tempSdev, file=sys.stderr)
 
     # linear regression for bias vs temp
     # obtain the fit, ww[0] is slope, ww[1] is intercept
@@ -738,17 +737,17 @@ def computeDailyStats(times, vals):
 def runCommand(cmd):
 
     if (options.debug == True):
-        print >>sys.stderr, "running cmd:",cmd
+        print("running cmd:",cmd, file=sys.stderr)
     
     try:
         retcode = subprocess.call(cmd, shell=True)
         if retcode < 0:
-            print >>sys.stderr, "Child was terminated by signal: ", -retcode
+            print("Child was terminated by signal: ", -retcode, file=sys.stderr)
         else:
             if (options.debug == True):
-                print >>sys.stderr, "Child returned code: ", retcode
-    except OSError, e:
-        print >>sys.stderr, "Execution failed:", e
+                print("Child returned code: ", retcode, file=sys.stderr)
+    except OSError as e:
+        print("Execution failed:", e, file=sys.stderr)
 
 ########################################################################
 # Run - entry point

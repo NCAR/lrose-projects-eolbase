@@ -95,9 +95,9 @@ def main():
         options.debug = True
 
     if (options.debug == True):
-        print >>sys.stderr, "Running PlotTitanTableType1:"
-        print >>sys.stderr, "  inputFilePath: ", options.inputFilePath
-        print >>sys.stderr, "  maxGates: ", options.maxGates
+        print("Running PlotTitanTableType1:", file=sys.stderr)
+        print("  inputFilePath: ", options.inputFilePath, file=sys.stderr)
+        print("  maxGates: ", options.maxGates, file=sys.stderr)
 
     # read in file list
 
@@ -138,16 +138,16 @@ def readFileList():
             break
     
     if (options.debug == True):
-        print >>sys.stderr, "Dir path: ", dirPath
-        print >>sys.stderr, "Input file path: ", options.inputFilePath
-        print >>sys.stderr, "File index : ", fileIndex
-        print >>sys.stderr, "n files : ", len(fileList)
-        print >>sys.stderr, "Computed File path: ", getFilePath()
+        print("Dir path: ", dirPath, file=sys.stderr)
+        print("Input file path: ", options.inputFilePath, file=sys.stderr)
+        print("File index : ", fileIndex, file=sys.stderr)
+        print("n files : ", len(fileList), file=sys.stderr)
+        print("Computed File path: ", getFilePath(), file=sys.stderr)
 
     if (options.verbose == True):
-        print >>sys.stderr, "Files:    "
+        print("Files:    ", file=sys.stderr)
         for index, file in enumerate(fileList):
-            print >>sys.stderr, "   ", index, ": ", file
+            print("   ", index, ": ", file, file=sys.stderr)
 
 ########################################################################
 # Get the path to the current data file
@@ -178,10 +178,10 @@ def readColumnHeaders():
         # header
         colHeaders = line.lstrip("# ").rstrip("\n").split()
         if (options.debug == True):
-            print >>sys.stderr, "colHeaders: ", colHeaders
+            print("colHeaders: ", colHeaders, file=sys.stderr)
     else:
-        print >>sys.stderr, "ERROR - readColumnHeaders"
-        print >>sys.stderr, "  First line does not start with #"
+        print("ERROR - readColumnHeaders", file=sys.stderr)
+        print("  First line does not start with #", file=sys.stderr)
         return -1
     
     count = 0
@@ -190,7 +190,7 @@ def readColumnHeaders():
         count = count + 1
         
     if (options.debug == True):
-        print >>sys.stderr, "colIndex: ", colIndex
+        print("colIndex: ", colIndex, file=sys.stderr)
 
     return 0
 
@@ -303,7 +303,7 @@ def press(event):
     global fileIndex
 
     if (options.debug == True):
-        print >>sys.stderr, "press: ", event.key
+        print("press: ", event.key, file=sys.stderr)
         
     if (event.key == 'left'):
         if (fileIndex > 0):
@@ -316,8 +316,8 @@ def press(event):
             reloadAndDraw()
             
     if (options.debug == True):
-        print >>sys.stderr, "  File index : ", fileIndex
-        print >>sys.stderr, "  File path  : ", getFilePath()
+        print("  File index : ", fileIndex, file=sys.stderr)
+        print("  File path  : ", getFilePath(), file=sys.stderr)
 
 ########################################################################
 # Plot - original instance
@@ -459,17 +459,17 @@ def doPlot():
 def runCommand(cmd):
 
     if (options.debug == True):
-        print >>sys.stderr, "running cmd:",cmd
+        print("running cmd:",cmd, file=sys.stderr)
     
     try:
         retcode = subprocess.call(cmd, shell=True)
         if retcode < 0:
-            print >>sys.stderr, "Child was terminated by signal: ", -retcode
+            print("Child was terminated by signal: ", -retcode, file=sys.stderr)
         else:
             if (options.debug == True):
-                print >>sys.stderr, "Child returned code: ", retcode
-    except OSError, e:
-        print >>sys.stderr, "Execution failed:", e
+                print("Child returned code: ", retcode, file=sys.stderr)
+    except OSError as e:
+        print("Execution failed:", e, file=sys.stderr)
 
 ########################################################################
 # Run - entry point

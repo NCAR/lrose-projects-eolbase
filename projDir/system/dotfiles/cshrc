@@ -32,7 +32,6 @@ setenv HOST_OS LINUX_LROSE
 
 setenv LROSE_CORE_DIR $HOME/git/lrose-core
 setenv LROSE_INSTALL_DIR $HOME/lrose
-
 # --- OTHER BUILD SETTINGS
 
 setenv QTDIR /usr/lib/qt4
@@ -106,9 +105,10 @@ endif
 
 # python
 
-setenv PYTHONPATH ~/anaconda2/pkgs:$HOME/dial/Python/ptvv1_python/python:$HOME/dial/Python/NCAR-LidarProcessing/libraries
+#setenv PYTHONPATH ~/anaconda2/pkgs:$HOME/dial/Python/ptvv1_python/python:$HOME/dial/Python/NCAR-LidarProcessing/libraries
 
-# setenv PYTHONPATH ~/anaconda3/pkgs
+setenv PYTHONPATH ~/anaconda3/pkgs
+
 
 # HSRL
 

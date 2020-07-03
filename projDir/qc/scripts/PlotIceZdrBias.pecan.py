@@ -119,15 +119,15 @@ def main():
                                 int(hour), int(minute), int(sec))
 
     if (options.debug == True):
-        print >>sys.stderr, "Running %prog"
-        print >>sys.stderr, "  cpFilePath: ", options.cpFilePath
-        print >>sys.stderr, "  biasFilePath: ", options.biasFilePath
-        print >>sys.stderr, "  startTime: ", startTime
-        print >>sys.stderr, "  endTime: ", endTime
-        print >>sys.stderr, "  surOnly: ", options.surOnly
-        print >>sys.stderr, "  rhiOnly: ", options.rhiOnly
-        print >>sys.stderr, "  meanAdj: ", options.meanAdj
-        print >>sys.stderr, "  percentile: ", options.percentile
+        print("Running %prog", file=sys.stderr)
+        print("  cpFilePath: ", options.cpFilePath, file=sys.stderr)
+        print("  biasFilePath: ", options.biasFilePath, file=sys.stderr)
+        print("  startTime: ", startTime, file=sys.stderr)
+        print("  endTime: ", endTime, file=sys.stderr)
+        print("  surOnly: ", options.surOnly, file=sys.stderr)
+        print("  rhiOnly: ", options.rhiOnly, file=sys.stderr)
+        print("  meanAdj: ", options.meanAdj, file=sys.stderr)
+        print("  percentile: ", options.percentile, file=sys.stderr)
 
     # read in column headers for bias results
 
@@ -176,10 +176,10 @@ def readColumnHeaders(filePath):
         # header
         colHeaders = line.lstrip("# ").rstrip("\n").split()
         if (options.debug == True):
-            print >>sys.stderr, "colHeaders: ", colHeaders
+            print("colHeaders: ", colHeaders, file=sys.stderr)
     else:
-        print >>sys.stderr, "ERROR - readColumnHeaders"
-        print >>sys.stderr, "  First line does not start with #"
+        print("ERROR - readColumnHeaders", file=sys.stderr)
+        print("  First line does not start with #", file=sys.stderr)
         return -1, colHeaders
     
     return 0, colHeaders
@@ -211,7 +211,7 @@ def readInputData(filePath, colHeaders):
         data = line.strip().split()
         if (len(data) != len(colHeaders)):
             if (options.debug == True):
-                print >>sys.stderr, "skipping line: ", line
+                print("skipping line: ", line, file=sys.stderr)
             continue;
 
         values = {}
@@ -279,7 +279,7 @@ def prepareData(biasData, biasTimes, cpData, cpTimes):
     percVal = float(options.percentile)
     percStr = 'ZdrInIcePerc' + '{:05.2f}'.format(percVal)
     if (options.debug):
-        print >>sys.stderr, "=>> using: ", percStr
+        print("=>> using: ", percStr, file=sys.stderr)
 
     biasIce = np.array(biasData[percStr]).astype(np.double)
     biasIce = movingAverage(biasIce, lenMeanFilter)
@@ -287,7 +287,7 @@ def prepareData(biasData, biasTimes, cpData, cpTimes):
     
     percmStr = 'ZdrmInIcePerc' + '{:05.2f}'.format(percVal)
     if (options.debug):
-        print >>sys.stderr, "=>> using: ", percmStr
+        print("=>> using: ", percmStr, file=sys.stderr)
 
     biasIceM = np.array(biasData[percmStr]).astype(np.double)
     biasIceM = movingAverage(biasIceM, lenMeanFilter)
@@ -366,9 +366,8 @@ def prepareData(biasData, biasTimes, cpData, cpTimes):
         ratioIceVals.append(ratioVal)
         ratioIceBias.append(biasVal)
         if (options.verbose):
-            print >>sys.stderr, \
-                "==>> btime, rtime, bias, txPwrH, txPwrV, ratioVal, txCorrBias:", \
-                btime, ratioTime, biasVal, txPwrH[ii], txPwrV[ii], ratioVal, txCorrBias
+            print("==>> btime, rtime, bias, txPwrH, txPwrV, ratioVal, txCorrBias:", \
+                btime, ratioTime, biasVal, txPwrH[ii], txPwrV[ii], ratioVal, txCorrBias, file=sys.stderr)
 
     meanRatio = np.mean(ratioIceVals)
     normRatios = ratioIceVals - meanRatio
@@ -388,15 +387,15 @@ def prepareData(biasData, biasTimes, cpData, cpTimes):
         tempIceMVals.append(tempVal)
         tempIceMBias.append(biasVal)
         if (options.verbose):
-            print >>sys.stderr, "==>> biasTime, biasVal, tempTime, tempVal:", \
-                btime, biasVal, tempTime, tempVal
+            print("==>> biasTime, biasVal, tempTime, tempVal:", \
+                btime, biasVal, tempTime, tempVal, file=sys.stderr)
 
     global tempMean, tempSdev, tempNorm
     tempMean = np.mean(tempSite)
     tempSdev = np.std(tempSite)
     tempNorm = (tempSite - tempMean) / (tempSdev * 10.0)
     if (options.debug):
-        print >>sys.stderr, "==>> tempMean, tempSdev: ", tempMean, tempSdev
+        print("==>> tempMean, tempSdev: ", tempMean, tempSdev, file=sys.stderr)
 
     # linear regression for bias vs temp
     # obtain the fit, ww[0] is slope, ww[1] is intercept
@@ -722,17 +721,17 @@ def computeDailyStats(times, vals):
 def runCommand(cmd):
 
     if (options.debug == True):
-        print >>sys.stderr, "running cmd:",cmd
+        print("running cmd:",cmd, file=sys.stderr)
     
     try:
         retcode = subprocess.call(cmd, shell=True)
         if retcode < 0:
-            print >>sys.stderr, "Child was terminated by signal: ", -retcode
+            print("Child was terminated by signal: ", -retcode, file=sys.stderr)
         else:
             if (options.debug == True):
-                print >>sys.stderr, "Child returned code: ", retcode
-    except OSError, e:
-        print >>sys.stderr, "Execution failed:", e
+                print("Child returned code: ", retcode, file=sys.stderr)
+    except OSError as e:
+        print("Execution failed:", e, file=sys.stderr)
 
 ########################################################################
 # Run - entry point

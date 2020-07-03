@@ -71,11 +71,11 @@ def main():
         options.debug = True
 
     if (options.debug == True):
-        print >>sys.stderr, "Running %prog"
-        print >>sys.stderr, "  scFilePath: ", options.scFilePath
-        print >>sys.stderr, "  cpFilePath: ", options.cpFilePath
-        print >>sys.stderr, "  lenMean: ", options.lenMean
-        print >>sys.stderr, "  minElev: ", options.minElev
+        print("Running %prog", file=sys.stderr)
+        print("  scFilePath: ", options.scFilePath, file=sys.stderr)
+        print("  cpFilePath: ", options.cpFilePath, file=sys.stderr)
+        print("  lenMean: ", options.lenMean, file=sys.stderr)
+        print("  minElev: ", options.minElev, file=sys.stderr)
 
     # read in column headers for self_con results
 
@@ -121,10 +121,10 @@ def readColumnHeaders(filePath):
         # header
         colHeaders = line.lstrip("# ").rstrip("\n").split()
         if (options.debug == True):
-            print >>sys.stderr, "colHeaders: ", colHeaders
+            print("colHeaders: ", colHeaders, file=sys.stderr)
     else:
-        print >>sys.stderr, "ERROR - readColumnHeaders"
-        print >>sys.stderr, "  First line does not start with #"
+        print("ERROR - readColumnHeaders", file=sys.stderr)
+        print("  First line does not start with #", file=sys.stderr)
         return -1, colHeaders, colData
     
     for index, var in enumerate(colHeaders, start=0):
@@ -273,11 +273,11 @@ def doPlot(scData, scTimes, cpData, cpTimes):
         
     # Scott's results
 
-    scottTimes = [ datetime.datetime(2015, 05, 29, 12, 00, 00), \
-                   datetime.datetime(2015, 06, 12, 12, 00, 00), \
-                   datetime.datetime(2015, 06, 15, 12, 00, 00), \
-                   datetime.datetime(2015, 06, 26, 12, 00, 00), \
-                   datetime.datetime(2015, 07, 02, 12, 00, 00) ]
+    scottTimes = [ datetime.datetime(2015, 0o5, 29, 12, 00, 00), \
+                   datetime.datetime(2015, 0o6, 12, 12, 00, 00), \
+                   datetime.datetime(2015, 0o6, 15, 12, 00, 00), \
+                   datetime.datetime(2015, 0o6, 26, 12, 00, 00), \
+                   datetime.datetime(2015, 0o7, 0o2, 12, 00, 00) ]
 
     scottBias = [ -1.39, -1.26, 2.78, 1.40, 0.75 ]
 
@@ -288,20 +288,20 @@ def doPlot(scData, scTimes, cpData, cpTimes):
 
     # mean bias for early and late parts of project
     
-    startTime = datetime.datetime(2015, 05, 28, 0, 0, 0)
-    endTime = datetime.datetime(2015, 06, 05, 0, 0, 0)
+    startTime = datetime.datetime(2015, 0o5, 28, 0, 0, 0)
+    endTime = datetime.datetime(2015, 0o6, 0o5, 0, 0, 0)
     meanBiasEarly = computePeriodStats(biasTimes, validDbzBias, startTime, endTime)
-    print >>sys.stderr, "Mean bias early, May 28 - June 5: ", meanBiasEarly
+    print("Mean bias early, May 28 - June 5: ", meanBiasEarly, file=sys.stderr)
 
-    startTime = datetime.datetime(2015, 06, 14, 0, 0, 0)
-    endTime = datetime.datetime(2015, 07, 17, 0, 0, 0)
+    startTime = datetime.datetime(2015, 0o6, 14, 0, 0, 0)
+    endTime = datetime.datetime(2015, 0o7, 17, 0, 0, 0)
     meanBiasLate = computePeriodStats(biasTimes, validDbzBias, startTime, endTime)
-    print >>sys.stderr, "Mean bias late, June 14 - July 17: ", meanBiasLate
+    print("Mean bias late, June 14 - July 17: ", meanBiasLate, file=sys.stderr)
 
-    meanTimes =  [ datetime.datetime(2015, 05, 28, 00, 00, 00), \
-                   datetime.datetime(2015, 06, 05, 00, 00, 00), \
-                   datetime.datetime(2015, 06, 14, 00, 00, 00), \
-                   datetime.datetime(2015, 07, 17, 00, 00, 00) ]
+    meanTimes =  [ datetime.datetime(2015, 0o5, 28, 00, 00, 00), \
+                   datetime.datetime(2015, 0o6, 0o5, 00, 00, 00), \
+                   datetime.datetime(2015, 0o6, 14, 00, 00, 00), \
+                   datetime.datetime(2015, 0o7, 17, 00, 00, 00) ]
 
     meanBias = [ meanBiasEarly, meanBiasEarly, meanBiasLate, meanBiasLate]
 
@@ -421,17 +421,17 @@ def computePeriodStats(times, vals, startTime, endTime):
 def runCommand(cmd):
 
     if (options.debug == True):
-        print >>sys.stderr, "running cmd:",cmd
+        print("running cmd:",cmd, file=sys.stderr)
     
     try:
         retcode = subprocess.call(cmd, shell=True)
         if retcode < 0:
-            print >>sys.stderr, "Child was terminated by signal: ", -retcode
+            print("Child was terminated by signal: ", -retcode, file=sys.stderr)
         else:
             if (options.debug == True):
-                print >>sys.stderr, "Child returned code: ", retcode
-    except OSError, e:
-        print >>sys.stderr, "Execution failed:", e
+                print("Child returned code: ", retcode, file=sys.stderr)
+    except OSError as e:
+        print("Execution failed:", e, file=sys.stderr)
 
 ########################################################################
 # Run - entry point
