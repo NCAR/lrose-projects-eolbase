@@ -1282,7 +1282,7 @@ prod_info = {
   //   request_data_on_zoom = FALSE,
   //   request_data_on_vert_change = FALSE
   // }
-  ,
+  //,
   {
     menu_label = "METARS-simple",
     url = "spdbp:Metar2Symprod:simple//front.eol.ucar.edu:8080:pecan/spdb/metar?use_http=true",
