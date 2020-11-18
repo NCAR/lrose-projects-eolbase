@@ -8,6 +8,24 @@ ConvStrat -params ConvStrat.test -debug \
     -start "2015 06 26 00 00 00" -end "2015 06 27 00 00 00" >& /tmp/ConvStrat.test.1.log &
 
 
+ConvStrat -params ConvStrat.test -debug \
+    -start "2015 06 01 00 00 00" -end "2015 06 06 00 00 00" >& /tmp/ConvStrat.test.2.log &
+
+ConvStrat -params ConvStrat.test -debug \
+    -start "2015 06 06 00 00 00" -end "2015 06 11 00 00 00" >& /tmp/ConvStrat.test.3.log &
+
+ConvStrat -params ConvStrat.test -debug \
+    -start "2015 06 11 00 00 00" -end "2015 06 16 00 00 00" >& /tmp/ConvStrat.test.4.log &
+
+ConvStrat -params ConvStrat.test -debug \
+    -start "2015 06 16 00 00 00" -end "2015 06 20 00 00 00" >& /tmp/ConvStrat.test.5.log &
+
+ConvStrat -params ConvStrat.test -debug \
+    -start "2015 06 20 00 00 00" -end "2015 06 25 00 00 00" >& /tmp/ConvStrat.test.6.log &
+
+ConvStrat -params ConvStrat.test -debug \
+    -start "2015 06 27 00 00 00" -end "2015 07 01 00 00 00" >& /tmp/ConvStrat.test.7.log &
+
 #StratFinder -params StratFinder.mrms_qc -debug \
 #    -start "2015 06 01 00 00 00" -end "2015 06 06 00 00 00" >& /tmp/StratFinder.mrms_qc.1.log &
 
