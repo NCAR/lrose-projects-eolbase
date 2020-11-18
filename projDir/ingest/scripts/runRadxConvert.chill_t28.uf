@@ -1,0 +1,8 @@
+#! /bin/csh
+
+# convert CHILL UF data to CfRadial on rain
+
+cd $PROJ_DIR/ingest/params
+
+RadxConvert -params RadxConvert.chill_t28.uf -debug -f /scr/rain1/rsfdata/projects/chill/uf/t28/CHL199506*
+
