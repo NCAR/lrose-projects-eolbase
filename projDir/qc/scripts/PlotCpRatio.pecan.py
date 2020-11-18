@@ -6,6 +6,8 @@
 #
 #===========================================================================
 
+from __future__ import print_function
+
 import os
 import sys
 import subprocess
@@ -79,8 +81,8 @@ def main():
         options.debug = True
 
     if (options.debug == True):
-        print >>sys.stderr, "Running PlotCpRatio:"
-        print >>sys.stderr, "  inputFilePath: ", options.inputFilePath
+        print("Running PlotCpRatio:", file=sys.stderr)
+        print("  inputFilePath: ", options.inputFilePath, file=sys.stderr)
 
     meanFilterLen = int(options.meanLen)
 
@@ -118,10 +120,10 @@ def readColumnHeaders():
         # header
         colHeaders = line.lstrip("# ").rstrip("\n").split()
         if (options.debug == True):
-            print >>sys.stderr, "colHeaders: ", colHeaders
+            print("colHeaders: ", colHeaders, file=sys.stderr)
     else:
-        print >>sys.stderr, "ERROR - readColumnHeaders"
-        print >>sys.stderr, "  First line does not start with #"
+        print("ERROR - readColumnHeaders", file=sys.stderr)
+        print("  First line does not start with #", file=sys.stderr)
         return -1
     
     for index, var in enumerate(colHeaders, start=0):
@@ -129,7 +131,7 @@ def readColumnHeaders():
         colData[var] = []
         
     if (options.debug == True):
-        print >>sys.stderr, "colIndex: ", colIndex
+        print("colIndex: ", colIndex, file=sys.stderr)
 
     return 0
 
@@ -403,17 +405,17 @@ def doPlot():
 def runCommand(cmd):
 
     if (options.debug == True):
-        print >>sys.stderr, "running cmd:",cmd
+        print("running cmd:",cmd, file=sys.stderr)
     
     try:
         retcode = subprocess.call(cmd, shell=True)
         if retcode < 0:
-            print >>sys.stderr, "Child was terminated by signal: ", -retcode
+            print("Child was terminated by signal: ", -retcode, file=sys.stderr)
         else:
             if (options.debug == True):
-                print >>sys.stderr, "Child returned code: ", retcode
-    except OSError, e:
-        print >>sys.stderr, "Execution failed:", e
+                print("Child returned code: ", retcode, file=sys.stderr)
+    except OSError as e:
+        print("Execution failed:", e, file=sys.stderr)
 
 ########################################################################
 # Run - entry point

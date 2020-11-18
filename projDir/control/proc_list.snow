@@ -14,6 +14,8 @@ DataMapper        primary    start_DataMapper          kill_DataMapper
 DsServerMgr       primary  start_inst(no-params)     snuff_inst
 DsProxyServer     primary  start_inst(no-params)     snuff_inst
 DsMdvServer       manager  start_inst(no-params)     snuff_inst
+DsMdvServer       mdv64    start_DsMdvServer64       snuff_inst
+#DsMdvServer       force64  start_DsMdvServerForce64  snuff_inst
 DsFmqServer       manager  start_inst(no-params)     snuff_inst
 DsSpdbServer      manager  start_inst(no-params)     snuff_inst
 DsFCopyServer     manager  start_inst(no-params)     snuff_inst

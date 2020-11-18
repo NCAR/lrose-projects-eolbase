@@ -6,6 +6,8 @@
 #
 #===========================================================================
 
+from __future__ import print_function
+
 import os
 import sys
 import subprocess
@@ -71,11 +73,11 @@ def main():
         options.debug = True
 
     if (options.debug == True):
-        print >>sys.stderr, "Running %prog"
-        print >>sys.stderr, "  scFilePath: ", options.scFilePath
-        print >>sys.stderr, "  cpFilePath: ", options.cpFilePath
-        print >>sys.stderr, "  lenMean: ", options.lenMean
-        print >>sys.stderr, "  minElev: ", options.minElev
+        print("Running %prog", file=sys.stderr)
+        print("  scFilePath: ", options.scFilePath, file=sys.stderr)
+        print("  cpFilePath: ", options.cpFilePath, file=sys.stderr)
+        print("  lenMean: ", options.lenMean, file=sys.stderr)
+        print("  minElev: ", options.minElev, file=sys.stderr)
 
     # read in column headers for self_con results
 
@@ -121,10 +123,10 @@ def readColumnHeaders(filePath):
         # header
         colHeaders = line.lstrip("# ").rstrip("\n").split()
         if (options.debug == True):
-            print >>sys.stderr, "colHeaders: ", colHeaders
+            print("colHeaders: ", colHeaders, file=sys.stderr)
     else:
-        print >>sys.stderr, "ERROR - readColumnHeaders"
-        print >>sys.stderr, "  First line does not start with #"
+        print("ERROR - readColumnHeaders", file=sys.stderr)
+        print("  First line does not start with #", file=sys.stderr)
         return -1, colHeaders, colData
     
     for index, var in enumerate(colHeaders, start=0):
@@ -250,13 +252,13 @@ def doPlot(scData, scTimes, cpData, cpTimes):
         
     # mean bias for project
     
-    startTime = datetime.datetime(2015, 05, 28, 0, 0, 0)
-    endTime = datetime.datetime(2015, 07, 17, 0, 0, 0)
+    startTime = datetime.datetime(2015, 0o5, 28, 0, 0, 0)
+    endTime = datetime.datetime(2015, 0o7, 17, 0, 0, 0)
     meanBiasProject = computePeriodStats(biasTimes, validDbzBias, startTime, endTime)
-    print >>sys.stderr, "KGLD mean bias for project, May 28 - July 17: ", meanBiasProject
+    print("KGLD mean bias for project, May 28 - July 17: ", meanBiasProject, file=sys.stderr)
 
-    meanTimes =  [ datetime.datetime(2015, 05, 28, 00, 00, 00), \
-                   datetime.datetime(2015, 07, 17, 00, 00, 00) ]
+    meanTimes =  [ datetime.datetime(2015, 0o5, 28, 00, 00, 00), \
+                   datetime.datetime(2015, 0o7, 17, 00, 00, 00) ]
 
     meanBias = [ meanBiasProject, meanBiasProject ]
 
@@ -376,17 +378,17 @@ def computePeriodStats(times, vals, startTime, endTime):
 def runCommand(cmd):
 
     if (options.debug == True):
-        print >>sys.stderr, "running cmd:",cmd
+        print("running cmd:",cmd, file=sys.stderr)
     
     try:
         retcode = subprocess.call(cmd, shell=True)
         if retcode < 0:
-            print >>sys.stderr, "Child was terminated by signal: ", -retcode
+            print("Child was terminated by signal: ", -retcode, file=sys.stderr)
         else:
             if (options.debug == True):
-                print >>sys.stderr, "Child returned code: ", retcode
-    except OSError, e:
-        print >>sys.stderr, "Execution failed:", e
+                print("Child returned code: ", retcode, file=sys.stderr)
+    except OSError as e:
+        print("Execution failed:", e, file=sys.stderr)
 
 ########################################################################
 # Run - entry point

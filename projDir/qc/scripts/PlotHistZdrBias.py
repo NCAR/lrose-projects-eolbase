@@ -6,6 +6,8 @@
 #
 #===========================================================================
 
+from __future__ import print_function
+
 import os
 import sys
 
@@ -54,8 +56,8 @@ def main():
     (options, args) = parser.parse_args()
     
     if (options.debug == True):
-        print >>sys.stderr, "Running %prog"
-        print >>sys.stderr, "  zdrFile: ", options.zdrFile
+        print("Running %prog", file=sys.stderr)
+        print("  zdrFile: ", options.zdrFile, file=sys.stderr)
 
     # read in data
 
@@ -81,11 +83,11 @@ def doPlot(zdr):
     percPoints = np.arange(0,100,1.0)
     percs = np.percentile(zdrSorted, percPoints)
 
-    print >>sys.stderr, "  ==>> mean: ", mean
-    print >>sys.stderr, "  ==>> sdev: ", sdev
-    print >>sys.stderr, "  ==>> skew: ", skew
-    print >>sys.stderr, "  ==>> kurtosis: ", kurtosis
-    print >>sys.stderr, "  ==>> percs: ", percs
+    print("  ==>> mean: ", mean, file=sys.stderr)
+    print("  ==>> sdev: ", sdev, file=sys.stderr)
+    print("  ==>> skew: ", skew, file=sys.stderr)
+    print("  ==>> kurtosis: ", kurtosis, file=sys.stderr)
+    print("  ==>> percs: ", percs, file=sys.stderr)
 
     widthIn = float(options.figWidthMm) / 25.4
     htIn = float(options.figHeightMm) / 25.4
@@ -206,17 +208,17 @@ def annotVal(ax1, ax2, val, pdf, cdf, label, plen,
 def runCommand(cmd):
 
     if (options.debug == True):
-        print >>sys.stderr, "running cmd:",cmd
+        print("running cmd:",cmd, file=sys.stderr)
     
     try:
         retcode = subprocess.call(cmd, shell=True)
         if retcode < 0:
-            print >>sys.stderr, "Child was terminated by signal: ", -retcode
+            print("Child was terminated by signal: ", -retcode, file=sys.stderr)
         else:
             if (options.debug == True):
-                print >>sys.stderr, "Child returned code: ", retcode
-    except OSError, e:
-        print >>sys.stderr, "Execution failed:", e
+                print("Child returned code: ", retcode, file=sys.stderr)
+    except OSError as e:
+        print("Execution failed:", e, file=sys.stderr)
 
 ########################################################################
 # Run - entry point

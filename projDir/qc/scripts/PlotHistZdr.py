@@ -6,6 +6,8 @@
 #
 #===========================================================================
 
+from __future__ import print_function
+
 import os
 import sys
 
@@ -63,8 +65,8 @@ def main():
     (options, args) = parser.parse_args()
     
     if (options.debug == True):
-        print >>sys.stderr, "Running %prog"
-        print >>sys.stderr, "  iceFile: ", options.iceFile
+        print("Running %prog", file=sys.stderr)
+        print("  iceFile: ", options.iceFile, file=sys.stderr)
 
     # read in headers
 
@@ -101,11 +103,11 @@ def readColumnHeaders(filePath):
         # header
         colHeaders = line.lstrip("# ").rstrip("\n").split()
         if (options.debug == True):
-            print >>sys.stderr, "colHeaders: ", colHeaders
+            print("colHeaders: ", colHeaders, file=sys.stderr)
     else:
-        print >>sys.stderr, "ERROR - readColumnHeaders"
-        print >>sys.stderr, "  File: ", filePath
-        print >>sys.stderr, "  First line does not start with #"
+        print("ERROR - readColumnHeaders", file=sys.stderr)
+        print("  File: ", filePath, file=sys.stderr)
+        print("  First line does not start with #", file=sys.stderr)
         return -1, colHeaders
     
     return 0, colHeaders
@@ -136,7 +138,7 @@ def readInputData(filePath, colHeaders):
         data = line.strip().split()
         if (len(data) != len(colHeaders)):
             if (options.debug == True):
-                print >>sys.stderr, "skipping line: ", line
+                print("skipping line: ", line, file=sys.stderr)
             continue;
 
         for index, var in enumerate(colHeaders, start=0):
@@ -161,13 +163,13 @@ def doPlot(filePath, colHeaders, colData):
     else:
         zdrValid = zdr
 
-    print >>sys.stderr, "  ==>> zdr: ", zdr
-    print >>sys.stderr, "  ==>> minElev: ", minElev
-    print >>sys.stderr, "  ==>> maxElev: ", maxElev
+    print("  ==>> zdr: ", zdr, file=sys.stderr)
+    print("  ==>> minElev: ", minElev, file=sys.stderr)
+    print("  ==>> maxElev: ", maxElev, file=sys.stderr)
 
-    print >>sys.stderr, "  ==>> size of zdr: ", len(zdr)
+    print("  ==>> size of zdr: ", len(zdr), file=sys.stderr)
     # print >>sys.stderr, "  ==>> size of elev: ", len(elev)
-    print >>sys.stderr, "  ==>> size of zdrValid: ", len(zdrValid)
+    print("  ==>> size of zdrValid: ", len(zdrValid), file=sys.stderr)
 
     zdrSorted = np.sort(zdrValid)
     mean = np.mean(zdrSorted)
@@ -181,12 +183,12 @@ def doPlot(filePath, colHeaders, colData):
     percPoints = np.arange(0,100,1.0)
     percs = np.percentile(zdrSorted, percPoints)
 
-    print >>sys.stderr, "  ==>> mean: ", mean
-    print >>sys.stderr, "  ==>> median: ", median
-    print >>sys.stderr, "  ==>> sdev: ", sdev
-    print >>sys.stderr, "  ==>> variance: ", variance
-    print >>sys.stderr, "  ==>> skew: ", skew
-    print >>sys.stderr, "  ==>> kurtosis: ", kurtosis
+    print("  ==>> mean: ", mean, file=sys.stderr)
+    print("  ==>> median: ", median, file=sys.stderr)
+    print("  ==>> sdev: ", sdev, file=sys.stderr)
+    print("  ==>> variance: ", variance, file=sys.stderr)
+    print("  ==>> skew: ", skew, file=sys.stderr)
+    print("  ==>> kurtosis: ", kurtosis, file=sys.stderr)
     # print >>sys.stderr, "  ==>> percs: ", percs
 
     widthIn = float(options.figWidthMm) / 25.4
@@ -218,12 +220,12 @@ def doPlot(filePath, colHeaders, colData):
     ax1.set_xlim([mean -sdev * 3, mean + sdev * 3])
     ax1Xlims=ax1.get_xlim()
 
-    print >>sys.stderr, "1111111111111111111111111111"
+    print("1111111111111111111111111111", file=sys.stderr)
     ae, loce, scalee=skewnorm.fit(zdrValid)
-    print >>sys.stderr, "2222222222222222222222222222"
-    print >>sys.stderr, "  ==>> ae: ", ae
-    print >>sys.stderr, "  ==>> loce: ", loce
-    print >>sys.stderr, "  ==>> scalee: ", scalee
+    print("2222222222222222222222222222", file=sys.stderr)
+    print("  ==>> ae: ", ae, file=sys.stderr)
+    print("  ==>> loce: ", loce, file=sys.stderr)
+    print("  ==>> scalee: ", scalee, file=sys.stderr)
     xmin, xmax = ax2.get_xlim()
     xplot = np.linspace(xmin, xmax, 60)
 
@@ -233,8 +235,8 @@ def doPlot(filePath, colHeaders, colData):
     piFac = pow(((4.0 - math.pi) / 2.0), tt)
     del1 = sqrt((piBy2 * deltt) / (deltt + piFac))
     alpha = del1 / math.sqrt(1.0 - del1 * del1)
-    print >>sys.stderr, "  ==>> del1: ", del1
-    print >>sys.stderr, "  ==>> alpha: ", alpha
+    print("  ==>> del1: ", del1, file=sys.stderr)
+    print("  ==>> alpha: ", alpha, file=sys.stderr)
     
     pd2 = skewnorm.pdf(xplot,ae, loce, scalee)
     ll2 = ax1.plot(xplot, pd2, 'r', linewidth=2)
@@ -244,17 +246,17 @@ def doPlot(filePath, colHeaders, colData):
 
     zdrLinear = np.exp(zdrValid / 10.0)
     a4, loc4, scale4 = lognorm.fit(zdrValid)
-    print >>sys.stderr, "  ==>> a4: ", a4
-    print >>sys.stderr, "  ==>> loc4: ", loc4
-    print >>sys.stderr, "  ==>> scale4: ", scale4
+    print("  ==>> a4: ", a4, file=sys.stderr)
+    print("  ==>> loc4: ", loc4, file=sys.stderr)
+    print("  ==>> scale4: ", scale4, file=sys.stderr)
 
     pd4 = lognorm.pdf(xplot, a4, loc4, scale4)
     ll4 = ax1.plot(xplot, pd4, 'k', linewidth=2)
 
     a5, loc5, scale5 = weibull_max.fit(zdrValid)
-    print >>sys.stderr, "  ==>> a5: ", a5
-    print >>sys.stderr, "  ==>> loc5: ", loc5
-    print >>sys.stderr, "  ==>> scale5: ", scale5
+    print("  ==>> a5: ", a5, file=sys.stderr)
+    print("  ==>> loc5: ", loc5, file=sys.stderr)
+    print("  ==>> scale5: ", scale5, file=sys.stderr)
 
     pd5 = weibull_max.pdf(xplot, a5, loc5, scale5)
     ll5 = ax1.plot(xplot, pd5, 'o', linewidth=2)
@@ -354,17 +356,17 @@ def annotVal(ax1, ax2, val, pdf, cdf, label, plen,
 def runCommand(cmd):
 
     if (options.debug == True):
-        print >>sys.stderr, "running cmd:",cmd
+        print("running cmd:",cmd, file=sys.stderr)
     
     try:
         retcode = subprocess.call(cmd, shell=True)
         if retcode < 0:
-            print >>sys.stderr, "Child was terminated by signal: ", -retcode
+            print("Child was terminated by signal: ", -retcode, file=sys.stderr)
         else:
             if (options.debug == True):
-                print >>sys.stderr, "Child returned code: ", retcode
-    except OSError, e:
-        print >>sys.stderr, "Execution failed:", e
+                print("Child returned code: ", retcode, file=sys.stderr)
+    except OSError as e:
+        print("Execution failed:", e, file=sys.stderr)
 
 ########################################################################
 # Run - entry point
