@@ -2250,7 +2250,7 @@ write_using_proposed_standard_name_attr = FALSE;
 // Type: boolean
 //
 
-separate_output_dirs_by_scan_type = FALSE;
+separate_output_dirs_by_scan_type = TRUE;
 
 ///////////// surveillance_subdir /////////////////////
 //
@@ -2276,7 +2276,7 @@ surveillance_subdir = "sur";
 // Type: string
 //
 
-sector_subdir = "sec";
+sector_subdir = "sur";
 
 ///////////// rhi_subdir //////////////////////////////
 //
