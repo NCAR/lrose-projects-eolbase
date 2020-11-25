@@ -103,49 +103,82 @@ field_list = {
 #MRMS_DBZ_3D   MRMS_DBZ_3D   $(HOME)/data/convstrat/mdv/mrms_3d&DBZ       dbz.colors   dBZ -5 80 5 cart 1 0
 
 Dbz3D           Dbz3D           mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/test?use_http=true&Dbz3D   dbz.colors - -5 80 5 cart,comp 1 0
-========        ======          mdvp:://junk.eol.ucar.edu:8080:pecan/mdv/radarCart/mrms_comp?use_http=true&DBZ         dbz.colors   dBZ -5 80 5 cart,comp 1 0
-========        ======          mdvp:://junk.eol.ucar.edu:8080:pecan/mdv/radarCart/mrms_comp?use_http=true&DBZ         dbz.colors   dBZ -5 80 5 cart,comp 1 0
-========        ======          mdvp:://junk.eol.ucar.edu:8080:pecan/mdv/radarCart/mrms_comp?use_http=true&DBZ         dbz.colors   dBZ -5 80 5 cart,comp 1 0
+Dbz3D-2           Dbz3D-2           mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/test2?use_http=true&Dbz3D   dbz.colors - -5 80 5 cart,comp 1 0
 
 FractionActive  FractionActive  mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/test?use_http=true&FractionActive  fraction.colors - -5 80 5 cart 1 0
+FractionActive-2  FractionActive-2  mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/test2?use_http=true&FractionActive  fraction.colors - -5 80 5 cart 1 0
+
 DbzColMax       DbzColMax       mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/test?use_http=true&DbzColMax       dbz.colors - -5 80 5 cart 1 0
+DbzColMax-2       DbzColMax-2       mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/test2?use_http=true&DbzColMax       dbz.colors - -5 80 5 cart 1 0
+
 DbzBackground   DbzBackground   mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/test?use_http=true&DbzBackground   dbz.colors - -5 80 5 cart 1 0
+DbzBackground-2   DbzBackground-2   mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/test2?use_http=true&DbzBackground   dbz.colors - -5 80 5 cart 1 0
+
 ConvRadius      ConvRadius      mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/test?use_http=true&ConvRadius      number.colors - -5 80 5 cart 1 0
+ConvRadius-2      ConvRadius-2      mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/test2?use_http=true&ConvRadius      number.colors - -5 80 5 cart 1 0
 
 ConvStrat       ConvStrat       mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/test?use_http=true&ConvStrat       conv_strat.colors - -5 80 5 cart 1 0
+ConvStrat-2       ConvStrat-2       mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/test2?use_http=true&ConvStrat       conv_strat.colors - -5 80 5 cart 1 0
+
 PartitionLow    PartitionLow    mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/test?use_http=true&PartitionLow    conv_strat.colors - -5 80 5 cart 1 0
+PartitionLow-2    PartitionLow-2    mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/test2?use_http=true&PartitionLow    conv_strat.colors - -5 80 5 cart 1 0
+
 PartitionMid    PartitionMid    mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/test?use_http=true&PartitionMid    conv_strat.colors - -5 80 5 cart 1 0
+PartitionMid-2    PartitionMid-2    mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/test2?use_http=true&PartitionMid    conv_strat.colors - -5 80 5 cart 1 0
+
 PartitionHigh   PartitionHigh   mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/test?use_http=true&PartitionHigh    conv_strat.colors - -5 80 5 cart 1 0
+PartitionHigh-2   PartitionHigh-2   mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/test2?use_http=true&PartitionHigh    conv_strat.colors - -5 80 5 cart 1 0
 
 DbzTextureMean  DbzTextureMean  mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/test?use_http=true&DbzTextureMean  dbz.colors - -5 80 5 cart 1  0
+DbzTextureMean-2  DbzTextureMean-2  mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/test2?use_http=true&DbzTextureMean  dbz.colors - -5 80 5 cart 1  0
+
 DbzTextureLow   DbzTextureLow   mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/test?use_http=true&DbzTextureLow   dbz.colors - -5 80 5 cart 1 0
+DbzTextureLow-2   DbzTextureLow-2   mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/test2?use_http=true&DbzTextureLow   dbz.colors - -5 80 5 cart 1 0
+
 DbzTextureMid   DbzTextureMid   mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/test?use_http=true&DbzTextureMid   dbz.colors - -5 80 5 cart 1 0
+DbzTextureMid-2   DbzTextureMid-2   mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/test2?use_http=true&DbzTextureMid   dbz.colors - -5 80 5 cart 1 0
+
 DbzTextureHigh  DbzTextureHigh  mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/test?use_http=true&DbzTextureHigh  dbz.colors - -5 80 5 cart 1 0
+DbzTextureHigh-2  DbzTextureHigh-2  mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/test2?use_http=true&DbzTextureHigh  dbz.colors - -5 80 5 cart 1 0
 
 DbzTexture3D    DbzTexture3D    mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/test?use_http=true&DbzTexture3D      dbz.colors - -5 80 5 cart,comp 1 0
+DbzTexture3D-2    DbzTexture3D-2    mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/test2?use_http=true&DbzTexture3D      dbz.colors - -5 80 5 cart,comp 1 0
+
 DbzTextureMax   DbzTextureMax   mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/test?use_http=true&DbzTextureMax   dbz.colors - -5 80 5 cart 1 0
-========        ======          mdvp:://junk.eol.ucar.edu:8080:pecan/mdv/radarCart/mrms_comp?use_http=true&DBZ         dbz.colors   dBZ -5 80 5 cart,comp 1 0
-========        ======          mdvp:://junk.eol.ucar.edu:8080:pecan/mdv/radarCart/mrms_comp?use_http=true&DBZ         dbz.colors   dBZ -5 80 5 cart,comp 1 0
+DbzTextureMax-2   DbzTextureMax-2   mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/test2?use_http=true&DbzTextureMax   dbz.colors - -5 80 5 cart 1 0
 
 ConvBase        ConvBase        mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/test?use_http=true&ConvBase   heightkm.colors km -5 80 5 cart 1 0
+ConvBase-2        ConvBase-2        mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/test2?use_http=true&ConvBase   heightkm.colors km -5 80 5 cart 1 0
+
 ConvTop         ConvTop         mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/test?use_http=true&ConvTop    heightkm.colors km -5 80 5 cart 1 0
+ConvTop-2         ConvTop-2         mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/test2?use_http=true&ConvTop    heightkm.colors km -5 80 5 cart 1 0
+
 StratBase       StratBase       mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/test?use_http=true&StratBase   heightkm.colors km -5 80 5 cart 1 0
+StratBase-2       StratBase-2       mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/test2?use_http=true&StratBase   heightkm.colors km -5 80 5 cart 1 0
+
 StratTop        StratTop        mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/test?use_http=true&StratTop    heightkm.colors km -5 80 5 cart 1 0
+StratTop-2        StratTop-2        mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/test2?use_http=true&StratTop    heightkm.colors km -5 80 5 cart 1 0
+
+========        ======          mdvp:://junk.eol.ucar.edu:8080:pecan/mdv/radarCart/mrms_comp?use_http=true&DBZ         dbz.colors   dBZ -5 80 5 cart,comp 1 0
+EchoTop-2        EchoTop-2        mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/test2?use_http=true&EchoTop    heightkm.colors km -5 80 5 cart 1 0
 
 FzHt            FzHt            mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/test?use_http=true&FzHt  number.colors km -5 80 5 cart 1 0
-DivHt           DivHt           mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/test?use_http=true&DivHt number.colors km -5 80 5 cart 1 0
-Temp            Temp            mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/test?use_http=true&TMP   temp.colors C -5 80 5 cart 1 0
-========        ======          mdvp:://junk.eol.ucar.edu:8080:pecan/mdv/radarCart/mrms_comp?use_http=true&DBZ         dbz.colors   dBZ -5 80 5 cart,comp 1 0
+FzHt-2            FzHt-2            mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/test2?use_http=true&FzHt  number.colors km -5 80 5 cart 1 0
 
-========        ======          mdvp:://junk.eol.ucar.edu:8080:pecan/mdv/radarCart/mrms_comp?use_http=true&DBZ         dbz.colors   dBZ -5 80 5 cart,comp 1 0
-========        ======          mdvp:://junk.eol.ucar.edu:8080:pecan/mdv/radarCart/mrms_comp?use_http=true&DBZ         dbz.colors   dBZ -5 80 5 cart,comp 1 0
-========        ======          mdvp:://junk.eol.ucar.edu:8080:pecan/mdv/radarCart/mrms_comp?use_http=true&DBZ         dbz.colors   dBZ -5 80 5 cart,comp 1 0
-========        ======          mdvp:://junk.eol.ucar.edu:8080:pecan/mdv/radarCart/mrms_comp?use_http=true&DBZ         dbz.colors   dBZ -5 80 5 cart,comp 1 0
+DivHt           DivHt           mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/test?use_http=true&DivHt number.colors km -5 80 5 cart 1 0
+DivHt-2           DivHt-2           mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/test2?use_http=true&DivHt number.colors km -5 80 5 cart 1 0
+
+Temp            Temp            mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/test?use_http=true&TMP   temp.colors C -5 80 5 cart 1 0
+Temp-2            Temp-2            mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/test2?use_http=true&TMP   temp.colors C -5 80 5 cart 1 0
 
 DBZ_3D0          DBZ_3D0            mdvp:://front.eol.ucar.edu:8080:pecan/mdv/radarCart/mrms_mosaic?use_http=true&DBZ           dbz.colors   dBZ -5 80 5 cart,comp 1 0
 ConvStrat0       ConvStrat0        mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/mrms_qc?use_http=true&ConvStrat       conv_strat.colors - -5 80 5 cart 1 0
 ConvFromColMax0  ConvFromColMax0   mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/mrms_qc?use_http=true&ConvFromColMax  conv_strat.colors - -5 80 5 cart 1 0
 ConvFromTexture0 ConvFromTexture0  mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/mrms_qc?use_http=true&ConvFromTexture conv_strat.colors - -5 80 5 cart 1 0
+
+========        ======          mdvp:://junk.eol.ucar.edu:8080:pecan/mdv/radarCart/mrms_comp?use_http=true&DBZ         dbz.colors   dBZ -5 80 5 cart,comp 1 0
+========        ======          mdvp:://junk.eol.ucar.edu:8080:pecan/mdv/radarCart/mrms_comp?use_http=true&DBZ         dbz.colors   dBZ -5 80 5 cart,comp 1 0
+
 
 </GRIDS>
 
@@ -935,7 +968,7 @@ cidd.click_posn_rel_to_origin: 1
 # Set this parameter to force the field menu popup to this many columns
 # If set <= 0, then cidd sets this dynamically, allowing at most 30 in each
 # column.
-cidd.num_field_menu_cols: 4
+cidd.num_field_menu_cols: 2
 
 # This parameter sets WSDDM specific behavior On -
 # - Go to end of loop when movie stops.
