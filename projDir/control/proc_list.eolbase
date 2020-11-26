@@ -233,7 +233,7 @@ madis2Spdb        hawaii  start_inst(ingest)   snuff_inst
 ######################################################################
 # GFS MODEL
 #
-Grib2toMdv    gfs.otrec  start_inst(ingest)   snuff_inst
+#Grib2toMdv    gfs.otrec  start_inst(ingest)   snuff_inst
 ######################################################################
 # model soundings at each radar
 #
@@ -241,19 +241,19 @@ Grib2toMdv    gfs.otrec  start_inst(ingest)   snuff_inst
 ######################################################################
 # SURFACE OBS
 #
-Metar2Spdb          otrec      start_inst(ingest)    snuff_inst 
+#Metar2Spdb          otrec      start_inst(ingest)    snuff_inst 
 ######################################################################
 # GOES16 sat data
 #
-GoesRnetCDF2Mdv    otrec_ch01   start_inst(ingest)    snuff_inst
-GoesRnetCDF2Mdv    otrec_ch02   start_inst(ingest)    snuff_inst
-GoesRnetCDF2Mdv    otrec_ch03   start_inst(ingest)    snuff_inst
-GoesRnetCDF2Mdv    otrec_ch06   start_inst(ingest)    snuff_inst
-GoesRnetCDF2Mdv    otrec_ch10   start_inst(ingest)    snuff_inst
-GoesRnetCDF2Mdv    otrec_ch13   start_inst(ingest)    snuff_inst
-GoesRnetCDF2Mdv    otrec_ch15   start_inst(ingest)    snuff_inst
+#GoesRnetCDF2Mdv    otrec_ch01   start_inst(ingest)    snuff_inst
+#GoesRnetCDF2Mdv    otrec_ch02   start_inst(ingest)    snuff_inst
+#GoesRnetCDF2Mdv    otrec_ch03   start_inst(ingest)    snuff_inst
+#GoesRnetCDF2Mdv    otrec_ch06   start_inst(ingest)    snuff_inst
+#GoesRnetCDF2Mdv    otrec_ch10   start_inst(ingest)    snuff_inst
+#GoesRnetCDF2Mdv    otrec_ch13   start_inst(ingest)    snuff_inst
+#GoesRnetCDF2Mdv    otrec_ch15   start_inst(ingest)    snuff_inst
 
 ######################################################################
 # GV
 #
-NcarAcPosn2Spdb    otrec          start_inst(ingest)  snuff_inst
+#NcarAcPosn2Spdb    otrec          start_inst(ingest)  snuff_inst

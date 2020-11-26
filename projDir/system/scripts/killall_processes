@@ -21,7 +21,4 @@ pkill vchilld
 pkill java
 pkill Xvfb
 
-# kill the control processes
-
-kill_control
 
