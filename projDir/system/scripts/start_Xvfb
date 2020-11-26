@@ -8,7 +8,7 @@
 
 running "Xvfb :1000.0"
 if ($status == 1) then
-    Xvfb :1000.0 -screen 0 2000x2000x24 -pixdepths 24 -ld 100000 -ls 10000 |& \
+    Xvfb :1000.0 -screen 0 2000x2000x24 -pixdepths 24 |& \
 	LogFilter -d $ERRORS_LOG_DIR -p Xvfb -i 1 >& /dev/null &
 endif
 
