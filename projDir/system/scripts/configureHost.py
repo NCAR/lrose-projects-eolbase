@@ -80,7 +80,7 @@ def main():
 
     # get the host type interactively
 
-    hostTypes = [ 'eolbase', 'relampago' ]
+    hostTypes = [ 'eolbase' ]
 
     print("", file=sys.stdout)
     print("Choose host type from the following list", file=sys.stdout)
@@ -160,12 +160,12 @@ def main():
     
     ############################################
     # data dir - specific to the host type
-    # populate installed data dir /data/spol
+    # populate param files to installed data dir
     
     dataDirsPath = os.path.join(options.gitDir, 'data_dirs')
     dataSubDir = "data." + hostType
     templateDataDir = os.path.join(dataDirsPath, dataSubDir)
-    installDataDir = os.path.join(options.dataDir, dataSubDir)
+    installDataDir = options.dataDir
 
     if (options.debug):
         print("Install data dir: ", installDataDir, file=sys.stderr)
