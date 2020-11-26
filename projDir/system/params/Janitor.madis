@@ -67,7 +67,7 @@ debug = DEBUG_OFF;
 // Type: string
 //
 
-instance = "raw";
+instance = "madis";
 
 ///////////// top_dir /////////////////////////////////
 //
