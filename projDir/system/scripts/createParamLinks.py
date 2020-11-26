@@ -95,6 +95,8 @@ def handleParamFile(dirPath, paramFileName):
     except OSError as exc:
         pass
 
+    if (options.debug):
+        print("os.chdir: ", installSubDir, file=sys.stderr)
     os.chdir(installSubDir)
 
     # remove the link if it exists

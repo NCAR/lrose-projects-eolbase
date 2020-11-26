@@ -21,26 +21,27 @@ def main():
     homeDir = os.environ['HOME']
     projDir = os.path.join(homeDir, 'projDir')
     controlDir = os.path.join(projDir, 'control')
-    defaultGitDir = os.path.join(homeDir, "git/lrose-projects-eolbase")
+    defaultDataDir = '/scr/sleet1/rsfdata/projects'
+    defaultGitDir = os.path.join(homeDir, 'git/lrose-projects-eolbase')
 
     # parse the command line
 
-    usage = "usage: %prog [options]"
+    usage = 'usage: %prog [options]'
     parser = OptionParser(usage)
     parser.add_option('--debug',
                       dest='debug', default=True,
-                      action="store_true",
+                      action='store_true',
                       help='Set debugging on')
     parser.add_option('--verbose',
                       dest='verbose', default=False,
-                      action="store_true",
+                      action='store_true',
                       help='Set verbose debugging on')
     parser.add_option('--gitDir',
                       dest='gitDir', default=defaultGitDir,
-                      help='Path of main directory in git')
+                      help='Main dir in git: default ' + defaultGitDir)
     parser.add_option('--dataDir',
-                      dest='dataDir', default='/data/eolbase',
-                      help='Path of installed data dir')
+                      dest='dataDir', default=defaultDataDir,
+                      help='Data dir, default: ' + defaultDataDir)
     (options, args) = parser.parse_args()
     
     if (options.verbose):
@@ -68,7 +69,7 @@ def main():
 
     # read current host type if previously set
 
-    prevHostType = 'archiver'
+    prevHostType = 'eolbase'
     hostTypePath = os.path.join(homeDir, '.host_type')
     if (os.path.exists(hostTypePath)):
         hostTypeFile = open(hostTypePath, 'r')
@@ -86,7 +87,10 @@ def main():
     print(" or hit enter to use host type shown:", file=sys.stdout)
     for hostType in hostTypes:
         print("     ", hostType, file=sys.stdout)
-    hostType = eval(input('    ............. (' + prevHostType + ')? '))
+    if (sys.version_info > (3, 0)):
+        hostType = input('    ............. (' + prevHostType + ')? ')
+    else:
+        hostType = raw_input('    ............. (' + prevHostType + ')? ')
     if (len(hostType) < 4):
         hostType = prevHostType
     else:
