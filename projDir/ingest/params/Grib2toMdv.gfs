@@ -367,7 +367,7 @@ write_forecast = FALSE;
 //
 
 // forecast_mdv_url = "mdvp:://localhost::$(project)/mdv/ruc";
-forecast_mdv_url = "mdvp:://localhost::/tmp/mdv/gfs_forecast";
+forecast_mdv_url = "mdvp:://localhost:0:/tmp/mdv/gfs_forecast";
 
 ///////////// write_non_forecast //////////////////////
 //
@@ -394,7 +394,7 @@ write_non_forecast = TRUE;
 // Type: string
 //
 
-non_forecast_mdv_url = "mdvp:://localhost::/tmp/mdv/gfs";
+non_forecast_mdv_url = "mdvp:://localhost:0:/tmp/mdv/gfs";
 
 ///////////// non_forecast_timestamp //////////////////
 //
