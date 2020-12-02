@@ -348,7 +348,7 @@ WV  WV  mdvp:://front.eol.ucar.edu:8080:dynamo/mdv/sat/wv?use_http=true&WV    sa
 # MAP_CODE Control_Label   Map_File_Name   On/OFF Detail__min Detail_max Color     
 #------------------------------------------------------------------------------------------
 
-World         World          world_states.map        1  0.0 1000000.0  white
+World         World          world_states.map        2  0.0 1000000.0  white
 Maldives      Maldives       maldives.map            1  0.0 10000.0    white
 #Towers        Towers         dynamo_towers.map       0  0.0 10000.0    cyan
 Points        Points         dynamo_points.map       0  0.0 1000000.0  cyan
@@ -661,10 +661,10 @@ cidd.reset_click_latitude:   -0.630447
 #
 # The Outer most domain: Overlays are clipped to this domain and 
 # pan/moves cannot exceed these edge limits.
-cidd.domain_limit_min_x:        -5000
-cidd.domain_limit_max_x:         5000
-cidd.domain_limit_min_y:        -5000
-cidd.domain_limit_max_y:         5000
+cidd.domain_limit_min_x:        -7000
+cidd.domain_limit_max_x:         7000
+cidd.domain_limit_min_y:        -7000
+cidd.domain_limit_max_y:         7000
  
 # The Lat, Long of the center of the display. Internal range rings
 # are relative to this point.
@@ -1547,7 +1547,7 @@ prod_info = {
   ,
   {
     menu_label = "WWLLN-1hour" ,
-    url = "spdbp:Ltg2Symprod:wwlln//front.eol.ucar.edu:8080:dynamo/spdb/wwlln?use_http=true",
+    url = "spdbp:Ltg2Symprod:yellow//front.eol.ucar.edu:8080:dynamo/spdb/wwlln?use_http=true",
     data_type = 0,
     render_type = RENDER_ALL_BEFORE_DATA_TIME,
     on_by_default = FALSE,
@@ -1560,7 +1560,7 @@ prod_info = {
   ,
   {
     menu_label = "WWLLN-3hour" ,
-    url = "spdbp:Ltg2Symprod:wwlln//front.eol.ucar.edu:8080:dynamo/spdb/wwlln?use_http=true",
+    url = "spdbp:Ltg2Symprod:yellow//front.eol.ucar.edu:8080:dynamo/spdb/wwlln?use_http=true",
     data_type = 0,
     render_type = RENDER_ALL_BEFORE_DATA_TIME,
     on_by_default = FALSE,
@@ -1573,7 +1573,7 @@ prod_info = {
   ,
   {
     menu_label = "WWLLN-6hour" ,
-    url = "spdbp:Ltg2Symprod:wwlln//front.eol.ucar.edu:8080:dynamo/spdb/wwlln?use_http=true",
+    url = "spdbp:Ltg2Symprod:yellow//front.eol.ucar.edu:8080:dynamo/spdb/wwlln?use_http=true",
     data_type = 0,
     render_type = RENDER_ALL_BEFORE_DATA_TIME,
     on_by_default = FALSE,
