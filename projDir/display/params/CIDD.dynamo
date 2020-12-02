@@ -326,6 +326,14 @@ MG1_RATE_HYBRID MG1_RATE_HYBRID    mdvp:://front.eol.ucar.edu:8080:dynamo/cfradi
 ======== ========  mdvp::static//front.eol.ucar.edu:8080:/spacer?use_http=true&Elevation  none.colors   m   -5   80  5  dcont   1 0
 ======== ========  mdvp::static//front.eol.ucar.edu:8080:/spacer?use_http=true&Elevation  none.colors   m   -5   80  5  dcont   1 0
 
+# SATELLITE
+
+VIS VIS mdvp:://front.eol.ucar.edu:8080:dynamo/mdv/sat/vis?use_http=true&VIS  sat_cloud.colors  none -5 80 5 radial 1 0
+IR  IR  mdvp:://front.eol.ucar.edu:8080:dynamo/mdv/sat/ir?use_http=true&IR    sat_tempK.colors  none -5 80 5 radial 1 0
+WV  WV  mdvp:://front.eol.ucar.edu:8080:dynamo/mdv/sat/wv?use_http=true&WV    sat_tempK.colors  none -5 80 5 radial 1 0
+======== ========  mdvp::static//front.eol.ucar.edu:8080:/spacer?use_http=true&Elevation  none.colors   m   -5   80  5  dcont   1 0
+======== ========  mdvp::static//front.eol.ucar.edu:8080:/spacer?use_http=true&Elevation  none.colors   m   -5   80  5  dcont   1 0
+======== ========  mdvp::static//front.eol.ucar.edu:8080:/spacer?use_http=true&Elevation  none.colors   m   -5   80  5  dcont   1 0
 
 </GRIDS>
 
