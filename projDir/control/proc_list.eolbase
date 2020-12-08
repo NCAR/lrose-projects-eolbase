@@ -53,17 +53,15 @@ LtgSpdb2Mdv         nldn               start_inst(ingest)  snuff_inst
 # MRMS radar mosaic
 #
 InputWatcher    mrms_MergedDbzQC  start_inst(ingest)          snuff_inst 
-MrmsGribIngest  pacific_nw  start_MrmsGribIngest.pacific_nw   snuff_inst 
-MrmsGribIngest  n_rockies   start_MrmsGribIngest.n_rockies    snuff_inst 
-MrmsGribIngest  n_miss      start_MrmsGribIngest.n_miss       snuff_inst 
-MrmsGribIngest  great_lakes start_MrmsGribIngest.great_lakes  snuff_inst 
-MrmsGribIngest  north_east  start_MrmsGribIngest.north_east   snuff_inst 
-MrmsGribIngest  pacific_sw  start_MrmsGribIngest.pacific_sw   snuff_inst 
-MrmsGribIngest  s_rockies   start_MrmsGribIngest.s_rockies    snuff_inst 
-MrmsGribIngest  s_plains    start_MrmsGribIngest.s_plains     snuff_inst 
-MrmsGribIngest  s_miss      start_MrmsGribIngest.s_miss       snuff_inst 
-MrmsGribIngest  south_east  start_MrmsGribIngest.south_east   snuff_inst 
-######################################################################
+MrmsGribIngest  conus          start_MrmsGribIngest.conus    snuff_inst 
+MrmsGribIngest  north_west     start_MrmsGribIngest.north_west    snuff_inst 
+MrmsGribIngest  north_rockies  start_MrmsGribIngest.north_rockies snuff_inst 
+MrmsGribIngest  north_central  start_MrmsGribIngest.north_central snuff_inst 
+MrmsGribIngest  north_east     start_MrmsGribIngest.north_east    snuff_inst 
+MrmsGribIngest  south_west     start_MrmsGribIngest.south_west    snuff_inst 
+MrmsGribIngest  south_central  start_MrmsGribIngest.south_central snuff_inst 
+MrmsGribIngest  south_east     start_MrmsGribIngest.south_east    snuff_inst 
+#####################################################################
 # Convective/stratiform partitioning
 #
 #StratFinder        mrms                start_inst(alg)     snuff_inst

@@ -102,38 +102,33 @@ field_list = {
 
 # MRMS mosaic
 
-DBZ_COMP_PACIFIC_NW  DBZ_COMP_PACIFIC_NW mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/mrms3D/pacific_nw?use_http=true&DBZ dbz.colors   dBZ -5 80 5 cart,comp 1 0
-DBZ_3D_PACIFIC_NW  DBZ_3D_PACIFIC_NW      mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/mrms3D/pacific_nw?use_http=true&DBZ dbz.colors   dBZ -5 80 5 cart 1 0
-
-DBZ_COMP_N_ROCKIES  DBZ_COMP_N_ROCKIES mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/mrms3D/n_rockies?use_http=true&DBZ dbz.colors   dBZ -5 80 5 cart,comp 1 0
-DBZ_3D_N_ROCKIES  DBZ_3D_N_ROCKIES      mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/mrms3D/n_rockies?use_http=true&DBZ dbz.colors   dBZ -5 80 5 cart 1 0
-
-DBZ_COMP_N_MISS  DBZ_COMP_N_MISS mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/mrms3D/n_miss?use_http=true&DBZ dbz.colors   dBZ -5 80 5 cart,comp 1 0
-DBZ_3D_N_MISS  DBZ_3D_N_MISS      mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/mrms3D/n_miss?use_http=true&DBZ dbz.colors   dBZ -5 80 5 cart 1 0
-
-DBZ_COMP_GREAT_LAKES  DBZ_COMP_GREAT_LAKES mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/mrms3D/great_lakes?use_http=true&DBZ dbz.colors   dBZ -5 80 5 cart,comp 1 0
-DBZ_3D_GREAT_LAKES  DBZ_3D_GREAT_LAKES      mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/mrms3D/great_lakes?use_http=true&DBZ dbz.colors   dBZ -5 80 5 cart 1 0
-
+DBZ_COMP_CONUS  DBZ_COMP_CONUS mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/mrms3D/conus?use_http=true&DBZ dbz.colors   dBZ -5 80 5 cart,comp 1 0
+DBZ_COMP_NORTH_WEST  DBZ_COMP_NORTH_WEST mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/mrms3D/north_west?use_http=true&DBZ dbz.colors   dBZ -5 80 5 cart,comp 1 0
+DBZ_COMP_NORTH_ROCKIES  DBZ_COMP_NORTH_ROCKIES mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/mrms3D/north_rockies?use_http=true&DBZ dbz.colors   dBZ -5 80 5 cart,comp 1 0
+DBZ_COMP_NORTH_CENTRAL  DBZ_COMP_NORTH_CENTRAL mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/mrms3D/north_central?use_http=true&DBZ dbz.colors   dBZ -5 80 5 cart,comp 1 0
 DBZ_COMP_NORTH_EAST  DBZ_COMP_NORTH_EAST mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/mrms3D/north_east?use_http=true&DBZ dbz.colors   dBZ -5 80 5 cart,comp 1 0
-DBZ_3D_NORTH_EAST  DBZ_3D_NORTH_EAST      mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/mrms3D/north_east?use_http=true&DBZ dbz.colors   dBZ -5 80 5 cart 1 0
-
-DBZ_COMP_PACIFIC_SW  DBZ_COMP_PACIFIC_SW mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/mrms3D/pacific_sw?use_http=true&DBZ dbz.colors   dBZ -5 80 5 cart,comp 1 0
-DBZ_3D_PACIFIC_SW  DBZ_3D_PACIFIC_SW      mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/mrms3D/pacific_sw?use_http=true&DBZ dbz.colors   dBZ -5 80 5 cart 1 0
-
-DBZ_COMP_S_ROCKIES  DBZ_COMP_S_ROCKIES mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/mrms3D/s_rockies?use_http=true&DBZ dbz.colors   dBZ -5 80 5 cart,comp 1 0
-DBZ_3D_S_ROCKIES  DBZ_3D_S_ROCKIES      mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/mrms3D/s_rockies?use_http=true&DBZ dbz.colors   dBZ -5 80 5 cart 1 0
-
-DBZ_COMP_S_PLAINS  DBZ_COMP_S_PLAINS mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/mrms3D/s_plains?use_http=true&DBZ dbz.colors   dBZ -5 80 5 cart,comp 1 0
-DBZ_3D_S_PLAINS  DBZ_3D_S_PLAINS      mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/mrms3D/s_plains?use_http=true&DBZ dbz.colors   dBZ -5 80 5 cart 1 0
-
-DBZ_COMP_S_MISS  DBZ_COMP_S_MISS mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/mrms3D/s_miss?use_http=true&DBZ dbz.colors   dBZ -5 80 5 cart,comp 1 0
-DBZ_3D_S_MISS  DBZ_3D_S_MISS      mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/mrms3D/s_miss?use_http=true&DBZ dbz.colors   dBZ -5 80 5 cart 1 0
-
+DBZ_COMP_SOUTH_WEST  DBZ_COMP_SOUTH_WEST mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/mrms3D/south_west?use_http=true&DBZ dbz.colors   dBZ -5 80 5 cart,comp 1 0
+DBZ_COMP_SOUTH_CENTRAL  DBZ_COMP_SOUTH_CENTRAL mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/mrms3D/south_central?use_http=true&DBZ dbz.colors   dBZ -5 80 5 cart,comp 1 0
 DBZ_COMP_SOUTH_EAST  DBZ_COMP_SOUTH_EAST mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/mrms3D/south_east?use_http=true&DBZ dbz.colors   dBZ -5 80 5 cart,comp 1 0
+
+
+DBZ_COMP_CONUS  DBZ_COMP_CONUS mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/mrms3D/conus?use_http=true&DBZ dbz.colors   dBZ -5 80 5 cart,comp 1 0
+DBZ_3D_NORTH_WEST  DBZ_3D_NORTH_WEST      mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/mrms3D/north_west?use_http=true&DBZ dbz.colors   dBZ -5 80 5 cart 1 0
+DBZ_3D_NORTH_ROCKIES  DBZ_3D_NORTH_ROCKIES      mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/mrms3D/north_rockies?use_http=true&DBZ dbz.colors   dBZ -5 80 5 cart 1 0
+DBZ_3D_NORTH_CENTRAL  DBZ_3D_NORTH_CENTRAL      mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/mrms3D/north_central?use_http=true&DBZ dbz.colors   dBZ -5 80 5 cart 1 0
+DBZ_3D_NORTH_EAST  DBZ_3D_NORTH_EAST      mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/mrms3D/north_east?use_http=true&DBZ dbz.colors   dBZ -5 80 5 cart 1 0
+DBZ_3D_SOUTH_WEST  DBZ_3D_SOUTH_WEST      mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/mrms3D/south_west?use_http=true&DBZ dbz.colors   dBZ -5 80 5 cart 1 0
+DBZ_3D_SOUTH_CENTRAL  DBZ_3D_SOUTH_CENTRAL      mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/mrms3D/south_central?use_http=true&DBZ dbz.colors   dBZ -5 80 5 cart 1 0
 DBZ_3D_SOUTH_EAST  DBZ_3D_SOUTH_EAST      mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/mrms3D/south_east?use_http=true&DBZ dbz.colors   dBZ -5 80 5 cart 1 0
 
-======== ========  mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 cart 0 0
-======== ========  mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 cart 0 0
+======== ========  dummy_dir&None  none.colors   m   0 0 0 cart 0 0
+======== ========  dummy_dir&None  none.colors   m   0 0 0 cart 0 0
+======== ========  dummy_dir&None  none.colors   m   0 0 0 cart 0 0
+======== ========  dummy_dir&None  none.colors   m   0 0 0 cart 0 0
+======== ========  dummy_dir&None  none.colors   m   0 0 0 cart 0 0
+======== ========  dummy_dir&None  none.colors   m   0 0 0 cart 0 0
+======== ========  dummy_dir&None  none.colors   m   0 0 0 cart 0 0
+======== ========  dummy_dir&None  none.colors   m   0 0 0 cart 0 0
 
 
 </GRIDS>
@@ -470,76 +465,58 @@ cidd.num_cache_zooms:       0
 #
 cidd.level1_label:                  CONUS
 cidd.level1_min_xkm:                -130
-cidd.level1_min_ykm:                20
-cidd.level1_max_xkm:                -60
-cidd.level1_max_ykm:                55
+cidd.level1_min_ykm:                22
+cidd.level1_max_xkm:                -62
+cidd.level1_max_ykm:                58
 #
-cidd.level2_label:                  PACIFIC_NW
-cidd.level2_min_xkm:                -127
-cidd.level2_min_ykm:                35
-cidd.level2_max_xkm:                -112
-cidd.level2_max_ykm:                50
+cidd.level2_label:                  NORTH_WEST
+cidd.level2_min_xkm:                -130
+cidd.level2_min_ykm:                38
+cidd.level2_max_xkm:                -110
+cidd.level2_max_ykm:                58
 #
-cidd.level3_label:                  N_ROCKIES
-cidd.level3_min_xkm:                -116
-cidd.level3_min_ykm:                35
-cidd.level3_max_xkm:                -100
-cidd.level3_max_ykm:                50
+cidd.level3_label:                  NORTH_ROCKIES
+cidd.level3_min_xkm:                -114
+cidd.level3_min_ykm:                38
+cidd.level3_max_xkm:                -94
+cidd.level3_max_ykm:                58
 #
-cidd.level4_label:                  N_MISS
-cidd.level4_min_xkm:                -104
-cidd.level4_min_ykm:                35
-cidd.level4_max_xkm:                -90
-cidd.level4_max_ykm:                50
+cidd.level4_label:                  NORTH_CENTRAL
+cidd.level4_min_xkm:                -98
+cidd.level4_min_ykm:                38
+cidd.level4_max_xkm:                -78
+cidd.level4_max_ykm:                58
 #
-cidd.level5_label:                  GREAT_LAKES
-cidd.level5_min_xkm:                -94
-cidd.level5_min_ykm:                35
-cidd.level5_max_xkm:                -76
-cidd.level5_max_ykm:                50
+cidd.level5_label:                  NORTH_EAST
+cidd.level5_min_xkm:                -82
+cidd.level5_min_ykm:                38
+cidd.level5_max_xkm:                -62
+cidd.level5_max_ykm:                58
 #
-cidd.level6_label:                  NORTH_EAST
-cidd.level6_min_xkm:                -80
-cidd.level6_min_ykm:                35
-cidd.level6_max_xkm:                -66
-cidd.level6_max_ykm:                50
+cidd.level6_label:                  SOUTH_WEST
+cidd.level6_min_xkm:                -126
+cidd.level6_min_ykm:                22
+cidd.level6_max_xkm:                -106
+cidd.level6_max_ykm:                42
 #
-cidd.level7_label:                  PACIFIC_SW
-cidd.level7_min_xkm:                -127
-cidd.level7_min_ykm:                23
-cidd.level7_max_xkm:                -112
-cidd.level7_max_ykm:                38
+cidd.level7_label:                  SOUTH_CENTRAL
+cidd.level7_min_xkm:                -110
+cidd.level7_min_ykm:                22
+cidd.level7_max_xkm:                -90
+cidd.level7_max_ykm:                42
 #
-cidd.level8_label:                  S_ROCKIES
-cidd.level8_min_xkm:                -116
-cidd.level8_min_ykm:                23
-cidd.level8_max_xkm:                -100
-cidd.level8_max_ykm:                38
-#
-cidd.level9_label:                  S_PLAINS
-cidd.level9_min_xkm:                -104
-cidd.level9_min_ykm:                23
-cidd.level9_max_xkm:                -90
-cidd.level9_max_ykm:                38
-#
-cidd.level10_label:                  S_MISS
-cidd.level10_min_xkm:                -94
-cidd.level10_min_ykm:                23
-cidd.level10_max_xkm:                -76
-cidd.level10_max_ykm:                38
-#
-cidd.level11_label:                  SOUTH_EAST
-cidd.level11_min_xkm:                -80
-cidd.level11_min_ykm:                23
-cidd.level11_max_xkm:                -66
-cidd.level11_max_ykm:                38
+cidd.level8_label:                  SOUTH_EAST
+cidd.level8_min_xkm:                -94
+cidd.level8_min_ykm:                22
+cidd.level8_max_xkm:                -74
+cidd.level8_max_ykm:                42
 #
 #
-cidd.level12_label:                  WORLD
-cidd.level12_min_xkm:                -180
-cidd.level12_min_ykm:                -90
-cidd.level12_max_xkm:                180
-cidd.level12_max_ykm:                90
+cidd.level9_label:                  WORLD
+cidd.level9_min_xkm:                -180
+cidd.level9_min_ykm:                -90
+cidd.level9_max_xkm:                180
+cidd.level9_max_ykm:                90
 #
 #
 
@@ -955,7 +932,7 @@ cidd.click_posn_rel_to_origin: 1
 # Set this parameter to force the field menu popup to this many columns
 # If set <= 0, then cidd sets this dynamically, allowing at most 30 in each
 # column.
-cidd.num_field_menu_cols: 2
+cidd.num_field_menu_cols: 8
 
 # This parameter sets WSDDM specific behavior On -
 # - Go to end of loop when movie stops.

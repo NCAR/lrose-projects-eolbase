@@ -1,0 +1,10 @@
+#! /bin/csh
+
+cd $PROJ_DIR/ingest/params
+
+running "MrmsGribIngest -instance conus"
+
+if ($status == 1) then
+    MrmsGribIngest -instance conus -params MrmsGribIngest.conus |& \
+        LogFilter -d $ERRORS_LOG_DIR -p MrmsGribIngest -i conus >& /dev/null &
+endif
