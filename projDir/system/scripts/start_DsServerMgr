@@ -1,6 +1,6 @@
 #! /bin/csh
 
-cd $RAP_DATA_DIR
+cd $DATA_DIR
 
 running "DsServerMgr"
 if ($status == 1) then

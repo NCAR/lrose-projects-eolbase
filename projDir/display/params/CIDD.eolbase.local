@@ -44,11 +44,11 @@
 //
 
 field_list = {
+  { "NEXRAD moments", "NEX_" },
   { "SPOL",  "SPOL_" },
   { "Satellite", "SAT_"},
   { "SPOL-DRX",  "SDRX_" },
   { "KBAND",  "KBAND_" },
-  { "NEXRAD moments", "NEX_" },
   { "NEXRAD PID/precip", "NEXP_ " },
   { "REFRACT",  "REFR_" },
   { "Surface", "SURF_" },

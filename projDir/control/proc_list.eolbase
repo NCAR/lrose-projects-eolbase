@@ -32,15 +32,12 @@ Tstorms2Symprod   manager  start_inst(no-params)     snuff_inst
 ######################################################################
 # Base observations ingest - from LDM
 #
-InputWatcher        mrms_conus_plus    start_inst(ingest)  snuff_inst 
 Metar2Spdb          ops                start_inst(ingest)  snuff_inst 
 LdmDynamic2Static   metar              start_inst(ingest)  snuff_inst
 LdmDynamic2Static   sounding           start_inst(ingest)  snuff_inst
 madis2Spdb          ops                start_inst(ingest)  snuff_inst 
 NWSsoundingIngest   ops                start_inst(ingest)  snuff_inst 
 InputWatcher        mesonet1           start_inst(ingest)  snuff_inst 
-#MrmsGribIngest     ops                start_inst(ingest)  snuff_inst 
-#MdvConvert         mrms_comp          start_inst(ingest)  snuff_inst
 InputWatcher        ruc                start_inst(ingest)  snuff_inst 
 Grib2toMdv          ruc                start_inst(ingest)  snuff_inst 
 #Grib2toMdv         ruc_fcasts         start_inst(ingest)  snuff_inst 
@@ -52,6 +49,24 @@ LtgSpdb2Mdv         nldn               start_inst(ingest)  snuff_inst
 #NcarAcPosn2Spdb     ops                start_inst(ingest)  snuff_inst
 #NcarAcPosn2Spdb    mobile             start_inst(ingest)  snuff_inst
 #
+######################################################################
+# MRMS radar mosaic
+#
+InputWatcher    mrms_MergedDbzQC  start_inst(ingest)          snuff_inst 
+MrmsGribIngest  pacific_nw  start_MrmsGribIngest.pacific_nw   snuff_inst 
+MrmsGribIngest  n_rockies   start_MrmsGribIngest.n_rockies    snuff_inst 
+MrmsGribIngest  n_miss      start_MrmsGribIngest.n_miss       snuff_inst 
+MrmsGribIngest  great_lakes start_MrmsGribIngest.great_lakes  snuff_inst 
+MrmsGribIngest  north_east  start_MrmsGribIngest.north_east   snuff_inst 
+MrmsGribIngest  pacific_sw  start_MrmsGribIngest.pacific_sw   snuff_inst 
+MrmsGribIngest  s_rockies   start_MrmsGribIngest.s_rockies    snuff_inst 
+MrmsGribIngest  s_plains    start_MrmsGribIngest.s_plains     snuff_inst 
+MrmsGribIngest  s_miss      start_MrmsGribIngest.s_miss       snuff_inst 
+MrmsGribIngest  south_east  start_MrmsGribIngest.south_east   snuff_inst 
+######################################################################
+# Convective/stratiform partitioning
+#
+#StratFinder        mrms                start_inst(alg)     snuff_inst
 ######################################################################
 # GFS MODEL
 #
@@ -111,10 +126,6 @@ RadxConvert   kpux    start_RadxConvert.kpux   snuff_inst
 #RadxConvert  kuex    start_RadxConvert.kuex   snuff_inst
 #RadxConvert  kvnx    start_RadxConvert.kvnx   snuff_inst
 #
-######################################################################
-# Convective/stratiform partitioning
-#
-#StratFinder        mrms                start_inst(alg)     snuff_inst
 ######################################################################
 # Storm tracking
 #

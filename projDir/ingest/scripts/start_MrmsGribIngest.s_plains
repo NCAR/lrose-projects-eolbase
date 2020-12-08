@@ -1,0 +1,16 @@
+#! /bin/csh
+
+cd $PROJ_DIR/ingest/params
+
+setenv min_lat 23
+setenv max_lat 38
+setenv min_lon -104
+setenv max_lon -90
+setenv tile_name s_plains
+
+running "MrmsGribIngest -instance $tile_name"
+
+if ($status == 1) then
+    MrmsGribIngest -instance $tile_name -params MrmsGribIngest.tiled |& \
+        LogFilter -d $ERRORS_LOG_DIR -p MrmsGribIngest -i $tile_name >& /dev/null &
+endif
