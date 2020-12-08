@@ -120,6 +120,9 @@ ConvRadius-2      ConvRadius-2      mdvp:://front.eol.ucar.edu:8080:pecan/mdv/co
 ConvStrat       ConvStrat       mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/test?use_http=true&ConvStrat       conv_strat.colors - -5 80 5 cart 1 0
 ConvStrat-2       ConvStrat-2       mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/test2?use_http=true&ConvStrat       conv_strat.colors - -5 80 5 cart 1 0
 
+ConvStrat3D     ConvStrat3D    mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/test?use_http=true&DbzTexture3D      conv_strat_from_texture.colors - -5 80 5 cart 1 0
+ConvStrat3D-2   ConvStrat3D-2    mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/test2?use_http=true&DbzTexture3D      conv_strat_from_texture.colors - -5 80 5 cart 1 0
+
 PartitionLow    PartitionLow    mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/test?use_http=true&PartitionLow    conv_strat.colors - -5 80 5 cart 1 0
 PartitionLow-2    PartitionLow-2    mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/test2?use_http=true&PartitionLow    conv_strat.colors - -5 80 5 cart 1 0
 
