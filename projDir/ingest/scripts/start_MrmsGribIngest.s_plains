@@ -5,7 +5,7 @@ cd $PROJ_DIR/ingest/params
 setenv min_lat 23
 setenv max_lat 38
 setenv min_lon -104
-setenv max_lon -90
+setenv max_lon -85
 setenv tile_name s_plains
 
 running "MrmsGribIngest -instance $tile_name"
