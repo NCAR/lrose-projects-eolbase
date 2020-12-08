@@ -635,7 +635,7 @@ cidd.margin_color: black
 
 # Render values outside the data range of the color scale in this color
 # 'transparent' is the default
-cidd.out_of_range_color: transparent
+cidd.out_of_range_color: gray20
 
 # Color of the cross section reference line 
 cidd.route_path_color: yellow
@@ -660,7 +660,6 @@ cidd.range_ring_color: gray
 # plotted. (This is the default) Otherwise, these data will be
 # plotted in the indicated color
 cidd.missing_data_color: transparent
-
 cidd.bad_data_color: transparent
 #
 # Time Control (Movie) Popup Colors
