@@ -263,6 +263,13 @@ if ($?prompt) then
   alias savedvd 'growisofs -Z /dev/dvd -r -J'
   alias saveiso2dvd 'growisofs -dvd-compat -Z /dev/dvd='
 
+# rsync and netcat examples
+
+  alias rsyncspol "rsync -av --rsh='ssh -p20022' dspol@spol.dyndns.org:/tmp"
+
+  alias nc_send 'tar cf - . | pv | nc -l -l 5555 '
+  alias nc_receive 'nc snow 5555 | pv | tar xf - '
+
 #    eval `dircolors ~/.dircolors`      # Set up color-ls variables.
 
   setprompt
