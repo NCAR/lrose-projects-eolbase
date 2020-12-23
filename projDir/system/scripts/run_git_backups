@@ -1,0 +1,8 @@
+#! /bin/csh
+
+cd $PROJ_DIR/system/scripts
+
+./git_backups.py --debug --targetDir /scr/sleet1/rsfdata/git_backups |& \
+	LogFilter -d $ERRORS_LOG_DIR -p git_backups.py -i daily >& /dev/null &
+endif
+
