@@ -53,7 +53,7 @@ def main():
     now = time.gmtime()
     nowTime = datetime(now.tm_year, now.tm_mon, now.tm_mday,
                        now.tm_hour, now.tm_min, now.tm_sec)
-    timeStr = nowTime.strftime("%Y%m%d%_H%M%S")
+    timeStr = nowTime.strftime("%Y%m%d_%H%M%S")
 
     # make date dir and go there
 
