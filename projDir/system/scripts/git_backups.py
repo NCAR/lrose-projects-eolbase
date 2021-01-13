@@ -75,6 +75,7 @@ def main():
     repos.append("git@github.com:ncar/lrose-devel")
     repos.append("git@github.com:ncar/lrose-displays")
     repos.append("git@github.com:ncar/lrose-docs")
+    repos.append("git@github.com:ncar/lrose-docker")
     repos.append("git@github.com:ncar/lrose-eumetsat")
     repos.append("git@github.com:ncar/lrose-examples")
     repos.append("git@github.com:ncar/lrose-hurricane-lane")
