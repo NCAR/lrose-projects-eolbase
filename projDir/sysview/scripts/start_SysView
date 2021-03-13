@@ -14,7 +14,7 @@ cd $PROJ_DIR/sysview/params
 running "java -jar $RAP_JAR_DIR/sysview.jar -instance ops"
 
 if ($status == 1) then
-   java -jar $RAP_JAR_DIR/sysview.jar -instance ops -params SysView.params.xml -diagram SysView.diagram.xml -run -noedit |& \
+   java -jar $LROSE_JAR_DIR/sysview.jar -instance ops -params SysView.params.xml -diagram SysView.diagram.xml -run -noedit |& \
 	LogFilter -d $ERRORS_LOG_DIR -p SysView -i ops >& /dev/null &
 endif
 

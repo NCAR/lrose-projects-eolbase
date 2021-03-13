@@ -214,7 +214,7 @@ if ($?prompt) then
   alias gpush 'git push'
   alias gpull 'git pull'
   alias gdiff 'git diff '
-  alias gdt 'git difftool -g -y -t tkdiff '
+  alias gdt 'git difftool -y -t tkdiff '
 
   alias gate 'ssh -a -XY -C -L 2401:cvs.rap.ucar.edu:2401 -L 8888:svn.eol.ucar.edu:80 dixon@gate.ucar.edu'
 

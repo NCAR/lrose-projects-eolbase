@@ -53,11 +53,11 @@ def main():
     now = time.gmtime()
     nowTime = datetime(now.tm_year, now.tm_mon, now.tm_mday,
                        now.tm_hour, now.tm_min, now.tm_sec)
-    dateStr = nowTime.strftime("%Y%m%d")
+    timeStr = nowTime.strftime("%Y%m%d_%H%M%S")
 
     # make date dir and go there
 
-    dateDir = os.path.join(options.targetDir, dateStr);
+    dateDir = os.path.join(options.targetDir, timeStr);
     if (os.path.isdir(dateDir) == False):
         os.makedirs(dateDir)
     os.chdir(dateDir)
@@ -75,6 +75,7 @@ def main():
     repos.append("git@github.com:ncar/lrose-devel")
     repos.append("git@github.com:ncar/lrose-displays")
     repos.append("git@github.com:ncar/lrose-docs")
+    repos.append("git@github.com:ncar/lrose-docker")
     repos.append("git@github.com:ncar/lrose-eumetsat")
     repos.append("git@github.com:ncar/lrose-examples")
     repos.append("git@github.com:ncar/lrose-hurricane-lane")
