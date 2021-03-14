@@ -102,33 +102,53 @@ field_list = {
 
 # MRMS mosaic
 
-DBZ_COMP_CONUS  DBZ_COMP_CONUS mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/mrms3D/conus?use_http=true&DBZ dbz.colors   dBZ -5 80 5 cart,comp 1 0
-DBZ_COMP_NORTH_WEST  DBZ_COMP_NORTH_WEST mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/mrms3D/north_west?use_http=true&DBZ dbz.colors   dBZ -5 80 5 cart,comp 1 0
-DBZ_COMP_NORTH_ROCKIES  DBZ_COMP_NORTH_ROCKIES mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/mrms3D/north_rockies?use_http=true&DBZ dbz.colors   dBZ -5 80 5 cart,comp 1 0
-DBZ_COMP_NORTH_CENTRAL  DBZ_COMP_NORTH_CENTRAL mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/mrms3D/north_central?use_http=true&DBZ dbz.colors   dBZ -5 80 5 cart,comp 1 0
-DBZ_COMP_NORTH_EAST  DBZ_COMP_NORTH_EAST mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/mrms3D/north_east?use_http=true&DBZ dbz.colors   dBZ -5 80 5 cart,comp 1 0
-DBZ_COMP_SOUTH_WEST  DBZ_COMP_SOUTH_WEST mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/mrms3D/south_west?use_http=true&DBZ dbz.colors   dBZ -5 80 5 cart,comp 1 0
-DBZ_COMP_SOUTH_CENTRAL  DBZ_COMP_SOUTH_CENTRAL mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/mrms3D/south_central?use_http=true&DBZ dbz.colors   dBZ -5 80 5 cart,comp 1 0
-DBZ_COMP_SOUTH_EAST  DBZ_COMP_SOUTH_EAST mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/mrms3D/south_east?use_http=true&DBZ dbz.colors   dBZ -5 80 5 cart,comp 1 0
+DBZ_COMP_US  DBZ_COMP_US mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/mrms3D/conus?use_http=true&DBZ dbz.colors   dBZ -5 80 5 cart,comp 1 0
+========      =========  /tmp/spacer&junk  none.colors   m   -5   80  5  dcont   1 0
+========      =========  /tmp/spacer&junk  none.colors   m   -5   80  5  dcont   1 0
+========      =========  /tmp/spacer&junk  none.colors   m   -5   80  5  dcont   1 0
+========      =========  /tmp/spacer&junk  none.colors   m   -5   80  5  dcont   1 0
+========      =========  /tmp/spacer&junk  none.colors   m   -5   80  5  dcont   1 0
+========      =========  /tmp/spacer&junk  none.colors   m   -5   80  5  dcont   1 0
 
+DBZ_COMP_NW  DBZ_COMP_NW mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/mrms3D/north_west?use_http=true&DBZ dbz.colors   dBZ -5 80 5 cart,comp 1 0
+DBZ_COMP_NR  DBZ_COMP_NR mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/mrms3D/north_rockies?use_http=true&DBZ dbz.colors   dBZ -5 80 5 cart,comp 1 0
+DBZ_COMP_NC  DBZ_COMP_NC mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/mrms3D/north_central?use_http=true&DBZ dbz.colors   dBZ -5 80 5 cart,comp 1 0
+DBZ_COMP_NE  DBZ_COMP_NE mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/mrms3D/north_east?use_http=true&DBZ dbz.colors   dBZ -5 80 5 cart,comp 1 0
+DBZ_COMP_SW  DBZ_COMP_SW mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/mrms3D/south_west?use_http=true&DBZ dbz.colors   dBZ -5 80 5 cart,comp 1 0
+DBZ_COMP_SC  DBZ_COMP_SC mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/mrms3D/south_central?use_http=true&DBZ dbz.colors   dBZ -5 80 5 cart,comp 1 0
+DBZ_COMP_SE  DBZ_COMP_SE mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/mrms3D/south_east?use_http=true&DBZ dbz.colors   dBZ -5 80 5 cart,comp 1 0
 
-DBZ_COMP_CONUS  DBZ_COMP_CONUS mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/mrms3D/conus?use_http=true&DBZ dbz.colors   dBZ -5 80 5 cart,comp 1 0
-DBZ_3D_NORTH_WEST  DBZ_3D_NORTH_WEST      mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/mrms3D/north_west?use_http=true&DBZ dbz.colors   dBZ -5 80 5 cart 1 0
-DBZ_3D_NORTH_ROCKIES  DBZ_3D_NORTH_ROCKIES      mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/mrms3D/north_rockies?use_http=true&DBZ dbz.colors   dBZ -5 80 5 cart 1 0
-DBZ_3D_NORTH_CENTRAL  DBZ_3D_NORTH_CENTRAL      mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/mrms3D/north_central?use_http=true&DBZ dbz.colors   dBZ -5 80 5 cart 1 0
-DBZ_3D_NORTH_EAST  DBZ_3D_NORTH_EAST      mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/mrms3D/north_east?use_http=true&DBZ dbz.colors   dBZ -5 80 5 cart 1 0
-DBZ_3D_SOUTH_WEST  DBZ_3D_SOUTH_WEST      mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/mrms3D/south_west?use_http=true&DBZ dbz.colors   dBZ -5 80 5 cart 1 0
-DBZ_3D_SOUTH_CENTRAL  DBZ_3D_SOUTH_CENTRAL      mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/mrms3D/south_central?use_http=true&DBZ dbz.colors   dBZ -5 80 5 cart 1 0
-DBZ_3D_SOUTH_EAST  DBZ_3D_SOUTH_EAST      mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/mrms3D/south_east?use_http=true&DBZ dbz.colors   dBZ -5 80 5 cart 1 0
+DBZ_3D_NW  DBZ_3D_NW      mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/mrms3D/north_west?use_http=true&DBZ dbz.colors   dBZ -5 80 5 cart 1 0
+DBZ_3D_NR  DBZ_3D_NR      mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/mrms3D/north_rockies?use_http=true&DBZ dbz.colors   dBZ -5 80 5 cart 1 0
+DBZ_3D_NC  DBZ_3D_NC      mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/mrms3D/north_central?use_http=true&DBZ dbz.colors   dBZ -5 80 5 cart 1 0
+DBZ_3D_NE  DBZ_3D_NE      mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/mrms3D/north_east?use_http=true&DBZ dbz.colors   dBZ -5 80 5 cart 1 0
+DBZ_3D_SW  DBZ_3D_SW      mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/mrms3D/south_west?use_http=true&DBZ dbz.colors   dBZ -5 80 5 cart 1 0
+DBZ_3D_SC  DBZ_3D_SC      mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/mrms3D/south_central?use_http=true&DBZ dbz.colors   dBZ -5 80 5 cart 1 0
+DBZ_3D_SE  DBZ_3D_SE      mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/mrms3D/south_east?use_http=true&DBZ dbz.colors   dBZ -5 80 5 cart 1 0
 
-======== ========  dummy_dir&None  none.colors   m   0 0 0 cart 0 0
-======== ========  dummy_dir&None  none.colors   m   0 0 0 cart 0 0
-======== ========  dummy_dir&None  none.colors   m   0 0 0 cart 0 0
-======== ========  dummy_dir&None  none.colors   m   0 0 0 cart 0 0
-======== ========  dummy_dir&None  none.colors   m   0 0 0 cart 0 0
-======== ========  dummy_dir&None  none.colors   m   0 0 0 cart 0 0
-======== ========  dummy_dir&None  none.colors   m   0 0 0 cart 0 0
-======== ========  dummy_dir&None  none.colors   m   0 0 0 cart 0 0
+PART_2D_NW  PART_2D_NW      mdvp::no_interp//front.eol.ucar.edu:8080:eolbase/mdv/conv_strat/north_west?use_http=true&Partition2D conv_strat3.colors   dBZ -5 80 5 cart 1 0
+PART_2D_NR  PART_2D_NR      mdvp::no_interp//front.eol.ucar.edu:8080:eolbase/mdv/conv_strat/north_rockies?use_http=true&Partition2D conv_strat3.colors   dBZ -5 80 5 cart 1 0
+PART_2D_NC  PART_2D_NC      mdvp::no_interp//front.eol.ucar.edu:8080:eolbase/mdv/conv_strat/north_central?use_http=true&Partition2D conv_strat3.colors   dBZ -5 80 5 cart 1 0
+PART_2D_NE  PART_2D_NE      mdvp::no_interp//front.eol.ucar.edu:8080:eolbase/mdv/conv_strat/north_east?use_http=true&Partition2D conv_strat3.colors   dBZ -5 80 5 cart 1 0
+PART_2D_SW  PART_2D_SW      mdvp::no_interp//front.eol.ucar.edu:8080:eolbase/mdv/conv_strat/south_west?use_http=true&Partition2D conv_strat3.colors   dBZ -5 80 5 cart 1 0
+PART_2D_SC  PART_2D_SC      mdvp::no_interp//front.eol.ucar.edu:8080:eolbase/mdv/conv_strat/south_central?use_http=true&Partition2D conv_strat3.colors   dBZ -5 80 5 cart 1 0
+PART_2D_SE  PART_2D_SE      mdvp::no_interp//front.eol.ucar.edu:8080:eolbase/mdv/conv_strat/south_east?use_http=true&Partition2D conv_strat3.colors   dBZ -5 80 5 cart 1 0
+
+PART_3D_NW  PART_3D_NW      mdvp::no_interp//front.eol.ucar.edu:8080:eolbase/mdv/conv_strat/north_west?use_http=true&Partition3D conv_strat3.colors   dBZ -5 80 5 cart,comp 1 0
+PART_3D_NR  PART_3D_NR      mdvp::no_interp//front.eol.ucar.edu:8080:eolbase/mdv/conv_strat/north_rockies?use_http=true&Partition3D conv_strat3.colors   dBZ -5 80 5 cart,comp 1 0
+PART_3D_NC  PART_3D_NC      mdvp::no_interp//front.eol.ucar.edu:8080:eolbase/mdv/conv_strat/north_central?use_http=true&Partition3D conv_strat3.colors   dBZ -5 80 5 cart,comp 1 0
+PART_3D_NE  PART_3D_NE      mdvp::no_interp//front.eol.ucar.edu:8080:eolbase/mdv/conv_strat/north_east?use_http=true&Partition3D conv_strat3.colors   dBZ -5 80 5 cart,comp 1 0
+PART_3D_SW  PART_3D_SW      mdvp::no_interp//front.eol.ucar.edu:8080:eolbase/mdv/conv_strat/south_west?use_http=true&Partition3D conv_strat3.colors   dBZ -5 80 5 cart,comp 1 0
+PART_3D_SC  PART_3D_SC      mdvp::no_interp//front.eol.ucar.edu:8080:eolbase/mdv/conv_strat/south_central?use_http=true&Partition3D conv_strat3.colors   dBZ -5 80 5 cart,comp 1 0
+PART_3D_SE  PART_3D_SE      mdvp::no_interp//front.eol.ucar.edu:8080:eolbase/mdv/conv_strat/south_east?use_http=true&Partition3D conv_strat3.colors   dBZ -5 80 5 cart,comp 1 0
+
+========      =========  /tmp/spacer&junk  none.colors   m   -5   80  5  dcont   1 0
+========      =========  /tmp/spacer&junk  none.colors   m   -5   80  5  dcont   1 0
+========      =========  /tmp/spacer&junk  none.colors   m   -5   80  5  dcont   1 0
+========      =========  /tmp/spacer&junk  none.colors   m   -5   80  5  dcont   1 0
+========      =========  /tmp/spacer&junk  none.colors   m   -5   80  5  dcont   1 0
+========      =========  /tmp/spacer&junk  none.colors   m   -5   80  5  dcont   1 0
+========      =========  /tmp/spacer&junk  none.colors   m   -5   80  5  dcont   1 0
 
 
 </GRIDS>
@@ -144,10 +164,10 @@ DBZ_3D_SOUTH_EAST  DBZ_3D_SOUTH_EAST      mdvp:://front.eol.ucar.edu:8080:eolbas
 # MAP_CODE Control_Label   Map_File_Name   On/OFF Detail__min Detail_max Color     
 #------------------------------------------------------------------------------------------
 
-Counties  Counties us_counties.map        0      0.0      10000.0     brown4
+#Counties  Counties us_counties.map        0      0.0      10000.0     brown4
 States    States   usa.map                1      0.0      10000.0     blue
 ihwys     ihwys    conus_interstates.map  0      0.0      10000.0     gray
-ushwys    ushwys   conus_ushwys.map       0      0.0      10000.0     darkblue
+#ushwys    ushwys   conus_ushwys.map       0      0.0      10000.0     darkblue
 World     World    world_states.map       1      0.0      1000000.0   white
 
 </MAPS>
@@ -932,7 +952,7 @@ cidd.click_posn_rel_to_origin: 1
 # Set this parameter to force the field menu popup to this many columns
 # If set <= 0, then cidd sets this dynamically, allowing at most 30 in each
 # column.
-cidd.num_field_menu_cols: 8
+cidd.num_field_menu_cols: 7
 
 # This parameter sets WSDDM specific behavior On -
 # - Go to end of loop when movie stops.
