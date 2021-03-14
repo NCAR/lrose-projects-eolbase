@@ -266,12 +266,12 @@ out_projection = PROJ_LATLON;
 //
 
 out_grid = {
-    nx = 1500,
-    ny = 1250,
-    minx = -120,
-    miny = 27.5,
-    dx = 0.02,
-    dy = 0.02
+    nx = 7000,
+    ny = 3500,
+    minx = -129.995,
+    miny = 20.005,
+    dx = 0.01,
+    dy = 0.01
 };
 
 ///////////// out_rotation ////////////////////////////
