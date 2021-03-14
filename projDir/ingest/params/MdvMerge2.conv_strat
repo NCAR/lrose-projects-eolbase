@@ -412,6 +412,24 @@ merge_fields = {
     merge_bias = -320,
     output_encoding = INT16
   }
+  ,
+  {
+    name = "ShallowHt",
+    merge_method = MERGE_MAX,
+    merge_encoding = INT16,
+    merge_scale = 0.01,
+    merge_bias = -320,
+    output_encoding = INT16
+  }
+  ,
+  {
+    name = "DeepHt",
+    merge_method = MERGE_MAX,
+    merge_encoding = INT16,
+    merge_scale = 0.01,
+    merge_bias = -320,
+    output_encoding = INT16
+  }
 };
 
 ///////////// range_field_name ////////////////////////
