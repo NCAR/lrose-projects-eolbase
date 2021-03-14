@@ -217,7 +217,7 @@ States    States   usa.map                1      0.0      10000.0     blue
 ihwys     ihwys    conus_interstates.map  0      0.0      10000.0     gray
 #ushwys    ushwys   conus_ushwys.map       0      0.0      10000.0     darkblue
 World     World    world_states.map       1      0.0      1000000.0   white
-
+Tiles     Tiles   mrms_conus_tiles.map    0      0.0     10000.0      orange
 </MAPS>
 
 <WINDS>
