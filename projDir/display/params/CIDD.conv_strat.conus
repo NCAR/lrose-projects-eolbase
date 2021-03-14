@@ -113,8 +113,8 @@ DEEP_HT      DEEP_HT      mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/conv_strat
 RUC_TEMP     RUC_TEMP     mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/ruc?use_http=true&TMP temp.colors C -5 80 5 cart 1 0
 RUC_RH       RUC_RH       mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/ruc?use_http=true&RH  rh.colors   % -5 80 5 cart 1 0
 RUC_VVEL     RUC_VVEL     mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/ruc?use_http=true&TMP vvel.colors m/s -5 80 5 cart 1 0
-========      =========  /tmp/spacer&junk  none.colors   m   -5   80  5  dcont   1 0
-========      =========  /tmp/spacer&junk  none.colors   m   -5   80  5  dcont   1 0
+SURF_TEMP    SURF_TEMP    mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/surf_interp?use_http=true&Temp     temp.colors m -5 80 5 cont 1 0
+SURF_DEWPT   SURF_DEWPT   mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/surf_interp?use_http=true&DewPoint temp.colors m -5 80 5 cont 1 0
 ========      =========  /tmp/spacer&junk  none.colors   m   -5   80  5  dcont   1 0
 ========      =========  /tmp/spacer&junk  none.colors   m   -5   80  5  dcont   1 0
 
