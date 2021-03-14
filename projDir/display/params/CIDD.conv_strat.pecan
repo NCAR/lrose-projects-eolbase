@@ -94,36 +94,48 @@ field_list = {
 #Legend   Button                                                             Rendering
 #Label    Label       URL           Colorscale Units Cont-lo-hi-interv Format Display_in_menu Bkgnd_Render
 #----------------------------------------------------------------------------------------------------------
-# PECAN
-#
 
-#############################
-# WIDE AREA PRODUCTS
+# ConvStrat for PECAN
 
-# MRMS mosaic
+#MrmsDbz3DComp MrmsDbz3DComp  mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/new?use_http=true&DBZ dbz.colors      dBZ -5 80 5 cart,comp 1 0
+#MrmsDbz3D     MrmsDbz3D      mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/new?use_http=true&DBZ dbz.colors      dBZ -5 80 5 cart 1 0
+#MrmsDbzHidden MrmsDbzHidden  mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/new?use_http=true&DBZ dbz_mrms.colors dBZ -5 80 5 cart 1 0
+#========      =========  /tmp/spacer&junk  none.colors   m   -5   80  5  dcont   1 0
 
-DBZ_COMP_3D DBZ_COMP_3D mdvp::composite//front.eol.ucar.edu:8080:pecan/mdv/radarCart/mrms_mosaic?use_http=true&DBZ  dbz.colors   dBZ -5 80 5 cart 1 0
-DBZ_3D      DBZ_3D      mdvp:://front.eol.ucar.edu:8080:pecan/mdv/radarCart/mrms_mosaic?use_http=true&DBZ           dbz.colors   dBZ -5 80 5 cart 1 0
-DbzColMax       DbzColMax        mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/mrms_qc?use_http=true&DbzColMax       dbz.colors        - -5 80 5 cart 1 0
-======== ========  mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 cart 0 0
+Dbz3DMax Dbz3DMax mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/new?use_http=true&Dbz3D  dbz.colors   dBZ -5 80 5 cart,comp 1 0
+Dbz3D     Dbz3D     mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/new?use_http=true&Dbz3D  dbz.colors   dBZ -5 80 5 cart 1 0
 
-FractionActive       FractionActive        mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/mrms_qc?use_http=true&FractionActive   fraction.colors        - -5 80 5 cart 1 0
-DbzTextureMean       DbzTextureMean        mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/mrms_qc?use_http=true&DbzTextureMean   dbz.colors        - -5 80 5 cart 1 0
-======== ========  mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 cart 0 0
-======== ========  mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 cart 0 0
+DbzTexture3DMax DbzTexture3DMax mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/new?use_http=true&DbzTexture3D dbz.colors - -5 80 5 cart,comp 1 0
+DbzTexture3D     DbzTexture3D     mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/new?use_http=true&DbzTexture3D dbz.colors - -5 80 5 cart 1 0
+DbzTexture2D     DbzTexture2D     mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/new?use_http=true&DbzTexture2D dbz.colors - -5 80 5 cart 1 0
+========      =========  /tmp/spacer&junk  none.colors   m   -5   80  5  dcont   1 0
 
-ConvFromColMax  ConvFromColMax   mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/mrms_qc?use_http=true&ConvFromColMax  conv_strat.colors - -5 80 5 cart 1 0
-ConvFromTexture ConvFromTexture  mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/mrms_qc?use_http=true&ConvFromTexture conv_strat.colors - -5 80 5 cart 1 0
-ConvStrat       ConvStrat        mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/mrms_qc?use_http=true&ConvStrat       conv_strat.colors - -5 80 5 cart 1 0
-======== ========  mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 cart 0 0
+Convectivity3DMax  Convectivity3DMax  mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/new?use_http=true&Convectivity3D convectivity.colors - -5 80 5 cart,comp 1 0
+Convectivity3D      Convectivity3D      mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/new?use_http=true&Convectivity3D convectivity.colors - -5 80 5 cart 1 0
+Convectivity2D      Convectivity2D      mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/new?use_http=true&Convectivity2D convectivity.colors - -5 80 5 cart,comp 1 0
+========      =========  /tmp/spacer&junk  none.colors   m   -5   80  5  dcont   1 0
 
-#DbzConv        DbzConv         mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/mrms_qc?use_http=true&DbzConv        dbz.colors        - -5 80 5 cart 1 0
-#DbzStrat       DbzStrat        mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/mrms_qc?use_http=true&DbzStrat       dbz.colors        - -5 80 5 cart 1 0
+Partition3DMax Partition3DMax  mdvp::no_interp//front.eol.ucar.edu:8080:pecan/mdv/conv_strat/new?use_http=true&Partition3D conv_strat3.colors - -5 80 5 cart,comp 1 0
+Partition3D     Partition3D      mdvp::no_interp//front.eol.ucar.edu:8080:pecan/mdv/conv_strat/new?use_http=true&Partition3D conv_strat3.colors - -5 80 5 cart 1 0
+Partition2D     Partition2D      mdvp::no_interp//front.eol.ucar.edu:8080:pecan/mdv/conv_strat/new?use_http=true&Partition2D conv_strat3.colors - -5 80 5 cart 1 0
+========      =========  /tmp/spacer&junk  none.colors   m   -5   80  5  dcont   1 0
 
-======== ========  mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 cart 0 0
-======== ========  mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 cart 0 0
-======== ========  mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 cart 0 0
-======== ========  mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 cart 0 0
+DbzConvMax     DbzConvMax     mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/new?use_http=true&DbzConv         dbz.colors - -5 80 5 cart,comp 1 0
+DbzConv         DbzConv         mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/new?use_http=true&DbzConv         dbz.colors - -5 80 5 cart 1 0
+========      =========  /tmp/spacer&junk  none.colors   m   -5   80  5  dcont   1 0
+========      =========  /tmp/spacer&junk  none.colors   m   -5   80  5  dcont   1 0
+#FractionActive  FractionActive  mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/new?use_http=true&FractionActive  fraction.colors - -5 80 5 cart 1 0
+#========      =========  /tmp/spacer&junk  none.colors   m   -5   80  5  dcont   1 0
+
+#ShallowHt ShallowHt mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/new?use_http=true&ShallowHt number.colors km -5 80 5 cart 1 0
+#DeepHt    DeepHt    mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/new?use_http=true&DeepHt    number.colors km -5 80 5 cart 1 0
+#Temp      Temp      mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/new?use_http=true&TMP       temp.colors C -5 80 5 cart 1 0
+#========      =========  /tmp/spacer&junk  none.colors   m   -5   80  5  dcont   1 0
+
+#ConvTops   ConvTops  mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/new?use_http=true&ConvTops     heightkm.colors km -5 80 5 cart 1 0
+#StratTops  StratTops mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/new?use_http=true&StratTops    heightkm.colors km -5 80 5 cart 1 0
+#EchoTops   EchoTops  mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/new?use_http=true&EchoTops     heightkm.colors km -5 80 5 cart 1 0
+#========      =========  /tmp/spacer&junk  none.colors   m   -5   80  5  dcont   1 0
 
 </GRIDS>
 
@@ -138,10 +150,18 @@ ConvStrat       ConvStrat        mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_
 # MAP_CODE Control_Label   Map_File_Name   On/OFF Detail__min Detail_max Color     
 #------------------------------------------------------------------------------------------
 
-PECAN        PECAN        pecan_domain.map  1  0.0 1000000.0  orange
-Counties     Counties     us_counties.map   0      0.0      10000.0     brown4
+#PECAN        PECAN        pecan_domain.map  0  0.0 1000000.0  orange
+#Counties     Counties     us_counties.map   0      0.0      10000.0     brown4
 States       States       usa.map           1      0.0      10000.0     blue
+ihwys        ihwys        conus_interstates.map    1      0.0      10000.0     gray
+#ushwys       ushwys       conus_ushwys.map    0      0.0      10000.0     darkblue
+#SPOL         SPOL         spol_pecan.map      0      0.0      10000.0     white
 NEXRADS      NEXRADS      nexrads.map       1      0.0      10000.0     white
+#PISA         PISA         pecan_pisa.map      0      0.0      10000.0     orange
+#SPOL-KDDC    SPOL-KDDC    spol_kddc_compare.map 0    0.0      10000.0     white
+#CHILL        CHILL        chill.map         0      0.0      10000.0     cyan
+
+RADARS_CIRC  RADAR_CIRC   radar_circles.map 0      0.0      10000.0     orange
 
 </MAPS>
 
@@ -190,15 +210,6 @@ NEXRADS      NEXRADS      nexrads.map       1      0.0      10000.0     white
 #
 # Legend_label  URL U V W_fieldnames units  Style [Color]
 #----------------------------------------------------------------------------
-#Surface  mdvp:://front.eol.ucar.edu:8080:pecan/mdv/surf_interp?use_http=true& Uwind Vwind None m/s 1 yellow
-#RUCRAP   mdvp:://front.eol.ucar.edu:8080:pecan/mdv/ruc?use_http=true& UGRD  VGRD  None m/s 1 cyan
-OpticalFlow mdvp:://front.eol.ucar.edu:8080:pecan/mdv/optflow/mrms?use_http=true& U  V  None m/s -1,barb seagreen
-#DDOP  mdvp:://front.eol.ucar.edu:8080:pecan/mdv/ddoppler/chill_spol?use_http=true& U V None m/s 1 yellow
-
-#VDRASr_Vector  mdvp:://front.eol.ucar.edu:8080:/data/zhuming/pecan/mdv/anal?use_http=true& uwind  vwind  wwind m/s 0 red
-#VDRASr_Shear   mdvp:://front.eol.ucar.edu:8080:/data/zhuming/pecan/mdv/post?use_http=true& us     vs     None  m/s 0 orange
-#VDRASr_MSL     mdvp:://front.eol.ucar.edu:8080:/data/zhuming/pecan/mdv/post?use_http=true& umsl   vmsl   wmsl  m/s 0 green
-
 </WINDS>
 
 ######################################################################################
@@ -528,11 +539,7 @@ cidd.max_adeg:               360.0
 # Searchs . then each directory/URL in order 
 
 cidd.color_file_subdir:   http://front.eol.ucar.edu/color_scales
-#cidd.color_file_subdir:   $(PROJ_DIR)/display/color_scales
 cidd.map_file_subdir:     http://front.eol.ucar.edu/maps
-
-#cidd.color_file_subdir:   $(PROJ_DIR)/display/color_scales,http://front.eol.ucar.edu/color_scales
-#cidd.map_file_subdir:     $(PROJ_DIR)/display/maps,http://front.eol.ucar.edu/maps
 
 #
 # Station locator features
@@ -918,7 +925,7 @@ cidd.click_posn_rel_to_origin: 1
 # Set this parameter to force the field menu popup to this many columns
 # If set <= 0, then cidd sets this dynamically, allowing at most 30 in each
 # column.
-cidd.num_field_menu_cols: 4
+cidd.num_field_menu_cols: 2
 
 # This parameter sets WSDDM specific behavior On -
 # - Go to end of loop when movie stops.
@@ -1251,6 +1258,32 @@ short_requests = TRUE;
 //         Note: scale_constant set in MAIN_PARAM section.      
 
 prod_info = {
+  // {
+  //   menu_label = "RHI-spol",
+  //   url = "spdbp:Rhi2Symprod:ticks//front.eol.ucar.edu:8080:pecan/spdb/spol/rhi/sband?use_http=true",
+  //   data_type = 0,
+  //   render_type = RENDER_ALL_VALID,
+  //   on_by_default = TRUE,
+  //   minutes_allow_before = 20,
+  //   minutes_allow_after = 10,
+  //   text_off_threshold = 0.4,
+  //   request_data_on_zoom = FALSE,
+  //   request_data_on_vert_change = FALSE
+  // }
+  // , 
+  // {
+  //   menu_label = "RHI-label",
+  //   url = "spdbp:Rhi2Symprod:label//front.eol.ucar.edu:8080:pecan/spdb/spol/rhi/sband?use_http=true",
+  //   data_type = 0,
+  //   render_type = RENDER_ALL_VALID,
+  //   on_by_default = FALSE,
+  //   minutes_allow_before = 20,
+  //   minutes_allow_after = 10,
+  //   text_off_threshold = 0.4,
+  //   request_data_on_zoom = FALSE,
+  //   request_data_on_vert_change = FALSE
+  // }
+  //,
   {
     menu_label = "METARS-simple",
     url = "spdbp:Metar2Symprod:simple//front.eol.ucar.edu:8080:pecan/spdb/metar?use_http=true",
@@ -1341,6 +1374,58 @@ prod_info = {
     FALSE,
     FALSE
   }
+  ,                        
+  {
+    menu_label = "AcPosn 10-min",
+    url = "spdbp:AcTrack2Symprod:10_min//front.eol.ucar.edu:8080:pecan/spdb/ac_posn?use_http=true",
+    data_type = 0,
+    render_type = RENDER_FIRST_BEFORE_FRAME_TIME,
+    on_by_default = FALSE,
+    minutes_allow_before = 15.0,
+    minutes_allow_after = 15.0,
+    text_off_threshold = 0.4,
+    FALSE,
+    FALSE
+  }
+  ,                        
+  {
+    menu_label = "AcPosn 20-min",
+    url = "spdbp:AcTrack2Symprod:20_min//front.eol.ucar.edu:8080:pecan/spdb/ac_posn?use_http=true",
+    data_type = 0,
+    render_type = RENDER_FIRST_BEFORE_FRAME_TIME,
+    on_by_default = FALSE,
+    minutes_allow_before = 15.0,
+    minutes_allow_after = 15.0,
+    text_off_threshold = 0.4,
+    FALSE,
+    FALSE
+  }
+  ,                        
+  {
+    menu_label = "AcPosn 30-min",
+    url = "spdbp:AcTrack2Symprod:30_min//front.eol.ucar.edu:8080:pecan/spdb/ac_posn?use_http=true",
+    data_type = 0,
+    render_type = RENDER_FIRST_BEFORE_FRAME_TIME,
+    on_by_default = FALSE,
+    minutes_allow_before = 15.0,
+    minutes_allow_after = 15.0,
+    text_off_threshold = 0.4,
+    FALSE,
+    FALSE
+  }
+  ,                        
+  {
+    menu_label = "MobilePosn",
+    url = "spdbp:AcTrack2Symprod:mobile//front.eol.ucar.edu:8080:pecan/spdb/mobile_posn?use_http=true",
+    data_type = 0,
+    render_type = RENDER_ALL_BEFORE_DATA_TIME,
+    on_by_default = FALSE,
+    minutes_allow_before = 60.0,
+    minutes_allow_after = 60.0,
+    text_off_threshold = 0.4,
+    FALSE,
+    FALSE
+  }
   ,
   {
     menu_label = "titan-forecast 60-min",
@@ -1363,6 +1448,32 @@ prod_info = {
     on_by_default = FALSE,
     minutes_allow_before = 20.0,
     minutes_allow_after = 0.0,
+    text_off_threshold = 0,
+    FALSE,
+    FALSE
+  }
+  ,
+  {
+    menu_label = "precip_front_range",
+    url = "spdbp:Metar2Symprod://front.eol.ucar.edu:8080:pecan/spdb/precip/front_range?use_http=true",
+    data_type = 0,
+    render_type = RENDER_ALL_VALID,
+    on_by_default = FALSE,
+    minutes_allow_before = 300.0,
+    minutes_allow_after = 300.0,
+    text_off_threshold = 0,
+    FALSE,
+    FALSE
+  }
+  ,
+  {
+    menu_label = "precip_ncdc",
+    url = "spdbp:Metar2Symprod://front.eol.ucar.edu:8080:pecan/spdb/precip/ncdc?use_http=true",
+    data_type = 0,
+    render_type = RENDER_ALL_VALID,
+    on_by_default = FALSE,
+    minutes_allow_before = 300.0,
+    minutes_allow_after = 300.0,
     text_off_threshold = 0,
     FALSE,
     FALSE
