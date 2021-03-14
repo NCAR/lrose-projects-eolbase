@@ -61,6 +61,16 @@ MrmsGribIngest  north_east     start_MrmsGribIngest.north_east    snuff_inst
 MrmsGribIngest  south_west     start_MrmsGribIngest.south_west    snuff_inst 
 MrmsGribIngest  south_central  start_MrmsGribIngest.south_central snuff_inst 
 MrmsGribIngest  south_east     start_MrmsGribIngest.south_east    snuff_inst 
+######################################################################
+# ConvStrat - convection finder
+#
+ConvStrat  north_west     start_ConvStrat.north_west    snuff_inst 
+ConvStrat  north_rockies  start_ConvStrat.north_rockies snuff_inst 
+ConvStrat  north_central  start_ConvStrat.north_central snuff_inst 
+ConvStrat  north_east     start_ConvStrat.north_east    snuff_inst 
+ConvStrat  south_west     start_ConvStrat.south_west    snuff_inst 
+ConvStrat  south_central  start_ConvStrat.south_central snuff_inst 
+ConvStrat  south_east     start_ConvStrat.south_east    snuff_inst 
 #####################################################################
 # Convective/stratiform partitioning
 #

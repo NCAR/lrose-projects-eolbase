@@ -1,0 +1,12 @@
+#! /bin/csh
+
+cd $PROJ_DIR/alg/params
+
+setenv tile_name south_west
+
+running "ConvStrat -instance $tile_name"
+
+if ($status == 1) then
+    ConvStrat -instance $tile_name -params ConvStrat.tiled |& \
+        LogFilter -d $ERRORS_LOG_DIR -p ConvStrat -i $tile_name >& /dev/null &
+endif
