@@ -212,7 +212,7 @@ TEXT_3D_SE  TEXT_3D_SE      mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/conv_str
 # MAP_CODE Control_Label   Map_File_Name   On/OFF Detail__min Detail_max Color     
 #------------------------------------------------------------------------------------------
 
-#Counties  Counties us_counties.map        0      0.0      10000.0     brown4
+Counties  Counties us_counties.map        1      0.0      10000.0     brown4
 States    States   usa.map                1      0.0      10000.0     blue
 ihwys     ihwys    conus_interstates.map  0      0.0      10000.0     gray
 #ushwys    ushwys   conus_ushwys.map       0      0.0      10000.0     darkblue
