@@ -215,7 +215,10 @@ checkBoundingBox = TRUE;
 // boundingBox = { 35, 45, -110, -98 };
 
 // PECAN
-boundingBox = { 30, 45, -110, -90 };
+// boundingBox = { 30, 45, -110, -90 };
+
+// CONUS
+boundingBox = { 20, 55, -130, -60 };
 
 ///////////// altUnits ////////////////////////////////
 //
