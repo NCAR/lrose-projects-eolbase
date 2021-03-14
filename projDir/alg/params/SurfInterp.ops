@@ -33,7 +33,7 @@
 //     DEBUG_VERBOSE
 //
 
-debug = DEBUG_OFF;
+debug = DEBUG_NORM;
 
 ///////////// instance ////////////////////////////////
 //
@@ -241,10 +241,10 @@ sounding_max_dist = 500;
 
 OutputProj = {
     proj_type = PROJ_LATLON,
-    nx = 2333,
-    ny = 1167,
-    dx = 0.03,
-    dy = 0.03,
+    nx = 700,
+    ny = 350,
+    dx = 0.1,
+    dy = 0.1,
     minx = -130,
     miny = 20,
     origin_lat = 40,
