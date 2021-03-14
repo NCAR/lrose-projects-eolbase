@@ -1072,7 +1072,7 @@ cidd.menu_bar_funct19: EXIT_BUTTON
 
 ##########################################
 
-cidd.horiz_frame_label: PECAN 2015
+cidd.horiz_frame_label: CONVECTIVE-STRATIFORM PECAN 2015
 
 # Set the message to display when no data is availible
 cidd.no_data_message:     NO DATA FOUND (in this area at the selected time)
