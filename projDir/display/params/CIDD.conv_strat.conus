@@ -212,8 +212,8 @@ TEXT_3D_SE  TEXT_3D_SE      mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/conv_str
 # MAP_CODE Control_Label   Map_File_Name   On/OFF Detail__min Detail_max Color     
 #------------------------------------------------------------------------------------------
 
-#Counties  Counties us_counties.map        0      0.0      10000.0     brown4
-States    States   usa.map                1      0.0      10000.0     blue
+Counties  Counties us_counties.map        0      0.0      10000.0     mediumblue
+States    States   usa.map                1      0.0      10000.0     steelblue
 ihwys     ihwys    conus_interstates.map  0      0.0      10000.0     gray
 #ushwys    ushwys   conus_ushwys.map       0      0.0      10000.0     darkblue
 World     World    world_states.map       1      0.0      1000000.0   white
@@ -314,7 +314,7 @@ cidd.starting_movie_frames:  24
 # minutes per movie frame on startup
 # The display will atomatically update every this interval, throwing away its
 # oldest movie frame and creating and drawing a new one.
-cidd.time_interval:  5
+cidd.time_interval:  10
 
 # This parameter sets the maximum number of hours in the future a user can select
 # from the quick forecast menu. See SHOW_FORECAST_MENU menu bar button
