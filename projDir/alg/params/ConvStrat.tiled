@@ -1,5 +1,5 @@
 /**********************************************************************
- * TDRP params for ./ConvStrat
+ * TDRP params for ConvStrat
  **********************************************************************/
 
 //======================================================================
@@ -266,6 +266,23 @@ min_valid_dbz = 0;
 //
 
 min_valid_volume_for_convective = 20;
+
+///////////// min_vert_extent_for_convective //////////
+//
+// Min vertical echo extent of a convective region (km).
+//
+// The vertical extent is computed as the mid height of the top layer in 
+//   the echo minus the mid height of the bottom layer. For an echo that 
+//   exists in only one layer, the vertical extent would therefore be 
+//   zero. This parameter lets us require that a valid convective echo 
+//   exist in multiple layers, which is desirable and helps to remove 
+//   spurious echoes as candidates for convection.
+//
+//
+// Type: double
+//
+
+min_vert_extent_for_convective = 1;
 
 ///////////// dbz_for_echo_tops ///////////////////////
 //
