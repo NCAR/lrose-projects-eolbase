@@ -115,9 +115,9 @@ Convectivity3D      Convectivity3D      mdvp:://front.eol.ucar.edu:8080:pecan/md
 Convectivity2D      Convectivity2D      mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/new?use_http=true&Convectivity2D convectivity.colors - -5 80 5 cart,comp 1 0
 ========      =========  /tmp/spacer&junk  none.colors   m   -5   80  5  dcont   1 0
 
-Partition3DMax Partition3DMax  mdvp::no_interp//front.eol.ucar.edu:8080:pecan/mdv/conv_strat/new?use_http=true&Partition3D conv_strat3.colors - -5 80 5 cart,comp 1 0
-Partition3D     Partition3D      mdvp::no_interp//front.eol.ucar.edu:8080:pecan/mdv/conv_strat/new?use_http=true&Partition3D conv_strat3.colors - -5 80 5 cart 1 0
-Partition2D     Partition2D      mdvp::no_interp//front.eol.ucar.edu:8080:pecan/mdv/conv_strat/new?use_http=true&Partition2D conv_strat3.colors - -5 80 5 cart 1 0
+Partition3DMax Partition3DMax  mdvp::no_interp//front.eol.ucar.edu:8080:pecan/mdv/conv_strat/new?use_http=true&Partition3D conv_strat4.colors - -5 80 5 cart,comp 1 0
+Partition3D     Partition3D      mdvp::no_interp//front.eol.ucar.edu:8080:pecan/mdv/conv_strat/new?use_http=true&Partition3D conv_strat4.colors - -5 80 5 cart 1 0
+Partition2D     Partition2D      mdvp::no_interp//front.eol.ucar.edu:8080:pecan/mdv/conv_strat/new?use_http=true&Partition2D conv_strat4.colors - -5 80 5 cart 1 0
 ========      =========  /tmp/spacer&junk  none.colors   m   -5   80  5  dcont   1 0
 
 DbzConvMax     DbzConvMax     mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/new?use_http=true&DbzConv         dbz.colors - -5 80 5 cart,comp 1 0
