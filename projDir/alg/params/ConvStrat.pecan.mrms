@@ -211,7 +211,7 @@ deep_threshold_ht = 9;
 // Type: double
 //
 
-deep_threshold_temp = -30;
+deep_threshold_temp = -25;
 
 //======================================================================
 //
@@ -395,7 +395,7 @@ min_overlap_for_convective_clumps = 1;
 // Type: string
 //
 
-output_url = "/scr/rain2/rsfdata/projects/pecan/mdv/conv_strat/new";
+output_url = "/scr/rain2/rsfdata/projects/pecan/mdv/conv_strat/new-25";
 
 ///////////// write_partition /////////////////////////
 //
@@ -479,7 +479,7 @@ write_col_max_dbz = TRUE;
 // Type: boolean
 //
 
-write_tops = FALSE;
+write_tops = TRUE;
 
 ///////////// write_fraction_active ///////////////////
 //
@@ -491,7 +491,7 @@ write_tops = FALSE;
 // Type: boolean
 //
 
-write_fraction_active = FALSE;
+write_fraction_active = TRUE;
 
 ///////////// write_height_grids //////////////////////
 //
@@ -503,7 +503,7 @@ write_fraction_active = FALSE;
 // Type: boolean
 //
 
-write_height_grids = FALSE;
+write_height_grids = TRUE;
 
 ///////////// write_temperature ///////////////////////
 //
@@ -515,5 +515,5 @@ write_height_grids = FALSE;
 // Type: boolean
 //
 
-write_temperature = FALSE;
+write_temperature = TRUE;
 
