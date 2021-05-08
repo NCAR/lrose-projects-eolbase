@@ -1,0 +1,10 @@
+#! /bin/csh
+
+# rsync CHIVO data from Maui server at CSU
+
+cd $DATA_DIR/eolbase/raw
+
+rsync -av mdixon@maui.atmos.colostate.edu:/bell-scratch2/precip/radar/CHIVO_raw . |& LogFilter -d $ERRORS_LOG_DIR -p rsync -i chivo_raw_from_csu_maui &
+
+
+

@@ -23,6 +23,10 @@
 #
 5 0 * * *  csh -c "run_git_backups" 1> /dev/null 2> /dev/null
 ####################################################################
+# RSYNC CHIVO C-band data from CSU
+#
+5 0 * * *  csh -c "rsync_chivo_raw_from_csu_maui" 1> /dev/null 2> /dev/null
+####################################################################
 # Maintain ssh tunnel from FL to Marshall for Moments data FMQ
 #
 #*/1 * * * * csh -c "create_spol_relay_tunnel" 1> /dev/null 2> /dev/null
