@@ -136,6 +136,10 @@ RadxConvert   kpux    start_RadxConvert.kpux   snuff_inst
 #RadxConvert  kvnx    start_RadxConvert.kvnx   snuff_inst
 #
 ######################################################################
+# CSU CHIVO
+#
+InputWatcher       csu_chivo     start_inst(ingest)    snuff_inst
+######################################################################
 # Storm tracking
 #
 #Titan           mrms_conv             start_inst(alg)     snuff_inst

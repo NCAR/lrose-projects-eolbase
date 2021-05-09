@@ -44,7 +44,7 @@ def main():
                       help='Set debugging on')
     parser.add_option('--targetDir',
                       dest='targetDir', default=targetDirDefault,
-                      help='Target dir, default is $HOME/backups4git')
+                      help='Target dir, default is $HOME/git_backups')
 
     (options, args) = parser.parse_args()
     
@@ -109,8 +109,10 @@ def main():
     repos.append("git@github.com:mmbell/samurai")
     repos.append("git@github.com:mmbell/vortrac")
 
-    for repo in repos:
-        gitCheckout(repo)
+    for repoUrl in repos:
+        gitCheckout(repoUrl)
+        makeTar(repoUrl)
+        deleteRepo(repoUrl)
 
     sys.exit(0)
 
@@ -128,6 +130,32 @@ def gitCheckout(repoUrl):
     
     print("checking out repo:", repoUrl, file=sys.stderr)
     shellCmd("git clone " + repoUrl)
+
+########################################################################
+# make a tar file of this repo
+
+def makeTar(repoUrl):
+
+    parts = repoUrl.split("/")
+    repoName = parts[len(parts) - 1]
+
+    if (not os.path.isdir(repoName)):
+        print("repo notout, ignoring:", repoName, file=sys.stderr)
+        return
+    
+    print("Making tar file for repo:", repoName, file=sys.stderr)
+    shellCmd("tar cvfz " + repoName + ".tgz " + repoName)
+
+########################################################################
+# delete a repo dir
+
+def deleteRepo(repoUrl):
+
+    parts = repoUrl.split("/")
+    repoName = parts[len(parts) - 1]
+
+    print("Deleting repo dir: ", repoName, file=sys.stderr)
+    shellCmd("/bin/rm -rf " + repoName)
 
 ########################################################################
 # Run a command in a shell, wait for it to complete
