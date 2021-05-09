@@ -25,7 +25,7 @@
 ####################################################################
 # RSYNC CHIVO C-band data from CSU
 #
-5 0 * * *  csh -c "rsync_chivo_raw_from_csu_maui" 1> /dev/null 2> /dev/null
+*/2 * * * *  csh -c "rsync_chivo_raw_from_csu_maui" 1> /dev/null 2> /dev/null
 ####################################################################
 # Maintain ssh tunnel from FL to Marshall for Moments data FMQ
 #

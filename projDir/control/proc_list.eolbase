@@ -64,6 +64,7 @@ MrmsGribIngest  south_east     start_MrmsGribIngest.south_east    snuff_inst
 ######################################################################
 # ConvStrat - convection finder
 #
+ConvStrat  mrms.conus     start_inst(alg)               snuff_inst 
 ConvStrat  north_west     start_ConvStrat.north_west    snuff_inst 
 ConvStrat  north_rockies  start_ConvStrat.north_rockies snuff_inst 
 ConvStrat  north_central  start_ConvStrat.north_central snuff_inst 

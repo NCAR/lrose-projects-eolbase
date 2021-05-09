@@ -65,7 +65,7 @@ procmap_register_interval = 60;
 // Type: string
 //
 
-input_dir = "$(DATA_DIR)/$(project)/mdv/gfs/conus";
+input_dir = "$(DATA_DIR)/$(project)/mdv/ruc";
 
 ///////////// mode ////////////////////////////////////
 //
@@ -177,7 +177,7 @@ v_wind_field_name = "VGRD";
 // Type: string
 //
 
-w_wind_field_name = "";
+w_wind_field_name = "VVEL";
 
 ///////////// pressure_field_name /////////////////////
 //
@@ -207,7 +207,7 @@ height_field_name = "HGT";
 // Type: boolean
 //
 
-heights_are_in_km = FALSE;
+heights_are_in_km = TRUE;
 
 //======================================================================
 //
@@ -232,6 +232,7 @@ heights_are_in_km = FALSE;
 
 station_locations = {
   { "SPOL", 39.9502, -105.195, 1.748},
+  { "CHIVO", 40.6117, -104.996, 1.547},
   { "CHIL", 40.4464, -104.637, 1.432},
   { "KFTG", 39.7866, -104.546, 1.709},
   { "KCYS", 41.1519, -104.806, 1.886},
@@ -253,7 +254,7 @@ station_locations = {
 // Type: string
 //
 
-output_url = "spdbp:://localhost::$(project)/spdb/sounding/eolbase";
+output_url = "spdbp:://localhost::$(project)/spdb/sounding/ruc";
 
 ///////////// valid_period_secs ///////////////////////
 //

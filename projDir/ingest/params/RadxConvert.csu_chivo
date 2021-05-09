@@ -60,7 +60,7 @@ instance = "csu_chivo";
 // Type: string
 //
 
-input_dir = "$(DATA_DIR)/relampago/cfradial/CSU_CHIVO/radar_data/qc_data";
+input_dir = "$(DATA_DIR)/$(project)/raw/CHIVO_copy";
 
 ///////////// mode ////////////////////////////////////
 //
@@ -121,7 +121,7 @@ latest_data_info_avail = TRUE;
 // Type: boolean
 //
 
-search_recursively = TRUE;
+search_recursively = FALSE;
 
 ///////////// max_recursion_depth /////////////////////
 //
@@ -661,7 +661,7 @@ override_site_name = TRUE;
 // Type: string
 //
 
-site_name = "RELAMPAGO";
+site_name = "CSU";
 
 //======================================================================
 //
@@ -1532,14 +1532,14 @@ apply_censoring = FALSE;
 
 censoring_fields = {
   {
-    name = "SNR",
-    min_valid_value = 0,
+    name = "DBZ",
+    min_valid_value = -20,
     max_valid_value = 1000,
     combination_method = LOGICAL_OR
   }
   ,
   {
-    name = "NCP",
+    name = "SQI",
     min_valid_value = 0.15,
     max_valid_value = 1000,
     combination_method = LOGICAL_OR
@@ -1817,7 +1817,7 @@ compression_level = 4;
 // Type: string
 //
 
-output_dir = "$(DATA_DIR)/relampago/cfradial/csu_chivo";
+output_dir = "$(DATA_DIR)/$(project)/cfradial/csu_chivo/moments";
 
 ///////////// output_filename_mode ////////////////////
 //
@@ -2070,7 +2070,7 @@ surveillance_subdir = "sur";
 // Type: string
 //
 
-sector_subdir = "sec";
+sector_subdir = "sur";
 
 ///////////// rhi_subdir //////////////////////////////
 //
