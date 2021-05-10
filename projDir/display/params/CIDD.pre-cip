@@ -111,19 +111,19 @@ field_list = {
 #############################
 # CHIVO MOMENTS
 
-CHIVO_DBZ    CHIVO_DBZ    mdvp:://front.eol.ucar.edu:8080:$(project)/cfradial/csu_chivo/moments/sur?use_http=true&DBZ     dbz.colors     dBZ  -5 80 5 radial 1 0
-CHIVO_VEL    CHIVO_VEL    mdvp:://front.eol.ucar.edu:8080:$(project)/cfradial/csu_chivo/moments/sur?use_http=true&VEL     vel.colors     m/s  -5 80 5 radial 1 0
-CHIVO_WIDTH  CHIVO_WIDTH  mdvp:://front.eol.ucar.edu:8080:$(project)/cfradial/csu_chivo/moments/sur?use_http=true&WIDTH   width.colors   m/s  -5 80 5 radial 1 0
-CHIVO_ZDR    CHIVO_ZDR    mdvp:://front.eol.ucar.edu:8080:$(project)/cfradial/csu_chivo/moments/sur?use_http=true&ZDR     zdr.colors     dB   -5 80 5 radial 1 0
-CHIVO_RHOHV  CHIVO_RHOHV  mdvp:://front.eol.ucar.edu:8080:$(project)/cfradial/csu_chivo/moments/sur?use_http=true&RHOHV   rhohv.colors   -    -5 80 5 radial 1 0
-CHIVO_PHIDP  CHIVO_PHIDP  mdvp:://front.eol.ucar.edu:8080:$(project)/cfradial/csu_chivo/moments/sur?use_http=true&PHIDP   phidp_360.colors deg  -5 80 5 radial 1 0
-CHIVO_KDP    CHIVO_KDP    mdvp:://front.eol.ucar.edu:8080:$(project)/cfradial/csu_chivo/moments/sur?use_http=true&KDP     kdp.colors     deg/km -5 80 5 radial 1 0
-CHIVO_SQI    CHIVO_SQI    mdvp:://front.eol.ucar.edu:8080:$(project)/cfradial/csu_chivo/moments/sur?use_http=true&SQI     ncp.colors     -    -5 80 5 radial 1 0
+CHIVO_DBZ    CHIVO_DBZ    mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/csu_chivo/moments/sur?use_http=true&DBZ     dbz.colors     dBZ  -5 80 5 radial 1 0
+CHIVO_VEL    CHIVO_VEL    mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/csu_chivo/moments/sur?use_http=true&VEL     vel.colors     m/s  -5 80 5 radial 1 0
+CHIVO_WIDTH  CHIVO_WIDTH  mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/csu_chivo/moments/sur?use_http=true&WIDTH   width.colors   m/s  -5 80 5 radial 1 0
+CHIVO_ZDR    CHIVO_ZDR    mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/csu_chivo/moments/sur?use_http=true&ZDR     zdr.colors     dB   -5 80 5 radial 1 0
+CHIVO_RHOHV  CHIVO_RHOHV  mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/csu_chivo/moments/sur?use_http=true&RHOHV   rhohv.colors   -    -5 80 5 radial 1 0
+CHIVO_PHIDP  CHIVO_PHIDP  mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/csu_chivo/moments/sur?use_http=true&PHIDP   phidp_360.colors deg  -5 80 5 radial 1 0
+CHIVO_KDP    CHIVO_KDP    mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/csu_chivo/moments/sur?use_http=true&KDP     kdp.colors     deg/km -5 80 5 radial 1 0
+CHIVO_SQI    CHIVO_SQI    mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/csu_chivo/moments/sur?use_http=true&SQI     ncp.colors     -    -5 80 5 radial 1 0
 
-CHIVO_DBZT   CHIVO_DBZT   mdvp:://front.eol.ucar.edu:8080:$(project)/cfradial/csu_chivo/moments/sur?use_http=true&DBZ_TOT dbz.colors     dBZ  -5 80 5 radial 1 0
-CHIVO_PID    CHIVO_PID    mdvp::pid//front.eol.ucar.edu:8080:$(project)/cfradial/csu_pid/sur?use_http=true&PID    pid.colors     -    -5 80 5 radial 1 0
-CHIVO_TEMP   CHIVO_TEMP   mdvp:://front.eol.ucar.edu:8080:$(project)/cfradial/csu_pid/sur?use_http=true&TEMP_FOR_PID    temp.colors     C    -5 80 5 radial 1 0
-CHIVO_KDP2   CHIVO_KDP2   mdvp:://front.eol.ucar.edu:8080:$(project)/cfradial/csu_pid/sur?use_http=true&KDP      kdp.colors     deg/km    -5 80 5 radial 1 0
+CHIVO_DBZT   CHIVO_DBZT   mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/csu_chivo/moments/sur?use_http=true&DBZ_TOT dbz.colors     dBZ  -5 80 5 radial 1 0
+CHIVO_PID    CHIVO_PID    mdvp::pid//front.eol.ucar.edu:8080:eolbase/cfradial/csu_pid/sur?use_http=true&PID    pid.colors     -    -5 80 5 radial 1 0
+CHIVO_TEMP   CHIVO_TEMP   mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/csu_pid/sur?use_http=true&TEMP_FOR_PID    temp.colors     C    -5 80 5 radial 1 0
+CHIVO_KDP2   CHIVO_KDP2   mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/csu_pid/sur?use_http=true&KDP      kdp.colors     deg/km    -5 80 5 radial 1 0
 CHIVO_======== =CHIVO=  mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
 CHIVO_======== =CHIVO=  mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
 CHIVO_======== =CHIVO=  mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
