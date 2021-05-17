@@ -82,7 +82,7 @@ mode = REALTIME;
 // Type: string
 //
 
-input_url = "$(DATA_DIR)/$(project)/mdv/mrms3D/conus";
+input_url = "$(DATA_DIR)/$(project)/mdv/mrms3D/conus3D";
 
 ///////////// dbz_field_name //////////////////////////
 //

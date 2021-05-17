@@ -52,8 +52,9 @@ LtgSpdb2Mdv         nldn               start_inst(ingest)  snuff_inst
 ######################################################################
 # MRMS radar mosaic
 #
-InputWatcher    mrms_MergedDbzQC  start_inst(ingest)          snuff_inst 
-MrmsGribIngest  conus          start_MrmsGribIngest.conus    snuff_inst 
+InputWatcher    mrms_MergedDbzQC  start_inst(ingest)      snuff_inst 
+MrmsGribIngest  conus             start_inst(ingest)      snuff_inst 
+MrmsGribIngest  conus3D           start_inst(ingest)      snuff_inst 
 MrmsGribIngest  north_west     start_MrmsGribIngest.north_west    snuff_inst 
 MrmsGribIngest  north_rockies  start_MrmsGribIngest.north_rockies snuff_inst 
 MrmsGribIngest  north_central  start_MrmsGribIngest.north_central snuff_inst 

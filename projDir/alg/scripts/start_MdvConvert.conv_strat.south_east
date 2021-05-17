@@ -1,0 +1,17 @@
+#! /bin/csh
+
+cd $PROJ_DIR/alg/params
+
+setenv min_lat 22
+setenv max_lat 42
+setenv min_lon -94
+setenv max_lon -70
+setenv tile_name south_east
+setenv instance conv_strat.$tile_name
+
+running "MdvConvert -instance $instance"
+
+if ($status == 1) then
+    MdvConvert -instance $instance -params MdvConvert.conv_strat.tiled |& \
+        LogFilter -d $ERRORS_LOG_DIR -p MdvConvert -i $instance >& /dev/null &
+endif
