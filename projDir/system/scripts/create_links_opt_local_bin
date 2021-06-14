@@ -1,5 +1,18 @@
 #! /bin/csh 
 
+# EOL BASE
+# Setup scripts and configs for running displays
+
+# checkout start scripts int /opt/local/git
+
+mkdir -p /opt/local/git
+cd /opt/local/git
+git clone git@github.com:ncar/HCR_configuration
+git clone git@github.com:ncar/lrose-projects-eolbase
+git clone git@github.com:ncar/lrose-uw-general
+git clone git@github.com:ncar/hsrl_configuration
+git clone git@github.com:ncar/spol-configuration
+ 
 # Create start script links in /opt/local/bin
 
 cd /opt/local/bin
@@ -56,7 +69,7 @@ ln -s ../git/hsrl_configuration/projDir/display/scripts/start_HawkEye.hsrl-socra
 ln -s ../git/hsrl_configuration/projDir/display/scripts/start_HawkEye.hsrl-socrates.mhayman
 ln -s ../git/hsrl_configuration/projDir/display/scripts/start_HawkEye.hsrl-socrates.qc
 ln -s ../git/hsrl_configuration/projDir/display/scripts/start_HawkEye.hsrl-socrates.qc.debug
-ln -s ../spol-configuration/projDir/display/scripts/start_HawkEye.kband.bscan.archive
+ln -s ../git/spol-configuration/projDir/display/scripts/start_HawkEye.kband.bscan.archive
 ln -s ../git/lrose-projects-eolbase/projDir/display/scripts/start_HawkEye.marshall
 ln -s ../git/HCR_configuration/projDir/display/scripts/start_HawkEye.noreaster.100hz
 ln -s ../git/HCR_configuration/projDir/display/scripts/start_HawkEye.noreaster.10hz
