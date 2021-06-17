@@ -231,7 +231,7 @@ PART_V0_3D_SE  PART_V0_3D_SE      mdvp::no_interp//front.eol.ucar.edu:8080:eolba
 Counties  Counties us_counties.map        0      0.0      10000.0     mediumblue
 States    States   usa.map                1      0.0      10000.0     steelblue
 ihwys     ihwys    conus_interstates.map  1      0.0      10000.0     gray
-#ushwys    ushwys   conus_ushwys.map      0      0.0      10000.0     darkblue
+ushwys    ushwys   conus_ushwys.map       1      0.0      10000.0     brown
 World     World    world_states.map       1      0.0      1000000.0   white
 Tiles     Tiles   mrms_conus_tiles.map    0      0.0     10000.0      orange
 </MAPS>
