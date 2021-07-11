@@ -137,6 +137,13 @@ ConvTops   ConvTops  mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/new?us
 StratTops  StratTops mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/new?use_http=true&StratTops    heightkm.colors km -5 80 5 cart 1 0
 EchoTops   EchoTops  mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/new?use_http=true&EchoTops     heightkm.colors km -5 80 5 cart 1 0
 
+GpmDbz  GpmDbz mdvp:://localhost::$(HOME)/data/convstrat/mdv/gpm&DBZ  dbz.colors   dBZ -5 80 5 cart 1 0
+GpmQual GpmQual mdvp:://localhost::$(HOME)/data/convstrat/mdv/gpm&qual number.colors  - -5 80 5 cart 1 0
+========      =========  /tmp/spacer&junk  none.colors   m   -5   80  5  dcont   1 0
+========      =========  /tmp/spacer&junk  none.colors   m   -5   80  5  dcont   1 0
+========      =========  /tmp/spacer&junk  none.colors   m   -5   80  5  dcont   1 0
+========      =========  /tmp/spacer&junk  none.colors   m   -5   80  5  dcont   1 0
+
 ========      =========  /tmp/spacer&junk  none.colors   m   -5   80  5  dcont   1 0
 ========      =========  /tmp/spacer&junk  none.colors   m   -5   80  5  dcont   1 0
 ========      =========  /tmp/spacer&junk  none.colors   m   -5   80  5  dcont   1 0
@@ -505,7 +512,8 @@ cidd.debug2_flag:           0
 #  System will startup using field 0, requesting data closest to the
 # demo time. The movie frame will be centered on the time after applying
 # temporal rounding. 
-cidd.demo_time:  00:00 06/26/2015
+cidd.demo_time:  10:20 06/05/2015
+#cidd.demo_time:  00:00 06/26/2015
 
 # Set times to the nearest value divisible by the number of seconds
 cidd.temporal_rounding:    1
