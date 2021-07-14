@@ -146,16 +146,23 @@ EchoTops   EchoTops  mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/new?us
 
 GpmDbz  GpmDbz  $(HOME)/data/convstrat/mdv/gpm&DBZ  dbz.colors   dBZ -5 80 5 cart 1 0
 GpmDbzComp  GpmDbzComp  $(HOME)/data/convstrat/mdv/gpm&DBZ  dbz.colors   dBZ -5 80 5 cart,comp 1 0
+Tops  Tops $(HOME)/data/convstrat/mdv/gpm&Tops height.colors  km -5 80 5 cart 1 0
 Anvil   Anvil $(HOME)/data/convstrat/mdv/gpm&Anvil number.colors  - -5 80 5 cart 1 0
-BB      BB    $(HOME)/data/convstrat/mdv/gpm&BB number.colors  - -5 80 5 cart 1 0
 HvyIcePrecip HvyIcePrecip $(HOME)/data/convstrat/mdv/gpm&HvyIcePrecip number.colors  - -5 80 5 cart 1 0
 ShallowRain ShallowRain $(HOME)/data/convstrat/mdv/gpm&ShallowRain number.colors  - -5 80 5 cart 1 0
 
+BB      BB    $(HOME)/data/convstrat/mdv/gpm&BB number.colors  - -5 80 5 cart 1 0
 BBHt  BBHt $(HOME)/data/convstrat/mdv/gpm&BBHt height.colors  km -5 80 5 cart 1 0
 BBWidth BBWidth $(HOME)/data/convstrat/mdv/gpm&BBWidth height.colors  km -5 80 5 cart 1 0
-Tops  Tops $(HOME)/data/convstrat/mdv/gpm&Tops height.colors  km -5 80 5 cart 1 0
 PrecipRate PrecipRate $(HOME)/data/convstrat/mdv/gpm&PrecipRate precip_rate.colors mm/hr -5 80 5 cart 1 0
+PrecipMax PrecipMax $(HOME)/data/convstrat/mdv/gpm&PrecipRate precip_rate.colors mm/hr -5 80 5 cart,comp 1 0
 Qual Qual $(HOME)/data/convstrat/mdv/gpm&Qual number.colors  - -5 80 5 cart 1 0
+
+========      =========  /tmp/spacer&junk  none.colors   m   -5   80  5  dcont   1 0
+========      =========  /tmp/spacer&junk  none.colors   m   -5   80  5  dcont   1 0
+========      =========  /tmp/spacer&junk  none.colors   m   -5   80  5  dcont   1 0
+========      =========  /tmp/spacer&junk  none.colors   m   -5   80  5  dcont   1 0
+========      =========  /tmp/spacer&junk  none.colors   m   -5   80  5  dcont   1 0
 ========      =========  /tmp/spacer&junk  none.colors   m   -5   80  5  dcont   1 0
 
 #############################
@@ -818,8 +825,8 @@ cidd.max_adeg:               360.0
 # List of comma delimited local directories or HTTP URLs to search
 # Searchs . then each directory/URL in order 
 
-cidd.color_file_subdir:   http://front.eol.ucar.edu/color_scales
-cidd.map_file_subdir:     http://front.eol.ucar.edu/maps
+cidd.color_file_subdir:   $(PROJ_DIR)/display/color_scales,http://front.eol.ucar.edu/color_scales
+cidd.map_file_subdir:     $(PROJ_DIR)/display/maps,http://front.eol.ucar.edu/maps
 
 #
 # Station locator features
