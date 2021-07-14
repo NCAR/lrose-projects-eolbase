@@ -144,20 +144,19 @@ EchoTops   EchoTops  mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/new?us
 ========      =========  /tmp/spacer&junk  none.colors   m   -5   80  5  dcont   1 0
 ========      =========  /tmp/spacer&junk  none.colors   m   -5   80  5  dcont   1 0
 
-========      =========  /tmp/spacer&junk  none.colors   m   -5   80  5  dcont   1 0
-GpmQual GpmQual $(HOME)/data/convstrat/mdv/gpm&qual number.colors  - -5 80 5 cart 1 0
-GpmDbz2 GpmDbz2 $(HOME)/data/convstrat/mdv/gpm&DBZ2 dbz.colors  dbz -5 80 5 cart 1 0
 GpmDbz  GpmDbz  $(HOME)/data/convstrat/mdv/gpm&DBZ  dbz.colors   dBZ -5 80 5 cart 1 0
-GpmDbz2Comp GpmDbz2Comp $(HOME)/data/convstrat/mdv/gpm&DBZ2 dbz.colors  dbz -5 80 5 cart,comp 1 0
 GpmDbzComp  GpmDbzComp  $(HOME)/data/convstrat/mdv/gpm&DBZ  dbz.colors   dBZ -5 80 5 cart,comp 1 0
+Anvil   Anvil $(HOME)/data/convstrat/mdv/gpm&Anvil number.colors  - -5 80 5 cart 1 0
+BB      BB    $(HOME)/data/convstrat/mdv/gpm&BB number.colors  - -5 80 5 cart 1 0
+HvyIcePrecip HvyIcePrecip $(HOME)/data/convstrat/mdv/gpm&HvyIcePrecip number.colors  - -5 80 5 cart 1 0
+ShallowRain ShallowRain $(HOME)/data/convstrat/mdv/gpm&ShallowRain number.colors  - -5 80 5 cart 1 0
 
+BBHt  BBHt $(HOME)/data/convstrat/mdv/gpm&BBHt height.colors  km -5 80 5 cart 1 0
+BBWidth BBWidth $(HOME)/data/convstrat/mdv/gpm&BBWidth height.colors  km -5 80 5 cart 1 0
+Tops  Tops $(HOME)/data/convstrat/mdv/gpm&Tops height.colors  km -5 80 5 cart 1 0
+PrecipRate PrecipRate $(HOME)/data/convstrat/mdv/gpm&PrecipRate precip_rate.colors mm/hr -5 80 5 cart 1 0
+Qual Qual $(HOME)/data/convstrat/mdv/gpm&Qual number.colors  - -5 80 5 cart 1 0
 ========      =========  /tmp/spacer&junk  none.colors   m   -5   80  5  dcont   1 0
-========      =========  /tmp/spacer&junk  none.colors   m   -5   80  5  dcont   1 0
-========      =========  /tmp/spacer&junk  none.colors   m   -5   80  5  dcont   1 0
-========      =========  /tmp/spacer&junk  none.colors   m   -5   80  5  dcont   1 0
-========      =========  /tmp/spacer&junk  none.colors   m   -5   80  5  dcont   1 0
-========      =========  /tmp/spacer&junk  none.colors   m   -5   80  5  dcont   1 0
-
 
 #############################
 # NEXRAD RADIAL MOMENTS
