@@ -158,7 +158,7 @@ PrecipRate PrecipRate $(HOME)/data/convstrat/mdv/gpm&PrecipRate precip_rate.colo
 PrecipMax PrecipMax $(HOME)/data/convstrat/mdv/gpm&PrecipRate precip_rate.colors mm/hr -5 80 5 cart,comp 1 0
 Qual Qual $(HOME)/data/convstrat/mdv/gpm&Qual number.colors  - -5 80 5 cart 1 0
 
-PID PID $(HOME)/data/convstrat/mdv/gpm&PID number.colors  - -5 80 5 cart 1 0
+PID PID $(HOME)/data/convstrat/mdv/gpm&PID pid_gpm.colors  - -5 80 5 cart 1 0
 ========      =========  /tmp/spacer&junk  none.colors   m   -5   80  5  dcont   1 0
 ========      =========  /tmp/spacer&junk  none.colors   m   -5   80  5  dcont   1 0
 ========      =========  /tmp/spacer&junk  none.colors   m   -5   80  5  dcont   1 0
