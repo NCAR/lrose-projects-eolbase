@@ -165,6 +165,48 @@ PID PID $(HOME)/data/convstrat/mdv/gpm&PID pid_gpm.colors  - -5 80 5 cart 1 0
 ========      =========  /tmp/spacer&junk  none.colors   m   -5   80  5  dcont   1 0
 ========      =========  /tmp/spacer&junk  none.colors   m   -5   80  5  dcont   1 0
 
+GpmDbzConvMax     GpmDbzConvMax     $(HOME)/data/convstrat/mdv/conv_strat/gpm&DbzConv         dbz.colors - -5 80 5 cart,comp 1 0
+GpmDbzConv         GpmDbzConv         $(HOME)/data/convstrat/mdv/conv_strat/gpm&DbzConv         dbz.colors - -5 80 5 cart 1 0
+GpmFractionActive  GpmFractionActive  $(HOME)/data/convstrat/mdv/conv_strat/gpm&FractionActive  fraction.colors - -5 80 5 cart 1 0
+========      =========  /tmp/spacer&junk  none.colors   m   -5   80  5  dcont   1 0
+========      =========  /tmp/spacer&junk  none.colors   m   -5   80  5  dcont   1 0
+========      =========  /tmp/spacer&junk  none.colors   m   -5   80  5  dcont   1 0
+
+GpmDbzTexture3DMax GpmDbzTexture3DMax $(HOME)/data/convstrat/mdv/conv_strat/gpm&DbzTexture3D dbz.colors - -5 80 5 cart,comp 1 0
+GpmDbzTexture3D     GpmDbzTexture3D     $(HOME)/data/convstrat/mdv/conv_strat/gpm&DbzTexture3D dbz.colors - -5 80 5 cart 1 0
+GpmDbzTexture2D     GpmDbzTexture2D     $(HOME)/data/convstrat/mdv/conv_strat/gpm&DbzTexture2D dbz.colors - -5 80 5 cart 1 0
+========      =========  /tmp/spacer&junk  none.colors   m   -5   80  5  dcont   1 0
+========      =========  /tmp/spacer&junk  none.colors   m   -5   80  5  dcont   1 0
+========      =========  /tmp/spacer&junk  none.colors   m   -5   80  5  dcont   1 0
+
+GpmConvectivity3DMax  GpmConvectivity3DMax  $(HOME)/data/convstrat/mdv/conv_strat/gpm&Convectivity3D convectivity.colors - -5 80 5 cart,comp 1 0
+GpmConvectivity3D      GpmConvectivity3D      $(HOME)/data/convstrat/mdv/conv_strat/gpm&Convectivity3D convectivity.colors - -5 80 5 cart 1 0
+GpmConvectivity2D      GpmConvectivity2D      $(HOME)/data/convstrat/mdv/conv_strat/gpm&Convectivity2D convectivity.colors - -5 80 5 cart,comp 1 0
+========      =========  /tmp/spacer&junk  none.colors   m   -5   80  5  dcont   1 0
+========      =========  /tmp/spacer&junk  none.colors   m   -5   80  5  dcont   1 0
+========      =========  /tmp/spacer&junk  none.colors   m   -5   80  5  dcont   1 0
+
+GpmPartition3DMax GpmPartition3DMax  mdvp::no_interp//localhost:0:$(HOME)/data/convstrat/mdv/conv_strat/gpm&Partition3D conv_strat4.colors - -5 80 5 cart,comp 1 0
+GpmPartition3D     GpmPartition3D      mdvp::no_interp//localhost:0:$(HOME)/data/convstrat/mdv/conv_strat/gpm&Partition3D conv_strat4.colors - -5 80 5 cart 1 0
+GpmPartition2D     GpmPartition2D      mdvp::no_interp//localhost:0:$(HOME)/data/convstrat/mdv/conv_strat/gpm&Partition2D conv_strat4.colors - -5 80 5 cart 1 0
+========      =========  /tmp/spacer&junk  none.colors   m   -5   80  5  dcont   1 0
+========      =========  /tmp/spacer&junk  none.colors   m   -5   80  5  dcont   1 0
+========      =========  /tmp/spacer&junk  none.colors   m   -5   80  5  dcont   1 0
+
+GpmShallowHt GpmShallowHt $(HOME)/data/convstrat/mdv/conv_strat/gpm&ShallowHt number.colors km -5 80 5 cart 1 0
+GpmDeepHt    GpmDeepHt    $(HOME)/data/convstrat/mdv/conv_strat/gpm&DeepHt    number.colors km -5 80 5 cart 1 0
+GpmTemp      GpmTemp      $(HOME)/data/convstrat/mdv/conv_strat/gpm&TMP       temp.colors C -5 80 5 cart 1 0
+GpmConvTops   GpmConvTops  $(HOME)/data/convstrat/mdv/conv_strat/gpm&ConvTops     heightkm.colors km -5 80 5 cart 1 0
+GpmStratTops  GpmStratTops $(HOME)/data/convstrat/mdv/conv_strat/gpm&StratTops    heightkm.colors km -5 80 5 cart 1 0
+GpmEchoTops   GpmEchoTops  $(HOME)/data/convstrat/mdv/conv_strat/gpm&EchoTops     heightkm.colors km -5 80 5 cart 1 0
+
+========      =========  /tmp/spacer&junk  none.colors   m   -5   80  5  dcont   1 0
+========      =========  /tmp/spacer&junk  none.colors   m   -5   80  5  dcont   1 0
+========      =========  /tmp/spacer&junk  none.colors   m   -5   80  5  dcont   1 0
+========      =========  /tmp/spacer&junk  none.colors   m   -5   80  5  dcont   1 0
+========      =========  /tmp/spacer&junk  none.colors   m   -5   80  5  dcont   1 0
+========      =========  /tmp/spacer&junk  none.colors   m   -5   80  5  dcont   1 0
+
 #############################
 # NEXRAD RADIAL MOMENTS
 
@@ -1204,7 +1246,7 @@ cidd.show_clock:       0
 # Set to 0 to draw the analogue clock using GMT, 1 = local time.
 cidd.draw_clock_local: 0
 
-cidd.one_click_rhi: 1
+cidd.one_click_rhi: 0
 cidd.click_posn_rel_to_origin: 1
 
 #####################################################################################
