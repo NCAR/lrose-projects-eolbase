@@ -137,13 +137,6 @@ ConvTops   ConvTops  mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/new?us
 StratTops  StratTops mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/new?use_http=true&StratTops    heightkm.colors km -5 80 5 cart 1 0
 EchoTops   EchoTops  mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/new?use_http=true&EchoTops     heightkm.colors km -5 80 5 cart 1 0
 
-GpmDbz  GpmDbz mdvp:://localhost::$(HOME)/data/convstrat/mdv/gpm&DBZ  dbz.colors   dBZ -5 80 5 cart 1 0
-GpmQual GpmQual mdvp:://localhost::$(HOME)/data/convstrat/mdv/gpm&qual number.colors  - -5 80 5 cart 1 0
-========      =========  /tmp/spacer&junk  none.colors   m   -5   80  5  dcont   1 0
-========      =========  /tmp/spacer&junk  none.colors   m   -5   80  5  dcont   1 0
-========      =========  /tmp/spacer&junk  none.colors   m   -5   80  5  dcont   1 0
-========      =========  /tmp/spacer&junk  none.colors   m   -5   80  5  dcont   1 0
-
 ========      =========  /tmp/spacer&junk  none.colors   m   -5   80  5  dcont   1 0
 ========      =========  /tmp/spacer&junk  none.colors   m   -5   80  5  dcont   1 0
 ========      =========  /tmp/spacer&junk  none.colors   m   -5   80  5  dcont   1 0
@@ -151,6 +144,68 @@ GpmQual GpmQual mdvp:://localhost::$(HOME)/data/convstrat/mdv/gpm&qual number.co
 ========      =========  /tmp/spacer&junk  none.colors   m   -5   80  5  dcont   1 0
 ========      =========  /tmp/spacer&junk  none.colors   m   -5   80  5  dcont   1 0
 
+GpmDbz  GpmDbz  mdvp:://front.eol.ucar.edu:8080:pecan/mdv/radarCart/gpm?use_http=true&DBZ  dbz.colors   dBZ -5 80 5 cart 1 0
+GpmDbzComp  GpmDbzComp  mdvp:://front.eol.ucar.edu:8080:pecan/mdv/radarCart/gpm?use_http=true&DBZ  dbz.colors   dBZ -5 80 5 cart,comp 1 0
+Tops  Tops mdvp:://front.eol.ucar.edu:8080:pecan/mdv/radarCart/gpm?use_http=true&Tops height.colors  km -5 80 5 cart 1 0
+Anvil   Anvil mdvp:://front.eol.ucar.edu:8080:pecan/mdv/radarCart/gpm?use_http=true&Anvil number.colors  - -5 80 5 cart 1 0
+HvyIcePrecip HvyIcePrecip mdvp:://front.eol.ucar.edu:8080:pecan/mdv/radarCart/gpm?use_http=true&HvyIcePrecip number.colors  - -5 80 5 cart 1 0
+ShallowRain ShallowRain mdvp:://front.eol.ucar.edu:8080:pecan/mdv/radarCart/gpm?use_http=true&ShallowRain number.colors  - -5 80 5 cart 1 0
+
+BB      BB    mdvp:://front.eol.ucar.edu:8080:pecan/mdv/radarCart/gpm?use_http=true&BB number.colors  - -5 80 5 cart 1 0
+BBHt  BBHt mdvp:://front.eol.ucar.edu:8080:pecan/mdv/radarCart/gpm?use_http=true&BBHt height.colors  km -5 80 5 cart 1 0
+BBWidth BBWidth mdvp:://front.eol.ucar.edu:8080:pecan/mdv/radarCart/gpm?use_http=true&BBWidth height.colors  km -5 80 5 cart 1 0
+PrecipRate PrecipRate mdvp:://front.eol.ucar.edu:8080:pecan/mdv/radarCart/gpm?use_http=true&PrecipRate precip_rate.colors mm/hr -5 80 5 cart 1 0
+PrecipMax PrecipMax mdvp:://front.eol.ucar.edu:8080:pecan/mdv/radarCart/gpm?use_http=true&PrecipRate precip_rate.colors mm/hr -5 80 5 cart,comp 1 0
+Qual Qual mdvp:://front.eol.ucar.edu:8080:pecan/mdv/radarCart/gpm?use_http=true&Qual number.colors  - -5 80 5 cart 1 0
+
+PID PID mdvp::no_interp//front.eol.ucar.edu:8080:pecan/mdv/radarCart/gpm?use_http=true&PID pid_gpm.colors  - -5 80 5 cart 1 0
+========      =========  /tmp/spacer&junk  none.colors   m   -5   80  5  dcont   1 0
+========      =========  /tmp/spacer&junk  none.colors   m   -5   80  5  dcont   1 0
+========      =========  /tmp/spacer&junk  none.colors   m   -5   80  5  dcont   1 0
+========      =========  /tmp/spacer&junk  none.colors   m   -5   80  5  dcont   1 0
+========      =========  /tmp/spacer&junk  none.colors   m   -5   80  5  dcont   1 0
+
+GpmDbzConvMax  GpmDbzConvMax  mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/gpm?use_http=true&DbzConv         dbz.colors - -5 80 5 cart,comp 1 0
+GpmDbzConv     GpmDbzConv     mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/gpm?use_http=true&DbzConv         dbz.colors - -5 80 5 cart 1 0
+GpmFracActive  GpmFracActive  mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/gpm?use_http=true&FractionActive  fraction.colors - -5 80 5 cart 1 0
+========      =========  /tmp/spacer&junk  none.colors   m   -5   80  5  dcont   1 0
+========      =========  /tmp/spacer&junk  none.colors   m   -5   80  5  dcont   1 0
+========      =========  /tmp/spacer&junk  none.colors   m   -5   80  5  dcont   1 0
+
+GpmDbzText3DMax GpmDbzText3DMax mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/gpm?use_http=true&DbzTexture3D dbz.colors - -5 80 5 cart,comp 1 0
+GpmDbzText3D    GpmDbzText3D    mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/gpm?use_http=true&DbzTexture3D dbz.colors - -5 80 5 cart 1 0
+GpmDbzText2D    GpmDbzText2D    mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/gpm?use_http=true&DbzTexture2D dbz.colors - -5 80 5 cart 1 0
+========      =========  /tmp/spacer&junk  none.colors   m   -5   80  5  dcont   1 0
+========      =========  /tmp/spacer&junk  none.colors   m   -5   80  5  dcont   1 0
+========      =========  /tmp/spacer&junk  none.colors   m   -5   80  5  dcont   1 0
+
+GpmConv3DMax  GpmConv3DMax  mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/gpm?use_http=true&Convectivity3D convectivity.colors - -5 80 5 cart,comp 1 0
+GpmConv3D     GpmConv3D     mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/gpm?use_http=true&Convectivity3D convectivity.colors - -5 80 5 cart 1 0
+GpmConv2D     GpmConv2D     mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/gpm?use_http=true&Convectivity2D convectivity.colors - -5 80 5 cart,comp 1 0
+========      =========  /tmp/spacer&junk  none.colors   m   -5   80  5  dcont   1 0
+========      =========  /tmp/spacer&junk  none.colors   m   -5   80  5  dcont   1 0
+========      =========  /tmp/spacer&junk  none.colors   m   -5   80  5  dcont   1 0
+
+GpmPart3DMax  GpmPart3DMax  mdvp::no_interp//front.eol.ucar.edu:8080:pecan/mdv/conv_strat/gpm?use_http=true&Partition3D conv_strat4.colors - -5 80 5 cart,comp 1 0
+GpmPart3D     GpmPart3D     mdvp::no_interp//front.eol.ucar.edu:8080:pecan/mdv/conv_strat/gpm?use_http=true&Partition3D conv_strat4.colors - -5 80 5 cart 1 0
+GpmPart2D     GpmPart2D     mdvp::no_interp//front.eol.ucar.edu:8080:pecan/mdv/conv_strat/gpm?use_http=true&Partition2D conv_strat4.colors - -5 80 5 cart 1 0
+========      =========  /tmp/spacer&junk  none.colors   m   -5   80  5  dcont   1 0
+========      =========  /tmp/spacer&junk  none.colors   m   -5   80  5  dcont   1 0
+========      =========  /tmp/spacer&junk  none.colors   m   -5   80  5  dcont   1 0
+
+GpmShallowHt  GpmShallowHt mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/gpm?use_http=true&ShallowHt    number.colors km -5 80 5 cart 1 0
+GpmDeepHt     GpmDeepHt    mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/gpm?use_http=true&DeepHt       number.colors km -5 80 5 cart 1 0
+GpmTemp       GpmTemp      mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/gpm?use_http=true&TMP          temp.colors C -5 80 5 cart 1 0
+GpmConvTops   GpmConvTops  mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/gpm?use_http=true&ConvTops     heightkm.colors km -5 80 5 cart 1 0
+GpmStratTops  GpmStratTops mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/gpm?use_http=true&StratTops    heightkm.colors km -5 80 5 cart 1 0
+GpmEchoTops   GpmEchoTops  mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/gpm?use_http=true&EchoTops     heightkm.colors km -5 80 5 cart 1 0
+
+========      =========  /tmp/spacer&junk  none.colors   m   -5   80  5  dcont   1 0
+========      =========  /tmp/spacer&junk  none.colors   m   -5   80  5  dcont   1 0
+========      =========  /tmp/spacer&junk  none.colors   m   -5   80  5  dcont   1 0
+========      =========  /tmp/spacer&junk  none.colors   m   -5   80  5  dcont   1 0
+========      =========  /tmp/spacer&junk  none.colors   m   -5   80  5  dcont   1 0
+========      =========  /tmp/spacer&junk  none.colors   m   -5   80  5  dcont   1 0
 
 #############################
 # NEXRAD RADIAL MOMENTS
@@ -512,7 +567,8 @@ cidd.debug2_flag:           0
 #  System will startup using field 0, requesting data closest to the
 # demo time. The movie frame will be centered on the time after applying
 # temporal rounding. 
-cidd.demo_time:  10:20 06/05/2015
+cidd.demo_time:   00:30 07/08/2015
+#cidd.demo_time:  10:20 06/05/2015
 #cidd.demo_time:  00:00 06/26/2015
 
 # Set times to the nearest value divisible by the number of seconds
