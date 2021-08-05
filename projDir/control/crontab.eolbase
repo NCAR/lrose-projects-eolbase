@@ -18,6 +18,10 @@
 */5 * * * *   csh -c "start_build_logdir_links" 1> /dev/null 2> /dev/null
 #
 ####################################################################
+# MONITORING
+#
+0 * * * *  csh -c "run_monitorSpol_automatic" 1> /dev/null 2> /dev/null
+####################################################################
 # GIT BACKUPS
 # clone all repos once per day
 #

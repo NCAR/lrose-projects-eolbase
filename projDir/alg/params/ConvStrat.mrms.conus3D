@@ -32,7 +32,7 @@
 //     DEBUG_EXTRA
 //
 
-debug = DEBUG_OFF;
+debug = DEBUG_VERBOSE;
 
 ///////////// instance ////////////////////////////////
 //
@@ -44,7 +44,7 @@ debug = DEBUG_OFF;
 // Type: string
 //
 
-instance = "mrms.conus";
+instance = "mrms.conus3D";
 
 ///////////// mode ////////////////////////////////////
 //
