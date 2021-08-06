@@ -1,0 +1,14 @@
+#! /bin/csh
+
+# rsync CHIVO data from Maui server at CSU
+
+cd $DATA_DIR/eolbase/cfradial/spol/moments/sband/sur
+
+rsync -av 202108* 202109* mdixon@maui.atmos.colostate.edu:/bell-scratch2/precip/spol/cfradial/moments/sur |& LogFilter -d $ERRORS_LOG_DIR -p rsync -i spol_moments_to_maui.sur &
+
+cd $DATA_DIR/eolbase/cfradial/spol/moments/sband/rhi
+
+rsync -av 202108* 202109* mdixon@maui.atmos.colostate.edu:/bell-scratch2/precip/spol/cfradial/moments/rhi |& LogFilter -d $ERRORS_LOG_DIR -p rsync -i spol_moments_to_maui.rhi &
+
+
+
