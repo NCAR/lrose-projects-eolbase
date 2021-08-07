@@ -391,6 +391,7 @@ Refract_SIGMA_DN  Refract_SIGMA_DN  mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/
 #SPOL_======== ==SPOL==  mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
 
 SPOL_DBZ_F     SPOL_DBZ_F      mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sur?use_http=true&DBZ_F      dbz.colors   dBZ -5 80 5 radial 1 0
+SPOL_DBZ_F     SPOL_DBZ_F      mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sur?use_http=true&DBZ_F      dbz.colors   dBZ -5 80 5 radial 1 0
 SPOL_DBZ       SPOL_DBZ        mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sur?use_http=true&DBZ        dbz.colors   dBZ -5 80 5 radial 1 0
 SPOL_DBZ_BRAGG_F  SPOL_DBZ_BRAGG_F  mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sur?use_http=true&DBZ_F      dbz_bragg.colors   dBZ -5 80 5 radial 1 0
 SPOL_DBZ_BRAGG    SPOL_DBZ_BRAGG    mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sur?use_http=true&DBZ        dbz_bragg.colors   dBZ -5 80 5 radial 1 0
@@ -836,7 +837,7 @@ cidd.debug2_flag:           0
 #  System will startup using field 0, requesting data closest to the
 # demo time. The movie frame will be centered on the time after applying
 # temporal rounding. 
-cidd.demo_time:  23:00 5/8/2021
+#cidd.demo_time:  23:00 5/8/2021
 
 # Set times to the nearest value divisible by the number of seconds
 cidd.temporal_rounding:    1
