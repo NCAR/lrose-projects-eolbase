@@ -45,6 +45,7 @@
 
 field_list = {
   { "CHIVO",  "CHIVO_" },
+  { "SPOL",  "SPOL_" },
   { "NEXRAD moments", "NEX_" },
   { "NEXRAD PID/precip", "NEXP_ " },
   { "Satellite", "SAT_"},
@@ -52,7 +53,6 @@ field_list = {
   { "Surface", "SURF_" },
   { "Model", "MODEL_"},
   { "Lightning", "LTG_"},
-  { "SPOL",  "SPOL_" },
   { "SPOL-DRX",  "SDRX_" },
   { "SPOL sectors",  "SPSEC_" }
 };
