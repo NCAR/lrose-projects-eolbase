@@ -11,16 +11,16 @@ from optparse import OptionParser
 import numpy as np
 import matplotlib as mpl
 import matplotlib.pyplot as plt
-import matplotlib.pylab as pl
+#import matplotlib.pylab as pl
 import matplotlib.ticker as ticker
 from matplotlib import dates
 import datetime
 import pathlib
-from matplotlib.dates import DateFormatter
+#from matplotlib.dates import DateFormatter
 import pandas as pd
 
-from bokeh.plotting import figure, output_file, show
-from bokeh.layouts import row
+#from bokeh.plotting import figure, output_file, show
+#from bokeh.layouts import row
 
 def main():
 
@@ -49,7 +49,7 @@ def main():
                       help='Set verbose debugging on')
     parser.add_option('--suncalFile',
                       dest='suncalFile',
-                      default='/scr/hail1/rsfdata/eolbase/tables/spolSunCal/spolSunCal_20191001_000000_to_20191031_235959.txt',
+                      default='/scr/sleet1/rsfdata/projects/eolbase/tables/spolSunCal/spolSunCal_20210801_000000_to_20210831_235959.txt',
                       help='File with suncal data')
     parser.add_option('--widthMain',
                       dest='mainWidthMm',
@@ -75,7 +75,7 @@ def main():
                       help='End time for XY plot')
     parser.add_option('--figDir',
                       dest='figureDir',
-                      default='/scr/hail1/rsfdata/eolbase/catalog/images/spol_sunCal/',
+                      default='/scr/sleet1/rsfdata/projects/eolbase/catalog/images/spol_sunCal/2021/',
                       help='Directory for output figures')
 
     
@@ -374,13 +374,13 @@ def doPlotPowersNoise(outFilePath,data):
         
     data.plot(x='datetime',y=['noiseDbmHc','noiseDbmHx','noiseDbmVc','noiseDbmVx'],ax=ax1,color=colorsA[0:4],fontsize=fontSize)
     ax1.set_title('Noise '+str(firstTime)+' to '+str(lastTime), fontsize=fontSize, fontweight='bold')
-    configTimeAxisMinMax(ax1, -75.3, -74.8, 'Noise (dBm)', 'upper left',firstTime,lastTime,fontSize)
+    configTimeAxisMinMax(ax1, -76.0, -74.6, 'Noise (dBm)', 'upper left',firstTime,lastTime,fontSize)
        
 # Plot noise number
     ax1 = fig.add_subplot(4,1,2,xmargin=0.0)
         
     data.plot(x='datetime',y='nBeamsNoise',ax=ax1,color=colorsA[0],fontsize=fontSize)
-    configTimeAxisMinMax(ax1, 0, 2000, 'Number', 'upper right',firstTime,lastTime,fontSize)
+    configTimeAxisMinMax(ax1, 0, 3000, 'Number', 'upper right',firstTime,lastTime,fontSize)
        
 # Plot maxPower and quadPower
     ax1 = fig.add_subplot(4,1,3,xmargin=0.0)
@@ -388,14 +388,14 @@ def doPlotPowersNoise(outFilePath,data):
     data.plot('datetime',['maxPowerDbm','quadPowerDbm','maxPowerDbmHc','quadPowerDbmHc',
                               'maxPowerDbmVc','quadPowerDbmVc'],ax=ax1,color=colorsA[0:6],fontsize=fontSize)
     ax1.set_title('Max power and quad power '+str(firstTime)+' to '+str(lastTime), fontsize=fontSize, fontweight='bold')
-    configTimeAxisMinMax(ax1, -63, -61, 'Power (dBm)', 'upper left',firstTime,lastTime,fontSize)
+    configTimeAxisMinMax(ax1, -63, -60, 'Power (dBm)', 'upper left',firstTime,lastTime,fontSize)
         
 # Plot mean Xmit powers
     ax1 = fig.add_subplot(4,1,4,xmargin=0.0)
     
     data.plot(x='datetime',y=['meanXmitPowerHDbm','meanXmitPowerVDbm'],ax=ax1,color=colorsA[0:2],fontsize=fontSize)
     ax1.set_title('Xmit power '+str(firstTime)+' to '+str(lastTime), fontsize=fontSize, fontweight='bold')
-    configTimeAxisMinMax(ax1, 87.8, 88.4, 'Power (dBm)', 'upper left',firstTime,lastTime,fontSize)
+    configTimeAxisMinMax(ax1, 87.0, 88.0, 'Power (dBm)', 'upper left',firstTime,lastTime,fontSize)
        
     fig.autofmt_xdate()
     fig.tight_layout()
@@ -441,7 +441,7 @@ def doPlotSunVars(outFilePath,data):
     med1=data.S1S2.median()
     med2=data.meanXpolRatioDb.median()
     med3=data.meanXmitPowerRatio.median()
-    configTimeAxisMedSpread(ax1, np.mean([med1,med2,med3]), 0.4, '(dB)', 'upper left',firstTime,lastTime,fontSize)
+    configTimeAxisMedSpread(ax1, np.mean([med1,med2,med3]), 0.7, '(dB)', 'upper left',firstTime,lastTime,fontSize)
     
     data.plot(x='timeForSiteTemp',y='siteTempC',ax=ax2,fontsize=fontSize,color=colorsA[4])    
     configTimeAxisMedSpread(ax2, data.siteTempC.median(), 15, 'Temperature (C)', 'upper right',firstTime,lastTime,fontSize)
@@ -454,7 +454,7 @@ def doPlotSunVars(outFilePath,data):
     ax1.set_title('S1S2, zdrCorr, test pulse ratios, '+str(firstTime)+' to '+str(lastTime), fontsize=fontSize, fontweight='bold')
     med1=data.S1S2.median()
     med2=data.zdrCorr.median()
-    configTimeAxisMedSpread(ax1, np.mean([med1,med2]), 0.3, 'S1S2, zdrCorr (dB)', 'upper left',firstTime,lastTime,fontSize)
+    configTimeAxisMedSpread(ax1, np.mean([med1,med2]), 0.6, 'S1S2, zdrCorr (dB)', 'upper left',firstTime,lastTime,fontSize)
     
     data.plot(x='datetime',y=['testPulseRatioVcHc2','testPulseRatioVxHx2'],ax=ax2,color=colorsA[3:5],fontsize=fontSize)
     medians=[data.testPulseRatioVcHc2.median(),data.testPulseRatioVxHx2.median()]
@@ -488,10 +488,10 @@ def doPlotSunVars(outFilePath,data):
         meanMed=-1000
     else:
         meanMed=np.nanmean(new_medians)
-    configTimeAxisMedSpread(ax1, meanMed, 0.25, 'TestPulseRatio*2 (dB)', 'upper left',firstTime,lastTime,fontSize)
+    configTimeAxisMedSpread(ax1, meanMed, 0.4, 'TestPulseRatio*2 (dB)', 'upper left',firstTime,lastTime,fontSize)
     
     data.plot(x='datetime',y='nXpolPoints',ax=ax2,color=colorsA[4],fontsize=fontSize)
-    configTimeAxisMinMax(ax2, 0, 150000, 'Number', 'upper right',firstTime,lastTime,fontSize)
+    configTimeAxisMinMax(ax2, 0, 300000, 'Number', 'upper right',firstTime,lastTime,fontSize)
     
     fig.autofmt_xdate()
     fig.tight_layout()
@@ -587,6 +587,8 @@ def configScattAxis(ax, yspread, xlabel, ylabel, title):
     if (yspread > -9990):
         ylimMean=np.mean(ax.get_ylim())        
         ax.set_ylim([ylimMean-yspread,ylimMean+yspread+yspread/10])
+    xlims=ax.get_xlim()
+    ax.set_xlim([xlims[0]-1,xlims[1]+1])
     ax.yaxis.set_major_formatter(ticker.FormatStrFormatter('%0.1f'))
     
 ########################################################################

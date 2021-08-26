@@ -6,7 +6,7 @@
 # output directory (PLOT_DIR) and the current time and plots it in the
 # latest plot until yy hours have been filled. Then it starts a new plot.
 
-set PLOT_DIR="$DATA_DIR/eolbase/catalog/images/spol_mon/"
+set PLOT_DIR="$DATA_DIR/eolbase/catalog/images/spol_mon/2021/"
 
 # Get start time for last file in PLOT_DIR and set it as START_TIME
 set LAST_FILE_FULL="`ls $PLOT_DIR"radar.SPOL.*.Monitoring.png" | tail -1`"

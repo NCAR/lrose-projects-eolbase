@@ -52,9 +52,8 @@ LtgSpdb2Mdv         nldn               start_inst(ingest)  snuff_inst
 ######################################################################
 # MRMS radar mosaic
 #
-InputWatcher    mrms_MergedDbzQC  start_inst(ingest)      snuff_inst 
-MrmsGribIngest  conus             start_inst(ingest)      snuff_inst 
-MrmsGribIngest  conus3D           start_inst(ingest)      snuff_inst 
+InputWatcher    mrms_MergedDbzQC  start_inst(ingest)          snuff_inst 
+MrmsGribIngest  conus          start_MrmsGribIngest.conus    snuff_inst 
 MrmsGribIngest  north_west     start_MrmsGribIngest.north_west    snuff_inst 
 MrmsGribIngest  north_rockies  start_MrmsGribIngest.north_rockies snuff_inst 
 MrmsGribIngest  north_central  start_MrmsGribIngest.north_central snuff_inst 
@@ -65,15 +64,7 @@ MrmsGribIngest  south_east     start_MrmsGribIngest.south_east    snuff_inst
 ######################################################################
 # ConvStrat - convection finder
 #
-ConvStrat  mrms.conus3D   start_inst(alg)               snuff_inst 
-ConvStrat  north_west     start_ConvStrat.north_west    snuff_inst 
-ConvStrat  north_rockies  start_ConvStrat.north_rockies snuff_inst 
-ConvStrat  north_central  start_ConvStrat.north_central snuff_inst 
-ConvStrat  north_east     start_ConvStrat.north_east    snuff_inst 
-ConvStrat  south_west     start_ConvStrat.south_west    snuff_inst 
-ConvStrat  south_central  start_ConvStrat.south_central snuff_inst 
-ConvStrat  south_east     start_ConvStrat.south_east    snuff_inst 
-MdvMerge2  conv_strat     start_inst(ingest)            snuff_inst 
+ConvStrat   mrms.conus                start_inst(alg)                           snuff_inst 
 MdvConvert  conv_strat.north_west     start_MdvConvert.conv_strat.north_west    snuff_inst 
 MdvConvert  conv_strat.north_rockies  start_MdvConvert.conv_strat.north_rockies snuff_inst 
 MdvConvert  conv_strat.north_central  start_MdvConvert.conv_strat.north_central snuff_inst 
@@ -81,10 +72,7 @@ MdvConvert  conv_strat.north_east     start_MdvConvert.conv_strat.north_east    
 MdvConvert  conv_strat.south_west     start_MdvConvert.conv_strat.south_west    snuff_inst 
 MdvConvert  conv_strat.south_central  start_MdvConvert.conv_strat.south_central snuff_inst 
 MdvConvert  conv_strat.south_east     start_MdvConvert.conv_strat.south_east    snuff_inst 
-#####################################################################
-# Convective/stratiform partitioning
-#
-#StratFinder        mrms                start_inst(alg)     snuff_inst
+MdvMerge2   conv_strat                start_inst(ingest)                        snuff_inst 
 ######################################################################
 # GFS MODEL
 #
@@ -159,8 +147,8 @@ RadxConvert   csu_chivo     start_inst(ingest)    snuff_inst
 #
 # PID and rain rate
 #
-LdataMultWatcher  partrain.nexrad   start_inst(alg)   snuff_inst
-LdataMultWatcher  partrain.spol     start_inst(alg)   snuff_inst
+#LdataMultWatcher  partrain.nexrad   start_inst(alg)   snuff_inst
+#LdataMultWatcher  partrain.spol     start_inst(alg)   snuff_inst
 ######################################################################
 # SPOL PID and rain rate
 #
