@@ -1,0 +1,34 @@
+######################################################################
+# EOL BASE crontab - on snow
+#
+#
+####################################################################
+# ============= DO NOT  edit with crontab -e  ======================
+# master copy is:
+#   github.com/NCAR/lrose-projects-eolbase/projDir/control/crontab
+# install with install_crontab
+####################################################################
+# SYSTEM
+#
+# Process restarters
+*/1 * * * *  csh -c "start_auto_restart_check_cron" 1> /dev/null 2> /dev/null
+*/1 * * * *  csh -c "start_procmap_check_cron"      1> /dev/null 2> /dev/null
+#
+# Build links to log date subdirs
+*/5 * * * *   csh -c "start_build_logdir_links" 1> /dev/null 2> /dev/null
+#
+
+#######################################################################
+###############################   MPD   ###############################
+# rsync dial data from the field
+#10-59/15 * * * * /home/rsfdata/git/MPD_base/projDir/system/scripts/run_rsync_dial_data_all >& /tmp/run_rsync_dial_data.log
+# rsync dial data to fog
+#*/5 * * * *  csh -c /home/rsfdata/git/MPD_base/projDir/system/scripts/rsync_mpd_backup_to_fog 1> /dev/null 2> /dev/null
+# check all DIAL transfer (notify if unsuccessful) every 15  min (4 min after the rsync)
+#14-59/15 * * * *  /home/rsfdata/git/MPD_base/projDir/system/scripts/run_check_dial_rsync >& /tmp/run_check_dial_rsync.log
+# process and save data every 15 min starting at 2 minutes after the hour
+#2-59/15 * * * * /home/rsfdata/git/MPD_base/projDir/system/scripts/run_matlab_processing_all >& /tmp/run_matlab_processing_all.log
+## process and save full day of  data once per day at 01:40
+#40 1 * * * /home/rsfdata/git/MPD_base/projDir/system/scripts/run_matlab_yesterday_all >& /tmp/run_matlab_yesterday_all.log
+#######################################################################
+#######################################################################
