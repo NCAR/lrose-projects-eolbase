@@ -228,6 +228,7 @@ def main():
     lengthMissing3=suncalShort['siteTempC'].isna().sum()
     if lengthMissing3!=suncalShort.shape[0]:
         doPlotS1S2temp(options.figureDir,suncalShort)
+        doPlotZDRcorrtemp(options.figureDir,suncalShort)
             
     # If you want to show the plots, uncomment the following line
     # Showing the plots will stop the script so it does not work when run as script
@@ -544,6 +545,47 @@ def doPlotS1S2temp(outFilePath,data):
     startString=firstTime.strftime("%Y%m%d_%H%M%S")
     endString=lastTime.strftime("%Y%m%d_%H%M%S")
     plt.savefig(outFilePath + 's1s2_temps_' + startString + '_to_' + endString+'.png')
+
+    return
+
+########################################################################
+# Plot zdrCorr vs temperatures
+
+def doPlotZDRcorrtemp(outFilePath,data):
+    # Don't remove outliers
+    #rmOut,indsOut=reject_outliers(data['S1S2'],float('inf'))
+    # Remove outliers
+    rmOut,indsOut=reject_outliers(data['S1S2'],4.5)
+    
+    dataRMout=pd.DataFrame([data['zdrCorr'].loc[indsOut],data['siteTempC'].loc[indsOut]])
+    dataRMout=dataRMout.T
+    # set up plots
+
+    widthIn = float(options.mainHeightMm)*3 / 25.4
+    htIn = float(options.mainHeightMm)*3 / 25.4
+    
+    fontSize=12
+    
+    global figNum
+    fig = plt.figure(figNum, (widthIn, htIn))
+    figNum = figNum + 1
+    
+    firstTime=data.datetime.iloc[0]
+    lastTime=data.datetime.iloc[-1]
+    
+    ax1 = fig.add_subplot(1,1,1,xmargin=0.0)
+    
+    dataRMout.plot.scatter(x='siteTempC',y='zdrCorr',ax=ax1,fontsize=fontSize)
+    ax1.set_title('zdrCorr vs site temperature '+str(firstTime)+' to '+str(lastTime), fontsize=fontSize, fontweight='bold')
+    configScattAxis(ax1, -9999, 'Temperature (C)', 'zdrCorr (dB)',fontSize)
+    
+    ax1.yaxis.set_major_formatter(plt.FormatStrFormatter('%.3f'))
+
+    fig.tight_layout()
+       
+    startString=firstTime.strftime("%Y%m%d_%H%M%S")
+    endString=lastTime.strftime("%Y%m%d_%H%M%S")
+    plt.savefig(outFilePath + 'zdrCorr_temps_' + startString + '_to_' + endString+'.png')
 
     return
 ########################################################################
