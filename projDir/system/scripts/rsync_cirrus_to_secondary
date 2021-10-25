@@ -18,6 +18,6 @@ foreach project ( \
     relampago \
     rico \
     timrex \
-    trmm_climo {
+    trmm_climo )
   rsync -av $project rsfdata@snow:/scr/snow1/rsfdata/projects
 end
