@@ -1,0 +1,19 @@
+#! /bin/csh
+#
+
+cd /scr/snow2/rsfdata/projects
+
+foreach project ( \
+    socrates \
+    cset \
+    noreaster \
+    aristo-17 \
+    torero \
+    sangria \
+    soc-test \
+    hcr-test \
+    ideas4 \
+    torero \
+    hsrl)
+  rsync -av $project rsfdata@sleet:/scr/sleet3/rsfdata/projects
+end
