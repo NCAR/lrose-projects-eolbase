@@ -19,5 +19,6 @@ foreach project ( \
     rico \
     timrex \
     trmm_climo )
+  echo "rsyncing project $project"
   rsync -av $project rsfdata@snow:/scr/snow1/rsfdata/projects
 end
