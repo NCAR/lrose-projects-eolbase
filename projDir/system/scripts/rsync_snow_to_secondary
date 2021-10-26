@@ -1,7 +1,7 @@
 #! /bin/csh
 #
 
-cd /scr/snow2/rsfdata/projects
+cd /export/snow2/rsfdata/projects
 
 foreach project ( \
     socrates \
@@ -13,7 +13,7 @@ foreach project ( \
     soc-test \
     hcr-test \
     ideas4 \
-    torero \
     hsrl)
-  rsync -av $project rsfdata@sleet:/scr/sleet3/rsfdata/projects
+  rsync -av $project rsfdata@sleet:/export/sleet3/rsfdata/projects
 end
+

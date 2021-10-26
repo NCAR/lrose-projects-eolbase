@@ -1,0 +1,11 @@
+#! /bin/csh
+#
+
+cd /export/sleet2/rsfdata/projects
+
+foreach project ( \
+    spicule \
+    otrec)
+  rsync -av $project rsfdata@cirrus:/export/cirrus2/rsfdata/projects
+end
+

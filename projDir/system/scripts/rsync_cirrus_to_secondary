@@ -1,7 +1,7 @@
 #! /bin/csh
 #
 
-cd /scr/cirrus1/rsfdata/projects
+cd /export/cirrus1/rsfdata/projects
 
 foreach project ( \
     bomb_snowstorm \
@@ -20,5 +20,5 @@ foreach project ( \
     timrex \
     trmm_climo )
   echo "rsyncing project $project"
-  rsync -av $project rsfdata@snow:/scr/snow1/rsfdata/projects
+  rsync -av $project rsfdata@snow:/export/snow1/rsfdata/projects
 end
