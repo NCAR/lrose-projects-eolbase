@@ -18,8 +18,8 @@
 */5 * * * *   csh -c "start_build_logdir_links" 1> /dev/null 2> /dev/null
 #
 
-#######################################################################
-######################  SYNC DATA RAIDS ###############################
-*/5 * * * * csh -c run_rsync_cirrus_to_secondary 1> /dev/null 2> /dev/null
-#0 */3 * * * /home/rsfdata/git/lrose-projects-eolbase/projDir/system/scripts/run_rsync_cirrus_to_secondary >& /tmp/run_rsync_cirrus_to_secondary.log
-#######################################################################
+######################  SYNC DATA RAIDS ######################################
+#
+10 */3 * * * * csh -c run_rsync_cirrus_to_secondary 1> /dev/null 2> /dev/null
+#
+##############################################################################
