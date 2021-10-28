@@ -19,7 +19,7 @@
 #
 ######################  SYNC DATA RAIDS ######################################
 #
-30 */3 * * * csh -c run_rsync_snow_to_secondary 1> /dev/null 2> /dev/null
+30 */1 * * * csh -c run_rsync_snow_to_secondary 1> /dev/null 2> /dev/null
 #
 ##############################################################################
 

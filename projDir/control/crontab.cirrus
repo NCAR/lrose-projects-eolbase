@@ -20,6 +20,6 @@
 
 ######################  SYNC DATA RAIDS ######################################
 #
-10 */3 * * * csh -c run_rsync_cirrus_to_secondary 1> /dev/null 2> /dev/null
+10 */1 * * * csh -c run_rsync_cirrus_to_secondary 1> /dev/null 2> /dev/null
 #
 ##############################################################################
