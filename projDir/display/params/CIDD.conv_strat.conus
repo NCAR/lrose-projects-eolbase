@@ -104,11 +104,11 @@ field_list = {
 
 PART_2D_US   PART_2D_US   mdvp::no_interp//front.eol.ucar.edu:8080:eolbase/mdv/conv_strat/merged2D?use_http=true&Partition2D conv_strat4.colors dBZ -5 80 5 cart 1 0
 DBZ_COMP_US  DBZ_COMP_US  mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/mrms3D/conus?use_http=true&DBZ dbz.colors   dBZ -5 80 5 cart,comp 1 0
+CONV_COMP_US CONV_COMP_US mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/conv_strat/conus3D?use_http=true&Partition3D conv_strat4.colors   dBZ -5 80 5 cart,comp 1 0
 CONV_2D_US   CONV_2D_US   mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/conv_strat/merged2D?use_http=true&Convectivity2D convectivity.colors   dBZ -5 80 5 cart 1 0
 TEXT_2D_US   TEXT_2D_US   mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/conv_strat/merged2D?use_http=true&DbzTexture2D dbz.colors   dBZ -5 80 5 cart 1 0
 SHALLOW_HT   SHALLOW_HT   mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/conv_strat/merged2D?use_http=true&ShallowHt number.colors km -5 80 5 cart 1 0
 DEEP_HT      DEEP_HT      mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/conv_strat/merged2D?use_http=true&DeepHt number.colors km -5 80 5 cart 1 0
-========      =========  /tmp/spacer&junk  none.colors   m   -5   80  5  dcont   1 0
 
 RUC_TEMP     RUC_TEMP     mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/ruc?use_http=true&TMP temp.colors C -5 80 5 cart 1 0
 RUC_RH       RUC_RH       mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/ruc?use_http=true&RH  rh.colors   % -5 80 5 cart 1 0
