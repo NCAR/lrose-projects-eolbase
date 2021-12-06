@@ -25,7 +25,7 @@
 ####################################################################
 # MONITORING
 #
-0 * * * *  csh -c "run_monitorSpol_automatic" 1> /dev/null 2> /dev/null
+#0 * * * *  csh -c "run_monitorSpol_automatic" 1> /dev/null 2> /dev/null
 ####################################################################
 # GIT BACKUPS
 # clone all repos once per day
@@ -35,8 +35,8 @@
 # RSYNC CHIVO C-band data from CSU
 # and SPOL moments to CSU
 #
-*/2  * * * *  csh -c "rsync_chivo_raw_from_csu_maui" 1> /dev/null 2> /dev/null
-*/10 * * * *  csh -c "rsync_spol_moments_to_maui" 1> /dev/null 2> /dev/null
+#*/2  * * * *  csh -c "rsync_chivo_raw_from_csu_maui" 1> /dev/null 2> /dev/null
+#*/10 * * * *  csh -c "rsync_spol_moments_to_maui" 1> /dev/null 2> /dev/null
 ####################################################################
 # Maintain ssh tunnel from FL to Marshall for Moments data FMQ
 #
