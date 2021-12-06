@@ -512,7 +512,7 @@ dual_threshold = {
 // Type: string
 //
 
-output_url = "/scr/rain2/rsfdata/projects/pecan/mdv/conv_strat/new-elev2";
+output_url = "/scr/rain2/rsfdata/projects/pecan/mdv/conv_strat/new-final";
 
 ///////////// write_partition /////////////////////////
 //
