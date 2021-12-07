@@ -1,4 +1,4 @@
-#####################################################################################
+<#####################################################################################
 #  CIDD.master
 #  Configurable Interactive Data Display Master Params
 #
@@ -97,42 +97,42 @@ field_list = {
 
 # ConvStrat for PECAN
 
-#MrmsDbz3DComp MrmsDbz3DComp  mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/new?use_http=true&DBZ dbz.colors      dBZ -5 80 5 cart,comp 1 0
-#MrmsDbz3D     MrmsDbz3D      mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/new?use_http=true&DBZ dbz.colors      dBZ -5 80 5 cart 1 0
-#MrmsDbzHidden MrmsDbzHidden  mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/new?use_http=true&DBZ dbz_mrms.colors dBZ -5 80 5 cart 1 0
+#MrmsDbz3DComp MrmsDbz3DComp  mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/mrms_dual_thresh?use_http=true&DBZ dbz.colors      dBZ -5 80 5 cart,comp 1 0
+#MrmsDbz3D     MrmsDbz3D      mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/mrms_dual_thresh?use_http=true&DBZ dbz.colors      dBZ -5 80 5 cart 1 0
+#MrmsDbzHidden MrmsDbzHidden  mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/mrms_dual_thresh?use_http=true&DBZ dbz_mrms.colors dBZ -5 80 5 cart 1 0
 #========      =========  /tmp/spacer&junk  none.colors   m   -5   80  5  dcont   1 0
 
-Dbz3DMax Dbz3DMax mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/new?use_http=true&Dbz3D  dbz.colors   dBZ -5 80 5 cart,comp 1 0
-Dbz3D     Dbz3D     mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/new?use_http=true&Dbz3D  dbz.colors   dBZ -5 80 5 cart 1 0
-FractionActive  FractionActive  mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/new?use_http=true&FractionActive  fraction.colors - -5 80 5 cart 1 0
+Dbz3DMax Dbz3DMax mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/mrms_dual_thresh?use_http=true&Dbz3D  dbz.colors   dBZ -5 80 5 cart,comp 1 0
+Dbz3D     Dbz3D     mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/mrms_dual_thresh?use_http=true&Dbz3D  dbz.colors   dBZ -5 80 5 cart 1 0
+FractionActive  FractionActive  mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/mrms_dual_thresh?use_http=true&FractionActive  fraction.colors - -5 80 5 cart 1 0
 
-DbzTexture3DMax DbzTexture3DMax mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/new?use_http=true&DbzTexture3D dbz.colors - -5 80 5 cart,comp 1 0
-DbzTexture3D     DbzTexture3D     mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/new?use_http=true&DbzTexture3D dbz.colors - -5 80 5 cart 1 0
-DbzTexture2D     DbzTexture2D     mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/new?use_http=true&DbzTexture2D dbz.colors - -5 80 5 cart 1 0
+DbzTexture3DMax DbzTexture3DMax mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/mrms_dual_thresh?use_http=true&DbzTexture3D dbz.colors - -5 80 5 cart,comp 1 0
+DbzTexture3D     DbzTexture3D     mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/mrms_dual_thresh?use_http=true&DbzTexture3D dbz.colors - -5 80 5 cart 1 0
+DbzTexture2D     DbzTexture2D     mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/mrms_dual_thresh?use_http=true&DbzTexture2D dbz.colors - -5 80 5 cart 1 0
 
-Convectivity3DMax  Convectivity3DMax  mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/new?use_http=true&Convectivity3D convectivity.colors - -5 80 5 cart,comp 1 0
-Convectivity3D      Convectivity3D      mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/new?use_http=true&Convectivity3D convectivity.colors - -5 80 5 cart 1 0
-Convectivity2D      Convectivity2D      mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/new?use_http=true&Convectivity2D convectivity.colors - -5 80 5 cart,comp 1 0
+Convectivity3DMax  Convectivity3DMax  mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/mrms_dual_thresh?use_http=true&Convectivity3D convectivity.colors - -5 80 5 cart,comp 1 0
+Convectivity3D      Convectivity3D      mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/mrms_dual_thresh?use_http=true&Convectivity3D convectivity.colors - -5 80 5 cart 1 0
+Convectivity2D      Convectivity2D      mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/mrms_dual_thresh?use_http=true&Convectivity2D convectivity.colors - -5 80 5 cart,comp 1 0
 
-DbzConvMax     DbzConvMax     mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/new?use_http=true&DbzConv         dbz.colors - -5 80 5 cart,comp 1 0
-DbzConv         DbzConv         mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/new?use_http=true&DbzConv         dbz.colors - -5 80 5 cart 1 0
+DbzConvMax     DbzConvMax     mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/mrms_dual_thresh?use_http=true&DbzConv         dbz.colors - -5 80 5 cart,comp 1 0
+DbzConv         DbzConv         mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/mrms_dual_thresh?use_http=true&DbzConv         dbz.colors - -5 80 5 cart 1 0
 ========      =========  /tmp/spacer&junk  none.colors   m   -5   80  5  dcont   1 0
 
-Partition3DMax Partition3DMax  mdvp::no_interp//front.eol.ucar.edu:8080:pecan/mdv/conv_strat/new?use_http=true&Partition3D conv_strat4.colors - -5 80 5 cart,comp 1 0
-Partition3D     Partition3D      mdvp::no_interp//front.eol.ucar.edu:8080:pecan/mdv/conv_strat/new?use_http=true&Partition3D conv_strat4.colors - -5 80 5 cart 1 0
-Partition2D     Partition2D      mdvp::no_interp//front.eol.ucar.edu:8080:pecan/mdv/conv_strat/new?use_http=true&Partition2D conv_strat4.colors - -5 80 5 cart 1 0
+Part3DMax-Dual Part3DMax-Dual  mdvp::no_interp//front.eol.ucar.edu:8080:pecan/mdv/conv_strat/mrms_dual_thresh?use_http=true&Partition3D conv_strat4.colors - -5 80 5 cart,comp 1 0
+Part3D-Dual     Part3D-Dual      mdvp::no_interp//front.eol.ucar.edu:8080:pecan/mdv/conv_strat/mrms_dual_thresh?use_http=true&Partition3D conv_strat4.colors - -5 80 5 cart 1 0
+Part2D-Dual     Part2D-Dual      mdvp::no_interp//front.eol.ucar.edu:8080:pecan/mdv/conv_strat/mrms_dual_thresh?use_http=true&Partition2D conv_strat4.colors - -5 80 5 cart 1 0
 
-Part3DMaxOld Part3DMaxOld  mdvp::no_interp//front.eol.ucar.edu:8080:pecan/mdv/conv_strat/new-elev?use_http=true&Partition3D conv_strat4.colors - -5 80 5 cart,comp 1 0
-Part3DOld    Part3DOld     mdvp::no_interp//front.eol.ucar.edu:8080:pecan/mdv/conv_strat/new-elev?use_http=true&Partition3D conv_strat4.colors - -5 80 5 cart 1 0
-Part2DOld    Part2DOld     mdvp::no_interp//front.eol.ucar.edu:8080:pecan/mdv/conv_strat/new-elev?use_http=true&Partition2D conv_strat4.colors - -5 80 5 cart 1 0
+Part3DMax-Single Part3DMax-Single  mdvp::no_interp//front.eol.ucar.edu:8080:pecan/mdv/conv_strat/mrms_single_thresh?use_http=true&Partition3D conv_strat4.colors - -5 80 5 cart,comp 1 0
+Part3D-Single    Part3D-Single     mdvp::no_interp//front.eol.ucar.edu:8080:pecan/mdv/conv_strat/mrms_single_thresh?use_http=true&Partition3D conv_strat4.colors - -5 80 5 cart 1 0
+Part2D-Single    Part2D-Single     mdvp::no_interp//front.eol.ucar.edu:8080:pecan/mdv/conv_strat/mrms_single_thresh?use_http=true&Partition2D conv_strat4.colors - -5 80 5 cart 1 0
 
-ShallowHt ShallowHt mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/new?use_http=true&ShallowHt number.colors km -5 80 5 cart 1 0
-DeepHt    DeepHt    mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/new?use_http=true&DeepHt    number.colors km -5 80 5 cart 1 0
-Temp      Temp      mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/new?use_http=true&TMP       temp.colors C -5 80 5 cart 1 0
+ShallowHt ShallowHt mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/mrms_dual_thresh?use_http=true&ShallowHt number.colors km -5 80 5 cart 1 0
+DeepHt    DeepHt    mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/mrms_dual_thresh?use_http=true&DeepHt    number.colors km -5 80 5 cart 1 0
+Temp      Temp      mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/mrms_dual_thresh?use_http=true&TMP       temp.colors C -5 80 5 cart 1 0
 
-ConvTops   ConvTops  mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/new?use_http=true&ConvTops     heightkm.colors km -5 80 5 cart 1 0
-StratTops  StratTops mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/new?use_http=true&StratTops    heightkm.colors km -5 80 5 cart 1 0
-EchoTops   EchoTops  mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/new?use_http=true&EchoTops     heightkm.colors km -5 80 5 cart 1 0
+ConvTops   ConvTops  mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/mrms_dual_thresh?use_http=true&ConvTops     heightkm.colors km -5 80 5 cart 1 0
+StratTops  StratTops mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/mrms_dual_thresh?use_http=true&StratTops    heightkm.colors km -5 80 5 cart 1 0
+EchoTops   EchoTops  mdvp:://front.eol.ucar.edu:8080:pecan/mdv/conv_strat/mrms_dual_thresh?use_http=true&EchoTops     heightkm.colors km -5 80 5 cart 1 0
 
 ========      =========  /tmp/spacer&junk  none.colors   m   -5   80  5  dcont   1 0
 ========      =========  /tmp/spacer&junk  none.colors   m   -5   80  5  dcont   1 0
