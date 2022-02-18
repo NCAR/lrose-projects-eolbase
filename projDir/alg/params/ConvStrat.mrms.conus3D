@@ -348,6 +348,44 @@ min_valid_fraction_for_fit = 0.67;
 
 //======================================================================
 //
+// CONVERTING REFLECTIVITY TEXTURE TO CONVECTIVITY.
+//
+// Convectivity ranges from 0 to 1. To convert texture to convectivity, 
+//   we apply a piece-wise linear transfer function. This section defines 
+//   the lower texture limit and the upper texture limit. At or below the 
+//   lower limit convectivity is set to 0. At or above the upper limit 
+//   convectivity is set to 1. Between these two limits convectivity 
+//   varies linearly with texture.
+//
+//======================================================================
+ 
+///////////// texture_limit_low ///////////////////////
+//
+// Lower limit for texture.
+//
+// Below this texture the convectivity is set to 0.
+//
+//
+// Type: double
+//
+
+texture_limit_low = 0;
+
+///////////// texture_limit_high //////////////////////
+//
+// Upper limit for texture.
+//
+// Above this texture the convectivity is set to 1. Between the limits 
+//   convectivity varies linearly with texture.
+//
+//
+// Type: double
+//
+
+texture_limit_high = 30;
+
+//======================================================================
+//
 // SETTING CONVECTIVE OR STRATIFORM FLAGS BASED ON CONVECTIVITY.
 //
 // If neither is set, we flag the point as MIXED.
@@ -395,6 +433,68 @@ max_convectivity_for_stratiform = 0.4;
 //
 
 min_overlap_for_convective_clumps = 1;
+
+//======================================================================
+//
+// OPTIONS TO USE DUAL THRESHOLDS.
+//
+//======================================================================
+ 
+///////////// use_dual_thresholds /////////////////////
+//
+// Option to use dual thresholds to identify convective clumps.
+//
+// NOTE: this step is performed in 2D. If set, the identification is 
+//   performed in multiple stages. First, an outer convectivity envelope 
+//   is computed, using min_convectivity_for_convective. This is the 
+//   default method. Then, using the dual_threshold parameters, a search 
+//   is performed for clumps within the envelope exceeding the min 
+//   convectivity threshold. If there is only one region at the higher 
+//   convectivity, the entire outer envelope is used. If there are two or 
+//   more regions which meet or exceed the required characteristics, these 
+//   regions are grown back out to the original envelope, but stop growing 
+//   where they meet between the higher-convectivity areas. The final 
+//   clumps are computed by breaking the original clump into regions based 
+//   upon these secondary areas.
+//
+//
+// Type: boolean
+//
+
+use_dual_thresholds = FALSE;
+
+///////////// dual_threshold //////////////////////////
+//
+// Parameters for dual threshold identification. Performed in 2D.
+//
+// See 'use_dual_thresholds'. secondary_threshold: convectivity 
+//   threshold for this stage. A number of regions may be identified at 
+//   the higher threshold. min_fraction_all_parts: we sum the sizes of the 
+//   parts at the higher threshold, and the sum divided by the original 
+//   size of the envelope must exceed this fraction. If it does not the 
+//   original envelope is used. min_fraction_each_part: for any part to be 
+//   valid its size as a fraction of all of the parts must exceed this 
+//   value. min_size_each_part: for any part to be valid its area must 
+//   exceed this value. If it does not the part is ignored. If only 1 part 
+//   is valid, the entire envelope is used.
+//
+//
+// Type: struct
+//   typedef struct {
+//      double secondary_threshold;
+//      double min_fraction_all_parts;
+//      double min_fraction_each_part;
+//      double min_size_each_part;
+//   }
+//
+//
+
+dual_threshold = {
+    secondary_threshold = 0.65,
+    min_fraction_all_parts = 0.33,
+    min_fraction_each_part = 0.02,
+    min_size_each_part = 2
+};
 
 //======================================================================
 //

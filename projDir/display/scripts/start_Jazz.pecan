@@ -1,0 +1,6 @@
+#! /bin/csh
+
+javaws http://rap.ucar.edu/projects/jazz/app/jazz.jnlp -open http://raw.githubusercontent.com/NCAR/lrose-projects-eolbase/master/projDir/display/params/jazz4pecan.xml
+
+
+
