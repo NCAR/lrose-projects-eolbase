@@ -77,9 +77,11 @@
 
 KDDC_REF KDDC_REF /scr/cirrus3/rsfdata/projects/nexrad/cfradial/kddc_combined&REF dbz_fixed_int.colors   dBZ -5 80 5 radial 1 0
 KDDC_VEL KDDC_VEL /scr/cirrus3/rsfdata/projects/nexrad/cfradial/kddc_combined&VEL vel_fixed_int.colors   m/s -5 80 5 radial 1 0
+KDDC_VEL2 KDDC_VEL2 /scr/cirrus3/rsfdata/projects/nexrad/cfradial/kddc_combined&VEL vel_fixed_int2.colors   m/s -5 80 5 radial 1 0
 KDDC_SW  KDDC_SW  /scr/cirrus3/rsfdata/projects/nexrad/cfradial/kddc_combined&SW  width.colors m/s -5 80 5 radial 1 0
 KDDC_ZDR KDDC_ZDR /scr/cirrus3/rsfdata/projects/nexrad/cfradial/kddc_combined&ZDR zdr.colors   dB  -5 80 5 radial 1 0
 KDDC_PHI KDDC_PHI /scr/cirrus3/rsfdata/projects/nexrad/cfradial/kddc_combined&PHI phidp.colors deg -5 80 5 radial 1 0
+KDDC_PHI2 KDDC_PHI2 /scr/cirrus3/rsfdata/projects/nexrad/cfradial/kddc_combined&PHI phidp_5.colors deg -5 80 5 radial 1 0
 KDDC_RHO KDDC_RHO /scr/cirrus3/rsfdata/projects/nexrad/cfradial/kddc_combined&RHO rhohv.colors - -5 80 5 radial 1 0
 
 </GRIDS>
