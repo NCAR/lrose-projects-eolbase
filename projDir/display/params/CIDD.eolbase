@@ -517,6 +517,15 @@ NEX_KFTG_PHIDP KFTG_PHIDP  mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/kftg
 NEX_KFTG_RHOHV KFTG_RHOHV  mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/kftg/moments?use_http=true&RHOHV       rhohv.colors -   -5 80 5 radial 1 0
 NEX_========   ========    mdvp::static//front.eol.ucar.edu:8080:/spacer/moments?use_http=true&Elevation       none.colors  m   -5 80 5 dcont  1 0
 
+NEX_QC_COMP_DBZ2 QC_COMP_DBZ2 mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/mrms/ReflQcComp?use_http=true&CREF_GPML dbz.colors   dBZ -5 80 5 dcont,comp 1 0
+NEX_KFTG_DBZ2   KFTG_DBZ2    mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/kftg/moments?use_http=true&DBZ       dbz.colors   dBZ -5 80 5 radial 1 0
+NEX_KFTG_VEL   KFTG_VEL    mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/kftg/moments?use_http=true&VEL       vel30.colors   m/s -5 80 5 radial 1 0
+NEX_KFTG_VEL2   KFTG_VEL2    mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/kftg/moments?use_http=true&VEL       vel_fixed_int2.colors   m/s -5 80 5 radial 1 0
+NEX_KFTG_PHIDP KFTG_PHIDP  mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/kftg/moments?use_http=true&PHIDP       phidp.colors deg -5 80 5 radial 1 0
+NEX_KFTG_PHIDP2 KFTG_PHIDP2  mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/kftg/moments?use_http=true&PHIDP     phidp_5.colors deg -5 80 5 radial 1 0
+NEX_========   ========    mdvp::static//front.eol.ucar.edu:8080:/spacer/moments?use_http=true&Elevation       none.colors  m   -5 80 5 dcont  1 0
+NEX_========   ========    mdvp::static//front.eol.ucar.edu:8080:/spacer/moments?use_http=true&Elevation       none.colors  m   -5 80 5 dcont  1 0
+
 NEX_COMP_DBZ   COMP_DBZ    mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/mrms/ReflComp?use_http=true&CREF_GPML dbz.colors   dBZ -5 80 5 dcont,comp 1 0
 NEX_KCYS_DBZ   KCYS_DBZ    mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/kcys/moments?use_http=true&DBZ       dbz.colors   dBZ -5 80 5 radial 1 0
 NEX_KCYS_VEL   KCYS_VEL    mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/kcys/moments?use_http=true&VEL       vel30.colors   m/s -5 80 5 radial 1 0
@@ -1155,8 +1164,8 @@ cidd.max_adeg:               360.0
 # List of comma delimited local directories or HTTP URLs to search
 # Searchs . then each directory/URL in order 
 
-cidd.color_file_subdir:   http://front.eol.ucar.edu/color_scales
-cidd.map_file_subdir:     http://front.eol.ucar.edu/maps
+cidd.color_file_subdir:   $(HOME)/git/lrose-displays/color_scales,http://front.eol.ucar.edu/color_scales
+cidd.map_file_subdir:     $(HOME)/git/lrose-displays/maps,http://front.eol.ucar.edu/maps
 
 #
 # Station locator features
