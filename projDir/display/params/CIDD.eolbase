@@ -518,7 +518,7 @@ NEX_KFTG_RHOHV KFTG_RHOHV  mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/kftg
 NEX_========   ========    mdvp::static//front.eol.ucar.edu:8080:/spacer/moments?use_http=true&Elevation       none.colors  m   -5 80 5 dcont  1 0
 
 NEX_QC_COMP_DBZ2 QC_COMP_DBZ2 mdvp:://front.eol.ucar.edu:8080:eolbase/mdv/mrms/ReflQcComp?use_http=true&CREF_GPML dbz.colors   dBZ -5 80 5 dcont,comp 1 0
-NEX_KFTG_DBZ2   KFTG_DBZ2    mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/kftg/moments?use_http=true&DBZ       dbz.colors   dBZ -5 80 5 radial 1 0
+NEX_KFTG_DBZ2   KFTG_DBZ2    mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/kftg/moments?use_http=true&DBZ    dbz_fixed_int.colors   dBZ -5 80 5 radial 1 0
 NEX_KFTG_VEL   KFTG_VEL    mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/kftg/moments?use_http=true&VEL       vel30.colors   m/s -5 80 5 radial 1 0
 NEX_KFTG_VEL2   KFTG_VEL2    mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/kftg/moments?use_http=true&VEL       vel_fixed_int2.colors   m/s -5 80 5 radial 1 0
 NEX_KFTG_PHIDP KFTG_PHIDP  mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/kftg/moments?use_http=true&PHIDP       phidp.colors deg -5 80 5 radial 1 0
