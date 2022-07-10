@@ -6,6 +6,6 @@ cd /export/sleet2/rsfdata/projects
 foreach project ( \
     spicule \
     otrec)
-  rsync -av --exclude time_series $project rsfdata@cirrus:/export/cirrus2/rsfdata/projects
+  rsync -av --exclude time_series --exclude time_series_netcdf $project rsfdata@cirrus:/export/cirrus2/rsfdata/projects
 end
 
