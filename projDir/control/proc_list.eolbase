@@ -65,15 +65,15 @@ MrmsGribIngest  south_east     start_MrmsGribIngest.south_east    snuff_inst
 ######################################################################
 # ConvStrat - convection finder
 #
-ConvStrat  mrms.conus3D   start_inst(alg)               snuff_inst 
-ConvStrat  north_west     start_ConvStrat.north_west    snuff_inst 
-ConvStrat  north_rockies  start_ConvStrat.north_rockies snuff_inst 
-ConvStrat  north_central  start_ConvStrat.north_central snuff_inst 
-ConvStrat  north_east     start_ConvStrat.north_east    snuff_inst 
-ConvStrat  south_west     start_ConvStrat.south_west    snuff_inst 
-ConvStrat  south_central  start_ConvStrat.south_central snuff_inst 
-ConvStrat  south_east     start_ConvStrat.south_east    snuff_inst 
-MdvMerge2  conv_strat     start_inst(ingest)            snuff_inst 
+Ecco        mrms.conus3D   start_inst(alg)               snuff_inst 
+#ConvStrat  north_west     start_ConvStrat.north_west    snuff_inst 
+#ConvStrat  north_rockies  start_ConvStrat.north_rockies snuff_inst 
+#ConvStrat  north_central  start_ConvStrat.north_central snuff_inst 
+#ConvStrat  north_east     start_ConvStrat.north_east    snuff_inst 
+#ConvStrat  south_west     start_ConvStrat.south_west    snuff_inst 
+#ConvStrat  south_central  start_ConvStrat.south_central snuff_inst 
+#ConvStrat  south_east     start_ConvStrat.south_east    snuff_inst 
+#MdvMerge2  conv_strat     start_inst(ingest)            snuff_inst 
 MdvConvert  conv_strat.north_west     start_MdvConvert.conv_strat.north_west    snuff_inst 
 MdvConvert  conv_strat.north_rockies  start_MdvConvert.conv_strat.north_rockies snuff_inst 
 MdvConvert  conv_strat.north_central  start_MdvConvert.conv_strat.north_central snuff_inst 
@@ -81,10 +81,6 @@ MdvConvert  conv_strat.north_east     start_MdvConvert.conv_strat.north_east    
 MdvConvert  conv_strat.south_west     start_MdvConvert.conv_strat.south_west    snuff_inst 
 MdvConvert  conv_strat.south_central  start_MdvConvert.conv_strat.south_central snuff_inst 
 MdvConvert  conv_strat.south_east     start_MdvConvert.conv_strat.south_east    snuff_inst 
-#####################################################################
-# Convective/stratiform partitioning
-#
-#StratFinder        mrms                start_inst(alg)     snuff_inst
 ######################################################################
 # GFS MODEL
 #
@@ -147,8 +143,8 @@ RadxConvert   kpux    start_RadxConvert.kpux   snuff_inst
 ######################################################################
 # CSU CHIVO
 #
-InputWatcher  csu_chivo     start_inst(ingest)    snuff_inst
-RadxConvert   csu_chivo     start_inst(ingest)    snuff_inst
+#InputWatcher  csu_chivo     start_inst(ingest)    snuff_inst
+#RadxConvert   csu_chivo     start_inst(ingest)    snuff_inst
 ######################################################################
 # Storm tracking
 #
@@ -219,10 +215,10 @@ LdataMultWatcher  partrain.spol     start_inst(alg)   snuff_inst
 # HAWAII
 #
 # NEXRAD moments ingest
-RadxConvert   phki    start_RadxConvert.phki   snuff_inst
-RadxConvert   phmo    start_RadxConvert.phmo   snuff_inst
-RadxConvert   phkm    start_RadxConvert.phkm   snuff_inst
-RadxConvert   phwa    start_RadxConvert.phwa   snuff_inst
+#RadxConvert   phki    start_RadxConvert.phki   snuff_inst
+#RadxConvert   phmo    start_RadxConvert.phmo   snuff_inst
+#RadxConvert   phkm    start_RadxConvert.phkm   snuff_inst
+#RadxConvert   phwa    start_RadxConvert.phwa   snuff_inst
 #
 # GFS GRIB data to MDV
 #
@@ -233,10 +229,10 @@ Grib2toMdv    gfs.hawaii  start_inst(ingest)   snuff_inst
 Mdv2SoundingSpdb  hawaii  start_inst(ingest)  snuff_inst
 #
 # NEXRAD precip and pid
-RadxPartRain   phki    start_RadxPartRain.phki   snuff_inst
-RadxPartRain   phmo    start_RadxPartRain.phmo   snuff_inst
-RadxPartRain   phkm    start_RadxPartRain.phkm   snuff_inst
-RadxPartRain   phwa    start_RadxPartRain.phwa   snuff_inst
+#RadxPartRain   phki    start_RadxPartRain.phki   snuff_inst
+#RadxPartRain   phmo    start_RadxPartRain.phmo   snuff_inst
+#RadxPartRain   phkm    start_RadxPartRain.phkm   snuff_inst
+#RadxPartRain   phwa    start_RadxPartRain.phwa   snuff_inst
 #
 # SURFACE OBS
 #
