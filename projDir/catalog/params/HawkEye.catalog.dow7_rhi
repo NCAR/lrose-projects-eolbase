@@ -6,7 +6,7 @@
 //
 // HawkEye is the engineering display for the HAWK moments data.
 //
-// This is a C++ application using the QT4 GUI toolkit.
+// This is a C++ application using the QT GUI toolkit.
 //
 //======================================================================
  
@@ -32,6 +32,19 @@
 //
 
 debug = DEBUG_OFF;
+
+///////////// check_ray_alloc /////////////////////////
+//
+// Print out checks on ray memory allocation.
+//
+// If TRUE, the app will keep track of the number of rays allocated and 
+//   freed, and print out that information every 100 rays.
+//
+//
+// Type: boolean
+//
+
+check_ray_alloc = FALSE;
 
 ///////////// register_with_procmap ///////////////////
 //
@@ -72,8 +85,6 @@ instance = "catalog.dow7_rhi";
 // 	IWRF_FMQ_INPUT: read IWRF moments from an FMQ.
 // 	IWRF_TCP_INPUT: read an IWRF moments stream from a TCP socket.
 // 	SIMULATED_INPUT: internally-generated test pattern data.
-// 	SIMULATED_RHI_INPUT: internally-generated test pattern data for 
-//   RHIs.
 // 	DSR_FMQ_INPUT: deprecated.
 //
 //
@@ -82,7 +93,6 @@ instance = "catalog.dow7_rhi";
 //     IWRF_FMQ_INPUT
 //     IWRF_TCP_INPUT
 //     SIMULATED_INPUT
-//     SIMULATED_RHI_INPUT
 //     DSR_FMQ_INPUT
 //
 
@@ -182,29 +192,17 @@ begin_in_archive_mode = TRUE;
 
 archive_start_time = "2017 01 09 00 00 00";
 
-///////////// archive_scan_interval_secs //////////////
+///////////// archive_time_span_secs //////////////////
 //
-// Time between scans in archive mode (secs).
+// Time span in ARCHIVE mode (secs).
 //
-// Only applies to POLAR (PPI/RHI) mode, not BSCAN mode.
-//
-//
-// Type: int
-//
-
-archive_scan_interval_secs = 300;
-
-///////////// archive_n_scans /////////////////////////
-//
-// Number of scans in archive mode.
-//
-// Only applies to POLAR (PPI/RHI) mode, not BSCAN mode.
+// Archive end time = archive_start_time + archive_time_span.
 //
 //
-// Type: int
+// Type: double
 //
 
-archive_n_scans = 12;
+archive_time_span_secs = 3600;
 
 ///////////// archive_data_url ////////////////////////
 //
@@ -217,19 +215,6 @@ archive_n_scans = 12;
 //
 
 archive_data_url = "$(HOME)/data/cswr/SNOWIE/cfradial/dow7/rhi";
-
-///////////// archive_search_margin_secs //////////////
-//
-// Time margin for search in archive mode (secs).
-//
-// We search for data within this margin, on either side of the required 
-//   time.
-//
-//
-// Type: int
-//
-
-archive_search_margin_secs = 300;
 
 //======================================================================
 //
@@ -319,6 +304,13 @@ show_status_in_gui = {
 ///////////// color_scale_dir /////////////////////////
 //
 // Directory for color scales.
+//
+// You can set this in 2 ways:
+//
+// (a) Set to the absolute path
+//
+// (b)Set as a path relative to the location of the application binary 
+//   executable.
 //
 //
 // Type: string
@@ -417,10 +409,23 @@ use_field_label_in_title = FALSE;
 
 //======================================================================
 //
-// INITIAL MAX RANGE.
+// SET MAX RANGE.
 //
 //======================================================================
  
+///////////// set_max_range ///////////////////////////
+//
+// Option to set the max range to be used for plotting.
+//
+// If FALSE, the max range of the data will be used. If TRUE, 
+//   max_range_km will override the max range in the data.
+//
+//
+// Type: boolean
+//
+
+set_max_range = FALSE;
+
 ///////////// max_range_km ////////////////////////////
 //
 // Max range for the display (km).
@@ -587,6 +592,16 @@ label_font_size = 12;
 
 background_color = "black";
 
+///////////// text_color //////////////////////////////
+//
+// Color of text annotation in main display.
+//
+//
+// Type: string
+//
+
+text_color = "yellow";
+
 ///////////// grid_and_range_ring_color ///////////////
 //
 // Color of grids and range rings.
@@ -607,6 +622,16 @@ grid_and_range_ring_color = "white";
 
 range_ring_label_font_size = 8;
 
+///////////// click_cross_color ///////////////////////
+//
+// Color of cross at click point.
+//
+//
+// Type: string
+//
+
+click_cross_color = "cyan";
+
 ///////////// click_cross_size ////////////////////////
 //
 // Size of cross at click point (pixels).
@@ -618,6 +643,16 @@ range_ring_label_font_size = 8;
 //
 
 click_cross_size = 10;
+
+///////////// click_cross_line_width //////////////////
+//
+// Line width for click cross.
+//
+//
+// Type: int
+//
+
+click_cross_line_width = 1;
 
 //======================================================================
 //
@@ -700,6 +735,32 @@ ppi_azimuth_lines_on_at_startup = TRUE;
 //
 
 ppi_main_legend_pos = LEGEND_TOP_LEFT;
+
+///////////// ppi_override_rendering_beam_width ///////
+//
+// Option to override the azimuth beam width for rendering.
+//
+// Normally HawkEye determines the azimuth rendering beam width 
+//   automatically. You can override this and specifcally set the azimuth 
+//   beam width for rendering.
+//
+//
+// Type: boolean
+//
+
+ppi_override_rendering_beam_width = FALSE;
+
+///////////// ppi_rendering_beam_width ////////////////
+//
+// Rendering beam width, if override is active.
+//
+// See 'ppi_override_rendering_beam_width'.
+//
+//
+// Type: double
+//
+
+ppi_rendering_beam_width = 1;
 
 //======================================================================
 //
@@ -923,6 +984,44 @@ rhi_elevation_lines_on_at_startup = FALSE;
 
 rhi_main_legend_pos = LEGEND_TOP_LEFT;
 
+///////////// rhi_beam_queue_size /////////////////////
+//
+// Size of the queue for RHI beams.
+//
+// After the queue reaches this size, older beams are discarded.
+//
+//
+// Type: int
+//
+
+rhi_beam_queue_size = 360;
+
+///////////// rhi_override_rendering_beam_width ///////
+//
+// Option to override the azimuth beam width for rendering.
+//
+// Normally HawkEye determines the azimuth rendering beam width 
+//   automatically. You can override this and specifcally set the azimuth 
+//   beam width for rendering.
+//
+//
+// Type: boolean
+//
+
+rhi_override_rendering_beam_width = FALSE;
+
+///////////// rhi_rendering_beam_width ////////////////
+//
+// Rendering beam width, if override is active.
+//
+// See 'rhi_override_rendering_beam_width'.
+//
+//
+// Type: double
+//
+
+rhi_rendering_beam_width = 1;
+
 //======================================================================
 //
 // BSCAN TIME LIMITS.
@@ -1116,6 +1215,84 @@ bscan_range_in_feet = FALSE;
 //
 
 bscan_range_axis_mode = RANGE_AXIS_ALTITUDE;
+
+//======================================================================
+//
+// BSCAN ANGLE LIMITS.
+//
+//======================================================================
+ 
+///////////// bscan_specify_elevation_limits //////////
+//
+// Specify the min and max elevation angle.
+//
+// If true, only beams within the specified limits will be plotted.
+//
+//
+// Type: boolean
+//
+
+bscan_specify_elevation_limits = FALSE;
+
+///////////// bscan_min_elevation_deg /////////////////
+//
+// Min elevation angle to be plotted (deg).
+//
+// Used if 'bscan_specify_elevation_limits' is true.
+//
+//
+// Type: double
+//
+
+bscan_min_elevation_deg = 89;
+
+///////////// bscan_max_elevation_deg /////////////////
+//
+// Max elevation angle to be plotted (deg).
+//
+// Used if 'bscan_specify_elevation_limits' is true.
+//
+//
+// Type: double
+//
+
+bscan_max_elevation_deg = 91;
+
+///////////// bscan_specify_azimuth_limits ////////////
+//
+// Specify the min and max azimuth angle.
+//
+// If true, only beams within the specified limits will be plotted.
+//
+//
+// Type: boolean
+//
+
+bscan_specify_azimuth_limits = FALSE;
+
+///////////// bscan_min_azimuth_deg ///////////////////
+//
+// Min azimuth angle to be plotted (deg).
+//
+// Used if 'bscan_specify_azimuth_limits' is true.
+//
+//
+// Type: double
+//
+
+bscan_min_azimuth_deg = 89;
+
+///////////// bscan_max_azimuth_deg ///////////////////
+//
+// Max azimuth angle to be plotted (deg).
+//
+// Used if 'bscan_specify_azimuth_limits' is true.
+//
+//
+// Type: double
+//
+
+bscan_max_azimuth_deg = 91;
 
 //======================================================================
 //
@@ -1643,6 +1820,30 @@ images_include_seconds_in_time_part = TRUE;
 
 images_include_field_label_in_file_name = TRUE;
 
+///////////// images_include_scan_type_in_file_name ///
+//
+// Option to include the scan type in the image file name.
+//
+// If TRUE, the scan type will be added to the image file name.
+//
+//
+// Type: boolean
+//
+
+images_include_scan_type_in_file_name = FALSE;
+
+///////////// images_include_scan_id_in_file_name /////
+//
+// Option to include the scan Id in the image file name.
+//
+// If TRUE, the scan Id will be added to the image file name.
+//
+//
+// Type: boolean
+//
+
+images_include_scan_id_in_file_name = FALSE;
+
 ///////////// images_write_latest_data_info ///////////
 //
 // Option to write latest_data_info files when an image is created.
@@ -1750,6 +1951,18 @@ images_archive_start_time = "1970 01 01 00 00 00";
 
 images_archive_end_time = "1970 01 01 00 00 00";
 
+///////////// images_scan_interval_secs ///////////////
+//
+// Time between scans in archive mode (secs).
+//
+// Only applies to POLAR (PPI/RHI) mode, not BSCAN mode.
+//
+//
+// Type: int
+//
+
+images_scan_interval_secs = 300;
+
 ///////////// images_set_sweep_index_list /////////////
 //
 // Option to specify the sweep indexes for the image generation.
@@ -1825,4 +2038,25 @@ sim_start_range_km = -0.3;
 //
 
 sim_gate_spacing_km = 0.02;
+
+//======================================================================
+//
+// CLICK POINT DATA MESSAGING.
+//
+// Writing the click point location to an FMQ in XML format.
+//
+//======================================================================
+ 
+///////////// click_point_fmq_url /////////////////////
+//
+// URL for click point URL.
+//
+// The details of the latest click point are written to an FMQ. The 
+//   format is XML. You can view the FMQ using FmqMon -mode ASCII_PRINT.
+//
+//
+// Type: string
+//
+
+click_point_fmq_url = "/tmp/fmq/click_point";
 
