@@ -25,6 +25,6 @@ xset fp= /usr/X11R6/lib/X11/fonts/misc/,/usr/X11R6/lib/X11/fonts/75dpi/,/usr/X11
 
 setenv PROJ_DIR /opt/local/git/lrose-projects-eolbase/projDir
 cd $PROJ_DIR/display/params
-/opt/local/lrose/bin/CIDD -font fixed -p CIDD.dynamo.lwc
+/opt/local/cidd/bin/CIDD -font fixed -p CIDD.dynamo.lwc
 
 

@@ -26,7 +26,7 @@ xset fp= /usr/X11R6/lib/X11/fonts/misc/,/usr/X11R6/lib/X11/fonts/75dpi/,/usr/X11
 # start CIDD
 
 setenv PROJ_DIR /opt/local/git/lrose-projects-eolbase/projDir
-/opt/local/lrose/bin/CIDD -font fixed -p $PROJ_DIR/display/params/CIDD.pecan2 >& /dev/null &
+/opt/local/cidd/bin/CIDD -font fixed -p $PROJ_DIR/display/params/CIDD.pecan2 >& /dev/null &
 
 
 
