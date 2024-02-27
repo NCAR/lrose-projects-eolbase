@@ -1,19 +1,12 @@
 #! /bin/csh
 #
 
-cd /export/snow2/rsfdata/projects
+cd /export/virga1/rsfdata/projects
 
-foreach project ( \
-    socrates \
-    cset \
-    noreaster \
-    aristo-17 \
-    torero \
-    sangria \
-    soc-test \
-    hcr-test \
-    ideas4 \
-    hsrl)
-  rsync -av $project rsfdata@sleet:/export/sleet3/rsfdata/projects
-end
+rsync -av --exclude time_series --exclude time_series_netcdf spicule rsfdata@cirrus:/export/cirrus2/rsfdata/projects
+
+cd /export/virga2/rsfdata/projects
+
+rsync -av socrates rsfdata@cirrus:/export/sleet3/rsfdata/projects
+
 
