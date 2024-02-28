@@ -7,6 +7,6 @@ rsync -av --exclude time_series --exclude time_series_netcdf spicule rsfdata@cir
 
 cd /export/virga2/rsfdata/projects
 
-rsync -av socrates rsfdata@cirrus:/export/sleet3/rsfdata/projects
+rsync -av socrates rsfdata@sleet:/export/sleet3/rsfdata/projects
 
 
