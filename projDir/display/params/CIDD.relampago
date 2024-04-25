@@ -254,17 +254,53 @@ PER_WIDTH PER_WIDTH  mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/PER?use_
 ========   ========  mdvp::static//front.eol.ucar.edu:8080:/spacer/moments?use_http=true&Elevation       none.colors  m   -5 80 5 cont  1 0
 ========   ========  mdvp::static//front.eol.ucar.edu:8080:/spacer/moments?use_http=true&Elevation       none.colors  m   -5 80 5 cont  1 0
 
-CHIVO_DBZ    CHIVO_DBZ    mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/csu_chivo_plus/sur?use_http=true&DZ_qc     dbz.colors     dBZ  -5 80 5 radial 1 0
-CHIVO_VEL    CHIVO_VEL    mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/csu_chivo_plus/sur?use_http=true&VR_qc     vel.colors     m/s  -5 80 5 radial 1 0
-CHIVO_WIDTH  CHIVO_WIDTH  mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/csu_chivo_plus/sur?use_http=true&spectrum_width   width.colors   m/s  -5 80 5 radial 1 0
-CHIVO_ZDR    CHIVO_ZDR    mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/csu_chivo_plus/sur?use_http=true&ZDR_qc     zdr.colors     dB   -5 80 5 radial 1 0
-CHIVO_RHOHV  CHIVO_RHOHV  mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/csu_chivo_plus/sur?use_http=true&RHOHV_qc   rhohv.colors   -    -5 80 5 radial 1 0
-CHIVO_PHIDP  CHIVO_PHIDP  mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/csu_chivo_plus/sur?use_http=true&PHIDP_qc   phidp_360.colors deg  -5 80 5 radial 1 0
-CHIVO_KDP    CHIVO_KDP    mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/csu_chivo_plus/sur?use_http=true&KDP_qc     kdp.colors     deg/km -5 80 5 radial 1 0
-CHIVO_SQI    CHIVO_SQI    mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/csu_chivo_plus/sur?use_http=true&normalized_coherent_power   ncp.colors     -    -5 80 5 radial 1 0
+CHIVO_SUR_DBZ    CHIVO_SUR_DBZ    mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/csu_chivo_plus/sur?use_http=true&DZ_qc     dbz.colors     dBZ  -5 80 5 radial 1 0
+CHIVO_SUR_VEL    CHIVO_SUR_VEL    mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/csu_chivo_plus/sur?use_http=true&VR_qc     vel.colors     m/s  -5 80 5 radial 1 0
+CHIVO_SUR_WIDTH  CHIVO_SUR_WIDTH  mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/csu_chivo_plus/sur?use_http=true&spectrum_width   width.colors   m/s  -5 80 5 radial 1 0
+CHIVO_SUR_ZDR    CHIVO_SUR_ZDR    mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/csu_chivo_plus/sur?use_http=true&ZDR_qc     zdr.colors     dB   -5 80 5 radial 1 0
+CHIVO_SUR_RHOHV  CHIVO_SUR_RHOHV  mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/csu_chivo_plus/sur?use_http=true&RHOHV_qc   rhohv.colors   -    -5 80 5 radial 1 0
+CHIVO_SUR_PHIDP  CHIVO_SUR_PHIDP  mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/csu_chivo_plus/sur?use_http=true&PHIDP_qc   phidp_360.colors deg  -5 80 5 radial 1 0
+CHIVO_SUR_KDP    CHIVO_SUR_KDP    mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/csu_chivo_plus/sur?use_http=true&KDP_qc     kdp.colors     deg/km -5 80 5 radial 1 0
+CHIVO_SUR_SQI    CHIVO_SUR_SQI    mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/csu_chivo_plus/sur?use_http=true&normalized_coherent_power   ncp.colors     -    -5 80 5 radial 1 0
 
-CHIVO_HID  CHIVO_HID  mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/csu_chivo_plus/sur?use_http=true&HydroClass_qc   hid_csu.colors     -  -5 80 5 radial 1 0
-CHIVO_RATE CHIVO_RATE mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/csu_chivo_plus/sur?use_http=true&RainRate        precip.colors  -  -5 80 5 radial 1 0
+CHIVO_SUR_HID  CHIVO_SUR_HID  mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/csu_chivo_plus/sur?use_http=true&HydroClass_qc   hid_csu.colors     -  -5 80 5 radial 1 0
+CHIVO_SUR_RATE CHIVO_SUR_RATE mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/csu_chivo_plus/sur?use_http=true&RainRate        precip.colors  -  -5 80 5 radial 1 0
+========   ========   mdvp::static//front.eol.ucar.edu:8080:/spacer/moments?use_http=true&Elevation       none.colors  m   -5 80 5 cont  1 0
+========   ========   mdvp::static//front.eol.ucar.edu:8080:/spacer/moments?use_http=true&Elevation       none.colors  m   -5 80 5 cont  1 0
+========   ========   mdvp::static//front.eol.ucar.edu:8080:/spacer/moments?use_http=true&Elevation       none.colors  m   -5 80 5 cont  1 0
+========   ========   mdvp::static//front.eol.ucar.edu:8080:/spacer/moments?use_http=true&Elevation       none.colors  m   -5 80 5 cont  1 0
+========   ========   mdvp::static//front.eol.ucar.edu:8080:/spacer/moments?use_http=true&Elevation       none.colors  m   -5 80 5 cont  1 0
+========   ========   mdvp::static//front.eol.ucar.edu:8080:/spacer/moments?use_http=true&Elevation       none.colors  m   -5 80 5 cont  1 0
+
+#CHIVO_PPI_DBZ    CHIVO_PPI_DBZ    mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/csu_chivo_plus/ppi?use_http=true&DZ_qc     dbz.colors     dBZ  -5 80 5 radial 1 0
+#CHIVO_PPI_VEL    CHIVO_PPI_VEL    mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/csu_chivo_plus/ppi?use_http=true&VR_qc     vel.colors     m/s  -5 80 5 radial 1 0
+#CHIVO_PPI_WIDTH  CHIVO_PPI_WIDTH  mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/csu_chivo_plus/ppi?use_http=true&spectrum_width   width.colors   m/s  -5 80 5 radial 1 0
+#CHIVO_PPI_ZDR    CHIVO_PPI_ZDR    mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/csu_chivo_plus/ppi?use_http=true&ZDR_qc     zdr.colors     dB   -5 80 5 radial 1 0
+#CHIVO_PPI_RHOHV  CHIVO_PPI_RHOHV  mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/csu_chivo_plus/ppi?use_http=true&RHOHV_qc   rhohv.colors   -    -5 80 5 radial 1 0
+#CHIVO_PPI_PHIDP  CHIVO_PPI_PHIDP  mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/csu_chivo_plus/ppi?use_http=true&PHIDP_qc   phidp_360.colors deg  -5 80 5 radial 1 0
+#CHIVO_PPI_KDP    CHIVO_PPI_KDP    mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/csu_chivo_plus/ppi?use_http=true&KDP_qc     kdp.colors     deg/km -5 80 5 radial 1 0
+#CHIVO_PPI_SQI    CHIVO_PPI_SQI    mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/csu_chivo_plus/ppi?use_http=true&normalized_coherent_power   ncp.colors     -    -5 80 5 radial 1 0
+
+#CHIVO_PPI_HID  CHIVO_PPI_HID  mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/csu_chivo_plus/ppi?use_http=true&HydroClass_qc   hid_csu.colors     -  -5 80 5 radial 1 0
+#CHIVO_PPI_RATE CHIVO_PPI_RATE mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/csu_chivo_plus/ppi?use_http=true&RainRate        precip.colors  -  -5 80 5 radial 1 0
+#========   ========   mdvp::static//front.eol.ucar.edu:8080:/spacer/moments?use_http=true&Elevation       none.colors  m   -5 80 5 cont  1 0
+#========   ========   mdvp::static//front.eol.ucar.edu:8080:/spacer/moments?use_http=true&Elevation       none.colors  m   -5 80 5 cont  1 0
+#========   ========   mdvp::static//front.eol.ucar.edu:8080:/spacer/moments?use_http=true&Elevation       none.colors  m   -5 80 5 cont  1 0
+#========   ========   mdvp::static//front.eol.ucar.edu:8080:/spacer/moments?use_http=true&Elevation       none.colors  m   -5 80 5 cont  1 0
+#========   ========   mdvp::static//front.eol.ucar.edu:8080:/spacer/moments?use_http=true&Elevation       none.colors  m   -5 80 5 cont  1 0
+#========   ========   mdvp::static//front.eol.ucar.edu:8080:/spacer/moments?use_http=true&Elevation       none.colors  m   -5 80 5 cont  1 0
+
+CHIVO_SEC_DBZ    CHIVO_SEC_DBZ    mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/csu_chivo_plus/sec?use_http=true&DZ_qc     dbz.colors     dBZ  -5 80 5 radial 1 0
+CHIVO_SEC_VEL    CHIVO_SEC_VEL    mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/csu_chivo_plus/sec?use_http=true&VR_qc     vel.colors     m/s  -5 80 5 radial 1 0
+CHIVO_SEC_WIDTH  CHIVO_SEC_WIDTH  mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/csu_chivo_plus/sec?use_http=true&spectrum_width   width.colors   m/s  -5 80 5 radial 1 0
+CHIVO_SEC_ZDR    CHIVO_SEC_ZDR    mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/csu_chivo_plus/sec?use_http=true&ZDR_qc     zdr.colors     dB   -5 80 5 radial 1 0
+CHIVO_SEC_RHOHV  CHIVO_SEC_RHOHV  mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/csu_chivo_plus/sec?use_http=true&RHOHV_qc   rhohv.colors   -    -5 80 5 radial 1 0
+CHIVO_SEC_PHIDP  CHIVO_SEC_PHIDP  mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/csu_chivo_plus/sec?use_http=true&PHIDP_qc   phidp_360.colors deg  -5 80 5 radial 1 0
+CHIVO_SEC_KDP    CHIVO_SEC_KDP    mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/csu_chivo_plus/sec?use_http=true&KDP_qc     kdp.colors     deg/km -5 80 5 radial 1 0
+CHIVO_SEC_SQI    CHIVO_SEC_SQI    mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/csu_chivo_plus/sec?use_http=true&normalized_coherent_power   ncp.colors     -    -5 80 5 radial 1 0
+
+CHIVO_SEC_HID  CHIVO_SEC_HID  mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/csu_chivo_plus/sec?use_http=true&HydroClass_qc   hid_csu.colors     -  -5 80 5 radial 1 0
+CHIVO_SEC_RATE CHIVO_SEC_RATE mdvp:://front.eol.ucar.edu:8080:relampago/cfradial/csu_chivo_plus/sec?use_http=true&RainRate        precip.colors  -  -5 80 5 radial 1 0
 ========   ========   mdvp::static//front.eol.ucar.edu:8080:/spacer/moments?use_http=true&Elevation       none.colors  m   -5 80 5 cont  1 0
 ========   ========   mdvp::static//front.eol.ucar.edu:8080:/spacer/moments?use_http=true&Elevation       none.colors  m   -5 80 5 cont  1 0
 ========   ========   mdvp::static//front.eol.ucar.edu:8080:/spacer/moments?use_http=true&Elevation       none.colors  m   -5 80 5 cont  1 0
