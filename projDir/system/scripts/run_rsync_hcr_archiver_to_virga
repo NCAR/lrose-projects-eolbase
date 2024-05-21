@@ -1,0 +1,11 @@
+#! /bin/csh
+
+cd ~/git/HCR_configuration/projDir/system/scripts
+
+snuff rsyncArchiverToVirga
+snuff rsync
+
+./rsyncArchiverToVirga |& \
+	LogFilter -d $ERRORS_LOG_DIR -p rsyncArchiverToVirga -i daily >& /dev/null &
+endif
+

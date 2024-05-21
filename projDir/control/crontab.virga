@@ -20,5 +20,9 @@
 #
 30 */1 * * * csh -c run_rsync_virga_to_secondary 1> /dev/null 2> /dev/null
 #
+######################  SYNC DATA FROM HCR ARCHIVER ############################
+#
+10 1 * * * csh -c run_rsync_hcr_archiver_to_virga 1> /dev/null 2> /dev/null
+#
 ##############################################################################
 
