@@ -48,14 +48,14 @@ field_list = {
   { "SECTORS-DRX",  "SECDRX_" },
   { "SPOL",  "SPOL_" },
   { "Satellite", "SAT_"},
-  { "KBAND",  "KBAND_" },
   { "NEXRAD moments", "NEX_" },
   { "NEXRAD PID/precip", "NEXP_ " },
   { "REFRACT",  "REFR_" },
   { "Surface", "SURF_" },
   { "Model", "MODEL_"},
   { "Lightning", "LTG_"},
-  { "SPOL sectors",  "SPSEC_" }
+  { "SPOL-DRX sectors",  "SPSEC_" },
+  { "RVP8",  "SPOL_" }
 };
 
 </GUI_CONFIG>
@@ -111,15 +111,6 @@ field_list = {
 
 #################################
 # SPOLDRX MOMENTS - SURVEILLANCE
-
-SDRX_======== ==SDRX==  mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/spoldrx/sur?use_http=true&DBZ_F      dbz.colors   dBZ -5 80 5 radial 1 0
-SDRX_======== ==SDRX==  mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/spoldrx/sur?use_http=true&DBZ        dbz.colors   dBZ -5 80 5 radial 1 0
-SDRX_======== ==SDRX==  mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/spoldrx/sur?use_http=true&DBZ_F      dbz_bragg.colors   dBZ -5 80 5 radial 1 0
-SDRX_======== ==SDRX==  mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/spoldrx/sur?use_http=true&DBZ        dbz_bragg.colors   dBZ -5 80 5 radial 1 0
-SDRX_======== ==SDRX==  mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/spoldrx/sur?use_http=true&VEL_F      vel30.colors   m/s -5 80 5 radial 1 0
-SDRX_======== ==SDRX==  mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/spoldrx/sur?use_http=true&VEL        vel30.colors   m/s -5 80 5 radial 1 0
-SDRX_======== ==SDRX==  mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/spoldrx/sur?use_http=true&VEL_F      vel_nexrad.colors   m/s -5 80 5 radial 1 0
-SDRX_======== ==SDRX==  mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/spoldrx/sur?use_http=true&VEL_ALT_F   vel30.colors   m/s -5 80 5 radial 1 0
 
 SDRX_DBZ_F     SDRX_DBZ_F      mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/spoldrx/sur?use_http=true&DBZ_F      dbz.colors   dBZ -5 80 5 radial 1 0
 SDRX_DBZ       SDRX_DBZ        mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/spoldrx/sur?use_http=true&DBZ        dbz.colors   dBZ -5 80 5 radial 1 0
@@ -300,14 +291,14 @@ SECDRX_CLUT        SECDRX_CLUT      mdvp:://front.eol.ucar.edu:8080:eolbase/cfra
 ##############################
 # SPOL MOMENTS - SURVEILLANCE
 
-#SPOL_======== ==SPOL==  mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/moments/sband/sur?use_http=true&DBZ_F      dbz.colors   dBZ -5 80 5 radial 1 0
-#SPOL_======== ==SPOL==  mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
-#SPOL_======== ==SPOL==  mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
-#SPOL_======== ==SPOL==  mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
-#SPOL_======== ==SPOL==  mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
-#SPOL_======== ==SPOL==  mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
-#SPOL_======== ==SPOL==  mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
-#SPOL_======== ==SPOL==  mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
+RVP8_======== ==RVP8==  mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/moments/sband/sur?use_http=true&DBZ_F      dbz.colors   dBZ -5 80 5 radial 1 0
+RVP8_======== ==RVP8==  mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
+RVP8_======== ==RVP8==  mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
+RVP8_======== ==RVP8==  mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
+RVP8_======== ==RVP8==  mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
+RVP8_======== ==RVP8==  mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
+RVP8_======== ==RVP8==  mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
+RVP8_======== ==RVP8==  mdvp::static//localhost::/spacer?&None  none.colors   m   0 0 0 dcont 0 0
 
 SPOL_DBZ_F     SPOL_DBZ_F      mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sur?use_http=true&DBZ_F      dbz.colors   dBZ -5 80 5 radial 1 0
 SPOL_DBZ       SPOL_DBZ        mdvp:://front.eol.ucar.edu:8080:eolbase/cfradial/spol/moments/sband/sur?use_http=true&DBZ        dbz.colors   dBZ -5 80 5 radial 1 0

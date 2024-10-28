@@ -52,9 +52,11 @@ LtgSpdb2Mdv         nldn               start_inst(ingest)  snuff_inst
 ######################################################################
 # MRMS radar mosaic
 #
-InputWatcher    mrms_MergedDbzQC  start_inst(ingest)      snuff_inst 
-MrmsGribIngest  conus             start_inst(ingest)      snuff_inst 
-MrmsGribIngest  conus3D           start_inst(ingest)      snuff_inst 
+
+##InputWatcher    mrms_MergedDbzQC  start_inst(ingest)      snuff_inst 
+##MrmsGribIngest  conus             start_inst(ingest)      snuff_inst 
+##MrmsGribIngest  conus3D           start_inst(ingest)      snuff_inst 
+
 #MrmsGribIngest  north_west     start_MrmsGribIngest.north_west    snuff_inst 
 #MrmsGribIngest  north_rockies  start_MrmsGribIngest.north_rockies snuff_inst 
 #MrmsGribIngest  north_central  start_MrmsGribIngest.north_central snuff_inst 
@@ -65,7 +67,9 @@ MrmsGribIngest  conus3D           start_inst(ingest)      snuff_inst
 ######################################################################
 # ConvStrat - convection finder
 #
-Ecco        mrms.conus3D   start_inst(alg)               snuff_inst 
+
+##Ecco        mrms.conus3D   start_inst(alg)               snuff_inst 
+
 #ConvStrat  north_west     start_ConvStrat.north_west    snuff_inst 
 #ConvStrat  north_rockies  start_ConvStrat.north_rockies snuff_inst 
 #ConvStrat  north_central  start_ConvStrat.north_central snuff_inst 
@@ -74,13 +78,15 @@ Ecco        mrms.conus3D   start_inst(alg)               snuff_inst
 #ConvStrat  south_central  start_ConvStrat.south_central snuff_inst 
 #ConvStrat  south_east     start_ConvStrat.south_east    snuff_inst 
 #MdvMerge2  conv_strat     start_inst(ingest)            snuff_inst 
-MdvConvert  conv_strat.north_west     start_MdvConvert.conv_strat.north_west    snuff_inst 
-MdvConvert  conv_strat.north_rockies  start_MdvConvert.conv_strat.north_rockies snuff_inst 
-MdvConvert  conv_strat.north_central  start_MdvConvert.conv_strat.north_central snuff_inst 
-MdvConvert  conv_strat.north_east     start_MdvConvert.conv_strat.north_east    snuff_inst 
-MdvConvert  conv_strat.south_west     start_MdvConvert.conv_strat.south_west    snuff_inst 
-MdvConvert  conv_strat.south_central  start_MdvConvert.conv_strat.south_central snuff_inst 
-MdvConvert  conv_strat.south_east     start_MdvConvert.conv_strat.south_east    snuff_inst 
+
+##MdvConvert  conv_strat.north_west     start_MdvConvert.conv_strat.north_west    snuff_inst 
+##MdvConvert  conv_strat.north_rockies  start_MdvConvert.conv_strat.north_rockies snuff_inst 
+##MdvConvert  conv_strat.north_central  start_MdvConvert.conv_strat.north_central snuff_inst 
+##MdvConvert  conv_strat.north_east     start_MdvConvert.conv_strat.north_east    snuff_inst 
+##MdvConvert  conv_strat.south_west     start_MdvConvert.conv_strat.south_west    snuff_inst 
+##MdvConvert  conv_strat.south_central  start_MdvConvert.conv_strat.south_central snuff_inst 
+##MdvConvert  conv_strat.south_east     start_MdvConvert.conv_strat.south_east    snuff_inst 
+
 ######################################################################
 # GFS MODEL
 #
