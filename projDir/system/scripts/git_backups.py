@@ -107,8 +107,6 @@ def main():
     repos.append("git@github.com:ncar/titan-web")
     repos.append("git@github.com:ncar/xpol-configuration")
 
-    repos.append("git@github.com:ncar/apar")
-
     repos.append("git@github.com:mmbell/fractl")
     repos.append("git@github.com:mmbell/samurai")
     repos.append("git@github.com:mmbell/vortrac")
