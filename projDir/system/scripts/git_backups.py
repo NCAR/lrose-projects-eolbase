@@ -67,7 +67,10 @@ def main():
     repos = []
     repos.append("git@github.com:ncar/lrose-core")
     repos.append("git@github.com:ncar/CfRadial")
+    repos.append("git@github.com:ncar/cloudSat_ecco-v")
+    repos.append("git@github.com:ncar/eol-rsf-dm")
     repos.append("git@github.com:ncar/HCR_instrument")
+    repos.append("git@github.com:ncar/HCR_configuration")
     repos.append("git@github.com:ncar/hsrl_configuration")
     repos.append("git@github.com:ncar/hsrl_instrument")
     repos.append("git@github.com:ncar/ka-band_instrument")
@@ -77,6 +80,7 @@ def main():
     repos.append("git@github.com:ncar/lrose-docs")
     repos.append("git@github.com:ncar/lrose-docker")
     repos.append("git@github.com:ncar/lrose-eumetsat")
+    repos.append("git@github.com:ncar/lrose-ecco")
     repos.append("git@github.com:ncar/lrose-examples")
     repos.append("git@github.com:ncar/lrose-hurricane-lane")
     repos.append("git@github.com:ncar/lrose-lucid")
