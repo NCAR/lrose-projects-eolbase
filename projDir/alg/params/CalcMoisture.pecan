@@ -23,9 +23,10 @@
 ///////////// debug ///////////////////////////////////
 //
 // debug flag.
-// Debug flag.
-// Type: boolean
 //
+// Debug flag.
+//
+// Type: boolean
 
 debug = FALSE;
 
@@ -38,9 +39,10 @@ debug = FALSE;
 ///////////// instance ////////////////////////////////
 //
 // Process instance.
-// Used for registration with procmap.
-// Type: string
 //
+// Used for registration with procmap.
+//
+// Type: string
 
 instance = "pecan";
 
@@ -55,6 +57,7 @@ instance = "pecan";
 ///////////// trigger_mode ////////////////////////////
 //
 // Input triggering mode.
+//
 // In LATEST_DATA mode, the program waits for N field data before doing 
 //   any processing.
 // In TIME_LIST mode, the program operates on archive data as specified 
@@ -64,13 +67,13 @@ instance = "pecan";
 // Options:
 //     LATEST_DATA
 //     TIME_LIST
-//
 
 trigger_mode = LATEST_DATA;
 
 ///////////// time_list_trigger ///////////////////////
 //
 // Trigger information used when using the TIME_LIST trigger.
+//
 // 	start_time specifies the archive start time in any format recognized 
 //   by the DateTime class.
 // 	end_time specifies the archive end time in any format recognized by 
@@ -81,7 +84,6 @@ trigger_mode = LATEST_DATA;
 //      string start_time;
 //      string end_time;
 //   }
-//
 //
 
 time_list_trigger = {
@@ -100,6 +102,7 @@ time_list_trigger = {
 ///////////// n_field /////////////////////////////////
 //
 // Field which contains the calculated N values.
+//
 // 	url - URL for the N field.
 // 	use_field_name - Flag indicating whether to use the field name or 
 //   the field number to identify the N field.
@@ -116,7 +119,6 @@ time_list_trigger = {
 //      long field_num;
 //   }
 //
-//
 
 n_field = {
     url = "mdvp:://localhost:0:$(project)/mdv/refract/spol_refr",
@@ -128,8 +130,8 @@ n_field = {
 ///////////// output_url //////////////////////////////
 //
 // Output URL.
-// Type: string
 //
+// Type: string
 
 output_url = "mdvp:://localhost::$(project)/mdv/refract/spol_moisture";
 
@@ -137,8 +139,8 @@ output_url = "mdvp:://localhost::$(project)/mdv/refract/spol_moisture";
 //
 // Flag indicating whether to compress the calculated fields before 
 //   writing them to the output file.
-// Type: boolean
 //
+// Type: boolean
 
 compress_output_fields = TRUE;
 
@@ -151,8 +153,8 @@ compress_output_fields = TRUE;
 ///////////// station_url /////////////////////////////
 //
 // URL of SPDB database containing station information.
-// Type: string
 //
+// Type: string
 
 station_url = "spdbp:://localhost::$(project)/spdb/metar";
 
@@ -160,6 +162,7 @@ station_url = "spdbp:://localhost::$(project)/spdb/metar";
 //
 // List of stations to use for calculating the mean temperature and 
 //   pressure values.
+//
 // 	name is the name of the station as it appears in the database.
 // 	elevation is the elevation of the station in meters. This elevation 
 //   value is only used if get_elevation_from_data is set to false.
@@ -171,7 +174,6 @@ station_url = "spdbp:://localhost::$(project)/spdb/metar";
 //   }
 //
 // 1D array - variable length.
-//
 
 station_list = {
   {
@@ -194,25 +196,27 @@ station_list = {
 //
 // Flag indicating whether to get the station elevations from the data 
 //   or from the station_list parameter.
+//
 // If set to TRUE, the station elevations are taken from the database. 
 //   If set to FALSE, the station elevations are taken from the 
 //   station_list parameter.
 // This allows you to override the station elevation values in the data 
 //   if they are wrong for some reason.
-// Type: boolean
 //
+// Type: boolean
 
 get_elevation_from_data = TRUE;
 
 ///////////// max_station_valid_secs //////////////////
 //
 // Maximum valid time for station information in seconds.
+//
 // If a station hasn't reported temperature and pressure values within 
 //   this number of seconds before the N field time stamp, the station 
 //   will not be included in the mean temperature and pressure 
 //   calculations.
-// Type: long
 //
+// Type: long
 
 max_station_valid_secs = 3600;
 

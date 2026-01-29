@@ -1,12 +1,12 @@
 /**********************************************************************
- * TDRP params for RefractCalib
+ * TDRP params for RefParams
  **********************************************************************/
 
 //======================================================================
 //
-// RefractCalib.
+// Refract.
 //
-// This program creates the calibration file used by Refract.
+// Common Parameters for the Refract algorithms.
 //
 //======================================================================
  
@@ -18,35 +18,33 @@
 //
 //======================================================================
  
-///////////// debug_level /////////////////////////////
+///////////// debug ///////////////////////////////////
 //
-// Debug level.
+// debug flag.
 //
-// Type: enum
-// Options:
-//     DEBUG_OFF
-//     DEBUG_NORM
-//     DEBUG_EXTRA
-//     DEBUG_VERBOSE
-//
-
-debug_level = DEBUG_NORM;
-
-///////////// write_debug_mdv_files ///////////////////
-//
-// Flag indicating whether to write debug MDV files.
 // Type: boolean
-//
 
-write_debug_mdv_files = TRUE;
+debug = FALSE;
 
-///////////// debug_mdv_url ///////////////////////////
+///////////// verbose /////////////////////////////////
 //
-// Debug MDV file URL.
-// Type: string
+// verbose debug flag.
 //
+// If true, verbose debug messages will be printed.
+//
+// Type: boolean
 
-debug_mdv_url = "mdvp:://localhost::$(project)/mdv/refract/RefractCalib_debug";
+verbose = FALSE;
+
+///////////// debug_show_source_code_method_and_line //
+//
+// Source code methods/line numbers flag.
+//
+// true to show with debug output, ,false to hide.
+//
+// Type: boolean
+
+debug_show_source_code_method_and_line = FALSE;
 
 //======================================================================
 //
@@ -57,114 +55,231 @@ debug_mdv_url = "mdvp:://localhost::$(project)/mdv/refract/RefractCalib_debug";
 ///////////// instance ////////////////////////////////
 //
 // Process instance.
-// Used for registration with procmap.
-// Type: string
 //
+// Used for registration with procmap.
+//
+// Type: string
 
 instance = "spol";
 
 //======================================================================
 //
-// INPUT DATA PARAMETERS.
+// PROCESS TRIGGERING PARAMETERS.
+//
+// Parameters describing the process triggering.
 //
 //======================================================================
  
+///////////// trigger_mode ////////////////////////////
+//
+// Input triggering mode.
+//
+// In LATEST_DATA mode, the program triggers whenever a new input file 
+//   appears.
+// In TIME_LIST mode, the program operates on every input file between 
+//   the start and end times specified on the command line.
+//
+// Type: enum
+// Options:
+//     LATEST_DATA
+//     TIME_LIST
+
+trigger_mode = LATEST_DATA;
+
+///////////// max_valid_secs //////////////////////////
+//
+// Number of seconds the input files are valid.
+//
+// Used only if trigger_mode is set to LATEST_DATA.
+//
+// Type: long
+
+max_valid_secs = 300;
+
+//======================================================================
+//
+// PROCESS I/O PARAMETERS.
+//
+// Parameters describing the input and output locations.
+//
+//======================================================================
+ 
+///////////// input_url ///////////////////////////////
+//
+// Input URL.
+//
+// Type: string
+
+input_url = "mdvp:://localhost::mdv/radar";
+
 ///////////// raw_iq_in_input /////////////////////////
 //
 // Flag indicating whether the raw I and Q values are included in the 
 //   input stream.
+//
 // If true, the raw fields will be read from the input stream. If false, 
 //   the raw fields will be calculated from the NIQ/AIQ values which must 
 //   be inluded in the input stream instead.
-// Type: boolean
 //
+// Type: boolean
 
 raw_iq_in_input = FALSE;
 
 ///////////// raw_i_field_name ////////////////////////
 //
 // Raw I field name in the input stream.
-// Used only if raw_iq_in_input is set to TRUE.
-// Type: string
 //
+// Used only if raw_iq_in_input is set to TRUE.
+//
+// Type: string
 
 raw_i_field_name = "MeanI";
 
 ///////////// raw_q_field_name ////////////////////////
 //
 // Raw Q field name in the input stream.
-// Used only if raw_iq_in_input is set to TRUE.
-// Type: string
 //
+// Used only if raw_iq_in_input is set to TRUE.
+//
+// Type: string
 
 raw_q_field_name = "MeanQ";
 
 ///////////// niq_field_name //////////////////////////
 //
 // NIQ field name in the input stream.
-// Used only if raw_iq_in_input is set to FALSE.
-// Type: string
 //
+// Used only if raw_iq_in_input is set to FALSE.
+//
+// Type: string
 
 niq_field_name = "NIQ";
 
 ///////////// input_niq_scale /////////////////////////
 //
 // Input NIQ scale value.
+//
 // The NIQ value from the input source is multiplied by this value 
 //   before the data is used. For most radars this value should be 0.1. 
 //   For SPOL this value should be 0.025.
-// Type: double
 //
+// Type: double
 
 input_niq_scale = 0.025;
 
 ///////////// invert_target_angle_sign ////////////////
 //
 // Flag indicating whether to invert the sign of the target angles.
+//
 // This fix should be done upstream, but is added here just in case.
 // Used only if raw_iq_in_input is set to FALSE.
-// Type: boolean
 //
+// Type: boolean
 
 invert_target_angle_sign = FALSE;
 
 ///////////// aiq_field_name //////////////////////////
 //
 // AIQ field name in the input stream.
-// Used only if raw_iq_in_input is set to FALSE.
-// Type: string
 //
+// Used only if raw_iq_in_input is set to FALSE.
+//
+// Type: string
 
 aiq_field_name = "AIQ";
+
+///////////// snr_in_input ////////////////////////////
+//
+// Flag indicating whether the SNR field is included in the input 
+//   stream.
+//
+// If true, the SNR field will be read from the input stream. If false, 
+//   the SNR field will be calculated from the power field which must be 
+//   inluded in the input stream.
+// The SNR field is only needed if the raw I/Q values are not included 
+//   in the input files and so must be calculated from the NIQ/AIQ values.
+//
+// Type: boolean
+
+snr_in_input = TRUE;
 
 ///////////// snr_field_name //////////////////////////
 //
 // Signal-to-noise ratio field name in the input stream.
-// Type: string
 //
+// Type: string
 
 snr_field_name = "SNRHC";
+
+///////////// power_field_name ////////////////////////
+//
+// Power field name in the input stream.
+//
+// Type: string
+
+power_field_name = "DM";
+
+///////////// quality_source //////////////////////////
+//
+// Which field to use when calculating the quality value.
+//
+// 	QUALITY_FROM_WIDTH - The quality field is calculated using a 
+//   spectrum width field.
+// 	QUALITY_FROM_CPA - The quality field is calculated using a CPA 
+//   field.
+//
+// Type: enum
+// Options:
+//     QUALITY_FROM_WIDTH
+//     QUALITY_FROM_CPA
+
+quality_source = QUALITY_FROM_WIDTH;
+
+///////////// quality_field_name //////////////////////
+//
+// Name of field to use in the quality calculations.
+//
+// If quality_source is set to QUALITY_FROM_WIDTH then this should be a 
+//   spectrum width field.
+// If quality_source is set to QUALITY_FROM_CPA then this shoudl be a 
+//   probability of clutter field. The probability of clutter field should 
+//   range from 0.0 to 1.0 with 0.0 indicating the gate definitely doesn't 
+//   contain clutter and 1.0 indicating that the gate definitely is 
+//   clutter.
+//
+// Type: string
+
+quality_field_name = "WIDTH";
+
+///////////// output_url //////////////////////////////
+//
+// Output URL.
+//
+// Type: string
+
+output_url = "mdvp:://localhost::apps/refract/src/Refract/TiMREX/output";
 
 ///////////// specify_elevation_by_index //////////////
 //
 // Flag indicating whether to specify the desired elevation by index or 
 //   by angle limits.
+//
 // If true, the elevation is specfied by index in the elevation_num 
 //   parameter.
 // If false, the elevation is specified by angle in the elevation_angle 
 //   parameter.
-// Type: boolean
 //
+// Type: boolean
 
 specify_elevation_by_index = FALSE;
 
 ///////////// elevation_num ///////////////////////////
 //
 // Elevation number to use from the MDV files.
-// Used only if specify_elevation_by_index is set to true.
-// Type: long
 //
+// Used only if specify_elevation_by_index is set to true.
+//
+// Type: long
 
 elevation_num = 0;
 
@@ -173,6 +288,7 @@ elevation_num = 0;
 // The angle limits for the desired elevation angle. Only sweeps with 
 //   elevation angles between these limits will be used in the 
 //   calibration.
+//
 // Used only if specify_elevation_by_index is set to false.
 //
 // Type: struct
@@ -181,182 +297,385 @@ elevation_num = 0;
 //      double max_angle;
 //   }
 //
-//
 
 elevation_angle = {
     min_angle = 0.4,
     max_angle = 0.6
 };
 
-///////////// target_id_file_list /////////////////////
+///////////// scan_mode ///////////////////////////////
 //
-// List of files to use for target identification.
-// Type: string
-// 1D array - variable length.
+// Input scan mode.
 //
+// Type: enum
+// Options:
+//     ALL_SCAN_STRATEGIES
+//     MULTIPLE_ELEV_ONLY
+//     SINGLE_ELEV_ONLY
 
-target_id_file_list = {
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/050119.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/050705.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/051058.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/051643.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/052036.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/052622.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/053015.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/053600.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/053953.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/054539.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/054932.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/055517.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/055910.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/060456.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/060849.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/061434.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/061827.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/062413.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/062806.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/063351.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/063744.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/064330.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/064723.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/065308.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/065701.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/070247.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/070640.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/071225.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/071618.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/072204.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/072557.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/073142.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/073535.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/074120.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/074514.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/075059.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/075452.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/080037.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/080431.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/081016.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/081409.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/081954.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/082347.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/082933.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/083326.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/083911.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/084304.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/084850.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/085243.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/085828.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/090221.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/090807.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/091200.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/091745.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/092138.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/092724.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/093117.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/093702.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/094055.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/094641.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/095034.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/095619.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/100012.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/100558.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/100951.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/101536.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/101929.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/102515.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/102908.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/103453.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/103846.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/104432.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/104825.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/105410.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/105803.mdv"
+scan_mode = MULTIPLE_ELEV_ONLY;
+
+///////////// num_azim ////////////////////////////////
+//
+// Number of azimuths used in data processing.
+//
+// Minimum val: 1
+//
+// Type: long
+
+num_azim = 360;
+
+///////////// num_range_bins //////////////////////////
+//
+// Number of range bins used in data processing.
+//
+// Minimum val: 1
+//
+// Type: long
+
+num_range_bins = 533;
+
+///////////// debug_latlon ////////////////////////////
+//
+// debug lat/lon.
+//
+// Extreme debugging at a point, set to -1,-1 to disable.
+//
+// Type: double
+// 1D array - fixed length - 2 elements.
+
+debug_latlon = {
+ -1,
+ -1
 };
 
+///////////// debug_npt ///////////////////////////////
+//
+// debug npt.
+//
+// Extreme debugging radius around the debug point to keep showing 
+//   debugging, number of gridpoints.
+//
+// Type: int
+
+debug_npt = 1;
+
+/**********************************************************************
+ * TDRP params for Params
+ **********************************************************************/
+
+//======================================================================
+//
+// RefractCalib.
+//
+// This program creates the calibration file used by Refract.
+//
+//======================================================================
+ 
+///////////// write_debug_mdv_files ///////////////////
+//
+// Flag indicating whether to write debug MDV files.
+//
+// Type: boolean
+
+write_debug_mdv_files = TRUE;
+
+///////////// debug_mdv_url ///////////////////////////
+//
+// Debug MDV file URL.
+//
+// Type: string
+
+debug_mdv_url = "mdvp:://localhost::$(project)/mdv/refract/RefractCalib_debug";
+
+///////////// file_list_inputs ////////////////////////
+//
+// Flag indicating whether to use a file list for input data, or a range 
+//   of times.
+//
+// TRUE means use the file list, FALSE means use a range of times.
+//
+// Type: boolean
+
+file_list_inputs = TRUE;
+
+///////////// target_files_host ///////////////////////
+//
+// Host on which target files are found.
+//
+// Type: string
+
+target_files_host = "localhost";
+
+///////////// calibration_files_host //////////////////
+//
+// Host on which calibration files are found.
+//
+// Type: string
+
+calibration_files_host = "localhost";
+
+///////////// target_id_file_list /////////////////////
+//
+// List of files to use for target identification, when 
+//   file_list_inputs=true.
+//
+// Type: string
+// 1D array - variable length.
+
+target_id_file_list = {
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/050119.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/050705.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/051058.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/051643.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/052036.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/052622.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/053015.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/053600.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/053953.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/054539.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/054932.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/055517.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/055910.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/060456.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/060849.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/061434.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/061827.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/062413.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/062806.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/063351.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/063744.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/064330.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/064723.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/065308.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/065701.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/070247.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/070640.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/071225.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/071618.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/072204.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/072557.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/073142.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/073535.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/074120.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/074514.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/075059.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/075452.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/080037.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/080431.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/081016.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/081409.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/081954.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/082347.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/082933.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/083326.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/083911.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/084304.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/084850.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/085243.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/085828.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/090221.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/090807.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/091200.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/091745.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/092138.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/092724.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/093117.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/093702.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/094055.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/094641.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/095034.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/095619.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/100012.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/100558.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/100951.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/101536.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/101929.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/102515.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/102908.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/103453.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/103846.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/104432.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/104825.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/105410.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/105803.mdv"
+};
 
 ///////////// calibration_file_list ///////////////////
 //
-// List of files to use for calibration.
+// List of files to use for calibration, when file_list_inputs=true.
+//
 // Type: string
 // 1D array - variable length.
-//
 
 calibration_file_list = {
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/050119.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/050705.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/051058.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/051643.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/052036.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/052622.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/053015.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/053600.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/053953.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/054539.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/054932.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/055517.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/055910.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/060456.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/060849.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/061434.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/061827.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/062413.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/062806.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/063351.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/063744.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/064330.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/064723.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/065308.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/065701.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/070247.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/070640.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/071225.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/071618.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/072204.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/072557.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/073142.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/073535.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/074120.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/074514.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/075059.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/075452.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/080037.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/080431.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/081016.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/081409.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/081954.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/082347.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/082933.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/083326.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/083911.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/084304.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/084850.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/085243.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/085828.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/090221.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/090807.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/091200.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/091745.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/092138.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/092724.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/093117.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/093702.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/094055.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/094641.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/095034.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/095619.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/100012.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/100558.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/100951.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/101536.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/101929.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/102515.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/102908.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/103453.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/103846.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/104432.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/104825.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/105410.mdv",
-  "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/105803.mdv"
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/050119.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/050705.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/051058.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/051643.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/052036.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/052622.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/053015.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/053600.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/053953.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/054539.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/054932.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/055517.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/055910.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/060456.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/060849.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/061434.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/061827.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/062413.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/062806.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/063351.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/063744.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/064330.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/064723.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/065308.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/065701.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/070247.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/070640.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/071225.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/071618.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/072204.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/072557.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/073142.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/073535.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/074120.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/074514.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/075059.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/075452.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/080037.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/080431.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/081016.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/081409.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/081954.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/082347.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/082933.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/083326.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/083911.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/084304.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/084850.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/085243.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/085828.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/090221.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/090807.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/091200.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/091745.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/092138.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/092724.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/093117.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/093702.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/094055.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/094641.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/095034.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/095619.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/100012.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/100558.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/100951.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/101536.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/101929.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/102515.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/102908.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/103453.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/103846.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/104432.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/104825.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/105410.mdv",
+ "$(DATA_DIR)/$(project)/mdv/refract/spol_cov/20150628/105803.mdv"
+};
+
+///////////// target_files_path ///////////////////////
+//
+// Path with files to use for target identification when 
+//   file_list_inputs = false, can be relative to $RAP_DATA_DIR.
+//
+// Type: string
+
+target_files_path = "./data";
+
+///////////// target_files_time_range /////////////////
+//
+// Starting/ending time for target identification data when 
+//   file_list_inputs = false.
+//
+// Type: struct
+//   typedef struct {
+//      int year;
+//      int month;
+//      int day;
+//      int hour;
+//      int min;
+//      int sec;
+//   }
+//
+// 1D array - fixed length - 2 elements.
+
+target_files_time_range = {
+  {
+    year = 2017,
+    month = 3,
+    day = 21,
+    hour = 0,
+    min = 0,
+    sec = 0
+  }
+  ,
+  {
+    year = 2017,
+    month = 3,
+    day = 22,
+    hour = 0,
+    min = 0,
+    sec = 0
+  }
+};
+
+///////////// calibration_files_path //////////////////
+//
+// Path with files to use for calibration when file_list_inputs = false, 
+//   can be relative to $RAP_DATA_DIR.
+//
+// Type: string
+
+calibration_files_path = "./data";
+
+///////////// calibration_files_time_range ////////////
+//
+// Starting/ending time for calibration data when file_list_inputs = 
+//   false.
+//
+// Type: struct
+//   typedef struct {
+//      int year;
+//      int month;
+//      int day;
+//      int hour;
+//      int min;
+//      int sec;
+//   }
+//
+// 1D array - fixed length - 2 elements.
+
+calibration_files_time_range = {
+  {
+    year = 2017,
+    month = 3,
+    day = 21,
+    hour = 0,
+    min = 0,
+    sec = 0
+  }
+  ,
+  {
+    year = 2017,
+    month = 3,
+    day = 22,
+    hour = 0,
+    min = 0,
+    sec = 0
+  }
 };
 
 //======================================================================
@@ -368,63 +687,61 @@ calibration_file_list = {
 ///////////// ref_file_path ///////////////////////////
 //
 // Reference file path.
+//
 // Full path for the file containing calibration information.  This is 
 //   the file that is created by the calibration and used as input to the 
 //   Refract algorithm.
-// Type: string
 //
+// Type: string
 
 ref_file_path = "$(DATA_DIR)/$(project)/mdv/refract/calib/Refract_calibration.mdv";
 
-///////////// num_azim ////////////////////////////////
+///////////// ref_url /////////////////////////////////
 //
-// Number of azimuths used in data processing.
-// Minimum val: 1
-// Type: long
+// Reference file url.
 //
+// Second path in which time stamped MDV is written so as to be useful 
+//   in display.
+//
+// Type: string
 
-num_azim = 360;
-
-///////////// num_range_bins //////////////////////////
-//
-// Number of range bins.
-// Minimum val: 1
-// Type: long
-//
-
-num_range_bins = 533;
+ref_url = "";
 
 ///////////// beam_width //////////////////////////////
 //
 // Antenna beam width in degrees.
-// Type: double
 //
+// Type: double
 
 beam_width = 0.92;
 
 ///////////// r_min ///////////////////////////////////
 //
 // Min range gate of ground echo.
-// Minimum val: 1
-// Type: long
 //
+// Minimum val: 1
+//
+// Type: long
 
 r_min = 4;
 
 ///////////// side_lobe_pow ///////////////////////////
 //
 // Side lobe power.
+//
 // Echoes below this value of integrated power are considered to be from 
 //   sidelobes.
-// Maximum val: -10
-// Type: double
 //
+// Maximum val: -10
+//
+// Type: double
 
 side_lobe_pow = -50;
 
 ///////////// entry_type //////////////////////////////
 //
 // Type of data entry for the calibration calculation.
+//
 // 	ENTER_N - N is entered directly in the calib_n parameter.
 // 	ENTER_P_T_TD - Pressure is entered in the calib_pressure parameter, 
 //   temperature is entered in the calib_temperature parameter and dew 
@@ -435,46 +752,49 @@ side_lobe_pow = -50;
 // Options:
 //     ENTER_N
 //     ENTER_P_T_TD
-//
 
 entry_type = ENTER_P_T_TD;
 
 ///////////// calib_n /////////////////////////////////
 //
 // N value to use in the calibration.
-// Used only if entry_type is set to ENTER_N.
-// Type: double
 //
+// Used only if entry_type is set to ENTER_N.
+//
+// Type: double
 
 calib_n = 1;
 
 ///////////// calib_pressure //////////////////////////
 //
 // Pressure value to use in the calibration.
+//
 // This is the station pressure, NOT the sea level pressure. Used only 
 //   if entry_type is set to ENTER_P_T_TD.
-// Type: double
 //
+// Type: double
 
-calib_pressure = 936.0;
+calib_pressure = 936;
 
 ///////////// calib_temperature ///////////////////////
 //
 // Temperature value to use in the calibration.
-// Used only if entry_type is set to ENTER_P_T_TD.
-// Type: double
 //
+// Used only if entry_type is set to ENTER_P_T_TD.
+//
+// Type: double
 
-calib_temperature = 19.0;
+calib_temperature = 19;
 
 ///////////// calib_dewpoint_temperature //////////////
 //
 // Dewpoint temperature to use in the calibration.
-// Unsed only if entry_type is set to ENTER_P_T_TD.
-// Type: double
 //
+// Unsed only if entry_type is set to ENTER_P_T_TD.
+//
+// Type: double
 
-calib_dewpoint_temperature = 9.0;
+calib_dewpoint_temperature = 9;
 
 //======================================================================
 //
@@ -488,38 +808,42 @@ calib_dewpoint_temperature = 9.0;
 ///////////// create_strength_colorscale //////////////
 //
 // Flag indicating whether to create the strength colorscale file.
+//
 // This creates a CIDD colorscale file that matches the colors used by 
 //   Frederic Fabry in his original n_viewcalib program.
-// Type: boolean
 //
+// Type: boolean
 
 create_strength_colorscale = FALSE;
 
 ///////////// strength_colorscale_path ////////////////
 //
 // Full path for the strength colorscale file.
-// Used only if create_strength_colorscale is set to true.
-// Type: string
 //
+// Used only if create_strength_colorscale is set to true.
+//
+// Type: string
 
 strength_colorscale_path = "colorscales/strength.colors";
 
 ///////////// create_quality_colorscale ///////////////
 //
 // Flag indicating whether to create the quality colorscale file.
+//
 // This creates a CIDD colorscale file that matches the colors used by 
 //   Frederic Fabry in his original n_viewcalib program.
-// Type: boolean
 //
+// Type: boolean
 
 create_quality_colorscale = FALSE;
 
 ///////////// quality_colorscale_path /////////////////
 //
 // Full path for the quality colorscale file.
-// Used only if create_quality_colorscale is set to true.
-// Type: string
 //
+// Used only if create_quality_colorscale is set to true.
+//
+// Type: string
 
 quality_colorscale_path = "colorscales/quality.colors";
 
