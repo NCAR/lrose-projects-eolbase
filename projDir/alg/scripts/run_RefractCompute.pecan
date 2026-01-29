@@ -1,0 +1,8 @@
+#! /bin/csh
+
+# Write output in MDV format.
+
+cd $PROJ_DIR/alg/params
+
+RefractCompute -params Refract.spol -mode TIME_LIST \
+    -start "2014 7 9 21 15 4" -end "2014 12 1 0 0 0" -debug
