@@ -311,6 +311,12 @@ Ltg_monthly Ltg_monthly  mdvp:://front.eol.ucar.edu:8080:cp2_queensland/mdv/ltg?
 ======== ========  mdvp::static//front.eol.ucar.edu:8080:cp2_queensland/mdv/terrain&Elevation  none.colors   m   -5   80  5  dcont   1 0
 ======== ========  mdvp::static//front.eol.ucar.edu:8080:cp2_queensland/mdv/terrain&Elevation  none.colors   m   -5   80  5  dcont   1 0
 
+======== ========  mdvp::static//front.eol.ucar.edu:8080:cp2_queensland/mdv/terrain&Elevation  none.colors   m   -5   80  5  dcont   1 0
+======== ========  mdvp::static//front.eol.ucar.edu:8080:cp2_queensland/mdv/terrain&Elevation  none.colors   m   -5   80  5  dcont   1 0
+======== ========  mdvp::static//front.eol.ucar.edu:8080:cp2_queensland/mdv/terrain&Elevation  none.colors   m   -5   80  5  dcont   1 0
+======== ========  mdvp::static//front.eol.ucar.edu:8080:cp2_queensland/mdv/terrain&Elevation  none.colors   m   -5   80  5  dcont   1 0
+======== ========  mdvp::static//front.eol.ucar.edu:8080:cp2_queensland/mdv/terrain&Elevation  none.colors   m   -5   80  5  dcont   1 0
+
 #
 </GRIDS>
 
@@ -380,7 +386,6 @@ Queensland Queensland Queensland.map 1 0.0 10000.0    white
 NswCoast   NswCoast NswCoast.map   1  0.0 10000.0     white
 AusCoast   AusCoast AusCoast.map   0  0.0 10000.0     white
 Radars     Radars   radars.map     1  0.0 10000.0     green
-RadarCirc  RadarsCirc radar_circles.map     0  0.0 10000.0 green
 RadarCirc  RadarsCirc radar_circles.map     0  0.0 10000.0 green
 Disdrometer Disdrometer   disdrometer.map     1  0.0 10000.0     red
 Navaids   Navaids   navaids.map     1  0.0 10000.0    yellow
