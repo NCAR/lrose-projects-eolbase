@@ -23,4 +23,4 @@ xset fp= /usr/share/fonts/X11/misc/,/usr/share/fonts/X11/75dpi/,/usr/share/fonts
 xset fp= /usr/share/fonts/misc/,/usr/share/fonts/75dpi/,/usr/share/fonts/100dpi/ >& /dev/null
 xset fp= /usr/X11R6/lib/X11/fonts/misc/,/usr/X11R6/lib/X11/fonts/75dpi/,/usr/X11R6/lib/X11/fonts/100dpi/ >& /dev/null
 
-/home/rsfdata/cidd/bin/CIDD -font fixed -p http://front.eol.ucar.edu/displayParams/CIDD.dynamo.local
+/home/rsfdata/cidd/bin/CIDD -font fixed -p $home/git/lrose-projects-eolbase/projDir/display/params/CIDD.dynamo.local
