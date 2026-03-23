@@ -127,7 +127,7 @@ DBZY_S DBZY_S    mdvp:://front.eol.ucar.edu:8080:rico/cfradial/sandk?use_http=tr
 #------------------------------------------------------------------------------------------
 
 World         World        world_states.map    1      0.0      1000000.0   white
-#Counties      Counties     us_counties.map     0      0.0      10000.0     blue 
+Counties      Counties     us_counties.map     0      0.0      10000.0     blue 
 #States	      States       usa.map             0      0.0      10000.0     white
 </MAPS>
 
