@@ -1207,7 +1207,7 @@ prod_info = {
     url = "spdbp:Rhi2Symprod:ticks//front.eol.ucar.edu:8080:name/spdb/rhi/sband",
     data_type = 0,
     render_type = RENDER_ALL_VALID,
-    on_by_default = TRUE,
+    on_by_default = FALSE,
     minutes_allow_before = 20,
     minutes_allow_after = 10,
     text_off_threshold = 0.4,
@@ -1227,71 +1227,6 @@ prod_info = {
     request_data_on_zoom = FALSE,
     request_data_on_vert_change = FALSE
   }
-  // ,
-  // {
-  //   menu_label = "METARS-simple",
-  //   url = "spdbp:Metar2Symprod:simple//front.eol.ucar.edu:8080:name/spdb/metar",
-  //   data_type = 0,
-  //   render_type = RENDER_LATEST_IN_FRAME,
-  //   on_by_default = FALSE,
-  //   minutes_allow_before = 90.0,
-  //   minutes_allow_after = 0.0,
-  //   text_off_threshold = 0.0,
-  //   request_data_on_zoom = FALSE,
-  //   request_data_on_vert_change = FALSE
-  // }
-  // ,
-  // {
-  //   menu_label = "METARS-full",
-  //   url = "spdbp:Metar2Symprod:labels//front.eol.ucar.edu:8080:name/spdb/metar",
-  //   data_type = 0,
-  //   render_type = RENDER_LATEST_IN_FRAME,
-  //   on_by_default = FALSE,
-  //   minutes_allow_before = 90.0,
-  //   minutes_allow_after = 0.0,
-  //   text_off_threshold = 0.0,
-  //   request_data_on_zoom = FALSE,
-  //   request_data_on_vert_change = FALSE
-  // }
-  // ,
-  // {
-  //   menu_label = "SYN-OBS",
-  //   url = "spdbp:Metar2Symprod:simple//front.eol.ucar.edu:8080:name/spdb/synop_obs",
-  //   data_type = 0,
-  //   render_type = RENDER_LATEST_IN_FRAME,
-  //   on_by_default = FALSE,
-  //   minutes_allow_before = 240.0,
-  //   minutes_allow_after = 6.0,
-  //   text_off_threshold = 0.0,
-  //   request_data_on_zoom = FALSE,
-  //   request_data_on_vert_change = FALSE
-  // }
-  // ,
-  // {
-  //   menu_label = "WWLLN-1hour" ,
-  //   url = "spdbp:Ltg2Symprod:wwlln//front.eol.ucar.edu:8080:name/spdb/wwlln",
-  //   data_type = 0,
-  //   render_type = RENDER_ALL_BEFORE_DATA_TIME,
-  //   on_by_default = FALSE,
-  //   minutes_allow_before = 60.0,
-  //   minutes_allow_after = 0.0,
-  //   text_off_threshold = 0.0,
-  //   FALSE,
-  //   FALSE
-  // }
-  // ,                        
-  // {
-  //   menu_label = "Falcon Track 10-min",
-  //   url = "spdbp:AcTrack2Symprod:10_min//front.eol.ucar.edu:8080:name/spdb/ac_posn/falcon",
-  //   data_type = 0,
-  //   render_type = RENDER_FIRST_BEFORE_FRAME_TIME,
-  //   on_by_default = FALSE,
-  //   minutes_allow_before = 15.0,
-  //   minutes_allow_after = 15.0,
-  //   text_off_threshold = 0.4,
-  //   FALSE,
-  //   FALSE
-  // }
 };
 
 </SYMPRODS> 

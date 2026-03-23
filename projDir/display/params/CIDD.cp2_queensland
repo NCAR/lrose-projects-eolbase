@@ -381,6 +381,7 @@ NswCoast   NswCoast NswCoast.map   1  0.0 10000.0     white
 AusCoast   AusCoast AusCoast.map   0  0.0 10000.0     white
 Radars     Radars   radars.map     1  0.0 10000.0     green
 RadarCirc  RadarsCirc radar_circles.map     0  0.0 10000.0 green
+RadarCirc  RadarsCirc radar_circles.map     0  0.0 10000.0 green
 Disdrometer Disdrometer   disdrometer.map     1  0.0 10000.0     red
 Navaids   Navaids   navaids.map     1  0.0 10000.0    yellow
 BnAtc     BnAtc     BnAirspace.map   1  0.0 10000.0    blue

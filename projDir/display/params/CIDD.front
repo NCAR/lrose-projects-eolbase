@@ -890,9 +890,9 @@ CHILL-PAWNEE-DualDop30 CHILL-PAWNEE-DualDop30  CHILL_PAWNEE_DualDoppler_30.map 0
 CHILL-PAWNEE-DualDop45 CHILL-PAWNEE-DualDop45  CHILL_PAWNEE_DualDoppler_45.map 0      0.0      10000.0    orange
 CHILL-PAWNEE-DualDop60 CHILL-PAWNEE-DualDop60  CHILL_PAWNEE_DualDoppler_60.map 0      0.0      10000.0    orange
 
-KCYS-PAWNEE-DualDop30 KCYS-PAWNEE-DualDop30  KCYS_PAWNEE_DualDoppler_30.map 0      0.0      10000.0    pink
-KCYS-PAWNEE-DualDop45 KCYS-PAWNEE-DualDop45  KCYS_PAWNEE_DualDoppler_45.map 0      0.0      10000.0    pink
-KCYS-PAWNEE-DualDop60 KCYS-PAWNEE-DualDop60  KCYS_PAWNEE_DualDoppler_60.map 0      0.0      10000.0    pink
+#KCYS-PAWNEE-DualDop30 KCYS-PAWNEE-DualDop30  KCYS_PAWNEE_DualDoppler_30.map 0      0.0      10000.0    pink
+#KCYS-PAWNEE-DualDop45 KCYS-PAWNEE-DualDop45  KCYS_PAWNEE_DualDoppler_45.map 0      0.0      10000.0    pink
+#KCYS-PAWNEE-DualDop60 KCYS-PAWNEE-DualDop60  KCYS_PAWNEE_DualDoppler_60.map 0      0.0      10000.0    pink
 
 </MAPS>
 
@@ -1467,7 +1467,7 @@ cidd.horiz_legends_delta_y:  30
 #
 # WINDOW SIZE PARAMS
 #
-cidd.horiz_default_height:    660
+cidd.horiz_default_height:    1100
 cidd.horiz_min_height:        400
 cidd.horiz_min_width:         400
 cidd.horiz_default_x_pos:     0

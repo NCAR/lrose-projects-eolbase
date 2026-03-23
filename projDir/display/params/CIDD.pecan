@@ -44,8 +44,8 @@
 //
 
 field_list = {
-  { "WIDE area products", "WIDE_" },
   { "SPOL QC",  "SPOLQC_" },
+  { "WIDE area products", "WIDE_" },
   { "SPOL field",  "SPOL_" },
   { "NEXRAD radial moments", "NEXR_" },
   { "NEXRAD radial PID/precip", "NEXP_ " },
@@ -1903,7 +1903,7 @@ cidd.xsect_start_page:      1
 #
 # The Outer most domain:
 cidd.num_zoom_levels:       6
-cidd.start_zoom_level:      4
+cidd.start_zoom_level:      1
 
 # The number of Cached images for zooms.
 cidd.num_cache_zooms:       0
