@@ -1,0 +1,13 @@
+#! /bin/sh
+
+# rsync ldm data from aeolian to sleet
+
+cd /data/ldm/data
+
+snuff "rsync -av lightning madis"
+
+rsync -av lightning madis /scr/sleet2/rsfdata/projects/ldm |& LogFilter -d /tmp/rsync_log -p rsync -i ldm_to_sleet &
+
+
+
+
