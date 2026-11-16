@@ -1,0 +1,9 @@
+######################################################################
+# EOL BASE crontab - on ldm
+#
+####################################################################
+#
+# rsync ldm data to sleet
+#
+*/1 * * * * csh -c $HOME/git/lrose-projects-eolbase/projDir/ingest/scripts/rsync_ldm_to_sleet 1> /dev/null 2> /dev/null
+
